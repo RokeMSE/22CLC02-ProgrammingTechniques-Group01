@@ -5,25 +5,22 @@
 
 #include "enum.h"
 #include "USER.h"
+#include "STUDENT.h"
+#include "STAFF.h"
 #include "DLL.h"
 #include "DATE.h"
 #include "CLASS.h"
 #include "COURSE.h"
-#include "academicYear.h"
+#include "SCHOOLYEAR.h"
 
 using namespace std;
 
-// // // // // struct Tree {
-// // // // //     // using binary search tree
-// // // // //     STUDENT data;
-// // // // //     Tree* left;
-// // // // //     Tree* right;
-// // // // // };
-
 int main () {
-    USER a;
-    STUDENT s;
-    a.get(s);
+    STAFF sta;
+    STUDENT stu;
+    SCHOOLYEAR sc;
+    SEMESTER sem;
+
     return 0;
 }
 /*
