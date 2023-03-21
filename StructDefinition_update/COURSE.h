@@ -11,7 +11,7 @@ struct COURSE {
     ushort credit, maxStudents = 50;
     WeekDay day;
     Session session; // S1--S4
-    LIST<DLL<STUDENT>> students;
+    LIST<DLL, STUDENT> students;
 
     void add ();
     void remove ();
