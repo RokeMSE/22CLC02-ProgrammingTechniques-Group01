@@ -7,6 +7,7 @@
 #include "STAFF.h"
 
 struct USER {
+    // protected:
     char* username = nullptr, *password = nullptr;
     STUDENT* student = nullptr;
     STAFF* staff = nullptr;
@@ -19,11 +20,13 @@ struct USER {
     //     staff = nullptr;
     // }
 
-    pair<bool, USER*> authenticateUSER ();
+    USER* authenticateUSER ();
             // username must not be duplicated
-            // return value: bool   :   return 1 if user is allowed to log in; otherwise, return 0
-            //               USER*  :   return USER* that points to the corresponding user
+            // return value:    USER*  :   return USER* that points to the corresponding user; if there is no matching user in the list, return nullptr 
 
+    void get (STUDENT &s) {
+        
+    }
     void generateUSER (ifstream inp);
     void generateUSER ();
 };

@@ -7,7 +7,7 @@
 #include "USER.h"
 #include "STUDENT.h"
 #include "STAFF.h"
-#include "DLL.h"
+#include "LIST.h"
 #include "DATE.h"
 #include "CLASS.h"
 #include "COURSE.h"
@@ -16,11 +16,9 @@
 using namespace std;
 
 int main () {
-    STAFF sta;
-    STUDENT stu;
-    SCHOOLYEAR sc;
-    SEMESTER sem;
-
+    LIST<STUDENT> allstu;
+    
+    
     return 0;
 }
 /*
