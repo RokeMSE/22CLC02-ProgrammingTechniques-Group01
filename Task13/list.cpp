@@ -11,6 +11,7 @@ void LIST<T>::remove(DLL<T>* node)
     if(node == cur)
     {
         this->head = cur->next;
+        delete node;
         return;
     }
 
@@ -21,4 +22,5 @@ void LIST<T>::remove(DLL<T>* node)
         return;
 
     cur->next = cur->next->next;
+    delete node;
 }
