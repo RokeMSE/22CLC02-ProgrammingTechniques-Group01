@@ -1,11 +1,16 @@
 #pragma once
 #ifndef _Stack_h
-#define __Stack_h
+#define _Stack_h
 
-        struct Stack {
-            SLL* top;
-        };
+    #include "LIST.h"
+    
+    template <typename T>
+    struct Stack {
+        SLL<T>* stack;
 
-        returnDataType functionName (parameter(s));
+        // member functions
+        void push ();
+        void pop ()
+    };
 
 #endif

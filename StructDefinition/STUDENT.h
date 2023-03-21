@@ -5,6 +5,8 @@
 #include "DATE.h"
 #include "USER.h"
 #include "CLASS.h"
+#include "LIST.h"
+#include "COURSE.h"
 
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
@@ -16,6 +18,7 @@ struct STUDENT : public USER {
     double totalMark = 0, finalMark = 0, midtermMark = 0, otherMark = 0;
     CLASS Class;
 
+    LIST<DLL<COURSE>> course;
     // member functions
     STUDENT* get () {
         return this;

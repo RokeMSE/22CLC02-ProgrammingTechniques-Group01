@@ -2,30 +2,39 @@
 
 #define uint unsigned int
 #define ushort unsigned short
-#include "USER.h"
-#include "COURSE.h"
 
-template <typename T> 
+/////////////////////////////////////////////////
+template <typename data_type> 
 struct SLL {
-    //singly linked list
-    T data;
-    SLL* next = nullptr;
-
-    void insert ();
-    void remove ();
+    // declare a SLL:   SLL<data_type> *name;
+    data_type data;
+    SLL<data_type>* next = nullptr;
 };
+/////////////////////////////////////////////////
+// _____________________________________________
 
-template <typename T> 
+/////////////////////////////////////////////////
+template <typename data_type> 
 struct DLL {
-    // declare a DLL:   DLL<datatype> *name;
-    T data;
-    DLL* prev = nullptr, *next = nullptr;
-    void insert ();
-    void remove (DLL<T>* node);
-    // void view ();
+    // declare a DLL:   DLL<data_type> *name;
+    data_type data;
+    DLL<data_type>* prev = nullptr, *next = nullptr;
 };
+/////////////////////////////////////////////////
+// _____________________________________________
 
-template <typename T1, typename T2>
+/////////////////////////////////////////////////
+template <typename list_type>
 struct LIST {
-    T1<T2>* head, *tail;
+    using Data_type = typename decltype(list_type::data_type);
+    list_type<Data_type> *head, *tail;
+        // list_type:   SLL or DLL
+        // example, declare a DLL list of students: LIST<DLL<STUDENT>>
+
+
+    // member functions
+    void insert (list_type<Data_type>* node);
+    void remove (list_type<Data_type>* node);
 };
+/////////////////////////////////////////////////
+// _____________________________________________
