@@ -21,7 +21,7 @@ struct DLL {
     T data;
     DLL* prev = nullptr, *next = nullptr;
     void insert ();
-    void remove ();
+    void remove (DLL<T>* node);
     // void view ();
 };
 

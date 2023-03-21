@@ -23,5 +23,4 @@ struct SEMESTER : public SCHOOLYEAR{
 
     // member functions
     void add (); // choose school year
-    void removeCourse(COURSE* &course);//remove course(task13)
 };
