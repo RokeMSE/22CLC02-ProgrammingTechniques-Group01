@@ -1,16 +1,21 @@
-#include "StructDefinition\LIST.h"
+#include "StructsDefinition\LIST.h"
 
 template <typename T>
-void LIST<T>::remove(DLL<T>* node)
+void LIST<DLL, T>::remove(DLL<T>* node)
 {
     if(!node)
         return;
     
     DLL<T>* cur = this->head;
 
+    if(!cur)
+        return;
+
     if(node == cur)
     {
         this->head = cur->next;
+        cur = cur->next;
+        cur->prev = nullptr;
         delete node;
         return;
     }
@@ -22,5 +27,6 @@ void LIST<T>::remove(DLL<T>* node)
         return;
 
     cur->next = cur->next->next;
+    cur->next->next->prev = cur;
     delete node;
 }
