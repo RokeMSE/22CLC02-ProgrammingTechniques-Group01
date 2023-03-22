@@ -1,7 +1,7 @@
 #include "StructsDefinition\LIST.h"
 
 template <typename T>
-void LIST<DLL, T>::remove(DLL<T>* node)
+void DLL<T>::remove(DLL<T>* node)
 {
     if(!node)
         return;
