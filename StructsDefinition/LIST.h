@@ -10,8 +10,7 @@ struct SLL {
     data_type data;
     SLL<data_type>* next = nullptr;
 };
-/////////////////////////////////////////////////
-// _____________________________________________
+// // // _____________________________________________
 
 /////////////////////////////////////////////////
 template <typename data_type> 
@@ -20,21 +19,19 @@ struct DLL {
     data_type data;
     DLL<data_type>* prev = nullptr, *next = nullptr;
 };
-/////////////////////////////////////////////////
-// _____________________________________________
+// // // _____________________________________________
 
 /////////////////////////////////////////////////
-template <typename list_type>
+template <template <typename> typename list_type, typename Data_Type>
 struct LIST {
-    using Data_type = typename decltype(list_type::data_type);
-    list_type<Data_type> *head, *tail;
+    list_type<Data_Type> *head, *tail;
         // list_type:   SLL or DLL
-        // example, declare a DLL list of students: LIST<DLL<STUDENT>>
-
+        // data_type:   data type of member `data` in DLL or SLL
+        // example, to declare a DLL list of students: LIST<DLL, STUDENT>
 
     // member functions
-    void insert (list_type<Data_type>* node);
-    void remove (list_type<Data_type>* node);
+    // those prototypes haven't been finished yet
+    void insert (list_type<Data_Type>* node);
+    void remove (list_type<Data_Type>* node);
 };
-/////////////////////////////////////////////////
-// _____________________________________________
+// // // _____________________________________________
