@@ -25,7 +25,8 @@ struct STUDENT : public USER {
     }
     void importInfo(ST& SV);
     void import(ST& SV);// at the beginning, list of students is loaded into the system
-    void Export (ST SV);         // export all student to a file to store
+    void Export (ST SV);  // export all student to a file to store
+
     void importScore (std::string filename);
     void updateResult ();
 };
@@ -48,31 +49,31 @@ void ST::importInfo(ST& SV) {
     cout << endl;
 }
 void ST::import(ST &SV) {
-    SV = new STUDENT[maxStudents];
-    for (int i = 0; i < maxStudents; i++) {
+    //SV = new STUDENT[maxStudents];
+    for (int i = 0; i < 50; i++) {
         cout << "/n Nhap sinh vien thu "<< i <<":";
         importInfo(SV);
     }
 }
-//void ST::Export(ST &SV) {
-//    cout << "\n Enter your fullname: " << strcpy_s(50, SV.fullname);
-//    cout << endl;
-//    cout << "\n Enter your numerical order: " << SV.No;
-//    cout << endl;
-//    cout << "\n Enter your your ID: " << strcpy_s(20, SV.studentID);
-//    cout << endl;
-//    cout << "\n Enter your your total mark: " << SV.totalMark;
-//    cout << endl;
-//    cout << "\n Enter your your final mark: " << SV.finalMark;
-//    cout << endl;
-//    cout << "\n Enter your your midterm mark: " << SV.midtermMark;
-//    cout << endl;
-//    cout << "\n Enter your your orther mark: " << SV.otherMark;
-//    cout << endl;
-//}
+void ST::UpdateST(ST &SV) {
+    cout << "\n Enter your fullname: " << strcpy_s(50, SV.fullname);
+    cout << endl;
+    cout << "\n Enter your numerical order: " << SV.No;
+    cout << endl;
+    cout << "\n Enter your your ID: " << strcpy_s(20, SV.studentID);
+    cout << endl;
+    cout << "\n Enter your your total mark: " << SV.totalMark;
+    cout << endl;
+    cout << "\n Enter your your final mark: " << SV.finalMark;
+    cout << endl;
+    cout << "\n Enter your your midterm mark: " << SV.midtermMark;
+    cout << endl;
+    cout << "\n Enter your your orther mark: " << SV.otherMark;
+    cout << endl;
+}
 void ST::Export(ST SV) {
-    cout << "\n\NO\tStudent ID\tStudent Full Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
-    for (int i = 0; i < maxStudents; i++) {
+    cout << "\nNO\tStudent ID\tStudent Full Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
+    for (int i = 0; i < 50; i++) {
         // in sinh vien thu i ra man hinh
         cout << "\n"<< i+1;
         cout<< "\t" << SV.No;
