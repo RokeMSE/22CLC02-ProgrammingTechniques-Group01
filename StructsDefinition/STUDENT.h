@@ -5,6 +5,8 @@
 #include "DATE.h"
 #include "USER.h"
 #include "CLASS.h"
+#include "LIST.h"
+#include "COURSE.h"
 
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
@@ -16,9 +18,13 @@ struct STUDENT : public USER {
     double totalMark = 0, finalMark = 0, midtermMark = 0, otherMark = 0;
     CLASS Class;
 
+    LIST<DLL, COURSE> courses;   // courses that 1 student enrolls in a semester
     // member functions
+    STUDENT* get () {
+        return this;
+    }
     void import (std::string filename);         // at the beginning, list of students is loaded into the system
-    void export (std::string filename);         // export all student to a file to store
+    void Export (std::string filename);         // export all student to a file to store
     void importScore (std::string filename);
     void updateResult ();
 };

@@ -1,5 +1,4 @@
 #pragma once
-
 #define uint unsigned int
 #define ushort unsigned short
 #include "DATE.h"
@@ -20,7 +19,7 @@ struct SCHOOLYEAR {
 struct SEMESTER : public SCHOOLYEAR{
     int No;
     DATE startdate, enddate;
-    LIST<COURSE> course;
+    LIST<DLL, COURSE> course;
 
     // member functions
     void add (); // choose school year
