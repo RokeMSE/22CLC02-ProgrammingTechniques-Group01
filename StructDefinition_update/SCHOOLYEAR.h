@@ -19,7 +19,7 @@ struct SCHOOLYEAR {
 struct SEMESTER : public SCHOOLYEAR{
     int No;
     DATE startdate, enddate;
-    LIST<DLL<COURSE>> course;
+    LIST<DLL, COURSE> course;
 
     // member functions
     void add (); // choose school year
