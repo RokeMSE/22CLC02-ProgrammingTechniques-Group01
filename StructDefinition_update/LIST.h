@@ -24,9 +24,9 @@ struct DLL {
 // _____________________________________________
 
 /////////////////////////////////////////////////
-template <typename list_type>
+template <template <typename> class list_type, typename Data_Type>
 struct LIST {
-    list_type<typename list_type::data_type> *head, *tail;
+    list_type<Data_Type> *head, *tail;
         // list_type:   SLL or DLL
         // data_type:   data type of member `data` in DLL or SLL
         // example, to declare a DLL list of students: LIST<DLL<STUDENT>>
@@ -34,8 +34,8 @@ struct LIST {
 
     // member functions
     // those prototypes haven't been finished yet
-    void insert (list_type<Data_type>* node);
-    void remove (list_type<Data_type>* node);
+    void insert (list_type<Data_Type>* node);
+    void remove (list_type<Data_Type>* node);
 };
 /////////////////////////////////////////////////
 // _____________________________________________

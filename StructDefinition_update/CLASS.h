@@ -11,7 +11,7 @@ struct CLASS {
     ushort K;           // may be the last 2 digits of yearIn
     Program program;    // APCS, CLC, VP
     ushort No;          // No of class
-    LIST<DLL<STUDENT>> student;
+    LIST<DLL, STUDENT> student;
     // 22CLC2: K = 22, program = CLC, No = 2
 
     // member functions
