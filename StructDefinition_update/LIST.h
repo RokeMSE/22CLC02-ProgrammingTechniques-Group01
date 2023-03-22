@@ -29,8 +29,7 @@ struct LIST {
     list_type<Data_Type> *head, *tail;
         // list_type:   SLL or DLL
         // data_type:   data type of member `data` in DLL or SLL
-        // example, to declare a DLL list of students: LIST<DLL<STUDENT>>
-
+        // example, to declare a DLL list of students: LIST<DLL, STUDENT>
 
     // member functions
     // those prototypes haven't been finished yet

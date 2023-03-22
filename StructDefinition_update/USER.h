@@ -25,7 +25,10 @@ struct USER {
             // return value:    USER*  :   return USER* that points to the corresponding user; if there is no matching user in the list, return nullptr 
 
     void get (STUDENT &s) {
-        
+        student = s.get();   
+    }
+    void get (STAFF &s) {
+        staff = s.get();
     }
     void generateUSER (ifstream inp);
     void generateUSER ();
