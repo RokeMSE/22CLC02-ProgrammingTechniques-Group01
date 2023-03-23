@@ -12,13 +12,6 @@ int main() {
         cout << "*************************MENU**************************\n";
         cout << "**  1. Them sinh vien.                               **\n";
         cout << "**  2. Cap nhat thong tin sinh vien boi ID.          **\n";
-        cout << "**  3. Xoa sinh vien boi ID.                         **\n";
-        cout << "**  4. Tim kiem sinh vien theo ten.                  **\n";
-        cout << "**  5. Sap xep sinh vien theo diem trung binh (GPA). **\n";
-        cout << "**  6. Sap xep sinh vien theo ten.                   **\n";
-        cout << "**  7. Hien thi danh sach sinh vien.                 **\n";
-        cout << "**  8. Ghi danh sach sinh vien vao file.             **\n";
-        cout << "**  0. Thoat                                         **\n";
         cout << "*******************************************************\n";
         cout << "Nhap tuy chon: ";
         cin >> key;
