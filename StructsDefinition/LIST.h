@@ -1,8 +1,5 @@
 #pragma once
 
-#define uint unsigned int
-#define ushort unsigned short
-
 /////////////////////////////////////////////////
 template <typename data_type> 
 struct SLL {

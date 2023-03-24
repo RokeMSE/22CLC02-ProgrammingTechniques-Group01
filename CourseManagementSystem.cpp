@@ -1,0 +1,18 @@
+#include <iostream>
+#include "header.h"
+using namespace std;
+
+int main() {
+    // Var declaration
+
+    /////////////////////////////////////
+
+    // Main menu
+
+    /////////////////////////////////////
+
+    // Deallocation
+
+    /////////////////////////////////////
+    return 0;
+}

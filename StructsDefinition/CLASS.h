@@ -1,7 +1,5 @@
 #pragma once
 
-#define uint unsigned int
-#define ushort unsigned short
 #include "enum.h"
 #include "STUDENT.h"
 #include "LIST.h"
