@@ -23,6 +23,6 @@ struct CLASS {
                                 // there is a doubly linked list
 
     void add(SCHOOLYEAR year);  // t2: create several classes through terminal  // update yearIn, K (maybe), program, No
-    void add1stYearStudents(); // t3: add 1st-year students to a particular 1st-year class
+    bool add1stYearStudents(); // t3: add 1st-year students to a particular 1st-year class
                                 // just use when a new class is created
 };
