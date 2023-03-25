@@ -1,12 +1,14 @@
 #pragma once
 
+#include <string>
 #include "DATE.h"
 #include "STUDENT.h"
 #include "STAFF.h"
 
 struct USER {
     // protected:
-    char* username = nullptr, *password = nullptr;
+    std::string username = ""; 
+    std::string password = "";
     STUDENT* student = nullptr;
     STAFF* staff = nullptr;
     // if this user is a staff: student == nullptr
