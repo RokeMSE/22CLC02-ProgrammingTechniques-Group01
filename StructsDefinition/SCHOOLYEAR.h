@@ -1,6 +1,5 @@
 #pragma once
-#define uint unsigned int
-#define ushort unsigned short
+
 #include "DATE.h"
 #include "COURSE.h"
 #include "LIST.h"

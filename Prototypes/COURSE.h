@@ -17,9 +17,8 @@ struct COURSE
     void add();
     void remove();
     void updateInfo();
-    void add1Student(LIST<DLL, STUDENT> &students, STUDENT student);     
+    void add1Student(STUDENT student);     
     /// add1Student: Add a student to the course, includes:
     ///     student: is student needed to add 
-    ///     students: is the list of students enrroled in the course
     /// This function does not return anything
 };

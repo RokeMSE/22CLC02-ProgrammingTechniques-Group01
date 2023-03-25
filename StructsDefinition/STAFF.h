@@ -1,13 +1,13 @@
 #pragma once
 
-#define uint unsigned int
-#define ushort unsigned short
+#include <string>
 #include "DATE.h"
 #include "USER.h"
 
 struct STAFF : public USER {
     // USER* login;
-    char* firstname = nullptr, *lastname = nullptr;
+    std::string firstname = "";
+    std::string lastname = "";
 
     // member functions
     STAFF* get () {
