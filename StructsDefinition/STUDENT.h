@@ -19,7 +19,5 @@ struct STUDENT : public USER {
 
     LIST<DLL, COURSE> courses;   // courses that 1 student enrolls in a semester
     // member functions
-    STUDENT* get () {
-        return this;
-    }
+    STUDENT* get ();
 };
