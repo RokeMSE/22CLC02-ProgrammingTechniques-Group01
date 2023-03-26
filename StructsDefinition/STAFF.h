@@ -10,8 +10,5 @@ struct STAFF : public USER {
     const Type type = Staff;
     
     // member functions
-    STAFF* get () {
-        return this;
-    }
-    void add ();
+    STAFF* get ();
 };

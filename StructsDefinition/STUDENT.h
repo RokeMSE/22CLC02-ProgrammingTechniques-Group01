@@ -22,6 +22,4 @@ struct STUDENT : public USER {
     STUDENT* get () {
         return this;
     }
-    bool import (std::string filename);         // at the beginning, list of students is loaded into the system
-    bool Export (std::string filename);         // export all student to a file to store
 };
