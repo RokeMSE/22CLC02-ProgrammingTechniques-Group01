@@ -1,7 +1,25 @@
 #include "../header.h"
-
+#include <iostream>
+#include <string>
+using namespace std;
 void COURSE::updateInfo () {
+    // this function will be called when the button "UPDATE" is cliked
+    getline(cin, ID);
+    getline(cin, name);
+    getline(cin, teacher);
 
+    string tmp;
+    getline(cin, tmp); // get `credit`
+    credit = stoi(tmp);
+
+    getline(cin, tmp); // get `maxStudents`
+    maxStudents = stoi(tmp);
+
+    getline(cin, tmp); // get `day`
+    day = convertToWeekday(tmp);
+
+    getline(cin, tmp); // get `session`
+    session = convertToSession(tmp);
 }
 
 void COURSE::add1Student (STUDENT student) {
@@ -16,6 +34,7 @@ bool COURSE::importScore (std::string filename) {
     // file CSV _ task 20
     // quy ước định dạng file CSV theo nhu cầu rồi comment vô đây nhen, miễn là đủ các cột của đề yêu cầu, có thể thêm cột nếu muốn
     // điểm của sinh viên nằm trong struct STUDENT luôn, nên trước tiên search ID tương ứng trước rồi mới cập nhật điểm
+    
 }
 
 bool COURSE::updateResult (std::string studentID) {

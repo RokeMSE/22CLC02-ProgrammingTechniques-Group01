@@ -1,18 +1,18 @@
 #include "../header.h"
-
-WeekDay convertToWeekday ( char* str ) {
-    if ( strcmp ( str, "MON" ) == 0 )        return MON;
-    else if ( strcmp ( str, "TUE" ) == 0 )   return TUE;
-    else if ( strcmp ( str, "WED" ) == 0 )   return WED;
-    else if ( strcmp ( str, "THU" ) == 0 )   return THU;
-    else if ( strcmp ( str, "FRI" ) == 0 )   return FRI;
-    else if ( strcmp ( str, "SAT" ) == 0 )   return SAT;
-    else                                return SUN;
+#include <string>
+WeekDay convertToWeekday ( std::string str ) {
+    if ( str == "MON" )        return MON;
+    else if ( str == "TUE" )   return TUE;
+    else if ( str == "WED" )   return WED;
+    else if ( str == "THU" )   return THU;
+    else if ( str == "FRI" )   return FRI;
+    else if ( str == "SAT" )   return SAT;
+    else                       return SUN;
 }
 
-Session convertToSession ( char* str ) {
-    if ( strcmp ( str, "S1" ) == 0 )        return S1;
-    else if ( strcmp ( str, "S2" ) == 0 )   return S2;
-    else if ( strcmp ( str, "S3" ) == 0 )   return S3;
-    else                                    return S4;
+Session convertToSession ( std::string str ) {
+    if ( str == "S1" )      return S1;
+    else if ( str == "S2" ) return S2;
+    else if ( str == "S3" ) return S3;
+    else                    return S4;
 }

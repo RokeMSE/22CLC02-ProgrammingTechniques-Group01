@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // Var declaration
+    // Local var declarations
 
     /////////////////////////////////////
 

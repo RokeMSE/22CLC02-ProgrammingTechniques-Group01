@@ -7,15 +7,15 @@ struct COURSE {
     std::string ID = "";
     std::string name = "";
     std::string teacher = "";
-    ushort credit, maxStudents = 50;
-    WeekDay day;
-    Session session; // S1--S4
+    ushort credit = 0, maxStudents = 50;
+    WeekDay day = MON;
+    Session session = S1; // S1--S4
     LIST<DLL, STUDENT> students;
 
     void updateInfo ();                         // update info of this course
     void add1Student (STUDENT student);
     /// add1Student: Add a student to the course, includes:
-    ///     student: is student needed to add 
+    ///     student: is student needs to be added 
     /// This function does not return anything
 
     void remove1Student (STUDENT student);

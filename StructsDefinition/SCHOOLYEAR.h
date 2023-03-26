@@ -1,14 +1,10 @@
 #pragma once
 
-#include "DATE.h"
-#include "COURSE.h"
-#include "LIST.h"
+#include "../header.h"
 
 struct SCHOOLYEAR {
     public:
-        uint begin, end;
-    
-    private:
+        uint begin = 0, end = 0;    
         SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
 
     //member functions
@@ -16,12 +12,12 @@ struct SCHOOLYEAR {
 };
 
 struct SEMESTER : public SCHOOLYEAR{
-    int No;
+    int No = 0;
     DATE startdate, enddate;
     LIST<DLL, COURSE> course;
 
     // member functions
-    void add (SCHOOLYEAR year); // choose school year
+    bool add (); // choose school year
     void addCourse (); // add courses to list COURSE::course
 };
 

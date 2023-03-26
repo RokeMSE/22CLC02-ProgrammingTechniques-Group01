@@ -2,7 +2,7 @@
 
 #define uint unsigned int
 #define ushort unsigned short
-using namespace std;
+
 // Structs 
     #include "StructsDefinition/enum.h"
     #include "StructsDefinition/LIST.h"
@@ -19,6 +19,13 @@ using namespace std;
     #include "StructsDefinition/SCHOOLYEAR.h"
 /////////////////////////////////////
 
+// Global variables
+SCHOOLYEAR g_currentSchoolYear; // g stands for global
+SEMESTER g_currentSemester;
+/////////////////////////////////////
+
+using namespace std;
+
 // GUI
 
 /////////////////////////////////////
@@ -26,3 +33,4 @@ using namespace std;
 // Prototypes
 
 /////////////////////////////////////
+
