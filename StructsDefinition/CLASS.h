@@ -1,8 +1,6 @@
 #pragma once
 
-#include "enum.h"
-#include "STUDENT.h"
-#include "LIST.h"
+#include "../header.h"
 
 struct CLASS {
     uint yearIn;        // the year in which students admitted to school
@@ -15,7 +13,7 @@ struct CLASS {
 
     // member functions
     // these prototypes haven't been finished yet
-    void import (std::string filename /*and something here*/);
+    bool import (std::string filename /*and something here*/);
                                 // import students from a file to a class, INCLUDING give them username and password
                                 // there is a doubly linked list
 
@@ -24,7 +22,7 @@ struct CLASS {
 
     // add 1st-year students to a particular 1st-year class
     // just use when a new class is created
-    bool add1stYearStudent (); // using key board
+    void add1stYearStudent (); // using key board
     bool add1stYearStudents (std::string filename); // import from file
                                 
 };

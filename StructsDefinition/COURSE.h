@@ -1,10 +1,7 @@
 #pragma once
 
 #include <string>
-#include "enum.h"
-#include "STUDENT.h"
-#include "LIST.h"
-#include "STUDENT.h"
+#include "../header.h"
 
 struct COURSE {
     std::string ID = "";
@@ -25,10 +22,10 @@ struct COURSE {
     /// remove1Student: Remove a student from the course, includes:
     ///        student: is the student need to be removed from the course
     /// This function does not return anything
-
+    /////////////////
     // scores are members of STUDENT
     bool importScore (std::string filename);    // file CSV _ task 20
-    bool updateResult ();                       // get data from keyboard
+    bool updateResult (std::string studentID);  // get data from keyboard
                                                 // task 22
                                                 // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
 };

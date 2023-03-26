@@ -12,7 +12,7 @@ struct SCHOOLYEAR {
         SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
 
     //member functions
-    void add (); // create a school year
+    void create (); // create a school year
 };
 
 struct SEMESTER : public SCHOOLYEAR{
@@ -21,5 +21,7 @@ struct SEMESTER : public SCHOOLYEAR{
     LIST<DLL, COURSE> course;
 
     // member functions
-    void add (); // choose school year
+    void add (SCHOOLYEAR year); // choose school year
+    void addCourse (); // add courses to list COURSE::course
 };
+

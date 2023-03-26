@@ -1,11 +1,7 @@
 #pragma once
 
 #include <string>
-#include "DATE.h"
-#include "USER.h"
-#include "CLASS.h"
-#include "LIST.h"
-#include "COURSE.h"
+#include "../header.h"
 
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
@@ -13,6 +9,7 @@ struct STUDENT : public USER {
     std::string firstname = "";
     std::string lastname = "";
     std::string socialID = "";
+    const Type type = Student;
                         
 
     bool gender;        // 0 male & 1 female

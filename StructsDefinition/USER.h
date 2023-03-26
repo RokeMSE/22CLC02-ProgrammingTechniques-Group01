@@ -1,9 +1,7 @@
 #pragma once
 
 #include <string>
-#include "DATE.h"
-#include "STUDENT.h"
-#include "STAFF.h"
+#include "../header.h"
 
 struct USER {
     // protected:

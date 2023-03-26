@@ -2,7 +2,7 @@
 
 #define uint unsigned int
 #define ushort unsigned short
-
+using namespace std;
 // Structs 
     #include "StructsDefinition/enum.h"
     #include "StructsDefinition/LIST.h"

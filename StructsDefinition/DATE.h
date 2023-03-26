@@ -1,10 +1,6 @@
 #pragma once
 
-#include <iomanip>
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include "../header.h"
 
 // syntax to implement a member function: void DATE::getDate (char* chr) {}
 struct DATE {
@@ -14,14 +10,10 @@ struct DATE {
     /////////////////////////////////////////
     // member functions
 
-    void getDate (char* &chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
+    void getDate (string chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
     
-    void display () {
-        cout << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
+    void display ();
 
-    void display (ofstream out) {
-        out << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
+    void display (std::ostream out);
     /////////////////////////////////////////
 };
