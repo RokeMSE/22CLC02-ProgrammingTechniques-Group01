@@ -1,17 +1,18 @@
 #pragma once
 
-#define uint unsigned int
-#define ushort unsigned short
+#include <string>
 #include "DATE.h"
 #include "USER.h"
 #include "CLASS.h"
 #include "LIST.h"
 #include "COURSE.h"
-#include <string>
 
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
-    std::string studentID = nullptr, *firstname = nullptr, *lastname = nullptr, *socialID = nullptr;
+    std::string studentID = "";
+    std::string firstname = "";
+    std::string lastname = "";
+    std::string socialID = "";
                         
 
     bool gender;        // 0 male & 1 female
@@ -25,7 +26,7 @@ struct STUDENT : public USER {
         return this;
     }
     void import (std::string filename);         // at the beginning, list of students is loaded into the system
-    bool Export (std::string filename);         // export all student to a file to store
+    void Export (std::string filename);         // export all student to a file to store
     void importScore (std::string filename);
     void updateResult ();
 };
