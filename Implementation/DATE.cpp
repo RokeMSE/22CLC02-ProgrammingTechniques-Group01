@@ -1,12 +1,18 @@
-#pragma once
-
-#include <iomanip>
-#include <iostream>
+#include "../header.h"
 #include <fstream>
+void DATE::display () {
+    cout << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
+}
 
-using namespace std;
+void display (std::istream out) {
+    // out: append
+    out << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year << endl;
+}
 
-// syntax to implement a member function: void DATE::getDate (char* chr) {}
+void getDate (string &chr) {
+    
+}
+//syntax to implement a member function: void DATE::getDate (char* chr) {}
 struct DATE {
     ushort day, month;
     uint year;
@@ -14,14 +20,9 @@ struct DATE {
     /////////////////////////////////////////
     // member functions
 
-    void getDate (char* &chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
+    ; // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
     
-    void display () {
-        cout << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
-
-    void display (ofstream out) {
-        out << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
+    void display ();
+    void display (std::istream out);
     /////////////////////////////////////////
 };

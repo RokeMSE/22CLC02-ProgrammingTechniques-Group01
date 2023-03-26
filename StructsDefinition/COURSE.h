@@ -1,7 +1,7 @@
 #pragma once
 
 #include "enum.h"
-#include "USER.h"
+#include "STUDENT.h"
 #include "LIST.h"
 
 struct COURSE {
@@ -14,5 +14,9 @@ struct COURSE {
     void add ();
     void remove ();
     void updateInfo ();
-    void add1Student ();
+    void add1Student (STUDENT student);         // add `student` to the list `COURSE::students`
+    bool importScore (std::string filename);    // file CSV _ task 20
+    bool updateResult ();                       // get data from keyboard
+                                                // task 22
+                                                // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
 };
