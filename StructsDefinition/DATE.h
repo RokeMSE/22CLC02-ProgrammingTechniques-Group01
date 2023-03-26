@@ -1,4 +1,6 @@
 #pragma once
+#define ushort unsigned short
+#define uint unsigned int
 
 #include <iomanip>
 #include <iostream>

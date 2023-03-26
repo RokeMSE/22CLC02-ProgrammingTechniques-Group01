@@ -13,5 +13,6 @@ bool STUDENT::Export(std::string filename)
     *n = 0;
 
     output << ++n << "," << temp->studentID << "," << temp->firstname << "," << temp->lastname << "," << temp->gender << ",";
-    output << temp->DoB->day;//chua xong, con dang loi
+    output << temp->DoB->day << "," << temp->DoB->moth << "," << temp->DoB->year << ",";
+    output << temp->socialID << ",";//chua xong
 }

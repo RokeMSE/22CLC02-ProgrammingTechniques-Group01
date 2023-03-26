@@ -3,6 +3,7 @@
 #include "enum.h"
 #include "STUDENT.h"
 #include "LIST.h"
+#include "SCHOOLYEAR.h"
 
 struct CLASS {
     uint yearIn;        // the year in which students admitted to school
