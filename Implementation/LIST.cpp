@@ -1,34 +1,56 @@
-#pragma once
+#include "StructsDefinition/LIST.h"
 
-/////////////////////////////////////////////////
-template <typename data_type> 
-struct SLL {
-    // declare a SLL:   SLL<data_type> *name;
-    data_type data;
-    SLL<data_type>* next = nullptr;
-};
-// // // _____________________________________________
+template <typename Data_Type>
+///     data_type of (list) same as data_type of (val)
+void add_val(LIST<DLL,Data_Type> &list, Data_Type val)
+{
+    /// Allocate a node*(tmp) with data_type same as the data_type of (val) to add to the (list)
+    DLL<Data_Type> *tmp = new DLL<Data_Type>;
+    tmp -> data = val;
+    tmp -> next = nullptr;
+    tmp -> prev = list.tail;
 
-/////////////////////////////////////////////////
-template <typename data_type> 
-struct DLL {
-    // declare a DLL:   DLL<data_type> *name;
-    data_type data;
-    DLL<data_type>* prev = nullptr, *next = nullptr;
-};
-// // // _____________________________________________
+    /// Update the (list), 2 cases: the (list is empty or not) 
+    if (list.head == nullptr)
+    {
+        list.head = tmp;
+        list.tail = tmp;
+    }
+    else
+        {
+            
+            list.tail -> next = tmp;
+            list.tail = list.tail -> next;
+        }
+}
 
-/////////////////////////////////////////////////
-template <template <typename> typename list_type, typename Data_Type>
-struct LIST {
-    list_type<Data_Type> *head, *tail;
-        // list_type:   SLL or DLL
-        // data_type:   data type of member `data` in DLL or SLL
-        // example, to declare a DLL list of students: LIST<DLL, STUDENT>
+template <typename Data_Type>
+void remove_val(LIST<DLL,Data_Type> &list, Data_Type val)
+{
+    if (list.head == nullptr)
+        return;
 
-    // member functions
-    // those prototypes haven't been finished yet
-    void insert (list_type<Data_Type>* node);
-    void remove (list_type<Data_Type>* node);
-};
-// // // _____________________________________________
+    /// Find the val need to remove from the list 
+    DLL<Data_Type> *cur = list.head;
+    while (cur != nullptr && cur -> data != val)
+        cur = cur -> next;
+
+    /// Check the (cur) is nullptr(the val doesn't exist in the list) or not
+    if (!cur)
+        return;
+
+    /// Remove the (val) from the list and update with 2 special cases:
+    ///     -(val) is the tail
+    ///     -(val) is the head
+    if (cur != list.tail)
+        cur -> next -> prev = cur -> prev;
+    else
+        list.tail = list.tail -> prev;
+
+    if (cur == list.head)
+        list.head = list.head -> next;
+    else
+        cur -> prev -> next = cur -> next;
+
+    delete cur;
+}

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "DATE.h"
 #include "USER.h"
 #include "CLASS.h"
@@ -8,7 +9,10 @@
 
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
-    char* studentID = nullptr, *firstname = nullptr, *lastname = nullptr, *socialID = nullptr;
+    std::string studentID = "";
+    std::string firstname = "";
+    std::string lastname = "";
+    std::string socialID = "";
                         
 
     bool gender;        // 0 male & 1 female
