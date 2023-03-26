@@ -1,10 +1,11 @@
 #include "CLASS.h"
 #include "StructsDefinition\DATE.h"
+#include "SCHOOLYEAR.h"
 #include <fstream>
 #include <string>
 #include <cstring>
 
-void CLASS::add(SCHOOLYEAR year)
+void CLASS::add(SCHOOLYEAR &year)
 {
     // uint n = 0;
     // std::cout << "Enter number of classes you want to create: ";
@@ -23,6 +24,12 @@ void CLASS::add(SCHOOLYEAR year)
     this -> program = Program(i);
     std::cout << "\tEnter No: ";
     std::cin >> this -> No;
+    DLL<CLASS>* a = new DLL<CLASS>;
+    a -> data = *this;
+    a -> prev = (year.classes).tail;
+    a -> next = nullptr;
+    (year.classes).tail -> next = a;
+    (year.classes).tail = a;
 }
 
 bool CLASS::add1stYearStudents()

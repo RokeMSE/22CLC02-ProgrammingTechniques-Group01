@@ -8,6 +8,7 @@
 struct SCHOOLYEAR {
     public:
         uint begin, end;
+        LIST<DLL, CLASS> classes;
     
     private:
         SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
