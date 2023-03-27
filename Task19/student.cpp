@@ -1,5 +1,4 @@
-#include <StructsDefinition/STUDENT.h>
-#include <fstream>
+#include <../header.h>
 
 bool STUDENT::Export(std::string filename)
 {
@@ -12,7 +11,12 @@ bool STUDENT::Export(std::string filename)
     int* n = new int;
     *n = 0;
 
-    output << ++n << "," << temp->studentID << "," << temp->firstname << "," << temp->lastname << "," << temp->gender << ",";
-    output << temp->DoB->day << "," << temp->DoB->moth << "," << temp->DoB->year << ",";
-    output << temp->socialID << ",";//chua xong
+    output << ++(*n) << "," << temp->studentID << "," << temp->firstname << "," << temp->lastname << "," << temp->gender << ",";
+    output << (temp->DoB).day << "/" << (temp->DoB).month << "/" << (temp->DoB).year << ",";
+    output << temp->socialID << "\n"; 
+    temp->No = *n;
+
+    delete n;
+
+    return true;
 }
