@@ -103,6 +103,37 @@ void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
     }
 }
 
+void UpdateResult(LIST <SLL, STUDENT> L) {
+
+    SLL<STUDENT>* temp = L.head;
+    STUDENT S;
+    cout << "Enter your student ID you want to update: ";
+    cin.ignore();
+    getline(cin, S.studentID);
+    while (temp != nullptr) {
+
+        if (S.studentID == temp->data.studentID) {
+            cout << "\n Enter your your total mark: ";
+            cin >> S.totalMark;
+            temp->data.totalMark = S.totalMark;
+            cout << endl;
+            cout << "\n Enter your your final mark: ";
+            cin >> S.finalMark;
+            temp->data.finalMark = S.finalMark;
+            cout << endl;
+            cout << "\n Enter your your midterm mark: ";
+            cin >> S.midtermMark;
+            temp->data.midtermMark = S.midtermMark;
+            cout << endl;
+            cout << "\n Enter your your orther mark: ";
+            cin >> S.otherMark;
+            temp->data.otherMark = S.otherMark;
+            cout << endl;
+        }
+        temp = temp->next;
+    }
+}
+
 int main() {
     LIST <SLL, STUDENT> ST;
     LIST <SLL, STUDENT> list;
@@ -120,7 +151,8 @@ int main() {
         cout << "**  3. Export to teacher **\n";
         cout << "**  4. Read file from teacher **\n";
         cout << "**  5. Update list student         **\n";
-        cout << "**  6. out.          **\n";
+        cout << "**  6. Update by id student         **\n";
+        cout << "**  7. out.          **\n";
         cout << "*******************************************************\n";
         cout << "Nhap tuy chon: ";
         cin >> key;
@@ -163,11 +195,17 @@ int main() {
             //ST.Export(ST);
             // pressAnyKey();
             break;
+        case 6:
+
+            UpdateResult(ST);
+            //ST.Export(ST);
+            // pressAnyKey();
+            break;
         default:
             cout << "\nKhong co chuc nang nay!";
             cout << "\nHay chon chuc nang trong hop menu.";
             //pressAnyKey();
             break;
         }
-    } while (key != 6);
+    } while (key != 7);
 }
