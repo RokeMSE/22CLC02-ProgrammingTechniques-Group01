@@ -10,10 +10,13 @@
 #include <string>
 struct STUDENT : public USER {
     uint No, yearIn;    // yearIn: the year in which that student admitted to school
-    char* studentID = nullptr, *firstname = nullptr, *lastname = nullptr, *socialID = nullptr,*fullname = nullptr;
-                        
+    std::string studentID = "";
+    std::string firstname = "";
+    std::string lastname = "";
+    std::string fullname = "";
+    std::string socialID = "";
 
-    bool gender;        // 0 male & 1 female
+    bool gender = 0;        // 0 male & 1 female
     DATE DoB;
     double totalMark = 0, finalMark = 0, midtermMark = 0, otherMark = 0;
     CLASS Class;
@@ -23,67 +26,5 @@ struct STUDENT : public USER {
     STUDENT* get () {
         return this;
     }
-    void importInfo(ST& SV);
-    void import(ST& SV);// at the beginning, list of students is loaded into the system
-    void Export (ST SV);  // export all student to a file to store
-
-    void importScore (std::string filename);
-    void updateResult ();
+   
 };
-typedef STUDENT ST;
-
-void ST::importInfo(ST& SV) {
-    cout << "\n Enter your full name: " << strcpy(this->fullname, fullname);
-    cout << endl;
-    cout << "\n Enter your numerical order: " << No;
-    cout << endl;
-    cout << "\n Enter your your ID: " << strcpy(this->studentID, studentID);
-    cout << endl;
-    cout << "\n Enter your your total mark: " << totalMark;
-    cout << endl;
-    cout << "\n Enter your your final mark: " << finalMark;
-    cout << endl;
-    cout << "\n Enter your your midterm mark: " << midtermMark;
-    cout << endl;
-    cout << "\n Enter your your orther mark: " << otherMark;
-    cout << endl;
-}
-void ST::import(ST &SV) {
-    //SV = new STUDENT[maxStudents];
-    for (int i = 0; i < 50; i++) {
-        cout << "/n Nhap sinh vien thu "<< i <<":";
-        importInfo(SV);
-    }
-}
-// void ST::UpdateST(ST &SV) {
-//     cout << "\n Enter your fullname: " << strcpy_s(50, SV.fullname);
-//     cout << endl;
-//     cout << "\n Enter your numerical order: " << SV.No;
-//     cout << endl;
-//     cout << "\n Enter your your ID: " << strcpy_s(20, SV.studentID);
-//     cout << endl;
-//     cout << "\n Enter your your total mark: " << SV.totalMark;
-//     cout << endl;
-//     cout << "\n Enter your your final mark: " << SV.finalMark;
-//     cout << endl;
-//     cout << "\n Enter your your midterm mark: " << SV.midtermMark;
-//     cout << endl;
-//     cout << "\n Enter your your orther mark: " << SV.otherMark;
-//     cout << endl;
-// }
-void ST::Export(ST SV) {
-    cout << "\nNO\tStudent ID\tStudent Full Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
-    for (int i = 0; i < 50; i++) {
-        // in sinh vien thu i ra man hinh
-        cout << "\n"<< i+1;
-        cout<< "\t" << SV.No;
-        cout << "\t" << SV.studentID;
-        cout << "\t" << SV.fullname;
-        cout << "\t" << SV.totalMark;
-        cout << "\t" << SV.finalMark;
-        cout << "\t" << SV.midtermMark;
-        cout << "\t" << SV.otherMark;
-       
-
-    }
-}
