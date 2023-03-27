@@ -88,34 +88,47 @@ struct LIST {
 
         }
     }
-    void in(STUDENT ST) {
-        cout << endl;
-        cout << "\n" << ST.No;
-       // cout << endl;
-        cout << "\t" << ST.studentID;
-       // cout << endl;
-        cout << "\t" << ST.fullname;
-       // cout << endl;
-        cout << "\t" << ST.totalMark;
-       // cout << endl;
-        cout << "\t" << ST.finalMark;
-       // cout << endl;
-        cout << "\t" << ST.midtermMark;
-       // cout << endl;
-        cout << "\t" << ST.otherMark;
-       // cout << endl;
-    }
-    void Export(LIST <data_type>& L) {
-        cout << "\nNO\tStudent ID\tFull Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
-        SLL<data_type>*temp = head;
+    // void in(STUDENT ST) {
+    //     cout << endl;
+    //     cout << "\n" << ST.No;
+    //    // cout << endl;
+    //     cout << "\t" << ST.studentID;
+    //    // cout << endl;
+    //     cout << "\t" << ST.fullname;
+    //    // cout << endl;
+    //     cout << "\t" << ST.totalMark;
+    //    // cout << endl;
+    //     cout << "\t" << ST.finalMark;
+    //    // cout << endl;
+    //     cout << "\t" << ST.midtermMark;
+    //    // cout << endl;
+    //     cout << "\t" << ST.otherMark;
+    //    // cout << endl;
+    // }
+    // void Export(LIST <data_type>& L) {
+    //     cout << "\nNO\tStudent ID\tFull Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
+    //     SLL<data_type>*temp = head;
        
-        while (temp != NULL) {
-            in(temp->data);
-            temp = temp->next;
+    //     while (temp != NULL) {
+    //         in(temp->data);
+    //         temp = temp->next;
            
-        }
+    //     }
         
-    }
+    // }
     void remove (list_type<Data_Type>* node);
 };
 // // // _____________________________________________
+template <typename Data_Type>
+void add_val(LIST<DLL, Data_Type>& list, Data_Type val);
+/// This function is: add 1 val in to the list:
+///     (val): the val need to add
+///     (list): the list that (val) is added to
+/// This function doesn't return anything.
+
+template <typename Data_Type>
+void remove_val(LIST<DLL, Data_Type>& list, Data_Type val);
+/// This function is: remove 1 val from the list:
+///     (val): the val need to remove
+///     (list): the list that (val) is removed
+/// This function doesn't return anything.
