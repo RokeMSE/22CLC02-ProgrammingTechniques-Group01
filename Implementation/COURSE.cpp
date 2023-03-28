@@ -22,6 +22,10 @@ void COURSE::updateInfo () {
     session = convertToSession(tmp);
 }
 
+bool COURSE::addStudents (std::string filename){
+
+}
+
 void COURSE::add1Student (STUDENT student) {
     add_val<STUDENT> (students, student);
 }
