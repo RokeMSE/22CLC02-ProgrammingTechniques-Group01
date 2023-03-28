@@ -23,31 +23,27 @@ struct COURSE {
     /// add1Student: Add a student to the course, includes:
     ///     student: is student needs to be added 
     /// This function does not return anything
-<<<<<<< HEAD
-    void remove1Student (STUDENT student);
-=======
     
     void remove1Student (STUDENT* student);
->>>>>>> 12e54ca959637e607e906442b272265bb2b0241d
     /// remove1Student: Remove a student from the course, includes:
     ///        student: is the student need to be removed from the course
     /// This function does not return anything
     /////////////////
     // scores are members of STUDENT
-<<<<<<< HEAD
-    void importScore (LIST <SLL, STUDENT>& L);    // file CSV _ task 20
-=======
-
-    void in(STUDENT ST);                    //***************
-    void Export(LIST <SLL, STUDENT>& L) ; //***************
     
-    void importScore ();    // file CSV _ task 20
->>>>>>> 12e54ca959637e607e906442b272265bb2b0241d
-    bool updateResult ();  // get data from keyboard
+    /// @brief TASK 20 22
+    void importScore ();
+        // lấy điểm từ file vào
     void updateResultByID(LIST <SLL, STUDENT> L);
+        // lấy sinh viên ra bằng ID rồi gán điểm
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);
-     void exportFile() ;
-                                                // task 22
-                                                // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
+        // đã có data, gán vào danh sách `chính`
+    void exportFile() ;
+        // xuất ra danh sách SV cho GV nhập điểm vô
+    //////////////////////////////////
+
+    bool updateResult ();   // get data from keyboard
+                            // task 22
+                            // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
     bool exportStudents(std::string filename);
 };
