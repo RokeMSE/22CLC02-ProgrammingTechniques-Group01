@@ -1,13 +1,13 @@
 #include <../header.h>
 
-bool exportStudent(std::string filename, STUDENT* student)
+bool COURSE::exportStudents(std::string filename)
 {
     ofstream output(filename);
 
     if(!output.is_open())
         return false;
 
-    STUDENT* temp = student;
+    STUDENT* temp = this->students;
 
     while(temp)
     {
@@ -15,6 +15,6 @@ bool exportStudent(std::string filename, STUDENT* student)
         output << (temp->DoB).day << "/" << (temp->DoB).month << "/" << (temp->DoB).year << ",";
         output << temp->socialID << "\n"; 
     }
-
+    //No studentID firstname lastname  gender (day/month/year)oB socialID
     return true;
 }

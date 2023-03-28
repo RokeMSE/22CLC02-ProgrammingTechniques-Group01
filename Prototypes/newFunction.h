@@ -1,1 +1,1 @@
-bool exportStudent(std::string filename);
+bool exportStudents(std::string filename);
