@@ -26,12 +26,12 @@ bool COURSE::addStudents (std::string filename){
 
 }
 
-void COURSE::add1Student (STUDENT student) {
-    add_val<STUDENT> (students, student);
+void COURSE::add1Student (STUDENT* student) {
+    add_val<STUDENT*> (students, student);
 }
 
-void COURSE::remove1Student(STUDENT student) {
-    remove_val<STUDENT> (students, student);
+void COURSE::remove1Student(STUDENT* student) {
+    remove_val<STUDENT*> (students, student);
 }
 
 bool COURSE::importScore (std::string filename) {
@@ -47,9 +47,9 @@ bool COURSE::updateResult (std::string studentID) {
     // task 22
     // search for student in the list `students` using `ID`:
         // if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
-    DLL<STUDENT>* cur = students.head;
-    while ( cur ) {
-        if ( cur->data.studentID == studentID ) {
+    DLL<STUDENT*>* cur = students.head;
+    while ( cur->data ) {
+        if ( cur->data->studentID == studentID ) {
             // update
 
             /////////
