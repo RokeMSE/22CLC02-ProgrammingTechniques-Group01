@@ -11,12 +11,13 @@
     #include "StructsDefinition/Queue.h"
 
     #include "StructsDefinition/DATE.h"
-    #include "StructsDefinition/USER.h"
-    #include "StructsDefinition/STUDENT.h"
-    #include "StructsDefinition/STAFF.h"
-    #include "StructsDefinition/CLASS.h"
     #include "StructsDefinition/COURSE.h"
     #include "StructsDefinition/SCHOOLYEAR.h"
+    #include "StructsDefinition/CLASS.h"
+    #include "StructsDefinition/STUDENT.h"
+    #include "StructsDefinition/STAFF.h"
+    #include "StructsDefinition/USER.h"
+    
 /////////////////////////////////////
 
 // Global variables

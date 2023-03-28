@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 #include "../header.h"
 
 struct USER {
@@ -28,7 +29,7 @@ struct USER {
     void get (STAFF &s) {
         staff = s.get();
     }
-    void generateUSER (ifstream inp);
+    void generateUSER (std::istream inp);
     void generateUSER ();
 };
 

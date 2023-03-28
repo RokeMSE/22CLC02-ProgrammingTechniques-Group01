@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Header.h"
+#include "../header.h"
 
 struct CLASS {
     uint yearIn = 0;        // the year in which students admitted to school

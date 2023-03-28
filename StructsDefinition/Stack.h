@@ -10,7 +10,7 @@
 
         // member functions
         void push ();
-        void pop ()
+        void pop ();
     };
 
 #endif

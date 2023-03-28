@@ -3,7 +3,7 @@
 #include <string>
 #include "../header.h"
 
-struct STAFF : public USER {
+struct STAFF {
     // USER* login;
     std::string firstname = "";
     std::string lastname = "";

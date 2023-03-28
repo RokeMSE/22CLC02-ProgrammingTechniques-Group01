@@ -16,6 +16,6 @@ struct DATE {
     /////////////////////////////////////////
 };
 
-DATE getDate (string chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
+DATE getDate (std::string chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
 bool isLeapYear (uint year);
 uint getNumOfDateInMonth (ushort month, uint year);

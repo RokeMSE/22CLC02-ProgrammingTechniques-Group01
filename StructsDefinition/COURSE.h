@@ -3,6 +3,8 @@
 #include <string>
 #include "../header.h"
 
+struct STUDENT;
+
 struct COURSE {
     std::string ID = "";
     std::string name = "";
@@ -10,7 +12,7 @@ struct COURSE {
     ushort credit = 0, maxStudents = 50;
     WeekDay day = MON;
     Session session = S1; // S1--S4
-    LIST<DLL, STUDENT> students;
+    LIST<DLL, STUDENT*> students;
 
     void updateInfo ();                         // update info of this course
     bool addStudents(std::string filename);
