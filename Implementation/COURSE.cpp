@@ -67,13 +67,12 @@ void COURSE::Export(LIST <SLL, STUDENT>& L) {
 }
 
 void COURSE::add1Student (LIST <SLL, STUDENT>& L, STUDENT& SV) {
-    cout << "\nNO\tStudent ID\tFull Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
-    SLL<STUDENT>* temp = L.head;
-
-    while (temp != NULL) {
-        in(temp->data);
-        temp = temp->next;
-
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << "/n Nhap sinh vien thu " << i + 1 << ":";
+        importInfo(SV);
+        L.createNode(SV);
     }
 }
 
