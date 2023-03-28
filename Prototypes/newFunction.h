@@ -1,1 +1,1 @@
-void LIST<list_type, Data_Type>::remove(list_type<Data_Type>* node);// remove list depend on what kind of T(T can be course(task 13) or student(task 12)) // return directly on what function call on
+bool exportStudent(std::string filename);

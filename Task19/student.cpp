@@ -1,22 +1,20 @@
 #include <../header.h>
 
-bool STUDENT::Export(std::string filename)
+bool exportStudent(std::string filename, STUDENT* student)
 {
-    ofstream output("filename", ios_base::app);
+    ofstream output(filename);
 
     if(!output.is_open())
         return false;
 
-    STUDENT* temp = this;
-    int* n = new int;
-    *n = 0;
+    STUDENT* temp = student;
 
-    output << ++(*n) << "," << temp->studentID << "," << temp->firstname << "," << temp->lastname << "," << temp->gender << ",";
-    output << (temp->DoB).day << "/" << (temp->DoB).month << "/" << (temp->DoB).year << ",";
-    output << temp->socialID << "\n"; 
-    temp->No = *n;
-
-    delete n;
+    while(temp)
+    {
+        output << temp->No << "," << temp->studentID << "," << temp->firstname << "," << temp->lastname << "," << temp->gender << ",";
+        output << (temp->DoB).day << "/" << (temp->DoB).month << "/" << (temp->DoB).year << ",";
+        output << temp->socialID << "\n"; 
+    }
 
     return true;
 }
