@@ -31,36 +31,6 @@ void COURSE::remove1Student(STUDENT* student) {
     remove_val<STUDENT*> (students, student);
 }
 
-void COURSE::in(STUDENT ST) {
-    cout << endl;
-    cout << "\n" << ST.No;
-    // cout << endl;
-    cout << "\t" << ST.studentID;
-    // cout << endl;
-    cout << "\t" << ST.fullname;
-    // cout << endl;
-    cout << "\t" << ST.totalMark;
-    // cout << endl;
-    cout << "\t" << ST.finalMark;
-    // cout << endl;
-    cout << "\t" << ST.midtermMark;
-    // cout << endl;
-    cout << "\t" << ST.otherMark;
-    // cout << endl;
-}
-void COURSE::Export(LIST <SLL, STUDENT>& L) {
-    cout << "\nNO\tStudent ID\tFull Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
-    SLL<STUDENT>* temp = L.head;
-
-    while (temp != NULL) {
-        in(temp->data);
-        temp = temp->next;
-    }
-
-}
-
-
-
 void COURSE::exportFile () {
     // file CSV _ task 20
     // quy ước định dạng file CSV theo nhu cầu rồi comment vô đây nhen, miễn là đủ các cột của đề yêu cầu, có thể thêm cột nếu muốn
