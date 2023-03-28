@@ -10,6 +10,7 @@ struct STUDENT {
     std::string studentID = "";
     std::string firstname = "";
     std::string lastname = "";
+    std::string fullname = "";
     std::string socialID = "";
     const Type type = Student;
 
