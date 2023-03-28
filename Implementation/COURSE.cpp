@@ -55,18 +55,12 @@ void COURSE::Export(LIST <SLL, STUDENT>& L) {
 
 }
 
-void COURSE::add1Student (LIST <SLL, STUDENT>& L, STUDENT& SV) {
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cout << "/n Nhap sinh vien thu " << i + 1 << ":";
-        importInfo(SV);
-        L.createNode(SV);
-    }
+void COURSE::add1Student (STUDENT* student) {
+    add_val<STUDENT*> (students, student);
 }
 
-void COURSE::remove1Student(STUDENT student) {
-    remove_val<STUDENT> (students, student);
+void COURSE::remove1Student(STUDENT* student) {
+    remove_val<STUDENT*> (students, student);
 }
 
 void COURSE::exportFile () {
@@ -94,9 +88,9 @@ bool COURSE::updateResult (std::string studentID) {
     // task 22
     // search for student in the list `students` using `ID`:
         // if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
-    DLL<STUDENT>* cur = students.head;
-    while ( cur ) {
-        if ( cur->data.studentID == studentID ) {
+    DLL<STUDENT*>* cur = students.head;
+    while ( cur->data ) {
+        if ( cur->data->studentID == studentID ) {
             // update
 
             /////////

@@ -23,8 +23,6 @@ struct COURSE {
     /// add1Student: Add a student to the course, includes:
     ///     student: is student needs to be added 
     /// This function does not return anything
-    void in(STUDENT ST);
-    void exportFile() ;
     void remove1Student (STUDENT student);
     /// remove1Student: Remove a student from the course, includes:
     ///        student: is the student need to be removed from the course
@@ -35,8 +33,8 @@ struct COURSE {
     bool updateResult ();  // get data from keyboard
     void updateResultByID(LIST <SLL, STUDENT> L);
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);
+     void exportFile() ;
                                                 // task 22
                                                 // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
-    void ReadFileFromTeacher(LIST <SLL, STUDENT>& L);
     bool exportStudents(std::string filename);
 };
