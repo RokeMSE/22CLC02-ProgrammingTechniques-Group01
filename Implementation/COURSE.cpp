@@ -35,14 +35,8 @@ void COURSE::importInfo(STUDENT& SV) {
 }
 
 bool COURSE::addStudents (LIST <SLL, STUDENT>& L, STUDENT& SV){
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cout << "/n Nhap sinh vien thu " << i + 1 << ":";
-        importInfo(SV);
-        L.createNode(SV);
-
-    }
+    add_val<STUDENT>(students, student);
+    
 }
 void COURSE::in(STUDENT ST) {
     cout << endl;
@@ -68,13 +62,19 @@ void COURSE::Export(LIST <SLL, STUDENT>& L) {
     while (temp != NULL) {
         in(temp->data);
         temp = temp->next;
-
     }
 
 }
 
-void COURSE::add1Student (STUDENT student) {
-    add_val<STUDENT> (students, student);
+void COURSE::add1Student (LIST <SLL, STUDENT>& L, STUDENT& SV) {
+    cout << "\nNO\tStudent ID\tFull Name\tTotal Mark\tFinal Mark\tMidterm Mark\tOther Mark";
+    SLL<STUDENT>* temp = L.head;
+
+    while (temp != NULL) {
+        in(temp->data);
+        temp = temp->next;
+
+    }
 }
 
 void COURSE::remove1Student(STUDENT student) {
@@ -173,8 +173,6 @@ void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
     SLL<STUDENT>* temp1 = L1.head;
     while (temp != nullptr) {
         temp1->data = temp->data;
-        /* L.in(temp->data);
-         L1.in(temp1->data);*/
         temp = temp->next;
         temp1 = temp1->next;
     }
@@ -195,19 +193,14 @@ void ReadFileFromTeacher(LIST <SLL, STUDENT>& L) {
         cout << endl;
         input.ignore(256, '\n');
         while (input) {
-
             string s;
-
             for (int i = 0; i < numSV; i++) {
                 if (i >= numSV) {
                     return;
                 }
                 else {
-
-                    STUDENT S;
-                    
+                    STUDENT S;           
                     getline(input, s, '\n');
-
                     strcpy(l, s.c_str());
                     cout << l;
                     cout << endl;
