@@ -34,8 +34,6 @@ struct COURSE {
     /////////////////
     // scores are members of STUDENT
     void importScore (LIST <SLL, STUDENT>& L);    // file CSV _ task 20 
-    void importScore ();    // file CSV _ task 20
-
     bool updateResult ();  // get data from keyboard
     void updateResultByID(LIST <SLL, STUDENT> L);
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);
