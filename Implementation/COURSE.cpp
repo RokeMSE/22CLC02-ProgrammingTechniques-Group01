@@ -34,10 +34,14 @@ void COURSE::importInfo(STUDENT& SV) {
     getline(cin, SV.studentID);
 }
 
-bool COURSE::addStudents (LIST <SLL, STUDENT>& L, STUDENT& SV){
-    add_val<STUDENT>(students, student);
-    
+void COURSE::add1Student (STUDENT* student) {
+    add_val<STUDENT*> (students, student);
 }
+
+void COURSE::remove1Student(STUDENT* student) {
+    remove_val<STUDENT*> (students, student);
+}
+
 void COURSE::in(STUDENT ST) {
     cout << endl;
     cout << "\n" << ST.No;
@@ -66,13 +70,7 @@ void COURSE::Export(LIST <SLL, STUDENT>& L) {
 
 }
 
-void COURSE::add1Student (STUDENT* student) {
-    add_val<STUDENT*> (students, student);
-}
 
-void COURSE::remove1Student(STUDENT* student) {
-    remove_val<STUDENT*> (students, student);
-}
 
 void COURSE::importScore () {
     // file CSV _ task 20
