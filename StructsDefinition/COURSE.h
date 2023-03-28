@@ -15,7 +15,7 @@ struct COURSE {
     LIST<DLL, STUDENT*> students;
 
     void updateInfo ();                         // update info of this course
-    void importInfo(STUDENT& SV);
+
     bool addStudents(std::string filename);
     /// this function will upload the list of students enrolled in the course from a file (filename)
 
@@ -24,14 +24,14 @@ struct COURSE {
     ///     student: is student needs to be added 
     /// This function does not return anything
     void in(STUDENT ST);
-    void Export(LIST <SLL, STUDENT>& L) ;
+    void exportFile() ;
     void remove1Student (STUDENT student);
     /// remove1Student: Remove a student from the course, includes:
     ///        student: is the student need to be removed from the course
     /// This function does not return anything
     /////////////////
     // scores are members of STUDENT
-    void importScore ();    // file CSV _ task 20
+    void importScore (LIST <SLL, STUDENT>& L);    // file CSV _ task 20
     bool updateResult ();  // get data from keyboard
     void updateResultByID(LIST <SLL, STUDENT> L);
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);

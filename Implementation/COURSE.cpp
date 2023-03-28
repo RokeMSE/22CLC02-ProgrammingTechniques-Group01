@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
-void COURSE::updateInfo () {
+void COURSE::updateInfo() {
     // this function will be called when the button "UPDATE" is cliked
     getline(cin, ID);
     getline(cin, name);
@@ -21,17 +21,6 @@ void COURSE::updateInfo () {
 
     getline(cin, tmp); // get `session`
     session = convertToSession(tmp);
-}
-void COURSE::importInfo(STUDENT& SV) {
-
-    cout << "\n Enter your full name: "; cin.ignore();
-    getline(cin, SV.fullname);
-    cout << endl;
-    cout << "\n Enter your numerical order: ";
-    cin >> SV.No;
-    cout << endl;
-    cout << "\n Enter your your ID: "; cin.ignore();
-    getline(cin, SV.studentID);
 }
 
 bool COURSE::addStudents (LIST <SLL, STUDENT>& L, STUDENT& SV){
@@ -80,7 +69,7 @@ void COURSE::remove1Student(STUDENT student) {
     remove_val<STUDENT> (students, student);
 }
 
-void COURSE::importScore () {
+void COURSE::exportFile () {
     // file CSV _ task 20
     // quy ước định dạng file CSV theo nhu cầu rồi comment vô đây nhen, miễn là đủ các cột của đề yêu cầu, có thể thêm cột nếu muốn
     // điểm của sinh viên nằm trong struct STUDENT luôn, nên trước tiên search ID tương ứng trước rồi mới cập nhật điểm
@@ -92,10 +81,9 @@ void COURSE::importScore () {
 
         taofile << temp->data.No << "," << temp->data.studentID << "," << temp->data.fullname << "\n";
         temp = temp->next;
-
     }
-    taofile.close(); // d�ng file
-    //input.close();
+    taofile.close(); 
+   
 }
 
 
@@ -167,7 +155,7 @@ void COURSE::updateResultByID(LIST <SLL, STUDENT> L) {
         temp = temp->next;
     }
 }
-void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
+void COURSE::UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
     SLL<STUDENT>* temp = L.head;
     SLL<STUDENT>* temp1 = L1.head;
     while (temp != nullptr) {
@@ -176,7 +164,7 @@ void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
         temp1 = temp1->next;
     }
 }
-void ReadFileFromTeacher(LIST <SLL, STUDENT>& L) {
+void COURSE::importScore(LIST <SLL, STUDENT>& L) {
     ifstream input("fileNew.csv");
     if (!input.is_open())
     {
