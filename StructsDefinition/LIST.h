@@ -31,7 +31,6 @@ struct LIST {
     LIST() {
         head = NULL;
         tail = NULL;
-
     }
 
     void createNode(Data_Type data)
@@ -42,20 +41,13 @@ struct LIST {
         head = temp;
     }
     void importInfo(SLL<Data_Type>& SV) {
-        //char *target;
-        //target = new char[50];
-        //SV.studentID = new char[50];
-       // SV.fullname = new char[50];
-       // fullname = new char[50];
         cout << "\n Enter your full name: "; cin.ignore();
-        // cin >> strcpy(target, SV.fullname);
         getline(cin, SV.fullname);
         cout << endl;
         cout << "\n Enter your numerical order: ";
         cin >> SV.No;
         cout << endl;
         cout << "\n Enter your your ID: "; cin.ignore();
-        // cin >> strcpy(target, SV.studentID);
         getline(cin, SV.studentID);
         cout << endl;
         cout << "\n Enter your your total mark: ";
@@ -73,16 +65,12 @@ struct LIST {
     }
 
     void import(LIST <SLL,Data_Type>& L, SLL<Data_Type>& SV) {
-
         int n;
         cin >> n;
         for (int i = 0; i < n; i++) {
             cout << "/n Nhap sinh vien thu " << i + 1 << ":";
             importInfo(SV);
-
-
             createNode(SV);
-
         }
     }
 };
