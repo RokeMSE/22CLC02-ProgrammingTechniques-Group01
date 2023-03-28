@@ -5,7 +5,7 @@
 
 struct USER {
     // protected:
-    std::string username = ""; 
+    std::string username = "";
     std::string password = "";
     STUDENT* student = nullptr;
     STAFF* staff = nullptr;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../header.h"
+#include "Header.h"
 
 struct CLASS {
     uint yearIn = 0;        // the year in which students admitted to school
@@ -24,5 +24,4 @@ struct CLASS {
     // just use when a new class is created
     void add1stYearStudent (); // using key board
     bool add1stYearStudents (std::string filename); // import from file
-                                
 };
