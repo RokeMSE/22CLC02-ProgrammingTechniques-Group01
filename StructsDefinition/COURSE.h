@@ -33,4 +33,5 @@ struct COURSE {
     bool updateResult (std::string studentID);  // get data from keyboard
                                                 // task 22
                                                 // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
+    bool exportStudents(std::string filename);
 };

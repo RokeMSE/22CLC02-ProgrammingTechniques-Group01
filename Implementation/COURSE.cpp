@@ -1,6 +1,7 @@
 #include "../header.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 void COURSE::updateInfo () {
     // this function will be called when the button "UPDATE" is cliked
@@ -58,4 +59,24 @@ bool COURSE::updateResult (std::string studentID) {
         cur = cur->next;
     }
     return 0;
+}
+
+bool COURSE::exportStudents(std::string filename)
+{
+    ofstream output(filename);
+
+    if(!output.is_open())
+        return false;
+
+    DLL<STUDENT*>* temp = (this->students).head;
+
+    while(temp)
+    {
+        output << temp->data->No << "," << temp->data->studentID << "," << temp->data->firstname << "," << temp->data->lastname << "," << temp->data->gender << ",";
+        output << (temp->data->DoB).day << "/" << (temp->data->DoB).month << "/" << (temp->data->DoB).year << ",";
+        output << temp->data->socialID << "\n"; 
+        temp = temp->next;
+    }
+    //No studentID firstname lastname  gender (day/month/year)oB socialID
+    return true;
 }
