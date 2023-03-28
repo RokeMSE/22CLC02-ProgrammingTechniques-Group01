@@ -8,7 +8,6 @@ struct STAFF {
     std::string firstname = "";
     std::string lastname = "";
     const Type type = Staff;
-    
     // member functions
     STAFF* get ();
 };
