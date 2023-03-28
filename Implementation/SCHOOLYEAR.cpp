@@ -2,6 +2,16 @@
 using namespace std;
 #include <iostream>
 #include <string>
+
+void SCHOOLYEAR::create()
+{
+    std::cout << "Enter begin year: ";
+    uint yearBegin;
+    std::cin >> yearBegin;
+    (*this).begin = yearBegin;
+    (*this).end = yearBegin + 1;
+}
+
 bool SEMESTER::add () {
     // add a new semester to the schoolyear `year` if there is one available
     // `year` is set to `g_currentSchoolYear`by default
