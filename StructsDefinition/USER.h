@@ -19,17 +19,16 @@ struct USER {
     //     staff = nullptr;
     // }
 
-    USER* authenticateUSER ();
-            // username must not be duplicated
-            // return value:    USER*  :   return USER* that points to the corresponding user; if there is no matching user in the list, return nullptr 
-
     void get (STUDENT &s) {
         student = s.get();   
     }
     void get (STAFF &s) {
         staff = s.get();
     }
-    void generateUSER (std::istream inp);
-    void generateUSER ();
 };
+
+USER* authenticateUSER (LIST<DLL, USER> list, USER val);
+    // username must not be duplicated
+    // return value:    USER*  :   return USER* that points to the corresponding user; if there is no matching user in the list, return nullptr 
+
 

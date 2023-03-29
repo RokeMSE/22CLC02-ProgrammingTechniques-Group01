@@ -23,6 +23,11 @@
 // Global variables
 SCHOOLYEAR g_currentSchoolYear; // g stands for global
 SEMESTER g_currentSemester;
+// Global lists
+LIST<DLL, SCHOOLYEAR> L_SchoolYear;
+LIST<DLL, USER> L_USER;
+LIST<DLL, STAFF*> L_Staff;
+LIST<DLL, STUDENT*> L_Student;
 /////////////////////////////////////
 
 using namespace std;

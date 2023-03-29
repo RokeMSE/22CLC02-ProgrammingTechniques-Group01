@@ -1,5 +1,17 @@
 #include "../header.h"
 #include <string>
+
+Program convertToProgram ( std::string str ) {
+    if ( str == "APCS")         return APCS;
+    else if ( str == "CLC" )    return CLC;
+    else                        return VP;
+}
+
+Type convertToType ( std::string str ) {
+    if ( str == "Staff" )   return Staff;
+    else                    return Student;
+}
+
 WeekDay convertToWeekday ( std::string str ) {
     if ( str == "MON" )        return MON;
     else if ( str == "TUE" )   return TUE;

@@ -1,59 +1,43 @@
-#include <iostream>
 #include "header.h"
-
+#include <iostream>
+#include <Windows.h>
 using namespace std;
 
+USER* currentUSER;
 int main() {
     // Local var declarations
-    LIST<DLL, SCHOOLYEAR> L_SchoolYear;
-    LIST<DLL, STAFF> L_Staff;
-    LIST<DLL, STUDENT> L_Student;
-    /////////////////////////////////////
+    bool notExit = 1;
+    //////////////////////////////////////////////////////
+    // import();
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    while ( notExit ) {
+        system("cls");
+        // Logging in
+        USER tmp;
+        do {
+            cout << "User name: ";
+            cin >> tmp.username;
+            cout << "Password: ";
+            cin >> tmp.password;
+            currentUSER = authenticateUSER(L_USER, tmp); // notify if password is not correct
+        } while (!currentUSER);
+        /////////////////////////////////////
 
-
-
-
-
-
-
-
-
-    LIST<DLL,STUDENT*> test;
-    STUDENT* stu = new STUDENT;
-    stu->gender = 1;
-    test.head = test.tail = new DLL<STUDENT*>;
-    test.head->next = test.head->prev = nullptr;
-    test.head->data = stu;
-    cout << test.head->data->gender;
-    delete stu;
-    delete test.head;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Logging in
-
-    /////////////////////////////////////
-
-    // Main menu
-    
-    /////////////////////////////////////
-
+        // Main menu
+        if ( currentUSER->staff == nullptr )
+            // this user is a student
+            notExit = MenuStudent();
+        else
+            // this user is staff
+            notExit = MenuStaff();
+        /////////////////////////////////////
+    }
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    // Export();
     // Deallocation
-
-    /////////////////////////////////////
+    //
+    //////////////////////////////////////////////////////
     return 0;
 }
