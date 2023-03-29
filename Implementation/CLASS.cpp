@@ -111,14 +111,14 @@ bool CLASS::add1stYearStudents (std::string filename) {
         std::getline(inp, s, ',');
         a = new DLL<STUDENT*>;
         a -> data->No = std::stoi(s, nullptr);
-        std::getline(inp, (*a -> data).studentID, ',');
-        std::getline(inp, (*a -> data).firstname, ',');
-        std::getline(inp, (*a -> data).lastname, ',');
+        std::getline(inp, a -> data->studentID, ',');
+        std::getline(inp, a -> data->firstname, ',');
+        std::getline(inp, a -> data->lastname, ',');
         std::getline(inp, s, ',');
-        (*a -> data).gender = stoi(s); // 0 ~ male ; 1 ~ female
+        a->data->gender = stoi(s); // 0 ~ male ; 1 ~ female
         std::getline(inp, s, ',');
-        //((*a -> data).DoB) = getDate(s);
-        std::getline(inp, (*a -> data).socialID, ',');
+        a -> data->DoB = getDate(s);
+        std::getline(inp, a -> data->socialID, ',');
         if (!(this -> student).head)
             (this -> student).head = a;
         a -> prev = tmp;
