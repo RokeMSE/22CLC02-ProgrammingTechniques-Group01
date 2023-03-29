@@ -3,6 +3,7 @@
 #define uint unsigned int
 #define ushort unsigned short
 
+using namespace std;
 // Structs 
     #include "StructsDefinition/enum.h"
     #include "StructsDefinition/LIST.h"
@@ -25,12 +26,12 @@ SCHOOLYEAR g_currentSchoolYear; // g stands for global
 SEMESTER g_currentSemester;
 // Global lists
 LIST<DLL, SCHOOLYEAR> L_SchoolYear;
-LIST<DLL, USER> L_USER;
 LIST<DLL, STAFF*> L_Staff;
 LIST<DLL, STUDENT*> L_Student;
+LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
 
-using namespace std;
+
 
 // GUI
 

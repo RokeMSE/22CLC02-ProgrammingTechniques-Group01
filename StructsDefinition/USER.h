@@ -8,23 +8,7 @@ struct USER {
     // protected:
     std::string username = "";
     std::string password = "";
-    STUDENT* student = nullptr;
-    STAFF* staff = nullptr;
     // if this user is a staff: student == nullptr
-
-    // member functions
-    // USER () {
-    //     username = password = nullptr;
-    //     student = nullptr;
-    //     staff = nullptr;
-    // }
-
-    void get (STUDENT &s) {
-        student = s.get();   
-    }
-    void get (STAFF &s) {
-        staff = s.get();
-    }
 };
 
 USER* authenticateUSER (LIST<DLL, USER> list, USER val);

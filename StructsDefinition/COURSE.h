@@ -13,6 +13,7 @@ struct COURSE {
     WeekDay day = MON;
     Session session = S1; // S1--S4
     LIST<DLL, STUDENT*> students;
+        // list of `students enroll in this course`
 
     void updateInfo ();                         // update info of this course
 
@@ -34,15 +35,16 @@ struct COURSE {
     /// @brief TASK 20 22
     void importScore ();
         // lấy điểm từ file vào
-    void updateResultByID(LIST <SLL, STUDENT> L);
-        // lấy sinh viên ra bằng ID rồi gán điểm
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);
         // đã có data, gán vào danh sách `chính`
     void exportFile() ;
         // xuất ra danh sách SV cho GV nhập điểm vô
+    
+    void updateResultByID ();
+        // lấy sinh viên ra bằng ID rồi gán điểm
     //////////////////////////////////
 
-    bool updateResult ();   // get data from keyboard
+    bool updateResult (STUDENT student);   // get data from keyboard
                             // task 22
                             // search for student in the list `students` using `ID`:   if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
     bool exportStudents(std::string filename);

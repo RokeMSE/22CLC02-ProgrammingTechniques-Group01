@@ -23,13 +23,13 @@ void COURSE::updateInfo() {
     session = convertToSession(tmp);
 }
 
-bool COURSE::addStudents (std::string filename){
+bool COURSE::addStudents (std::string filename) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
         return false;
     string str;
-    getline(ifs,str);       ///next the first line
+    getline(ifs,str);       /// next the first line
 
     //  The format of file csv: No,Student ID,First Name,Last Name,Gender,Date Of Birth,Social ID
     while (!ifs.eof())
@@ -60,7 +60,6 @@ bool COURSE::addStudents (std::string filename){
 
         add1Student(&stu);       // Add students to the list of students in the course
     }
-
     ifs.close();
     return true;
 }
@@ -77,39 +76,36 @@ void COURSE::exportFile () {
     // file CSV _ task 20
     // quy ước định dạng file CSV theo nhu cầu rồi comment vô đây nhen, miễn là đủ các cột của đề yêu cầu, có thể thêm cột nếu muốn
     // điểm của sinh viên nằm trong struct STUDENT luôn, nên trước tiên search ID tương ứng trước rồi mới cập nhật điểm
-    ofstream taofile("filenew.csv");      
-    SLL<STUDENT>* temp = L.head;
+    ofstream taofile("filenew.csv");
+    DLL<STUDENT*>* temp = students.head;
     taofile << "NO,Student ID,Full Name,Total Mark,Final Mark,Midterm Mark,Other Mark";
     taofile << "\n";
     while (temp != nullptr) {
-
-        taofile << temp->data.No << "," << temp->data.studentID << "," << temp->data.fullname << "\n";
+        taofile << temp->data->No << "," << temp->data->studentID << "," << temp->data->fullname << "\n";
         temp = temp->next;
     }
-    taofile.close(); 
-   
+    taofile.close();
 }
 
+// bool COURSE::updateResult (STUDENT student) {
 
-bool COURSE::updateResult (std::string studentID) {
+//     /// @param studentID : ID of the student whose result needs upadating
+//     // get data from keyboard
+//     // task 22
+//     // search for student in the list `students` using `ID`:
+//         // if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
+//     DLL<STUDENT*>* cur = students.head;
+//     while ( cur->data ) {
+//         if ( cur->data->studentID == student.studentID ) {
+//             // update
 
-    /// @param studentID : ID of the student whose result needs upadating
-    // get data from keyboard
-    // task 22
-    // search for student in the list `students` using `ID`:
-        // if found, update new score; otherwise, pop up "there is no student with ID " << ID << " in this course."
-    DLL<STUDENT*>* cur = students.head;
-    while ( cur->data ) {
-        if ( cur->data->studentID == studentID ) {
-            // update
-
-            /////////
-            return 1;
-        }
-        cur = cur->next;
-    }
-    return 0;
-}
+//             /////////
+//             return 1;
+//         }
+//         cur = cur->next;
+//     }
+//     return 0;
+// }
 
 bool COURSE::exportStudents(std::string filename)
 {
@@ -120,47 +116,49 @@ bool COURSE::exportStudents(std::string filename)
 
     DLL<STUDENT*>* temp = (this->students).head;
 
-    while(temp)
+    while(temp) 
     {
         output << temp->data->No << "," << temp->data->studentID << "," << temp->data->firstname << "," << temp->data->lastname << "," << temp->data->gender << ",";
         output << (temp->data->DoB).day << "/" << (temp->data->DoB).month << "/" << (temp->data->DoB).year << ",";
         output << temp->data->socialID << "\n"; 
         temp = temp->next;
     }
+    output.close();
     //No studentID firstname lastname  gender (day/month/year)oB socialID
     return true;
 }
-void COURSE::updateResultByID(LIST <SLL, STUDENT> L) {
-    SLL<STUDENT>* temp = L.head;
+
+void COURSE::updateResultByID () {
+    DLL<STUDENT*>* temp = students.head;
     STUDENT S;
     cout << "Enter your student ID you want to update: ";
-    cin.ignore();
     getline(cin, S.studentID);
     while (temp != nullptr) {
-
-        if (S.studentID == temp->data.studentID) {
+        if (S.studentID == temp->data->studentID) {
             cout << "\n Enter your your total mark: ";
             cin >> S.totalMark;
-            temp->data.totalMark = S.totalMark;
+            temp->data->totalMark = S.totalMark;
             cout << endl;
             cout << "\n Enter your your final mark: ";
             cin >> S.finalMark;
-            temp->data.finalMark = S.finalMark;
+            temp->data->finalMark = S.finalMark;
             cout << endl;
             cout << "\n Enter your your midterm mark: ";
             cin >> S.midtermMark;
-            temp->data.midtermMark = S.midtermMark;
+            temp->data->midtermMark = S.midtermMark;
             cout << endl;
             cout << "\n Enter your your orther mark: ";
             cin >> S.otherMark;
-            temp->data.otherMark = S.otherMark;
+            temp->data->otherMark = S.otherMark;
             cout << endl;
         }
         temp = temp->next;
     }
+    cin.ignore();
 }
-void COURSE::UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
-    SLL<STUDENT>* temp = L.head;
+
+void COURSE::UpdateST(LIST <DLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
+    DLL<STUDENT*>* temp = L.head;
     SLL<STUDENT>* temp1 = L1.head;
     while (temp != nullptr) {
         temp1->data = temp->data;
@@ -168,6 +166,7 @@ void COURSE::UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
         temp1 = temp1->next;
     }
 }
+
 void COURSE::importScore(LIST <SLL, STUDENT>& L) {
     ifstream input("fileNew.csv");
     if (!input.is_open())
