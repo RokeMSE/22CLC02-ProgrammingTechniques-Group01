@@ -3,8 +3,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-void SCHOOLYEAR::create()
-{
+void SCHOOLYEAR::create() {
     std::cout << "Enter begin year: ";
     uint yearBegin;
     std::cin >> yearBegin;

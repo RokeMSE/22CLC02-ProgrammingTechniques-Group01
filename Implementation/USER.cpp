@@ -1,21 +1,15 @@
 #include "../header.h"
 
-USER* authenticateUSER (LIST<DLL, USER> list, USER val) {
-    DLL<USER>* cur = list.head;
-    while ( cur ) {
-        if ( cur->data.username == val.username )
-            if ( cur->data.password == val.password )
-                return &(cur->data);
-            else {
-                cout << "Sai mat khau, xin nhap lai.";
-                return nullptr;
-            }
+template <typename Data_Type>
+Data_Type* authenticateUSER (LIST<DLL, Data_Type*> list, USER val) {
+    DLL<Data_Type>* cur = list.head;
+    do {
+        if ( cur->data->user == val )    return cur->data;
         cur = cur->next;
-    }
-    cout << "khong co nguoi dung " << cur->data.username << "trong he thong" << endl;
+    } while ( cur != list.tail );
     return nullptr;
 }
 
-void generateUSER () {
-    // from keyboard
-}
+// void generateUSER () {
+//     // from keyboard
+// }

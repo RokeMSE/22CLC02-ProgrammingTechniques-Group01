@@ -157,62 +157,68 @@ void COURSE::updateResultByID () {
     cin.ignore();
 }
 
-void COURSE::UpdateST(LIST <DLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
-    DLL<STUDENT*>* temp = L.head;
-    SLL<STUDENT>* temp1 = L1.head;
-    while (temp != nullptr) {
-        temp1->data = temp->data;
-        temp = temp->next;
-        temp1 = temp1->next;
-    }
-}
+// void COURSE::UpdateST(LIST <DLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
+//     DLL<STUDENT*>* temp = L.head;
+//     SLL<STUDENT>* temp1 = L1.head;
+//     while (temp != nullptr) {
+//         temp1->data = temp->data;
+//         temp = temp->next;
+//         temp1 = temp1->next;
+//     }
+// }
 
-void COURSE::importScore(LIST <SLL, STUDENT>& L) {
+bool COURSE::importScore() {
     ifstream input("fileNew.csv");
     if (!input.is_open())
     {
-        cout << "Khong the mo file.\n";
-        return;
+        return false;
     }
     else {
-        int numSV;
+        DLL<STUDENT*>* temp = students.head;
         char* l;
         l = new char[10000];
-        cout << "Nhap so luong sinh vien: ";
-        cin >> numSV;
         cout << endl;
         input.ignore(256, '\n');
         while (input) {
             string s;
-            for (int i = 0; i < numSV; i++) {
-                if (i >= numSV) {
-                    return;
-                }
-                else {
-                    STUDENT S;           
+            for (int i = 0; i < 50; i++) {
+                
+                    STUDENT S;
                     getline(input, s, '\n');
                     strcpy(l, s.c_str());
                     cout << l;
                     cout << endl;
-                    S.No = stoi(strtok(l, ","));//stoi convert string to integer
-                    cout << S.No; cout << endl;
-                    S.studentID = strtok(NULL, ",");//strtok splits the string str into an array of tokens separated by delim
-                    cout << S.studentID; cout << endl;
+                    S.No = stoi(strtok(l, ",")); //stoi convert string to integer
+                    //cout << S.No; cout << endl;
+                    S.studentID = strtok(NULL, ","); //strtok splits the string str into an array of tokens separated by delim
+                    //cout << S.studentID; cout << endl;
                     S.fullname = strtok(NULL, ",");
-                    cout << S.fullname; cout << endl;
+                    //cout << S.fullname; cout << endl;
                     S.totalMark = stoi(strtok(NULL, ","));
-                    cout << S.totalMark; cout << endl;
+                    //cout << S.totalMark; cout << endl;
                     S.finalMark = stoi(strtok(NULL, ","));
-                    cout << S.finalMark; cout << endl;
+                    //cout << S.finalMark; cout << endl;
                     S.midtermMark = stoi(strtok(NULL, ","));
-                    cout << S.midtermMark; cout << endl;
+                    //cout << S.midtermMark; cout << endl;
                     S.otherMark = stoi(strtok(NULL, ","));
-                    cout << S.otherMark; cout << endl;
-                    L.createNode(S);
+                    //cout << S.otherMark; cout << endl;
+                    //L.createNode(S);
+                    while (temp != nullptr) {
+                                        if (S.studentID == temp->data->studentID) {
+                                            temp->data->finalMark = S.finalMark;
+                                            temp->data->totalMark = S.totalMark;
+                                            temp->data->midtermMark = S.midtermMark;
+                                            temp->data->otherMark = S.otherMark;
+                                        }
+                                        temp = temp->next;
+                                    }
+                
                 }
+                break;
             }
-            break;
+            
         }
         input.close();
-    }
+        return true;
 }
+

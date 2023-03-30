@@ -8,9 +8,13 @@ int main() {
     // Local var declarations
     bool notExit = 1;
     //////////////////////////////////////////////////////
+
     // import();
+
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
+    STAFF* staff = nullptr;
+    STUDENT* stu = nullptr;
     while ( notExit ) {
         system("cls");
         // Logging in
@@ -20,24 +24,29 @@ int main() {
             cin >> tmp.username;
             cout << "Password: ";
             cin >> tmp.password;
-            currentUSER = authenticateUSER(L_USER, tmp); // notify if password is not correct
+            stu = authenticateUSER<STUDENT>(L_Student, tmp);
+            staff = authenticateUSER<STAFF>(L_Staff, tmp);
         } while (!currentUSER);
         /////////////////////////////////////
-
         // Main menu
-        if ( currentUSER->staff == nullptr )
+        if ( staff == nullptr )
             // this user is a student
-            notExit = MenuStudent();
+            notExit = MenuStudent(stu);
         else
             // this user is staff
-            notExit = MenuStaff();
+            notExit = MenuStaff(staff);
         /////////////////////////////////////
     }
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
+
     // Export();
+
     // Deallocation
-    //
+    // dealloc: del node list COURSE::students => del node courses in semester => semesters => del nodes in L_SchoolYear
+    // dealloc L_Staff: node->data ==> node
+    // dealloc L_Student: node->data ==> node
+    // list L_Class: del node
     //////////////////////////////////////////////////////
     return 0;
 }

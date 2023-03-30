@@ -47,3 +47,14 @@ void remove_val(LIST<DLL,Data_Type> &list, Data_Type val) {
 
     delete cur;
 }
+
+template <typename Data_Type>
+Data_Type* find(LIST<DLL,Data_Type> list, Data_Type val) {
+    DLL<Data_Type>* cur = list.head;
+    if ( !list.head ) return nullptr;
+    do {
+        if ( cur->data == val ) return &(cur->data);
+        cur = cur->next;
+    } while ( cur != list.tail );
+    return nullptr;
+}

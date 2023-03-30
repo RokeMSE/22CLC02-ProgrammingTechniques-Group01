@@ -4,7 +4,7 @@ STAFF* STAFF::get () {
         return this;
 }
 
-bool MenuStaff() {
+bool MenuStaff(STAFF* staff) {
         while ( 1 ) {
                 cout << "1. Create a school year (2020-2021, for example) " << endl;
                 cout << "2. Create  several  classes  for  1st-year  students.  For  example:  class  20APCS1,  class  20APCS2, class 20CLC1…, class 20CLC11, class 20VP…" << endl;

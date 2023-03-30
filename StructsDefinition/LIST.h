@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../header.h"
 /////////////////////////////////////////////////
 template <typename data_type> 
 struct SLL {
@@ -32,47 +32,6 @@ struct LIST {
         head = NULL;
         tail = NULL;
     }
-
-    void createNode(Data_Type data)
-    {
-        SLL<Data_Type>* temp = new SLL<Data_Type>();
-        temp->data = data;
-        temp->next = head;
-        head = temp;
-    }
-    void importInfo(SLL<Data_Type>& SV) {
-        cout << "\n Enter your full name: "; cin.ignore();
-        getline(cin, SV.fullname);
-        cout << endl;
-        cout << "\n Enter your numerical order: ";
-        cin >> SV.No;
-        cout << endl;
-        cout << "\n Enter your your ID: "; cin.ignore();
-        getline(cin, SV.studentID);
-        cout << endl;
-        cout << "\n Enter your your total mark: ";
-        cin >> SV.totalMark;
-        cout << endl;
-        cout << "\n Enter your your final mark: ";
-        cin >> SV.finalMark;
-        cout << endl;
-        cout << "\n Enter your your midterm mark: ";
-        cin >> SV.midtermMark;
-        cout << endl;
-        cout << "\n Enter your your orther mark: ";
-        cin >> SV.otherMark;
-        cout << endl;
-    }
-
-    void import(LIST <SLL,Data_Type>& L, SLL<Data_Type>& SV) {
-        int n;
-        cin >> n;
-        for (int i = 0; i < n; i++) {
-            cout << "/n Nhap sinh vien thu " << i + 1 << ":";
-            importInfo(SV);
-            createNode(SV);
-        }
-    }
 };
 // // // _____________________________________________
 
@@ -89,3 +48,6 @@ void remove_val(LIST<DLL,Data_Type> &list, Data_Type val);
     ///     (val): the val need to remove
     ///     (list): the list that (val) is removed
     /// This function doesn't return anything.
+
+template <typename Data_Type>
+Data_Type* find(LIST<DLL,Data_Type> list, Data_Type val);

@@ -4,7 +4,6 @@
 #include "../header.h"
 
 struct STUDENT;
-
 struct COURSE {
     std::string ID = "";
     std::string name = "";
@@ -15,7 +14,7 @@ struct COURSE {
     LIST<DLL, STUDENT*> students;
         // list of `students enroll in this course`
 
-    void updateInfo ();                         // update info of this course
+    void updateInfo (); // update info of this course
 
     bool addStudents(std::string filename);
     /// this function will upload the list of students enrolled in the course from a file (filename)
@@ -33,7 +32,7 @@ struct COURSE {
     // scores are members of STUDENT
     
     /// @brief TASK 20 22
-    void importScore ();
+    bool importScore ();
         // lấy điểm từ file vào
     void UpdateST(LIST <SLL, STUDENT>& L, LIST <SLL, STUDENT>& L1);
         // đã có data, gán vào danh sách `chính`

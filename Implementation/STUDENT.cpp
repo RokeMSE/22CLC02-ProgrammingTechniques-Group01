@@ -4,10 +4,10 @@ STUDENT* STUDENT::get () {
         return this;
 }
 
-bool MenuStudent() {
+bool MenuStudent(STUDENT* current) {
         while ( 1 ) {
                 cout << "1. View a list of his/ her courses" << endl;
-                cout << "2. " << endl;
+                cout << "2. View a list of classes. " << endl;
                 cout << "3. View a list of students in a class" << endl;
                 cout << "4. View a list of courses" << endl;
                 cout << "5. View a list of students in a course" << endl;

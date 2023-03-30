@@ -26,4 +26,4 @@ struct STUDENT {
     STUDENT* get ();
 };
 
-bool MenuStudent(); // return 0 if user chooses exit.
+bool MenuStudent(STUDENT* current); // return 0 if user chooses exit.
