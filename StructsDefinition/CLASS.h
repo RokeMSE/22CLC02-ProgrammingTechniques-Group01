@@ -21,5 +21,6 @@ struct CLASS {
     // just use when a new class is created
     void add1stYearStudent (); // using key board
     bool add1stYearStudents (std::string filename); // import from file
-                                
 };
+
+CLASS convertToClass(std::string str);

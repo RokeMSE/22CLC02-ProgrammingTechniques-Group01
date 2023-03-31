@@ -14,7 +14,7 @@ struct STUDENT {
     std::string fullname = "";
     std::string socialID = "";
     const Type type = Student;
-    USER user;
+    USER* user;
 
     bool gender = 0;        // 0 male & 1 female
     DATE DoB;
@@ -22,8 +22,6 @@ struct STUDENT {
     CLASS Class;
 
     LIST<DLL, COURSE*> courses;   // courses that 1 student enrolls in a semester
-    // member functions
-    STUDENT* get ();
 };
 
 bool MenuStudent(STUDENT* current); // return 0 if user chooses exit.

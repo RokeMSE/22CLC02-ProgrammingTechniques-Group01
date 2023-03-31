@@ -1,9 +1,5 @@
 #include "../header.h"
 
-STAFF* STAFF::get () {
-        return this;
-}
-
 bool MenuStaff(STAFF* staff) {
         while ( 1 ) {
                 cout << "1. Create a school year (2020-2021, for example) " << endl;
