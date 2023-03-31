@@ -1,29 +1,21 @@
 #pragma once
-#define ushort unsigned short
-#define uint unsigned int
 
-#include <iomanip>
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
+#include "../header.h"
+#include <string>
 // syntax to implement a member function: void DATE::getDate (char* chr) {}
 struct DATE {
-    ushort day, month;
-    uint year;
+    ushort day = 0, month = 0;
+    uint year = 0;
 
     /////////////////////////////////////////
     // member functions
-
-    void getDate (char* &chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
     
-    void display () {
-        cout << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
+    void display ();
 
-    void display (ofstream out) {
-        out << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-    }
+    void display (std::ostream out);
     /////////////////////////////////////////
 };
+
+DATE getDate (std::string chr); // lấy một mảng kí tự chr có định dạng mm/dd/yyyy, theo đó gán giá trị cho các member day-mon-year của struct
+bool isLeapYear (uint year);
+uint getNumOfDateInMonth (ushort month, uint year);

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../header.h"
 /////////////////////////////////////////////////
 template <typename data_type> 
 struct SLL {
@@ -28,6 +28,10 @@ struct LIST {
 
     // member functions
     // those prototypes haven't been finished yet
+    LIST() {
+        head = NULL;
+        tail = NULL;
+    }
 };
 // // // _____________________________________________
 
@@ -44,3 +48,6 @@ void remove_val(LIST<DLL,Data_Type> &list, Data_Type val);
     ///     (val): the val need to remove
     ///     (list): the list that (val) is removed
     /// This function doesn't return anything.
+
+template <typename Data_Type>
+Data_Type* find(LIST<DLL,Data_Type> list, Data_Type val);

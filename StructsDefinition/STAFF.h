@@ -1,17 +1,17 @@
 #pragma once
 
 #include <string>
-#include "DATE.h"
-#include "USER.h"
+#include "../header.h"
 
-struct STAFF : public USER {
+struct USER;
+struct STAFF {
     // USER* login;
     std::string firstname = "";
     std::string lastname = "";
-
+    const Type type = Staff;
+    USER user;
     // member functions
-    STAFF* get () {
-        return this;
-    }
-    void add ();
+    STAFF* get ();
 };
+
+bool MenuStaff(STAFF* staff); // return 0 if user chooses exit.
