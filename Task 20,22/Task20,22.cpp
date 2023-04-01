@@ -47,12 +47,12 @@ typedef STUDENT ST;
 //// // // _____________________________________________
 //
 ///////////////////////////////////////////////////
-//template <typename data_type>
-//struct DLL {
-//    // declare a DLL:   DLL<data_type> *name;
-//    data_type data;
-//    DLL<data_type>* prev = nullptr, * next = nullptr;
-//};
+template <typename data_type>
+struct DLL {
+    // declare a DLL:   DLL<data_type> *name;
+    data_type data;
+    DLL<data_type>* prev = nullptr, * next = nullptr;
+};
 // // // _____________________________________________
 
 /////////////////////////////////////////////////
@@ -146,6 +146,8 @@ struct LIST {
         
     }
 };
+
+//LIST<DLL, STUDENT*> L_Student;
 //    // list_type:   SLL or DLL
 //    // data_type:   data type of member `data` in DLL or SLL
 //    // example, to declare a DLL list of students: LIST<DLL, STUDENT>
@@ -294,7 +296,66 @@ struct STAFF {
 
 
 };
+bool importStudents(LIST <STUDENT>& L) {
+    ifstream ifs("CSV/Student.csv");
+    ifs.open(filename);
+    if (ifs.is_open() == false)
+        return false;
+    string str;
+    int count = 0;
+    while (getline(ifs, str)) {
+        count++;
+    }
+    //DLL<STUDENT*>* cur = L_Class.head;
+    getline(ifs, str);
+    while (!ifs.eof())
+    {
+        for (int i = 0; i < count; i++) {
+            STUDENT s;
+            getline(ifs, str, ','); // get username
+            //cur->data->user->username = str;
+            getline(ifs, str, ','); // password
+           // cur->data->user->password = str;
+            getline(ifs, str, ','); // get No
+            //cur->data->No = str;
+            s.No = str;
+            getline(ifs, str, ',');
+            //cur->data->studentID = str;
+            s.studentID = str;
+            getline(ifs, str, ',');
+            //cur->data->firstname = str;
+            s.firstname = str;
+            getline(ifs, str, ',');
+            //cur->data->lastname = str;
+            s.lastname = str;
+            getline(ifs, str, ',');
+            //cur->data->gender = str;
+            s.gender = str;
+            getline(ifs, str, ',');
+            //cur->data->DoB = str;
 
+            getline(ifs, str, ',');
+            //cur->data->socialID = str;
+            s.socialID = str;
+            getline(ifs, str, ',');
+            //cur->data->otherMark = str;
+            s.otherMark = stod(str);
+            getline(ifs, str, ',');
+            //cur->data->midtermMark = str;
+            s.midtermMark =stod(str);
+            getline(ifs, str, ',');
+            //cur->data->finalMark = str;
+            s.finalMark = stod(str);
+            getline(ifs, str, ',');
+            //cur->data->totalMark = str;
+            s.totalMark = stod(str);
+            getline(ifs, str, ',');
+            //cur->data->Class = str;
+            L.createNode(s);
+            //cur = cur->next;
+        }
+    }
+}
 
 void EXportToTeacher() {
     ofstream taofile("filenew.csv");      // ofs  l� t?o file ???
@@ -396,7 +457,8 @@ int main() {
         cout << "**  3. Export to teacher **\n";
         cout << "**  4. Read file from teacher **\n";
         cout << "**  5. Update list student         **\n";
-        cout << "**  6. out.          **\n";
+        cout << "**  6. read file student.          **\n";
+        cout << "**  7. out.          **\n";
         cout << "*******************************************************\n";
         cout << "Nhap tuy chon: ";
         cin >> key;
@@ -436,6 +498,12 @@ int main() {
         case 5:
 
             UpdateST(list,ST);
+            //ST.Export(ST);
+            // pressAnyKey();
+            break;
+        case 6:
+
+            importStudents(list);
             //ST.Export(ST);
             // pressAnyKey();
             break;
