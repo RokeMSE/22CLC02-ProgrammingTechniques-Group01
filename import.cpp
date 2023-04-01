@@ -2,8 +2,54 @@
 #include "header.h"
 using namespace std;
 
-bool importStudents(std::string filename) {
 
+bool importStudents(std::string filename) {
+    ifstream ifs("CSV/Student.csv");
+    ifs.open(filename);
+    if (ifs.is_open() == false)
+        return false;
+    string str;
+    int count = 0;
+    while (getline(ifs, str)) {
+        count++;
+    }
+    DLL<STUDENT*>* cur = L_Class.head;
+    getline(ifs, str);
+    while (!ifs.eof())
+    {
+        for (int i = 0; i < count; i++) {
+
+            getline(ifs, str, ','); // get username
+            cur->data->user->username = str;
+            getline(ifs, str, ','); // password
+            cur->data->user->password = str;
+            getline(ifs, str, ','); // get No
+            cur->data->No = str;
+            getline(ifs, str, ',');
+            cur->data->studentID = str;
+            getline(ifs, str, ',');
+            cur->data->firstname = str;
+            getline(ifs, str, ',');
+            cur->data->lastname = str;
+            getline(ifs, str, ',');
+            cur->data->gender = str;
+            getline(ifs, str, ',');
+            cur->data->DoB = str;
+            getline(ifs, str, ',');
+            cur->data->socialID = str;
+            getline(ifs, str, ',');
+            cur->data->otherMark = str;
+            getline(ifs, str, ',');
+            cur->data->midtermMark = str;
+            getline(ifs, str, ',');
+            cur->data->finalMark = str;
+            getline(ifs, str, ',');
+            cur->data->totalMark = str;
+            getline(ifs, str, ',');
+            cur->data->Class = str;
+            cur = cur->next;
+        }
+    }
 }
 
 bool importStaffs(std::string filename) {
