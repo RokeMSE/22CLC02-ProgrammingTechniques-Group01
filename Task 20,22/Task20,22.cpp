@@ -340,19 +340,19 @@ void ReadFileFromTeacher(LIST <STUDENT>& L) {
                     strcpy(l, s.c_str());
                     cout << l;
                     cout << endl;
-                    S.No = stoi(strtok(l, ","));//stoi convert string to integer
+                    S.No = stod(strtok(l, ","));//stoi convert string to integer
                     cout << S.No; cout << endl;
                     S.studentID = strtok(NULL, ",");//strtok splits the string str into an array of tokens separated by delim
                     cout << S.studentID; cout << endl;
                     S.fullname = strtok(NULL, ",");
                     cout << S.fullname; cout << endl;
-                    S.totalMark = stoi(strtok(NULL, ","));
+                    S.totalMark = stod(strtok(NULL, ","));
                     cout << S.totalMark; cout << endl;
-                    S.finalMark = stoi(strtok(NULL, ","));
+                    S.finalMark = stod(strtok(NULL, ","));
                     cout << S.finalMark; cout << endl;
-                    S.midtermMark = stoi(strtok(NULL, ","));
+                    S.midtermMark = stod(strtok(NULL, ","));
                     cout << S.midtermMark; cout << endl;
-                    S.otherMark = stoi(strtok(NULL, ","));
+                    S.otherMark = stod(strtok(NULL, ","));
                     cout << S.otherMark; cout << endl;
                     L.createNode(S);
                     
