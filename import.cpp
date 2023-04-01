@@ -13,50 +13,52 @@ bool importStudents(std::string filename) {
     while (getline(ifs, str)) {
         count++;
     }
-    LIST<DLL, STUDENT*> L_Student
+    //LIST<DLL, STUDENT*> L_Student
     getline(ifs, str);
     while (!ifs.eof())
     {
         for (int i = 0; i < count; i++) {
-
+            STUDENT* tmp = new STUDENT;
             getline(ifs, str, ','); // get username
-            cur->data->user->username = str;
+            
+            tmp->username = str;
             getline(ifs, str, ','); // password
-            cur->data->user->password = str;
+            
+            tmp->password = str;
             getline(ifs, str, ','); // get No
-            cur->data->No = stoi(str);
+            
+            tmp->No= stoi(str);
             getline(ifs, str, ',');
-            cur->data->studentID = str;
+            
+            tmp->studentID = str;
             getline(ifs, str, ',');
-            cur->data->firstname = str;
+           
+            tmp->firstname = str;
             getline(ifs, str, ',');
-            cur->data->lastname = str;
+            
+            tmp->lastname = str;
             getline(ifs, str, ',');
-            cur->data->gender = str;
+            
             getline(ifs, str, ',');
-            cur->data->DoB = getDate(str);
+            
+            tmp->DoB = getDate(str);
             getline(ifs, str, ',');
-            cur->data->socialID = str;
+            
+            tmp->socialID = str;
             getline(ifs, str, ',');
-           /* cur->data->otherMark = stod(str);
-            getline(ifs, str, ',');
-            cur->data->midtermMark = stod(str);
-            getline(ifs, str, ',');
-            cur->data->finalMark = stod(str);
-            getline(ifs, str, ',');
-            cur->data->totalMark = (str);
-            getline(ifs, str, ',')*/;
-            cur->data->Class = convertToClass(str);
+            
+            tmp->Class = convertToClass(str);
             if (L_Student.head == nullptr) L_Student.head = L_Student.tail = new DLL<STUDENT>;
             else {
                 L_Student.tail->next = new DLL<STUDENT>;
                 L_Student.tail->next->prev = L_Student.tail->next;
                 L_Student.tail = L_Student.tail->next;
             }
-            L_Student.tail->data = new STUDENT;
+            L_Student.tail->data = tmp;
             L_Student.tail->next = nullptr;
-            cur = cur->next;
+            //cur = cur->next;
         }
+        break;
     }
 }
 
