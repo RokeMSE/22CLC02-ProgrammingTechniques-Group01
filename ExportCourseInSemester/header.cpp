@@ -6,7 +6,6 @@
 void exportCourseInSemester(SEMESTER a)
 {
     DLL<COURSE>* cur = a.course.head;
-    //ID, name, teacher, credit, maxStudents, day, session, students(exportStudentsInCourse)
     string filename ="CSV/SemInSchoolYear/CourseInSemester/";
     ofstream out(filename + (cur->data).ID + ".csv");
     
@@ -34,6 +33,9 @@ bool importCourseInSemester(std::string filename, SEMESTER &a)
         return false;
 
     DLL<COURSE>* cur = a.course.head;
+    string* temp = new string;
+    getline(inp, *temp);
+    delete temp;
     while(!inp.eof())
     {
         getline(inp, (cur->data).ID , ',');
@@ -43,7 +45,7 @@ bool importCourseInSemester(std::string filename, SEMESTER &a)
         inp >> (cur->data).maxStudents;
         getline(inp, WeekDaytoString((cur->data).day) , ',');
         getline(inp, SeesionToString((cur->data).session), ',');
-        importStudentInCourse((cur->data).ID + ".csv");
+        importStudentInCourse("CSV/SemInSchoolYear/CourseInSemester/" + (cur->data).ID + ".csv", cur->data);
     }
 
     inp.close();

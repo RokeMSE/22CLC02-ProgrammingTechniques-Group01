@@ -44,8 +44,8 @@ LIST<DLL, CLASS> L_Class;
 
         bool importClass(std::string filename); // Dat
 
-        bool importStudentInCourse(std::string filename);
-        bool importCourseInSemester(std::string filename);
+        bool importStudentInCourse(std::string filename, COURSE& c);
+        bool importCourseInSemester(std::string filename, SEMESTER &a);
         bool importSemesterInSchoolYear(std::string filename);
         bool importSchoolYear(std::string filename);
     /////////////////////////////////
