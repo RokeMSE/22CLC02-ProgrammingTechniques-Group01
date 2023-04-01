@@ -9,9 +9,8 @@ bool importStudentsInACourse(std::string filename, COURSE c) {
 
     while (!ifs.eof())
     {
-        getline(ifs,str);   /// (str) will have format: "[StudentID],,"
-        str.erase(str.length()-2,2);    /// delete 2 last chars of (str): ",,"  => (str) = [StudentID]
-
+        getline(ifs,str);   /// (str) will have format: "[StudentID]"
+        
         /// find this student by StudentID in L_Student;
         DLL<STUDENT*> *cur = L_Student.head;
         while (cur != nullptr && cur->data->studentID != str)

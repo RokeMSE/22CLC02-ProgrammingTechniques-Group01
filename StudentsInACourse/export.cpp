@@ -4,17 +4,20 @@ void exportStudentsInACourse(COURSE c) {
     filename += c.ID + ".csv";
     ofs.open(filename);
 
-    ofs << "StudentID,," << endl;       // this is title line
+    ofs << "StudentID" << endl;       // this is title line
     DLL<STUDENT*> *cur = c.students.head;
-    if ( !cur ) return;     // will not do anything if there is no student in list of student in the course;
+    if ( !cur ) 
+    {
+        ofs.close();
+        return;     // will not do anything if there is no student in list of student in the course;
+    }
     while (cur != nullptr)
     {
-        ofs << cur->data->studentID << ",," << endl;
+        ofs << cur->data->studentID << endl;
         DLL<STUDENT*> *tmp = cur;
         cur = cur -> next;
         delete tmp;
     }
-    delete cur;
 
     ofs.close();
 }
