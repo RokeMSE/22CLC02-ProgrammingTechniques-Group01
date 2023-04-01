@@ -3,23 +3,27 @@
 #include <fstream>
 #include <iostream>
 
-bool exportCourseInSemester(std::string filename, SEMESTER a)
+void exportCourseInSemester(SEMESTER a)
 {
-    //ID, name, teacher, credit, maxStudents, day, session, students(exportStudentsInCourse)
-    ofstream out(filename);
-    
     DLL<COURSE>* cur = a.course.head;
+    //ID, name, teacher, credit, maxStudents, day, session, students(exportStudentsInCourse)
+    string filename ="CSV/SemInSchoolYear/CourseInSemester/";
+    ofstream out(filename + (cur->data).ID + ".csv");
+    
+    out << "ID,Name,Teacher,Credit,Max Students,Day,Session"; 
     while(cur)
     {
         out << (cur->data).ID << ',' << (cur->data).name << ',' << (cur->data).teacher << ',' << (cur->data).credit << ',' << (cur->data).maxStudents << ',' << (cur->data).day << ',' << (cur->data).session;
-        exportStudentInCourse((cur->data).ID + ".csv");
+        exportStudentsInCourse(cur->data);
         out << ',' << (cur->data).ID + ".csv" << '\n';
+        
+        DLL<COURSE>* temp = cur; 
         cur = cur->next;
+        delete temp;
     }
-    out << '.';
+    delete cur;
 
     out.close();
-    return true;
 }
 
 bool importCourseInSemester(std::string filename, SEMESTER &a)

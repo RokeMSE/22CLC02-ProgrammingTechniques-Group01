@@ -57,8 +57,8 @@ LIST<DLL, CLASS> L_Class;
 
         bool exportClass(std::string filename); // Luong
 
-        bool exportStudentInCourse(std::string filename);
-        bool exportCourseInSemester(std::string filename);
+        void exportStudentsInCourse(COURSE c);
+        void exportCourseInSemester(SEMESTER a);
         bool exportSemesterInSchoolYear(std::string filename);
         bool exportSchoolYear(std::string filename);
     /////////////////////////////////
