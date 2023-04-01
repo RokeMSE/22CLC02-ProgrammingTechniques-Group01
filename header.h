@@ -60,8 +60,8 @@ LIST<DLL, CLASS> L_Class;
         void exportClasses();
 
         void exportStudentsInACourse();
-        void exportCoursesInASemester();
-        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem);
+        void exportCoursesInASemester(std::string filename, SEMESTER a);
+        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, ushort noSem, uint startYear);
         void exportSchoolYears();
     /////////////////////////////////
 

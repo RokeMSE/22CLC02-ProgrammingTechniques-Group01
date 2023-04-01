@@ -39,3 +39,13 @@ DATE getDate (string chr) {
     date.year = stoi(chr.substr(6,4));
     return date;
 }
+
+std::string DateToString (DATE date) {
+    string res = "";
+    if (date.month < 10) res += "0";
+    res += to_string(date.month) + '/';
+
+    if ( date.day < 10) res += "0";
+    res += to_string(date.day) + '/' + to_string(date.year);
+    return res;
+}
