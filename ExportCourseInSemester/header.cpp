@@ -43,16 +43,13 @@ bool importCourseInSemester(std::string filename, SEMESTER &a)
         getline(inp, (cur->data).teacher, ',');
         string* temp = new string;
         getline(inp, *temp, ',');
-        int* dummy = new int;
-        *dummy = stoi(*temp);
-        (cur->data).credit = *dummy;
+        (cur->data).credit = stoi(*temp);
         getline(inp, *temp, ',');
-        *dummy = stoi(*temp);
-        (cur->data).maxStudents = *dummy;
+        (cur->data).maxStudents = stoi(*temp);
         getline(inp, WeekDaytoString((cur->data).day) , ',');
         getline(inp, SeesionToString((cur->data).session), ',');
         importStudentInCourse("CSV/SemInSchoolYear/CourseInSemester/" + (cur->data).ID + ".csv", cur->data);
-        delete temp, dummy;
+        delete temp;
     }
 
     inp.close();
