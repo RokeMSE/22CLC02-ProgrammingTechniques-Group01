@@ -28,3 +28,27 @@ Session convertToSession ( std::string str ) {
     else if ( str == "S3" ) return S3;
     else                    return S4;
 }
+
+string convertFromProgram(Program x)
+{
+    string str[3] = {"APCS", "CLC", "VP"};
+    return str[x];
+}
+
+string convertFromWeekDay(WeekDay x)
+{
+    string str[7] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+    return str[x];
+}
+
+string convertFromSession(Session x)
+{
+    string str[4] = {"S1", "S2", "S3", "S4"};
+    return str[x];
+}
+
+string convertFromType(Type x)
+{
+    string str[2] = {"STAFF", "STUDENT"};
+    return str[x];
+}
