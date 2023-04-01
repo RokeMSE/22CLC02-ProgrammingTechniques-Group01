@@ -14,8 +14,27 @@ void exportClasses() {
 
 }
 
-void exportStudentsInACourse() {
+void exportStudentsInACourse(COURSE c) {
+    ofstream ofs;
+    string filename = "CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/";
+    filename += c.ID + ".csv";
+    ofs.open(filename);
 
+    ofs << "StudentID" << endl;       // this is title line
+    DLL<STUDENT*> *cur = c.students.head;
+    if ( !cur ) 
+    {
+        ofs.close();
+        return;     // will not do anything if there is no student in list of student in the course;
+    }
+    while (cur != nullptr)
+    {
+        ofs << cur->data->studentID << endl;    // export StudentID to the file
+        DLL<STUDENT*> *tmp = cur;
+        cur = cur -> next;
+        delete tmp;     // delete data
+    }
+    ofs.close();
 }
 
 void exportCoursesInASemester(std::string filename, SEMESTER a) {
