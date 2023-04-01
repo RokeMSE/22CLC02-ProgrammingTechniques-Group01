@@ -1,24 +1,67 @@
 #include "header.h"
+#include "StructsImplementation\enum.cpp"
 #include <fstream>
 
 //No,studentID,firstname,lastname,fullname,socailID,user->username,user->password,gender,DoB->month/DoB->day/DoB->year,totalMark,finalMark,midtermMark,otherMark,Class
-void exportStudent(std::string filename, STUDENT* stu)
+void exportStudents()
 {
-    ofstream ofs(filename);
-    ofs << stu -> No << ',' << stu -> studentID << ',' << stu -> firstname << ',' << stu -> lastname;
-    ofs << ',' << stu -> socialID << ',' << stu -> user -> username << ',' << stu -> user -> password;
-    ofs << ',' << stu -> gender << ',' << (stu -> DoB).month << '/' << (stu -> DoB).day << '/' << (stu -> DoB).year;
-    ofs << ',' << stu -> totalMark << ',' << stu -> finalMark << ',' << stu -> midtermMark << ',' << stu -> otherMark << ',';
-    ofs << (stu -> Class).convertToString();
+    if (!L_Student.head)
+        return;
+    DLL<STUDENT*>* cur = L_Student.head;
+    string filepath = "CSV\\STUDENT.csv";
+    ofstream ofs(filepath);
+    ofs << "No,studentID,firstname,lastname,socialID,username,password,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),totalMark,finalMark,midtermMark,otherMark,Class\n";
+    while (cur)
+    {
+        STUDENT* stu = cur -> data;
+        ofs << stu -> No << ',' << stu -> studentID << ',' << stu -> firstname << ',' << stu -> lastname;
+        ofs << ',' << stu -> socialID << ',' << stu -> user -> username << ',' << stu -> user -> password;
+        ofs << ',' << stu -> gender << ',' << (stu -> DoB).month << '/' << (stu -> DoB).day << '/' << (stu -> DoB).year;
+        ofs << ',' << stu -> totalMark << ',' << stu -> finalMark << ',' << stu -> midtermMark << ',' << stu -> otherMark << ',';
+        ofs << (stu -> Class).convertToString();
+        ofs << '\n';
+        cur = cur -> next;
+    }
     ofs.close();
+    return;
 }
 
-void exportStaff(std::string filename, STAFF* staf)
+void exportStaffs()
 {
-    ofstream ofs(filename);
-    ofs << staf -> firstname << ',' << staf -> lastname << ',';
-    ofs << (staf -> user) -> username << ',' << (staf -> user) -> password;
+    if (!L_Staff.head)
+        return;
+    DLL<STAFF*>* cur = L_Staff.head;
+    string filepath = "CSV\\STAFF.csv";
+    ofstream ofs(filepath);
+    ofs << "firstname,lastname,username,password\n";
+    while (cur)
+    {
+        STAFF* staf = cur -> data;
+        ofs << staf -> firstname << ',' << staf -> lastname << ',';
+        ofs << (staf -> user) -> username << ',' << (staf -> user) -> password;
+        ofs << '\n';
+        cur = cur -> next;
+    }
     ofs.close();
+    return;
 }
 
-bool exportClass(std::string filename);
+void exportClasses()
+{
+    if (!L_Class.head)
+        return;
+    DLL<CLASS>* cur = L_Class.head;
+    string filepath = "CSV\\CLASS.csv";
+    ofstream ofs(filepath);
+    ofs << "yearIn,K,Program,No\n";
+    while (cur)
+    {
+        CLASS cla = cur -> data;
+        ofs << cla.yearIn << ',' << cla.K << ',';
+        ofs << convertFromProgram(cla.program) << ',' << cla.No;
+        ofs << '\n';
+        cur = cur -> next;
+    }
+    ofs.close();
+    return;
+}
