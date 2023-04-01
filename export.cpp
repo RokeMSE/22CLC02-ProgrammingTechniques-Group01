@@ -20,7 +20,10 @@ void exportStudents()
         ofs << ',' << stu -> totalMark << ',' << stu -> finalMark << ',' << stu -> midtermMark << ',' << stu -> otherMark << ',';
         ofs << (stu -> Class).convertToString();
         ofs << '\n';
+        DLL<STUDENT*>* dump = cur;
         cur = cur -> next;
+        delete stu;
+        delete dump;
     }
     ofs.close();
     return;
@@ -40,7 +43,10 @@ void exportStaffs()
         ofs << staf -> firstname << ',' << staf -> lastname << ',';
         ofs << (staf -> user) -> username << ',' << (staf -> user) -> password;
         ofs << '\n';
+        DLL<STAFF*>* dump = cur;
         cur = cur -> next;
+        delete staf;
+        delete dump;
     }
     ofs.close();
     return;
@@ -60,7 +66,9 @@ void exportClasses()
         ofs << cla.yearIn << ',' << cla.K << ',';
         ofs << convertFromProgram(cla.program) << ',' << cla.No;
         ofs << '\n';
+        DLL<CLASS>* dump = cur;
         cur = cur -> next;
+        delete dump;
     }
     ofs.close();
     return;
