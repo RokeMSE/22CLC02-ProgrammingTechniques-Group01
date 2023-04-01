@@ -13,7 +13,7 @@ bool importStudents(std::string filename) {
     while (getline(ifs, str)) {
         count++;
     }
-    DLL<STUDENT*>* cur = L_Class.head;
+    LIST<DLL, STUDENT*> L_Student
     getline(ifs, str);
     while (!ifs.eof())
     {
@@ -38,15 +38,23 @@ bool importStudents(std::string filename) {
             getline(ifs, str, ',');
             cur->data->socialID = str;
             getline(ifs, str, ',');
-            cur->data->otherMark = stod(str);
+           /* cur->data->otherMark = stod(str);
             getline(ifs, str, ',');
             cur->data->midtermMark = stod(str);
             getline(ifs, str, ',');
             cur->data->finalMark = stod(str);
             getline(ifs, str, ',');
             cur->data->totalMark = (str);
-            getline(ifs, str, ',');
+            getline(ifs, str, ',')*/;
             cur->data->Class = convertToClass(str);
+            if (L_Student.head == nullptr) L_Student.head = L_Student.tail = new DLL<STUDENT>;
+            else {
+                L_Student.tail->next = new DLL<STUDENT>;
+                L_Student.tail->next->prev = L_Student.tail->next;
+                L_Student.tail = L_Student.tail->next;
+            }
+            L_Student.tail->data = new STUDENT;
+            L_Student.tail->next = nullptr;
             cur = cur->next;
         }
     }
