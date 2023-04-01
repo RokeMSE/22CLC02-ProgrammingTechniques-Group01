@@ -24,7 +24,7 @@ bool importStudents(std::string filename) {
             getline(ifs, str, ','); // password
             cur->data->user->password = str;
             getline(ifs, str, ','); // get No
-            cur->data->No = str;
+            cur->data->No = stoi(str);
             getline(ifs, str, ',');
             cur->data->studentID = str;
             getline(ifs, str, ',');
@@ -34,19 +34,19 @@ bool importStudents(std::string filename) {
             getline(ifs, str, ',');
             cur->data->gender = str;
             getline(ifs, str, ',');
-            cur->data->DoB = str;
+            cur->data->DoB = getDate(str);
             getline(ifs, str, ',');
             cur->data->socialID = str;
             getline(ifs, str, ',');
-            cur->data->otherMark = str;
+            cur->data->otherMark = stod(str);
             getline(ifs, str, ',');
-            cur->data->midtermMark = str;
+            cur->data->midtermMark = stod(str);
             getline(ifs, str, ',');
-            cur->data->finalMark = str;
+            cur->data->finalMark = stod(str);
             getline(ifs, str, ',');
-            cur->data->totalMark = str;
+            cur->data->totalMark = (str);
             getline(ifs, str, ',');
-            cur->data->Class = str;
+            cur->data->Class = convertToClass(str);
             cur = cur->next;
         }
     }
