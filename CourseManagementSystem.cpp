@@ -24,8 +24,8 @@ int main() {
             cin >> tmp.username;
             cout << "Password: ";
             cin >> tmp.password;
-            stu = authenticateUSER<STUDENT>(L_Student, tmp);
-            staff = authenticateUSER<STAFF>(L_Staff, tmp);
+            stu = authenticateUSER<STUDENT>(L_Student, &tmp);
+            staff = authenticateUSER<STAFF>(L_Staff, &tmp);
         } while (!currentUSER);
         /////////////////////////////////////
         // Main menu

@@ -1,9 +1,5 @@
 #include "../header.h"
 
-STUDENT* STUDENT::get () {
-        return this;
-}
-
 bool MenuStudent(STUDENT* current) {
         while ( 1 ) {
                 cout << "1. View a list of his/ her courses" << endl;

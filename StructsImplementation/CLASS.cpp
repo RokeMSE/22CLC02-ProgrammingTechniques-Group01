@@ -2,11 +2,6 @@
 #include <fstream>
 
 using namespace std;
-bool CLASS::import (std::string filename) {
-// import students from a file to a class, INCLUDING give them username and password
-// there is a doubly linked list
-
-}
 
 void CLASS::add (SCHOOLYEAR year) {
     this -> yearIn = year.begin;
@@ -59,7 +54,7 @@ void CLASS::add1stYearStudent () {
         cin >> user.username;
         cout << "Generate password for logging in: ";
         cin >> user.password;
-        stu->data->user = user;
+        stu->data->user = &user;
         //////////////////////////////
 
         if (!(this -> student).head)
@@ -90,7 +85,7 @@ bool CLASS::add1stYearStudents (std::string filename) {
         // log in info
         getline(inp, user.username, ',');
         getline(inp, user.password, ',');
-        stu->data->user = user;
+        stu->data->user = &user;
         ////////////////////////
         string s;
         std::getline(inp, s, ',');
@@ -115,3 +110,26 @@ bool CLASS::add1stYearStudents (std::string filename) {
     inp.close();
     return 1;
 }
+
+CLASS convertToClass(std::string str) {
+    CLASS res;
+
+    int i = 0;
+    while (str[i] <= '9' && str[i] >= '0')  i++;
+    res.K = stoi(str.substr(0, i));
+
+    if ( str[2] == 'C' ) {
+        res.program = CLC;
+        // `No` starts from str[5]
+        res.No = stoi(str.substr(i + 3, str.length() - i - 3));
+    } else if ( str[2] == 'V' ) {
+        res.program = VP;
+        // `No` starts from str[4]
+        res.No = stoi(str.substr(i + 2, str.length() - i - 2));
+    } else {
+        res.program = APCS;
+        res.No = stoi(str.substr(i + 4, str.length() - i - 4));
+    }
+    return res;
+}
+// 22apcs1

@@ -3,6 +3,8 @@
 #define uint unsigned int
 #define ushort unsigned short
 #include <string>
+#include <iostream>
+#include <fstream>
 using namespace std;
 // Structs 
     #include "StructsDefinition/enum.h"
@@ -38,29 +40,29 @@ LIST<DLL, CLASS> L_Class;
 
 // Prototypes
     // import
-        bool importStudent(std::string filename);
+        bool importStudents(std::string filename);
 
-        bool importStaff(std::string filename);
+        bool importStaffs(std::string filename);
 
-        bool importClass(std::string filename); // Dat
+        bool importClasses(std::string filename);
 
-        bool importStudentInCourse(std::string filename);
-        bool importCourseInSemester(std::string filename);
-        bool importSemesterInSchoolYear(std::string filename);
-        bool importSchoolYear(std::string filename);
+        bool importStudentsInACourse(std::string filename);
+        bool importCoursesInASemester(std::string filename);
+        bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem);
+        bool importSchoolYears(std::string filename);
     /////////////////////////////////
-
+    
     // export
-        bool exportStudent(std::string filename);
+        void exportStudents();
 
-        bool exportStaff(std::string filename);
+        void exportStaffs();
 
-        bool exportClass(std::string filename); // Luong
+        void exportClasses();
 
-        bool exportStudentInCourse(std::string filename);
-        bool exportCourseInSemester(std::string filename);
-        bool exportSemesterInSchoolYear(std::string filename);
-        bool exportSchoolYear(std::string filename);
+        void exportStudentsInACourse();
+        void exportCoursesInASemester();
+        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem);
+        void exportSchoolYears();
     /////////////////////////////////
 
     // dealloc
