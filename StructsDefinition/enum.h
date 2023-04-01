@@ -9,3 +9,8 @@ Program convertToProgram ( std::string str );
 WeekDay convertToWeekday ( std::string str );
 Session convertToSession ( std::string str );
 Type convertToType ( std::string str );
+
+std::string convertFromProgram(Program x);
+std::string convertFromWeekDay(WeekDay x);
+std::string convertFromSession(Session x);
+std::string convertFromType(Type x);

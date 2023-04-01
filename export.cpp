@@ -14,49 +14,64 @@ void exportClasses() {
 
 }
 
-void exportStudentsInACourse(COURSE c) {
-    ofstream ofs;
-    string filename = "CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/";
-    filename += c.ID + ".csv";
-    ofs.open(filename);
+void exportStudentsInACourse(COURSE* c, uint startYear) {
+    DLL<SCOREBOARD*> *cur = c->students.head;
+    if ( !cur ) return;
+        // will not do anything if there is no student in the list of students in the course;
 
-    ofs << "StudentID" << endl;       // this is title line
-    DLL<STUDENT*> *cur = c.students.head;
-    if ( !cur ) 
-    {
-        ofs.close();
-        return;     // will not do anything if there is no student in list of student in the course;
-    }
+    ofstream ofs("CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/" + c->ID + ".csv");
+
+    ofs << "StudentID" << endl;         // this is title line
+    
     while (cur != nullptr)
     {
-        ofs << cur->data->studentID << endl;    // export StudentID to the file
-        DLL<STUDENT*> *tmp = cur;
+        ofs << cur->data->student->studentID << endl;    // export StudentID to the file
+        DLL<SCOREBOARD*> *tmp = cur;
         cur = cur -> next;
-        delete tmp;     // delete data
+        delete tmp;     // delete a node of the COURSE::students list
     }
     ofs.close();
 }
 
-void exportCoursesInASemester(std::string filename, SEMESTER a) {
+void exportCoursesInASemester(std::string filename, SEMESTER* sem, uint startYear) {
+    DLL<COURSE*>* cur = sem->course.head;
+    string filename ="CSV/SemInSchoolYear/CourseInSemester/";
+    ofstream out(filename + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv");
+    
+    DLL<COURSE*>* temp; // node to be deleted
+    out << "ID,Name,Teacher,Credit,Max Students,Day,Session"; 
+    while(cur)
+    {
+        out << cur->data->ID << ',' << cur->data->name << ',' << cur->data->teacher << ',' << cur->data->credit << ',' << cur->data->maxStudents << ',' << cur->data->day << ',' << cur->data->session;
+        out << ',' << cur->data->ID + ".csv" << '\n';
+        
+        exportStudentsInACourse(cur->data, startYear);
+        
+        temp = cur; 
+        cur = cur->next;
+        delete temp;
+    }
 
-}
-
-void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, ushort noSem, uint startYear) {
-    // open the file that has been created
-    ofstream out(filename, std::ofstream::app); // append
-    string file = "CSV/SemInSchoolYear/" + to_string(startYear) + "_sem" + to_string(noSem) + ".csv";
-    out << sem->No << ',' << DateToString(sem->startdate) << ',' << DateToString(sem->enddate) << endl;
     out.close();
 }
 
-void exportSchoolYears() {
-    ofstream out("CSV/SchoolYear.csv");
-    DLL<SCHOOLYEAR>* cur = L_SchoolYear.head;
-    if ( !cur ) {
-        out.close();
-        return;
-    } // will not do anything if there is no school year => no semester => no course
+void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, uint startYear) {
+    if ( !sem ) return;
 
+    // open the file that has been created
+    ofstream out(filename, std::ofstream::app); // append
+    string file = "CSV/SemInSchoolYear/" + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv";
+    out << sem->No << ',' << DateToString(sem->startdate) << ',' << DateToString(sem->enddate) << endl;
+    out.close();
+    exportCoursesInASemester(file, sem, startYear);
+}
+
+void exportSchoolYears() {
+    DLL<SCHOOLYEAR>* cur = L_SchoolYear.head;
+    if ( !cur ) return; // will not do anything if there is no school year => no semester => no course
+
+    // since then, list.tail != nullptr
+    ofstream out("CSV/SchoolYear.csv");
     out << "yearbegin,yearend,semester file,sem1,sem2,sem3" << endl;    // title line
 
     string file;

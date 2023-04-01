@@ -14,6 +14,7 @@ using namespace std;
     #include "StructsDefinition/Queue.h"
 
     #include "StructsDefinition/DATE.h"
+    #include "StructsDefinition/SCOREBOARD.h"
     #include "StructsDefinition/COURSE.h"
     #include "StructsDefinition/SCHOOLYEAR.h"
     #include "StructsDefinition/CLASS.h"
@@ -46,8 +47,8 @@ LIST<DLL, CLASS> L_Class;
 
         bool importClasses(std::string filename);
 
-        bool importStudentsInACourse(std::string filename);
-        bool importCoursesInASemester(std::string filename);
+        bool importStudentsInACourse(std::string filename, COURSE &c);
+        bool importCoursesInASemester(std::string filename, SEMESTER* sem);
         bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem);
         bool importSchoolYears(std::string filename);
     /////////////////////////////////
@@ -59,8 +60,8 @@ LIST<DLL, CLASS> L_Class;
 
         void exportClasses();
 
-        void exportStudentsInACourse();
-        void exportCoursesInASemester(std::string filename, SEMESTER a);
+        void exportStudentsInACourse(COURSE c);
+        void exportCoursesInASemester(std::string filename, SEMESTER a, uint startYear);
         void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, ushort noSem, uint startYear);
         void exportSchoolYears();
     /////////////////////////////////

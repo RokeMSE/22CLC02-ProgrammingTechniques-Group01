@@ -11,7 +11,7 @@ struct COURSE {
     ushort credit = 0, maxStudents = 50;
     WeekDay day = MON;
     Session session = S1; // S1--S4
-    LIST<DLL, STUDENT*> students;
+    LIST<DLL, SCOREBOARD*> students;
         // list of `students enroll in this course`
 
     void updateInfo (); // update info of this course

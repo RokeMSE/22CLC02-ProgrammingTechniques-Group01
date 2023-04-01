@@ -1,6 +1,5 @@
 #include "../header.h"
 
-
 /// data_type of (list) same as data_type of (val)
 template <typename Data_Type>
 void add_val(LIST<DLL,Data_Type> &list, Data_Type val) {

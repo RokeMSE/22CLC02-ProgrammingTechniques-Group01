@@ -54,7 +54,7 @@ bool SEMESTER::add () {
 void SEMESTER::addCourse () {
     // call this function when users choose this task
 
-    COURSE tmp;
+    COURSE* tmp = new COURSE;
     // get tmp.ID
     // get tmp.name
     // get tmp.teacher
@@ -66,11 +66,11 @@ void SEMESTER::addCourse () {
     // when button "ADD" is clicked
     // if ( button_add is clicked ) {
         if ( !course.head ) {
-            course.head = new DLL<COURSE>;
+            course.head = new DLL<COURSE*>;
             course.tail = course.head;
             course.head->prev = nullptr;
         } else {
-            course.tail->next = new DLL<COURSE>;
+            course.tail->next = new DLL<COURSE*>;
             course.tail->next->prev = course.tail; 
             course.tail = course.tail->next;
         }

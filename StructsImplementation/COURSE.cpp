@@ -57,7 +57,7 @@ bool COURSE::addStudents (std::string filename) {
 }
 
 void COURSE::add1Student (STUDENT* student) {
-    add_val<STUDENT*> (students, student);
+    add_val<SCOREBOARD*> (students, student);
 }
 
 void COURSE::remove1Student(STUDENT* student) {
@@ -69,11 +69,11 @@ void COURSE::exportFile () {
     // quy ước định dạng file CSV theo nhu cầu rồi comment vô đây nhen, miễn là đủ các cột của đề yêu cầu, có thể thêm cột nếu muốn
     // điểm của sinh viên nằm trong struct STUDENT luôn, nên trước tiên search ID tương ứng trước rồi mới cập nhật điểm
     ofstream taofile("filenew.csv");
-    DLL<STUDENT*>* temp = students.head;
+    DLL<SCOREBOARD*>* temp = students.head;
     taofile << "NO,Student ID,Full Name,Total Mark,Final Mark,Midterm Mark,Other Mark";
     taofile << "\n";
     while (temp != nullptr) {
-        taofile << temp->data->No << "," << temp->data->studentID << "," << temp->data->fullname << "\n";
+        taofile << temp->data->student->No << "," << temp->data->student->studentID << "," << temp->data->student->fullname << "\n";
         temp = temp->next;
     }
     taofile.close();
@@ -106,11 +106,11 @@ bool COURSE::exportStudents(std::string filename)
     if(!output.is_open())
         return false;
 
-    DLL<STUDENT*>* temp = (this->students).head;
+    DLL<SCOREBOARD*>* temp = students.head;
 
     while(temp) 
     {
-        output << temp->data->No << "," << temp->data->studentID << "," << temp->data->firstname << "," << temp->data->lastname << "," << temp->data->gender << ",";
+        output << temp->data->student->No << "," << temp->data->student->studentID << "," << temp->data->firstname << "," << temp->data->lastname << "," << temp->data->gender << ",";
         output << (temp->data->DoB).day << "/" << (temp->data->DoB).month << "/" << (temp->data->DoB).year << ",";
         output << temp->data->socialID << "\n"; 
         temp = temp->next;

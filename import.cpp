@@ -14,7 +14,7 @@ bool importClasses(std::string filename) {
 
 }
 
-bool importStudentsInACourse(std::string filename, COURSE c) {
+bool importStudentsInACourse(std::string filename, COURSE* c) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
@@ -33,14 +33,36 @@ bool importStudentsInACourse(std::string filename, COURSE c) {
             cur = cur->next;
 
         /// add this student into the list of student in the course
-        c.add1Student(cur->data);
+        c->add1Student(cur->data);
     }
     ifs.close();
     return true;
 }
 
-bool importCoursesInASemester(std::string filename) {
+bool importCoursesInASemester(std::string filename, SEMESTER* sem) {
+    ifstream inp(filename);
 
+    if(!inp.is_open())
+        return false;
+
+    DLL<COURSE*>* cur = sem->course.head;
+    string* temp = new string;
+    getline(inp, *temp);
+    delete temp;
+    while(!inp.eof())
+    {
+        getline(inp, cur->data->ID , ',');
+        getline(inp, cur->data->name, ',');
+        getline(inp, cur->data->teacher, ',');
+        inp >> cur->data->credit;
+        inp >> cur->data->maxStudents;
+        getline(inp, convertFromWeekDay(cur->data->day) , ',');
+        getline(inp, convertFromSession(cur->data->session), ',');
+        importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + cur->data->ID + ".csv", cur->data);
+    }
+
+    inp.close();
+    return true;
 }
 
 bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem) {
@@ -66,7 +88,7 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     getline(inp, tmp, ','); // get name of the file that contains all the courses in this semester
     inp.close();
 
-    bool importCourseInSem = importCoursesInASemester (tmp);
+    bool importCourseInSem = importCoursesInASemester (tmp, newSem);
     return 1;
 }
 

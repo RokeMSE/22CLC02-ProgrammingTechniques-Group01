@@ -5,7 +5,7 @@
 struct SEMESTER {
     int No = 0;
     DATE startdate, enddate;
-    LIST<DLL, COURSE> course;
+    LIST<DLL, COURSE*> course;
 
     // member functions
     bool add (); // choose school year

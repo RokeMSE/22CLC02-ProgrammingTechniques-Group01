@@ -18,8 +18,7 @@ struct STUDENT {
 
     bool gender = 0;        // 0 male & 1 female
     DATE DoB;
-    double totalMark = 0, finalMark = 0, midtermMark = 0, otherMark = 0;
-    CLASS Class;
+    CLASS* Class;
 
     LIST<DLL, COURSE*> courses;   // courses that 1 student enrolls in a semester
 };

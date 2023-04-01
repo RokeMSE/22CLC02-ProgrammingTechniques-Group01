@@ -5,7 +5,11 @@
 /// @param list list whose nodes would be deleted
 template<typename Data>
 void dealloc1(LIST<DLL, Data> &list) {
-    
+    while ( list.head ) {
+        DLL<Data>* tmp = list.head;
+        list.head = list.head->next;
+        delete tmp;
+    }
 }
 ////////////////////////////////
 
@@ -14,6 +18,11 @@ void dealloc1(LIST<DLL, Data> &list) {
 /// @param list 
 template<typename Data>
 void dealloc2(LIST<DLL, Data> &list) {
-
+    while ( list.head ) {
+        DLL<Data>* tmp = list.head;
+        list.head = list.head->next;
+        delete tmp->data;
+        delete tmp;
+    }
 }
 ////////////////////////////////
