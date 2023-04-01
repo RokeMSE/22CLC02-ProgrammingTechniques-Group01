@@ -3,11 +3,11 @@
 #include <fstream>
 #include <iostream>
 
-void exportCourseInSemester(SEMESTER a)
+void exportCourseInSemester(SCHOOLYEAR s, SEMESTER a)
 {
     DLL<COURSE>* cur = a.course.head;
     string filename ="CSV/SemInSchoolYear/CourseInSemester/";
-    ofstream out(filename + (cur->data).ID + ".csv");
+    ofstream out(filename + to_string(s.begin) + "_sem" + to_string(a.No) + ".csv");
     
     out << "ID,Name,Teacher,Credit,Max Students,Day,Session"; 
     while(cur)
