@@ -56,7 +56,7 @@ bool COURSE::addStudents (std::string filename) {
     return true;
 }
 
-void COURSE::add1Student (STUDENT* student) {
+void COURSE::add1Student (SCOREBOARD* student) {
     add_val<SCOREBOARD*> (students, student);
 }
 

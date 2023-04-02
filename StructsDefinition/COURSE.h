@@ -19,7 +19,7 @@ struct COURSE {
     bool addStudents(std::string filename);
     /// this function will upload the list of students enrolled in the course from a file (filename)
 
-    void add1Student (STUDENT* student);
+    void add1Student (SCOREBOARD* student);
     /// add1Student: Add a student to the course, includes:
     ///     student: is student needs to be added 
     /// This function does not return anything

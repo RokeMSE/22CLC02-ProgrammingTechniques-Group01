@@ -90,9 +90,9 @@ void exportSchoolYears() {
         ofstream out(file); // append
         out.close();
 
-        exportASemesterInASchoolYear(file, cur->data.sem1, 1, cur->data.begin);
-        exportASemesterInASchoolYear(file, cur->data.sem2, 2, cur->data.begin);
-        exportASemesterInASchoolYear(file, cur->data.sem3, 3, cur->data.begin);
+        exportASemesterInASchoolYear(file, cur->data.sem1, 1);
+        exportASemesterInASchoolYear(file, cur->data.sem2, 2);
+        exportASemesterInASchoolYear(file, cur->data.sem3, 3);
         cur = cur->next;
     }
     out.close();

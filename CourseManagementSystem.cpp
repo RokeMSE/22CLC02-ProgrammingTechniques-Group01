@@ -1,6 +1,6 @@
 #include "header.h"
 #include <iostream>
-#include <Windows.h>
+
 using namespace std;
 
 USER* currentUSER;
@@ -16,7 +16,6 @@ int main() {
     STAFF* staff = nullptr;
     STUDENT* stu = nullptr;
     while ( notExit ) {
-        system("cls");
         // Logging in
         USER tmp;
         do {

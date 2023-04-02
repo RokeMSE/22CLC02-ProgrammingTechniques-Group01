@@ -2,15 +2,15 @@
 #include "header.h"
 using namespace std;
 
-bool importStudents(std::string filename) {
+bool importStudents() {
 
 }
 
-bool importStaffs(std::string filename) {
+bool importStaffs() {
 
 }
 
-bool importClasses(std::string filename) {
+bool importClasses() {
 
 }
 
@@ -28,12 +28,15 @@ bool importStudentsInACourse(std::string filename, COURSE* c) {
         getline(ifs,str);   /// (str) will have format: "[StudentID]"
 
         /// find this student by StudentID in L_Student;
-        DLL<STUDENT*> *cur = L_Student.head;
-        while (cur != nullptr && cur->data->studentID != str)
-            cur = cur->next;
+        DLL<STUDENT*> *stu = L_Student.head;
+        DLL<SCOREBOARD*> *cur = c->students.head;
+        while (stu != nullptr && stu->data->studentID != str)
+            stu = stu->next;
 
-        /// add this student into the list of student in the course
-        c->add1Student(cur->data);
+        SCOREBOARD* s = new SCOREBOARD;
+        s->student = stu->data;
+        /// add this student with his/her scoreboard to the list of student in the course
+        c->add1Student(s);
     }
     ifs.close();
     return true;

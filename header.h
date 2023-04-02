@@ -35,10 +35,6 @@ LIST<DLL, STUDENT*> L_Student;
 LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
 
-// GUI
-
-/////////////////////////////////////
-
 // Prototypes
     // import
         bool importStudents(std::string filename);
@@ -60,9 +56,9 @@ LIST<DLL, CLASS> L_Class;
 
         void exportClasses();
 
-        void exportStudentsInACourse(COURSE c);
-        void exportCoursesInASemester(std::string filename, SEMESTER a, uint startYear);
-        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, ushort noSem, uint startYear);
+        void exportStudentsInACourse(COURSE* c, uint startYear);
+        void exportCoursesInASemester(std::string filename, SEMESTER* sem, uint startYear);
+        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, uint startYear);
         void exportSchoolYears();
     /////////////////////////////////
 
@@ -77,3 +73,6 @@ LIST<DLL, CLASS> L_Class;
     /////////////////////////////////
 /////////////////////////////////////
 
+// GUI
+#include <Windows.h>
+/////////////////////////////////////
