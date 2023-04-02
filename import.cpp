@@ -1,74 +1,63 @@
 ﻿#include <fstream>
+#include <string>
 #include "header.h"
 using namespace std;
 
 bool stringToBool(std::string str)//ham doi tu string -> bool
 {
-    if (str == "true" || str == "1") {
+    if (str == "true" || str == "1")
         return true;
-    }
-    else if (str == "false" || str == "0") {
+    else if (str == "false" || str == "0") 
         return false;
-    }
-    else {
+    else
         throw std::invalid_argument("Invalid input string");
-    }
 }
 
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
-    if (ifs.is_open() == false)
-        return false;
+    if (!ifs.is_open()) return 0;
     string str;
-    int count = 0;
-    while (getline(ifs, str)) {
-        count++;
-    }
-    getline(ifs, str);
-    while (!ifs.eof())
-    {
-        for (int i = 0; i < count; i++) {
-            STUDENT* tmp = new STUDENT;
-            getline(ifs, str, ','); // get username
-            tmp->username = str;
+    getline(ifs, str);  // skip title line
+    while (!ifs.eof()) {
+        STUDENT* tmp = new STUDENT;
+        getline(ifs, str, ','); // get username
+        tmp->user->username = str;
 
-            getline(ifs, str, ','); // password
+        getline(ifs, str, ','); // password
+        tmp->user->password = str;
 
-            tmp->password = str;
-            getline(ifs, str, ','); // get No
+        getline(ifs, str, ','); // get No
+        tmp->No = stoi(str);
 
-            tmp->No = stoi(str);
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        tmp->studentID = str;
 
-            tmp->studentID = str;
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        tmp->firstname = str;
 
-            tmp->firstname = str;
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        tmp->lastname = str;
 
-            tmp->lastname = str;
-            getline(ifs, str, ',');
-            tmp->gender = stringToBool(str);
+        getline(ifs, str, ',');
+        tmp->gender = stringToBool(str);
 
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        tmp->DoB = getDate(str);
 
-            tmp->DoB = getDate(str);
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        tmp->socialID = str;
 
-            tmp->socialID = str;
-            getline(ifs, str, ',');
+        getline(ifs, str, ',');
+        *(tmp->Class) = convertToClass(str);
 
-            tmp->Class = convertToClass(str);
-            if (L_Student.head == nullptr) L_Student.head = L_Student.tail = new DLL<STUDENT>;
-            else {
-                L_Student.tail->next = new DLL<STUDENT>;
-                L_Student.tail->next->prev = L_Student.tail->next;
-                L_Student.tail = L_Student.tail->next;
-            }
-            L_Student.tail->data = tmp;
-            L_Student.tail->next = nullptr;
+        if (L_Student.head == nullptr) L_Student.head = L_Student.tail = new DLL<STUDENT*>;
+        else {
+            L_Student.tail->next = new DLL<STUDENT*>;
+            L_Student.tail->next->prev = L_Student.tail->next;
+            L_Student.tail = L_Student.tail->next;
         }
-        break;
+        L_Student.tail->data = tmp;
+        L_Student.tail->next = nullptr;
     }
 }
 
@@ -87,10 +76,10 @@ bool importStaffs() {
         for (int i = 0; i < count; i++) {
             STAFF* tmp = new STAFF;
             getline(ifs, str, ','); // get username
-            tmp->username = str;
+            tmp->user->username = str;
 
             getline(ifs, str, ','); // password
-            tmp->password = str;
+            tmp->user->password = str;
 
             getline(ifs, str, ',');
             tmp->firstname = str;
@@ -98,10 +87,9 @@ bool importStaffs() {
             getline(ifs, str, ',');
             tmp->lastname = str;
 
-
-            if (L_Staff.head == nullptr) L_Staff.head = L_Staff.tail = new DLL<STAFF>;
+            if (L_Staff.head == nullptr) L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
             else {
-                L_Staff.tail->next = new DLL<STAFF>;
+                L_Staff.tail->next = new DLL<STAFF*>;
                 L_Staff.tail->next->prev = L_Staff.tail->next;
                 L_Staff.tail = L_Staff.tail->next;
             }
@@ -113,8 +101,7 @@ bool importStaffs() {
     }
 }
 
-
-bool importClasses(std::string filename) {
+bool importClasses() {
     ifstream ifs("CSV/Class.csv");
     if (ifs.is_open() == false)
         return false;
@@ -129,11 +116,11 @@ bool importClasses(std::string filename) {
         for (int i = 0; i < count; i++) {
             CLASS* tmp = new CLASS;
             getline(ifs, str, ',');
-            unsigned short n = static_cast short > (std::stoul(str));//sử dụng hàm `std::stoul` để chuyển đổi chuỗi sang kiểu `unsigned long`, sau đó sử dụng ép kiểu để chuyển đổi sang kiểu `unsigned short`
+            ushort n = (short)std::stoul(str);//sử dụng hàm `std::stoul` để chuyển đổi chuỗi sang kiểu `unsigned long`, sau đó sử dụng ép kiểu để chuyển đổi sang kiểu `unsigned short`
             tmp->K = n;
 
             getline(ifs, str, ',');
-            tmp->program = convertFromProgram(str);
+            tmp->program = convertToProgram(str);
 
             getline(ifs, str, ',');
             tmp->No = stoi(str);
@@ -142,13 +129,13 @@ bool importClasses(std::string filename) {
             tmp->yearIn = stoi(str);
 
 
-            if (L_Class.head == nullptr) L_Class.head = L_Class.tail = new DLL<STAFF>;
+            if (L_Class.head == nullptr) L_Class.head = L_Class.tail = new DLL<CLASS>;
             else {
-                L_Class.tail->next = new DLL<STAFF>;
+                L_Class.tail->next = new DLL<CLASS>;
                 L_Class.tail->next->prev = L_Class.tail->next;
                 L_Class.tail = L_Class.tail->next;
             }
-            L_Class.tail->data = tmp;
+            L_Class.tail->data = *tmp;
             L_Class.tail->next = nullptr;
 
         }

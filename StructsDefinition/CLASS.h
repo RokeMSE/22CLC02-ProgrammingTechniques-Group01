@@ -16,11 +16,11 @@ struct CLASS {
 
     void add (SCHOOLYEAR year); // create a class
 
-
     // add 1st-year students to a particular 1st-year class
     // just use when a new class is created
     void add1stYearStudent (); // using key board
     bool add1stYearStudents (std::string filename); // import from file
+    std::string convertToString();
 };
 
 CLASS convertToClass(std::string str);

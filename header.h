@@ -37,11 +37,11 @@ LIST<DLL, CLASS> L_Class;
 
 // Prototypes
     // import
-        bool importStudents(std::string filename);
+        bool importStudents();
 
-        bool importStaffs(std::string filename);
+        bool importStaffs();
 
-        bool importClasses(std::string filename);
+        bool importClasses();
 
         bool importStudentsInACourse(std::string filename, COURSE &c);
         bool importCoursesInASemester(std::string filename, SEMESTER* sem);
@@ -74,5 +74,6 @@ LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
 
 // GUI
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 /////////////////////////////////////

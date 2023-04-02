@@ -9,33 +9,33 @@ int main() {
     bool notExit = 1;
     //////////////////////////////////////////////////////
 
-    // import();
+    importStudents();
 
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
-    STAFF* staff = nullptr;
-    STUDENT* stu = nullptr;
-    while ( notExit ) {
-        // Logging in
-        USER tmp;
-        do {
-            cout << "User name: ";
-            cin >> tmp.username;
-            cout << "Password: ";
-            cin >> tmp.password;
-            stu = authenticateUSER<STUDENT>(L_Student, &tmp);
-            staff = authenticateUSER<STAFF>(L_Staff, &tmp);
-        } while (!currentUSER);
-        /////////////////////////////////////
-        // Main menu
-        if ( staff == nullptr )
-            // this user is a student
-            notExit = MenuStudent(stu);
-        else
-            // this user is staff
-            notExit = MenuStaff(staff);
-        /////////////////////////////////////
-    }
+    // STAFF* staff = nullptr;
+    // STUDENT* stu = nullptr;
+    // while ( notExit ) {
+    //     // Logging in
+    //     USER tmp;
+    //     do {
+    //         cout << "User name: ";
+    //         cin >> tmp.username;
+    //         cout << "Password: ";
+    //         cin >> tmp.password;
+    //         stu = authenticateUSER<STUDENT>(L_Student, &tmp);
+    //         staff = authenticateUSER<STAFF>(L_Staff, &tmp);
+    //     } while (!currentUSER);
+    //     /////////////////////////////////////
+    //     // Main menu
+    //     if ( staff == nullptr )
+    //         // this user is a student
+    //         notExit = MenuStudent(stu);
+    //     else
+    //         // this user is staff
+    //         notExit = MenuStaff(staff);
+    //     /////////////////////////////////////
+    // }
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
 

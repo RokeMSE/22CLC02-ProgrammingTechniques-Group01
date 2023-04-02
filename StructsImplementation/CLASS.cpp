@@ -132,4 +132,7 @@ CLASS convertToClass(std::string str) {
     }
     return res;
 }
-// 22apcs1
+std::string CLASS::convertToString() {
+    if (!this) return "";
+    return to_string(this -> K) + convertFromProgram(this -> program) + to_string(this -> No);
+}
