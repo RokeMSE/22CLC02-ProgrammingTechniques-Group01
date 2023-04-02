@@ -10,15 +10,14 @@ void exportStudents()
     DLL<STUDENT*>* cur = L_Student.head;
     string filepath = "CSV\\STUDENT.csv";
     ofstream ofs(filepath);
-    ofs << "No,studentID,firstname,lastname,socialID,username,password,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),totalMark,finalMark,midtermMark,otherMark,Class\n";
+    ofs << "No,studentID,firstname,lastname,socialID,username,password,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),Class\n";
     while (cur)
     {
         STUDENT* stu = cur -> data;
         ofs << stu -> No << ',' << stu -> studentID << ',' << stu -> firstname << ',' << stu -> lastname;
         ofs << ',' << stu -> socialID << ',' << stu -> user -> username << ',' << stu -> user -> password;
         ofs << ',' << stu -> gender << ',' << (stu -> DoB).month << '/' << (stu -> DoB).day << '/' << (stu -> DoB).year;
-        ofs << ',' << stu -> totalMark << ',' << stu -> finalMark << ',' << stu -> midtermMark << ',' << stu -> otherMark << ',';
-        ofs << (stu -> Class).convertToString();
+        ofs << ',' << (stu -> Class).convertToString();
         ofs << '\n';
         DLL<STUDENT*>* dump = cur;
         cur = cur -> next;
