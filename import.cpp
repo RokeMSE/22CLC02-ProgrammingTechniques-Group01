@@ -179,9 +179,8 @@ bool importCoursesInASemester(std::string filename, SEMESTER* sem) {
         return false;
 
     DLL<COURSE*>* cur = sem->course.head;
-    string* temp = new string;
-    getline(inp, *temp);
-    delete temp;
+    string temp;
+    getline(inp, temp);
     while(!inp.eof())
     {
         getline(inp, cur->data->ID , ',');
@@ -189,8 +188,12 @@ bool importCoursesInASemester(std::string filename, SEMESTER* sem) {
         getline(inp, cur->data->teacher, ',');
         inp >> cur->data->credit;
         inp >> cur->data->maxStudents;
-        getline(inp, convertFromWeekDay(cur->data->day) , ',');
-        getline(inp, convertFromSession(cur->data->session), ',');
+
+        getline(inp, temp, ','); // get weekday
+        cur->data->day = convertToWeekday(temp);
+
+        getline(inp, temp, ','); // get session
+        cur->data->session = convertToSession(temp);
         importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + cur->data->ID + ".csv", cur->data);
     }
 
@@ -225,9 +228,9 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     return 1;
 }
 
-bool importSchoolYears(std::string filename) {
+bool importSchoolYears() {
     L_SchoolYear.head = L_SchoolYear.tail = nullptr;
-    ifstream inp(filename);
+    ifstream inp("CSV/SchoolYear");
     if (!inp.is_open()) return 0;
 
     string temp;

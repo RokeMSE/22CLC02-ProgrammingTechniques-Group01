@@ -7,20 +7,22 @@ void exportStudents() {
     DLL<STUDENT*>* cur = L_Student.head;
     string filepath = "CSV\\STUDENT.csv";
     ofstream ofs(filepath);
-    ofs << "No,studentID,firstname,lastname,socialID,username,password,gender(0-male/1-female),DateofBirth(mm/dd/yyyy)";
-    while (cur)
-    {
+    ofs << "username, password,No,studentID,firstname,lastname,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),socialID,CLASS";
+    DLL<STUDENT*>* dum; // the node to be deleted
+    while (cur) {
         // current student == cur->data;
-        ofs << cur->data -> No << ',' << cur->data -> studentID << ',' << cur->data -> firstname << ',' << cur->data -> lastname;
-        ofs << ',' << cur->data -> socialID << ',' << cur->data -> user -> username << ',' << cur->data -> user -> password;
-        ofs << ',' << cur->data -> gender << ',';
+        ofs << cur->data->user->username << ',' << cur->data -> user -> password << ',';
+        ofs << cur->data->No << ',' << cur->data->studentID << ',' << cur->data->firstname << ',' << cur->data->lastname << ',';
+        ofs << cur->data -> gender << ',';
         ofs << DateToString(cur->data->DoB) << ',';
-        ofs << cur->data -> Class->convertToString();
+        ofs << cur->data -> socialID << ',';
+        ofs << cur->data->Class->convertToString();
         ofs << '\n';
-        DLL<STUDENT*>* dump = cur;
+
+        dum = cur;
         cur = cur -> next;
-        delete cur->data;
-        delete dump;
+        delete dum->data;
+        delete dum;
     }
     ofs.close();
     return;
@@ -32,16 +34,18 @@ void exportStaffs() {
     string filepath = "CSV\\STAFF.csv";
     ofstream ofs(filepath);
     ofs << "username,password,firstname,lastname\n";
+    DLL<STAFF*>* dum; // the node to be deleted
     while (cur)
     {
-        STAFF* staff = cur -> data;
-        ofs << (staff -> user) -> username << ',' << (staff -> user) -> password << ',';
-        ofs << staff -> firstname << ',' << staff -> lastname;
+        // current staff == cur -> data;
+        ofs << (cur -> data -> user) -> username << ',' << (cur -> data -> user) -> password << ',';
+        ofs << cur -> data -> firstname << ',' << cur -> data -> lastname;
         ofs << '\n';
-        DLL<STAFF*>* dump = cur;
+
+        dum = cur;
         cur = cur -> next;
-        delete staff;
-        delete dump;
+        delete dum->data;
+        delete dum;
     }
     ofs.close();
     return;
@@ -53,15 +57,17 @@ void exportClasses() {
     string filepath = "CSV\\CLASS.csv";
     ofstream ofs(filepath);
     ofs << "yearIn,K,Program,No\n";
+    DLL<CLASS>* dum; // the node to be deleted
     while (cur)
     {
         CLASS cla = cur -> data;
         ofs << cla.yearIn << ',' << cla.K << ',';
         ofs << convertFromProgram(cla.program) << ',' << cla.No;
         ofs << '\n';
-        DLL<CLASS>* dump = cur;
+
+        dum = cur;
         cur = cur -> next;
-        delete dump;
+        delete dum;
     }
     ofs.close();
     return;
@@ -76,20 +82,22 @@ void exportStudentsInACourse(COURSE* c, uint startYear) {
 
     ofs << "StudentID,othermark,midtermMark,finalMark,totalMark" << endl;         // this is title line
     
+    DLL<SCOREBOARD*>* tmp; // the node to be deleted
     while (cur != nullptr)
     {
         ofs << cur->data->student->studentID <<',' << cur->data->otherMark << ',' << cur->data->midtermMark << ',' << cur->data->finalMark << ',' << cur->data->totalMark << endl;
-        DLL<SCOREBOARD*> *tmp = cur;
+
+        tmp = cur;
         cur = cur -> next;
-        delete tmp;     // delete a node of the COURSE::students list
+        delete tmp->data;   // delete node->data first
+        delete tmp;         // delete a node of the COURSE::students list
     }
     ofs.close();
 }
 
 void exportCoursesInASemester(std::string filename, SEMESTER* sem, uint startYear) {
     DLL<COURSE*>* cur = sem->course.head;
-    string filename ="CSV/SemInSchoolYear/CourseInSemester/";
-    ofstream out(filename + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv");
+    ofstream out(filename);
     
     DLL<COURSE*>* temp; // node to be deleted
     out << "ID,Name,Teacher,Credit,Max Students,Day,Session"; 
@@ -102,6 +110,7 @@ void exportCoursesInASemester(std::string filename, SEMESTER* sem, uint startYea
         
         temp = cur; 
         cur = cur->next;
+        delete temp->data;
         delete temp;
     }
 
@@ -128,6 +137,7 @@ void exportSchoolYears() {
     out << "yearbegin,yearend,semester file,sem1,sem2,sem3" << endl;    // title line
 
     string file;
+    DLL<SCHOOLYEAR>* dummy; // the node to be deleted
     while ( cur != L_SchoolYear.tail->next ) {
         out << cur->data.begin << ',';
         out << cur->data.end << ',';
@@ -146,7 +156,14 @@ void exportSchoolYears() {
         exportASemesterInASchoolYear(file, cur->data.sem1, 1);
         exportASemesterInASchoolYear(file, cur->data.sem2, 2);
         exportASemesterInASchoolYear(file, cur->data.sem3, 3);
+
+        delete cur->data.sem1;
+        delete cur->data.sem2;
+        delete cur->data.sem3;
+
+        dummy = cur;
         cur = cur->next;
+        delete dummy;
     }
     out.close();
 }

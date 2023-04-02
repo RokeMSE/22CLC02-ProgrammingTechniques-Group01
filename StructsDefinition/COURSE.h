@@ -24,7 +24,7 @@ struct COURSE {
     ///     student: is student needs to be added 
     /// This function does not return anything
 
-    void remove1Student (STUDENT* student);
+    void remove1Student (SCOREBOARD* student);
     /// remove1Student: Remove a student from the course, includes:
     ///        student: is the student need to be removed from the course
     /// This function does not return anything

@@ -9,7 +9,10 @@ int main() {
     bool notExit = 1;
     //////////////////////////////////////////////////////
 
-    importStudents();
+    bool _importStudents = importStudents();
+    bool _importStaffs = importStaffs();
+    bool _importClasses = importClasses();
+    bool _importSchoolYears = importSchoolYears();
 
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
@@ -39,13 +42,20 @@ int main() {
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
 
-    // Export();
+    DLL<STUDENT*>* curStudent = L_Student.head;
+    while ( curStudent ) {
+        cout << curStudent->data->No << ' ' << curStudent->data->yearIn << ' ';
+        cout << curStudent->data->studentID << ' ' << curStudent->data->socialID << ' ';
+        cout << curStudent->data->firstname << ' ' << curStudent->data->lastname << ' ';
+        cout << DateToString(curStudent->data->DoB);
+        cout << endl;
+    }
 
-    // Deallocation
-    // dealloc: del node list COURSE::students => del node courses in semester => semesters => del nodes in L_SchoolYear
-    // dealloc L_Staff: node->data ==> node
-    // dealloc L_Student: node->data ==> node
-    // list L_Class: del node
+    // Export data to files including deallocation
+    exportSchoolYears();
+    exportStudents();
+    exportStaffs();
+    exportClasses();
     //////////////////////////////////////////////////////
     return 0;
 }
