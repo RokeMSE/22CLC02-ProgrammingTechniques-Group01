@@ -15,14 +15,16 @@ bool stringToBool(std::string str)//ham doi tu string -> bool
 
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
-    if (!ifs.is_open()) return 0;
+    if (!ifs.is_open())
+        return 0;
     string str;
     getline(ifs, str);  // skip title line
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
         getline(ifs, str, ','); // get username
-        tmp->user->username = str;
-
+        tmp->user = new USER;
+        tmp -> user -> username = str;
+        
         getline(ifs, str, ','); // password
         tmp->user->password = str;
 
@@ -46,19 +48,27 @@ bool importStudents() {
 
         getline(ifs, str, ',');
         tmp->socialID = str;
-
-        getline(ifs, str, ',');
+    
+        getline(ifs, str);
+        tmp->Class = new CLASS;
         *(tmp->Class) = convertToClass(str);
 
-        if (L_Student.head == nullptr) L_Student.head = L_Student.tail = new DLL<STUDENT*>;
-        else {
+        if (L_Student.head == nullptr)
+        {
+            L_Student.head = L_Student.tail = new DLL<STUDENT*>;
+            L_Student.head -> data = tmp;
+        }
+        else
+        {
             L_Student.tail->next = new DLL<STUDENT*>;
-            L_Student.tail->next->prev = L_Student.tail->next;
+            L_Student.tail->next->prev = L_Student.tail;
             L_Student.tail = L_Student.tail->next;
         }
         L_Student.tail->data = tmp;
-        L_Student.tail->next = nullptr;
+        //L_Student.head -> next = L_Student.tail->next = nullptr;
     }
+    ifs.close();
+    return 1;
 }
 
 bool importStaffs() {
@@ -66,81 +76,78 @@ bool importStaffs() {
     if (ifs.is_open() == false)
         return false;
     string str;
-    int count = 0;
-    while (getline(ifs, str)) {
-        count++;
-    }
     getline(ifs, str);
     while (!ifs.eof())
     {
-        for (int i = 0; i < count; i++) {
-            STAFF* tmp = new STAFF;
-            getline(ifs, str, ','); // get username
-            tmp->user->username = str;
+        STAFF* tmp = new STAFF;
+        tmp -> user = new USER;
+        getline(ifs, str, ','); // get username
+        tmp->user->username = str;
 
-            getline(ifs, str, ','); // password
-            tmp->user->password = str;
+        getline(ifs, str, ','); // password
+        tmp->user->password = str;
 
-            getline(ifs, str, ',');
-            tmp->firstname = str;
+        getline(ifs, str, ',');
+        tmp->firstname = str;
 
-            getline(ifs, str, ',');
-            tmp->lastname = str;
+        getline(ifs, str);
+        tmp->lastname = str;
 
-            if (L_Staff.head == nullptr) L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
-            else {
-                L_Staff.tail->next = new DLL<STAFF*>;
-                L_Staff.tail->next->prev = L_Staff.tail->next;
-                L_Staff.tail = L_Staff.tail->next;
-            }
-            L_Staff.tail->data = tmp;
-            L_Staff.tail->next = nullptr;
-
+        if (L_Staff.head == nullptr)
+        {
+            L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
+            L_Staff.head -> data = tmp;
         }
-        break;
+        else
+        {
+            L_Staff.tail->next = new DLL<STAFF*>;
+            L_Staff.tail->next->prev = L_Staff.tail;
+            L_Staff.tail = L_Staff.tail->next;
+        }
+        L_Staff.tail->data = tmp;
     }
+    ifs.close();
+    return true;
 }
 
-bool importClasses() {
+bool importClasses()
+{
     ifstream ifs("CSV/Class.csv");
     if (ifs.is_open() == false)
         return false;
     string str;
-    int count = 0;
-    while (getline(ifs, str)) {
-        count++;
-    }
     getline(ifs, str);
     while (!ifs.eof())
     {
-        for (int i = 0; i < count; i++) {
-            CLASS* tmp = new CLASS;
-            getline(ifs, str, ',');
-            ushort n = (short)std::stoul(str);//sử dụng hàm `std::stoul` để chuyển đổi chuỗi sang kiểu `unsigned long`, sau đó sử dụng ép kiểu để chuyển đổi sang kiểu `unsigned short`
-            tmp->K = n;
+        CLASS* tmp = new CLASS;
+        getline(ifs, str, ',');
+        tmp->yearIn = stoi(str);
 
-            getline(ifs, str, ',');
-            tmp->program = convertToProgram(str);
+        getline(ifs, str, ',');
+        ushort n = (short)std::stoul(str);//sử dụng hàm `std::stoul` để chuyển đổi chuỗi sang kiểu `unsigned long`, sau đó sử dụng ép kiểu để chuyển đổi sang kiểu `unsigned short`
+        tmp->K = n;
 
-            getline(ifs, str, ',');
-            tmp->No = stoi(str);
+        getline(ifs, str, ',');
+        tmp->program = convertToProgram(str);
 
-            getline(ifs, str, ',');
-            tmp->yearIn = stoi(str);
+        getline(ifs, str);
+        tmp->No = stoi(str);
 
-
-            if (L_Class.head == nullptr) L_Class.head = L_Class.tail = new DLL<CLASS>;
-            else {
-                L_Class.tail->next = new DLL<CLASS>;
-                L_Class.tail->next->prev = L_Class.tail->next;
-                L_Class.tail = L_Class.tail->next;
-            }
-            L_Class.tail->data = *tmp;
-            L_Class.tail->next = nullptr;
-
+        if (L_Class.head == nullptr)
+        {
+            L_Class.head = L_Class.tail = new DLL<CLASS>;
+            L_Class.head -> data = *tmp;
         }
-        break;
+        else
+        {
+            L_Class.tail->next = new DLL<CLASS>;
+            L_Class.tail->next->prev = L_Class.tail;
+            L_Class.tail = L_Class.tail->next;
+        }
+        L_Class.tail->data = *tmp;
     }
+    ifs.close();
+    return true;
 }
 
 
@@ -159,11 +166,12 @@ bool importStudentsInACourse(std::string filename, COURSE* c) {
 
         /// find this student by StudentID in L_Student;
         DLL<STUDENT*> *stu = L_Student.head;
-        DLL<SCOREBOARD*> *cur = c->students.head;
+        //DLL<SCOREBOARD*> *cur = c->students.head;
         while (stu != nullptr && stu->data->studentID != str)
             stu = stu->next;
 
         SCOREBOARD* s = new SCOREBOARD;
+        
         s->student = stu->data;
         /// add this student with his/her scoreboard to the list of student in the course
         c->add1Student(s);
@@ -172,31 +180,40 @@ bool importStudentsInACourse(std::string filename, COURSE* c) {
     return true;
 }
 
-bool importCoursesInASemester(std::string filename, SEMESTER* sem) {
+bool importCourseInSemester(std::string filename, SEMESTER &a)
+{
     ifstream inp(filename);
 
     if(!inp.is_open())
         return false;
 
-    DLL<COURSE*>* cur = sem->course.head;
-    string temp;
-    getline(inp, temp);
+    DLL<COURSE*>* cur;
+    a.course.head = a.course.tail = cur;
+    string* temp = new string;
+    getline(inp, *temp);
+    delete temp;
     while(!inp.eof())
     {
-        getline(inp, cur->data->ID , ',');
-        getline(inp, cur->data->name, ',');
-        getline(inp, cur->data->teacher, ',');
-        inp >> cur->data->credit;
-        inp >> cur->data->maxStudents;
+        cur = new DLL<COURSE*>;
+        getline(inp, (*cur->data).ID , ',');
+        getline(inp, (*cur->data).name, ',');
+        getline(inp, (*cur->data).teacher, ',');
+        string* temp = new string;
+        getline(inp, *temp, ',');
+        (*cur->data).credit = stoi(*temp);
+        getline(inp, *temp, ',');
+        (*cur->data).maxStudents = stoi(*temp);
+        getline(inp, *temp, ',');
+        (*cur -> data).day = convertToWeekday(*temp);
+        getline(inp, *temp, ',');
+        (*cur -> data).session = convertToSession(*temp);
+        importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + (*cur->data).ID + ".csv", *cur->data);
+        delete temp;
+        cur -> next = new DLL<COURSE*>;
+        cur -> next -> prev = cur;
 
-        getline(inp, temp, ','); // get weekday
-        cur->data->day = convertToWeekday(temp);
-
-        getline(inp, temp, ','); // get session
-        cur->data->session = convertToSession(temp);
-        importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + cur->data->ID + ".csv", cur->data);
+        cur = cur -> next;
     }
-
     inp.close();
     return true;
 }
@@ -221,7 +238,7 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     getline(inp, tmp, ','); // get enddate
     newSem->enddate = getDate(tmp);
 
-    getline(inp, tmp, ','); // get name of the file that contains all the courses in this semester
+    getline(inp, tmp); // get name of the file that contains all the courses in this semester
     inp.close();
 
     bool importCourseInSem = importCoursesInASemester (tmp, newSem);
