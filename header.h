@@ -10,9 +10,7 @@ using namespace std;
     #include "StructsDefinition/enum.h"
     #include "StructsDefinition/LIST.h"
 
-    #include "StructsDefinition/Stack.h"
-    #include "StructsDefinition/Queue.h"
-
+    #include "StructsDefinition/USER.h"
     #include "StructsDefinition/DATE.h"
     #include "StructsDefinition/SCOREBOARD.h"
     #include "StructsDefinition/COURSE.h"
@@ -20,7 +18,7 @@ using namespace std;
     #include "StructsDefinition/CLASS.h"
     #include "StructsDefinition/STUDENT.h"
     #include "StructsDefinition/STAFF.h"
-    #include "StructsDefinition/USER.h"
+    
 /////////////////////////////////////
 
 // Global variables
@@ -64,21 +62,21 @@ LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
         #include "import.cpp"
         #include "export.cpp"
-        #include "StructsImplementation/enum.cpp"
-        #include "StructsImplementation/LIST.cpp"
+        // #include "StructsImplementation/enum.cpp"
+        // #include "StructsImplementation/LIST.cpp"
 
-        #include "StructsImplementation/Stack.cpp"
-        #include "StructsImplementation/Queue.cpp"
+        // #include "StructsImplementation/Stack.cpp"
+        // #include "StructsImplementation/Queue.cpp"
 
-        #include "StructsImplementation/DATE.cpp"
-        #include "StructsImplementation/SCOREBOARD.cpp"
-        #include "StructsImplementation/COURSE.cpp"
-        #include "StructsImplementation/SCHOOLYEAR.cpp"
-        #include "StructsImplementation/CLASS.cpp"
-        #include "StructsImplementation/STUDENT.cpp"
-        #include "StructsImplementation/STAFF.cpp"
-        #include "StructsImplementation/USER.cpp"
+        // #include "StructsImplementation/DATE.cpp"
+        // #include "StructsImplementation/SCOREBOARD.cpp"
+        // #include "StructsImplementation/COURSE.cpp"
+        // #include "StructsImplementation/SCHOOLYEAR.cpp"
+        // #include "StructsImplementation/CLASS.cpp"
+        // #include "StructsImplementation/STUDENT.cpp"
+        // #include "StructsImplementation/STAFF.cpp"
+        // #include "StructsImplementation/USER.cpp"
 // GUI
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+// #define WIN32_LEAN_AND_MEAN
+// #include <Windows.h>
 /////////////////////////////////////

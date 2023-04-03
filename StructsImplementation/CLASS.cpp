@@ -54,7 +54,7 @@ void CLASS::add1stYearStudent () {
         cin >> user.username;
         cout << "Generate password for logging in: ";
         cin >> user.password;
-        stu->data->user = &user;
+        stu->data->user = user;
         //////////////////////////////
 
         if (!(this -> student).head)
@@ -85,7 +85,7 @@ bool CLASS::add1stYearStudents (std::string filename) {
         // log in info
         getline(inp, user.username, ',');
         getline(inp, user.password, ',');
-        stu->data->user = &user;
+        stu->data->user = user;
         ////////////////////////
         string s;
         std::getline(inp, s, ',');

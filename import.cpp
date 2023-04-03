@@ -3,30 +3,19 @@
 #include "header.h"
 using namespace std;
 
-bool stringToBool(std::string str)//ham doi tu string -> bool
-{
-    if (str == "true" || str == "1")
-        return true;
-    else if (str == "false" || str == "0") 
-        return false;
-    else
-        throw std::invalid_argument("Invalid input string");
-}
-
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
-    if (!ifs.is_open())
-        return 0;
+    if (!ifs.is_open()) return 0;
     string str;
     getline(ifs, str);  // skip title line
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
         getline(ifs, str, ','); // get username
-        tmp->user = new USER;
-        tmp -> user -> username = str;
+
+        tmp->user.username = str;
         
-        getline(ifs, str, ','); // password
-        tmp->user->password = str;
+        getline(ifs, str, ','); // get password
+        tmp->user.password = str;
 
         getline(ifs, str, ','); // get No
         tmp->No = stoi(str);
@@ -41,7 +30,7 @@ bool importStudents() {
         tmp->lastname = str;
 
         getline(ifs, str, ',');
-        tmp->gender = stringToBool(str);
+        tmp->gender = ((str == "1")? 1 : 0);
 
         getline(ifs, str, ',');
         tmp->DoB = getDate(str);
@@ -49,9 +38,17 @@ bool importStudents() {
         getline(ifs, str, ',');
         tmp->socialID = str;
     
-        getline(ifs, str);
-        tmp->Class = new CLASS;
-        *(tmp->Class) = convertToClass(str);
+        getline(ifs, str);  // get class
+        DLL<CLASS>* nodeCls = L_Class.head;
+        while ( nodeCls ) {
+            if (nodeCls->data.convertToString() == str) {
+                tmp->Class = &(nodeCls->data);
+                break;
+            }
+            nodeCls = nodeCls->next;
+        }
+
+        // if ( !nodeCls ) MessageBox::Show("Error");
 
         if (L_Student.head == nullptr)
         {
@@ -77,21 +74,15 @@ bool importStaffs() {
         return false;
     string str;
     getline(ifs, str);
-    while (!ifs.eof())
-    {
+    while (!ifs.eof()) {
         STAFF* tmp = new STAFF;
-        tmp -> user = new USER;
-        getline(ifs, str, ','); // get username
-        tmp->user->username = str;
+        getline(ifs, tmp->user.username, ','); // get username
 
-        getline(ifs, str, ','); // password
-        tmp->user->password = str;
+        getline(ifs, tmp->user.password, ','); // get password
 
-        getline(ifs, str, ',');
-        tmp->firstname = str;
+        getline(ifs, tmp->firstname, ',');
 
-        getline(ifs, str);
-        tmp->lastname = str;
+        getline(ifs, tmp->lastname);
 
         if (L_Staff.head == nullptr)
         {
@@ -124,8 +115,7 @@ bool importClasses()
         tmp->yearIn = stoi(str);
 
         getline(ifs, str, ',');
-        ushort n = (short)std::stoul(str);//sử dụng hàm `std::stoul` để chuyển đổi chuỗi sang kiểu `unsigned long`, sau đó sử dụng ép kiểu để chuyển đổi sang kiểu `unsigned short`
-        tmp->K = n;
+        tmp->K = stoi(str);
 
         getline(ifs, str, ',');
         tmp->program = convertToProgram(str);

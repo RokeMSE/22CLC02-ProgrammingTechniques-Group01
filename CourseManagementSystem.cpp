@@ -11,7 +11,7 @@ int main() {
 
     bool _importStudents = importStudents();
     // bool _importStaffs = importStaffs();
-    // bool _importClasses = importClasses();
+    bool _importClasses = importClasses();
     // bool _importSchoolYears = importSchoolYears();
 
     //////////////////////////////////////////////////////
@@ -41,7 +41,7 @@ int main() {
     // }
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
-    //cout << _importStudents;
+    // cout << _importStudents;
     // DLL<STUDENT*>* curStudent = L_Student.head;
     // while ( curStudent ) {
     //     cout << curStudent->data->No << ' ' << curStudent->data->yearIn << ' ';
@@ -53,9 +53,9 @@ int main() {
     // }
 
     // Export data to files including deallocation
-    exportSchoolYears();
+    // exportSchoolYears();
     exportStudents();
-    exportStaffs();
+    // exportStaffs();
     exportClasses();
     //////////////////////////////////////////////////////
     return 0;

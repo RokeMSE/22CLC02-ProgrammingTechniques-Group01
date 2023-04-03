@@ -13,7 +13,7 @@ void exportStudents() {
     DLL<STUDENT*>* dum; // the node to be deleted
     while (cur) {
         // current student == cur->data;
-        ofs << cur->data->user->username << ',' << cur->data -> user -> password << ',';
+        ofs << ((cur->data)->user).username << ',' << ((cur->data)->user).password << ',';
         ofs << cur->data->No << ',' << cur->data->studentID << ',' << cur->data->firstname << ',' << cur->data->lastname << ',';
         ofs << cur->data -> gender << ',';
         ofs << DateToString(cur->data->DoB) << ',';
@@ -23,10 +23,9 @@ void exportStudents() {
             ofs << '\n';
 
         dum = cur;
-        cur = cur -> next;
-        delete (dum -> data) -> user;
-        delete (dum -> data) -> Class;
-        delete dum -> data;
+        cur = cur->next;
+        delete (dum->data)->Class;
+        delete dum->data;
         delete dum;
     }
     ofs.close();
@@ -43,14 +42,14 @@ void exportStaffs() {
     while (cur)
     {
         // current staff == cur -> data;
-        ofs << (cur -> data -> user) -> username << ',' << (cur -> data -> user) -> password << ',';
+        ofs << (cur -> data -> user).username << ',' << (cur -> data -> user).password << ',';
         ofs << cur -> data -> firstname << ',' << cur -> data -> lastname;
         if (cur -> next)
             ofs << '\n';
 
         dum = cur;
         cur = cur -> next;
-        delete dum -> data -> user;
+        
         delete dum -> data;
         delete dum;
     }
@@ -66,9 +65,8 @@ void exportClasses() {
     ofstream ofs(filepath);
     ofs << "yearIn,K,Program,No\n";
     DLL<CLASS>* dum; // the node to be deleted
-    while (cur)
-    {
-        CLASS cla = cur -> data;
+    while (cur) {
+        CLASS cla = cur->data;
         ofs << cla.yearIn << ',' << cla.K << ',';
         ofs << convertFromProgram(cla.program) << ',' << cla.No;
         if (cur -> next)
