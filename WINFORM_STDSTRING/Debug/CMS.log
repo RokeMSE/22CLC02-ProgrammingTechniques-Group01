@@ -1,0 +1,7 @@
+﻿  import.cpp
+C:\Users\Toan\Desktop\CMS\import.cpp(278,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
+C:\Users\Toan\Desktop\CMS\import.cpp(278,68): error C3861: 'importASemesterInASchoolYear': identifier not found
+C:\Users\Toan\Desktop\CMS\import.cpp(284,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
+C:\Users\Toan\Desktop\CMS\import.cpp(284,68): error C3861: 'importASemesterInASchoolYear': identifier not found
+C:\Users\Toan\Desktop\CMS\import.cpp(290,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
+C:\Users\Toan\Desktop\CMS\import.cpp(290,68): error C3861: 'importASemesterInASchoolYear': identifier not found
