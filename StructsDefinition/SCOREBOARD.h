@@ -9,5 +9,5 @@ struct SCOREBOARD {
     STUDENT* student;
 };
 
-SCOREBOARD getScore(STUDENT* student, COURSE* course);
+//SCOREBOARD getScore(STUDENT* student, COURSE* course);
 
