@@ -5,17 +5,21 @@ using namespace std;
 
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
-    if (!ifs.is_open()) return 0;
+    if (!ifs.is_open()) 
+    {
+        ifs.close();
+        return 0;
+    }
     string str;
     getline(ifs, str);  // skip title line
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
         getline(ifs, str, ','); // get username
 
-        tmp->user.username = str;
+        tmp->user->username = str;
         
         getline(ifs, str, ','); // get password
-        tmp->user.password = str;
+        tmp->user->username = str;
 
         getline(ifs, str, ','); // get No
         tmp->No = stoi(str);
@@ -71,14 +75,17 @@ bool importStudents() {
 bool importStaffs() {
     ifstream ifs("CSV/Staff.csv");
     if (ifs.is_open() == false)
+    {
+        ifs.close();
         return false;
+    }
     string str;
     getline(ifs, str);
     while (!ifs.eof()) {
         STAFF* tmp = new STAFF;
-        getline(ifs, tmp->user.username, ','); // get username
+        getline(ifs, tmp->user->username, ','); // get username
 
-        getline(ifs, tmp->user.password, ','); // get password
+        getline(ifs, tmp->user->password, ','); // get password
 
         getline(ifs, tmp->firstname, ',');
 
@@ -105,28 +112,32 @@ bool importClasses()
 {
     ifstream ifs("CSV/Class.csv");
     if (ifs.is_open() == false)
+    {
+        ifs.close();
         return false;
+    }    
     string str;
-    getline(ifs, str);
+    std::getline(ifs, str);
     while (!ifs.eof())
     {
         CLASS* tmp = new CLASS;
-        getline(ifs, str, ',');
-        tmp->yearIn = stoi(str);
 
-        getline(ifs, str, ',');
+        std::getline(ifs, str, ',');
         tmp->K = stoi(str);
 
-        getline(ifs, str, ',');
+        std::getline(ifs, str, ',');
         tmp->program = convertToProgram(str);
 
-        getline(ifs, str);
+        std::getline(ifs, str,',');
         tmp->No = stoi(str);
+
+        std::getline(ifs, str);
+        tmp->yearIn = stoi(str);
 
         if (L_Class.head == nullptr)
         {
             L_Class.head = L_Class.tail = new DLL<CLASS>;
-            L_Class.head -> data = *tmp;
+            L_Class.head->data = *tmp;
         }
         else
         {
@@ -145,7 +156,10 @@ bool importStudentsInACourse(std::string filename, COURSE* c) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
+    {
+        ifs.close();
         return false;
+    }
     
     string str;
     getline(ifs,str);   /// skip the title line;
@@ -175,7 +189,10 @@ bool importCourseInSemester(std::string filename, SEMESTER &a)
     ifstream inp(filename);
 
     if(!inp.is_open())
+    {
+        inp.close();
         return false;
+    }
 
     DLL<COURSE*>* cur;
     a.course.head = a.course.tail = cur;
@@ -212,7 +229,11 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     newSem = new SEMESTER;
     
     ifstream inp(filename);
-    if (!inp.is_open())  return 0;
+    if (!inp.is_open())
+    {
+        inp.close();
+        return 0;
+    }  
 
     string tmp;
     getline(inp, tmp);  // skip title line
@@ -238,7 +259,11 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
 bool importSchoolYears() {
     L_SchoolYear.head = L_SchoolYear.tail = nullptr;
     ifstream inp("CSV/SchoolYear");
-    if (!inp.is_open()) return 0;
+    if (!inp.is_open())
+    {
+        inp.close();
+        return 0;
+    }
 
     string temp;
     getline(inp, temp); // skip title line

@@ -121,10 +121,10 @@ bool importClasses()
         std::getline(ifs, str, ',');
         tmp->program = convertToProgram(str);
 
-        std::getline(ifs, str);
+        std::getline(ifs, str, ',');
         tmp->No = stoi(str);
 
-        std::getline(ifs, str, ',');
+        std::getline(ifs, str);
         tmp->yearIn = stoi(str);
 
         if (L_Class.head == nullptr)
