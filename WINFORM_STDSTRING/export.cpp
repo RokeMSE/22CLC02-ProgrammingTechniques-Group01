@@ -1,7 +1,13 @@
 #include <fstream>
-#include "header.h"
+
+#include "export.h"
+#include "Structs.h"
+#include "helperFunctions.h"
+#include "GlobalVariables.h"
+
 using namespace std;
 using namespace GROUP1;
+
 void exportStudents() {
     if (!L_Student.head)
         return;

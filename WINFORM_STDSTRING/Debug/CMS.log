@@ -1,7 +1,23 @@
-﻿  import.cpp
-C:\Users\Toan\Desktop\CMS\import.cpp(278,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
-C:\Users\Toan\Desktop\CMS\import.cpp(278,68): error C3861: 'importASemesterInASchoolYear': identifier not found
-C:\Users\Toan\Desktop\CMS\import.cpp(284,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
-C:\Users\Toan\Desktop\CMS\import.cpp(284,68): error C3861: 'importASemesterInASchoolYear': identifier not found
-C:\Users\Toan\Desktop\CMS\import.cpp(290,40): error C2039: 'importASemesterInASchoolYear': is not a member of '`global namespace''
-C:\Users\Toan\Desktop\CMS\import.cpp(290,68): error C3861: 'importASemesterInASchoolYear': identifier not found
+﻿  Login.cpp
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Login.cpp(8,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  export.cpp
+  import.cpp
+  Generating Code...
+  export.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+import.obj : error LNK2020: unresolved token (0A000527) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STUDENT *> L_Student" (?L_Student@@3U?$LIST@UDLL@GROUP1@@PAUSTUDENT@2@@GROUP1@@A)
+export.obj : error LNK2020: unresolved token (0A00052C) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STUDENT *> L_Student" (?L_Student@@3U?$LIST@UDLL@GROUP1@@PAUSTUDENT@2@@GROUP1@@A)
+import.obj : error LNK2020: unresolved token (0A0005C2) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::CLASS> L_Class" (?L_Class@@3U?$LIST@UDLL@GROUP1@@UCLASS@2@@GROUP1@@A)
+export.obj : error LNK2020: unresolved token (0A0005C8) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::CLASS> L_Class" (?L_Class@@3U?$LIST@UDLL@GROUP1@@UCLASS@2@@GROUP1@@A)
+import.obj : error LNK2020: unresolved token (0A0005D8) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::SCHOOLYEAR> L_SchoolYear" (?L_SchoolYear@@3U?$LIST@UDLL@GROUP1@@USCHOOLYEAR@2@@GROUP1@@A)
+export.obj : error LNK2020: unresolved token (0A0005DE) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::SCHOOLYEAR> L_SchoolYear" (?L_SchoolYear@@3U?$LIST@UDLL@GROUP1@@USCHOOLYEAR@2@@GROUP1@@A)
+import.obj : error LNK2020: unresolved token (0A0005F1) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STAFF *> L_Staff" (?L_Staff@@3U?$LIST@UDLL@GROUP1@@PAUSTAFF@2@@GROUP1@@A)
+export.obj : error LNK2020: unresolved token (0A0005F7) "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STAFF *> L_Staff" (?L_Staff@@3U?$LIST@UDLL@GROUP1@@PAUSTAFF@2@@GROUP1@@A)
+export.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STUDENT *> L_Student" (?L_Student@@3U?$LIST@UDLL@GROUP1@@PAUSTUDENT@2@@GROUP1@@A)
+import.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STUDENT *> L_Student" (?L_Student@@3U?$LIST@UDLL@GROUP1@@PAUSTUDENT@2@@GROUP1@@A)
+export.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STAFF *> L_Staff" (?L_Staff@@3U?$LIST@UDLL@GROUP1@@PAUSTAFF@2@@GROUP1@@A)
+import.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::STAFF *> L_Staff" (?L_Staff@@3U?$LIST@UDLL@GROUP1@@PAUSTAFF@2@@GROUP1@@A)
+export.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::CLASS> L_Class" (?L_Class@@3U?$LIST@UDLL@GROUP1@@UCLASS@2@@GROUP1@@A)
+import.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::CLASS> L_Class" (?L_Class@@3U?$LIST@UDLL@GROUP1@@UCLASS@2@@GROUP1@@A)
+export.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::SCHOOLYEAR> L_SchoolYear" (?L_SchoolYear@@3U?$LIST@UDLL@GROUP1@@USCHOOLYEAR@2@@GROUP1@@A)
+import.obj : error LNK2001: unresolved external symbol "struct GROUP1::LIST<struct GROUP1::DLL,struct GROUP1::SCHOOLYEAR> L_SchoolYear" (?L_SchoolYear@@3U?$LIST@UDLL@GROUP1@@USCHOOLYEAR@2@@GROUP1@@A)
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Debug\CMS.exe : fatal error LNK1120: 12 unresolved externals

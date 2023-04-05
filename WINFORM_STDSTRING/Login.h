@@ -1,7 +1,7 @@
 #pragma once
 
 #include "header.h"
-#include <iostream>
+#include "Structs.h"
 
 namespace CMS {
 
@@ -99,7 +99,7 @@ namespace CMS {
 			this->btn_signin->TabIndex = 1;
 			this->btn_signin->Text = L"Sign In";
 			this->btn_signin->UseVisualStyleBackColor = true;
-			this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
+			//this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
 			// 
 			// lbl_username
 			// 
@@ -155,31 +155,31 @@ namespace CMS {
 		}
 #pragma endregion
 
-private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
-	GROUP1::USER input;
-	input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
-	input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
-	std::string str = input.username + " " + input.password;
-	//MessageBox::Show(msclr::interop::marshal_as<System::String>(str));
-	// inspect L_Student first
-	GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
-	MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
-	if (input.username == cur->data->user.username) {
-		if (input.password == cur->data->user.password) {
-			MessageBox::Show("Successfully logged in!");
-			this->Close();
-			// call an another form
+//private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
+//	GROUP1::USER input;
+//	input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
+//	input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
+//	std::string str = input.username + " " + input.password;
+//	//MessageBox::Show(msclr::interop::marshal_as<System::String>(str));
+//	// inspect L_Student first
+//	GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
+//	MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
+//	if (input.username == cur->data->user.username) {
+//		if (input.password == cur->data->user.password) {
+//			MessageBox::Show("Successfully logged in!");
+//			this->Close();
+//			// call an another form
+//		}
+//		else {
+//			MessageBox::Show("Wrong password!");
+//		}
+//	} else
+//		MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+//}
+		private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+			// deallocate first
+			// then exit
+			Application::Exit();
 		}
-		else {
-			MessageBox::Show("Wrong password!");
-		}
-	} else
-		MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+	};
 }
-private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
-	// deallocate first
-	// then exit
-	Application::Exit();
-}
-};
-};

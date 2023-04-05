@@ -1,3 +1,7 @@
 C:\Users\Toan\Desktop\TESTING WINFORM\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
 C:\Users\Toan\Desktop\TESTING WINFORM\CMS\Debug\CMS.Login.resources
 C:\Users\Toan\Desktop\TESTING WINFORM\CMS\Debug\CMS.vcxproj.GenerateResource.cache
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Debug\CMS.vcxproj.AssemblyReference.cache
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Debug\CMS.Login.resources
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Debug\CMS.vcxproj.GenerateResource.cache
+C:\Users\Toan\Desktop\WINFORM_STDSTRING\Debug\CMS.exe

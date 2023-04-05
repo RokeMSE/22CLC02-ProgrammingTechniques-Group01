@@ -125,21 +125,16 @@
     <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="export.h" />
+    <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="helperFunctions.h" />
+    <ClInclude Include="import.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="StructsDefinition\CLASS.h" />
-    <ClInclude Include="StructsDefinition\COURSE.h" />
-    <ClInclude Include="StructsDefinition\DATE.h" />
-    <ClInclude Include="StructsDefinition\enum.h" />
-    <ClInclude Include="StructsDefinition\LIST.h" />
-    <ClInclude Include="StructsDefinition\SCHOOLYEAR.h" />
-    <ClInclude Include="StructsDefinition\SCOREBOARD.h" />
-    <ClInclude Include="StructsDefinition\STAFF.h" />
-    <ClInclude Include="StructsDefinition\STUDENT.h" />
-    <ClInclude Include="StructsDefinition\USER.h" />
-    <ClInclude Include="StructsImplement.cpp" />
+    <ClInclude Include="Structs.h" />
+    <ClCompile Include="helperFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">

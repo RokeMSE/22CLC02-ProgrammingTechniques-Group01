@@ -24,6 +24,9 @@
     <ClCompile Include="import.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="helperFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -32,37 +35,19 @@
     <ClInclude Include="header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructsImplement.cpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\CLASS.h">
+    <ClInclude Include="Structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructsDefinition\COURSE.h">
+    <ClInclude Include="import.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructsDefinition\DATE.h">
+    <ClInclude Include="export.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructsDefinition\enum.h">
+    <ClInclude Include="helperFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructsDefinition\LIST.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\SCHOOLYEAR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\SCOREBOARD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\STAFF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\STUDENT.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StructsDefinition\USER.h">
+    <ClInclude Include="GlobalVariables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
