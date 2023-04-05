@@ -3,7 +3,7 @@
 using namespace std;
 using namespace GROUP1;
 
-DATE getDate(string chr) {
+extern DATE getDate(string chr) {
     DATE date;
     // chr: mm/dd/yyyy
     // creat a list to choose: day (according to month, 1-31), month (1 to 12), year (1950 to current year)
@@ -13,7 +13,7 @@ DATE getDate(string chr) {
     return date;
 }
 
-string DateToString(DATE date) {
+extern string DateToString(DATE date) {
     string res = "";
     if (date.month < 10) res += "0";
     res += to_string(date.month) + '/';
@@ -37,18 +37,18 @@ void COURSE::add1Student(SCOREBOARD* student) {
 }
 
 // enum
-Program convertToProgram(string str) {
+extern Program convertToProgram(string str) {
     if (str == "APCS")         return APCS;
     else if (str == "CLC")    return CLC;
     else                        return VP;
 }
 
-Type convertToType(string str) {
+extern Type convertToType(string str) {
     if (str == "Staff")   return Staff;
     else                    return Student;
 }
 
-WeekDay convertToWeekday(string str) {
+extern WeekDay convertToWeekday(string str) {
     if (str == "MON")        return MON;
     else if (str == "TUE")   return TUE;
     else if (str == "WED")   return WED;
@@ -56,41 +56,42 @@ WeekDay convertToWeekday(string str) {
     else if (str == "FRI")   return FRI;
     else if (str == "SAT")   return SAT;
     else                     return SUN;
+
 }
 
-Session convertToSession(string str) {
+extern Session convertToSession(string str) {
     if (str == "S1")      return S1;
     else if (str == "S2") return S2;
     else if (str == "S3") return S3;
     else                    return S4;
 }
 
-string convertFromProgram(Program x)
+extern string convertFromProgram(Program x)
 {
     string str[3] = { "APCS", "CLC", "VP" };
     return str[x];
 }
 
-string convertFromWeekDay(WeekDay x)
+extern string convertFromWeekDay(WeekDay x)
 {
     string str[7] = { "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN" };
     return str[x];
 }
 
-string convertFromSession(Session x)
+extern string convertFromSession(Session x)
 {
     string str[4] = { "S1", "S2", "S3", "S4" };
     return str[x];
 }
 
-string convertFromType(Type x)
+extern string convertFromType(Type x)
 {
     string str[2] = { "STAFF", "STUDENT" };
     return str[x];
 }
 
 template <typename Data_Type>
-void add_val(LIST<DLL, Data_Type>& list, Data_Type val) {
+extern void add_val(LIST<DLL, Data_Type>& list, Data_Type val) {
     /// Allocate a node*(tmp) with data_type same as the data_type of (val) to add to the (list)
     DLL<Data_Type>* tmp = new DLL<Data_Type>;
     tmp->data = val;

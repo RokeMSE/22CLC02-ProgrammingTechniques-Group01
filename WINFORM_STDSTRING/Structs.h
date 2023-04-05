@@ -43,13 +43,6 @@ namespace GROUP1 {
         // list_type:   SLL or DLL
         // data_type:   data type of member `data` in DLL or SLL
         // example, to declare a DLL list of students: LIST<DLL, STUDENT>
-
-    // member functions
-    // those prototypes haven't been finished yet
-        LIST() {
-            head = NULL;
-            tail = NULL;
-        }
     };
     /////////////////////////////////////////////////
 

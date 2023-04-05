@@ -2,6 +2,7 @@
 #include <string>
 
 #include "import.h"
+#include "Structs.h"
 #include "helperFunctions.h"
 #include "GlobalVariables.h"
 
@@ -81,12 +82,9 @@ bool importStaffs() {
     std::getline(ifs, str);
     while (!ifs.eof()) {
         STAFF* tmp = new STAFF;
-        std::getline(ifs, tmp->user.username, ','); // get username
-
-        std::getline(ifs, tmp->user.password, ','); // get password
-
+        std::getline(ifs, tmp->user.username, ',');
+        std::getline(ifs, tmp->user.password, ',');
         std::getline(ifs, tmp->firstname, ',');
-
         std::getline(ifs, tmp->lastname);
 
         if (L_Staff.head == nullptr)
@@ -116,8 +114,6 @@ bool importClasses()
     while (!ifs.eof())
     {
         CLASS* tmp = new CLASS;
-        std::getline(ifs, str, ',');
-        tmp->yearIn = stoi(str);
 
         std::getline(ifs, str, ',');
         tmp->K = stoi(str);
@@ -127,6 +123,9 @@ bool importClasses()
 
         std::getline(ifs, str);
         tmp->No = stoi(str);
+
+        std::getline(ifs, str, ',');
+        tmp->yearIn = stoi(str);
 
         if (L_Class.head == nullptr)
         {
@@ -253,7 +252,7 @@ bool importSchoolYears() {
 
     SCHOOLYEAR newSchoolYear;
     while (!inp.eof()) {
-        // create new Node of L_SchoolYear
+        // create a new Node of L_SchoolYear
         if (L_SchoolYear.head == nullptr)   L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR>;
         else {
             L_SchoolYear.tail->next = new DLL<SCHOOLYEAR>;

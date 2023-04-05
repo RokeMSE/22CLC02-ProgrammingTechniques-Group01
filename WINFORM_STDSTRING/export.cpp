@@ -9,13 +9,12 @@ using namespace std;
 using namespace GROUP1;
 
 void exportStudents() {
-    if (!L_Student.head)
-        return;
-    GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
-    string filepath = "CSV\\STUDENT.csv";
+    string filepath = "CSV\\Student.csv";
     ofstream ofs(filepath);
     ofs << "username,password,No,studentID,firstname,lastname,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),socialID,CLASS";
+    if (!L_Student.head) return;
     ofs << '\n';
+    GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
     GROUP1::DLL<GROUP1::STUDENT*>* dum; // the node to be deleted
     while (cur) {
         // current student == cur->data;
@@ -25,8 +24,7 @@ void exportStudents() {
         ofs << DateToString(cur->data->DoB) << ',';
         ofs << cur->data -> socialID << ',';
         ofs << cur -> data -> Class -> convertToString();
-        if (cur -> next)
-            ofs << '\n';
+        if (cur -> next) ofs << '\n'; // avoid creating an empty line at the end of the file
 
         dum = cur;
         cur = cur->next;
@@ -35,23 +33,22 @@ void exportStudents() {
         delete dum;
     }
     ofs.close();
-    return;
 }
 
 void exportStaffs() {
-    if (!L_Staff.head)  return;
-    GROUP1::DLL<GROUP1::STAFF*>* cur = L_Staff.head;
-    string filepath = "CSV\\STAFF.csv";
+    string filepath = "CSV\\Staff.csv";
     ofstream ofs(filepath);
-    ofs << "username,password,firstname,lastname\n";
+    ofs << "username,password,firstname,lastname";
+    if (!L_Staff.head)  return;
+    ofs << endl;
+    GROUP1::DLL<GROUP1::STAFF*>* cur = L_Staff.head;
     GROUP1::DLL<GROUP1::STAFF*>* dum; // the node to be deleted
     while (cur)
     {
         // current staff == cur -> data;
         ofs << (cur -> data -> user).username << ',' << (cur -> data -> user).password << ',';
         ofs << cur -> data -> firstname << ',' << cur -> data -> lastname;
-        if (cur -> next)
-            ofs << '\n';
+        if (cur -> next) ofs << '\n'; // avoid creating an empty line at the end of the file
 
         dum = cur;
         cur = cur -> next;
@@ -60,51 +57,44 @@ void exportStaffs() {
         delete dum;
     }
     ofs.close();
-    return;
 }
 
 void exportClasses() {
-    if (!L_Class.head)
-        return;
-    GROUP1::DLL<GROUP1::CLASS>* cur = L_Class.head;
-    string filepath = "CSV\\CLASS.csv";
+    string filepath = "CSV\\Class.csv";
     ofstream ofs(filepath);
-    ofs << "yearIn,K,Program,No\n";
+    ofs << "K,Program,No,yearIn";
+    if (!L_Class.head) return;
+    ofs << endl;
+    GROUP1::DLL<GROUP1::CLASS>* cur = L_Class.head;
     GROUP1::DLL<GROUP1::CLASS>* dum; // the node to be deleted
     while (cur) {
         GROUP1::CLASS cla = cur->data;
-        ofs << cla.yearIn << ',' << cla.K << ',';
-        ofs << convertFromProgram(cla.program) << ',' << cla.No;
-        if (cur -> next)
-            ofs << '\n';
-
+        ofs << cla.K << ',';
+        ofs << convertFromProgram(cla.program) << ',' << cla.No << ',' << cla.yearIn;
+        if (cur -> next) ofs << '\n'; // avoid creating an empty line at the end of the file
         dum = cur;
         cur = cur -> next;
         delete dum;
     }
     ofs.close();
-    return;
 }
 
-void exportStudentsInACourse(GROUP1::COURSE* c, uint startYear) {
+void exportStudentsInACourse(string filename, COURSE* c) {
     GROUP1::DLL<GROUP1::SCOREBOARD*> *cur = c->students.head;
-    if ( !cur ) return;
-        // will not do anything if there is no student in the list of students in the course;
+    ofstream ofs(filename);
 
-    ofstream ofs("CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/" + c->ID + ".csv");
-
-    ofs << "StudentID,othermark,midtermMark,finalMark,totalMark" << endl;         // this is title line
+    ofs << "StudentID,othermark,midtermMark,finalMark,totalMark"; // this is title line
+    if (cur)    ofs << endl;
     
     GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp; // the node to be deleted
-    while (cur != nullptr)
+    while (cur)
     {
         ofs << cur->data->student->studentID <<',' << cur->data->otherMark << ',' << cur->data->midtermMark << ',' << cur->data->finalMark << ',' << cur->data->totalMark;
-        if (cur -> next)
-            ofs << '\n';
+        if (cur -> next) ofs << '\n'; // avoid creating an empty line at the end of the file
         tmp = cur;
         cur = cur -> next;
-        delete tmp->data;   // delete node->data first
-        delete tmp;         // delete a node of the COURSE::students list
+        delete tmp->data;   // delete node->data [SCOREBOARD*] first
+        delete tmp;         // delete a node of the COURSE::students list [DLL<SCOREBOARD*>*]
     }
     ofs.close();
 }
@@ -113,50 +103,48 @@ void exportCoursesInASemester(std::string filename, GROUP1::SEMESTER* sem, uint 
     GROUP1::DLL<GROUP1::COURSE*>* cur = sem->course.head;
     ofstream out(filename);
     
-    GROUP1::DLL<GROUP1::COURSE*>* temp; // node to be deleted
-    out << "ID,Name,Teacher,Credit,Max Students,Day,Session"; 
+    GROUP1::DLL<GROUP1::COURSE*>* temp; // the node to be deleted
+    out << "ID,Name,Teacher,Credit,Max Students,Day,Session, file containing students in the course"; 
+    if (cur)    out << endl;
     while(cur)
     {
-        out << cur->data->ID << ',' << cur->data->name << ',' << cur->data->teacher << ',' << cur->data->credit << ',' << cur->data->maxStudents << ',' << cur->data->day << ',' << cur->data->session;
-        out << ',' << cur->data->ID + ".csv";
-        if (cur -> next)
-            out << '\n';
+        string file = "CSV/SemInSchoolYear/CourseInASemester/StudentsInCourse/" + to_string(startYear) + "_sem" + to_string(sem->No) + "_course" + cur->data->ID + ".csv";
+        out << cur->data->ID << ',' << cur->data->name << ',' << cur->data->teacher << ',' << cur->data->credit << ',' << cur->data->maxStudents << ',' << convertFromWeekDay(cur->data->day) << ',' << convertFromSession(cur->data->session);
+        out << ',' << file;
+        if (cur -> next) out << '\n'; // avoid creating an empty line at the end of the file
 
-        exportStudentsInACourse(cur->data, startYear);
+        exportStudentsInACourse(file, cur->data);
         
         temp = cur; 
         cur = cur->next;
-        delete temp->data;
-        delete temp;
+        delete temp->data;  // delete [COURSE*]
+        delete temp;        // delete [DLL<COURSE*>*]
     }
-
     out.close();
 }
 
 void exportASemesterInASchoolYear(std::string filename, GROUP1::SEMESTER* sem, uint startYear) {
-    if ( !sem )
-        return;
-
-    // open the file that has been created
     ofstream out(filename, std::ofstream::app); // append
+    if (sem->No == 1) out << "No,startdate,enddate,file containing all courses of semester"; // title line when exporting sem1 of the schoolyear
+    if ( !sem ) return;
     
-    string file = "CSV/SemInSchoolYear/" + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv";
-    out << sem->No << ',' << DateToString(sem->startdate) << ',' << DateToString(sem->enddate) << '\n';
+    out << endl; // avoid creating an empty line at the end of the file
+    string file = "CSV/SemInSchoolYear/CourseInASemester/" + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv";
+    out << sem->No << ',' << DateToString(sem->startdate) << ',' << DateToString(sem->enddate) << ',' << file;
     out.close();
     exportCoursesInASemester(file, sem, startYear);
 }
 
 void exportSchoolYears() {
     GROUP1::DLL<GROUP1::SCHOOLYEAR>* cur = L_SchoolYear.head;
-    if ( !cur ) return; // will not do anything if there is no school year => no semester => no course
-
     // since then, list.tail != nullptr
     ofstream out("CSV/SchoolYear.csv");
-    out << "yearbegin,yearend,semester file,sem1,sem2,sem3" << endl;    // title line
-
+    out << "beginning year,end year,file containing semesters,sem1,sem2,sem3";    // title line
+    if (cur)    out << endl;
     string file;
     GROUP1::DLL<GROUP1::SCHOOLYEAR>* dummy; // the node to be deleted
-    while ( cur != L_SchoolYear.tail->next ) {
+    while ( cur ) {
+        // we need to loop until we have exported all school year => loop 'til cur == nullptr
         out << cur->data.begin << ',';
         out << cur->data.end << ',';
 
@@ -165,10 +153,11 @@ void exportSchoolYears() {
 
         out << ((cur->data.sem1)? 1:0) << ',';
         out << ((cur->data.sem2)? 1:0) << ',';
-        out << ((cur->data.sem3)? 1:0) << endl;
+        out << ((cur->data.sem3) ? 1 : 0);
+        if (cur->next)    out << endl; // avoid creating an empty line at the end of the file
 
         // create an empty file
-        ofstream out(file); // append
+        ofstream out(file);
         out.close();
 
         exportASemesterInASchoolYear(file, cur->data.sem1, 1);
@@ -181,7 +170,7 @@ void exportSchoolYears() {
 
         dummy = cur;
         cur = cur->next;
-        delete dummy;
+        delete dummy; // delete a node of school year
     }
     out.close();
 }

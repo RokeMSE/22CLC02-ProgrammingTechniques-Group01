@@ -51,4 +51,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CSV\Class.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CSV\SchoolYear.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CSV\Staff.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CSV\Student.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
