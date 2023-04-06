@@ -10,6 +10,7 @@ struct SEMESTER {
     // member functions
     bool add (); // choose school year
     void addCourse (); // add courses to list COURSE::course
+    bool addCourses (string filename);
 };
 
 struct SCHOOLYEAR {

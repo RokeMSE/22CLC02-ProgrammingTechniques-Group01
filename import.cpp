@@ -5,17 +5,19 @@ using namespace std;
 
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
-    if (!ifs.is_open()) return 0;
+    if (!ifs.is_open())
+        return 0;
     string str;
     getline(ifs, str);  // skip title line
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
+        tmp->user = new USER;
         getline(ifs, str, ','); // get username
 
-        tmp->user.username = str;
+        tmp->user->username = str;
         
         getline(ifs, str, ','); // get password
-        tmp->user.password = str;
+        tmp->user->username = str;
 
         getline(ifs, str, ','); // get No
         tmp->No = stoi(str);
@@ -76,9 +78,10 @@ bool importStaffs() {
     getline(ifs, str);
     while (!ifs.eof()) {
         STAFF* tmp = new STAFF;
-        getline(ifs, tmp->user.username, ','); // get username
+        tmp->user = new USER;
+        getline(ifs, tmp->user->username, ','); // get username
 
-        getline(ifs, tmp->user.password, ','); // get password
+        getline(ifs, tmp->user->password, ','); // get password
 
         getline(ifs, tmp->firstname, ',');
 
@@ -105,28 +108,29 @@ bool importClasses()
 {
     ifstream ifs("CSV/Class.csv");
     if (ifs.is_open() == false)
-        return false;
+        return false; 
     string str;
-    getline(ifs, str);
+    std::getline(ifs, str);
     while (!ifs.eof())
     {
         CLASS* tmp = new CLASS;
-        getline(ifs, str, ',');
-        tmp->yearIn = stoi(str);
 
-        getline(ifs, str, ',');
+        std::getline(ifs, str, ',');
         tmp->K = stoi(str);
 
-        getline(ifs, str, ',');
+        std::getline(ifs, str, ',');
         tmp->program = convertToProgram(str);
 
-        getline(ifs, str);
+        std::getline(ifs, str,',');
         tmp->No = stoi(str);
+
+        std::getline(ifs, str);
+        tmp->yearIn = stoi(str);
 
         if (L_Class.head == nullptr)
         {
             L_Class.head = L_Class.tail = new DLL<CLASS>;
-            L_Class.head -> data = *tmp;
+            L_Class.head->data = *tmp;
         }
         else
         {
@@ -141,11 +145,14 @@ bool importClasses()
 }
 
 
-bool importStudentsInACourse(std::string filename, COURSE* c) {
+bool importStudentsInACourse(std::string filename, COURSE &c) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
+    {
+        ifs.close();
         return false;
+    }
     
     string str;
     getline(ifs,str);   /// skip the title line;
@@ -164,45 +171,43 @@ bool importStudentsInACourse(std::string filename, COURSE* c) {
         
         s->student = stu->data;
         /// add this student with his/her scoreboard to the list of student in the course
-        c->add1Student(s);
+        c.add1Student(s);
     }
     ifs.close();
     return true;
 }
 
-bool importCourseInSemester(std::string filename, SEMESTER &a)
+bool importCoursesInASemester(std::string filename, SEMESTER* &a)
 {
     ifstream inp(filename);
 
     if(!inp.is_open())
+    {
+        inp.close();
         return false;
+    }
 
-    DLL<COURSE*>* cur;
-    a.course.head = a.course.tail = cur;
-    string* temp = new string;
-    getline(inp, *temp);
-    delete temp;
+    string temp ;
+    getline(inp, temp);     //skip title line
+
     while(!inp.eof())
     {
-        cur = new DLL<COURSE*>;
-        getline(inp, (*cur->data).ID , ',');
-        getline(inp, (*cur->data).name, ',');
-        getline(inp, (*cur->data).teacher, ',');
-        string* temp = new string;
-        getline(inp, *temp, ',');
-        (*cur->data).credit = stoi(*temp);
-        getline(inp, *temp, ',');
-        (*cur->data).maxStudents = stoi(*temp);
-        getline(inp, *temp, ',');
-        (*cur -> data).day = convertToWeekday(*temp);
-        getline(inp, *temp, ',');
-        (*cur -> data).session = convertToSession(*temp);
-        importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + (*cur->data).ID + ".csv", *cur->data);
-        delete temp;
-        cur -> next = new DLL<COURSE*>;
-        cur -> next -> prev = cur;
+        COURSE* cur = new COURSE;
+        getline(inp, cur->ID , ',');
+        getline(inp, cur->name, ',');
+        getline(inp, cur->teacher, ',');
+        getline(inp, temp, ',');
+        cur->credit = stoi(temp);
+        getline(inp, temp, ',');
+        cur->maxStudents = stoi(temp);
+        getline(inp, temp, ',');
+        cur->day = convertToWeekday(temp);
+        getline(inp, temp, ',');
+        cur->session = convertToSession(temp);
+        getline(inp, temp);
 
-        cur = cur -> next;
+        importStudentsInACourse(temp,*cur);
+
     }
     inp.close();
     return true;
@@ -212,7 +217,11 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     newSem = new SEMESTER;
     
     ifstream inp(filename);
-    if (!inp.is_open())  return 0;
+    if (!inp.is_open())
+    {
+        inp.close();
+        return 0;
+    }  
 
     string tmp;
     getline(inp, tmp);  // skip title line
@@ -238,7 +247,11 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
 bool importSchoolYears() {
     L_SchoolYear.head = L_SchoolYear.tail = nullptr;
     ifstream inp("CSV/SchoolYear");
-    if (!inp.is_open()) return 0;
+    if (!inp.is_open())
+    {
+        inp.close();
+        return 0;
+    }
 
     string temp;
     getline(inp, temp); // skip title line

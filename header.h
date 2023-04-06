@@ -42,7 +42,7 @@ LIST<DLL, CLASS> L_Class;
         bool importClasses();
 
         bool importStudentsInACourse(std::string filename, COURSE &c);
-        bool importCoursesInASemester(std::string filename, SEMESTER* sem);
+        bool importCoursesInASemester(std::string filename, SEMESTER* &sem);
         bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem);
         bool importSchoolYears();
     /////////////////////////////////
@@ -62,20 +62,20 @@ LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
         #include "import.cpp"
         #include "export.cpp"
-        // #include "StructsImplementation/enum.cpp"
-        // #include "StructsImplementation/LIST.cpp"
+        #include "StructsImplementation/enum.cpp"
+        #include "StructsImplementation/LIST.cpp"
 
-        // #include "StructsImplementation/Stack.cpp"
-        // #include "StructsImplementation/Queue.cpp"
+        #include "StructsImplementation/Stack.cpp"
+        #include "StructsImplementation/Queue.cpp"
 
-        // #include "StructsImplementation/DATE.cpp"
-        // #include "StructsImplementation/SCOREBOARD.cpp"
-        // #include "StructsImplementation/COURSE.cpp"
-        // #include "StructsImplementation/SCHOOLYEAR.cpp"
-        // #include "StructsImplementation/CLASS.cpp"
-        // #include "StructsImplementation/STUDENT.cpp"
-        // #include "StructsImplementation/STAFF.cpp"
-        // #include "StructsImplementation/USER.cpp"
+        #include "StructsImplementation/DATE.cpp"
+        #include "StructsImplementation/SCOREBOARD.cpp"
+        #include "StructsImplementation/COURSE.cpp"
+        #include "StructsImplementation/SCHOOLYEAR.cpp"
+        #include "StructsImplementation/CLASS.cpp"
+        #include "StructsImplementation/STUDENT.cpp"
+        #include "StructsImplementation/STAFF.cpp"
+        #include "StructsImplementation/USER.cpp"
 // GUI
 // #define WIN32_LEAN_AND_MEAN
 // #include <Windows.h>
