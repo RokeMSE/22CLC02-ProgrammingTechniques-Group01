@@ -38,8 +38,8 @@ void COURSE::add1Student(SCOREBOARD* student) {
 
 // enum
 extern Program convertToProgram(string str) {
-    if (str == "APCS")         return APCS;
-    else if (str == "CLC")    return CLC;
+    if (str == "APCS")          return APCS;
+    else if (str == "CLC")      return CLC;
     else                        return VP;
 }
 

@@ -1,7 +1,2 @@
-yearbegin,yearend,semester file,sem1,sem2,sem3
-2017,2018,CSV/SemInSchoolYear/2017_2018.csv,1,0,1
-2018,2019,CSV/SemInSchoolYear/2018_2019.csv,1,0,1
-2019,2020,CSV/SemInSchoolYear/2019_2020.csv,1,1,1
-2020,2021,CSV/SemInSchoolYear/2020_2021.csv,1,0,1
-2021,2022,CSV/SemInSchoolYear/2021_2022.csv,1,1,0
-2022,2023,CSV/SemInSchoolYear/2022_2023.csv,0,1,0
+beginning year,end year,file containing semesters,sem1,sem2,sem3
+2017,2018,CSV/SemInSchoolYear/2017_2018.csv,1,0,0

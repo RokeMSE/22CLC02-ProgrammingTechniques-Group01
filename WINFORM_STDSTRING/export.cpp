@@ -28,7 +28,7 @@ void exportStudents() {
 
         dum = cur;
         cur = cur->next;
-        delete (dum->data)->Class;
+        //delete (dum->data)->Class;
         delete dum->data;
         delete dum;
     }
@@ -124,9 +124,10 @@ void exportCoursesInASemester(std::string filename, GROUP1::SEMESTER* sem, uint 
 }
 
 void exportASemesterInASchoolYear(std::string filename, GROUP1::SEMESTER* sem, uint startYear) {
+    if (!sem) return;
     ofstream out(filename, std::ofstream::app); // append
     if (sem->No == 1) out << "No,startdate,enddate,file containing all courses of semester"; // title line when exporting sem1 of the schoolyear
-    if ( !sem ) return;
+    
     
     out << endl; // avoid creating an empty line at the end of the file
     string file = "CSV/SemInSchoolYear/CourseInASemester/" + to_string(startYear) + "_sem" + to_string(sem->No) + ".csv";
@@ -140,7 +141,7 @@ void exportSchoolYears() {
     // since then, list.tail != nullptr
     ofstream out("CSV/SchoolYear.csv");
     out << "beginning year,end year,file containing semesters,sem1,sem2,sem3";    // title line
-    if (cur)    out << endl;
+    if (cur) out << endl;
     string file;
     GROUP1::DLL<GROUP1::SCHOOLYEAR>* dummy; // the node to be deleted
     while ( cur ) {
@@ -154,11 +155,11 @@ void exportSchoolYears() {
         out << ((cur->data.sem1)? 1:0) << ',';
         out << ((cur->data.sem2)? 1:0) << ',';
         out << ((cur->data.sem3) ? 1 : 0);
-        if (cur->next)    out << endl; // avoid creating an empty line at the end of the file
+        if (cur->next) out << endl; // avoid creating an empty line at the end of the file
 
         // create an empty file
-        ofstream out(file);
-        out.close();
+        //ofstream out(file);
+        //out.close();
 
         exportASemesterInASchoolYear(file, cur->data.sem1, 1);
         exportASemesterInASchoolYear(file, cur->data.sem2, 2);

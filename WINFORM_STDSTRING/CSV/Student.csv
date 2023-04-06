@@ -1,4 +1,4 @@
-username,password,No,studentID,firstname,lastname,gender,DOB,socialID,CLASS
+username,password,No,studentID,firstname,lastname,gender(0-male/1-female),DateofBirth(mm/dd/yyyy),socialID,CLASS
 21140014,an562@KHTN,1,21140014,Huynh Dinh Gia,An,0,11/18/2002,75304018562,22CLC2
 21140018,anh563@KHTN,2,21140018,Quan Vu Hoang,Anh,0,01/01/2002,75304018563,22CLC2
 21140019,anh564@KHTN,3,21140019,Nguyen Truong Ngoc,Anh,1,09/07/2003,75304018564,22CLC2

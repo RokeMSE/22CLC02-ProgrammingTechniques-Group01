@@ -1,4 +1,5 @@
 #include "Login.h"
+#include <string>
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -8,23 +9,37 @@ using namespace System::Windows::Forms;
 void main(cli::array<System::String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-//    bool imp;
-//    imp = importClasses();
-//    if (imp == 0) goto _export;
-//
-//    imp = importStudents();
-//    if (imp == 0) goto _export;
-//
-//    imp = importStaffs();
-//    if (imp == 0) goto _export;
-//
-//    imp = importSchoolYears();
-//    if (imp == 0) goto _export;
-//
-//_export:
-//    MessageBox::Show("There is an error opening .csv file!");
-//    // call `export` functions
+    bool imp;
+    int i = 0;
+    imp = importClasses();
+    if (!imp) goto _export;
+    //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(i)));
+    i++;
+    imp = importStudents();
+    MessageBox::Show(msclr::interop::marshal_as<System::String^>(L_Student.head->data->firstname));
+    if (!imp) goto _export;
+    //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(i)));
+    i++;
+
+    imp = importStaffs();
+    if (!imp) goto _export;
+    //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(i)));
+
+    imp = importSchoolYears();
+    if (!imp) goto _export;
+    else goto _xyz;
+
+_export:
+    MessageBox::Show("There is an error opening .csv file!");
+    // call `export` functions
+    exportSchoolYears();
+    exportClasses();
+    exportStudents();
+    exportStaffs();
+    return;
+_xyz:
     CMS::Login form;
     Application::Run(% form);
+
 }
 // 

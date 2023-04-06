@@ -144,6 +144,9 @@
   <ItemGroup>
     <None Include="CSV\Class.csv" />
     <None Include="CSV\SchoolYear.csv" />
+    <None Include="CSV\SemInSchoolYear\2017_2018.csv" />
+    <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv" />
+    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\12344.csv" />
     <None Include="CSV\Staff.csv" />
     <None Include="CSV\Student.csv" />
   </ItemGroup>

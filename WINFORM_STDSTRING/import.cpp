@@ -1,10 +1,17 @@
 ﻿#include <fstream>
 #include <string>
+#include <msclr/marshal_cppstd.h>
 
 #include "import.h"
 #include "Structs.h"
 #include "helperFunctions.h"
 #include "GlobalVariables.h"
+using namespace System;
+using namespace System::ComponentModel;
+using namespace System::Collections;
+using namespace System::Windows::Forms;
+using namespace System::Data;
+using namespace System::Drawing;
 
 using namespace std;
 using namespace GROUP1;
@@ -75,7 +82,7 @@ bool importStudents() {
 }
 
 bool importStaffs() {
-    ifstream ifs("CSV/Staff.csv");
+    ifstream ifs("CSV\\Staff.csv");
     if (ifs.is_open() == false)
         return false;
     string str;
@@ -121,10 +128,10 @@ bool importClasses()
         std::getline(ifs, str, ',');
         tmp->program = convertToProgram(str);
 
-        std::getline(ifs, str);
+        std::getline(ifs, str, ',');
         tmp->No = stoi(str);
 
-        std::getline(ifs, str, ',');
+        std::getline(ifs, str);
         tmp->yearIn = stoi(str);
 
         if (L_Class.head == nullptr)
@@ -200,9 +207,10 @@ bool importCoursesInASemester(std::string filename, SEMESTER* a)
         cur->data->maxStudents = stoi(temp);
         std::getline(inp, temp, ',');
         cur->data->day = convertToWeekday(temp);
-        std::getline(inp, temp, ',');
+        std::getline(inp, temp);
         cur->data->session = convertToSession(temp);
         bool imp = importStudentsInACourse("CSV/SemInSchoolYear/CourseInSemester/" + (cur->data)->ID + ".csv", cur->data);
+        if (importStudentsInACourse) MessageBox::Show(msclr::interop::marshal_as<System::String^>("CSV/SemInSchoolYear/CourseInSemester/" + (cur->data)->ID + ".csv"));
         cur->next = new DLL<COURSE*>;
         cur->next->prev = cur;
 
@@ -219,8 +227,9 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     newSem = new SEMESTER;
 
     ifstream inp(filename);
-    if (!inp.is_open())  return 0;
-
+    if (!inp.is_open())
+        return 0;
+    
     string tmp;
     std::getline(inp, tmp);  // skip title line
 
@@ -239,38 +248,43 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
     inp.close();
 
     bool importCourseInSem = importCoursesInASemester(tmp, newSem);
+    if (importCourseInSem) MessageBox::Show(msclr::interop::marshal_as<System::String^>(tmp + "__sem1__courses"));
     return 1;
 }
 
 bool importSchoolYears() {
     L_SchoolYear.head = L_SchoolYear.tail = nullptr;
-    ifstream inp("CSV/SchoolYear");
+    ifstream inp("CSV/SchoolYear.csv");
     if (!inp.is_open()) return 0;
 
     string temp;
     std::getline(inp, temp); // skip title line
 
-    SCHOOLYEAR newSchoolYear;
+    
     while (!inp.eof()) {
+        //SCHOOLYEAR newSchoolYear;
         // create a new Node of L_SchoolYear
-        if (L_SchoolYear.head == nullptr)   L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR>;
+        if (L_SchoolYear.head == nullptr)
+        {
+            L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR>;
+            //L_SchoolYear.head -> data = newSchoolYear;
+        }
         else {
             L_SchoolYear.tail->next = new DLL<SCHOOLYEAR>;
-            L_SchoolYear.tail->next->prev = L_SchoolYear.tail->next;
+            L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
             L_SchoolYear.tail = L_SchoolYear.tail->next;
         }
-        L_SchoolYear.tail->data = newSchoolYear;
-        L_SchoolYear.tail->next = nullptr;
+        //L_SchoolYear.tail->data = newSchoolYear;
         ////////////////
 
         // year begin
         std::getline(inp, temp, ',');
-        newSchoolYear.begin = stoi(temp);
+        L_SchoolYear.tail->data.begin = stoi(temp);
         ////////////////
 
         // year end
         std::getline(inp, temp, ',');
-        newSchoolYear.end = stoi(temp);
+        L_SchoolYear.tail->data.end = stoi(temp);
         ////////////////
 
         // get name of file that contains all semesters' info
@@ -282,8 +296,10 @@ bool importSchoolYears() {
 
         // sem1
         std::getline(inp, temp, ',');    // sem1's condition
-        if (temp != "1") continue;// if sem1 is null => all the following sems are null
+        if (temp != "1")
+            continue;// if sem1 is null => all the following sems are null
         importSemesterInSchoolYear = importASemesterInASchoolYear(filenameImportSemester, L_SchoolYear.tail->data.sem1, 1);
+        if (!importSemesterInSchoolYear) MessageBox::Show(msclr::interop::marshal_as<System::String^>(filenameImportSemester + "__sem1"));
         ////////////////
 
         // sem2
@@ -293,10 +309,11 @@ bool importSchoolYears() {
         ////////////////
 
         // sem3
-        std::getline(inp, temp, ',');    // sem3's condition
+        std::getline(inp, temp);    // sem3's condition
         if (temp != "1") continue;
         importSemesterInSchoolYear = importASemesterInASchoolYear(filenameImportSemester, L_SchoolYear.tail->data.sem3, 3);
         ////////////////
+        MessageBox::Show(msclr::interop::marshal_as<System::String^>(filenameImportSemester + "__sem1"));
     }
     inp.close();
     return 1;
