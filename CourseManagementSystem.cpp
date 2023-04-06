@@ -8,9 +8,9 @@ int main() {
     bool notExit = 1;
     //////////////////////////////////////////////////////
 
+    bool _importClasses = importClasses();
     bool _importStudents = importStudents();
     bool _importStaffs = importStaffs();
-    bool _importClasses = importClasses();
     // bool _importSchoolYears = importSchoolYears();
 
     //////////////////////////////////////////////////////
@@ -30,7 +30,7 @@ int main() {
         // Main menu
         if (staff == nullptr && stu == nullptr)
             // this user is not exist
-            notExit = MenuResetPassword(L_Student, L_Staff);
+            notExit = MenuResetPassword();
         else
             if ( staff == nullptr )
                 // this user is a student

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 
 template <typename Data_Type>
@@ -11,7 +13,7 @@ Data_Type* authenticateUSER (LIST<DLL, Data_Type*> list, USER* val) {
     return nullptr;
 }
 
-bool MenuResetPassword(LIST<DLL, STUDENT*> &L_stu, LIST<DLL, STAFF*> &L_sta)
+bool MenuResetPassword()
 {
 
     cout << "ERROR: User name or Password is not correct!" << endl;
@@ -33,8 +35,8 @@ bool MenuResetPassword(LIST<DLL, STUDENT*> &L_stu, LIST<DLL, STAFF*> &L_sta)
                         string str,str1,str2;
                         cin >> str;
 
-                        DLL<STUDENT*> *cur1 = L_stu.head;
-                        DLL<STAFF*> *cur2 = L_sta.head;
+                        DLL<STUDENT*> *cur1 = L_Student.head;
+                        DLL<STAFF*> *cur2 = L_Staff.head;
                         while (cur1 != nullptr && cur1->data->user->username != str)
                             cur1 = cur1 -> next;
                         while (cur2 != nullptr && cur2->data->user->username != str)

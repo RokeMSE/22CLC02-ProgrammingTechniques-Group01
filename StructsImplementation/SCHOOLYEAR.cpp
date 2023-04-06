@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 using namespace std;
 #include <iostream>
@@ -77,6 +79,41 @@ void SEMESTER::addCourse () {
         course.tail->data = tmp;
         course.tail->next = nullptr;
     // }
+}
+
+bool SEMESTER::addCourses(string filename){
+    ////ID, name, teacher name, number of credits, the maximum number of students in the course (default 50), day of the week, and the session that the course will be performed (MON / TUE / WED / THU / FRI / SAT, S1 (07:30), S2 (09:30), S3(13:30) and S4 (15:30)))
+    ifstream ifs;
+    ifs.open(filename);
+    if (ifs.is_open() == false)
+    {
+        ifs.close();
+        return false;
+    }
+
+    string str;
+    getline(cin,str);   // skip title line;
+    while (!ifs.eof())
+    {
+        COURSE* tmp = new COURSE;
+
+        getline(cin, tmp->ID, ',');
+        getline(cin, tmp->name, ',');
+        getline(cin, tmp->teacher, ',');
+        getline(cin, str, ',');
+        tmp->credit = stoi(str);
+        // getline(cin, str, ',');
+        // tmp->maxStudents = stoi(str);
+        getline(cin,str, ',');
+        tmp->day = convertToWeekday(str);
+        getline(cin,str, ',');
+        tmp->session = convertToSession(str);
+
+        add_val(course,tmp);
+    }
+
+    ifs.close();
+    return true;
 }
 
 /*

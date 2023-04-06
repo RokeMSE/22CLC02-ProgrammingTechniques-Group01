@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 
 bool MenuStudent(STUDENT* current) {
