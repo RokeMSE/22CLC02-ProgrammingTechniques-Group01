@@ -11,6 +11,8 @@ void SCHOOLYEAR::create() {
     std::cin >> yearBegin;
     (*this).begin = yearBegin;
     (*this).end = yearBegin + 1;
+
+    g_currentSchoolYear = *this;
 }
 
 bool SEMESTER::add () {
@@ -54,31 +56,38 @@ bool SEMESTER::add () {
 }
 
 void SEMESTER::addCourse () {
-    // call this function when users choose this task
 
-    COURSE* tmp = new COURSE;
-    // get tmp.ID
-    // get tmp.name
-    // get tmp.teacher
-    // get tmp.credit
-    // get tmp.maxStudents
-    // get tmp.day
-    // get tmp.session
+    int choice=1;
+    while (choice)
+    {
+        COURSE* tmp = new COURSE;
+        cout << "Enter ID of course: ";
+        getline(cin,tmp->ID);
+        cout << "Enter name of course: ";
+        getline(cin,tmp->name);
+        cout << "Enter name of teacher: ";
+        getline(cin,tmp->teacher);
+        cout << "Enter number of credit: ";
+        cin >> tmp->credit;
+        // cout << "Enter the maximum number of students in the course (default 50): ";
+        // cin >> tmp->maxStudents;
+        cin.ignore();
+        string str;
+        cout << "Enter day of the week that the course will be performed: ";
+        getline(cin,str);
+        tmp->day = convertToWeekday(str);
+        cout << "Enter the session that the course will be performed: ";
+        getline(cin, str);
+        tmp->session = convertToSession(str);
 
-    // when button "ADD" is clicked
-    // if ( button_add is clicked ) {
-        if ( !course.head ) {
-            course.head = new DLL<COURSE*>;
-            course.tail = course.head;
-            course.head->prev = nullptr;
-        } else {
-            course.tail->next = new DLL<COURSE*>;
-            course.tail->next->prev = course.tail; 
-            course.tail = course.tail->next;
-        }
-        course.tail->data = tmp;
-        course.tail->next = nullptr;
-    // }
+        add_val<COURSE*>(course,tmp);
+
+        cout << "Add course successfully!" << endl;
+        cout << "If you wanna continue, enter 1. Otherwise, enter 0." << endl;
+        cout << "=> Your choice: ";
+        cin >> choice;
+        cin.ignore();
+    }
 }
 
 bool SEMESTER::addCourses(string filename){
@@ -102,8 +111,8 @@ bool SEMESTER::addCourses(string filename){
         getline(cin, tmp->teacher, ',');
         getline(cin, str, ',');
         tmp->credit = stoi(str);
-        // getline(cin, str, ',');
-        // tmp->maxStudents = stoi(str);
+        getline(cin, str, ',');
+        tmp->maxStudents = stoi(str);
         getline(cin,str, ',');
         tmp->day = convertToWeekday(str);
         getline(cin,str, ',');

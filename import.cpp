@@ -17,7 +17,7 @@ bool importStudents() {
         tmp->user->username = str;
         
         getline(ifs, str, ','); // get password
-        tmp->user->username = str;
+        tmp->user->password = str;
 
         getline(ifs, str, ','); // get No
         tmp->No = stoi(str);
@@ -39,16 +39,20 @@ bool importStudents() {
 
         getline(ifs, str, ',');
         tmp->socialID = str;
-    
+
         getline(ifs, str);  // get class
-        DLL<CLASS>* nodeCls = L_Class.head;
-        while ( nodeCls ) {
-            if (nodeCls->data.convertToString() == str) {
-                tmp->Class = &(nodeCls->data);
-                break;
-            }
-            nodeCls = nodeCls->next;
-        }
+        tmp->Class = new CLASS;
+        *(tmp->Class) = convertToClass(str);
+    
+        // getline(ifs, str);  // get class
+        // DLL<CLASS>* nodeCls = L_Class.head;
+        // while ( nodeCls ) {
+        //     if (nodeCls->data.convertToString() == str) {
+        //         tmp->Class = &(nodeCls->data);
+        //         break;
+        //     }
+        //     nodeCls = nodeCls->next;
+        // }
 
         // if ( !nodeCls ) MessageBox::Show("Error");
 
@@ -149,10 +153,7 @@ bool importStudentsInACourse(std::string filename, COURSE &c) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
-    {
-        ifs.close();
         return false;
-    }
     
     string str;
     getline(ifs,str);   /// skip the title line;
@@ -182,10 +183,7 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a)
     ifstream inp(filename);
 
     if(!inp.is_open())
-    {
-        inp.close();
         return false;
-    }
 
     string temp ;
     getline(inp, temp);     //skip title line
@@ -205,6 +203,8 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a)
         getline(inp, temp, ',');
         cur->session = convertToSession(temp);
         getline(inp, temp);
+
+        add_val<COURSE*>(a->course,cur);
 
         importStudentsInACourse(temp,*cur);
 

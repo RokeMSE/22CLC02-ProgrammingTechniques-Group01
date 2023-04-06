@@ -8,9 +8,9 @@ int main() {
     bool notExit = 1;
     //////////////////////////////////////////////////////
 
-    bool _importClasses = importClasses();
     bool _importStudents = importStudents();
     bool _importStaffs = importStaffs();
+    bool _importClasses = importClasses();
     // bool _importSchoolYears = importSchoolYears();
 
     //////////////////////////////////////////////////////
