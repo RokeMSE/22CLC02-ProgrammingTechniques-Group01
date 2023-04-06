@@ -64,5 +64,14 @@
     <None Include="CSV\Student.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="CSV\SemInSchoolYear\2017_2018.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

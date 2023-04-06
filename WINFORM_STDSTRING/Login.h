@@ -75,6 +75,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->txt_username = (gcnew System::Windows::Forms::TextBox());
 			this->btn_signin = (gcnew System::Windows::Forms::Button());
 			this->lbl_username = (gcnew System::Windows::Forms::Label());
@@ -85,61 +86,50 @@ namespace CMS {
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(149, 55);
+			this->txt_username->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->txt_username->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->txt_username, L"txt_username");
 			this->txt_username->Name = L"txt_username";
-			this->txt_username->Size = System::Drawing::Size(180, 26);
-			this->txt_username->TabIndex = 0;
 			// 
 			// btn_signin
 			// 
-			this->btn_signin->Location = System::Drawing::Point(149, 150);
+			resources->ApplyResources(this->btn_signin, L"btn_signin");
 			this->btn_signin->Name = L"btn_signin";
-			this->btn_signin->Size = System::Drawing::Size(87, 38);
-			this->btn_signin->TabIndex = 1;
-			this->btn_signin->Text = L"Sign In";
 			this->btn_signin->UseVisualStyleBackColor = true;
 			this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
 			// 
 			// lbl_username
 			// 
-			this->lbl_username->AutoSize = true;
-			this->lbl_username->Location = System::Drawing::Point(42, 61);
+			resources->ApplyResources(this->lbl_username, L"lbl_username");
+			this->lbl_username->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_username->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->lbl_username->Name = L"lbl_username";
-			this->lbl_username->Size = System::Drawing::Size(83, 20);
-			this->lbl_username->TabIndex = 2;
-			this->lbl_username->Text = L"Username";
 			// 
 			// lbl_password
 			// 
-			this->lbl_password->AutoSize = true;
-			this->lbl_password->Location = System::Drawing::Point(42, 101);
+			resources->ApplyResources(this->lbl_password, L"lbl_password");
+			this->lbl_password->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_password->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->lbl_password->Name = L"lbl_password";
-			this->lbl_password->Size = System::Drawing::Size(78, 20);
-			this->lbl_password->TabIndex = 3;
-			this->lbl_password->Text = L"Password";
 			// 
 			// txt_password
 			// 
-			this->txt_password->Location = System::Drawing::Point(149, 101);
+			resources->ApplyResources(this->txt_password, L"txt_password");
 			this->txt_password->Name = L"txt_password";
-			this->txt_password->PasswordChar = '~';
-			this->txt_password->Size = System::Drawing::Size(180, 26);
-			this->txt_password->TabIndex = 4;
 			this->txt_password->UseSystemPasswordChar = true;
 			// 
 			// btn_exit
 			// 
-			this->btn_exit->Location = System::Drawing::Point(242, 150);
+			resources->ApplyResources(this->btn_exit, L"btn_exit");
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(87, 38);
-			this->btn_exit->TabIndex = 5;
-			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = true;
 			this->btn_exit->Click += gcnew System::EventHandler(this, &Login::btn_exit_Click);
 			// 
 			// Login
 			// 
-			this->ClientSize = System::Drawing::Size(389, 226);
+			this->AllowDrop = true;
+			resources->ApplyResources(this, L"$this");
 			this->Controls->Add(this->btn_exit);
 			this->Controls->Add(this->txt_password);
 			this->Controls->Add(this->lbl_password);
@@ -154,31 +144,42 @@ namespace CMS {
 		}
 #pragma endregion
 
-private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
-	GROUP1::USER input;
-	input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
-	input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
-	std::string str = input.username + " " + input.password;
-	//MessageBox::Show(msclr::interop::marshal_as<System::String>(str));
-	// inspect L_Student first
-	//GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
-	//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
-	if (input.username == "admin") {// cur->data->user.username
-		if (input.password == "12345") {//cur->data->user.password
-			MessageBox::Show("Successfully logged in!");
-			this->Close();
-			// call an another form
-			MessageBox::Show("ANOTHER FORM");
-			Application::Exit();
+	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
+		GROUP1::USER input;
+		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
+		input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
+		std::string str = input.username + " " + input.password;
+		MessageBox::Show(msclr::interop::marshal_as<System::String^>(str));
+		// inspect L_Student first
+		GROUP1::DLL<GROUP1::STUDENT*>* cur = L_Student.head;
+		//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
+		while (cur) {
+			if (input.username == cur->data->user.username) {// cur->data->user.username
+				if (input.password == cur->data->user.password) {//cur->data->user.password
+					MessageBox::Show("Successfully logged in!");
+					//this->Close();
+					// call an another form
+					MessageBox::Show("ANOTHER FORM");
+					exportSchoolYears();
+					exportStudents();
+					exportClasses();
+					exportStaffs();
+					Application::Exit();
+				}
+				else {
+					MessageBox::Show("Wrong password!");
+					break;
+				}
+			}
+			cur = cur->next;
 		}
-		else {
-			MessageBox::Show("Wrong password!");
-		}
-	} else
-		MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
-}
+		if (!cur)	MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+	}
 		private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
-			// deallocate first
+			exportSchoolYears();
+			exportStudents();
+			exportClasses();
+			exportStaffs();
 			// then exit
 			Application::Exit();
 		}
