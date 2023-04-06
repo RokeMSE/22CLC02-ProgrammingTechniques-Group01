@@ -70,7 +70,7 @@
     <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\12344.csv">
+    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

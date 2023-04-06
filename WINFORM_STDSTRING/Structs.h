@@ -91,6 +91,9 @@ namespace GROUP1 {
         DATE DoB;
         CLASS* Class;
 
+        // when user forgot their password, they will need to enter a code that they had been given before to verify and create a new password
+        // char verification[6]; // 5 digits + 1 NULL character
+
         LIST<DLL, COURSE*> courses;   // courses that 1 student enrolls in a semester
     };
     /////////////////////////////////////////////////
@@ -121,7 +124,7 @@ namespace GROUP1 {
 
     struct SCHOOLYEAR {
         uint begin = 0, end = 0;
-        SEMESTER* sem1 = nullptr, * sem2 = nullptr, * sem3 = nullptr;
+        SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
     };
     /////////////////////////////////////////////////
 

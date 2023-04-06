@@ -173,7 +173,7 @@ namespace CMS {
 			}
 			cur = cur->next;
 		}
-		MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+		if (!cur)	MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
 	}
 		private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 			exportSchoolYears();
