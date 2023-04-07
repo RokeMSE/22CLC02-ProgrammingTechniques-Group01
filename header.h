@@ -43,7 +43,7 @@ LIST<DLL, CLASS> L_Class;
 
         bool importStudentsInACourse(std::string filename, COURSE &c);
         bool importCoursesInASemester(std::string filename, SEMESTER* &sem);
-        bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem);
+        bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, ushort noSem);
         bool importSchoolYears();
     /////////////////////////////////
     
@@ -54,9 +54,9 @@ LIST<DLL, CLASS> L_Class;
 
         void exportClasses();
 
-        void exportStudentsInACourse(COURSE* c, uint startYear);
-        void exportCoursesInASemester(std::string filename, SEMESTER* sem, uint startYear);
-        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, uint startYear);
+        void exportStudentsInACourse(COURSE* &c, uint startYear);
+        void exportCoursesInASemester(std::string filename, SEMESTER* &sem, uint startYear);
+        void exportASemesterInASchoolYear(std::string filename, SEMESTER* &sem, uint startYear);
         void exportSchoolYears();
     /////////////////////////////////
 /////////////////////////////////////
