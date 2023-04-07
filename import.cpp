@@ -3,6 +3,17 @@
 #include "header.h"
 using namespace std;
 
+bool stringToBool(std::string str)//ham doi tu string -> bool
+{
+    if (str == "true" || str == "1")
+        return true;
+    else if (str == "false" || str == "0") 
+        return false;
+    else
+        throw std::invalid_argument("Invalid input string");
+
+}
+
 bool importStudents() {
     ifstream ifs("CSV/Student.csv");
     if (!ifs.is_open())
@@ -12,11 +23,11 @@ bool importStudents() {
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
         tmp->user = new USER;
-        getline(ifs, str, ','); // get username
 
-        tmp->user->username = str;
+        getline(ifs, str, ','); // get username
+        tmp -> user -> username = str;
         
-        getline(ifs, str, ','); // get password
+        getline(ifs, str, ','); // password
         tmp->user->password = str;
 
         getline(ifs, str, ','); // get No
@@ -32,43 +43,31 @@ bool importStudents() {
         tmp->lastname = str;
 
         getline(ifs, str, ',');
-        tmp->gender = ((str == "1")? 1 : 0);
+        tmp->gender = stringToBool(str);
 
         getline(ifs, str, ',');
         tmp->DoB = getDate(str);
 
         getline(ifs, str, ',');
         tmp->socialID = str;
-
-        getline(ifs, str);  // get class
+    
+        getline(ifs, str);
         tmp->Class = new CLASS;
         *(tmp->Class) = convertToClass(str);
-    
-        // getline(ifs, str);  // get class
-        // DLL<CLASS>* nodeCls = L_Class.head;
-        // while ( nodeCls ) {
-        //     if (nodeCls->data.convertToString() == str) {
-        //         tmp->Class = &(nodeCls->data);
-        //         break;
-        //     }
-        //     nodeCls = nodeCls->next;
+
+        add_val<STUDENT*> (L_Student,tmp);
+        // if (L_Student.head == nullptr)
+        // {
+        //     L_Student.head = L_Student.tail = new DLL<STUDENT*>;
+        //     L_Student.head -> data = tmp;
         // }
-
-        // if ( !nodeCls ) MessageBox::Show("Error");
-
-        if (L_Student.head == nullptr)
-        {
-            L_Student.head = L_Student.tail = new DLL<STUDENT*>;
-            L_Student.head -> data = tmp;
-        }
-        else
-        {
-            L_Student.tail->next = new DLL<STUDENT*>;
-            L_Student.tail->next->prev = L_Student.tail;
-            L_Student.tail = L_Student.tail->next;
-        }
-        L_Student.tail->data = tmp;
-        //L_Student.head -> next = L_Student.tail->next = nullptr;
+        // else
+        // {
+        //     L_Student.tail->next = new DLL<STUDENT*>;
+        //     L_Student.tail->next->prev = L_Student.tail;
+        //     L_Student.tail = L_Student.tail->next;
+        // }
+        // L_Student.tail->data = tmp;
     }
     ifs.close();
     return 1;
@@ -80,29 +79,35 @@ bool importStaffs() {
         return false;
     string str;
     getline(ifs, str);
-    while (!ifs.eof()) {
+    while (!ifs.eof())
+    {
         STAFF* tmp = new STAFF;
-        tmp->user = new USER;
-        getline(ifs, tmp->user->username, ','); // get username
+        tmp -> user = new USER;
+        getline(ifs, str, ','); // get username
+        tmp->user->username = str;
 
-        getline(ifs, tmp->user->password, ','); // get password
+        getline(ifs, str, ','); // password
+        tmp->user->password = str;
 
-        getline(ifs, tmp->firstname, ',');
+        getline(ifs, str, ',');
+        tmp->firstname = str;
 
-        getline(ifs, tmp->lastname);
+        getline(ifs, str);
+        tmp->lastname = str;
 
-        if (L_Staff.head == nullptr)
-        {
-            L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
-            L_Staff.head -> data = tmp;
-        }
-        else
-        {
-            L_Staff.tail->next = new DLL<STAFF*>;
-            L_Staff.tail->next->prev = L_Staff.tail;
-            L_Staff.tail = L_Staff.tail->next;
-        }
-        L_Staff.tail->data = tmp;
+        add_val<STAFF*>(L_Staff,tmp);
+        // if (L_Staff.head == nullptr)
+        // {
+        //     L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
+        //     L_Staff.head -> data = tmp;
+        // }
+        // else
+        // {
+        //     L_Staff.tail->next = new DLL<STAFF*>;
+        //     L_Staff.tail->next->prev = L_Staff.tail;
+        //     L_Staff.tail = L_Staff.tail->next;
+        // }
+        // L_Staff.tail->data = tmp;
     }
     ifs.close();
     return true;
@@ -112,37 +117,39 @@ bool importClasses()
 {
     ifstream ifs("CSV/Class.csv");
     if (ifs.is_open() == false)
-        return false; 
+        return false;
     string str;
-    std::getline(ifs, str);
+    getline(ifs, str);  // skip title line
     while (!ifs.eof())
     {
         CLASS* tmp = new CLASS;
 
-        std::getline(ifs, str, ',');
+        getline(ifs, str, ',');
         tmp->K = stoi(str);
 
-        std::getline(ifs, str, ',');
+        getline(ifs, str, ',');
         tmp->program = convertToProgram(str);
 
-        std::getline(ifs, str,',');
+        getline(ifs, str,',');
         tmp->No = stoi(str);
 
-        std::getline(ifs, str);
+        getline(ifs, str);
         tmp->yearIn = stoi(str);
 
-        if (L_Class.head == nullptr)
-        {
-            L_Class.head = L_Class.tail = new DLL<CLASS>;
-            L_Class.head->data = *tmp;
-        }
-        else
-        {
-            L_Class.tail->next = new DLL<CLASS>;
-            L_Class.tail->next->prev = L_Class.tail;
-            L_Class.tail = L_Class.tail->next;
-        }
-        L_Class.tail->data = *tmp;
+        add_val<CLASS>(L_Class,*tmp);
+
+        // if (L_Class.head == nullptr)
+        // {
+        //     L_Class.head = L_Class.tail = new DLL<CLASS>;
+        //     L_Class.head->data = *tmp;
+        // }
+        // else
+        // {
+        //     L_Class.tail->next = new DLL<CLASS>;
+        //     L_Class.tail->next->prev = L_Class.tail;
+        //     L_Class.tail = L_Class.tail->next;
+        // }
+        // L_Class.tail->data = *tmp;
     }
     ifs.close();
     return true;
@@ -160,8 +167,11 @@ bool importStudentsInACourse(std::string filename, COURSE &c) {
     
     while (!ifs.eof())
     {
-        getline(ifs,str);   /// (str) will have format: "[StudentID]"
+        getline(ifs,str, ',');   /// (str) will have format: "[StudentID], [ScoreBoard]"
 
+        //////////////////////////////////////////////////////////////////
+        getline(ifs,str);       //      get scoreboard
+        //////////////////////////////////////////////////////////////////
         /// find this student by StudentID in L_Student;
         DLL<STUDENT*> *stu = L_Student.head;
         //DLL<SCOREBOARD*> *cur = c->students.head;
@@ -184,7 +194,6 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a)
 
     if(!inp.is_open())
         return false;
-
     string temp ;
     getline(inp, temp);     //skip title line
 
@@ -213,15 +222,11 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a)
     return true;
 }
 
-bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem) {
+bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, ushort noSem) {
     newSem = new SEMESTER;
     
     ifstream inp(filename);
-    if (!inp.is_open())
-    {
-        inp.close();
-        return 0;
-    }  
+    if (!inp.is_open())  return 0;
 
     string tmp;
     getline(inp, tmp);  // skip title line
@@ -230,6 +235,7 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
         getline(inp, tmp);
 
     getline(inp, tmp, ','); // skip No
+    newSem->No = stoi(tmp);
 
     getline(inp, tmp, ','); // get startdate
     newSem->startdate = getDate(tmp);
@@ -246,27 +252,16 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort
 
 bool importSchoolYears() {
     L_SchoolYear.head = L_SchoolYear.tail = nullptr;
-    ifstream inp("CSV/SchoolYear");
-    if (!inp.is_open())
-    {
-        inp.close();
-        return 0;
-    }
+    ifstream inp("CSV/SchoolYear.csv");
+    if (!inp.is_open()) return 0;
 
     string temp;
     getline(inp, temp); // skip title line
 
-    SCHOOLYEAR newSchoolYear;
+    
     while ( !inp.eof() ) {
         // create new Node of L_SchoolYear
-        if (L_SchoolYear.head == nullptr)   L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR>;
-        else {
-            L_SchoolYear.tail->next = new DLL<SCHOOLYEAR>;
-            L_SchoolYear.tail->next->prev = L_SchoolYear.tail->next;
-            L_SchoolYear.tail = L_SchoolYear.tail->next;
-        }
-        L_SchoolYear.tail->data = newSchoolYear;
-        L_SchoolYear.tail->next = nullptr;
+        SCHOOLYEAR newSchoolYear;
         ////////////////
 
         // year begin
@@ -288,21 +283,23 @@ bool importSchoolYears() {
 
         // sem1
         getline(inp, temp, ',');    // sem1's condition
-        if ( temp != "1" ) continue;// if sem1 is null => all the following sems are null
-        importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, L_SchoolYear.tail->data.sem1, 1);
+        // if ( temp == "0" ) 
+            importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, newSchoolYear.sem1, 1);
         ////////////////
 
         // sem2
         getline(inp, temp, ',');    // sem2's condition
-        if ( temp != "1" ) continue;
-        importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, L_SchoolYear.tail->data.sem2, 2);
+        // if ( temp == "0" ) 
+        importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, newSchoolYear.sem2, 2);
         ////////////////
 
         // sem3
-        getline(inp, temp, ',');    // sem3's condition
-        if ( temp != "1" ) continue;
-        importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, L_SchoolYear.tail->data.sem3, 3);
+        getline(inp, temp);    // sem3's condition
+        // if ( temp == "0" ) 
+        importSemesterInSchoolYear = ::importASemesterInASchoolYear(filenameImportSemester, newSchoolYear.sem3, 3);
         ////////////////
+
+        add_val<SCHOOLYEAR>(L_SchoolYear,newSchoolYear);
     }
     inp.close();
     return 1;
