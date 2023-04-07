@@ -1,6 +1,7 @@
 #pragma once
 
 #include "header.h"
+#include "MenuStudent.h"
 
 namespace CMS {
 
@@ -158,12 +159,11 @@ namespace CMS {
 				if (input.password == cur->data->user.password) {//cur->data->user.password
 					MessageBox::Show("Successfully logged in!");
 					//this->Close();
-					// call an another form
-					MessageBox::Show("ANOTHER FORM");
-					exportSchoolYears();
+					break;
+					/*exportSchoolYears();
 					exportStudents();
 					exportClasses();
-					exportStaffs();
+					exportStaffs();*/
 					Application::Exit();
 				}
 				else {
@@ -174,6 +174,15 @@ namespace CMS {
 			cur = cur->next;
 		}
 		if (!cur)	MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+		else
+		{
+			// call an another form
+			MessageBox::Show("ANOTHER FORM");
+			MenuStudent^ form = gcnew CMS::MenuStudent(this);
+			this->Hide();
+			form->Show();
+			
+		}
 	}
 		private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 			exportSchoolYears();

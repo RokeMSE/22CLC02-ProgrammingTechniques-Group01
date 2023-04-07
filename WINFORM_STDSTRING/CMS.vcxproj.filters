@@ -27,6 +27,9 @@
     <ClCompile Include="helperFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GlobalVariables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -73,5 +79,10 @@
     <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuStudent.resx">
+      <Filter>Header Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
