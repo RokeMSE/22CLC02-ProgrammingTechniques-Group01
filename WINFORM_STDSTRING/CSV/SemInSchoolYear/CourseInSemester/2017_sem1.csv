@@ -1,2 +1,2 @@
-ID,name,teacher,credit,maxStudents,day,session,stuInCourse
-12344,ABC course,abc,3,47,Mon,S1,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2017_sem1_course12344.csv
+ID,Name,Teacher,Credit,Max Students,Day,Session,File containing students in the course
+12344,ABC course,abc,3,47,SUN,S1,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2017_sem1_course12344.csv

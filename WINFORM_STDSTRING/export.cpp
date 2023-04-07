@@ -107,7 +107,7 @@ void exportCoursesInASemester(std::string filename, GROUP1::SEMESTER* &sem, uint
     out << "ID,Name,Teacher,Credit,Max Students,Day,Session,File containing students in the course"; 
     if (cur)    out << endl;
     while(cur) {
-        string file = "CSV/SemInSchoolYear/CourseInASemester/StudentsInCourse/" + to_string(startYear) + "_sem" + to_string(sem->No) + "_course" + cur->data->ID + ".csv";
+        string file = "CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/" + to_string(startYear) + "_sem" + to_string(sem->No) + "_course" + cur->data->ID + ".csv";
         out << cur->data->ID << ',' << cur->data->name << ',' << cur->data->teacher << ',' << cur->data->credit << ',' << cur->data->maxStudents << ',' << convertFromWeekDay(cur->data->day) << ',' << convertFromSession(cur->data->session);
         out << ',' << file;
         if (cur -> next) out << '\n'; // avoid creating an empty line at the end of the file
@@ -154,7 +154,8 @@ void exportSchoolYears() {
         out << ((cur->data->sem2)? 1:0) << ',';
         out << ((cur->data->sem3)? 1:0);
         if (cur->next) out << endl; // avoid creating an empty line at the end of the file
-
+        ofstream out(file);
+        out.close();
         exportASemesterInASchoolYear(file, cur->data->sem1, cur->data->begin);
         exportASemesterInASchoolYear(file, cur->data->sem2, cur->data->begin);
         exportASemesterInASchoolYear(file, cur->data->sem3, cur->data->begin);

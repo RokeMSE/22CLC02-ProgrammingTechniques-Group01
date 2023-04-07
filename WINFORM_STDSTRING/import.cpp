@@ -157,27 +157,35 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
     ifs.open(filename);
     if (ifs.is_open() == false)
         return false;
-
     string str;
     std::getline(ifs, str);   /// skip the title line;
 
+    DLL<STUDENT*>* oriStu;
     while (!ifs.eof())
     {
-        std::getline(ifs, str);   /// (str) will have format: "[StudentID]"
+        std::getline(ifs, str, ',');   /// (str) will have format: "[StudentID]"
 
         /// find this student by StudentID in L_Student;
         DLL<STUDENT*>* stu = L_Student.head;
+        oriStu = stu;
         //DLL<SCOREBOARD*> *cur = c->students.head;
         while (stu != nullptr && stu->data->studentID != str)
             stu = stu->next;
         if (stu) {
             SCOREBOARD* s = new SCOREBOARD;
-
+            std::getline(ifs, str, ',');
+            s->otherMark = stod(str);
+            std::getline(ifs, str, ',');
+            s->midtermMark = stod(str);
+            std::getline(ifs, str, ',');
+            s->finalMark = stod(str);
+            std::getline(ifs, str);
+            s->totalMark = stod(str);
             s->student = stu->data;
             /// add this student with his/her scoreboard to the list of student in the course
             c->add1Student(s);
         } else {
-            MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + stu->data->studentID + "] in the list of students"));
+            MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
             return 0;
         }
     }
@@ -193,8 +201,6 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear
     string temp;
     std::getline(inp, temp);
     while (!inp.eof()) {
-        std::getline(inp, temp, ',');
-        if (inp.eof())  break;
         if (!a->course.head)
             a->course.head = a->course.tail = new DLL<COURSE*>;
         else {
@@ -202,17 +208,27 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear
             a->course.tail->next->prev = a->course.tail;
             a->course.tail = a->course.tail->next;
         }
+        a->course.tail->data = new COURSE;
+        std::getline(inp, temp, ',');
         a->course.tail->data->ID = temp;
-        std::getline(inp, (a->course.tail->data)->name, ',');
-        std::getline(inp, (a->course.tail->data)->teacher, ',');
+        std::getline(inp, temp, ',');
+        (a->course.tail->data)->name = temp;
+
+        std::getline(inp, temp, ',');
+        (a->course.tail->data)->teacher = temp;
+
 
         std::getline(inp, temp, ',');
         a->course.tail->data->credit = stoi(temp);
+
         std::getline(inp, temp, ',');
+
         a->course.tail->data->maxStudents = stoi(temp);
+
         std::getline(inp, temp, ',');
         a->course.tail->data->day = convertToWeekday(temp);
-        std::getline(inp, temp);
+
+        std::getline(inp, temp, ',');
         a->course.tail->data->session = convertToSession(temp);
 
         std::getline(inp, temp); // get file name
@@ -230,11 +246,8 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear
 }
 
 bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, uint startYear) {
-    newSem = new SEMESTER;
-
     ifstream inp(filename);
     if (!inp.is_open()) return 0;
-    
     string tmp;
     std::getline(inp, tmp);  // skip title line
 
@@ -263,7 +276,6 @@ bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, uint 
 }
 
 bool importSchoolYears() {
-    L_SchoolYear.head = L_SchoolYear.tail = nullptr;
     ifstream inp("CSV/SchoolYear.csv");
     if (!inp.is_open()) return 0;
 
@@ -271,10 +283,9 @@ bool importSchoolYears() {
     std::getline(inp, temp); // skip title line
 
     while (!inp.eof()) {
+        SCHOOLYEAR* newSchoolyear = new SCHOOLYEAR;
         // year begin
         std::getline(inp, temp, ',');
-        if (inp.eof())  break;
-        SCHOOLYEAR* newSchoolyear = new SCHOOLYEAR;
         newSchoolyear->begin = stoi(temp);
         ////////////////
 
@@ -284,15 +295,21 @@ bool importSchoolYears() {
         ////////////////
 
         // get name of file that contains all semesters' 
-        std::getline(inp, temp, ',');
+        string file;
+        std::getline(inp, file, ',');
         ////////////////
 
         bool importSemesterInSchoolYear;
 
         // sem1
         std::getline(inp, temp, ',');    // sem1's condition
-        if (stoi(temp) == 0)    goto _createNode;// if sem1 is null => all the following sems are null
-        importSemesterInSchoolYear = importASemesterInASchoolYear(temp, newSchoolyear->sem1, newSchoolyear->begin);
+        if (stoi(temp) == 0) {
+            std::getline(inp, temp);
+            goto _createNode;
+        } // if sem1 is null => all the following sems are
+        newSchoolyear->sem1 = new SEMESTER;
+        newSchoolyear->sem1->No = 1;
+        importSemesterInSchoolYear = importASemesterInASchoolYear(file, newSchoolyear->sem1, newSchoolyear->begin);
         if (!importSemesterInSchoolYear) {
             delete newSchoolyear;
             return 0;
@@ -301,8 +318,13 @@ bool importSchoolYears() {
 
         // sem2
         std::getline(inp, temp, ',');   // sem2's condition
-        if (stoi(temp) == 0) goto _createNode;
-        importSemesterInSchoolYear = importASemesterInASchoolYear(temp, newSchoolyear->sem2, newSchoolyear->begin);
+        if (stoi(temp) == 0) {
+            std::getline(inp, temp);
+            goto _createNode;
+        }
+        newSchoolyear->sem2 = new SEMESTER;
+        newSchoolyear->sem2->No = 2;
+        importSemesterInSchoolYear = importASemesterInASchoolYear(file, newSchoolyear->sem2, newSchoolyear->begin);
         if (!importSemesterInSchoolYear) {
             delete newSchoolyear;
             return 0;
@@ -311,8 +333,13 @@ bool importSchoolYears() {
 
         // sem3
         std::getline(inp, temp);        // sem3's condition
-        if (stoi(temp) == 0) goto _createNode;
-        importSemesterInSchoolYear = importASemesterInASchoolYear(temp, newSchoolyear->sem3, newSchoolyear->begin);
+        if (stoi(temp) == 0) {
+            std::getline(inp, temp);
+            goto _createNode;
+        }
+        newSchoolyear->sem3 = new SEMESTER;
+        newSchoolyear->sem3->No = 3;
+        importSemesterInSchoolYear = importASemesterInASchoolYear(file, newSchoolyear->sem3, newSchoolyear->begin);
         if (!importSemesterInSchoolYear) {
             delete newSchoolyear;
             return 0;
@@ -321,10 +348,7 @@ bool importSchoolYears() {
     
         // create a new Node of L_SchoolYear
         _createNode: {
-            if (L_SchoolYear.head == nullptr)
-            {
-                L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR*>;
-            }
+            if (L_SchoolYear.head == nullptr) L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR*>;
             else {
                 L_SchoolYear.tail->next = new DLL<SCHOOLYEAR*>;
                 L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
