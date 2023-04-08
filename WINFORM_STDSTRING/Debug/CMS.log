@@ -2,3 +2,4 @@
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Login.cpp(9,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   22.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.exe
+﻿  CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.exe

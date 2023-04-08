@@ -157,7 +157,7 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
     ifs.open(filename);
     if (ifs.is_open() == false)
         return false;
-    string str;
+    string str; MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(4)));
     std::getline(ifs, str);   /// skip the title line;
 
     DLL<STUDENT*>* oriStu;
@@ -198,7 +198,7 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear
 
     if (!inp.is_open())
         return false;
-    string temp;
+    string temp; MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(3)));
     std::getline(inp, temp);
     while (!inp.eof()) {
         if (!a->course.head)
@@ -300,7 +300,7 @@ bool importSchoolYears() {
         ////////////////
 
         bool importSemesterInSchoolYear;
-
+        MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(1)));
         // sem1
         std::getline(inp, temp, ',');    // sem1's condition
         if (stoi(temp) == 0) {

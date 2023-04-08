@@ -28,6 +28,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="22.cpp">
+    <ClCompile Include="MenuStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +55,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="22.h">
+    <ClInclude Include="MenuStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -79,5 +81,10 @@
     <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuStudent.resx">
+      <Filter>Header Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
