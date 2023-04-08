@@ -12,26 +12,25 @@ namespace CMS {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MenuStudent1
+	/// Summary for MenuStaff
 	/// </summary>
-	public ref class MenuStudent : public System::Windows::Forms::Form
+	public ref class MenuStaff : public System::Windows::Forms::Form
 	{
 	public:
 		System::Windows::Forms::Form^ sourceForm;
-		MenuStudent(System::Windows::Forms::Form^ form)
+		//GROUP1::STAFF* currentStaff;
+		MenuStaff(System::Windows::Forms::Form^ form, GROUP1::STAFF* staf)
 		{
 			InitializeComponent();
 			this->sourceForm = form;
-			//
-			//TODO: Add the constructor code here
-			//
+			//currentStaff = staf;
 		}
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MenuStudent()
+		~MenuStaff()
 		{
 			if (components)
 			{
@@ -58,7 +57,7 @@ namespace CMS {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -89,9 +88,9 @@ namespace CMS {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(376, 58);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"View my courses";
+			this->button1->Text = L"Create a school year";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MenuStudent::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MenuStaff::button1_Click);
 			// 
 			// button2
 			// 
@@ -99,7 +98,7 @@ namespace CMS {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(376, 58);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
+			this->button2->Text = L"Create classes for 1st-year students";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// button3
@@ -108,7 +107,7 @@ namespace CMS {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(376, 58);
 			this->button3->TabIndex = 2;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"Add new 1st year students to 1st-year classes one by one";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// button4
@@ -117,7 +116,7 @@ namespace CMS {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(376, 58);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"Add new 1st year students to a 1st-year class by CSV file";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// button5
@@ -126,7 +125,7 @@ namespace CMS {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(376, 58);
 			this->button5->TabIndex = 4;
-			this->button5->Text = L"button5";
+			this->button5->Text = L"Create a semester";
 			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// button6
@@ -135,7 +134,7 @@ namespace CMS {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(376, 58);
 			this->button6->TabIndex = 5;
-			this->button6->Text = L"button6";
+			this->button6->Text = L"Add a course to current semester";
 			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// button7
@@ -144,7 +143,7 @@ namespace CMS {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(376, 58);
 			this->button7->TabIndex = 6;
-			this->button7->Text = L"button7";
+			this->button7->Text = L"Upload a CSV file of students enrolled in a course of current semester";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// button8
@@ -153,7 +152,7 @@ namespace CMS {
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(376, 58);
 			this->button8->TabIndex = 7;
-			this->button8->Text = L"button8";
+			this->button8->Text = L"View courses of current semester";
 			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// button9
@@ -162,7 +161,7 @@ namespace CMS {
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(376, 58);
 			this->button9->TabIndex = 8;
-			this->button9->Text = L"button9";
+			this->button9->Text = L"Update information of a course in current semester";
 			this->button9->UseVisualStyleBackColor = true;
 			// 
 			// button10
@@ -171,7 +170,7 @@ namespace CMS {
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(376, 58);
 			this->button10->TabIndex = 9;
-			this->button10->Text = L"button10";
+			this->button10->Text = L"Add a student to a course in current semester";
 			this->button10->UseVisualStyleBackColor = true;
 			// 
 			// button11
@@ -180,7 +179,7 @@ namespace CMS {
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(376, 58);
 			this->button11->TabIndex = 10;
-			this->button11->Text = L"button11";
+			this->button11->Text = L"Remove a student from a course in current semester";
 			this->button11->UseVisualStyleBackColor = true;
 			// 
 			// button12
@@ -189,7 +188,7 @@ namespace CMS {
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(376, 58);
 			this->button12->TabIndex = 11;
-			this->button12->Text = L"button12";
+			this->button12->Text = L"Delete a course of current semester";
 			this->button12->UseVisualStyleBackColor = true;
 			// 
 			// button13
@@ -200,6 +199,17 @@ namespace CMS {
 			this->button13->TabIndex = 12;
 			this->button13->Text = L"View classes";
 			this->button13->UseVisualStyleBackColor = true;
+			//button14 "View students in a class"
+			//this->button15->Text = L"View courses";
+			//this->button16->Text = L"View students in a course";
+			//this->button17->Text = L"Export students of a course in current semester to a CSV file";
+			//this->button18->Text = L"Import the scoreboard of a course in current semester";
+			//this->button19->Text = L"Import the scoreboard of a course in current semester";
+			//this->button20->Text = L"View the scoreboard of a course in current semester";
+			//this->button21->Text = L"Update a student's result in current semester";
+			//this->button22->Text = L"View the scoreboard of a class in current semester";
+			//this->button23->Text = L"Log out";
+			//this->button24->Text = L"Exit";
 			// 
 			// label1
 			// 
@@ -211,7 +221,7 @@ namespace CMS {
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Choose 1";
 			// 
-			// MenuStudent1
+			// MenuStaff
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -230,17 +240,17 @@ namespace CMS {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Name = L"MenuStudent1";
-			this->Text = L"MenuStudent";
-			this->Load += gcnew System::EventHandler(this, &MenuStudent1::MenuStudent1_Load);
+			this->Name = L"MenuStaff";
+			this->Text = L"MenuStaff";
+			this->Load += gcnew System::EventHandler(this, &MenuStaff::MenuStaff_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void MenuStudent1_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void MenuStaff_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-};
+	};
 }

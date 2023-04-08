@@ -42,5 +42,6 @@ _xyz:
     if (L_SchoolYear.head->data->sem1)   MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(L_SchoolYear.head->data->sem1->No)));
     CMS::Login form;
     Application::Run(% form);
+
 }
 // 
