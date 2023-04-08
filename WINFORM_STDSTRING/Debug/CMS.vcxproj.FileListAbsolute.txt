@@ -9,3 +9,4 @@ C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.Login.resources
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.vcxproj.GenerateResource.cache
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.exe
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINFORM_STDSTRING\Debug\CMS.22.resources

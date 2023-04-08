@@ -37,6 +37,5 @@ _export:
 _xyz:
     CMS::Login form;
     Application::Run(% form);
-
 }
 // 

@@ -120,11 +120,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="22.cpp" />
     <ClCompile Include="export.cpp" />
     <ClCompile Include="import.cpp" />
     <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="22.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="export.h" />
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="header.h" />
@@ -137,6 +141,9 @@
     <ClCompile Include="helperFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="22.resx">
+      <DependentUpon>22.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
