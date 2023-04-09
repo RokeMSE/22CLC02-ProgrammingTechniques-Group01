@@ -33,13 +33,13 @@
     <ClInclude Include="Structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Login.h">
+    <ClInclude Include="Forms\Login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuStudent.h">
+    <ClInclude Include="Forms\MenuStaff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuStaff.h">
+    <ClInclude Include="Forms\MenuStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,9 +67,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Login.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="export.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -79,10 +76,13 @@
     <ClCompile Include="import.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuStudent.cpp">
+    <ClCompile Include="Forms\Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuStaff.cpp">
+    <ClCompile Include="Forms\MenuStaff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Forms\MenuStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
