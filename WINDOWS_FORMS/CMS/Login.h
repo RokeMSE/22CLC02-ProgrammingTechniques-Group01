@@ -1,8 +1,8 @@
 #pragma once
 #include "header.h"
 //
-//#include "MenuStaff.h"
-//#include "MenuStudent.h"
+#include "MenuStaff.h"
+#include "MenuStudent.h"
 
 namespace CMS {
 
@@ -123,7 +123,7 @@ namespace CMS {
 			this->btn_signin->TabIndex = 2;
 			this->btn_signin->Text = L"Sign in";
 			this->btn_signin->UseVisualStyleBackColor = false;
-			//this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
+			this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
 			// 
 			// btn_exit
 			// 
@@ -236,65 +236,65 @@ namespace CMS {
 
 		}
 #pragma endregion
-	//private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
-	//	GROUP1::USER input;
-	//	input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
-	//	input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
-	//	std::string str = input.username + " " + input.password;
-	//	/*MessageBox::Show(msclr::interop::marshal_as<System::String^>(str));*/
-	//	// inspect L_Staff first
-	//	GROUP1::DLL<GROUP1::STAFF*>* curStaf = L_Staff.head;
-	//	//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
-	//	while (curStaf) {
-	//		if (input.username == curStaf->data->user.username) {// cur->data->user.username
-	//			if (input.password == curStaf->data->user.password) {//cur->data->user.password
-	//				MessageBox::Show("Successfully logged in!");
-	//				g_currentStaff = curStaf->data;
-	//				g_currentStudent = nullptr;
-	//				MenuStaff^ form = gcnew CMS::MenuStaff(this);//, curStaf -> data);
-	//				this->txt_username->Text = L"";
-	//				this->txt_password->Text = L"";
-	//				this->Hide();
-	//				form->Show();
-	//				break;
-	//			}
-	//			else {
-	//				MessageBox::Show("Wrong password!");
-	//				curStaf = nullptr;
-	//				break;
-	//			}
-	//		}
-	//		curStaf = curStaf->next;
-	//	}
-	//	if (curStaf)	return;
-	//	GROUP1::DLL<GROUP1::STUDENT*>* curStu = L_Student.head;
-	//	//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
-	//	while (curStu) {
-	//		if (input.username == curStu->data->user.username) {// cur->data->user.username
-	//			if (input.password == curStu->data->user.password) {//cur->data->user.password
-	//				//MessageBox::Show("Successfully logged in!");
-	//				MenuStudent^ form = gcnew CMS::MenuStudent(this);//, curStu -> data);
-	//				g_currentStaff = nullptr;
-	//				g_currentStudent = curStu->data;
-	//				this->Hide();
-	//				this->txt_username->Text = L"";
-	//				this->txt_password->Text = L"";
-	//				form->Show();
-	//				break;
-	//			}
-	//			else {
-	//				MessageBox::Show("Wrong password!");
-	//				this->txt_password->Text = L"";
-	//				break;
-	//			}
-	//		}
-	//		curStu = curStu->next;
-	//	}
-	//	if (!curStu)
-	//		MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
-	//	this->txt_username->Text = L"";
-	//	this->txt_password->Text = L"";
-	//}
+	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
+		GROUP1::USER input;
+		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
+		input.password = msclr::interop::marshal_as<std::string>(txt_password->Text);
+		std::string str = input.username + " " + input.password;
+		/*MessageBox::Show(msclr::interop::marshal_as<System::String^>(str));*/
+		// inspect L_Staff first
+		GROUP1::DLL<GROUP1::STAFF*>* curStaf = L_Staff.head;
+		//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
+		while (curStaf) {
+			if (input.username == curStaf->data->user.username) {// cur->data->user.username
+				if (input.password == curStaf->data->user.password) {//cur->data->user.password
+					MessageBox::Show("Successfully logged in!");
+					g_currentStaff = curStaf->data;
+					g_currentStudent = nullptr;
+					MenuStaff^ form = gcnew CMS::MenuStaff(this);//, curStaf -> data);
+					this->txt_username->Text = L"";
+					this->txt_password->Text = L"";
+					this->Hide();
+					form->Show();
+					return;
+				}
+				else {
+					MessageBox::Show("Wrong password!");
+					curStaf = nullptr;
+					return;
+				}
+			}
+			curStaf = curStaf->next;
+		}
+		if (curStaf)	return;
+		GROUP1::DLL<GROUP1::STUDENT*>* curStu = L_Student.head;
+		//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
+		while (curStu) {
+			if (input.username == curStu->data->user.username) {// cur->data->user.username
+				if (input.password == curStu->data->user.password) {//cur->data->user.password
+					//MessageBox::Show("Successfully logged in!");
+					MenuStudent^ form = gcnew CMS::MenuStudent(this);//, curStu -> data);
+					g_currentStaff = nullptr;
+					g_currentStudent = curStu->data;
+					this->Hide();
+					this->txt_username->Text = L"";
+					this->txt_password->Text = L"";
+					form->Show();
+					return;
+				}
+				else {
+					MessageBox::Show("Wrong password!");
+					this->txt_password->Text = L"";
+					return;
+				}
+			}
+			curStu = curStu->next;
+		}
+		if (!curStu)
+			MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+		this->txt_username->Text = L"";
+		this->txt_password->Text = L"";
+	}
 
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		exportSchoolYears();
@@ -335,5 +335,5 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	};
+};
 }

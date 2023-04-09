@@ -6,3 +6,4 @@ C:\Users\Toan\Desktop\proj\CMS\CMS\Debug\CMS.MenuStaff.resources
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.UpdateResult.resources
