@@ -1,6 +1,0 @@
-﻿  Login.cpp
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\Login.cpp(9,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  MenuStudent.cpp
-  Generating Code...
-  export.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  CMS.vcxproj -> C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.exe

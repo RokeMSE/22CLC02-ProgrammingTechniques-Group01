@@ -1,6 +1,0 @@
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.vcxproj.AssemblyReference.cache
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.Login.resources
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.MenuStudent.resources
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.vcxproj.GenerateResource.cache
-C:\Users\ADMIN\Desktop\MS\WINFORM_STDSTRING\x64\Debug\CMS.exe

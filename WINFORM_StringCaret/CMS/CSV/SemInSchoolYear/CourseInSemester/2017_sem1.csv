@@ -1,6 +1,0 @@
-ID,name,teacher,credit,maxStudents,day,session,stuInCourse
-12344,ABC course,abc,3,47,Mon,S1,CSV/SemInSchoolYear/CourseInSemester/12344.csv
-12345,DEF course,def,4,52,Tue,S2,CSV/SemInSchoolYear/CourseInSemester/12345.csv
-12346,GHI course,ghi,2,53,Wed,S2,CSV/SemInSchoolYear/CourseInSemester/12346.csv
-12347,JKL course,jkl,1,54,Thu,S1,CSV/SemInSchoolYear/CourseInSemester/12347.csv
-12348,MNO course,mno,3,51,Fri,S4,CSV/SemInSchoolYear/CourseInSemester/12348.csv
