@@ -5,7 +5,6 @@
 
 struct USER;
 struct STAFF {
-    // USER* login;
     std::string firstname = "";
     std::string lastname = "";
     const Type type = Staff;

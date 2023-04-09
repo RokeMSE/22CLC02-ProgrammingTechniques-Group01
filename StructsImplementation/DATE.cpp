@@ -1,17 +1,11 @@
+#pragma once
+
 #include "../header.h"
 // #include <fstream>
 #include <iostream>
 #include <iomanip>
 
 using namespace std;
-void DATE::display () {
-    cout << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year;
-}
-
-void DATE::display (std::ostream out) {
-    // out: append
-    out << setw(2) << setfill('0') << month << '/' << setw(2) << setfill('0') << day << '/' << year << endl;
-}
 
 bool isLeapYear (uint year) {
     return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));

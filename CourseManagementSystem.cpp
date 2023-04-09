@@ -1,52 +1,63 @@
 #include "header.h"
 #include <iostream>
-#include <Windows.h>
+
 using namespace std;
 
-USER* currentUSER;
 int main() {
     // Local var declarations
     bool notExit = 1;
     //////////////////////////////////////////////////////
 
-    // import();
+    bool _importStudents = importStudents();
+    bool _importStaffs = importStaffs();
+    bool _importClasses = importClasses();
+    // bool _importSchoolYears = importSchoolYears();
 
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
     STAFF* staff = nullptr;
     STUDENT* stu = nullptr;
     while ( notExit ) {
-        system("cls");
         // Logging in
         USER tmp;
-        do {
-            cout << "User name: ";
-            cin >> tmp.username;
-            cout << "Password: ";
-            cin >> tmp.password;
-            stu = authenticateUSER<STUDENT>(L_Student, &tmp);
-            staff = authenticateUSER<STAFF>(L_Staff, &tmp);
-        } while (!currentUSER);
+        cout << "User name: ";
+        cin >> tmp.username;
+        cout << "Password: ";
+        cin >> tmp.password;
+        stu = authenticateUSER<STUDENT>(L_Student, &tmp);
+        staff = authenticateUSER<STAFF>(L_Staff, &tmp);
         /////////////////////////////////////
         // Main menu
-        if ( staff == nullptr )
-            // this user is a student
-            notExit = MenuStudent(stu);
+        if (staff == nullptr && stu == nullptr)
+            // this user is not exist
+            notExit = MenuResetPassword();
         else
-            // this user is staff
-            notExit = MenuStaff(staff);
+            if ( staff == nullptr )
+                // this user is a student
+                notExit = MenuStudent(stu);
+            else
+                // this user is staff
+                notExit = MenuStaff(staff);
         /////////////////////////////////////
     }
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
+    // cout << _importStudents;
+    // DLL<STUDENT*>* curStudent = L_Student.head;
+    // while ( curStudent ) {
+    //     cout << curStudent->data->No << ' ' << curStudent->data->yearIn << ' ';
+    //     cout << curStudent->data->studentID << ' ' << curStudent->data->socialID << ' ';
+    //     cout << curStudent->data->firstname << ' ' << curStudent->data->lastname << ' ';
+    //     cout << DateToString(curStudent->data->DoB);
+    //     cout << endl;
+    //     curStudent = curStudent -> next;
+    // }
 
-    // Export();
-
-    // Deallocation
-    // dealloc: del node list COURSE::students => del node courses in semester => semesters => del nodes in L_SchoolYear
-    // dealloc L_Staff: node->data ==> node
-    // dealloc L_Student: node->data ==> node
-    // list L_Class: del node
+    // Export data to files including deallocation
+    // exportSchoolYears();
+    exportStudents();
+    exportStaffs();
+    exportClasses();
     //////////////////////////////////////////////////////
     return 0;
 }

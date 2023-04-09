@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 #include <iostream>
 #include <string>
@@ -32,6 +34,7 @@ bool COURSE::addStudents (std::string filename) {
     getline(ifs,str);       /// next the first line
 
     //  The format of file csv: No,Student ID,First Name,Last Name,Gender,Date Of Birth,Social ID
+    SCOREBOARD* newScoreBoard;
     while (!ifs.eof())
     {
 
@@ -42,26 +45,27 @@ bool COURSE::addStudents (std::string filename) {
         DLL<STUDENT*> *cur = L_Student.head;
         while (cur != nullptr && cur->data->studentID != str)
             cur = cur -> next;
-
+        newScoreBoard = new SCOREBOARD;
+        newScoreBoard->student = cur->data;
         if (cur == nullptr)
         {
             cout << "Can not find student: " << str << endl;
             return false;
         }
         else
-            add1Student(cur->data);       // Add students to the list of students in the course
+            add1Student(newScoreBoard);       // Add students to the list of students in the course
         getline(ifs,str);       // next line
     }
     ifs.close();
     return true;
 }
 
-void COURSE::add1Student (STUDENT* student) {
-    //add_val<SCOREBOARD*> (students, student);
+void COURSE::add1Student (SCOREBOARD* student) {
+    add_val<SCOREBOARD*> (students, student);
 }
 
-void COURSE::remove1Student(STUDENT* student) {
-   // remove_val<STUDENT*> (students, student);
+void COURSE::remove1Student(SCOREBOARD* student) {
+    remove_val<SCOREBOARD*> (students, student);
 }
 
 void COURSE::exportFile () {
@@ -99,118 +103,118 @@ void COURSE::exportFile () {
 //     return 0;
 // }
 
-//bool COURSE::exportStudents(std::string filename)
-//{
-//    ofstream output(filename);
-//
-//    if(!output.is_open())
-//        return false;
-//
-//    DLL<SCOREBOARD*>* temp = students.head;
-//
-//    while(temp) 
-//    {
-//        output << temp->data->student->No << "," << temp->data->student->studentID << "," << temp->data->firstname << "," << temp->data->lastname << "," << temp->data->gender << ",";
-//        output << (temp->data->DoB).day << "/" << (temp->data->DoB).month << "/" << (temp->data->DoB).year << ",";
-//        output << temp->data->socialID << "\n"; 
-//        temp = temp->next;
-//    }
-//    output.close();
-//    //No studentID firstname lastname  gender (day/month/year)oB socialID
-//    return true;
-//}
+bool COURSE::exportStudents(std::string filename)
+{
+    ofstream output(filename);
 
-//void COURSE::updateResultByID () {
-//    DLL<STUDENT*>* temp = students.head;
-//    STUDENT S;
-//    cout << "Enter your student ID you want to update: ";
-//    getline(cin, S.studentID);
-//    while (temp != nullptr) {
-//        if (S.studentID == temp->data->studentID) {
-//            cout << "\n Enter your your total mark: ";
-//            cin >> S.totalMark;
-//            temp->data->totalMark = S.totalMark;
-//            cout << endl;
-//            cout << "\n Enter your your final mark: ";
-//            cin >> S.finalMark;
-//            temp->data->finalMark = S.finalMark;
-//            cout << endl;
-//            cout << "\n Enter your your midterm mark: ";
-//            cin >> S.midtermMark;
-//            temp->data->midtermMark = S.midtermMark;
-//            cout << endl;
-//            cout << "\n Enter your your orther mark: ";
-//            cin >> S.otherMark;
-//            temp->data->otherMark = S.otherMark;
-//            cout << endl;
-//        }
-//        temp = temp->next;
-//    }
-//    cin.ignore();
-//}
+    if(!output.is_open())
+        return false;
 
-// void COURSE::UpdateST(LIST <DLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
-//     DLL<STUDENT*>* temp = L.head;
-//     SLL<STUDENT>* temp1 = L1.head;
+    DLL<SCOREBOARD*>* temp = students.head;
+
+    while(temp) 
+    {
+        output << temp->data->student->No << "," << temp->data->student->studentID << "," << temp->data->student->firstname << "," << temp->data->student->lastname << "," << temp->data->student->gender << ",";
+        output << (temp->data->student->DoB).day << "/" << (temp->data->student->DoB).month << "/" << (temp->data->student->DoB).year << ",";
+        output << temp->data->student->socialID << "\n"; 
+        temp = temp->next;
+    }
+    output.close();
+    //No studentID firstname lastname  gender (day/month/year)oB socialID
+    return true;
+}
+
+// void COURSE::updateResultByID () {
+//     DLL<STUDENT*>* temp = students.head;
+//     STUDENT S;
+//     cout << "Enter your student ID you want to update: ";
+//     getline(cin, S.studentID);
 //     while (temp != nullptr) {
-//         temp1->data = temp->data;
+//         if (S.studentID == temp->data->studentID) {
+//             cout << "\n Enter your your total mark: ";
+//             cin >> S.totalMark;
+//             temp->data->totalMark = S.totalMark;
+//             cout << endl;
+//             cout << "\n Enter your your final mark: ";
+//             cin >> S.finalMark;
+//             temp->data->finalMark = S.finalMark;
+//             cout << endl;
+//             cout << "\n Enter your your midterm mark: ";
+//             cin >> S.midtermMark;
+//             temp->data->midtermMark = S.midtermMark;
+//             cout << endl;
+//             cout << "\n Enter your your orther mark: ";
+//             cin >> S.otherMark;
+//             temp->data->otherMark = S.otherMark;
+//             cout << endl;
+//         }
 //         temp = temp->next;
-//         temp1 = temp1->next;
 //     }
+//     cin.ignore();
 // }
 
-//bool COURSE::importScore() {
-//    ifstream input("fileNew.csv");
-//    if (!input.is_open())
-//    {
-//        return false;
-//    }
-//    else {
-//        DLL<STUDENT*>* temp = students.head;
-//        char* l;
-//        l = new char[10000];
-//        cout << endl;
-//        input.ignore(256, '\n');
-//        while (input) {
-//            string s;
-//            for (int i = 0; i < 50; i++) {
-//                
-//                    STUDENT S;
-//                    getline(input, s, '\n');
-//                    strcpy(l, s.c_str());
-//                    cout << l;
-//                    cout << endl;
-//                    S.No = stoi(strtok(l, ",")); //stoi convert string to integer
-//                    //cout << S.No; cout << endl;
-//                    S.studentID = strtok(NULL, ","); //strtok splits the string str into an array of tokens separated by delim
-//                    //cout << S.studentID; cout << endl;
-//                    S.fullname = strtok(NULL, ",");
-//                    //cout << S.fullname; cout << endl;
-//                    S.totalMark = stoi(strtok(NULL, ","));
-//                    //cout << S.totalMark; cout << endl;
-//                    S.finalMark = stoi(strtok(NULL, ","));
-//                    //cout << S.finalMark; cout << endl;
-//                    S.midtermMark = stoi(strtok(NULL, ","));
-//                    //cout << S.midtermMark; cout << endl;
-//                    S.otherMark = stoi(strtok(NULL, ","));
-//                    //cout << S.otherMark; cout << endl;
-//                    //L.createNode(S);
-//                    while (temp != nullptr) {
-//                                        if (S.studentID == temp->data->studentID) {
-//                                            temp->data->finalMark = S.finalMark;
-//                                            temp->data->totalMark = S.totalMark;
-//                                            temp->data->midtermMark = S.midtermMark;
-//                                            temp->data->otherMark = S.otherMark;
-//                                        }
-//                                        temp = temp->next;
-//                                    }
-//                
-//                }
-//                break;
-//            }
-//            
-//        }
-//        input.close();
-//        return true;
-//}
+// // void COURSE::UpdateST(LIST <DLL, STUDENT>& L, LIST <SLL, STUDENT>& L1) {
+// //     DLL<STUDENT*>* temp = L.head;
+// //     SLL<STUDENT>* temp1 = L1.head;
+// //     while (temp != nullptr) {
+// //         temp1->data = temp->data;
+// //         temp = temp->next;
+// //         temp1 = temp1->next;
+// //     }
+// // }
+
+// bool COURSE::importScore() {
+//     ifstream input("fileNew.csv");
+//     if (!input.is_open())
+//     {
+//         return false;
+//     }
+//     else {
+//         DLL<STUDENT*>* temp = students.head;
+//         char* l;
+//         l = new char[10000];
+//         cout << endl;
+//         input.ignore(256, '\n');
+//         while (input) {
+//             string s;
+//             for (int i = 0; i < 50; i++) {
+                
+//                     STUDENT S;
+//                     getline(input, s, '\n');
+//                     strcpy(l, s.c_str());
+//                     cout << l;
+//                     cout << endl;
+//                     S.No = stoi(strtok(l, ",")); //stoi convert string to integer
+//                     //cout << S.No; cout << endl;
+//                     S.studentID = strtok(NULL, ","); //strtok splits the string str into an array of tokens separated by delim
+//                     //cout << S.studentID; cout << endl;
+//                     S.fullname = strtok(NULL, ",");
+//                     //cout << S.fullname; cout << endl;
+//                     S.totalMark = stoi(strtok(NULL, ","));
+//                     //cout << S.totalMark; cout << endl;
+//                     S.finalMark = stoi(strtok(NULL, ","));
+//                     //cout << S.finalMark; cout << endl;
+//                     S.midtermMark = stoi(strtok(NULL, ","));
+//                     //cout << S.midtermMark; cout << endl;
+//                     S.otherMark = stoi(strtok(NULL, ","));
+//                     //cout << S.otherMark; cout << endl;
+//                     //L.createNode(S);
+//                     while (temp != nullptr) {
+//                                         if (S.studentID == temp->data->studentID) {
+//                                             temp->data->finalMark = S.finalMark;
+//                                             temp->data->totalMark = S.totalMark;
+//                                             temp->data->midtermMark = S.midtermMark;
+//                                             temp->data->otherMark = S.otherMark;
+//                                         }
+//                                         temp = temp->next;
+//                                     }
+                
+//                 }
+//                 break;
+//             }
+            
+//         }
+//         input.close();
+//         return true;
+// }
 

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 
 /// data_type of (list) same as data_type of (val)
@@ -9,7 +11,7 @@ void add_val(LIST<DLL,Data_Type> &list, Data_Type val) {
     tmp -> next = nullptr;
     tmp -> prev = list.tail;
 
-    /// Update the (list), 2 cases: the (list is empty or not) 
+    /// Update the (list), 2 cases: the list is empty or not
     if (list.head == nullptr) {
         list.head = tmp;
         list.tail = tmp;

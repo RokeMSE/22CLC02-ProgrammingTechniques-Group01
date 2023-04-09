@@ -10,9 +10,7 @@ using namespace std;
     #include "StructsDefinition/enum.h"
     #include "StructsDefinition/LIST.h"
 
-    #include "StructsDefinition/Stack.h"
-    #include "StructsDefinition/Queue.h"
-
+    #include "StructsDefinition/USER.h"
     #include "StructsDefinition/DATE.h"
     #include "StructsDefinition/SCOREBOARD.h"
     #include "StructsDefinition/COURSE.h"
@@ -20,7 +18,7 @@ using namespace std;
     #include "StructsDefinition/CLASS.h"
     #include "StructsDefinition/STUDENT.h"
     #include "StructsDefinition/STAFF.h"
-    #include "StructsDefinition/USER.h"
+    
 /////////////////////////////////////
 
 // Global variables
@@ -35,22 +33,18 @@ LIST<DLL, STUDENT*> L_Student;
 LIST<DLL, CLASS> L_Class;
 /////////////////////////////////////
 
-// GUI
-
-/////////////////////////////////////
-
 // Prototypes
     // import
-        bool importStudents(std::string filename);
+        bool importStudents();
 
-        bool importStaffs(std::string filename);
+        bool importStaffs();
 
-        bool importClasses(std::string filename);
+        bool importClasses();
 
         bool importStudentsInACourse(std::string filename, COURSE &c);
-        bool importCoursesInASemester(std::string filename, SEMESTER* sem);
-        bool importASemesterInASchoolYear(std::string filename, SEMESTER* newSem, ushort noSem);
-        bool importSchoolYears(std::string filename);
+        bool importCoursesInASemester(std::string filename, SEMESTER* &sem);
+        bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, ushort noSem);
+        bool importSchoolYears();
     /////////////////////////////////
     
     // export
@@ -60,20 +54,29 @@ LIST<DLL, CLASS> L_Class;
 
         void exportClasses();
 
-        void exportStudentsInACourse(COURSE c);
-        void exportCoursesInASemester(std::string filename, SEMESTER a, uint startYear);
-        void exportASemesterInASchoolYear(std::string filename, SEMESTER* sem, ushort noSem, uint startYear);
+        void exportStudentsInACourse(COURSE* &c, uint startYear);
+        void exportCoursesInASemester(std::string filename, SEMESTER* &sem, uint startYear);
+        void exportASemesterInASchoolYear(std::string filename, SEMESTER* &sem, uint startYear);
         void exportSchoolYears();
     /////////////////////////////////
-
-    // dealloc
-        template<typename Data>
-        void dealloc1(LIST<DLL, Data> &list);
-        // hàm dealloc node
-
-        template<typename Data>
-        void dealloc2(LIST<DLL, Data> &list);
-        // hàm dealloc node->data xong mới dealloc node
-    /////////////////////////////////
 /////////////////////////////////////
+        #include "import.cpp"
+        #include "export.cpp"
+        #include "StructsImplementation/enum.cpp"
+        #include "StructsImplementation/LIST.cpp"
 
+        #include "StructsImplementation/Stack.cpp"
+        #include "StructsImplementation/Queue.cpp"
+
+        #include "StructsImplementation/DATE.cpp"
+        #include "StructsImplementation/SCOREBOARD.cpp"
+        #include "StructsImplementation/COURSE.cpp"
+        #include "StructsImplementation/SCHOOLYEAR.cpp"
+        #include "StructsImplementation/CLASS.cpp"
+        #include "StructsImplementation/STUDENT.cpp"
+        #include "StructsImplementation/STAFF.cpp"
+        #include "StructsImplementation/USER.cpp"
+// GUI
+// #define WIN32_LEAN_AND_MEAN
+// #include <Windows.h>
+/////////////////////////////////////

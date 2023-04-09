@@ -1,10 +1,8 @@
 #pragma once
 
-#include <string>
 #include "../header.h"
 
 struct COURSE;
-struct USER;
 
 struct STUDENT {
     uint No = 0, yearIn = 0;    // yearIn: the year in which that student admitted to school
@@ -23,4 +21,4 @@ struct STUDENT {
     LIST<DLL, COURSE*> courses;   // courses that 1 student enrolls in a semester
 };
 
-bool MenuStudent(STUDENT* current); // return 0 if user chooses exit.
+bool MenuStudent(STUDENT* current);

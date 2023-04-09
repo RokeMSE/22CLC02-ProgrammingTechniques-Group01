@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../header.h"
 #include <fstream>
 
@@ -72,45 +74,44 @@ void CLASS::add1stYearStudent () {
     return;
 }
 
-//bool CLASS::add1stYearStudents (std::string filename) {
-//// from file csv: username, password, No, studentID, firstname, lastname, gender, (DoB: hasn't been set up yet), socialID
-//    ifstream inp (filename);
-//    if ( !inp.is_open() )    return 0;
-//    // your code here
-//    DLL<STUDENT*>* tmp = nullptr;
-//    DLL<STUDENT*>*stu;
-//    USER user;
-//    string skip1stLine;
-//    getline(inp, skip1stLine);
-//    while (!inp.eof()) {
-//        // log in info
-//        getline(inp, user.username, ',');
-//        getline(inp, user.password, ',');
-//       // stu->data->user = &user;
-//        ////////////////////////
-//        string s;
-//        std::getline(inp, s, ',');
-//        stu = new DLL<STUDENT*>;
-//        stu -> data->No = std::stoi(s, nullptr);
-//        std::getline(inp, stu -> data->studentID, ',');
-//        std::getline(inp, stu -> data->firstname, ',');
-//        std::getline(inp, stu -> data->lastname, ',');
-//        std::getline(inp, s, ',');
-//        stu->data->gender = stoi(s); // 0 ~ male ; 1 ~ female
-//        std::getline(inp, s, ',');
-//        stu -> data->DoB = getDate(s);
-//        std::getline(inp, stu -> data->socialID, ',');
-//        if (!(this -> student).head)
-//            (this -> student).head = stu;
-//        stu -> prev = tmp;
-//        tmp = stu;
-//        stu = stu -> next;
-//    }
-//    (this -> student).tail = ::L_Student.tail = stu;
-//    stu = nullptr;
-//    inp.close();
-//    return 1;
-//}
+bool CLASS::add1stYearStudents (std::string filename) {
+// from file csv: username, password, No, studentID, firstname, lastname, gender, (DoB: hasn't been set up yet), socialID
+    ifstream inp (filename);
+    if ( !inp.is_open() )    return 0;
+    // your code here
+    DLL<STUDENT*>* tmp = nullptr, *stu;
+    USER user;
+    string skip1stLine;
+    getline(inp, skip1stLine);
+    while (!inp.eof()) {
+        // log in info
+        getline(inp, user.username, ',');
+        getline(inp, user.password, ',');
+        stu->data->user = &user;
+        ////////////////////////
+        string s;
+        std::getline(inp, s, ',');
+        stu = new DLL<STUDENT*>;
+        stu -> data->No = std::stoi(s, nullptr);
+        std::getline(inp, stu -> data->studentID, ',');
+        std::getline(inp, stu -> data->firstname, ',');
+        std::getline(inp, stu -> data->lastname, ',');
+        std::getline(inp, s, ',');
+        stu->data->gender = stoi(s); // 0 ~ male ; 1 ~ female
+        std::getline(inp, s, ',');
+        stu -> data->DoB = getDate(s);
+        std::getline(inp, stu -> data->socialID, ',');
+        if (!(this -> student).head)
+            (this -> student).head = stu;
+        stu -> prev = tmp;
+        tmp = stu;
+        stu = stu -> next;
+    }
+    (this -> student).tail = ::L_Student.tail = stu;
+    stu = nullptr;
+    inp.close();
+    return 1;
+}
 
 CLASS convertToClass(std::string str) {
     CLASS res;
@@ -133,4 +134,7 @@ CLASS convertToClass(std::string str) {
     }
     return res;
 }
-// 22apcs1
+std::string CLASS::convertToString() {
+    if (!this) return "";
+    return to_string(this -> K) + convertFromProgram(this -> program) + to_string(this -> No);
+}
