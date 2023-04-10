@@ -18,8 +18,9 @@ namespace CMS {
 	public ref class UpdateResult : public System::Windows::Forms::Form
 	{
 	public:
-		UpdateResult(void)
+		UpdateResult(System::Windows::Forms::Form^ form)
 		{
+			this->sourceForm = form;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -41,7 +42,7 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
 															// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
-		int rateOther, rateMid, rateFinal, totalRate;
+		System::Windows::Forms::Form^ sourceForm;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_courseID;
 	private: System::Windows::Forms::TextBox^ txt_coursename;
@@ -50,7 +51,8 @@ namespace CMS {
 
 
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ lbl_title;
+
 	private: System::Windows::Forms::Button^ btn_Search;
 
 	private: System::Windows::Forms::TextBox^ txt_schoolyear;
@@ -66,6 +68,8 @@ namespace CMS {
 	private: System::Windows::Forms::TextBox^ txt_maxStu;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ txt_StudentID;
+
+
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::TextBox^ txt_othermark;
@@ -96,8 +100,11 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label20;
 	private: System::Windows::Forms::TextBox^ txt_rateTotal;
 	private: System::Windows::Forms::Label^ label21;
-
-
+	private: System::Windows::Forms::Button^ btn_back;
+	private: System::Windows::Forms::Panel^ pnl_titleUpdateScore;
+	private: System::Windows::Forms::TextBox^ txt_StudentID_2;
+	private: System::Windows::Forms::Label^ label3;
+	private: Point mouseDownLocation, formLocation;
 
 	private:
 		/// <summary>
@@ -112,11 +119,12 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UpdateResult::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txt_courseID = (gcnew System::Windows::Forms::TextBox());
 			this->txt_coursename = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->btn_Search = (gcnew System::Windows::Forms::Button());
 			this->txt_schoolyear = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -153,6 +161,11 @@ namespace CMS {
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->txt_rateTotal = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->btn_back = (gcnew System::Windows::Forms::Button());
+			this->pnl_titleUpdateScore = (gcnew System::Windows::Forms::Panel());
+			this->txt_StudentID_2 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pnl_titleUpdateScore->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -160,7 +173,7 @@ namespace CMS {
 			this->label1->AutoSize = true;
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label1->Location = System::Drawing::Point(719, 84);
+			this->label1->Location = System::Drawing::Point(724, 84);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(81, 20);
 			this->label1->TabIndex = 0;
@@ -194,24 +207,24 @@ namespace CMS {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Course name";
 			// 
-			// label3
+			// lbl_title
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_title->AutoSize = true;
+			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label3->Location = System::Drawing::Point(458, 24);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(286, 30);
-			this->label3->TabIndex = 4;
-			this->label3->Text = L"Update Score of Student";
+			this->lbl_title->Location = System::Drawing::Point(458, 8);
+			this->lbl_title->Name = L"lbl_title";
+			this->lbl_title->Size = System::Drawing::Size(286, 30);
+			this->lbl_title->TabIndex = 4;
+			this->lbl_title->Text = L"Update Score of Student";
 			// 
 			// btn_Search
 			// 
-			this->btn_Search->Location = System::Drawing::Point(896, 119);
+			this->btn_Search->Location = System::Drawing::Point(1094, 123);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(90, 34);
+			this->btn_Search->Size = System::Drawing::Size(83, 26);
 			this->btn_Search->TabIndex = 5;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = true;
@@ -319,20 +332,20 @@ namespace CMS {
 			// 
 			// txt_StudentID
 			// 
-			this->txt_StudentID->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_StudentID->Location = System::Drawing::Point(161, 304);
+			this->txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
+			this->txt_StudentID->Location = System::Drawing::Point(814, 123);
 			this->txt_StudentID->Name = L"txt_StudentID";
-			this->txt_StudentID->ReadOnly = true;
+			this->txt_StudentID->ReadOnly = false;
 			this->txt_StudentID->Size = System::Drawing::Size(261, 26);
 			this->txt_StudentID->TabIndex = 17;
-			this->txt_StudentID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_studentID_KeyPress);
+			this->txt_StudentID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label9->Location = System::Drawing::Point(66, 307);
+			this->label9->Location = System::Drawing::Point(719, 126);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(87, 20);
 			this->label9->TabIndex = 16;
@@ -578,6 +591,55 @@ namespace CMS {
 			this->label21->TabIndex = 38;
 			this->label21->Text = L"Total Rate";
 			// 
+			// btn_back
+			// 
+			this->btn_back->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_back->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_back->Location = System::Drawing::Point(1165, 6);
+			this->btn_back->Name = L"btn_back";
+			this->btn_back->Size = System::Drawing::Size(35, 33);
+			this->btn_back->TabIndex = 41;
+			this->btn_back->Text = L"<";
+			this->btn_back->UseVisualStyleBackColor = false;
+			this->btn_back->Click += gcnew System::EventHandler(this, &UpdateResult::btn_back_Click);
+			// 
+			// pnl_titleUpdateScore
+			// 
+			this->pnl_titleUpdateScore->Controls->Add(this->btn_back);
+			this->pnl_titleUpdateScore->Controls->Add(this->lbl_title);
+			this->pnl_titleUpdateScore->Dock = System::Windows::Forms::DockStyle::Top;
+			this->pnl_titleUpdateScore->Location = System::Drawing::Point(4, 4);
+			this->pnl_titleUpdateScore->Name = L"pnl_titleUpdateScore";
+			this->pnl_titleUpdateScore->Padding = System::Windows::Forms::Padding(4);
+			this->pnl_titleUpdateScore->Size = System::Drawing::Size(1207, 46);
+			this->pnl_titleUpdateScore->TabIndex = 42;
+			this->pnl_titleUpdateScore->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseDown);
+			this->pnl_titleUpdateScore->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseMove);
+			// 
+			// txt_StudentID_2
+			// 
+			this->txt_StudentID_2->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->txt_StudentID_2->Location = System::Drawing::Point(161, 302);
+			this->txt_StudentID_2->Name = L"txt_StudentID_2";
+			this->txt_StudentID_2->ReadOnly = true;
+			this->txt_StudentID_2->Size = System::Drawing::Size(261, 26);
+			this->txt_StudentID_2->TabIndex = 44;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label3->Location = System::Drawing::Point(66, 305);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(87, 20);
+			this->label3->TabIndex = 43;
+			this->label3->Text = L"Student ID";
+			// 
 			// UpdateResult
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -586,6 +648,8 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
 			this->ClientSize = System::Drawing::Size(1215, 611);
 			this->ControlBox = false;
+			this->Controls->Add(this->txt_StudentID_2);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label20);
 			this->Controls->Add(this->txt_rateTotal);
 			this->Controls->Add(this->label21);
@@ -622,15 +686,18 @@ namespace CMS {
 			this->Controls->Add(this->txt_schoolyear);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->btn_Search);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->txt_coursename);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->txt_courseID);
 			this->Controls->Add(this->label1);
+			this->Controls->Add(this->pnl_titleUpdateScore);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"UpdateResult";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Load += gcnew System::EventHandler(this, &UpdateResult::UpdateResult_Load);
+			this->pnl_titleUpdateScore->ResumeLayout(false);
+			this->pnl_titleUpdateScore->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -641,53 +708,39 @@ namespace CMS {
 		txt_schoolyear->Text = gcnew System::String(str.c_str());
 		str = std::to_string(g_currentSemester->No);
 		txt_sem->Text = gcnew System::String(str.c_str());
-		txt_StudentID->ReadOnly = true;
-		txt_StudentID->BackColor = System::Drawing::SystemColors::AppWorkspace;
-		txt_othermark->ReadOnly = false;
+
+		txt_othermark->ReadOnly = true;
+		txt_othermark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
 		txt_midmark->ReadOnly = true;
+		txt_midmark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
 		txt_finalmark->ReadOnly = true;
+		txt_finalmark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
 		txt_rateOther->ReadOnly = true;
+		txt_rateOther->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
 		txt_rateMid->ReadOnly = true;
+		txt_rateMid->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
 		txt_rateFinal->ReadOnly = true;
+		txt_rateFinal->BackColor = System::Drawing::SystemColors::AppWorkspace;
 
 		this->curCourse = nullptr;
 		this->curStudent = nullptr;
+
+		pnl_titleUpdateScore->BackColor = Color::FromArgb(50, 255, 255, 255);
+		lbl_title->BackColor = System::Drawing::Color::Transparent;
 	}
 
 	private: System::Void txt_intOnly_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 		// integers only
 		if (!Char::IsControl(e->KeyChar) && !Char::IsDigit(e->KeyChar))	e->Handled = true;
 	}
-
-	private: System::Void txt_studentID_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// integers only
-		if (!Char::IsControl(e->KeyChar) && !Char::IsDigit(e->KeyChar)) {
-			e->Handled = true;
-			return;
-		}
-		else e->Handled = false;
-
-		std::string id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text); //input
-		this->curStudent = this->curCourse->data->students.head;
-		while (this->curStudent) {
-			if (this->curStudent->data->student->studentID == id) {
-				txt_othermark->Text = gcnew System::String((std::to_string(this->curStudent->data->otherMark)).c_str());
-				txt_midmark->Text = gcnew System::String((std::to_string(this->curStudent->data->midtermMark)).c_str());
-				txt_finalmark->Text = gcnew System::String((std::to_string(this->curStudent->data->finalMark)).c_str());
-				txt_totalmark->Text = gcnew System::String((std::to_string(this->curStudent->data->totalMark)).c_str());
-				return;
-			}
-			this->curStudent = this->curStudent->next;
-		}
-		txt_othermark->Text = "";
-		txt_midmark->Text = "";
-		txt_finalmark->Text = "";
-		txt_totalmark->Text = "";
-	}
 	
 	private: bool existDot(System::String^ s) {
 		std::string str = msclr::interop::marshal_as<std::string>(s);
-		MessageBox::Show(s);
 		for (int i = 0; i < str.length(); i++)	if (str[i] == '.')	return 1;
 		return 0;
 	}
@@ -701,40 +754,81 @@ namespace CMS {
 	}
 
 	private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->curCourse = g_currentSemester->course.head;
+		// search for course
 		std::string id = msclr::interop::marshal_as<std::string>(txt_courseID->Text);
+		if (this->curCourse && this->curCourse->data->ID == id)	goto _skipfindcourse;
+		this->curCourse = g_currentSemester->course.head;
+		
 		while (this->curCourse) {
 			if (id == this->curCourse->data->ID) {
 				txt_coursename->Text = gcnew System::String((this->curCourse->data->name).c_str());
 				txt_teacher->Text = gcnew System::String((this->curCourse->data->teacher).c_str());
 				txt_credit->Text = System::Convert::ToString(this->curCourse->data->credit);
 				txt_maxStu->Text = System::Convert::ToString(this->curCourse->data->maxStudents);
-
-				txt_StudentID->ReadOnly = false;
-				txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
-
-				txt_othermark->ReadOnly = false;
-				txt_midmark->ReadOnly = false;
-				txt_finalmark->ReadOnly = false;
-				txt_rateOther->ReadOnly = false;
-				txt_rateMid->ReadOnly = false;
-				txt_rateFinal->ReadOnly = false;
-				return;
+				break;
 			}
 			this->curCourse = this->curCourse->next;
 		}
 
-		// id now is used for storing message (not an ID anymore)
-		id = "There is no course with ID " + id + " in this semester.";
-		System::String^ message = gcnew System::String(id.c_str());
-		if (!(this->curCourse)) MessageBox::Show(message);
+		if (!(this->curCourse)) {
+			// id now is used for storing message (not an ID anymore)
+			id = "There is no course with ID " + id + " in this semester.";
+			System::String^ message = gcnew System::String(id.c_str());
+			MessageBox::Show(message);
+			return;
+		}
+
+		// then search for student in the course
+	_skipfindcourse:
+		id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
+		if (this->curStudent && this->curStudent->data->student->studentID == id)	goto _skipfindstudent;
+		this->curStudent = this->curCourse->data->students.head; //type == DLL<SCOREBOARD*>*
+		while (this->curStudent) {
+			if (this->curStudent->data->student->studentID == id) {
+			_skipfindstudent:
+				txt_othermark->ReadOnly = false;
+				txt_othermark->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_midmark->ReadOnly = false;
+				txt_midmark->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_finalmark->ReadOnly = false;
+				txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_rateOther->ReadOnly = false;
+				txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_rateMid->ReadOnly = false;
+				txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_rateFinal->ReadOnly = false;
+				txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
+
+				txt_StudentID_2->Text = txt_StudentID->Text;
+				return;
+			}
+			this->curStudent = this->curStudent->next;
+		}
+		if (!this->curStudent) {
+			id = "Cannot find student " + id;
+			System::String^ message = gcnew System::String(id.c_str());
+			MessageBox::Show(message);
+			return;
+		}
 	}
 
-	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-		std::string id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
-		int rateOther = System::Convert::ToInt32(txt_rateOther->Text);
-		int rateMid = System::Convert::ToInt32(txt_rateMid->Text);
-		int rateFinal = System::Convert::ToInt32(txt_rateFinal->Text);
+	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {		
+		int rateOther = -1, rateMid = -1, rateFinal = -1;
+		try {
+			rateOther = System::Convert::ToInt32(txt_rateOther->Text);
+			rateMid = System::Convert::ToInt32(txt_rateMid->Text);
+			rateFinal = System::Convert::ToInt32(txt_rateFinal->Text);
+		}
+		catch (System::FormatException^) {
+			MessageBox::Show("Rate is not valid. Please enter again!");
+			return;
+		}
+
 		if (rateOther + rateMid + rateFinal != 100) {
 			MessageBox::Show("Total rate must be 100%");
 			return;
@@ -744,29 +838,79 @@ namespace CMS {
 			val_otherMark = System::Convert::ToDouble(txt_othermark->Text); // Use the input_value as a floating-point number
 			val_midtermMark = System::Convert::ToDouble(txt_midmark->Text); // Use the input_value as a floating-point number
 			val_finalMark = System::Convert::ToDouble(txt_finalmark->Text); // Use the input_value as a floating-point number
-			if (val_otherMark > 10 || val_midtermMark > 10 || val_finalMark > 10) {
-				MessageBox::Show("Score must not be greater than 10");
-				return;
-			}
 		}
 		catch (System::FormatException^) {
 			// Handle the case when the input is not a valid floating-point number
-			MessageBox::Show("Mark must be a floating point number, such as: 4.5, 9.5, 10,...");
+			MessageBox::Show("Mark is not valid. Please enter again!");
+			return;
 		}
-		this->curStudent = this->curCourse->data->students.head; //type == DLL<SCOREBOARD*>*
-		while (curStudent) {
-			if (curStudent->data->student->studentID == id) {
-				curStudent->data->otherMark = val_otherMark;
-				curStudent->data->midtermMark = val_midtermMark;
-				curStudent->data->finalMark = val_finalMark;
-				curStudent->data->totalMark = val_otherMark * rateOther + val_midtermMark * rateMid + val_finalMark * rateFinal;
-			}
-			curStudent = curStudent->next;
+		if (val_otherMark > 10 || val_otherMark < 0 || val_midtermMark > 10 || val_midtermMark < 0 || val_finalMark > 10 || val_finalMark < 0) {
+			MessageBox::Show("Score must be non-negative and less than or equal to 10");
+			return;
 		}
-		if (!curStudent) {
-			id = "Cannot find student " + id;
-			System::String^ message = gcnew System::String(id.c_str());
-			MessageBox::Show(message);
+
+		curStudent->data->otherMark = val_otherMark;
+		curStudent->data->midtermMark = val_midtermMark;
+		curStudent->data->finalMark = val_finalMark;
+		curStudent->data->totalMark = (val_otherMark * rateOther + val_midtermMark * rateMid + val_finalMark * rateFinal) / 100.0;
+		MessageBox::Show("Successfully updated");
+
+		txt_StudentID->Text = "";
+		txt_StudentID_2->Text = "";
+
+		txt_othermark->Text = "";
+		txt_othermark->ReadOnly = true;
+		txt_othermark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_midmark->Text = "";
+		txt_midmark->ReadOnly = true;
+		txt_midmark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_finalmark->Text = "";
+		txt_finalmark->ReadOnly = true;
+		txt_finalmark->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_rateOther->Text = "";
+		txt_rateOther->ReadOnly = true;
+		txt_rateOther->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_rateMid->Text = "";
+		txt_rateMid->ReadOnly = true;
+		txt_rateMid->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_rateFinal->Text = "";
+		txt_rateFinal->ReadOnly = true;
+		txt_rateFinal->BackColor = System::Drawing::SystemColors::AppWorkspace;
+
+		txt_coursename->Text = "";
+		txt_teacher->Text = "";
+		txt_credit->Text = "";
+		txt_maxStu->Text = "";
+	}
+
+	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+		this->sourceForm->Show();
+	}
+
+	private: System::Void pnl_titleUpdateScore_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Record the mouse position when the panel is clicked
+		mouseDownLocation = e->Location;
+		// Record the form position
+		formLocation = this->Location;
+	}
+
+	private: System::Void pnl_titleUpdateScore_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Check if the left mouse button is pressed
+		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
+			// Calculate the new form position based on the mouse position
+			int dx = e->Location.X - mouseDownLocation.X;
+			int dy = e->Location.Y - mouseDownLocation.Y;
+			int newX = formLocation.X + dx;
+			int newY = formLocation.Y + dy;
+			// Update the form position
+			System::Drawing::Point newLocation(newX, newY);
+			this->Location = newLocation;
 		}
 	}
 };

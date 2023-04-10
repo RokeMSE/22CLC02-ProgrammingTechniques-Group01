@@ -1,6 +1,7 @@
 #pragma once
 
 #include "header.h"
+#include "UpdateResult.h"
 
 namespace CMS {
 
@@ -70,6 +71,8 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btn_logout;
 	private: System::Windows::Forms::Button^ btn_exit;
+	private: System::Windows::Forms::Button^ btn_UpdateResult;
+
 
 
 
@@ -103,11 +106,12 @@ namespace CMS {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
+			this->btn_UpdateResult = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// btn_CreateSchoolYear
 			// 
-			this->btn_CreateSchoolYear->Location = System::Drawing::Point(51, 96);
+			this->btn_CreateSchoolYear->Location = System::Drawing::Point(51, 83);
 			this->btn_CreateSchoolYear->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_CreateSchoolYear->Name = L"btn_CreateSchoolYear";
 			this->btn_CreateSchoolYear->Size = System::Drawing::Size(423, 72);
@@ -117,7 +121,7 @@ namespace CMS {
 			// 
 			// btn_Create1NewClass
 			// 
-			this->btn_Create1NewClass->Location = System::Drawing::Point(51, 256);
+			this->btn_Create1NewClass->Location = System::Drawing::Point(51, 243);
 			this->btn_Create1NewClass->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Create1NewClass->Name = L"btn_Create1NewClass";
 			this->btn_Create1NewClass->Size = System::Drawing::Size(423, 72);
@@ -127,7 +131,7 @@ namespace CMS {
 			// 
 			// btn_AddStuToClass
 			// 
-			this->btn_AddStuToClass->Location = System::Drawing::Point(51, 581);
+			this->btn_AddStuToClass->Location = System::Drawing::Point(51, 568);
 			this->btn_AddStuToClass->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_AddStuToClass->Name = L"btn_AddStuToClass";
 			this->btn_AddStuToClass->Size = System::Drawing::Size(423, 72);
@@ -137,7 +141,7 @@ namespace CMS {
 			// 
 			// btn_AddStuCSV
 			// 
-			this->btn_AddStuCSV->Location = System::Drawing::Point(51, 336);
+			this->btn_AddStuCSV->Location = System::Drawing::Point(51, 323);
 			this->btn_AddStuCSV->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_AddStuCSV->Name = L"btn_AddStuCSV";
 			this->btn_AddStuCSV->Size = System::Drawing::Size(423, 72);
@@ -147,7 +151,7 @@ namespace CMS {
 			// 
 			// btn_Create1Sem
 			// 
-			this->btn_Create1Sem->Location = System::Drawing::Point(51, 419);
+			this->btn_Create1Sem->Location = System::Drawing::Point(51, 406);
 			this->btn_Create1Sem->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Create1Sem->Name = L"btn_Create1Sem";
 			this->btn_Create1Sem->Size = System::Drawing::Size(423, 72);
@@ -157,7 +161,7 @@ namespace CMS {
 			// 
 			// btn_Add1CourseToCurSem
 			// 
-			this->btn_Add1CourseToCurSem->Location = System::Drawing::Point(51, 499);
+			this->btn_Add1CourseToCurSem->Location = System::Drawing::Point(51, 486);
 			this->btn_Add1CourseToCurSem->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Add1CourseToCurSem->Name = L"btn_Add1CourseToCurSem";
 			this->btn_Add1CourseToCurSem->Size = System::Drawing::Size(423, 72);
@@ -167,7 +171,7 @@ namespace CMS {
 			// 
 			// btn_StuInCourseCSV
 			// 
-			this->btn_StuInCourseCSV->Location = System::Drawing::Point(538, 499);
+			this->btn_StuInCourseCSV->Location = System::Drawing::Point(538, 486);
 			this->btn_StuInCourseCSV->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_StuInCourseCSV->Name = L"btn_StuInCourseCSV";
 			this->btn_StuInCourseCSV->Size = System::Drawing::Size(423, 72);
@@ -177,7 +181,7 @@ namespace CMS {
 			// 
 			// btn_ViewCourses
 			// 
-			this->btn_ViewCourses->Location = System::Drawing::Point(538, 176);
+			this->btn_ViewCourses->Location = System::Drawing::Point(538, 163);
 			this->btn_ViewCourses->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_ViewCourses->Name = L"btn_ViewCourses";
 			this->btn_ViewCourses->Size = System::Drawing::Size(423, 72);
@@ -187,7 +191,7 @@ namespace CMS {
 			// 
 			// btn_UpdateCourse
 			// 
-			this->btn_UpdateCourse->Location = System::Drawing::Point(538, 336);
+			this->btn_UpdateCourse->Location = System::Drawing::Point(538, 323);
 			this->btn_UpdateCourse->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_UpdateCourse->Name = L"btn_UpdateCourse";
 			this->btn_UpdateCourse->Size = System::Drawing::Size(423, 72);
@@ -197,7 +201,7 @@ namespace CMS {
 			// 
 			// btn_Add1StuToCourse
 			// 
-			this->btn_Add1StuToCourse->Location = System::Drawing::Point(538, 96);
+			this->btn_Add1StuToCourse->Location = System::Drawing::Point(538, 83);
 			this->btn_Add1StuToCourse->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Add1StuToCourse->Name = L"btn_Add1StuToCourse";
 			this->btn_Add1StuToCourse->Size = System::Drawing::Size(423, 72);
@@ -207,7 +211,7 @@ namespace CMS {
 			// 
 			// btn_Remove1StuInCourse
 			// 
-			this->btn_Remove1StuInCourse->Location = System::Drawing::Point(538, 419);
+			this->btn_Remove1StuInCourse->Location = System::Drawing::Point(538, 406);
 			this->btn_Remove1StuInCourse->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Remove1StuInCourse->Name = L"btn_Remove1StuInCourse";
 			this->btn_Remove1StuInCourse->Size = System::Drawing::Size(423, 72);
@@ -217,7 +221,7 @@ namespace CMS {
 			// 
 			// btn_Delete1Course
 			// 
-			this->btn_Delete1Course->Location = System::Drawing::Point(538, 256);
+			this->btn_Delete1Course->Location = System::Drawing::Point(538, 243);
 			this->btn_Delete1Course->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Delete1Course->Name = L"btn_Delete1Course";
 			this->btn_Delete1Course->Size = System::Drawing::Size(423, 72);
@@ -227,7 +231,7 @@ namespace CMS {
 			// 
 			// btn_ViewClasses
 			// 
-			this->btn_ViewClasses->Location = System::Drawing::Point(51, 176);
+			this->btn_ViewClasses->Location = System::Drawing::Point(51, 163);
 			this->btn_ViewClasses->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_ViewClasses->Name = L"btn_ViewClasses";
 			this->btn_ViewClasses->Size = System::Drawing::Size(423, 72);
@@ -239,7 +243,7 @@ namespace CMS {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->label1->Location = System::Drawing::Point(448, 22);
+			this->label1->Location = System::Drawing::Point(448, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(119, 46);
 			this->label1->TabIndex = 13;
@@ -247,7 +251,7 @@ namespace CMS {
 			// 
 			// btn_logout
 			// 
-			this->btn_logout->Location = System::Drawing::Point(558, 609);
+			this->btn_logout->Location = System::Drawing::Point(558, 596);
 			this->btn_logout->Name = L"btn_logout";
 			this->btn_logout->Size = System::Drawing::Size(81, 38);
 			this->btn_logout->TabIndex = 14;
@@ -257,7 +261,7 @@ namespace CMS {
 			// 
 			// btn_exit
 			// 
-			this->btn_exit->Location = System::Drawing::Point(793, 609);
+			this->btn_exit->Location = System::Drawing::Point(793, 596);
 			this->btn_exit->Name = L"btn_exit";
 			this->btn_exit->Size = System::Drawing::Size(81, 38);
 			this->btn_exit->TabIndex = 15;
@@ -265,12 +269,24 @@ namespace CMS {
 			this->btn_exit->UseVisualStyleBackColor = true;
 			this->btn_exit->Click += gcnew System::EventHandler(this, &MenuStaff::btn_exit_Click);
 			// 
+			// btn_UpdateResult
+			// 
+			this->btn_UpdateResult->Location = System::Drawing::Point(51, 653);
+			this->btn_UpdateResult->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->btn_UpdateResult->Name = L"btn_UpdateResult";
+			this->btn_UpdateResult->Size = System::Drawing::Size(423, 72);
+			this->btn_UpdateResult->TabIndex = 16;
+			this->btn_UpdateResult->Text = L"Update a Student\'s Result";
+			this->btn_UpdateResult->UseVisualStyleBackColor = true;
+			this->btn_UpdateResult->Click += gcnew System::EventHandler(this, &MenuStaff::btn_UpdateResult_Click);
+			// 
 			// MenuStaff
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1007, 738);
 			this->ControlBox = false;
+			this->Controls->Add(this->btn_UpdateResult);
 			this->Controls->Add(this->btn_exit);
 			this->Controls->Add(this->btn_logout);
 			this->Controls->Add(this->label1);
@@ -311,5 +327,11 @@ namespace CMS {
 		this->Close();
 		this->sourceForm->Show();
 	}
-	};
+
+	private: System::Void btn_UpdateResult_Click(System::Object^ sender, System::EventArgs^ e) {
+		UpdateResult^ form = gcnew CMS::UpdateResult(this);
+		form->Show();
+		this->Close();
+	}
+};
 }

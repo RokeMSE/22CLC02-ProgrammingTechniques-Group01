@@ -179,9 +179,16 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuStaff.resx">
+      <DependentUpon>MenuStaff.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateResult.resx">
       <DependentUpon>UpdateResult.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\..\..\Downloads\icon.ico" />
+    <Image Include="..\..\..\..\..\..\..\..\..\Pictures\img.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

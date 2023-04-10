@@ -2,10 +2,11 @@
 #include <string>
 #include <msclr/marshal_cppstd.h>
 
+#include "GlobalVariables.h"
 #include "import.h"
 #include "Structs.h"
 #include "helperFunctions.h"
-#include "GlobalVariables.h"
+
 //using namespace System;
 //using namespace System::ComponentModel;
 //using namespace System::Collections;
@@ -366,5 +367,15 @@ bool importSchoolYears() {
     else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;
     else g_currentSemester = g_currentSchoolYear->sem3;
     inp.close();
+
+    ifstream inp2("CSV / DATA.csv");
+    getline(inp2, temp); // skip title line
+    if (!inp.eof()) {
+        getline(inp2, temp, ',');
+        latestCheckRememberLogin = ((temp == "1") ? true : false);
+        getline(inp2, latestUsername, ',');
+        getline(inp2, latestPassword);
+    }
+    inp2.close();
     return 1;
 }
