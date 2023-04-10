@@ -1,26 +1,23 @@
 #pragma once
-#define uint unsigned int
-#define ushort unsigned short
-#include "DATE.h"
-#include "COURSE.h"
-#include "LIST.h"
+
+#include "../header.h"
+
+struct SEMESTER {
+    int No = 0;
+    DATE startdate, enddate;
+    LIST<DLL, COURSE*> course;
+
+    // member functions
+    bool add (); // choose school year
+    void addCourse (); // add courses to list COURSE::course
+    bool addCourses (string filename);
+};
 
 struct SCHOOLYEAR {
     public:
-        uint begin, end;
-    
-    private:
+        uint begin = 0, end = 0;    
         SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
 
     //member functions
-    void add (); // create a school year
-};
-
-struct SEMESTER : public SCHOOLYEAR{
-    int No;
-    DATE startdate, enddate;
-    LIST<DLL, COURSE> course;
-
-    // member functions
-    void add (); // choose school year
+    void create (); // create a school year
 };

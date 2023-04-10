@@ -1,20 +1,14 @@
 #pragma once
 
-#define uint unsigned int
-#define ushort unsigned short
-#include "DATE.h"
-#include "USER.h"
+#include <string>
+#include "../header.h"
 
-struct STAFF : public USER {
-    // USER* login;
-     std::string firstname = "";
+struct USER;
+struct STAFF {
+    std::string firstname = "";
     std::string lastname = "";
-
-    // member functions
-    STAFF* get () {
-        return this;
-    }
-    void add ();
-    void EmportToTeacher();
-    void ReadFileFromTeacher(LIST <SLL, STUDENT>& L);
+    const Type type = Staff;
+    USER* user;
 };
+
+bool MenuStaff(STAFF* staff); // return 0 if user chooses exit.
