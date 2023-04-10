@@ -360,6 +360,11 @@ bool importSchoolYears() {
         }
         ////////////////
     }
+    g_currentSchoolYear = L_SchoolYear.head->data;
+    if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
+    else if (!g_currentSchoolYear->sem2) g_currentSemester = g_currentSchoolYear->sem1;
+    else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;
+    else g_currentSemester = g_currentSchoolYear->sem3;
     inp.close();
     return 1;
 }
