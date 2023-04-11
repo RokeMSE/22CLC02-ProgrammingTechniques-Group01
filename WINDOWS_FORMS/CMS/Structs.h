@@ -82,12 +82,11 @@ namespace GROUP1 {
         std::string studentID = "";
         std::string firstname = "";
         std::string lastname = "";
-        std::string fullname = "";
         std::string socialID = "";
         const Type type = Student;
         USER user;
 
-        bool gender = 0;        // 0 male & 1 female
+        bool gender = 0;           // 0 male & 1 female
         DATE DoB;
         CLASS* Class;
 

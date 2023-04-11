@@ -145,6 +145,9 @@
     <ClInclude Include="MenuStudent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RemoveStuFromCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Structs.h" />
     <ClInclude Include="UpdateResult.h">
       <FileType>CppForm</FileType>
@@ -178,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStaff.resx">
       <DependentUpon>MenuStaff.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStudent.resx">
+      <DependentUpon>MenuStudent.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveStuFromCourse.resx">
+      <DependentUpon>RemoveStuFromCourse.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateResult.resx">
       <DependentUpon>UpdateResult.h</DependentUpon>

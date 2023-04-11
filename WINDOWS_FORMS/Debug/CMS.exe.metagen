@@ -1,5 +1,7 @@
   CMS.Login.resources - Embedded, ContainedInManifestFile, 
   CMS.MenuStaff.resources - Embedded, ContainedInManifestFile, 
+  CMS.MenuStudent.resources - Embedded, ContainedInManifestFile, 
+  CMS.RemoveStuFromCourse.resources - Embedded, ContainedInManifestFile, 
   CMS.UpdateResult.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly CMS, Version=0.0.*, Culture=Invariant Language (Invariant Country): 

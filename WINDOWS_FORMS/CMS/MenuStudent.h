@@ -100,10 +100,10 @@ namespace CMS {
 			// 
 			// btn_logout
 			// 
-			this->btn_logout->Location = System::Drawing::Point(549, 401);
+			this->btn_logout->Location = System::Drawing::Point(701, 256);
 			this->btn_logout->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_logout->Name = L"btn_logout";
-			this->btn_logout->Size = System::Drawing::Size(423, 72);
+			this->btn_logout->Size = System::Drawing::Size(134, 38);
 			this->btn_logout->TabIndex = 3;
 			this->btn_logout->Text = L"Log out";
 			this->btn_logout->UseVisualStyleBackColor = true;
@@ -111,10 +111,10 @@ namespace CMS {
 			// 
 			// btn_exit
 			// 
-			this->btn_exit->Location = System::Drawing::Point(28, 401);
+			this->btn_exit->Location = System::Drawing::Point(180, 256);
 			this->btn_exit->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(423, 72);
+			this->btn_exit->Size = System::Drawing::Size(134, 38);
 			this->btn_exit->TabIndex = 4;
 			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = true;
@@ -148,7 +148,6 @@ namespace CMS {
 	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
 		//Log out
 		g_currentStudent = nullptr;
-		MessageBox::Show("Succcessfully logged out!");
 		this->Hide();
 		this->sourceForm->Show();
 	}
