@@ -258,7 +258,6 @@ namespace CMS {
 		pnl_login->BackColor = cl.FromArgb(100, 244, 238, 224);
 		pnl_titleLogin->BackColor = cl.FromArgb(50, 0, 0, 0);
 		// rgb(244, 238, 224)
-		// https://colorhunt.co/palette/3936464f45576d5d6ef4eee0
 		this->chkbx_remember->Checked = latestCheckRememberLogin;
 		txt_password->Text = gcnew System::String(latestPassword.c_str());
 		txt_username->Text = gcnew System::String(latestUsername.c_str());
@@ -269,12 +268,12 @@ namespace CMS {
 			latestUsername = input.username;
 			latestPassword = input.password;
 			latestCheckRememberLogin = true;
-		}
-		else {
+		} else {
 			latestUsername = latestPassword = "";
 			latestCheckRememberLogin = false;
 		}
 	}
+	
 	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
 		GROUP1::USER input;
 		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
@@ -306,8 +305,8 @@ namespace CMS {
 			curStaf = curStaf->next;
 		}
 		if (curStaf)	return;
+
 		GROUP1::DLL<GROUP1::STUDENT*>* curStu = L_Student.head;
-		//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
 		while (curStu) {
 			if (input.username == curStu->data->user.username) {// cur->data->user.username
 				if (input.password == curStu->data->user.password) {//cur->data->user.password
@@ -329,6 +328,7 @@ namespace CMS {
 			}
 			curStu = curStu->next;
 		}
+
 		if (!curStu)
 			MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
 		this->txt_username->Text = L"";

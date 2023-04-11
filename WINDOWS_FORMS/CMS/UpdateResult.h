@@ -43,6 +43,7 @@ namespace CMS {
 															// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
 		System::Windows::Forms::Form^ sourceForm;
+		System::Windows::Forms::TextBox^ latestTextBox = nullptr;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_courseID;
 	private: System::Windows::Forms::TextBox^ txt_coursename;
@@ -222,12 +223,18 @@ namespace CMS {
 			// 
 			// btn_Search
 			// 
-			this->btn_Search->Location = System::Drawing::Point(1094, 123);
+			this->btn_Search->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_Search->Location = System::Drawing::Point(903, 155);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(83, 26);
+			this->btn_Search->Size = System::Drawing::Size(84, 30);
 			this->btn_Search->TabIndex = 5;
 			this->btn_Search->Text = L"Search";
-			this->btn_Search->UseVisualStyleBackColor = true;
+			this->btn_Search->UseVisualStyleBackColor = false;
 			this->btn_Search->Click += gcnew System::EventHandler(this, &UpdateResult::btn_Search_Click);
 			// 
 			// txt_schoolyear
@@ -253,7 +260,7 @@ namespace CMS {
 			// txt_sem
 			// 
 			this->txt_sem->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_sem->Location = System::Drawing::Point(609, 81);
+			this->txt_sem->Location = System::Drawing::Point(609, 84);
 			this->txt_sem->Name = L"txt_sem";
 			this->txt_sem->ReadOnly = true;
 			this->txt_sem->Size = System::Drawing::Size(56, 26);
@@ -264,7 +271,7 @@ namespace CMS {
 			this->label5->AutoSize = true;
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label5->Location = System::Drawing::Point(501, 84);
+			this->label5->Location = System::Drawing::Point(501, 87);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(78, 20);
 			this->label5->TabIndex = 8;
@@ -273,7 +280,7 @@ namespace CMS {
 			// txt_teacher
 			// 
 			this->txt_teacher->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_teacher->Location = System::Drawing::Point(536, 208);
+			this->txt_teacher->Location = System::Drawing::Point(536, 207);
 			this->txt_teacher->Name = L"txt_teacher";
 			this->txt_teacher->ReadOnly = true;
 			this->txt_teacher->Size = System::Drawing::Size(233, 26);
@@ -284,7 +291,7 @@ namespace CMS {
 			this->label6->AutoSize = true;
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label6->Location = System::Drawing::Point(463, 211);
+			this->label6->Location = System::Drawing::Point(463, 210);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(67, 20);
 			this->label6->TabIndex = 10;
@@ -293,7 +300,7 @@ namespace CMS {
 			// txt_credit
 			// 
 			this->txt_credit->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_credit->Location = System::Drawing::Point(916, 211);
+			this->txt_credit->Location = System::Drawing::Point(916, 207);
 			this->txt_credit->Name = L"txt_credit";
 			this->txt_credit->ReadOnly = true;
 			this->txt_credit->Size = System::Drawing::Size(41, 26);
@@ -304,7 +311,7 @@ namespace CMS {
 			this->label7->AutoSize = true;
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label7->Location = System::Drawing::Point(840, 214);
+			this->label7->Location = System::Drawing::Point(840, 210);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(69, 20);
 			this->label7->TabIndex = 12;
@@ -313,7 +320,7 @@ namespace CMS {
 			// txt_maxStu
 			// 
 			this->txt_maxStu->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_maxStu->Location = System::Drawing::Point(1113, 211);
+			this->txt_maxStu->Location = System::Drawing::Point(1113, 207);
 			this->txt_maxStu->Name = L"txt_maxStu";
 			this->txt_maxStu->ReadOnly = true;
 			this->txt_maxStu->Size = System::Drawing::Size(48, 26);
@@ -324,7 +331,7 @@ namespace CMS {
 			this->label8->AutoSize = true;
 			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label8->Location = System::Drawing::Point(1000, 214);
+			this->label8->Location = System::Drawing::Point(1000, 210);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(107, 20);
 			this->label8->TabIndex = 14;
@@ -335,7 +342,6 @@ namespace CMS {
 			this->txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_StudentID->Location = System::Drawing::Point(814, 123);
 			this->txt_StudentID->Name = L"txt_StudentID";
-			this->txt_StudentID->ReadOnly = false;
 			this->txt_StudentID->Size = System::Drawing::Size(261, 26);
 			this->txt_StudentID->TabIndex = 17;
 			this->txt_StudentID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
@@ -367,6 +373,7 @@ namespace CMS {
 			this->txt_othermark->ReadOnly = true;
 			this->txt_othermark->Size = System::Drawing::Size(84, 26);
 			this->txt_othermark->TabIndex = 20;
+			this->txt_othermark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_othermark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
 			// 
 			// label10
@@ -388,6 +395,7 @@ namespace CMS {
 			this->txt_midmark->ReadOnly = true;
 			this->txt_midmark->Size = System::Drawing::Size(84, 26);
 			this->txt_midmark->TabIndex = 22;
+			this->txt_midmark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_midmark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
 			// 
 			// label11
@@ -403,11 +411,12 @@ namespace CMS {
 			// 
 			// txt_rateOther
 			// 
-			this->txt_rateOther->Location = System::Drawing::Point(814, 302);
+			this->txt_rateOther->Location = System::Drawing::Point(814, 301);
 			this->txt_rateOther->Name = L"txt_rateOther";
 			this->txt_rateOther->ReadOnly = true;
 			this->txt_rateOther->Size = System::Drawing::Size(62, 26);
 			this->txt_rateOther->TabIndex = 24;
+			this->txt_rateOther->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateOther->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// label12
@@ -415,7 +424,7 @@ namespace CMS {
 			this->label12->AutoSize = true;
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label12->Location = System::Drawing::Point(766, 305);
+			this->label12->Location = System::Drawing::Point(766, 304);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(44, 20);
 			this->label12->TabIndex = 23;
@@ -423,11 +432,12 @@ namespace CMS {
 			// 
 			// txt_rateMid
 			// 
-			this->txt_rateMid->Location = System::Drawing::Point(814, 351);
+			this->txt_rateMid->Location = System::Drawing::Point(814, 350);
 			this->txt_rateMid->Name = L"txt_rateMid";
 			this->txt_rateMid->ReadOnly = true;
 			this->txt_rateMid->Size = System::Drawing::Size(62, 26);
 			this->txt_rateMid->TabIndex = 26;
+			this->txt_rateMid->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateMid->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// label13
@@ -435,7 +445,7 @@ namespace CMS {
 			this->label13->AutoSize = true;
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label13->Location = System::Drawing::Point(766, 354);
+			this->label13->Location = System::Drawing::Point(766, 353);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(44, 20);
 			this->label13->TabIndex = 25;
@@ -446,7 +456,7 @@ namespace CMS {
 			this->label14->AutoSize = true;
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label14->Location = System::Drawing::Point(881, 305);
+			this->label14->Location = System::Drawing::Point(881, 304);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(23, 20);
 			this->label14->TabIndex = 27;
@@ -457,7 +467,7 @@ namespace CMS {
 			this->label16->AutoSize = true;
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label16->Location = System::Drawing::Point(881, 354);
+			this->label16->Location = System::Drawing::Point(881, 353);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(23, 20);
 			this->label16->TabIndex = 29;
@@ -468,7 +478,7 @@ namespace CMS {
 			this->label15->AutoSize = true;
 			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label15->Location = System::Drawing::Point(881, 402);
+			this->label15->Location = System::Drawing::Point(881, 401);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(23, 20);
 			this->label15->TabIndex = 34;
@@ -476,11 +486,12 @@ namespace CMS {
 			// 
 			// txt_rateFinal
 			// 
-			this->txt_rateFinal->Location = System::Drawing::Point(814, 399);
+			this->txt_rateFinal->Location = System::Drawing::Point(814, 398);
 			this->txt_rateFinal->Name = L"txt_rateFinal";
 			this->txt_rateFinal->ReadOnly = true;
 			this->txt_rateFinal->Size = System::Drawing::Size(62, 26);
 			this->txt_rateFinal->TabIndex = 33;
+			this->txt_rateFinal->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateFinal->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// label17
@@ -488,7 +499,7 @@ namespace CMS {
 			this->label17->AutoSize = true;
 			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label17->Location = System::Drawing::Point(766, 402);
+			this->label17->Location = System::Drawing::Point(766, 401);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(44, 20);
 			this->label17->TabIndex = 32;
@@ -502,6 +513,7 @@ namespace CMS {
 			this->txt_finalmark->ReadOnly = true;
 			this->txt_finalmark->Size = System::Drawing::Size(84, 26);
 			this->txt_finalmark->TabIndex = 31;
+			this->txt_finalmark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_finalmark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
 			// 
 			// label18
@@ -548,7 +560,7 @@ namespace CMS {
 			// 
 			this->btn_Update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_Update->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
@@ -565,7 +577,7 @@ namespace CMS {
 			this->label20->AutoSize = true;
 			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label20->Location = System::Drawing::Point(881, 456);
+			this->label20->Location = System::Drawing::Point(881, 455);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(23, 20);
 			this->label20->TabIndex = 40;
@@ -574,7 +586,7 @@ namespace CMS {
 			// txt_rateTotal
 			// 
 			this->txt_rateTotal->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->txt_rateTotal->Location = System::Drawing::Point(814, 453);
+			this->txt_rateTotal->Location = System::Drawing::Point(814, 452);
 			this->txt_rateTotal->Name = L"txt_rateTotal";
 			this->txt_rateTotal->ReadOnly = true;
 			this->txt_rateTotal->Size = System::Drawing::Size(62, 26);
@@ -585,7 +597,7 @@ namespace CMS {
 			this->label21->AutoSize = true;
 			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label21->Location = System::Drawing::Point(726, 456);
+			this->label21->Location = System::Drawing::Point(726, 455);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(83, 20);
 			this->label21->TabIndex = 38;
@@ -738,12 +750,34 @@ namespace CMS {
 		// integers only
 		if (!Char::IsControl(e->KeyChar) && !Char::IsDigit(e->KeyChar))	e->Handled = true;
 	}
-	
-	private: bool existDot(System::String^ s) {
-		std::string str = msclr::interop::marshal_as<std::string>(s);
-		for (int i = 0; i < str.length(); i++)	if (str[i] == '.')	return 1;
-		return 0;
+
+	private: System::Void txt_TextChanged(Object^ sender, EventArgs^ e) {
+		latestTextBox = safe_cast<TextBox^>(sender);
+
+		double val_otherMark, val_midtermMark, val_finalMark;
+		int rateOther = -1, rateMid = -1, rateFinal = -1;
+		try {
+			val_otherMark = System::Convert::ToDouble(txt_othermark->Text); // Use the input_value as a floating-point number
+			val_midtermMark = System::Convert::ToDouble(txt_midmark->Text); // Use the input_value as a floating-point number
+			val_finalMark = System::Convert::ToDouble(txt_finalmark->Text); // Use the input_value as a floating-point number
+			// throw an exception if mark cannot be converted to `double`
+
+			rateOther = System::Convert::ToInt32(txt_rateOther->Text);
+			rateMid = System::Convert::ToInt32(txt_rateMid->Text);
+			rateFinal = System::Convert::ToInt32(txt_rateFinal->Text);
+			// throw an exception if rate cannot be converted to `integer`
+		}
+		catch (System::FormatException^) {
+			// Handle the case when the input is not a valid floating-point number
+			return;
+		}
+
+		double tmpFinal = (val_otherMark * rateOther + val_midtermMark * rateMid + val_finalMark * rateFinal) / 100.0;
+		txt_totalmark->Text = tmpFinal.ToString("F2");
+		txt_rateTotal->Text = (rateOther + rateMid + rateFinal).ToString();
+		latestTextBox = nullptr;
 	}
+
 	private: System::Void txt_doubleOnly_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 		//// Allow digits, decimal point, backspace, and delete keys
 		if (!Char::IsControl(e->KeyChar) && !Char::IsDigit(e->KeyChar) && e->KeyChar != '.' && e->KeyChar != '\u007F')	e->Handled = true;
@@ -751,6 +785,12 @@ namespace CMS {
 
 		// Allow only one decimal point
 		if (e->KeyChar == '.' && existDot(static_cast<System::String^>(sender)))	e->Handled = true;
+	}
+	
+	private: bool existDot(System::String^ s) {
+		std::string str = msclr::interop::marshal_as<std::string>(s);
+		for (int i = 0; i < str.length(); i++)	if (str[i] == '.')	return 1;
+		return 0;
 	}
 
 	private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -788,12 +828,15 @@ namespace CMS {
 			_skipfindstudent:
 				txt_othermark->ReadOnly = false;
 				txt_othermark->BackColor = System::Drawing::SystemColors::Control;
+				txt_othermark->Text = this->curStudent->data->otherMark.ToString("F2");
 
 				txt_midmark->ReadOnly = false;
 				txt_midmark->BackColor = System::Drawing::SystemColors::Control;
+				txt_midmark->Text = this->curStudent->data->midtermMark.ToString("F2");
 
 				txt_finalmark->ReadOnly = false;
 				txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
+				txt_finalmark->Text = this->curStudent->data->finalMark.ToString("F2");
 
 				txt_rateOther->ReadOnly = false;
 				txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
@@ -819,6 +862,7 @@ namespace CMS {
 
 	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {		
 		int rateOther = -1, rateMid = -1, rateFinal = -1;
+
 		try {
 			rateOther = System::Convert::ToInt32(txt_rateOther->Text);
 			rateMid = System::Convert::ToInt32(txt_rateMid->Text);
@@ -831,8 +875,10 @@ namespace CMS {
 
 		if (rateOther + rateMid + rateFinal != 100) {
 			MessageBox::Show("Total rate must be 100%");
+			txt_rateTotal->Text = (rateOther + rateMid + rateFinal).ToString();
 			return;
 		}
+
 		double val_otherMark, val_midtermMark, val_finalMark;
 		try {
 			val_otherMark = System::Convert::ToDouble(txt_othermark->Text); // Use the input_value as a floating-point number
@@ -886,6 +932,8 @@ namespace CMS {
 		txt_teacher->Text = "";
 		txt_credit->Text = "";
 		txt_maxStu->Text = "";
+		txt_totalmark->Text = "";
+		txt_rateTotal->Text = "";
 	}
 
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {

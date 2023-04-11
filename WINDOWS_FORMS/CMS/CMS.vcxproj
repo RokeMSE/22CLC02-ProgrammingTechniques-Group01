@@ -171,9 +171,6 @@
     <ClCompile Include="helperFunctions.cpp" />
     <ClCompile Include="import.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="MenuStaff.cpp" />
-    <ClCompile Include="MenuStudent.cpp" />
-    <ClCompile Include="UpdateResult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">

@@ -1,13 +1,5 @@
 ﻿  Login.cpp
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateResult.h(744,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateResult.h(787,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Login.cpp(10,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  MenuStaff.cpp
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateResult.h(744,21): warning C4018: '<': signed/unsigned mismatch
-  MenuStudent.cpp
-  UpdateResult.cpp
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateResult.h(744,21): warning C4018: '<': signed/unsigned mismatch
-  export.cpp
-  import.cpp
-  Generating Code...
   export.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\Debug\CMS.exe

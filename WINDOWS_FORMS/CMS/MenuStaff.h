@@ -324,14 +324,14 @@ namespace CMS {
 		Application::Exit();
 	}
 	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-		this->sourceForm->Show();
+		this->Hide();
+		this->sourceForm->Show();                                                                             
 	}
 
 	private: System::Void btn_UpdateResult_Click(System::Object^ sender, System::EventArgs^ e) {
 		UpdateResult^ form = gcnew CMS::UpdateResult(this);
+		this->Hide();
 		form->Show();
-		this->Close();
 	}
 };
 }
