@@ -49,6 +49,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Add1StuToCourse.h">
+    <ClInclude Include="ViewListCourses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpScoreOfCourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,6 +90,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewListCourses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpScoreOfCourse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
