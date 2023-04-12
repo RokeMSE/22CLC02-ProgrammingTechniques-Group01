@@ -48,6 +48,12 @@
     <ClInclude Include="RemoveStuFromCourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ViewListCourses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpScoreOfCourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv">
@@ -83,6 +89,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewListCourses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpScoreOfCourse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
