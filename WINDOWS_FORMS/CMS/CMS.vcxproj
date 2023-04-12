@@ -131,6 +131,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Add1StuToCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="export.h" />
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="header.h" />
@@ -176,6 +179,9 @@
     <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add1StuToCourse.resx">
+      <DependentUpon>Add1StuToCourse.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>

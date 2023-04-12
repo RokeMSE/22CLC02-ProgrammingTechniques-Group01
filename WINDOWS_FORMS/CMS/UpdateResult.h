@@ -45,6 +45,7 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::SCHOOLYEAR*>* curSchoolyear;
 		GROUP1::SEMESTER* curSemester;
 		System::Windows::Forms::Form^ sourceForm;
+		Point mouseDownLocation, formLocation;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_courseID;
 	private: System::Windows::Forms::TextBox^ txt_coursename;
@@ -106,7 +107,6 @@ namespace CMS {
 	private: System::Windows::Forms::Panel^ pnl_titleUpdateScore;
 	private: System::Windows::Forms::TextBox^ txt_StudentID_2;
 	private: System::Windows::Forms::Label^ label3;
-	private: Point mouseDownLocation, formLocation;
 	private: System::Windows::Forms::TextBox^ txt_schoolyear_start;
 
 	private: System::Windows::Forms::Label^ label22;
@@ -116,6 +116,7 @@ namespace CMS {
 	private: System::Windows::Forms::CheckBox^ chkbox_sem1;
 	private: System::Windows::Forms::CheckBox^ chkbox_sem2;
 	private: System::Windows::Forms::CheckBox^ chkbox_sem3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
 		/// <summary>
@@ -182,7 +183,9 @@ namespace CMS {
 			this->chkbox_sem1 = (gcnew System::Windows::Forms::CheckBox());
 			this->chkbox_sem2 = (gcnew System::Windows::Forms::CheckBox());
 			this->chkbox_sem3 = (gcnew System::Windows::Forms::CheckBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pnl_titleUpdateScore->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -192,11 +195,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label1->Location = System::Drawing::Point(794, 84);
+			this->label1->Location = System::Drawing::Point(790, 84);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(85, 21);
+			this->label1->Size = System::Drawing::Size(89, 21);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Course ID";
+			this->label1->Text = L"Course ID:";
 			// 
 			// txt_courseID
 			// 
@@ -242,9 +245,9 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->lbl_title->Location = System::Drawing::Point(458, 8);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(286, 30);
+			this->lbl_title->Size = System::Drawing::Size(317, 30);
 			this->lbl_title->TabIndex = 4;
-			this->lbl_title->Text = L"Update Score of Student";
+			this->lbl_title->Text = L"Update Scores of a Student";
 			// 
 			// btn_Search
 			// 
@@ -392,11 +395,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label9->Location = System::Drawing::Point(789, 126);
+			this->label9->Location = System::Drawing::Point(785, 126);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(92, 21);
+			this->label9->Size = System::Drawing::Size(96, 21);
 			this->label9->TabIndex = 16;
-			this->label9->Text = L"Student ID";
+			this->label9->Text = L"Student ID:";
 			// 
 			// panel1
 			// 
@@ -791,11 +794,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label23->Location = System::Drawing::Point(282, 123);
+			this->label23->Location = System::Drawing::Point(287, 123);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(43, 21);
+			this->label23->Size = System::Drawing::Size(39, 21);
 			this->label23->TabIndex = 47;
-			this->label23->Text = L"End:";
+			this->label23->Text = L"End";
 			// 
 			// chkbox_sem1
 			// 
@@ -842,6 +845,16 @@ namespace CMS {
 			this->chkbox_sem3->UseVisualStyleBackColor = true;
 			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &UpdateResult::chkbox_sem3_CheckedChanged);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(122, 354);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(178, 189);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 52;
+			this->pictureBox1->TabStop = false;
+			// 
 			// UpdateResult
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -850,6 +863,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->ClientSize = System::Drawing::Size(1215, 611);
 			this->ControlBox = false;
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->chkbox_sem3);
 			this->Controls->Add(this->chkbox_sem2);
 			this->Controls->Add(this->chkbox_sem1);
@@ -906,6 +920,7 @@ namespace CMS {
 			this->Load += gcnew System::EventHandler(this, &UpdateResult::UpdateResult_Load);
 			this->pnl_titleUpdateScore->ResumeLayout(false);
 			this->pnl_titleUpdateScore->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1126,8 +1141,9 @@ namespace CMS {
 	}
 
 	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (!this->curStudent) {
+		if (!this->curStudent || !this->curCourse) {
 			MessageBox::Show("Whose result will be updated???");
+			return;
 		}
 		int rateOther = -1, rateMid = -1, rateFinal = -1;
 
@@ -1219,10 +1235,10 @@ namespace CMS {
 	}
 
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
-		txt_coursename->Text = "";
-		txt_teacher->Text = "";
-		txt_credit->Text = "";
-		txt_maxStu->Text = "";
+		//txt_coursename->Text = "";
+		//txt_teacher->Text = "";
+		//txt_credit->Text = "";
+		//txt_maxStu->Text = "";
 		this->Close();
 		this->sourceForm->Show();
 	}

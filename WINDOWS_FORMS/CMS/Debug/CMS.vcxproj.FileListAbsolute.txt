@@ -10,3 +10,4 @@ C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.MenuStaff.resources
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.RemoveStuFromCourse.resources
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.MenuStudent.resources
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.Add1StuToCourse.resources
