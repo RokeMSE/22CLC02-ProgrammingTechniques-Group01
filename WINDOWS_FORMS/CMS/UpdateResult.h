@@ -42,8 +42,9 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
 															// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
+		GROUP1::DLL<GROUP1::SCHOOLYEAR*>* curSchoolyear;
+		GROUP1::SEMESTER* curSemester;
 		System::Windows::Forms::Form^ sourceForm;
-		System::Windows::Forms::TextBox^ latestTextBox = nullptr;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_courseID;
 	private: System::Windows::Forms::TextBox^ txt_coursename;
@@ -59,7 +60,7 @@ namespace CMS {
 	private: System::Windows::Forms::TextBox^ txt_schoolyear;
 
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ txt_sem;
+
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ txt_teacher;
@@ -106,6 +107,15 @@ namespace CMS {
 	private: System::Windows::Forms::TextBox^ txt_StudentID_2;
 	private: System::Windows::Forms::Label^ label3;
 	private: Point mouseDownLocation, formLocation;
+	private: System::Windows::Forms::TextBox^ txt_schoolyear_start;
+
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::TextBox^ txt_schoolyear_end;
+
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::CheckBox^ chkbox_sem1;
+	private: System::Windows::Forms::CheckBox^ chkbox_sem2;
+	private: System::Windows::Forms::CheckBox^ chkbox_sem3;
 
 	private:
 		/// <summary>
@@ -129,7 +139,6 @@ namespace CMS {
 			this->btn_Search = (gcnew System::Windows::Forms::Button());
 			this->txt_schoolyear = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->txt_sem = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->txt_teacher = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -166,6 +175,13 @@ namespace CMS {
 			this->pnl_titleUpdateScore = (gcnew System::Windows::Forms::Panel());
 			this->txt_StudentID_2 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txt_schoolyear_start = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->txt_schoolyear_end = (gcnew System::Windows::Forms::TextBox());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->chkbox_sem1 = (gcnew System::Windows::Forms::CheckBox());
+			this->chkbox_sem2 = (gcnew System::Windows::Forms::CheckBox());
+			this->chkbox_sem3 = (gcnew System::Windows::Forms::CheckBox());
 			this->pnl_titleUpdateScore->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -270,18 +286,6 @@ namespace CMS {
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"School Year";
 			// 
-			// txt_sem
-			// 
-			this->txt_sem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_sem->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_sem->Location = System::Drawing::Point(609, 84);
-			this->txt_sem->Name = L"txt_sem";
-			this->txt_sem->ReadOnly = true;
-			this->txt_sem->Size = System::Drawing::Size(56, 26);
-			this->txt_sem->TabIndex = 9;
-			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
@@ -289,7 +293,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label5->Location = System::Drawing::Point(523, 87);
+			this->label5->Location = System::Drawing::Point(491, 86);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(80, 21);
 			this->label5->TabIndex = 8;
@@ -738,6 +742,100 @@ namespace CMS {
 			this->label3->TabIndex = 43;
 			this->label3->Text = L"Student ID";
 			// 
+			// txt_schoolyear_start
+			// 
+			this->txt_schoolyear_start->BackColor = System::Drawing::SystemColors::Control;
+			this->txt_schoolyear_start->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->txt_schoolyear_start->Location = System::Drawing::Point(161, 121);
+			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
+			this->txt_schoolyear_start->Size = System::Drawing::Size(92, 26);
+			this->txt_schoolyear_start->TabIndex = 46;
+			this->txt_schoolyear_start->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_SchoolYear_TextChanged);
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label22->Location = System::Drawing::Point(105, 122);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(50, 21);
+			this->label22->TabIndex = 45;
+			this->label22->Text = L"Start:";
+			// 
+			// txt_schoolyear_end
+			// 
+			this->txt_schoolyear_end->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->txt_schoolyear_end->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->txt_schoolyear_end->Location = System::Drawing::Point(330, 121);
+			this->txt_schoolyear_end->Name = L"txt_schoolyear_end";
+			this->txt_schoolyear_end->ReadOnly = true;
+			this->txt_schoolyear_end->Size = System::Drawing::Size(92, 26);
+			this->txt_schoolyear_end->TabIndex = 48;
+			this->txt_schoolyear_end->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_SchoolYear_TextChanged);
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label23->Location = System::Drawing::Point(282, 123);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(43, 21);
+			this->label23->TabIndex = 47;
+			this->label23->Text = L"End:";
+			// 
+			// chkbox_sem1
+			// 
+			this->chkbox_sem1->AutoSize = true;
+			this->chkbox_sem1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->chkbox_sem1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->chkbox_sem1->Location = System::Drawing::Point(577, 87);
+			this->chkbox_sem1->Name = L"chkbox_sem1";
+			this->chkbox_sem1->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem1->TabIndex = 49;
+			this->chkbox_sem1->Text = L"1";
+			this->chkbox_sem1->UseVisualStyleBackColor = true;
+			this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &UpdateResult::chkbox_sem1_CheckedChanged);
+			// 
+			// chkbox_sem2
+			// 
+			this->chkbox_sem2->AutoSize = true;
+			this->chkbox_sem2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->chkbox_sem2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->chkbox_sem2->Location = System::Drawing::Point(628, 87);
+			this->chkbox_sem2->Name = L"chkbox_sem2";
+			this->chkbox_sem2->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem2->TabIndex = 50;
+			this->chkbox_sem2->Text = L"2";
+			this->chkbox_sem2->UseVisualStyleBackColor = true;
+			this->chkbox_sem2->CheckedChanged += gcnew System::EventHandler(this, &UpdateResult::chkbox_sem2_CheckedChanged);
+			// 
+			// chkbox_sem3
+			// 
+			this->chkbox_sem3->AutoSize = true;
+			this->chkbox_sem3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->chkbox_sem3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->chkbox_sem3->Location = System::Drawing::Point(679, 87);
+			this->chkbox_sem3->Name = L"chkbox_sem3";
+			this->chkbox_sem3->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem3->TabIndex = 51;
+			this->chkbox_sem3->Text = L"3";
+			this->chkbox_sem3->UseVisualStyleBackColor = true;
+			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &UpdateResult::chkbox_sem3_CheckedChanged);
+			// 
 			// UpdateResult
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -746,6 +844,13 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->ClientSize = System::Drawing::Size(1215, 611);
 			this->ControlBox = false;
+			this->Controls->Add(this->chkbox_sem3);
+			this->Controls->Add(this->chkbox_sem2);
+			this->Controls->Add(this->chkbox_sem1);
+			this->Controls->Add(this->txt_schoolyear_end);
+			this->Controls->Add(this->label23);
+			this->Controls->Add(this->txt_schoolyear_start);
+			this->Controls->Add(this->label22);
 			this->Controls->Add(this->txt_StudentID_2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label20);
@@ -779,7 +884,6 @@ namespace CMS {
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->txt_teacher);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->txt_sem);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->txt_schoolyear);
 			this->Controls->Add(this->label4);
@@ -804,8 +908,24 @@ namespace CMS {
 	private: System::Void UpdateResult_Load(System::Object^ sender, System::EventArgs^ e) {
 		std::string str = std::to_string(g_currentSchoolYear->begin) + " - " + std::to_string(g_currentSchoolYear->end);
 		txt_schoolyear->Text = gcnew System::String(str.c_str());
-		str = std::to_string(g_currentSemester->No);
-		txt_sem->Text = gcnew System::String(str.c_str());
+		txt_schoolyear_start->Text = gcnew System::String(g_currentSchoolYear->begin.ToString());
+		txt_schoolyear_end->Text = gcnew System::String(g_currentSchoolYear->end.ToString());
+
+		if (g_currentSemester->No == 1) {
+			chkbox_sem1->Checked = true;
+			chkbox_sem2->Checked = false;
+			chkbox_sem3->Checked = false;
+		}
+		else if (g_currentSemester->No == 2) {
+			chkbox_sem1->Checked = false;
+			chkbox_sem2->Checked = true;
+			chkbox_sem3->Checked = false;
+		}
+		else {
+			chkbox_sem1->Checked = false;
+			chkbox_sem2->Checked = false;
+			chkbox_sem3->Checked = true;
+		}
 
 		txt_othermark->ReadOnly = true;
 		txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
@@ -844,8 +964,6 @@ namespace CMS {
 	}
 
 	private: System::Void txt_TextChanged(Object^ sender, EventArgs^ e) {
-		latestTextBox = safe_cast<TextBox^>(sender);
-
 		double val_otherMark, val_midtermMark, val_finalMark;
 		int rateOther = -1, rateMid = -1, rateFinal = -1;
 		try {
@@ -867,7 +985,6 @@ namespace CMS {
 		double tmpFinal = (val_otherMark * rateOther + val_midtermMark * rateMid + val_finalMark * rateFinal) / 100.0;
 		txt_totalmark->Text = tmpFinal.ToString("F2");
 		txt_rateTotal->Text = (rateOther + rateMid + rateFinal).ToString();
-		latestTextBox = nullptr;
 	}
 
 	private: System::Void txt_doubleOnly_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
@@ -886,10 +1003,59 @@ namespace CMS {
 	}
 
 	private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
-		// search for course
-		std::string id = msclr::interop::marshal_as<std::string>(txt_courseID->Text);
+		std::string id;
+		// search for the current course
+		int curStartYear = System::Convert::ToInt32(txt_schoolyear_start->Text);
+		this->curSchoolyear = L_SchoolYear.head;
+		while (this->curSchoolyear) {
+			if (System::Convert::ToInt32(this->curSchoolyear->data->begin) == curStartYear)	break;
+			this->curSchoolyear = this->curSchoolyear->next;
+		}
+		if (!this->curSchoolyear) {
+			// id now is used for storing message (not an ID)
+			id = "There is no schoolyear " + std::to_string(curStartYear) + " - " + std::to_string(curStartYear + 1);
+			System::String^ message = gcnew System::String(id.c_str());
+			MessageBox::Show(message);
+			return;
+		}
+		////////////////////////////////////////////////
+
+		// search for the current semester
+		if (chkbox_sem1->Checked == true) {
+			if (this->curSchoolyear->data->sem1)
+				this->curSemester = this->curSchoolyear->data->sem1;
+			else {
+				MessageBox::Show("Please choose a valid semester.");
+				return;
+			}
+		}
+		else if (chkbox_sem2->Checked == true) {
+			if (this->curSchoolyear->data->sem2)
+				this->curSemester = this->curSchoolyear->data->sem2;
+			else {
+				MessageBox::Show("Please choose a valid semester.");
+				return;
+			}
+		}
+		else if (chkbox_sem3->Checked == true) {
+			if (this->curSchoolyear->data->sem3)
+				this->curSemester = this->curSchoolyear->data->sem3;
+			else {
+				MessageBox::Show("Please choose a valid semester.");
+				return;
+			}
+		}
+		else {
+			MessageBox::Show("Please choose a semester.");
+			return;
+		}
+		////////////////////////////////////////////////
+
+		// search for the current course
+		id = msclr::interop::marshal_as<std::string>(txt_courseID->Text);
+
 		if (this->curCourse && this->curCourse->data->ID == id)	goto _skipfindcourse;
-		this->curCourse = g_currentSemester->course.head;
+		this->curCourse = this->curSemester->course.head;
 		
 		while (this->curCourse) {
 			if (id == this->curCourse->data->ID) {
@@ -909,6 +1075,7 @@ namespace CMS {
 			MessageBox::Show(message);
 			return;
 		}
+		////////////////////////////////////////////////
 
 		// then search for student in the course
 	_skipfindcourse:
@@ -1008,15 +1175,15 @@ namespace CMS {
 		txt_finalmark->ReadOnly = true;
 		txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
 
-		txt_rateOther->Text = "";
+		//txt_rateOther->Text = "";
 		txt_rateOther->ReadOnly = true;
 		txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
 
-		txt_rateMid->Text = "";
+		//txt_rateMid->Text = "";
 		txt_rateMid->ReadOnly = true;
 		txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
 
-		txt_rateFinal->Text = "";
+		//txt_rateFinal->Text = "";
 		txt_rateFinal->ReadOnly = true;
 		txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
 
@@ -1029,6 +1196,10 @@ namespace CMS {
 	}
 
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
+		txt_coursename->Text = "";
+		txt_teacher->Text = "";
+		txt_credit->Text = "";
+		txt_maxStu->Text = "";
 		this->Close();
 		this->sourceForm->Show();
 	}
@@ -1051,6 +1222,41 @@ namespace CMS {
 			// Update the form position
 			System::Drawing::Point newLocation(newX, newY);
 			this->Location = newLocation;
+		}
+	}
+	
+	private: System::Void txt_SchoolYear_TextChanged(Object^ sender, EventArgs^ e) {
+		if (txt_schoolyear_start->Text == "") {
+			txt_schoolyear_end->Text = "";
+			txt_schoolyear->Text = "";
+			return;
+		}
+		int start = -1;
+		try {
+			start = System::Convert::ToInt32(txt_schoolyear_start->Text);
+			// throw an exception if rate cannot be converted to `integer`
+		}
+		catch (System::FormatException^) {
+			// Handle the case when the input is not a valid floating-point number
+			return;
+		}
+		txt_schoolyear_end->Text = gcnew System::String((start + 1).ToString());
+		txt_schoolyear->Text = gcnew System::String((std::to_string(start) + " - " + std::to_string(start + 1)).c_str());
+	}
+
+	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem1->Checked) {
+			chkbox_sem2->Checked = 0;	chkbox_sem3->Checked = 0;
+		}
+	}
+	private: System::Void chkbox_sem2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem2->Checked) {
+			chkbox_sem1->Checked = 0;	chkbox_sem3->Checked = 0;
+		}
+	}
+	private: System::Void chkbox_sem3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem3->Checked) {
+			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;
 		}
 	}
 };

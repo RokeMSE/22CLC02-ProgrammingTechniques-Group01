@@ -190,6 +190,7 @@ namespace CMS {
 			this->chkbx_remember->TabIndex = 6;
 			this->chkbx_remember->Text = L"Remember me";
 			this->chkbx_remember->UseVisualStyleBackColor = false;
+			//this->chkbx_remember->CheckedChanged += gcnew System::EventHandler(this, &Login::chkbx_remember_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -222,10 +223,10 @@ namespace CMS {
 			this->pnl_titleLogin->Controls->Add(this->label1);
 			this->pnl_titleLogin->Controls->Add(this->btn_exit);
 			this->pnl_titleLogin->Dock = System::Windows::Forms::DockStyle::Top;
-			this->pnl_titleLogin->Location = System::Drawing::Point(3, 3);
+			this->pnl_titleLogin->Location = System::Drawing::Point(1, 1);
 			this->pnl_titleLogin->Name = L"pnl_titleLogin";
 			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(3);
-			this->pnl_titleLogin->Size = System::Drawing::Size(1037, 48);
+			this->pnl_titleLogin->Size = System::Drawing::Size(1041, 48);
 			this->pnl_titleLogin->TabIndex = 8;
 			this->pnl_titleLogin->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseDown);
 			this->pnl_titleLogin->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseMove);
@@ -242,7 +243,7 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Login";
-			this->Padding = System::Windows::Forms::Padding(3);
+			this->Padding = System::Windows::Forms::Padding(1);
 			this->Text = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->pnl_login->ResumeLayout(false);

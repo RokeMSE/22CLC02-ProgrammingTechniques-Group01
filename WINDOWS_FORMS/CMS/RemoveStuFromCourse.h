@@ -41,7 +41,9 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
 															// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
-	private: System::Windows::Forms::Panel^ panel1;
+	private: Point mouseDownLocation, formLocation;
+	private: System::Windows::Forms::Panel^ pnl_titleRemv;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btn_back;
 	private: System::Windows::Forms::TextBox^ txt_StudentID;
@@ -91,6 +93,10 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::ColumnHeader^ col_ID;
+	private: System::Windows::Forms::ColumnHeader^ col_nStu;
+	private: System::Windows::Forms::ColumnHeader^ col_teacher;
+	private: System::Windows::Forms::TextBox^ txt_coursename;
 
 
 	protected:
@@ -109,7 +115,7 @@ namespace CMS {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RemoveStuFromCourse::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pnl_titleRemv = (gcnew System::Windows::Forms::Panel());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txt_StudentID = (gcnew System::Windows::Forms::TextBox());
@@ -126,7 +132,10 @@ namespace CMS {
 			this->txt_yearIn = (gcnew System::Windows::Forms::TextBox());
 			this->lstView_listCourses = (gcnew System::Windows::Forms::ListView());
 			this->col_No = (gcnew System::Windows::Forms::ColumnHeader());
+			this->col_ID = (gcnew System::Windows::Forms::ColumnHeader());
 			this->col_name = (gcnew System::Windows::Forms::ColumnHeader());
+			this->col_nStu = (gcnew System::Windows::Forms::ColumnHeader());
+			this->col_teacher = (gcnew System::Windows::Forms::ColumnHeader());
 			this->btn_remove = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->txt_StudentID_2 = (gcnew System::Windows::Forms::TextBox());
@@ -142,21 +151,24 @@ namespace CMS {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->panel1->SuspendLayout();
+			this->txt_coursename = (gcnew System::Windows::Forms::TextBox());
+			this->pnl_titleRemv->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// panel1
+			// pnl_titleRemv
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+			this->pnl_titleRemv->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
-			this->panel1->Controls->Add(this->btn_back);
-			this->panel1->Controls->Add(this->label1);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(4, 4);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1206, 46);
-			this->panel1->TabIndex = 0;
+			this->pnl_titleRemv->Controls->Add(this->btn_back);
+			this->pnl_titleRemv->Controls->Add(this->label1);
+			this->pnl_titleRemv->Dock = System::Windows::Forms::DockStyle::Top;
+			this->pnl_titleRemv->Location = System::Drawing::Point(4, 4);
+			this->pnl_titleRemv->Name = L"pnl_titleRemv";
+			this->pnl_titleRemv->Size = System::Drawing::Size(1206, 46);
+			this->pnl_titleRemv->TabIndex = 0;
+			this->pnl_titleRemv->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseDown);
+			this->pnl_titleRemv->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseMove);
 			// 
 			// btn_back
 			// 
@@ -192,7 +204,7 @@ namespace CMS {
 			this->txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_StudentID->Location = System::Drawing::Point(743, 112);
 			this->txt_StudentID->Name = L"txt_StudentID";
-			this->txt_StudentID->Size = System::Drawing::Size(261, 26);
+			this->txt_StudentID->Size = System::Drawing::Size(147, 26);
 			this->txt_StudentID->TabIndex = 26;
 			// 
 			// label9
@@ -270,7 +282,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->btn_Search->Location = System::Drawing::Point(827, 144);
+			this->btn_Search->Location = System::Drawing::Point(776, 144);
 			this->btn_Search->Name = L"btn_Search";
 			this->btn_Search->Size = System::Drawing::Size(84, 35);
 			this->btn_Search->TabIndex = 20;
@@ -283,7 +295,7 @@ namespace CMS {
 			this->txt_courseID->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_courseID->Location = System::Drawing::Point(743, 73);
 			this->txt_courseID->Name = L"txt_courseID";
-			this->txt_courseID->Size = System::Drawing::Size(261, 26);
+			this->txt_courseID->Size = System::Drawing::Size(147, 26);
 			this->txt_courseID->TabIndex = 19;
 			// 
 			// label2
@@ -339,24 +351,45 @@ namespace CMS {
 			// lstView_listCourses
 			// 
 			this->lstView_listCourses->BackColor = System::Drawing::SystemColors::Control;
-			this->lstView_listCourses->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) {
+			this->lstView_listCourses->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(5) {
 				this->col_No,
-					this->col_name
+					this->col_ID, this->col_name, this->col_nStu, this->col_teacher
 			});
 			this->lstView_listCourses->HideSelection = false;
-			this->lstView_listCourses->Location = System::Drawing::Point(175, 336);
+			this->lstView_listCourses->Location = System::Drawing::Point(95, 115);
 			this->lstView_listCourses->Name = L"lstView_listCourses";
-			this->lstView_listCourses->Size = System::Drawing::Size(944, 284);
+			this->lstView_listCourses->RightToLeftLayout = true;
+			this->lstView_listCourses->Size = System::Drawing::Size(944, 290);
 			this->lstView_listCourses->TabIndex = 59;
 			this->lstView_listCourses->UseCompatibleStateImageBehavior = false;
+			this->lstView_listCourses->View = System::Windows::Forms::View::Details;
 			// 
 			// col_No
 			// 
 			this->col_No->Text = L"No";
+			this->col_No->Width = 38;
+			// 
+			// col_ID
+			// 
+			this->col_ID->Text = L"Course ID";
+			this->col_ID->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->col_ID->Width = 126;
 			// 
 			// col_name
 			// 
-			this->col_name->Text = L"Course name";
+			this->col_name->Text = L"Course";
+			this->col_name->Width = 275;
+			// 
+			// col_nStu
+			// 
+			this->col_nStu->Text = L"Number of students";
+			this->col_nStu->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->col_nStu->Width = 164;
+			// 
+			// col_teacher
+			// 
+			this->col_teacher->Text = L"Teacher";
+			this->col_teacher->Width = 337;
 			// 
 			// btn_remove
 			// 
@@ -542,7 +575,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label13->Location = System::Drawing::Point(24, 122);
+			this->label13->Location = System::Drawing::Point(22, 119);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(70, 21);
 			this->label13->TabIndex = 61;
@@ -551,6 +584,7 @@ namespace CMS {
 			// panel3
 			// 
 			this->panel3->Controls->Add(this->label13);
+			this->panel3->Controls->Add(this->lstView_listCourses);
 			this->panel3->Controls->Add(this->label11);
 			this->panel3->Controls->Add(this->txt_DoB);
 			this->panel3->Controls->Add(this->label12);
@@ -568,6 +602,21 @@ namespace CMS {
 			this->panel3->Size = System::Drawing::Size(1059, 405);
 			this->panel3->TabIndex = 62;
 			// 
+			// txt_coursename
+			// 
+			this->txt_coursename->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->txt_coursename->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->txt_coursename->Location = System::Drawing::Point(902, 71);
+			this->txt_coursename->Name = L"txt_coursename";
+			this->txt_coursename->ReadOnly = true;
+			this->txt_coursename->ScrollBars = System::Windows::Forms::ScrollBars::Both;
+			this->txt_coursename->Size = System::Drawing::Size(217, 28);
+			this->txt_coursename->TabIndex = 63;
+			// 
 			// RemoveStuFromCourse
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -576,8 +625,8 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->ClientSize = System::Drawing::Size(1214, 708);
 			this->ControlBox = false;
+			this->Controls->Add(this->txt_coursename);
 			this->Controls->Add(this->btn_remove);
-			this->Controls->Add(this->lstView_listCourses);
 			this->Controls->Add(this->txt_yearIn);
 			this->Controls->Add(this->txt_name);
 			this->Controls->Add(this->panel2);
@@ -590,7 +639,7 @@ namespace CMS {
 			this->Controls->Add(this->btn_Search);
 			this->Controls->Add(this->txt_courseID);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->pnl_titleRemv);
 			this->Controls->Add(this->panel3);
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
@@ -599,8 +648,8 @@ namespace CMS {
 			this->Name = L"RemoveStuFromCourse";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Load += gcnew System::EventHandler(this, &RemoveStuFromCourse::RemoveStuFromCourse_Load);
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
+			this->pnl_titleRemv->ResumeLayout(false);
+			this->pnl_titleRemv->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
 			this->ResumeLayout(false);
@@ -640,10 +689,11 @@ namespace CMS {
 		// then search for student in the course
 	_skipfindcourse:
 		id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
-		if (this->curStudent && this->curStudent->data->student->studentID == id)	return;
+		if (this->curStudent && this->curStudent->data->student->studentID == id)	goto _skipfindstu;
 		this->curStudent = this->curCourse->data->students.head; //type == DLL<SCOREBOARD*>*
 		while (this->curStudent) {
 			if (this->curStudent->data->student->studentID == id) {
+			_skipfindstu:
 				txt_StudentID_2->Text = gcnew System::String(id.c_str());
 				txt_class->Text = gcnew System::String(this->curStudent->data->student->Class->convertToString().c_str());
 				txt_socialID->Text = gcnew System::String(this->curStudent->data->student->socialID.c_str());
@@ -653,6 +703,32 @@ namespace CMS {
 				txt_name->Text = gcnew System::String(tmpString.c_str());
 				txt_DoB->Text = gcnew System::String(DateToString(this->curStudent->data->student->DoB).c_str());
 				txt_yearIn->Text = gcnew System::String(this->curStudent->data->student->yearIn.ToString());
+				// list courses
+				int i = 0;
+				GROUP1::DLL<GROUP1::COURSE*>* _curCourse = this->curStudent->data->student->courses.head;
+				while (_curCourse) {
+					// create a new list view item and add sub-items
+					i++;
+					ListViewItem^ item1 = gcnew ListViewItem(i.ToString()); // No
+					System::String^ tmp;
+
+					tmp = gcnew System::String(_curCourse->data->ID.c_str());
+					item1->SubItems->Add(tmp);	// course ID
+
+					tmp = gcnew System::String(_curCourse->data->name.c_str());
+					item1->SubItems->Add(tmp);	// course name
+
+					tmp = gcnew System::String(_curCourse->data->maxStudents.ToString());
+					item1->SubItems->Add(tmp);	// number of student
+
+					tmp = gcnew System::String(_curCourse->data->teacher.c_str());
+					item1->SubItems->Add(tmp);	// teacher
+
+					// add the item to the list view
+					lstView_listCourses->Items->Add(item1);
+					_curCourse = _curCourse->next;
+				}
+				return;
 			}
 			this->curStudent = this->curStudent->next;
 		}
@@ -678,6 +754,27 @@ namespace CMS {
 		// remove
 		std::string message = "Student" + this->curStudent->data->student->studentID + "was successfully removed";
 		MessageBox::Show("Student");
+	}
+
+	private: System::Void pnl_titleRemv_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Record the mouse position when the panel is clicked
+		mouseDownLocation = e->Location;
+		// Record the form position
+		formLocation = this->Location;
+	}
+
+	private: System::Void pnl_titleRemv_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Check if the left mouse button is pressed
+		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
+			// Calculate the new form position based on the mouse position
+			int dx = e->Location.X - mouseDownLocation.X;
+			int dy = e->Location.Y - mouseDownLocation.Y;
+			int newX = formLocation.X + dx;
+			int newY = formLocation.Y + dy;
+			// Update the form position
+			System::Drawing::Point newLocation(newX, newY);
+			this->Location = newLocation;
+		}
 	}
 };
 }

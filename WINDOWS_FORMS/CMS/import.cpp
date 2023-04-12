@@ -361,7 +361,7 @@ bool importSchoolYears() {
         }
         ////////////////
     }
-    g_currentSchoolYear = L_SchoolYear.head->data;
+    g_currentSchoolYear = L_SchoolYear.tail->data;
     if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
     else if (!g_currentSchoolYear->sem2) g_currentSemester = g_currentSchoolYear->sem1;
     else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;

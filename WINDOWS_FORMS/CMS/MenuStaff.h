@@ -2,6 +2,7 @@
 
 #include "header.h"
 #include "UpdateResult.h"
+#include "RemoveStuFromCourse.h"
 
 namespace CMS {
 
@@ -223,6 +224,7 @@ namespace CMS {
 			this->btn_Remove1StuInCourse->TabIndex = 10;
 			this->btn_Remove1StuInCourse->Text = L"Remove a student from a course in current semester";
 			this->btn_Remove1StuInCourse->UseVisualStyleBackColor = true;
+			this->btn_Remove1StuInCourse->Click += gcnew System::EventHandler(this, &MenuStaff::btn_Remove1StuInCourse_Click);
 			// 
 			// btn_Delete1Course
 			// 
@@ -360,6 +362,12 @@ namespace CMS {
 
 	private: System::Void btn_UpdateResult_Click(System::Object^ sender, System::EventArgs^ e) {
 		UpdateResult^ form = gcnew CMS::UpdateResult(this);
+		this->Hide();
+		form->Show();
+	}
+
+	private: System::Void btn_Remove1StuInCourse_Click(System::Object^ sender, System::EventArgs^ e) {
+		RemoveStuFromCourse^ form = gcnew RemoveStuFromCourse(this);
 		this->Hide();
 		form->Show();
 	}
