@@ -202,6 +202,7 @@ namespace CMS {
 			// 
 			this->txt_courseID->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_courseID->Location = System::Drawing::Point(884, 81);
+			this->txt_courseID->MaxLength = 15;
 			this->txt_courseID->Name = L"txt_courseID";
 			this->txt_courseID->Size = System::Drawing::Size(261, 26);
 			this->txt_courseID->TabIndex = 1;
@@ -378,6 +379,7 @@ namespace CMS {
 			// 
 			this->txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_StudentID->Location = System::Drawing::Point(884, 123);
+			this->txt_StudentID->MaxLength = 15;
 			this->txt_StudentID->Name = L"txt_StudentID";
 			this->txt_StudentID->Size = System::Drawing::Size(261, 26);
 			this->txt_StudentID->TabIndex = 17;
@@ -410,7 +412,7 @@ namespace CMS {
 			this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_othermark->Location = System::Drawing::Point(609, 302);
-			this->txt_othermark->MaxLength = 10;
+			this->txt_othermark->MaxLength = 7;
 			this->txt_othermark->Name = L"txt_othermark";
 			this->txt_othermark->ReadOnly = true;
 			this->txt_othermark->Size = System::Drawing::Size(84, 26);
@@ -436,7 +438,7 @@ namespace CMS {
 			this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_midmark->Location = System::Drawing::Point(609, 351);
-			this->txt_midmark->MaxLength = 10;
+			this->txt_midmark->MaxLength = 7;
 			this->txt_midmark->Name = L"txt_midmark";
 			this->txt_midmark->ReadOnly = true;
 			this->txt_midmark->Size = System::Drawing::Size(84, 26);
@@ -462,6 +464,7 @@ namespace CMS {
 			this->txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_rateOther->Location = System::Drawing::Point(814, 301);
+			this->txt_rateOther->MaxLength = 3;
 			this->txt_rateOther->Name = L"txt_rateOther";
 			this->txt_rateOther->ReadOnly = true;
 			this->txt_rateOther->Size = System::Drawing::Size(62, 26);
@@ -487,6 +490,7 @@ namespace CMS {
 			this->txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_rateMid->Location = System::Drawing::Point(814, 350);
+			this->txt_rateMid->MaxLength = 3;
 			this->txt_rateMid->Name = L"txt_rateMid";
 			this->txt_rateMid->ReadOnly = true;
 			this->txt_rateMid->Size = System::Drawing::Size(62, 26);
@@ -551,6 +555,7 @@ namespace CMS {
 			this->txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_rateFinal->Location = System::Drawing::Point(814, 398);
+			this->txt_rateFinal->MaxLength = 3;
 			this->txt_rateFinal->Name = L"txt_rateFinal";
 			this->txt_rateFinal->ReadOnly = true;
 			this->txt_rateFinal->Size = System::Drawing::Size(62, 26);
@@ -576,7 +581,7 @@ namespace CMS {
 			this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->txt_finalmark->Location = System::Drawing::Point(609, 399);
-			this->txt_finalmark->MaxLength = 10;
+			this->txt_finalmark->MaxLength = 7;
 			this->txt_finalmark->Name = L"txt_finalmark";
 			this->txt_finalmark->ReadOnly = true;
 			this->txt_finalmark->Size = System::Drawing::Size(84, 26);
@@ -747,6 +752,7 @@ namespace CMS {
 			this->txt_schoolyear_start->BackColor = System::Drawing::SystemColors::Control;
 			this->txt_schoolyear_start->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->txt_schoolyear_start->Location = System::Drawing::Point(161, 121);
+			this->txt_schoolyear_start->MaxLength = 4;
 			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
 			this->txt_schoolyear_start->Size = System::Drawing::Size(92, 26);
 			this->txt_schoolyear_start->TabIndex = 46;
@@ -979,6 +985,8 @@ namespace CMS {
 		}
 		catch (System::FormatException^) {
 			// Handle the case when the input is not a valid floating-point number
+			txt_totalmark->Text = "";
+			txt_rateTotal->Text = "";
 			return;
 		}
 
@@ -1059,6 +1067,7 @@ namespace CMS {
 		
 		while (this->curCourse) {
 			if (id == this->curCourse->data->ID) {
+			_skipfindcourse:
 				txt_coursename->Text = gcnew System::String((this->curCourse->data->name).c_str());
 				txt_teacher->Text = gcnew System::String((this->curCourse->data->teacher).c_str());
 				txt_credit->Text = System::Convert::ToString(this->curCourse->data->credit);
@@ -1078,13 +1087,10 @@ namespace CMS {
 		////////////////////////////////////////////////
 
 		// then search for student in the course
-	_skipfindcourse:
 		id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
-		if (this->curStudent && this->curStudent->data->student->studentID == id)	goto _skipfindstudent;
 		this->curStudent = this->curCourse->data->students.head; //type == DLL<SCOREBOARD*>*
 		while (this->curStudent) {
 			if (this->curStudent->data->student->studentID == id) {
-			_skipfindstudent:
 				txt_othermark->ReadOnly = false;
 				txt_othermark->BackColor = System::Drawing::SystemColors::Control;
 				txt_othermark->Text = this->curStudent->data->otherMark.ToString("F2");
@@ -1119,7 +1125,10 @@ namespace CMS {
 		}
 	}
 
-	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {		
+	private: System::Void btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->curStudent) {
+			MessageBox::Show("Whose result will be updated???");
+		}
 		int rateOther = -1, rateMid = -1, rateFinal = -1;
 
 		try {
@@ -1165,26 +1174,38 @@ namespace CMS {
 
 		txt_othermark->Text = "";
 		txt_othermark->ReadOnly = true;
+		this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_othermark->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_midmark->Text = "";
 		txt_midmark->ReadOnly = true;
+		this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_midmark->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_finalmark->Text = "";
 		txt_finalmark->ReadOnly = true;
+		this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateOther->Text = "";
 		txt_rateOther->ReadOnly = true;
+		this->txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateMid->Text = "";
 		txt_rateMid->ReadOnly = true;
+		this->txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateFinal->Text = "";
 		txt_rateFinal->ReadOnly = true;
+		this->txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_coursename->Text = "";
@@ -1193,6 +1214,8 @@ namespace CMS {
 		txt_maxStu->Text = "";
 		txt_totalmark->Text = "";
 		txt_rateTotal->Text = "";
+
+		this->curStudent = nullptr;
 	}
 
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
