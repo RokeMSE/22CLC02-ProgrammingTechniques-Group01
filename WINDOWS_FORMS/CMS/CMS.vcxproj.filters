@@ -48,7 +48,6 @@
     <ClInclude Include="RemoveStuFromCourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Add1StuToCourse.h">
     <ClInclude Include="ViewListCourses.h">
       <Filter>Header Files</Filter>
     </ClInclude>

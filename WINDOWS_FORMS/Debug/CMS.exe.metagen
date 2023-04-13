@@ -1,4 +1,3 @@
-  CMS.Add1StuToCourse.resources - Embedded, ContainedInManifestFile, 
   CMS.Login.resources - Embedded, ContainedInManifestFile, 
   CMS.MenuStaff.resources - Embedded, ContainedInManifestFile, 
   CMS.MenuStudent.resources - Embedded, ContainedInManifestFile, 
@@ -23,15 +22,6 @@ Class CMS.UpdateResult: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CMS.RemoveStuFromCourse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.Form sourceForm : Public
-    GROUP1.DLL<GROUP1::COURSE \*>* curCourse : Public
-    GROUP1.DLL<GROUP1::SCOREBOARD \*>* curStudent : Public
-    System.Drawing.Point mouseDownLocation : Public
-    System.Drawing.Point formLocation : Public
-Class CMS.Add1StuToCourse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CMS.MenuStaff: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

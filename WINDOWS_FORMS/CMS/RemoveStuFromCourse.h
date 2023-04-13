@@ -24,12 +24,7 @@ namespace CMS {
 			//TODO: Add the constructor code here
 			//
 		}
-	
-		System::Windows::Forms::Form^ sourceForm;
-		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
-															// this pointer is get when course ID has been entered and button search is clicked 
-		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
-		Point mouseDownLocation, formLocation;
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -41,6 +36,12 @@ namespace CMS {
 				delete components;
 			}
 		}
+	private: 
+		System::Windows::Forms::Form^ sourceForm;
+		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
+															// this pointer is get when course ID has been entered and button search is clicked 
+		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
+	private: Point mouseDownLocation, formLocation;
 	private: System::Windows::Forms::Panel^ pnl_titleRemv;
 
 	private: System::Windows::Forms::Label^ label1;
@@ -211,7 +212,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label1->Location = System::Drawing::Point(215, 8);
+			this->label1->Location = System::Drawing::Point(223, 8);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(416, 30);
 			this->label1->TabIndex = 1;
@@ -226,7 +227,7 @@ namespace CMS {
 			this->txt_StudentID->Location = System::Drawing::Point(120, 293);
 			this->txt_StudentID->MaxLength = 10;
 			this->txt_StudentID->Name = L"txt_StudentID";
-			this->txt_StudentID->Size = System::Drawing::Size(168, 26);
+			this->txt_StudentID->Size = System::Drawing::Size(147, 26);
 			this->txt_StudentID->TabIndex = 26;
 			// 
 			// label9
@@ -296,7 +297,7 @@ namespace CMS {
 			this->txt_courseID->Location = System::Drawing::Point(120, 252);
 			this->txt_courseID->MaxLength = 10;
 			this->txt_courseID->Name = L"txt_courseID";
-			this->txt_courseID->Size = System::Drawing::Size(168, 26);
+			this->txt_courseID->Size = System::Drawing::Size(147, 26);
 			this->txt_courseID->TabIndex = 19;
 			// 
 			// label2
@@ -546,11 +547,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_coursename->Location = System::Drawing::Point(23, 339);
+			this->txt_coursename->Location = System::Drawing::Point(29, 339);
 			this->txt_coursename->Name = L"txt_coursename";
 			this->txt_coursename->ReadOnly = true;
 			this->txt_coursename->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->txt_coursename->Size = System::Drawing::Size(265, 28);
+			this->txt_coursename->Size = System::Drawing::Size(238, 28);
 			this->txt_coursename->TabIndex = 63;
 			// 
 			// chkbox_sem3
@@ -618,11 +619,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label23->Location = System::Drawing::Point(250, 118);
+			this->label23->Location = System::Drawing::Point(245, 118);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(39, 21);
+			this->label23->Size = System::Drawing::Size(43, 21);
 			this->label23->TabIndex = 69;
-			this->label23->Text = L"End";
+			this->label23->Text = L"End:";
 			// 
 			// txt_schoolyear_start
 			// 
@@ -783,7 +784,6 @@ namespace CMS {
 			chkbox_sem3->Checked = true;
 		}
 		this->curStudent = nullptr;
-		this->curCourse = nullptr;
 	}
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
@@ -838,9 +838,8 @@ namespace CMS {
 	}
 
 	private: System::Void btn_remove_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (!this->curStudent || !this->curCourse) {
+		if (!this->curStudent) {
 			MessageBox::Show("Which student will be deleted???");
-			return;
 		}
 		txt_StudentID->Text = "";
 		txt_StudentID_2->Text = "";
@@ -866,7 +865,7 @@ namespace CMS {
 		delete tmp;
 		////////////////////////////////////////////////
 		std::string message = "Student" + this->curStudent->data->student->studentID + "was successfully removed";
-		MessageBox::Show(gcnew System::String(message.c_str()));
+		MessageBox::Show("Student");
 		this->curStudent = nullptr;
 	}
 

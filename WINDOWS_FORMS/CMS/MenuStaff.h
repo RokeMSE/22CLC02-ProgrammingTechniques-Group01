@@ -3,7 +3,6 @@
 #include "header.h"
 #include "UpdateResult.h"
 #include "RemoveStuFromCourse.h"
-#include "Add1StuToCourse.h"
 #include "ViewListCourses.h"
 #include "ImpScoreOfCourse.h"
 
@@ -210,7 +209,6 @@ namespace CMS {
 			this->btn_Add1StuToCourse->TabIndex = 9;
 			this->btn_Add1StuToCourse->Text = L"Add a student to a course in current semester";
 			this->btn_Add1StuToCourse->UseVisualStyleBackColor = true;
-			this->btn_Add1StuToCourse->Click += gcnew System::EventHandler(this, &MenuStaff::btn_Add1StuToCourse_Click);
 			// 
 			// btn_Remove1StuInCourse
 			// 
@@ -374,11 +372,6 @@ namespace CMS {
 
 	private: System::Void btn_Remove1StuInCourse_Click(System::Object^ sender, System::EventArgs^ e) {
 		RemoveStuFromCourse^ form = gcnew RemoveStuFromCourse(this);
-		this->Hide();
-		form->Show();
-	}
-	private: System::Void btn_Add1StuToCourse_Click(System::Object^ sender, System::EventArgs^ e) {
-		Add1StuToCourse^ form = gcnew Add1StuToCourse(this);
 		this->Hide();
 		form->Show();
 	}
