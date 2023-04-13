@@ -1167,7 +1167,6 @@ namespace CMS {
 		curStudent->data->midtermMark = val_midtermMark;
 		curStudent->data->finalMark = val_finalMark;
 		curStudent->data->totalMark = (val_otherMark * rateOther + val_midtermMark * rateMid + val_finalMark * rateFinal) / 100.0;
-		MessageBox::Show("Successfully updated");
 
 		txt_StudentID->Text = "";
 		txt_StudentID_2->Text = "";
@@ -1176,36 +1175,27 @@ namespace CMS {
 		txt_othermark->ReadOnly = true;
 		this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
-		txt_othermark->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_midmark->Text = "";
 		txt_midmark->ReadOnly = true;
 		this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
-		txt_midmark->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_finalmark->Text = "";
 		txt_finalmark->ReadOnly = true;
 		this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
-		txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateOther->Text = "";
 		txt_rateOther->ReadOnly = true;
-		this->txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateMid->Text = "";
 		txt_rateMid->ReadOnly = true;
-		this->txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
 
 		//txt_rateFinal->Text = "";
 		txt_rateFinal->ReadOnly = true;
-		this->txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
 		txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
 
 		txt_coursename->Text = "";
@@ -1216,6 +1206,7 @@ namespace CMS {
 		txt_rateTotal->Text = "";
 
 		this->curStudent = nullptr;
+		MessageBox::Show("Successfully updated");
 	}
 
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
