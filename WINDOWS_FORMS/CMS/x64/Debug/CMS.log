@@ -1,11 +1,6 @@
-﻿  export.cpp
-  helperFunctions.cpp
-  import.cpp
-  ImpScoreOfCourse.cpp
-  Login.cpp
+﻿  Login.cpp
 D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Login.cpp(10,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   ViewListCourses.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Generating Code...
   export.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-LINK : fatal error LNK1561: entry point must be defined
+  CMS.vcxproj -> D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\x64\Debug\CMS.exe
