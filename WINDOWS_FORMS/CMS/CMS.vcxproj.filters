@@ -54,6 +54,9 @@
     <ClInclude Include="ImpScoreOfCourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Add1StuToCourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv">

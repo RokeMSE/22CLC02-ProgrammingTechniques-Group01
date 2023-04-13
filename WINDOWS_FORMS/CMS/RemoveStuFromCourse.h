@@ -840,6 +840,7 @@ namespace CMS {
 	private: System::Void btn_remove_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!this->curStudent) {
 			MessageBox::Show("Which student will be deleted???");
+			return;
 		}
 		txt_StudentID->Text = "";
 		txt_StudentID_2->Text = "";
@@ -862,10 +863,11 @@ namespace CMS {
 		else
 			tmp->next->prev = tmp->prev;
 
+		std::string message = "Student" + tmp->data->student->studentID + "was successfully removed";
+		tmp->data->student = nullptr;
 		delete tmp;
 		////////////////////////////////////////////////
-		std::string message = "Student" + this->curStudent->data->student->studentID + "was successfully removed";
-		MessageBox::Show("Student");
+		MessageBox::Show(gcnew System::String(message.c_str()));
 		this->curStudent = nullptr;
 	}
 

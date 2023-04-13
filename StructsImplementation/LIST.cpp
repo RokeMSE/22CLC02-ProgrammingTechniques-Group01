@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../header.h"
 
 /// data_type of (list) same as data_type of (val)

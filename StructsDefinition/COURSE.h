@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include "../header.h"
 
 struct STUDENT;

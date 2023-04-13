@@ -1,26 +1,7 @@
 #pragma once
 
 #include "../header.h"
+using namespace GROUP1;
 
-struct CLASS {
-    uint yearIn;        // the year in which students admitted to school
-    ushort K;           // may be the last 2 digits of yearIn
-    Program program;    // APCS, CLC, VP
-    ushort No;          // No of class
-    LIST<DLL, STUDENT*> student;
-    //LIST <DLL, STUDENT> student;
-    // 22CLC2: K = 22, program = CLC, No = 2
 
-    // member functions
-    // these prototypes haven't been finished yet
-
-    void add (SCHOOLYEAR year); // create a class
-
-    // // add 1st-year students to a particular 1st-year class
-    // // just use when a new class is created
-    void add1stYearStudent (); // using key board
-    bool add1stYearStudents (std::string filename); // import from file
-    std::string convertToString();
-};
-
-CLASS convertToClass(std::string str);
+//CLASS convertToClass(std::string str);
