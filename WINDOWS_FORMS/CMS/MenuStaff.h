@@ -5,6 +5,7 @@
 #include "RemoveStuFromCourse.h"
 #include "ViewListCourses.h"
 #include "ImpScoreOfCourse.h"
+#include "Add1StuToCourse.h"
 
 namespace CMS {
 
@@ -40,44 +41,145 @@ namespace CMS {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ btn_CreateSchoolYear;
-	private: System::Windows::Forms::Button^ btn_Create1NewClass;
-	private: System::Windows::Forms::Button^ btn_AddStuToClass;
+
+
+
 
 	protected:
 
 	protected:
 
 
-	private: System::Windows::Forms::Button^ btn_AddStuCSV;
-	private: System::Windows::Forms::Button^ btn_Create1Sem;
-	private: System::Windows::Forms::Button^ btn_Add1CourseToCurSem;
+
+
+
 	private: System::Windows::Forms::Button^ btn_StuInCourseCSV;
 
 
 
 
-	private: System::Windows::Forms::Button^ btn_ViewCourses;
-	private: System::Windows::Forms::Button^ btn_UpdateCourse;
 
 
 
-	private: System::Windows::Forms::Button^ btn_Add1StuToCourse;
+
+
+
 	private: System::Windows::Forms::Button^ btn_Remove1StuInCourse;
 
 
 	private: System::Windows::Forms::Button^ btn_Delete1Course;
 
-	private: System::Windows::Forms::Button^ btn_ViewClasses;
 
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ btn_logout;
-	private: System::Windows::Forms::Button^ btn_exit;
-	private: System::Windows::Forms::Button^ btn_UpdateResult;
-	private: System::Windows::Forms::TextBox^ txt_nameOfUser;
-	private: System::Windows::Forms::Label^ label2;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ btn_ImportScore;
+
+
+
+	private: System::Windows::Forms::Panel^ OptionPanel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Panel^ MenuPanel;
+	private: System::Windows::Forms::Label^ MenuLabel;
+
+
+
+
+	private: System::Windows::Forms::PictureBox^ Icon;
+
+	private: System::Windows::Forms::Panel^ ImagePanel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Button^ RemoveBtn;
+	private: System::Windows::Forms::Button^ AddBtn;
+	private: System::Windows::Forms::Button^ UpdateBtn;
+	private: System::Windows::Forms::Button^ CreateBtn;
+	private: System::Windows::Forms::Button^ ViewBtn;
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Panel^ RemovePanel;
+	private: System::Windows::Forms::Panel^ UpdatePanel;
+	private: System::Windows::Forms::Button^ btn_UpdateCourse;
+	private: System::Windows::Forms::Button^ btn_UpdateResult;
+	private: System::Windows::Forms::Panel^ AddPanel;
+	private: System::Windows::Forms::Button^ btn_AddStuCSV;
+	private: System::Windows::Forms::Button^ btn_Add1StuToCourse;
+	private: System::Windows::Forms::Button^ btn_AddStuToClass;
+	private: System::Windows::Forms::Button^ btn_Add1CourseToCurSem;
+	private: System::Windows::Forms::Panel^ ViewPanel;
+	private: System::Windows::Forms::Button^ btn_ViewCourses;
+	private: System::Windows::Forms::Button^ btn_ViewClasses;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ txt_nameOfUser;
+	private: System::Windows::Forms::Button^ btn_Create1Sem;
+	private: System::Windows::Forms::Button^ btn_CreateSchoolYear;
+	private: System::Windows::Forms::Button^ btn_Create1NewClass;
+	private: System::Windows::Forms::Panel^ CreatePanel;
+	private: System::Windows::Forms::Button^ AccountBtn;
+	private: System::Windows::Forms::Button^ ImportExportBtn;
+	private: System::Windows::Forms::Panel^ ImportExportPanel;
+	private: System::Windows::Forms::Panel^ AccountPanel;
+	private: System::Windows::Forms::Button^ btn_exit;
+	private: System::Windows::Forms::Button^ btn_logout;
+	private: System::Windows::Forms::Button^ ChangePassBtn;
+	private: System::Windows::Forms::Button^ ExitBtn;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -97,134 +199,103 @@ namespace CMS {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MenuStaff::typeid));
-			this->btn_CreateSchoolYear = (gcnew System::Windows::Forms::Button());
-			this->btn_Create1NewClass = (gcnew System::Windows::Forms::Button());
-			this->btn_AddStuToClass = (gcnew System::Windows::Forms::Button());
-			this->btn_AddStuCSV = (gcnew System::Windows::Forms::Button());
-			this->btn_Create1Sem = (gcnew System::Windows::Forms::Button());
-			this->btn_Add1CourseToCurSem = (gcnew System::Windows::Forms::Button());
 			this->btn_StuInCourseCSV = (gcnew System::Windows::Forms::Button());
-			this->btn_ViewCourses = (gcnew System::Windows::Forms::Button());
-			this->btn_UpdateCourse = (gcnew System::Windows::Forms::Button());
-			this->btn_Add1StuToCourse = (gcnew System::Windows::Forms::Button());
 			this->btn_Remove1StuInCourse = (gcnew System::Windows::Forms::Button());
 			this->btn_Delete1Course = (gcnew System::Windows::Forms::Button());
-			this->btn_ViewClasses = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->btn_logout = (gcnew System::Windows::Forms::Button());
-			this->btn_exit = (gcnew System::Windows::Forms::Button());
-			this->btn_UpdateResult = (gcnew System::Windows::Forms::Button());
-			this->txt_nameOfUser = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btn_ImportScore = (gcnew System::Windows::Forms::Button());
+			this->OptionPanel = (gcnew System::Windows::Forms::Panel());
+			this->AccountBtn = (gcnew System::Windows::Forms::Button());
+			this->ImportExportBtn = (gcnew System::Windows::Forms::Button());
+			this->RemoveBtn = (gcnew System::Windows::Forms::Button());
+			this->AddBtn = (gcnew System::Windows::Forms::Button());
+			this->UpdateBtn = (gcnew System::Windows::Forms::Button());
+			this->CreateBtn = (gcnew System::Windows::Forms::Button());
+			this->ViewBtn = (gcnew System::Windows::Forms::Button());
+			this->ImagePanel = (gcnew System::Windows::Forms::Panel());
+			this->Icon = (gcnew System::Windows::Forms::PictureBox());
+			this->MenuPanel = (gcnew System::Windows::Forms::Panel());
+			this->ExitBtn = (gcnew System::Windows::Forms::Button());
+			this->MenuLabel = (gcnew System::Windows::Forms::Label());
+			this->RemovePanel = (gcnew System::Windows::Forms::Panel());
+			this->UpdatePanel = (gcnew System::Windows::Forms::Panel());
+			this->btn_UpdateCourse = (gcnew System::Windows::Forms::Button());
+			this->btn_UpdateResult = (gcnew System::Windows::Forms::Button());
+			this->AddPanel = (gcnew System::Windows::Forms::Panel());
+			this->btn_AddStuCSV = (gcnew System::Windows::Forms::Button());
+			this->btn_Add1StuToCourse = (gcnew System::Windows::Forms::Button());
+			this->btn_AddStuToClass = (gcnew System::Windows::Forms::Button());
+			this->btn_Add1CourseToCurSem = (gcnew System::Windows::Forms::Button());
+			this->ViewPanel = (gcnew System::Windows::Forms::Panel());
+			this->btn_ViewCourses = (gcnew System::Windows::Forms::Button());
+			this->btn_ViewClasses = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->txt_nameOfUser = (gcnew System::Windows::Forms::TextBox());
+			this->btn_Create1Sem = (gcnew System::Windows::Forms::Button());
+			this->btn_CreateSchoolYear = (gcnew System::Windows::Forms::Button());
+			this->btn_Create1NewClass = (gcnew System::Windows::Forms::Button());
+			this->CreatePanel = (gcnew System::Windows::Forms::Panel());
+			this->ImportExportPanel = (gcnew System::Windows::Forms::Panel());
+			this->AccountPanel = (gcnew System::Windows::Forms::Panel());
+			this->btn_exit = (gcnew System::Windows::Forms::Button());
+			this->btn_logout = (gcnew System::Windows::Forms::Button());
+			this->ChangePassBtn = (gcnew System::Windows::Forms::Button());
+			this->OptionPanel->SuspendLayout();
+			this->ImagePanel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Icon))->BeginInit();
+			this->MenuPanel->SuspendLayout();
+			this->RemovePanel->SuspendLayout();
+			this->UpdatePanel->SuspendLayout();
+			this->AddPanel->SuspendLayout();
+			this->ViewPanel->SuspendLayout();
+			this->panel1->SuspendLayout();
+			this->CreatePanel->SuspendLayout();
+			this->ImportExportPanel->SuspendLayout();
+			this->AccountPanel->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// btn_CreateSchoolYear
-			// 
-			this->btn_CreateSchoolYear->Location = System::Drawing::Point(45, 92);
-			this->btn_CreateSchoolYear->Name = L"btn_CreateSchoolYear";
-			this->btn_CreateSchoolYear->Size = System::Drawing::Size(376, 28);
-			this->btn_CreateSchoolYear->TabIndex = 0;
-			this->btn_CreateSchoolYear->Text = L"Create a school year";
-			this->btn_CreateSchoolYear->UseVisualStyleBackColor = true;
-			// 
-			// btn_Create1NewClass
-			// 
-			this->btn_Create1NewClass->Location = System::Drawing::Point(45, 161);
-			this->btn_Create1NewClass->Name = L"btn_Create1NewClass";
-			this->btn_Create1NewClass->Size = System::Drawing::Size(376, 28);
-			this->btn_Create1NewClass->TabIndex = 1;
-			this->btn_Create1NewClass->Text = L"Create classes for 1st-year students";
-			this->btn_Create1NewClass->UseVisualStyleBackColor = true;
-			// 
-			// btn_AddStuToClass
-			// 
-			this->btn_AddStuToClass->Location = System::Drawing::Point(45, 299);
-			this->btn_AddStuToClass->Name = L"btn_AddStuToClass";
-			this->btn_AddStuToClass->Size = System::Drawing::Size(376, 28);
-			this->btn_AddStuToClass->TabIndex = 2;
-			this->btn_AddStuToClass->Text = L"Add new 1st year students to 1st-year classes one by one";
-			this->btn_AddStuToClass->UseVisualStyleBackColor = true;
-			// 
-			// btn_AddStuCSV
-			// 
-			this->btn_AddStuCSV->Location = System::Drawing::Point(45, 195);
-			this->btn_AddStuCSV->Name = L"btn_AddStuCSV";
-			this->btn_AddStuCSV->Size = System::Drawing::Size(376, 28);
-			this->btn_AddStuCSV->TabIndex = 3;
-			this->btn_AddStuCSV->Text = L"Add new 1st year students to a 1st-year class by CSV file";
-			this->btn_AddStuCSV->UseVisualStyleBackColor = true;
-			// 
-			// btn_Create1Sem
-			// 
-			this->btn_Create1Sem->Location = System::Drawing::Point(45, 230);
-			this->btn_Create1Sem->Name = L"btn_Create1Sem";
-			this->btn_Create1Sem->Size = System::Drawing::Size(376, 28);
-			this->btn_Create1Sem->TabIndex = 4;
-			this->btn_Create1Sem->Text = L"Create a semester";
-			this->btn_Create1Sem->UseVisualStyleBackColor = true;
-			// 
-			// btn_Add1CourseToCurSem
-			// 
-			this->btn_Add1CourseToCurSem->Location = System::Drawing::Point(45, 264);
-			this->btn_Add1CourseToCurSem->Name = L"btn_Add1CourseToCurSem";
-			this->btn_Add1CourseToCurSem->Size = System::Drawing::Size(376, 28);
-			this->btn_Add1CourseToCurSem->TabIndex = 5;
-			this->btn_Add1CourseToCurSem->Text = L"Add a course to current semester";
-			this->btn_Add1CourseToCurSem->UseVisualStyleBackColor = true;
 			// 
 			// btn_StuInCourseCSV
 			// 
-			this->btn_StuInCourseCSV->Location = System::Drawing::Point(475, 266);
+			this->btn_StuInCourseCSV->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_StuInCourseCSV->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_StuInCourseCSV->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_StuInCourseCSV->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_StuInCourseCSV->Location = System::Drawing::Point(0, 0);
+			this->btn_StuInCourseCSV->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_StuInCourseCSV->Name = L"btn_StuInCourseCSV";
-			this->btn_StuInCourseCSV->Size = System::Drawing::Size(376, 26);
+			this->btn_StuInCourseCSV->Size = System::Drawing::Size(1019, 50);
 			this->btn_StuInCourseCSV->TabIndex = 6;
 			this->btn_StuInCourseCSV->Text = L"Upload a CSV file of students enrolled in a course of current semester";
-			this->btn_StuInCourseCSV->UseVisualStyleBackColor = true;
-			// 
-			// btn_ViewCourses
-			// 
-			this->btn_ViewCourses->Location = System::Drawing::Point(475, 128);
-			this->btn_ViewCourses->Name = L"btn_ViewCourses";
-			this->btn_ViewCourses->Size = System::Drawing::Size(376, 26);
-			this->btn_ViewCourses->TabIndex = 7;
-			this->btn_ViewCourses->Text = L"View courses of current semester";
-			this->btn_ViewCourses->UseVisualStyleBackColor = true;
-			this->btn_ViewCourses->Click += gcnew System::EventHandler(this, &MenuStaff::btn_ViewCourses_Click);
-			// 
-			// btn_UpdateCourse
-			// 
-			this->btn_UpdateCourse->Location = System::Drawing::Point(475, 197);
-			this->btn_UpdateCourse->Name = L"btn_UpdateCourse";
-			this->btn_UpdateCourse->Size = System::Drawing::Size(376, 26);
-			this->btn_UpdateCourse->TabIndex = 8;
-			this->btn_UpdateCourse->Text = L"Update information of a course in current semester";
-			this->btn_UpdateCourse->UseVisualStyleBackColor = true;
-			// 
-			// btn_Add1StuToCourse
-			// 
-			this->btn_Add1StuToCourse->Location = System::Drawing::Point(475, 92);
-			this->btn_Add1StuToCourse->Name = L"btn_Add1StuToCourse";
-			this->btn_Add1StuToCourse->Size = System::Drawing::Size(376, 26);
-			this->btn_Add1StuToCourse->TabIndex = 9;
-			this->btn_Add1StuToCourse->Text = L"Add a student to a course in current semester";
-			this->btn_Add1StuToCourse->UseVisualStyleBackColor = true;
+			this->btn_StuInCourseCSV->UseVisualStyleBackColor = false;
 			// 
 			// btn_Remove1StuInCourse
 			// 
-			this->btn_Remove1StuInCourse->Location = System::Drawing::Point(475, 231);
+			this->btn_Remove1StuInCourse->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_Remove1StuInCourse->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_Remove1StuInCourse->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_Remove1StuInCourse->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_Remove1StuInCourse->Location = System::Drawing::Point(0, 50);
+			this->btn_Remove1StuInCourse->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Remove1StuInCourse->Name = L"btn_Remove1StuInCourse";
-			this->btn_Remove1StuInCourse->Size = System::Drawing::Size(376, 26);
+			this->btn_Remove1StuInCourse->Size = System::Drawing::Size(1019, 50);
 			this->btn_Remove1StuInCourse->TabIndex = 10;
 			this->btn_Remove1StuInCourse->Text = L"Remove a student from a course in current semester";
-			this->btn_Remove1StuInCourse->UseVisualStyleBackColor = true;
+			this->btn_Remove1StuInCourse->UseVisualStyleBackColor = false;
 			this->btn_Remove1StuInCourse->Click += gcnew System::EventHandler(this, &MenuStaff::btn_Remove1StuInCourse_Click);
 			// 
 			// btn_Delete1Course
 			// 
-			this->btn_Delete1Course->Location = System::Drawing::Point(475, 162);
+			this->btn_Delete1Course->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_Delete1Course->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_Delete1Course->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_Delete1Course->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_Delete1Course->Location = System::Drawing::Point(0, 0);
+			this->btn_Delete1Course->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_Delete1Course->Name = L"btn_Delete1Course";
-			this->btn_Delete1Course->Size = System::Drawing::Size(376, 26);
+			this->btn_Delete1Course->Size = System::Drawing::Size(1019, 50);
 			this->btn_Delete1Course->TabIndex = 11;
 			this->btn_Delete1Course->Text = L"Delete a course of current semester";
 			this->btn_Delete1Course->UseVisualStyleBackColor = false;
@@ -403,7 +474,9 @@ namespace CMS {
 			this->Icon->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->Icon->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.ErrorImage")));
 			this->Icon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.Image")));
+			this->Icon->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.InitialImage")));
 			this->Icon->Location = System::Drawing::Point(59, 10);
 			this->Icon->Name = L"Icon";
 			this->Icon->Padding = System::Windows::Forms::Padding(4);
@@ -430,9 +503,9 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
 			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->ExitBtn->ForeColor = System::Drawing::Color::Coral;
-			this->ExitBtn->Location = System::Drawing::Point(896, 12);
+			this->ExitBtn->Location = System::Drawing::Point(910, 12);
 			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(53, 52);
+			this->ExitBtn->Size = System::Drawing::Size(39, 37);
 			this->ExitBtn->TabIndex = 14;
 			this->ExitBtn->Text = L"x";
 			this->ExitBtn->UseVisualStyleBackColor = false;
@@ -612,117 +685,222 @@ namespace CMS {
 			// 
 			// btn_ViewClasses
 			// 
-			this->btn_ViewClasses->Location = System::Drawing::Point(45, 126);
+			this->btn_ViewClasses->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_ViewClasses->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_ViewClasses->FlatAppearance->BorderSize = 0;
+			this->btn_ViewClasses->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_ViewClasses->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_ViewClasses->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_ViewClasses->Location = System::Drawing::Point(0, 0);
+			this->btn_ViewClasses->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_ViewClasses->Name = L"btn_ViewClasses";
-			this->btn_ViewClasses->Size = System::Drawing::Size(376, 28);
-			this->btn_ViewClasses->TabIndex = 12;
+			this->btn_ViewClasses->Size = System::Drawing::Size(1019, 50);
+			this->btn_ViewClasses->TabIndex = 41;
 			this->btn_ViewClasses->Text = L"View classes";
-			this->btn_ViewClasses->UseVisualStyleBackColor = true;
+			this->btn_ViewClasses->UseVisualStyleBackColor = false;
 			// 
-			// label1
+			// panel1
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->label1->Location = System::Drawing::Point(49, 42);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(102, 39);
-			this->label1->TabIndex = 13;
-			this->label1->Text = L"Menu";
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->txt_nameOfUser);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(249, 74);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1019, 72);
+			this->panel1->TabIndex = 51;
 			// 
-			// btn_logout
+			// label2
 			// 
-			this->btn_logout->Location = System::Drawing::Point(701, 425);
-			this->btn_logout->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btn_logout->Name = L"btn_logout";
-			this->btn_logout->Size = System::Drawing::Size(72, 30);
-			this->btn_logout->TabIndex = 14;
-			this->btn_logout->Text = L"Logout";
-			this->btn_logout->UseVisualStyleBackColor = true;
-			this->btn_logout->Click += gcnew System::EventHandler(this, &MenuStaff::btn_logout_Click);
-			// 
-			// btn_exit
-			// 
-			this->btn_exit->Location = System::Drawing::Point(779, 425);
-			this->btn_exit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(72, 30);
-			this->btn_exit->TabIndex = 15;
-			this->btn_exit->Text = L"Exit";
-			this->btn_exit->UseVisualStyleBackColor = true;
-			this->btn_exit->Click += gcnew System::EventHandler(this, &MenuStaff::btn_exit_Click);
-			// 
-			// btn_UpdateResult
-			// 
-			this->btn_UpdateResult->Location = System::Drawing::Point(45, 334);
-			this->btn_UpdateResult->Name = L"btn_UpdateResult";
-			this->btn_UpdateResult->Size = System::Drawing::Size(376, 28);
-			this->btn_UpdateResult->TabIndex = 16;
-			this->btn_UpdateResult->Text = L"Update Student\'s Result";
-			this->btn_UpdateResult->UseVisualStyleBackColor = true;
-			this->btn_UpdateResult->Click += gcnew System::EventHandler(this, &MenuStaff::btn_UpdateResult_Click);
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label2->Location = System::Drawing::Point(11, 14);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(44, 20);
+			this->label2->TabIndex = 18;
+			this->label2->Text = L"Staff";
 			// 
 			// txt_nameOfUser
 			// 
 			this->txt_nameOfUser->BackColor = System::Drawing::Color::LemonChiffon;
 			this->txt_nameOfUser->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_nameOfUser->Location = System::Drawing::Point(56, 8);
+			this->txt_nameOfUser->Location = System::Drawing::Point(61, 10);
 			this->txt_nameOfUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_nameOfUser->Name = L"txt_nameOfUser";
 			this->txt_nameOfUser->ReadOnly = true;
-			this->txt_nameOfUser->Size = System::Drawing::Size(337, 24);
+			this->txt_nameOfUser->Size = System::Drawing::Size(379, 28);
 			this->txt_nameOfUser->TabIndex = 17;
 			// 
-			// label2
+			// btn_Create1Sem
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 10);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(33, 16);
-			this->label2->TabIndex = 18;
-			this->label2->Text = L"Staff";
+			this->btn_Create1Sem->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_Create1Sem->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_Create1Sem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_Create1Sem->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_Create1Sem->Location = System::Drawing::Point(0, 0);
+			this->btn_Create1Sem->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->btn_Create1Sem->Name = L"btn_Create1Sem";
+			this->btn_Create1Sem->Size = System::Drawing::Size(1019, 50);
+			this->btn_Create1Sem->TabIndex = 37;
+			this->btn_Create1Sem->Text = L"Create a semester";
+			this->btn_Create1Sem->UseVisualStyleBackColor = false;
 			// 
-			// btn_ImportScore
+			// btn_CreateSchoolYear
 			// 
-			this->btn_ImportScore->Location = System::Drawing::Point(475, 301);
-			this->btn_ImportScore->Name = L"btn_ImportScore";
-			this->btn_ImportScore->Size = System::Drawing::Size(376, 26);
-			this->btn_ImportScore->TabIndex = 19;
-			this->btn_ImportScore->Text = L"Import the ScoreBoard of a Course";
-			this->btn_ImportScore->UseVisualStyleBackColor = true;
-			this->btn_ImportScore->Click += gcnew System::EventHandler(this, &MenuStaff::btn_ImportScore_Click);
+			this->btn_CreateSchoolYear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_CreateSchoolYear->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_CreateSchoolYear->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_CreateSchoolYear->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_CreateSchoolYear->Location = System::Drawing::Point(0, 50);
+			this->btn_CreateSchoolYear->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->btn_CreateSchoolYear->Name = L"btn_CreateSchoolYear";
+			this->btn_CreateSchoolYear->Size = System::Drawing::Size(1019, 50);
+			this->btn_CreateSchoolYear->TabIndex = 35;
+			this->btn_CreateSchoolYear->Text = L"Create a school year";
+			this->btn_CreateSchoolYear->UseVisualStyleBackColor = false;
+			// 
+			// btn_Create1NewClass
+			// 
+			this->btn_Create1NewClass->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_Create1NewClass->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_Create1NewClass->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_Create1NewClass->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_Create1NewClass->Location = System::Drawing::Point(0, 100);
+			this->btn_Create1NewClass->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->btn_Create1NewClass->Name = L"btn_Create1NewClass";
+			this->btn_Create1NewClass->Size = System::Drawing::Size(1019, 50);
+			this->btn_Create1NewClass->TabIndex = 36;
+			this->btn_Create1NewClass->Text = L"Create classes for 1st-year students";
+			this->btn_Create1NewClass->UseVisualStyleBackColor = false;
+			// 
+			// CreatePanel
+			// 
+			this->CreatePanel->AutoSize = true;
+			this->CreatePanel->Controls->Add(this->btn_Create1NewClass);
+			this->CreatePanel->Controls->Add(this->btn_CreateSchoolYear);
+			this->CreatePanel->Controls->Add(this->btn_Create1Sem);
+			this->CreatePanel->Dock = System::Windows::Forms::DockStyle::Top;
+			this->CreatePanel->Location = System::Drawing::Point(249, 546);
+			this->CreatePanel->Name = L"CreatePanel";
+			this->CreatePanel->Size = System::Drawing::Size(1019, 150);
+			this->CreatePanel->TabIndex = 55;
+			this->CreatePanel->Visible = false;
+			// 
+			// ImportExportPanel
+			// 
+			this->ImportExportPanel->AutoSize = true;
+			this->ImportExportPanel->Controls->Add(this->btn_ImportScore);
+			this->ImportExportPanel->Controls->Add(this->btn_StuInCourseCSV);
+			this->ImportExportPanel->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ImportExportPanel->Location = System::Drawing::Point(249, 796);
+			this->ImportExportPanel->Name = L"ImportExportPanel";
+			this->ImportExportPanel->Size = System::Drawing::Size(1019, 100);
+			this->ImportExportPanel->TabIndex = 56;
+			this->ImportExportPanel->Visible = false;
+			// 
+			// AccountPanel
+			// 
+			this->AccountPanel->AutoSize = true;
+			this->AccountPanel->Controls->Add(this->btn_exit);
+			this->AccountPanel->Controls->Add(this->btn_logout);
+			this->AccountPanel->Controls->Add(this->ChangePassBtn);
+			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Top;
+			this->AccountPanel->Location = System::Drawing::Point(249, 896);
+			this->AccountPanel->Name = L"AccountPanel";
+			this->AccountPanel->Size = System::Drawing::Size(1019, 150);
+			this->AccountPanel->TabIndex = 57;
+			this->AccountPanel->Visible = false;
+			// 
+			// btn_exit
+			// 
+			this->btn_exit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_exit->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_exit->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_exit->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_exit->Location = System::Drawing::Point(0, 100);
+			this->btn_exit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btn_exit->Name = L"btn_exit";
+			this->btn_exit->Size = System::Drawing::Size(1019, 50);
+			this->btn_exit->TabIndex = 18;
+			this->btn_exit->Text = L"Exit";
+			this->btn_exit->UseVisualStyleBackColor = false;
+			this->btn_exit->Click += gcnew System::EventHandler(this, &MenuStaff::btn_exit_Click);
+			// 
+			// btn_logout
+			// 
+			this->btn_logout->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->btn_logout->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_logout->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->btn_logout->ForeColor = System::Drawing::Color::FloralWhite;
+			this->btn_logout->Location = System::Drawing::Point(0, 50);
+			this->btn_logout->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btn_logout->Name = L"btn_logout";
+			this->btn_logout->Size = System::Drawing::Size(1019, 50);
+			this->btn_logout->TabIndex = 17;
+			this->btn_logout->Text = L"Logout";
+			this->btn_logout->UseVisualStyleBackColor = false;
+			this->btn_logout->Click += gcnew System::EventHandler(this, &MenuStaff::btn_logout_Click);
+			// 
+			// ChangePassBtn
+			// 
+			this->ChangePassBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
+				static_cast<System::Int32>(static_cast<System::Byte>(110)));
+			this->ChangePassBtn->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ChangePassBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->ChangePassBtn->ForeColor = System::Drawing::Color::FloralWhite;
+			this->ChangePassBtn->Location = System::Drawing::Point(0, 0);
+			this->ChangePassBtn->Name = L"ChangePassBtn";
+			this->ChangePassBtn->Size = System::Drawing::Size(1019, 50);
+			this->ChangePassBtn->TabIndex = 16;
+			this->ChangePassBtn->Text = L"Change password";
+			this->ChangePassBtn->UseVisualStyleBackColor = false;
 			// 
 			// MenuStaff
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(889, 465);
+			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+			this->ClientSize = System::Drawing::Size(1294, 911);
 			this->ControlBox = false;
-			this->Controls->Add(this->btn_ImportScore);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->txt_nameOfUser);
-			this->Controls->Add(this->btn_UpdateResult);
-			this->Controls->Add(this->btn_exit);
-			this->Controls->Add(this->btn_logout);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->btn_ViewClasses);
-			this->Controls->Add(this->btn_Delete1Course);
-			this->Controls->Add(this->btn_Remove1StuInCourse);
-			this->Controls->Add(this->btn_Add1StuToCourse);
-			this->Controls->Add(this->btn_UpdateCourse);
-			this->Controls->Add(this->btn_ViewCourses);
-			this->Controls->Add(this->btn_StuInCourseCSV);
-			this->Controls->Add(this->btn_Add1CourseToCurSem);
-			this->Controls->Add(this->btn_Create1Sem);
-			this->Controls->Add(this->btn_AddStuCSV);
-			this->Controls->Add(this->btn_AddStuToClass);
-			this->Controls->Add(this->btn_Create1NewClass);
-			this->Controls->Add(this->btn_CreateSchoolYear);
+			this->Controls->Add(this->AccountPanel);
+			this->Controls->Add(this->ImportExportPanel);
+			this->Controls->Add(this->RemovePanel);
+			this->Controls->Add(this->CreatePanel);
+			this->Controls->Add(this->UpdatePanel);
+			this->Controls->Add(this->AddPanel);
+			this->Controls->Add(this->ViewPanel);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->MenuPanel);
+			this->Controls->Add(this->OptionPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"MenuStaff";
 			this->Text = L"MenuStaff";
 			this->Load += gcnew System::EventHandler(this, &MenuStaff::MenuStaff_Load);
+			this->OptionPanel->ResumeLayout(false);
+			this->ImagePanel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Icon))->EndInit();
+			this->MenuPanel->ResumeLayout(false);
+			this->MenuPanel->PerformLayout();
+			this->RemovePanel->ResumeLayout(false);
+			this->UpdatePanel->ResumeLayout(false);
+			this->AddPanel->ResumeLayout(false);
+			this->ViewPanel->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
+			this->CreatePanel->ResumeLayout(false);
+			this->ImportExportPanel->ResumeLayout(false);
+			this->AccountPanel->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -742,7 +920,7 @@ namespace CMS {
 	}
 	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		this->sourceForm->Show();                                                                             
+		this->sourceForm->Show();
 	}
 
 	private: System::Void btn_UpdateResult_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -756,15 +934,209 @@ namespace CMS {
 		this->Hide();
 		form->Show();
 	}
-private: System::Void btn_ViewCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	ViewListCourses^ form = gcnew CMS::ViewListCourses(this);
-	form->Show();
-}
-private: System::Void btn_ImportScore_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	ImpScoreOfCourse^ form = gcnew CMS::ImpScoreOfCourse(this);
-	form->Show();
-}
-};
+	private: System::Void btn_ViewCourses_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		ViewListCourses^ form = gcnew CMS::ViewListCourses(this);
+		form->Show();
+	}
+	private: System::Void btn_ImportScore_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		ImpScoreOfCourse^ form = gcnew CMS::ImpScoreOfCourse(this);
+		form->Show();
+	}
+	private: System::Void btn_Add1StuToCourse_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		Add1StuToCourse^ form = gcnew Add1StuToCourse(this);
+		form->Show();
+	}
+	private: System::Void ViewBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->ViewPanel->Visible)
+			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreatePanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->ViewPanel->Visible = !this->ViewPanel->Visible;
+	}
+	private: System::Void CreateBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->CreatePanel->Visible)
+			this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->CreatePanel->Visible = !this->CreatePanel->Visible;
+	}
+	private: System::Void AddBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->AddPanel->Visible)
+			this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->CreatePanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->AddPanel->Visible = !this->AddPanel->Visible;
+	}
+	private: System::Void UpdateBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->UpdatePanel->Visible)
+			this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->CreatePanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->UpdatePanel->Visible = !this->UpdatePanel->Visible;
+	}
+	private: System::Void RemoveBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->RemovePanel->Visible)
+			this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->CreatePanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->RemovePanel->Visible = !this->RemovePanel->Visible;
+	}
+	private: System::Void AccountBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->AccountPanel->Visible)
+			this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->CreatePanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->ImportExportPanel->Visible = false;
+		this->AccountPanel->Visible = !this->AccountPanel->Visible;
+	}
+	private: System::Void ImportExportBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!this->ImportExportPanel->Visible)
+			this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
+				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		else
+			this->ImportExportBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->CreateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->AddBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->RemoveBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->UpdateBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewPanel->Visible = false;
+		this->CreatePanel->Visible = false;
+		this->AddPanel->Visible = false;
+		this->UpdatePanel->Visible = false;
+		this->RemovePanel->Visible = false;
+		this->AccountPanel->Visible = false;
+		this->ImportExportPanel->Visible = !this->ImportExportPanel->Visible;
+	}
+	};
 }
