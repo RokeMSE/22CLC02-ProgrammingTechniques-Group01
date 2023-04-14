@@ -149,6 +149,9 @@
     <ClInclude Include="UpdateResult.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="viewClass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv" />
@@ -174,10 +177,17 @@
     <ClCompile Include="MenuStaff.cpp" />
     <ClCompile Include="MenuStudent.cpp" />
     <ClCompile Include="UpdateResult.cpp" />
+    <ClCompile Include="viewClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStaff.resx">
+      <DependentUpon>MenuStaff.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewClass.resx">
+      <DependentUpon>viewClass.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

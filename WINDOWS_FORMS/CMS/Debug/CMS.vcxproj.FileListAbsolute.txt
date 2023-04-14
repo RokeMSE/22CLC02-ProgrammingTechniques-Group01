@@ -10,3 +10,5 @@ C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.
 C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
 C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
 C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
+C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.MenuStaff.resources
+C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.viewClass.resources

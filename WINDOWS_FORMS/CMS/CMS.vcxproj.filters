@@ -45,6 +45,9 @@
     <ClInclude Include="MenuStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="viewClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv">
@@ -90,6 +93,9 @@
     </ClCompile>
     <ClCompile Include="MenuStudent.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="viewClass.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

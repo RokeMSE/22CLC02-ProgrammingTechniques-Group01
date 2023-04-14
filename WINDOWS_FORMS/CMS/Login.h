@@ -94,9 +94,9 @@ namespace CMS {
 			this->lbl_username->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_username->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_username->Location = System::Drawing::Point(35, 133);
+			this->lbl_username->Location = System::Drawing::Point(31, 106);
 			this->lbl_username->Name = L"lbl_username";
-			this->lbl_username->Size = System::Drawing::Size(95, 22);
+			this->lbl_username->Size = System::Drawing::Size(84, 19);
 			this->lbl_username->TabIndex = 0;
 			this->lbl_username->Text = L"User name";
 			// 
@@ -104,10 +104,12 @@ namespace CMS {
 			// 
 			this->txt_username->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_username->Location = System::Drawing::Point(39, 159);
+			this->txt_username->Location = System::Drawing::Point(35, 127);
+			this->txt_username->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_username->Name = L"txt_username";
-			this->txt_username->Size = System::Drawing::Size(320, 26);
+			this->txt_username->Size = System::Drawing::Size(285, 22);
 			this->txt_username->TabIndex = 1;
+			this->txt_username->TextChanged += gcnew System::EventHandler(this, &Login::txt_username_TextChanged);
 			// 
 			// btn_signin
 			// 
@@ -117,23 +119,25 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_signin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->btn_signin->Location = System::Drawing::Point(140, 288);
+			this->btn_signin->Location = System::Drawing::Point(124, 230);
+			this->btn_signin->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_signin->Name = L"btn_signin";
-			this->btn_signin->Size = System::Drawing::Size(121, 43);
+			this->btn_signin->Size = System::Drawing::Size(108, 34);
 			this->btn_signin->TabIndex = 2;
 			this->btn_signin->Text = L"Sign in";
 			this->btn_signin->UseVisualStyleBackColor = false;
 			this->btn_signin->Click += gcnew System::EventHandler(this, &Login::btn_signin_Click);
 			// 
-			btn_exit;
+			// btn_exit
 			// 
 			this->btn_exit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->btn_exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_exit->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_exit->Location = System::Drawing::Point(995, 6);
+			this->btn_exit->Location = System::Drawing::Point(884, 5);
+			this->btn_exit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(38, 38);
+			this->btn_exit->Size = System::Drawing::Size(34, 30);
 			this->btn_exit->TabIndex = 5;
 			this->btn_exit->Text = L"X";
 			this->btn_exit->UseVisualStyleBackColor = false;
@@ -143,10 +147,11 @@ namespace CMS {
 			// 
 			this->txt_password->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_password->Location = System::Drawing::Point(39, 240);
+			this->txt_password->Location = System::Drawing::Point(35, 192);
+			this->txt_password->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->PasswordChar = '>';
-			this->txt_password->Size = System::Drawing::Size(320, 26);
+			this->txt_password->Size = System::Drawing::Size(285, 22);
 			this->txt_password->TabIndex = 4;
 			this->txt_password->UseSystemPasswordChar = true;
 			// 
@@ -156,9 +161,9 @@ namespace CMS {
 			this->lbl_password->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_password->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_password->Location = System::Drawing::Point(35, 214);
+			this->lbl_password->Location = System::Drawing::Point(31, 171);
 			this->lbl_password->Name = L"lbl_password";
-			this->lbl_password->Size = System::Drawing::Size(89, 22);
+			this->lbl_password->Size = System::Drawing::Size(76, 19);
 			this->lbl_password->TabIndex = 3;
 			this->lbl_password->Text = L"Password";
 			// 
@@ -170,10 +175,12 @@ namespace CMS {
 			this->pnl_login->Controls->Add(this->lbl_password);
 			this->pnl_login->Controls->Add(this->txt_password);
 			this->pnl_login->Controls->Add(this->txt_username);
-			this->pnl_login->Location = System::Drawing::Point(341, 122);
+			this->pnl_login->Location = System::Drawing::Point(303, 98);
+			this->pnl_login->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pnl_login->Name = L"pnl_login";
-			this->pnl_login->Size = System::Drawing::Size(403, 478);
+			this->pnl_login->Size = System::Drawing::Size(358, 382);
 			this->pnl_login->TabIndex = 7;
+			this->pnl_login->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Login::pnl_login_Paint);
 			// 
 			// label2
 			// 
@@ -181,9 +188,9 @@ namespace CMS {
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(155, 27);
+			this->label2->Location = System::Drawing::Point(138, 22);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(106, 36);
+			this->label2->Size = System::Drawing::Size(91, 30);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"LOGIN";
 			// 
@@ -194,9 +201,9 @@ namespace CMS {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::Control;
-			this->label1->Location = System::Drawing::Point(2, 8);
+			this->label1->Location = System::Drawing::Point(2, 6);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(363, 31);
+			this->label1->Size = System::Drawing::Size(302, 27);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Course Management System";
 			// 
@@ -206,26 +213,28 @@ namespace CMS {
 			this->pnl_titleLogin->Controls->Add(this->label1);
 			this->pnl_titleLogin->Controls->Add(this->btn_exit);
 			this->pnl_titleLogin->Dock = System::Windows::Forms::DockStyle::Top;
-			this->pnl_titleLogin->Location = System::Drawing::Point(3, 3);
+			this->pnl_titleLogin->Location = System::Drawing::Point(3, 2);
+			this->pnl_titleLogin->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pnl_titleLogin->Name = L"pnl_titleLogin";
-			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(3);
-			this->pnl_titleLogin->Size = System::Drawing::Size(1037, 48);
+			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pnl_titleLogin->Size = System::Drawing::Size(921, 38);
 			this->pnl_titleLogin->TabIndex = 8;
 			this->pnl_titleLogin->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseDown);
 			this->pnl_titleLogin->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseMove);
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1043, 688);
+			this->ClientSize = System::Drawing::Size(927, 550);
 			this->Controls->Add(this->pnl_titleLogin);
 			this->Controls->Add(this->pnl_login);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Login";
-			this->Padding = System::Windows::Forms::Padding(3);
+			this->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Text = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->pnl_login->ResumeLayout(false);
@@ -335,5 +344,9 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	};
+	private: System::Void txt_username_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void pnl_login_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+};
 }
