@@ -401,6 +401,7 @@ namespace CMS {
 	private: System::Void txt_schoolyear_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ViewListCourses_Load(System::Object^ sender, System::EventArgs^ e) {
+		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
 	}
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
