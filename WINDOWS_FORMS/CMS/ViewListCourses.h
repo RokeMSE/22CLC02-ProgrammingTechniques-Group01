@@ -484,7 +484,7 @@ namespace CMS {
 				item->SubItems->Add(gcnew System::String((list->data->teacher).c_str()));
 				item->SubItems->Add(System::Convert::ToString(list->data->credit));
 				item->SubItems->Add(System::Convert::ToString(list->data->maxStudents));
-				item->SubItems->Add(gcnew System::String((convertFromWeekDay(list->data->day)).c_str()));
+				item->SubItems->Add(gcnew System::String((DayToString(list->data->day)).c_str()));
 				item->SubItems->Add(gcnew System::String((convertFromSession(list->data->session)).c_str()));
 				list = list->next;
 				count++;

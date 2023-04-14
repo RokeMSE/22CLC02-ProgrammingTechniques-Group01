@@ -186,6 +186,18 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
             s->student = stu->data;
             /// add this student with his/her scoreboard to the list of student in the course
             c->add1Student(s);
+
+            DLL<COURSE*>* tmp = new DLL<COURSE*>;
+            tmp->data = c;
+            tmp->next = nullptr;
+            if (s->student->courses.head == nullptr) {
+                s->student->courses.head = s->student->courses.tail = tmp;
+            }
+            else {
+                tmp->prev = s->student->courses.tail;
+                s->student->courses.tail = tmp;
+            }
+
         } else {
             MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
             return 0;

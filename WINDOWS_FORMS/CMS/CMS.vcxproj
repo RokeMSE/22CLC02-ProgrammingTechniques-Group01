@@ -163,6 +163,9 @@
     <ClInclude Include="ViewListCourses.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ViewListCoursesOfStu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv" />
@@ -187,6 +190,7 @@
     <ClCompile Include="ImpScoreOfCourse.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="ViewListCourses.cpp" />
+    <ClCompile Include="ViewListCoursesOfStu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add1StuToCourse.resx">

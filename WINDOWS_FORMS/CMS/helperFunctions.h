@@ -4,6 +4,7 @@
 
 extern std::string DateToString(GROUP1::DATE date);
 extern GROUP1::DATE getDate(std::string chr);
+extern std::string DayToString(GROUP1::WeekDay day);
 
 // enum functions
 extern GROUP1::Program convertToProgram(std::string str);
