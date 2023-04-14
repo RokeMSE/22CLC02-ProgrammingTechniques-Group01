@@ -1,5 +1,6 @@
 #pragma once
 #include "header.h"
+using namespace GROUP1;
 namespace CMS {
 
 	using namespace System;
@@ -23,7 +24,7 @@ namespace CMS {
 			//TODO: Add the constructor code here
 			//
 		}
-	private:
+		/*private:*/
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
 													// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::STUDENT*>* curStudent;
@@ -31,6 +32,8 @@ namespace CMS {
 		GROUP1::SEMESTER* curSemester;
 		System::Windows::Forms::Form^ sourceForm;
 		Point mouseDownLocation, formLocation;
+
+	public:
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -63,7 +66,7 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ lbl_title;
 	private: System::Windows::Forms::Button^ btn_back;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Label^ label11;
+
 	private: System::Windows::Forms::TextBox^ txt_DoB;
 	private: System::Windows::Forms::Button^ btn_add;
 
@@ -115,7 +118,6 @@ namespace CMS {
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->txt_DoB = (gcnew System::Windows::Forms::TextBox());
 			this->btn_add = (gcnew System::Windows::Forms::Button());
 			this->label12 = (gcnew System::Windows::Forms::Label());
@@ -375,13 +377,14 @@ namespace CMS {
 			// 
 			this->btn_back->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->btn_back->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_back->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_back->Location = System::Drawing::Point(799, 6);
+			this->btn_back->Location = System::Drawing::Point(0, 0);
 			this->btn_back->Name = L"btn_back";
-			this->btn_back->Size = System::Drawing::Size(35, 33);
+			this->btn_back->Size = System::Drawing::Size(43, 46);
 			this->btn_back->TabIndex = 93;
 			this->btn_back->Text = L"<";
 			this->btn_back->UseVisualStyleBackColor = false;
@@ -409,20 +412,6 @@ namespace CMS {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 92;
 			this->pictureBox1->TabStop = false;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->label11->Location = System::Drawing::Point(592, 400);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(138, 22);
-			this->label11->TabIndex = 106;
-			this->label11->Text = L"Enrollment year";
 			// 
 			// txt_DoB
 			// 
@@ -646,7 +635,6 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->ClientSize = System::Drawing::Size(838, 505);
 			this->Controls->Add(this->btn_search);
-			this->Controls->Add(this->label11);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->txt_DoB);
 			this->Controls->Add(this->pnl_title);
@@ -762,7 +750,7 @@ namespace CMS {
 
 		   ///////////////////////////////////////////////////////////////////////
 		   // checkbox semester 1 2 3
-				   //this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &Add1StuToCourse::chkbox_sem1_CheckedChanged);
+		   //this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &Add1StuToCourse::chkbox_sem1_CheckedChanged);
 	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (chkbox_sem1->Checked) {
 			chkbox_sem2->Checked = 0;	chkbox_sem3->Checked = 0;
@@ -817,8 +805,8 @@ namespace CMS {
 		   ///////////////////////////////////////////////////////////////////////
 
 
-		   ///////////////////////////////////////////////////////////////////////
-		   // button Search/Add clicked
+	///////////////////////////////////////////////////////////////////////
+	// button Search/Add clicked
 	private: System::Void btn_search_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string id;
 		// search for the current course
@@ -894,7 +882,7 @@ namespace CMS {
 
 		// then search for student in list L_Student
 		id = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
-		this->curStudent = L_Student.head; //type == DLL<SCOREBOARD*>*
+		this->curStudent = L_Student.head; //type == DLL<STUDENT*>*
 		while (this->curStudent) {
 			if (this->curStudent->data->studentID == id) {
 				txt_StudentID_2->Text = gcnew System::String(id.c_str());
@@ -927,29 +915,56 @@ namespace CMS {
 		}
 
 		// check whether this student has occurred in the course
-		GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp = this->curCourse->data->students.head;
-		while (tmp) {
-			if (tmp->data->student == this->curStudent->data) {
+		GROUP1::DLL<GROUP1::SCOREBOARD*>* tmpScore = this->curCourse->data->students.head;
+		while (tmpScore) {
+			if (tmpScore->data->student == this->curStudent->data) {
+				// pointing to the same address, which is equivalent to `they are the same`
 				MessageBox::Show("This student has already been in this course!");
 				return;
 			}
-			tmp = tmp->next;
+			tmpScore = tmpScore->next;
 		}
 		// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				// add a new student to list COURSE::students
+		tmpScore = new GROUP1::DLL<GROUP1::SCOREBOARD*>;
+		tmpScore->data = new GROUP1::SCOREBOARD;
+		tmpScore->data->student = this->curStudent->data;
+		tmpScore->next = nullptr;
+		tmpScore->prev = this->curCourse->data->students.tail;
 
-		if (!this->curCourse->data->students.head) {
-			this->curCourse->data->students.tail = new GROUP1::DLL<GROUP1::SCOREBOARD*>;
-			this->curCourse->data->students.head = this->curCourse->data->students.tail;
-		}	// head.prev == nullptr
+		/// Update the list, 2 cases: the list is empty or not
+		if (this->curCourse->data->students.head == nullptr) {
+			this->curCourse->data->students.head = tmpScore;
+			this->curCourse->data->students.tail = tmpScore;
+		}
 		else {
-			this->curCourse->data->students.tail->next = new GROUP1::DLL<GROUP1::SCOREBOARD*>;
-			this->curCourse->data->students.tail = this->curCourse->data->students.tail->next;
-		}	// tail.next == nullptr
-		this->curCourse->data->students.tail->data->student = this->curStudent->data;
-		this->curCourse->data->students.tail->data->otherMark = 0;
-		this->curCourse->data->students.tail->data->midtermMark = 0;
-		this->curCourse->data->students.tail->data->finalMark = 0;
-		this->curCourse->data->students.tail->data->totalMark = 0;
+			this->curCourse->data->students.tail->next = tmpScore;
+			this->curCourse->data->students.tail = tmpScore;
+		}
+
+		////////////////////////////////////////////
+		////////////////////////////////////////////
+////////////////////////////////////////////
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		// add a new course to list STUDENT::courses
+		// new a node
+		DLL<COURSE*>* tmp = new DLL<COURSE*>;
+		tmp->data = this->curCourse->data;
+
+		/// Update the list, 2 cases: the list is empty or not
+		if (this->curStudent->data->courses.head == nullptr) {
+			this->curStudent->data->courses.head = tmp;
+			this->curStudent->data->courses.head = tmp;
+		}
+		else {
+			this->curStudent->data->courses.tail->next = tmp;
+			this->curStudent->data->courses.tail = tmp;
+		}
+		////////////////////////////////////////////
+		////////////////////////////////////////////
+////////////////////////////////////////////
+
 		std::string message = "Student" + this->curStudent->data->studentID + "was successfully added";
 		MessageBox::Show(gcnew System::String(message.c_str()));
 		this->curStudent = nullptr;

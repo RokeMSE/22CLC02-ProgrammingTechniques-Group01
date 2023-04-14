@@ -121,7 +121,7 @@ namespace CMS {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -1003,7 +1003,7 @@ namespace CMS {
 		// Allow only one decimal point
 		if (e->KeyChar == '.' && existDot(static_cast<System::String^>(sender)))	e->Handled = true;
 	}
-	
+
 	private: bool existDot(System::String^ s) {
 		std::string str = msclr::interop::marshal_as<std::string>(s);
 		for (int i = 0; i < str.length(); i++)	if (str[i] == '.')	return 1;
@@ -1064,7 +1064,7 @@ namespace CMS {
 
 		if (this->curCourse && this->curCourse->data->ID == id)	goto _skipfindcourse;
 		this->curCourse = this->curSemester->course.head;
-		
+
 		while (this->curCourse) {
 			if (id == this->curCourse->data->ID) {
 			_skipfindcourse:
@@ -1238,7 +1238,7 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	
+
 	private: System::Void txt_SchoolYear_TextChanged(Object^ sender, EventArgs^ e) {
 		if (txt_schoolyear_start->Text == "") {
 			txt_schoolyear_end->Text = "";
@@ -1273,5 +1273,5 @@ namespace CMS {
 			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;
 		}
 	}
-};
+	};
 }

@@ -36,7 +36,7 @@ namespace CMS {
 				delete components;
 			}
 		}
-	private: 
+	private:
 		System::Windows::Forms::Form^ sourceForm;
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
 															// this pointer is get when course ID has been entered and button search is clicked 
@@ -120,7 +120,7 @@ namespace CMS {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -926,5 +926,5 @@ namespace CMS {
 			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;
 		}
 	}
-};
+	};
 }

@@ -501,9 +501,9 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
 			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->ExitBtn->ForeColor = System::Drawing::Color::Coral;
-			this->ExitBtn->Location = System::Drawing::Point(910, 12);
+			this->ExitBtn->Location = System::Drawing::Point(896, 12);
 			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(39, 37);
+			this->ExitBtn->Size = System::Drawing::Size(53, 52);
 			this->ExitBtn->TabIndex = 14;
 			this->ExitBtn->Text = L"x";
 			this->ExitBtn->UseVisualStyleBackColor = false;
