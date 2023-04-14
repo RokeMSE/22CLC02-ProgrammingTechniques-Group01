@@ -1,6 +1,8 @@
   CMS.Login.resources - Embedded, ContainedInManifestFile, 
   CMS.MenuStaff.resources - Embedded, ContainedInManifestFile, 
-  CMS.viewClass.resources - Embedded, ContainedInManifestFile, 
+  CMS.ViewAListInAClasses.resources - Embedded, ContainedInManifestFile, 
+  CMS.ViewClasses.resources - Embedded, ContainedInManifestFile, 
+  CMS.ViewAListStudentInACourse.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly CMS, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -16,6 +18,27 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class CMS.ViewClasses: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form sourceForm : Public
+  Methods:
+    btnPrint_ClicK(Object, EventArgs): PrivateScope, Public, HideBySig
+Class CMS.ViewAListInAClasses: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form sourceForm : Public
+  Methods:
+    btn_Search_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+Class CMS.ViewListStudentInACourses: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form sourceForm : Public
+  Methods:
+    btn_Search_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class CMS.MenuStaff: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -30,8 +53,5 @@ Class CMS.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CMS.UpdateResult: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class CMS.viewClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

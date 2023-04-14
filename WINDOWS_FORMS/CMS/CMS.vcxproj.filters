@@ -45,7 +45,13 @@
     <ClInclude Include="MenuStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="viewClass.h">
+    <ClInclude Include="ViewClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewAListInAClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewAListStudentInACourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -94,8 +100,14 @@
     <ClCompile Include="MenuStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="viewClass.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="ViewClasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewAListInAClasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewAListStudentInACourses.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

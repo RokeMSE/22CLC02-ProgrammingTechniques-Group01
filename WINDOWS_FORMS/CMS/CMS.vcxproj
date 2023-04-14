@@ -149,7 +149,13 @@
     <ClInclude Include="UpdateResult.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="viewClass.h">
+    <ClInclude Include="ViewAListInAClasses.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewClasses.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewAListStudentInACourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -177,7 +183,9 @@
     <ClCompile Include="MenuStaff.cpp" />
     <ClCompile Include="MenuStudent.cpp" />
     <ClCompile Include="UpdateResult.cpp" />
-    <ClCompile Include="viewClass.cpp" />
+    <ClCompile Include="ViewAListInAClasses.cpp" />
+    <ClCompile Include="ViewClasses.cpp" />
+    <ClCompile Include="ViewAListStudentInACourses.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
@@ -186,8 +194,14 @@
     <EmbeddedResource Include="MenuStaff.resx">
       <DependentUpon>MenuStaff.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="viewClass.resx">
-      <DependentUpon>viewClass.h</DependentUpon>
+    <EmbeddedResource Include="ViewAListInAClasses.resx">
+      <DependentUpon>ViewAListInAClasses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewClasses.resx">
+      <DependentUpon>ViewClasses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAListStudentInACourse.resx">
+      <DependentUpon>ViewAListStudentInACourse.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

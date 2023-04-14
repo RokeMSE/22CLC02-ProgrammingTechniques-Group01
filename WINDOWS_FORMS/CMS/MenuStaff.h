@@ -1,7 +1,10 @@
 ﻿#pragma once
 
 #include "header.h"
-//#include "viewClass.h"
+
+#include "ViewClasses.h"
+#include"ViewAListInAClasses.h"
+#include "ViewAListStudentInACourse.H"
 namespace CMS {
 
 	using namespace System;
@@ -70,6 +73,12 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btn_logout;
 	private: System::Windows::Forms::Button^ btn_exit;
+	private: System::Windows::Forms::Button^ tbn_ViewAListStudentInAClasses;
+	private: System::Windows::Forms::Button^ tbn_ViewAListStudentInACourse;
+
+
+
+
 
 
 
@@ -103,6 +112,8 @@ namespace CMS {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
+			this->tbn_ViewAListStudentInAClasses = (gcnew System::Windows::Forms::Button());
+			this->tbn_ViewAListStudentInACourse = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// btn_CreateSchoolYear
@@ -212,17 +223,16 @@ namespace CMS {
 			this->btn_Delete1Course->TabIndex = 11;
 			this->btn_Delete1Course->Text = L"Delete a course of current semester";
 			this->btn_Delete1Course->UseVisualStyleBackColor = true;
-			this->btn_Delete1Course->Click += gcnew System::EventHandler(this, &MenuStaff::btn_Delete1Course_Click);
 			// 
 			// btn_ViewClasses
 			// 
-			this->btn_ViewClasses->Location = System::Drawing::Point(45, 277);
-			this->btn_ViewClasses->Name = L"btn_view_classes";
+			this->btn_ViewClasses->Location = System::Drawing::Point(45, 141);
+			this->btn_ViewClasses->Name = L"btn_ViewClasses";
 			this->btn_ViewClasses->Size = System::Drawing::Size(376, 58);
-			this->btn_ViewClasses->TabIndex = 13;
-			this->btn_ViewClasses->Text = L"view classes";
+			this->btn_ViewClasses->TabIndex = 12;
+			this->btn_ViewClasses->Text = L"View classes";
 			this->btn_ViewClasses->UseVisualStyleBackColor = true;
-			this->btn_ViewClasses->Click += gcnew System::EventHandler(this, &MenuStaff::btn_view_classes_Click);
+			this->btn_ViewClasses->Click += gcnew System::EventHandler(this, &MenuStaff::btn_ViewClasses_Click);
 			// 
 			// label1
 			// 
@@ -233,6 +243,7 @@ namespace CMS {
 			this->label1->Size = System::Drawing::Size(102, 39);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Menu";
+			this->label1->Click += gcnew System::EventHandler(this, &MenuStaff::label1_Click);
 			// 
 			// btn_logout
 			// 
@@ -256,12 +267,34 @@ namespace CMS {
 			this->btn_exit->UseVisualStyleBackColor = true;
 			this->btn_exit->Click += gcnew System::EventHandler(this, &MenuStaff::btn_exit_Click);
 			// 
+			// tbn_ViewAListStudentInAClasses
+			// 
+			this->tbn_ViewAListStudentInAClasses->Location = System::Drawing::Point(45, 538);
+			this->tbn_ViewAListStudentInAClasses->Name = L"tbn_ViewAListStudentInAClasses";
+			this->tbn_ViewAListStudentInAClasses->Size = System::Drawing::Size(376, 58);
+			this->tbn_ViewAListStudentInAClasses->TabIndex = 16;
+			this->tbn_ViewAListStudentInAClasses->Text = L"View a list student in a classes";
+			this->tbn_ViewAListStudentInAClasses->UseVisualStyleBackColor = true;
+			this->tbn_ViewAListStudentInAClasses->Click += gcnew System::EventHandler(this, &MenuStaff::btn_ViewAListInAClasses_Click);
+			// 
+			// tbn_ViewAListStudentInACourse
+			// 
+			this->tbn_ViewAListStudentInACourse->Location = System::Drawing::Point(45, 614);
+			this->tbn_ViewAListStudentInACourse->Name = L"tbn_ViewAListStudentInACourse";
+			this->tbn_ViewAListStudentInACourse->Size = System::Drawing::Size(376, 58);
+			this->tbn_ViewAListStudentInACourse->TabIndex = 17;
+			this->tbn_ViewAListStudentInACourse->Text = L"View a list student in a course";
+			this->tbn_ViewAListStudentInACourse->UseVisualStyleBackColor = true;
+			this->tbn_ViewAListStudentInACourse->Click += gcnew System::EventHandler(this, &MenuStaff::btn_ViewAListInACourse_Click);
+			// 
 			// MenuStaff
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(895, 590);
+			this->ClientSize = System::Drawing::Size(1372, 795);
 			this->ControlBox = false;
+			this->Controls->Add(this->tbn_ViewAListStudentInACourse);
+			this->Controls->Add(this->tbn_ViewAListStudentInAClasses);
 			this->Controls->Add(this->btn_exit);
 			this->Controls->Add(this->btn_logout);
 			this->Controls->Add(this->label1);
@@ -287,7 +320,58 @@ namespace CMS {
 
 		}
 #pragma endregion
+	
+		//private:System::Void btnPrint_Click(System::Object^ sender, System::EventArgs^ e) {
+		//	ViewClasses^ form = gcnew CMS::ViewClasses(this);
+		//	form->btnPrint_ClicK(sender, e);
+		//	this->Hide();
+		//	//this->txt_username->Text = L"";
+		//	//this->txt_password->Text = L"";
+		//	form->Show();
+	//
+	//	}private:
+		private:System::Void btn_ViewClasses_Click(System::Object^ sender, System::EventArgs^ e) {
+			
+				ViewClasses^ form = gcnew CMS::ViewClasses(this);
+
+				//form->Load += gcnew System::EventHandler(this, &MenuStaff::MenuStaff_Load);
+				this->Hide();
+				form->btnPrint_ClicK(sender, e);
+				form->Show();
+			
+		}
+		private:System::Void btn_ViewAListInAClasses_Click(System::Object^ sender, System::EventArgs^ e) {
+
+			ViewAListInAClasses^ form = gcnew CMS::ViewAListInAClasses(this);
+
+			//form->Load += gcnew System::EventHandler(this, &MenuStaff::MenuStaff_Load);
+			this->Hide();
+			//form->btnPrint_ClicK(sender, e);
+			form->ShowDialog();
+			//this->txt_yourclass->Text = L"";
+			//form->btnPrint_ClicK(sender, e);
+			//form->Show();
+
+		}
+		private:System::Void btn_ViewAListInACourse_Click(System::Object^ sender, System::EventArgs^ e) {
+
+			ViewListStudentInACourses^ form = gcnew CMS::ViewListStudentInACourses(this);
+
+			//form->Load += gcnew System::EventHandler(this, &MenuStaff::MenuStaff_Load);
+			this->Hide();
+			//form->btnPrint_ClicK(sender, e);
+			form->ShowDialog();
+			//this->txt_yourclass->Text = L"";
+			//form->btnPrint_ClicK(sender, e);
+			//form->Show();
+
+		}
+	/*private: System::Void btnPrint_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		this->btn_ViewClasses->Click+= gcnew System::EventHandler(vc, &CMS::ViewClasses::btnPrint_ClicK);
+	}*/
 	private: System::Void MenuStaff_Load(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		exportSchoolYears();
@@ -301,27 +385,12 @@ namespace CMS {
 		this->Close();
 		this->sourceForm->Show();
 	}
-	private: System::Void btn_Delete1Course_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-		   private: System::Void btn_view_classes_Click(System::Object^ sender, System::EventArgs^ e) {
-			   // Truy cập cơ sở dữ liệu và lấy danh sách các lớp học
-			  // std::DLL<CLASS>* classes = getClasses();
-			   //GROUP1::DLL<GROUP1::CLASS>*temp = L_Class.head;
-			  //viewClass^ form = gcnew CMS::viewClass(this);
-				  /* while (temp != NULL) {}
-				   {
-					   cout << "K/tprogram/tNo/tyearIn";
-					   cout << temp->data.K;
-					   cout << "\t";
-					   cout << temp->data.program;
-					   cout << "\t";
-					   cout << temp->data.No;
-					   cout << "\t";
-					   cout << temp->data.yearIn;
-					   cout << "\t";
-					   temp = temp->next;
-				   }
-				   cout << endl;*/
-			   }
-						   
+		 
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
+}

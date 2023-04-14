@@ -7,7 +7,7 @@ using namespace System::Windows::Forms;
 
 
 [STAThread]
-void Main(cli::array<System::String^>^ args) {
+void main(cli::array<System::String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     bool imp;
@@ -44,3 +44,4 @@ _xyz:
     CMS::Login form;
     Application::Run(% form);
 }
+// 

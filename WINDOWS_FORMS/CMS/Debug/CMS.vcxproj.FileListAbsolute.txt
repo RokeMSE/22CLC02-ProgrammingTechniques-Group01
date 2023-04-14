@@ -6,9 +6,17 @@ C:\Users\Toan\Desktop\proj\CMS\CMS\Debug\CMS.MenuStaff.resources
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
 C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.MenuStaff.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Debug\CMS.viewClass.resources
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.MenuStaff.resources
+C:\Users\gigabyte\Downloads\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.ViewClasses.resources
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.AssemblyReference.cache
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.Login.resources
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.MenuStaff.resources
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.ViewClasses.resources
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.vcxproj.GenerateResource.cache
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.ViewAListInAClasses.resources
+C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Debug\CMS.ViewAListStudentInACourse.resources

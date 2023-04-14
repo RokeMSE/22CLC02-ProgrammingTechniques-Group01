@@ -109,7 +109,6 @@ namespace CMS {
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(285, 22);
 			this->txt_username->TabIndex = 1;
-			this->txt_username->TextChanged += gcnew System::EventHandler(this, &Login::txt_username_TextChanged);
 			// 
 			// btn_signin
 			// 
@@ -193,6 +192,7 @@ namespace CMS {
 			this->label2->Size = System::Drawing::Size(91, 30);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"LOGIN";
+			this->label2->Click += gcnew System::EventHandler(this, &Login::label2_Click);
 			// 
 			// label1
 			// 
@@ -344,9 +344,9 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	private: System::Void txt_username_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void pnl_login_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
-private: System::Void pnl_login_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

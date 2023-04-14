@@ -5,3 +5,4 @@
 #include "GlobalVariables.h"
 #include "import.h"
 #include "export.h"
+#include <string>
