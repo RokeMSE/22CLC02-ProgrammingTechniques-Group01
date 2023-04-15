@@ -1,7 +1,15 @@
-﻿  Login.cpp
-C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\CMS\Login.cpp(10,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+﻿  export.cpp
+  helperFunctions.cpp
+  import.cpp
+  Login.cpp
+C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\Login.cpp(10,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   MenuStaff.cpp
+  MenuStudent.cpp
+  UpdateResult.cpp
+  ViewAListInAClasses.cpp
+  ViewClasses.cpp
   ViewAListStudentInACourses.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Generating Code...
   export.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  CMS.vcxproj -> C:\Users\gigabyte\OneDrive\Desktop\22CLC02-ProgrammingTechniques-Group01-MASTER\22CLC02-ProgrammingTechniques-Group01-MASTER\WINDOWS_FORMS\Debug\CMS.exe
+  CMS.vcxproj -> C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\Debug\CMS.exe
