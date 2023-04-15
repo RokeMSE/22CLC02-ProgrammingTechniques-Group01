@@ -115,7 +115,6 @@ namespace CMS {
 			this->lbl_title->Size = System::Drawing::Size(647, 52);
 			this->lbl_title->TabIndex = 6;
 			this->lbl_title->Text = L"Your Courses in current Semester";
-			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewListCoursesOfStu::lbl_title_Click);
 			// 
 			// btn_back
 			// 
@@ -156,7 +155,6 @@ namespace CMS {
 			this->lbl_schoolyear->Size = System::Drawing::Size(110, 23);
 			this->lbl_schoolyear->TabIndex = 58;
 			this->lbl_schoolyear->Text = L"School Year:";
-			this->lbl_schoolyear->Click += gcnew System::EventHandler(this, &ViewListCoursesOfStu::lbl_schoolyear_Click);
 			// 
 			// listview_course
 			// 
@@ -330,6 +328,7 @@ namespace CMS {
 		txt_schoolyear->Text = System::Convert::ToString(g_currentSchoolYear->begin) + "-" + System::Convert::ToString(g_currentSchoolYear->end);
 		txt_fullname->Text = gcnew System::String((g_currentStudent->firstname + " " + g_currentStudent->lastname).c_str());
 		txt_studentID->Text = gcnew System::String((g_currentStudent->studentID).c_str());
+		listview_course->Items->Clear();
 		DLL<COURSE*>* list = g_currentStudent->courses.head;
 		int count = 1;
 		if (list == nullptr) {
@@ -359,10 +358,6 @@ namespace CMS {
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 		this->sourceForm->Show();
-	}
-	private: System::Void lbl_title_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void lbl_schoolyear_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

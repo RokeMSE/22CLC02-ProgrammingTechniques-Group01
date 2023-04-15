@@ -132,7 +132,6 @@ namespace CMS {
 			this->txt_schoolyear->ReadOnly = true;
 			this->txt_schoolyear->Size = System::Drawing::Size(232, 24);
 			this->txt_schoolyear->TabIndex = 9;
-			this->txt_schoolyear->TextChanged += gcnew System::EventHandler(this, &ViewListCourses::txt_schoolyear_TextChanged);
 			// 
 			// lbl_schoolyear
 			// 
@@ -145,7 +144,6 @@ namespace CMS {
 			this->lbl_schoolyear->Size = System::Drawing::Size(88, 20);
 			this->lbl_schoolyear->TabIndex = 8;
 			this->lbl_schoolyear->Text = L"School Year";
-			this->lbl_schoolyear->Click += gcnew System::EventHandler(this, &ViewListCourses::lbl_schoolyear_Click);
 			// 
 			// chkbox_sem3
 			// 
@@ -203,7 +201,6 @@ namespace CMS {
 			this->lbl_semester->Size = System::Drawing::Size(70, 20);
 			this->lbl_semester->TabIndex = 52;
 			this->lbl_semester->Text = L"Semester";
-			this->lbl_semester->Click += gcnew System::EventHandler(this, &ViewListCourses::label5_Click);
 			// 
 			// btn_back
 			// 
@@ -233,7 +230,6 @@ namespace CMS {
 			this->lbl_title->Size = System::Drawing::Size(296, 52);
 			this->lbl_title->TabIndex = 5;
 			this->lbl_title->Text = L"List of Courses";
-			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewListCourses::lbl_title_Click);
 			// 
 			// txt_schoolyear_end
 			// 
@@ -326,7 +322,6 @@ namespace CMS {
 			this->listview_course->TabIndex = 76;
 			this->listview_course->UseCompatibleStateImageBehavior = false;
 			this->listview_course->View = System::Windows::Forms::View::Details;
-			this->listview_course->SelectedIndexChanged += gcnew System::EventHandler(this, &ViewListCourses::listview_course_SelectedIndexChanged);
 			// 
 			// col_no
 			// 
@@ -398,12 +393,8 @@ namespace CMS {
 
 		}
 #pragma endregion
-	private: System::Void txt_schoolyear_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void ViewListCourses_Load(System::Object^ sender, System::EventArgs^ e) {
 		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
-	}
-	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (chkbox_sem1->Checked) {
@@ -427,14 +418,6 @@ namespace CMS {
 		this->Close();
 		this->sourceForm->Show();
 	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void pnl_titleUpdateScore_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private: System::Void lbl_title_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void lbl_schoolyear_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void txt_schoolyear_start_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (txt_schoolyear_start->Text == "") {
 			txt_schoolyear_end->Text = "";
@@ -454,6 +437,7 @@ namespace CMS {
 		txt_schoolyear->Text = gcnew System::String((std::to_string(start) + " - " + std::to_string(start + 1)).c_str());
 	}
 	private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
+		listview_course->Items->Clear();
 		int yearbegin;
 		yearbegin = System::Convert::ToInt32(txt_schoolyear_start->Text);
 		DLL<SCHOOLYEAR*>* cur = L_SchoolYear.head;
@@ -490,8 +474,6 @@ namespace CMS {
 				count++;
 			}
 		}
-	}
-	private: System::Void listview_course_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

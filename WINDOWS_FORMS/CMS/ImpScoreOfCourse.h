@@ -400,7 +400,6 @@ namespace CMS {
 			this->txt_coursename->ReadOnly = true;
 			this->txt_coursename->Size = System::Drawing::Size(265, 24);
 			this->txt_coursename->TabIndex = 90;
-			this->txt_coursename->TextChanged += gcnew System::EventHandler(this, &ImpScoreOfCourse::txt_coursename_TextChanged);
 			// 
 			// lbl_coursename
 			// 
@@ -497,10 +496,6 @@ namespace CMS {
 
 		}
 #pragma endregion
-	private: System::Void txt_pathfile_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_pathfile->Text != "")
-			btn_import->Enabled = true;
-	}
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 		this->sourceForm->Show();
@@ -579,6 +574,12 @@ namespace CMS {
 	}
 
 	private: System::Void btn_search_Click(System::Object^ sender, System::EventArgs^ e) {
+		txt_coursename->Text = "";
+		txt_teacher->Text = "";
+		txt_pathfile->Text = "";
+		btn_browse->Enabled = false;
+		btn_import->Enabled = false;
+
 		int yearbegin;
 		yearbegin = System::Convert::ToInt32(txt_schoolyear_start->Text);
 
@@ -612,6 +613,7 @@ namespace CMS {
 		current_Course = list;
 		txt_coursename->Text = gcnew System::String((list->data->name).c_str());
 		txt_teacher->Text = gcnew System::String((list->data->teacher).c_str());
+		btn_browse->Enabled = true;
 	}
 	private: System::Void btn_browse_Click(System::Object^ sender, System::EventArgs^ e) {
 		OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog;
@@ -626,9 +628,9 @@ namespace CMS {
 			txt_pathfile->Text = filename;
 		}
 	}
-	private: System::Void txt_coursename_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_coursename->Text != "")
-			btn_browse->Enabled = true;
+	private: System::Void txt_pathfile_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_pathfile->Text != "")
+			btn_import->Enabled = true;
 	}
 	};
 }
