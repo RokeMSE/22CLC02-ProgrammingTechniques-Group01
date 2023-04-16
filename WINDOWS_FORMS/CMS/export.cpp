@@ -170,4 +170,10 @@ void exportSchoolYears() {
         delete dummy; // delete DLL<SCHOOLYEAR*>*
     }
     out.close();
+
+    ofstream out2("CSV/DATA.csv");
+    out2 << "checkBox(1:yes/0:no),latestUsername,latestPassword";
+    if (latestPassword != "" && latestUsername != "")
+        out2 << endl << ((latestCheckRememberLogin == true) ? 1 : 0) << ',' << latestUsername << ',' << latestPassword;
+    out2.close();
 }

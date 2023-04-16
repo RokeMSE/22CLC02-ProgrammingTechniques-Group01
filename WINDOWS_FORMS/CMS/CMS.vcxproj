@@ -30,14 +30,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -100,6 +100,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -131,11 +133,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Add1StuToCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="export.h" />
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="helperFunctions.h" />
     <ClInclude Include="import.h" />
+    <ClInclude Include="ImpScoreOfCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -145,8 +153,17 @@
     <ClInclude Include="MenuStudent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RemoveStuFromCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Structs.h" />
     <ClInclude Include="UpdateResult.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewListCourses.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewListCoursesOfStu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -170,18 +187,34 @@
     <ClCompile Include="export.cpp" />
     <ClCompile Include="helperFunctions.cpp" />
     <ClCompile Include="import.cpp" />
+    <ClCompile Include="ImpScoreOfCourse.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="MenuStaff.cpp" />
-    <ClCompile Include="MenuStudent.cpp" />
-    <ClCompile Include="UpdateResult.cpp" />
+    <ClCompile Include="ViewListCourses.cpp" />
+    <ClCompile Include="ViewListCoursesOfStu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add1StuToCourse.resx">
+      <DependentUpon>Add1StuToCourse.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStaff.resx">
+      <DependentUpon>MenuStaff.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStudent.resx">
+      <DependentUpon>MenuStudent.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveStuFromCourse.resx">
+      <DependentUpon>RemoveStuFromCourse.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateResult.resx">
       <DependentUpon>UpdateResult.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\..\..\Downloads\icon.ico" />
+    <Image Include="..\..\..\..\..\..\..\..\..\Pictures\img.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

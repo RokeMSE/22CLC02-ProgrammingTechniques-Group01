@@ -1,0 +1,9 @@
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.AssemblyReference.cache
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.Add1StuToCourse.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.Login.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.MenuStaff.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.MenuStudent.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.RemoveStuFromCourse.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.UpdateResult.resources
+D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.GenerateResource.cache

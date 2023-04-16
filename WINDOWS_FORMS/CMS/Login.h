@@ -1,6 +1,6 @@
 #pragma once
 #include "header.h"
-//
+
 #include "MenuStaff.h"
 #include "MenuStudent.h"
 
@@ -56,6 +56,7 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ pnl_titleLogin;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::CheckBox^ chkbx_remember;
 
 
 
@@ -81,6 +82,7 @@ namespace CMS {
 			this->txt_password = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_password = (gcnew System::Windows::Forms::Label());
 			this->pnl_login = (gcnew System::Windows::Forms::Panel());
+			this->chkbx_remember = (gcnew System::Windows::Forms::CheckBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pnl_titleLogin = (gcnew System::Windows::Forms::Panel());
@@ -117,7 +119,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_signin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->btn_signin->Location = System::Drawing::Point(140, 288);
+			this->btn_signin->Location = System::Drawing::Point(150, 319);
 			this->btn_signin->Name = L"btn_signin";
 			this->btn_signin->Size = System::Drawing::Size(121, 43);
 			this->btn_signin->TabIndex = 2;
@@ -164,6 +166,7 @@ namespace CMS {
 			// 
 			// pnl_login
 			// 
+			this->pnl_login->Controls->Add(this->chkbx_remember);
 			this->pnl_login->Controls->Add(this->label2);
 			this->pnl_login->Controls->Add(this->btn_signin);
 			this->pnl_login->Controls->Add(this->lbl_username);
@@ -174,6 +177,20 @@ namespace CMS {
 			this->pnl_login->Name = L"pnl_login";
 			this->pnl_login->Size = System::Drawing::Size(403, 478);
 			this->pnl_login->TabIndex = 7;
+			// 
+			// chkbx_remember
+			// 
+			this->chkbx_remember->AutoSize = true;
+			this->chkbx_remember->BackColor = System::Drawing::Color::Transparent;
+			this->chkbx_remember->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 7, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->chkbx_remember->Location = System::Drawing::Point(39, 272);
+			this->chkbx_remember->Name = L"chkbx_remember";
+			this->chkbx_remember->Size = System::Drawing::Size(128, 23);
+			this->chkbx_remember->TabIndex = 6;
+			this->chkbx_remember->Text = L"Remember me";
+			this->chkbx_remember->UseVisualStyleBackColor = false;
+			//this->chkbx_remember->CheckedChanged += gcnew System::EventHandler(this, &Login::chkbx_remember_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -206,10 +223,10 @@ namespace CMS {
 			this->pnl_titleLogin->Controls->Add(this->label1);
 			this->pnl_titleLogin->Controls->Add(this->btn_exit);
 			this->pnl_titleLogin->Dock = System::Windows::Forms::DockStyle::Top;
-			this->pnl_titleLogin->Location = System::Drawing::Point(3, 3);
+			this->pnl_titleLogin->Location = System::Drawing::Point(1, 1);
 			this->pnl_titleLogin->Name = L"pnl_titleLogin";
 			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(3);
-			this->pnl_titleLogin->Size = System::Drawing::Size(1037, 48);
+			this->pnl_titleLogin->Size = System::Drawing::Size(1041, 48);
 			this->pnl_titleLogin->TabIndex = 8;
 			this->pnl_titleLogin->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseDown);
 			this->pnl_titleLogin->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseMove);
@@ -224,8 +241,9 @@ namespace CMS {
 			this->Controls->Add(this->pnl_titleLogin);
 			this->Controls->Add(this->pnl_login);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Login";
-			this->Padding = System::Windows::Forms::Padding(3);
+			this->Padding = System::Windows::Forms::Padding(1);
 			this->Text = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->pnl_login->ResumeLayout(false);
@@ -236,6 +254,27 @@ namespace CMS {
 
 		}
 #pragma endregion
+	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+		Color cl;
+		pnl_login->BackColor = cl.FromArgb(100, 244, 238, 224);
+		pnl_titleLogin->BackColor = cl.FromArgb(50, 0, 0, 0);
+		// rgb(244, 238, 224)
+		this->chkbx_remember->Checked = latestCheckRememberLogin;
+		txt_password->Text = gcnew System::String(latestPassword.c_str());
+		txt_username->Text = gcnew System::String(latestUsername.c_str());
+	}
+
+	void checkBoxRemember(GROUP1::USER input) {
+		if (this->chkbx_remember->Checked) {
+			latestUsername = input.username;
+			latestPassword = input.password;
+			latestCheckRememberLogin = true;
+		} else {
+			latestUsername = latestPassword = "";
+			latestCheckRememberLogin = false;
+		}
+	}
+	
 	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
 		GROUP1::USER input;
 		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
@@ -248,11 +287,11 @@ namespace CMS {
 		while (curStaf) {
 			if (input.username == curStaf->data->user.username) {// cur->data->user.username
 				if (input.password == curStaf->data->user.password) {//cur->data->user.password
-					MessageBox::Show("Successfully logged in!");
+					//MessageBox::Show("Successfully logged in!");
 					g_currentStaff = curStaf->data;
 					g_currentStudent = nullptr;
-					MenuStaff^ form = gcnew CMS::MenuStaff(this);//, curStaf -> data);
-					this->txt_username->Text = L"";
+					MenuStaff^ form = gcnew CMS::MenuStaff(this);
+					checkBoxRemember(input);
 					this->txt_password->Text = L"";
 					this->Hide();
 					form->Show();
@@ -267,17 +306,17 @@ namespace CMS {
 			curStaf = curStaf->next;
 		}
 		if (curStaf)	return;
+
 		GROUP1::DLL<GROUP1::STUDENT*>* curStu = L_Student.head;
-		//MessageBox::Show(msclr::interop::marshal_as<System::String^>(cur->data->firstname));
 		while (curStu) {
 			if (input.username == curStu->data->user.username) {// cur->data->user.username
 				if (input.password == curStu->data->user.password) {//cur->data->user.password
 					//MessageBox::Show("Successfully logged in!");
 					MenuStudent^ form = gcnew CMS::MenuStudent(this);//, curStu -> data);
+					checkBoxRemember(input);
 					g_currentStaff = nullptr;
 					g_currentStudent = curStu->data;
 					this->Hide();
-					this->txt_username->Text = L"";
 					this->txt_password->Text = L"";
 					form->Show();
 					return;
@@ -290,6 +329,7 @@ namespace CMS {
 			}
 			curStu = curStu->next;
 		}
+
 		if (!curStu)
 			MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
 		this->txt_username->Text = L"";
@@ -303,16 +343,6 @@ namespace CMS {
 		exportStaffs();
 		// then exit
 		Application::Exit();
-	}
-
-	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
-		Color cl;
-		pnl_login->BackColor = cl.FromArgb(100, 244, 238, 224);
-		pnl_titleLogin->BackColor = cl.FromArgb(50, 0, 0, 0);
-		// rgb(244, 238, 224)
-		// https://colorhunt.co/palette/3936464f45576d5d6ef4eee0
-		txt_password->Text = L"";
-		txt_username->Text = L"";
 	}
 
 	private: System::Void pnl_titleLogin_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {

@@ -1,4 +1,7 @@
   CMS.Login.resources - Embedded, ContainedInManifestFile, 
+  CMS.MenuStaff.resources - Embedded, ContainedInManifestFile, 
+  CMS.MenuStudent.resources - Embedded, ContainedInManifestFile, 
+  CMS.RemoveStuFromCourse.resources - Embedded, ContainedInManifestFile, 
   CMS.UpdateResult.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly CMS, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
@@ -15,6 +18,12 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class CMS.UpdateResult: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class CMS.RemoveStuFromCourse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CMS.MenuStaff: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -26,8 +35,5 @@ Class CMS.MenuStudent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Fields:
     System.Windows.Forms.Form sourceForm : Public
 Class CMS.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class CMS.UpdateResult: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -2,10 +2,11 @@
 #include <string>
 #include <msclr/marshal_cppstd.h>
 
+#include "GlobalVariables.h"
 #include "import.h"
 #include "Structs.h"
 #include "helperFunctions.h"
-#include "GlobalVariables.h"
+
 //using namespace System;
 //using namespace System::ComponentModel;
 //using namespace System::Collections;
@@ -185,6 +186,18 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
             s->student = stu->data;
             /// add this student with his/her scoreboard to the list of student in the course
             c->add1Student(s);
+
+            DLL<COURSE*>* tmp = new DLL<COURSE*>;
+            tmp->data = c;
+            tmp->next = nullptr;
+            if (s->student->courses.head == nullptr) {
+                s->student->courses.head = s->student->courses.tail = tmp;
+            }
+            else {
+                tmp->prev = s->student->courses.tail;
+                s->student->courses.tail = tmp;
+            }
+
         } else {
             MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
             return 0;
@@ -360,6 +373,21 @@ bool importSchoolYears() {
         }
         ////////////////
     }
+    g_currentSchoolYear = L_SchoolYear.tail->data;
+    if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
+    else if (!g_currentSchoolYear->sem2) g_currentSemester = g_currentSchoolYear->sem1;
+    else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;
+    else g_currentSemester = g_currentSchoolYear->sem3;
     inp.close();
+
+    ifstream inp2("CSV / DATA.csv");
+    getline(inp2, temp); // skip title line
+    if (!inp.eof()) {
+        getline(inp2, temp, ',');
+        latestCheckRememberLogin = ((temp == "1") ? true : false);
+        getline(inp2, latestUsername, ',');
+        getline(inp2, latestPassword);
+    }
+    inp2.close();
     return 1;
 }

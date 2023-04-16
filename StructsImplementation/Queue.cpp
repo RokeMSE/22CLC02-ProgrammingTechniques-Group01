@@ -1,4 +1,8 @@
 #pragma once
+#ifndef _Queue_h
+#define _Queue_h
+
+    #include "LIST.h"
 
     template <typename T>
     struct Queue {
@@ -8,3 +12,5 @@
         void dequeue ();
         void enqueue ();
     };
+
+#endif
