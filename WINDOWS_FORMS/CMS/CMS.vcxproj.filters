@@ -75,6 +75,9 @@
     <ClInclude Include="Add1StuToClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ViewScoreOfCourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv">
