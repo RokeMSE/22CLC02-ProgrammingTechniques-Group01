@@ -133,6 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AboutUs.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Add1StuToCourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>

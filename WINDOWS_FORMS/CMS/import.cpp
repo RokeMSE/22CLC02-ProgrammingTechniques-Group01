@@ -189,7 +189,6 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
 
             DLL<COURSE*>* tmp = new DLL<COURSE*>;
             tmp->data = c;
-            tmp->next = nullptr;
             if (s->student->courses.head == nullptr) {
                 s->student->courses.head = s->student->courses.tail = tmp;
             }
@@ -197,7 +196,6 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
                 tmp->prev = s->student->courses.tail;
                 s->student->courses.tail = tmp;
             }
-
         } else {
             MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
             return 0;
@@ -382,12 +380,12 @@ bool importSchoolYears() {
 
     ifstream inp2("CSV / DATA.csv");
     getline(inp2, temp); // skip title line
-    if (!inp.eof()) {
+    if (inp2.is_open() && !inp2.eof()) {
         getline(inp2, temp, ',');
         latestCheckRememberLogin = ((temp == "1") ? true : false);
         getline(inp2, latestUsername, ',');
         getline(inp2, latestPassword);
+        inp2.close();
     }
-    inp2.close();
     return 1;
 }

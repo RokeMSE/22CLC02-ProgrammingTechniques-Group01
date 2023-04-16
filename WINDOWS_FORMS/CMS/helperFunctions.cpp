@@ -1,4 +1,5 @@
 #include "helperFunctions.h"
+#include "GlobalVariables.h"
 
 using namespace std;
 using namespace GROUP1;
@@ -40,6 +41,37 @@ extern std::string DayToString(GROUP1::WeekDay day) {
 string CLASS::convertToString() {
     if (!this) return "";
     return to_string(this->K) + convertFromProgram(this->program) + to_string(this->No);
+}
+
+extern CLASS* convertToClass(std::string str) {
+    // return the address of &class in the list L_Class
+    CLASS res;
+
+    int i = 0;
+    while (str[i] <= '9' && str[i] >= '0')  i++;
+    res.K = stoi(str.substr(0, i));
+
+    if (str[i] == 'C') {
+        res.program = CLC;
+        // `No` starts from str[5]
+        res.No = stoi(str.substr(i + 3, str.length() - i - 3));
+    }
+    else if (str[i] == 'V') {
+        res.program = VP;
+        // `No` starts from str[4]
+        res.No = stoi(str.substr(i + 2, str.length() - i - 2));
+    }
+    else {
+        res.program = APCS;
+        res.No = stoi(str.substr(i + 4, str.length() - i - 4));
+    }
+
+    DLL<CLASS>* cur = L_Class.head;
+    while (cur) {
+        if (cur->data.K == res.K && cur->data.No == res.No && cur->data.program == res.program) return &cur->data;
+        cur = cur->next;
+    }
+    return nullptr;
 }
 
 // COURSE

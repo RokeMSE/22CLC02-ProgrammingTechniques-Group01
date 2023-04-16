@@ -542,7 +542,7 @@ namespace CMS {
 	}
 
 	private: System::Void btn_Remove1StuInCourse_Click(System::Object^ sender, System::EventArgs^ e) {
-		RemoveStuFromCourse^ form = gcnew RemoveStuFromCourse(this);
+		RemoveStuFromCourse^ form = gcnew RemoveStuFromCourse(this, sourceForm);
 		this->Hide();
 		form->Show();
 	}

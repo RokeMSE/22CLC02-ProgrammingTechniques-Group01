@@ -73,7 +73,7 @@ namespace CMS {
 
 
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Panel^ panel1;
+
 	private: System::Windows::Forms::TextBox^ txt_othermark;
 
 	private: System::Windows::Forms::Label^ label10;
@@ -97,7 +97,7 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::TextBox^ txt_totalmark;
 	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::Panel^ panel2;
+
 	private: System::Windows::Forms::Button^ btn_Update;
 	private: System::Windows::Forms::Label^ label20;
 	private: System::Windows::Forms::TextBox^ txt_rateTotal;
@@ -116,6 +116,13 @@ namespace CMS {
 	private: System::Windows::Forms::CheckBox^ chkbox_sem1;
 	private: System::Windows::Forms::CheckBox^ chkbox_sem2;
 	private: System::Windows::Forms::CheckBox^ chkbox_sem3;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Panel^ pnl_account;
+	private: System::Windows::Forms::Button^ btn_exit;
+	private: System::Windows::Forms::Button^ btn_logout;
+	private: System::Windows::Forms::Button^ btn_aboutUs;
+private: System::Windows::Forms::Panel^ panel1;
 
 	private:
 		/// <summary>
@@ -148,7 +155,6 @@ namespace CMS {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->txt_StudentID = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->txt_othermark = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->txt_midmark = (gcnew System::Windows::Forms::TextBox());
@@ -166,7 +172,6 @@ namespace CMS {
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->txt_totalmark = (gcnew System::Windows::Forms::TextBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->btn_Update = (gcnew System::Windows::Forms::Button());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->txt_rateTotal = (gcnew System::Windows::Forms::TextBox());
@@ -182,81 +187,102 @@ namespace CMS {
 			this->chkbox_sem1 = (gcnew System::Windows::Forms::CheckBox());
 			this->chkbox_sem2 = (gcnew System::Windows::Forms::CheckBox());
 			this->chkbox_sem3 = (gcnew System::Windows::Forms::CheckBox());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pnl_account = (gcnew System::Windows::Forms::Panel());
+			this->btn_exit = (gcnew System::Windows::Forms::Button());
+			this->btn_logout = (gcnew System::Windows::Forms::Button());
+			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pnl_titleUpdateScore->SuspendLayout();
+			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->pnl_account->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label1->Location = System::Drawing::Point(794, 84);
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label1->Location = System::Drawing::Point(101, 203);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(85, 21);
+			this->label1->Size = System::Drawing::Size(110, 27);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Course ID";
 			// 
 			// txt_courseID
 			// 
-			this->txt_courseID->BackColor = System::Drawing::SystemColors::Control;
-			this->txt_courseID->Location = System::Drawing::Point(884, 81);
+			this->txt_courseID->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->txt_courseID->Location = System::Drawing::Point(218, 200);
+			this->txt_courseID->Margin = System::Windows::Forms::Padding(4);
 			this->txt_courseID->MaxLength = 15;
 			this->txt_courseID->Name = L"txt_courseID";
-			this->txt_courseID->Size = System::Drawing::Size(261, 26);
+			this->txt_courseID->Size = System::Drawing::Size(375, 33);
 			this->txt_courseID->TabIndex = 1;
 			this->txt_courseID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// txt_coursename
 			// 
-			this->txt_coursename->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_coursename->Location = System::Drawing::Point(161, 208);
+			this->txt_coursename->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_coursename->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_coursename->Location = System::Drawing::Point(761, 200);
+			this->txt_coursename->Margin = System::Windows::Forms::Padding(4);
 			this->txt_coursename->Name = L"txt_coursename";
 			this->txt_coursename->ReadOnly = true;
-			this->txt_coursename->Size = System::Drawing::Size(261, 26);
+			this->txt_coursename->Size = System::Drawing::Size(375, 33);
 			this->txt_coursename->TabIndex = 3;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label2->Location = System::Drawing::Point(46, 211);
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label2->Location = System::Drawing::Point(612, 203);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(111, 21);
+			this->label2->Size = System::Drawing::Size(144, 27);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Course name";
 			// 
 			// lbl_title
 			// 
 			this->lbl_title->AutoSize = true;
-			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->lbl_title->Location = System::Drawing::Point(458, 8);
+			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->lbl_title->Location = System::Drawing::Point(400, 15);
+			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(286, 30);
+			this->lbl_title->Size = System::Drawing::Size(380, 31);
 			this->lbl_title->TabIndex = 4;
-			this->lbl_title->Text = L"Update Score of Student";
+			this->lbl_title->Text = L"UPDATE SCORE OF STUDENTS";
 			// 
 			// btn_Search
 			// 
-			this->btn_Search->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Search->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->btn_Search->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->btn_Search->Location = System::Drawing::Point(973, 155);
+			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btn_Search->Location = System::Drawing::Point(336, 297);
+			this->btn_Search->Margin = System::Windows::Forms::Padding(4);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(84, 35);
+			this->btn_Search->Size = System::Drawing::Size(121, 47);
 			this->btn_Search->TabIndex = 5;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = false;
@@ -264,158 +290,168 @@ namespace CMS {
 			// 
 			// txt_schoolyear
 			// 
-			this->txt_schoolyear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_schoolyear->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_schoolyear->Location = System::Drawing::Point(161, 84);
+			this->txt_schoolyear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_schoolyear->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_schoolyear->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_schoolyear->Location = System::Drawing::Point(218, 99);
+			this->txt_schoolyear->Margin = System::Windows::Forms::Padding(4);
 			this->txt_schoolyear->Name = L"txt_schoolyear";
 			this->txt_schoolyear->ReadOnly = true;
-			this->txt_schoolyear->Size = System::Drawing::Size(261, 26);
+			this->txt_schoolyear->Size = System::Drawing::Size(375, 33);
 			this->txt_schoolyear->TabIndex = 7;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label4->Location = System::Drawing::Point(57, 87);
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label4->Location = System::Drawing::Point(84, 101);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(100, 21);
+			this->label4->Size = System::Drawing::Size(130, 27);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"School Year";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label5->Location = System::Drawing::Point(491, 86);
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label5->Location = System::Drawing::Point(648, 148);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(80, 21);
+			this->label5->Size = System::Drawing::Size(106, 27);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Semester";
 			// 
 			// txt_teacher
 			// 
-			this->txt_teacher->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_teacher->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_teacher->Location = System::Drawing::Point(536, 207);
+			this->txt_teacher->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_teacher->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_teacher->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_teacher->Location = System::Drawing::Point(761, 252);
+			this->txt_teacher->Margin = System::Windows::Forms::Padding(4);
 			this->txt_teacher->Name = L"txt_teacher";
 			this->txt_teacher->ReadOnly = true;
-			this->txt_teacher->Size = System::Drawing::Size(233, 26);
+			this->txt_teacher->Size = System::Drawing::Size(375, 33);
 			this->txt_teacher->TabIndex = 11;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label6->Location = System::Drawing::Point(463, 210);
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label6->Location = System::Drawing::Point(664, 255);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(70, 21);
+			this->label6->Size = System::Drawing::Size(92, 27);
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"Teacher";
 			// 
 			// txt_credit
 			// 
-			this->txt_credit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_credit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_credit->Location = System::Drawing::Point(916, 207);
+			this->txt_credit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_credit->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_credit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_credit->Location = System::Drawing::Point(760, 304);
+			this->txt_credit->Margin = System::Windows::Forms::Padding(4);
 			this->txt_credit->Name = L"txt_credit";
 			this->txt_credit->ReadOnly = true;
-			this->txt_credit->Size = System::Drawing::Size(41, 26);
+			this->txt_credit->Size = System::Drawing::Size(119, 33);
 			this->txt_credit->TabIndex = 13;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label7->Location = System::Drawing::Point(839, 210);
+			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label7->Location = System::Drawing::Point(656, 307);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(73, 21);
+			this->label7->Size = System::Drawing::Size(98, 27);
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"Credit(s)";
 			// 
 			// txt_maxStu
 			// 
-			this->txt_maxStu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_maxStu->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_maxStu->Location = System::Drawing::Point(1113, 207);
+			this->txt_maxStu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_maxStu->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_maxStu->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_maxStu->Location = System::Drawing::Point(1054, 304);
+			this->txt_maxStu->Margin = System::Windows::Forms::Padding(4);
 			this->txt_maxStu->Name = L"txt_maxStu";
 			this->txt_maxStu->ReadOnly = true;
-			this->txt_maxStu->Size = System::Drawing::Size(48, 26);
+			this->txt_maxStu->Size = System::Drawing::Size(82, 33);
 			this->txt_maxStu->TabIndex = 15;
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label8->Location = System::Drawing::Point(994, 210);
+			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label8->Location = System::Drawing::Point(895, 307);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(115, 21);
+			this->label8->Size = System::Drawing::Size(152, 27);
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Max Students";
 			// 
 			// txt_StudentID
 			// 
-			this->txt_StudentID->BackColor = System::Drawing::SystemColors::Control;
-			this->txt_StudentID->Location = System::Drawing::Point(884, 123);
+			this->txt_StudentID->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->txt_StudentID->Location = System::Drawing::Point(218, 254);
+			this->txt_StudentID->Margin = System::Windows::Forms::Padding(4);
 			this->txt_StudentID->MaxLength = 15;
 			this->txt_StudentID->Name = L"txt_StudentID";
-			this->txt_StudentID->Size = System::Drawing::Size(261, 26);
+			this->txt_StudentID->Size = System::Drawing::Size(375, 33);
 			this->txt_StudentID->TabIndex = 17;
 			this->txt_StudentID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label9->Location = System::Drawing::Point(789, 126);
+			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label9->Location = System::Drawing::Point(92, 257);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(92, 21);
+			this->label9->Size = System::Drawing::Size(120, 27);
 			this->label9->TabIndex = 16;
 			this->label9->Text = L"Student ID";
 			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->panel1->Location = System::Drawing::Point(285, 258);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(659, 3);
-			this->panel1->TabIndex = 18;
-			// 
 			// txt_othermark
 			// 
-			this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_othermark->Location = System::Drawing::Point(609, 302);
+			this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_othermark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_othermark->Location = System::Drawing::Point(761, 415);
+			this->txt_othermark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_othermark->MaxLength = 7;
 			this->txt_othermark->Name = L"txt_othermark";
 			this->txt_othermark->ReadOnly = true;
-			this->txt_othermark->Size = System::Drawing::Size(84, 26);
+			this->txt_othermark->Size = System::Drawing::Size(119, 33);
 			this->txt_othermark->TabIndex = 20;
 			this->txt_othermark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_othermark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
@@ -423,25 +459,29 @@ namespace CMS {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label10->Location = System::Drawing::Point(506, 305);
+			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label10->Location = System::Drawing::Point(627, 418);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(99, 21);
+			this->label10->Size = System::Drawing::Size(128, 27);
 			this->label10->TabIndex = 19;
 			this->label10->Text = L"Other Mark";
 			// 
 			// txt_midmark
 			// 
-			this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_midmark->Location = System::Drawing::Point(609, 351);
+			this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_midmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_midmark->Location = System::Drawing::Point(761, 462);
+			this->txt_midmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_midmark->MaxLength = 7;
 			this->txt_midmark->Name = L"txt_midmark";
 			this->txt_midmark->ReadOnly = true;
-			this->txt_midmark->Size = System::Drawing::Size(84, 26);
+			this->txt_midmark->Size = System::Drawing::Size(119, 33);
 			this->txt_midmark->TabIndex = 22;
 			this->txt_midmark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_midmark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
@@ -449,25 +489,29 @@ namespace CMS {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label11->Location = System::Drawing::Point(484, 354);
+			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label11->Location = System::Drawing::Point(595, 465);
+			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(121, 21);
+			this->label11->Size = System::Drawing::Size(159, 27);
 			this->label11->TabIndex = 21;
 			this->label11->Text = L"Midterm Mark";
 			// 
 			// txt_rateOther
 			// 
-			this->txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_rateOther->Location = System::Drawing::Point(814, 301);
+			this->txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_rateOther->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_rateOther->Location = System::Drawing::Point(1054, 414);
+			this->txt_rateOther->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateOther->MaxLength = 3;
 			this->txt_rateOther->Name = L"txt_rateOther";
 			this->txt_rateOther->ReadOnly = true;
-			this->txt_rateOther->Size = System::Drawing::Size(62, 26);
+			this->txt_rateOther->Size = System::Drawing::Size(82, 33);
 			this->txt_rateOther->TabIndex = 24;
 			this->txt_rateOther->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateOther->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
@@ -475,25 +519,29 @@ namespace CMS {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label12->Location = System::Drawing::Point(766, 304);
+			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label12->Location = System::Drawing::Point(990, 417);
+			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(44, 21);
+			this->label12->Size = System::Drawing::Size(58, 27);
 			this->label12->TabIndex = 23;
 			this->label12->Text = L"Rate";
 			// 
 			// txt_rateMid
 			// 
-			this->txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_rateMid->Location = System::Drawing::Point(814, 350);
+			this->txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_rateMid->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_rateMid->Location = System::Drawing::Point(1054, 461);
+			this->txt_rateMid->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateMid->MaxLength = 3;
 			this->txt_rateMid->Name = L"txt_rateMid";
 			this->txt_rateMid->ReadOnly = true;
-			this->txt_rateMid->Size = System::Drawing::Size(62, 26);
+			this->txt_rateMid->Size = System::Drawing::Size(82, 33);
 			this->txt_rateMid->TabIndex = 26;
 			this->txt_rateMid->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateMid->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
@@ -501,64 +549,71 @@ namespace CMS {
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label13->Location = System::Drawing::Point(766, 353);
+			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label13->Location = System::Drawing::Point(990, 464);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(44, 21);
+			this->label13->Size = System::Drawing::Size(58, 27);
 			this->label13->TabIndex = 25;
 			this->label13->Text = L"Rate";
 			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label14->Location = System::Drawing::Point(881, 304);
+			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label14->Location = System::Drawing::Point(1138, 414);
+			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(24, 21);
+			this->label14->Size = System::Drawing::Size(36, 31);
 			this->label14->TabIndex = 27;
 			this->label14->Text = L"%";
 			// 
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label16->Location = System::Drawing::Point(881, 353);
+			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label16->Location = System::Drawing::Point(1138, 461);
+			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(24, 21);
+			this->label16->Size = System::Drawing::Size(36, 31);
 			this->label16->TabIndex = 29;
 			this->label16->Text = L"%";
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label15->Location = System::Drawing::Point(881, 401);
+			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label15->Location = System::Drawing::Point(1138, 508);
+			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(24, 21);
+			this->label15->Size = System::Drawing::Size(36, 31);
 			this->label15->TabIndex = 34;
 			this->label15->Text = L"%";
 			// 
 			// txt_rateFinal
 			// 
-			this->txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_rateFinal->Location = System::Drawing::Point(814, 398);
+			this->txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_rateFinal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_rateFinal->Location = System::Drawing::Point(1054, 508);
+			this->txt_rateFinal->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateFinal->MaxLength = 3;
 			this->txt_rateFinal->Name = L"txt_rateFinal";
 			this->txt_rateFinal->ReadOnly = true;
-			this->txt_rateFinal->Size = System::Drawing::Size(62, 26);
+			this->txt_rateFinal->Size = System::Drawing::Size(82, 33);
 			this->txt_rateFinal->TabIndex = 33;
 			this->txt_rateFinal->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_rateFinal->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
@@ -566,25 +621,29 @@ namespace CMS {
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label17->Location = System::Drawing::Point(766, 401);
+			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label17->Location = System::Drawing::Point(990, 511);
+			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(44, 21);
+			this->label17->Size = System::Drawing::Size(58, 27);
 			this->label17->TabIndex = 32;
 			this->label17->Text = L"Rate";
 			// 
 			// txt_finalmark
 			// 
-			this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_finalmark->Location = System::Drawing::Point(609, 399);
+			this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_finalmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_finalmark->Location = System::Drawing::Point(760, 509);
+			this->txt_finalmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_finalmark->MaxLength = 7;
 			this->txt_finalmark->Name = L"txt_finalmark";
 			this->txt_finalmark->ReadOnly = true;
-			this->txt_finalmark->Size = System::Drawing::Size(84, 26);
+			this->txt_finalmark->Size = System::Drawing::Size(119, 33);
 			this->txt_finalmark->TabIndex = 31;
 			this->txt_finalmark->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_TextChanged);
 			this->txt_finalmark->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_doubleOnly_KeyPress);
@@ -592,64 +651,59 @@ namespace CMS {
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label18->Location = System::Drawing::Point(514, 402);
+			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label18->Location = System::Drawing::Point(635, 512);
+			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(91, 21);
+			this->label18->Size = System::Drawing::Size(119, 27);
 			this->label18->TabIndex = 30;
 			this->label18->Text = L"Final Mark";
 			// 
 			// txt_totalmark
 			// 
-			this->txt_totalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_totalmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_totalmark->Location = System::Drawing::Point(609, 453);
+			this->txt_totalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_totalmark->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_totalmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_totalmark->Location = System::Drawing::Point(761, 584);
+			this->txt_totalmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_totalmark->MaxLength = 10;
 			this->txt_totalmark->Name = L"txt_totalmark";
 			this->txt_totalmark->ReadOnly = true;
-			this->txt_totalmark->Size = System::Drawing::Size(84, 26);
+			this->txt_totalmark->Size = System::Drawing::Size(119, 33);
 			this->txt_totalmark->TabIndex = 36;
 			// 
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label19->Location = System::Drawing::Point(512, 456);
+			this->label19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label19->Location = System::Drawing::Point(632, 587);
+			this->label19->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(93, 21);
+			this->label19->Size = System::Drawing::Size(123, 27);
 			this->label19->TabIndex = 35;
 			this->label19->Text = L"Total Mark";
 			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->panel2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->panel2->Location = System::Drawing::Point(463, 437);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(250, 1);
-			this->panel2->TabIndex = 19;
-			// 
 			// btn_Update
 			// 
-			this->btn_Update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_Update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->btn_Update->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_Update->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_Update->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->btn_Update->Location = System::Drawing::Point(609, 499);
+			this->btn_Update->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btn_Update->Location = System::Drawing::Point(868, 640);
+			this->btn_Update->Margin = System::Windows::Forms::Padding(4);
 			this->btn_Update->Name = L"btn_Update";
-			this->btn_Update->Size = System::Drawing::Size(84, 35);
+			this->btn_Update->Size = System::Drawing::Size(121, 47);
 			this->btn_Update->TabIndex = 37;
 			this->btn_Update->Text = L"Update";
 			this->btn_Update->UseVisualStyleBackColor = false;
@@ -658,52 +712,59 @@ namespace CMS {
 			// label20
 			// 
 			this->label20->AutoSize = true;
-			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label20->Location = System::Drawing::Point(881, 455);
+			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label20->Location = System::Drawing::Point(1139, 583);
+			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(24, 21);
+			this->label20->Size = System::Drawing::Size(36, 31);
 			this->label20->TabIndex = 40;
 			this->label20->Text = L"%";
 			// 
 			// txt_rateTotal
 			// 
-			this->txt_rateTotal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_rateTotal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_rateTotal->Location = System::Drawing::Point(814, 452);
+			this->txt_rateTotal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_rateTotal->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_rateTotal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_rateTotal->Location = System::Drawing::Point(1054, 583);
+			this->txt_rateTotal->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateTotal->Name = L"txt_rateTotal";
 			this->txt_rateTotal->ReadOnly = true;
-			this->txt_rateTotal->Size = System::Drawing::Size(62, 26);
+			this->txt_rateTotal->Size = System::Drawing::Size(82, 33);
 			this->txt_rateTotal->TabIndex = 39;
 			// 
 			// label21
 			// 
 			this->label21->AutoSize = true;
-			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label21->Location = System::Drawing::Point(723, 455);
+			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label21->Location = System::Drawing::Point(932, 587);
+			this->label21->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(87, 21);
+			this->label21->Size = System::Drawing::Size(116, 27);
 			this->label21->TabIndex = 38;
 			this->label21->Text = L"Total Rate";
 			// 
 			// btn_back
 			// 
-			this->btn_back->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_back->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->btn_back->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_back->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_back->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->btn_back->Location = System::Drawing::Point(1165, 6);
+			this->btn_back->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(219)));
+			this->btn_back->Location = System::Drawing::Point(4, 4);
+			this->btn_back->Margin = System::Windows::Forms::Padding(4);
 			this->btn_back->Name = L"btn_back";
-			this->btn_back->Size = System::Drawing::Size(35, 33);
+			this->btn_back->Size = System::Drawing::Size(54, 54);
 			this->btn_back->TabIndex = 41;
 			this->btn_back->Text = L"<";
 			this->btn_back->UseVisualStyleBackColor = false;
@@ -711,102 +772,114 @@ namespace CMS {
 			// 
 			// pnl_titleUpdateScore
 			// 
-			this->pnl_titleUpdateScore->Controls->Add(this->btn_back);
+			this->pnl_titleUpdateScore->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)),
+				static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
 			this->pnl_titleUpdateScore->Controls->Add(this->lbl_title);
-			this->pnl_titleUpdateScore->Dock = System::Windows::Forms::DockStyle::Top;
-			this->pnl_titleUpdateScore->Location = System::Drawing::Point(4, 4);
+			this->pnl_titleUpdateScore->Location = System::Drawing::Point(68, 5);
+			this->pnl_titleUpdateScore->Margin = System::Windows::Forms::Padding(4);
 			this->pnl_titleUpdateScore->Name = L"pnl_titleUpdateScore";
-			this->pnl_titleUpdateScore->Padding = System::Windows::Forms::Padding(4);
-			this->pnl_titleUpdateScore->Size = System::Drawing::Size(1207, 46);
+			this->pnl_titleUpdateScore->Padding = System::Windows::Forms::Padding(6, 5, 6, 5);
+			this->pnl_titleUpdateScore->Size = System::Drawing::Size(1153, 60);
 			this->pnl_titleUpdateScore->TabIndex = 42;
 			this->pnl_titleUpdateScore->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseDown);
 			this->pnl_titleUpdateScore->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseMove);
 			// 
 			// txt_StudentID_2
 			// 
-			this->txt_StudentID_2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_StudentID_2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_StudentID_2->Location = System::Drawing::Point(161, 302);
+			this->txt_StudentID_2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_StudentID_2->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_StudentID_2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_StudentID_2->Location = System::Drawing::Point(218, 417);
+			this->txt_StudentID_2->Margin = System::Windows::Forms::Padding(4);
 			this->txt_StudentID_2->Name = L"txt_StudentID_2";
 			this->txt_StudentID_2->ReadOnly = true;
-			this->txt_StudentID_2->Size = System::Drawing::Size(261, 26);
+			this->txt_StudentID_2->Size = System::Drawing::Size(375, 33);
 			this->txt_StudentID_2->TabIndex = 44;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label3->Location = System::Drawing::Point(65, 305);
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label3->Location = System::Drawing::Point(93, 419);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(92, 21);
+			this->label3->Size = System::Drawing::Size(120, 27);
 			this->label3->TabIndex = 43;
 			this->label3->Text = L"Student ID";
 			// 
 			// txt_schoolyear_start
 			// 
-			this->txt_schoolyear_start->BackColor = System::Drawing::SystemColors::Control;
+			this->txt_schoolyear_start->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(251)), static_cast<System::Int32>(static_cast<System::Byte>(172)));
 			this->txt_schoolyear_start->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->txt_schoolyear_start->Location = System::Drawing::Point(161, 121);
+			this->txt_schoolyear_start->Location = System::Drawing::Point(218, 149);
+			this->txt_schoolyear_start->Margin = System::Windows::Forms::Padding(4);
 			this->txt_schoolyear_start->MaxLength = 4;
 			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
-			this->txt_schoolyear_start->Size = System::Drawing::Size(92, 26);
+			this->txt_schoolyear_start->Size = System::Drawing::Size(131, 33);
 			this->txt_schoolyear_start->TabIndex = 46;
 			this->txt_schoolyear_start->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_SchoolYear_TextChanged);
 			// 
 			// label22
 			// 
 			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label22->Location = System::Drawing::Point(105, 122);
+			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label22->Location = System::Drawing::Point(147, 151);
+			this->label22->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(50, 21);
+			this->label22->Size = System::Drawing::Size(66, 27);
 			this->label22->TabIndex = 45;
 			this->label22->Text = L"Start:";
 			// 
 			// txt_schoolyear_end
 			// 
-			this->txt_schoolyear_end->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-				static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->txt_schoolyear_end->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_schoolyear_end->Location = System::Drawing::Point(330, 121);
+			this->txt_schoolyear_end->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)),
+				static_cast<System::Int32>(static_cast<System::Byte>(213)), static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->txt_schoolyear_end->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->txt_schoolyear_end->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_schoolyear_end->Location = System::Drawing::Point(462, 149);
+			this->txt_schoolyear_end->Margin = System::Windows::Forms::Padding(4);
 			this->txt_schoolyear_end->Name = L"txt_schoolyear_end";
 			this->txt_schoolyear_end->ReadOnly = true;
-			this->txt_schoolyear_end->Size = System::Drawing::Size(92, 26);
+			this->txt_schoolyear_end->Size = System::Drawing::Size(131, 33);
 			this->txt_schoolyear_end->TabIndex = 48;
 			this->txt_schoolyear_end->TextChanged += gcnew System::EventHandler(this, &UpdateResult::txt_SchoolYear_TextChanged);
 			// 
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label23->Location = System::Drawing::Point(282, 123);
+			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->label23->Location = System::Drawing::Point(391, 150);
+			this->label23->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(43, 21);
+			this->label23->Size = System::Drawing::Size(55, 27);
 			this->label23->TabIndex = 47;
 			this->label23->Text = L"End:";
 			// 
 			// chkbox_sem1
 			// 
 			this->chkbox_sem1->AutoSize = true;
-			this->chkbox_sem1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->chkbox_sem1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->chkbox_sem1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->chkbox_sem1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->chkbox_sem1->Location = System::Drawing::Point(577, 87);
+			this->chkbox_sem1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->chkbox_sem1->Location = System::Drawing::Point(773, 148);
+			this->chkbox_sem1->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem1->Name = L"chkbox_sem1";
-			this->chkbox_sem1->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem1->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem1->TabIndex = 49;
 			this->chkbox_sem1->Text = L"1";
 			this->chkbox_sem1->UseVisualStyleBackColor = true;
@@ -815,13 +888,15 @@ namespace CMS {
 			// chkbox_sem2
 			// 
 			this->chkbox_sem2->AutoSize = true;
-			this->chkbox_sem2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->chkbox_sem2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->chkbox_sem2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->chkbox_sem2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->chkbox_sem2->Location = System::Drawing::Point(628, 87);
+			this->chkbox_sem2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->chkbox_sem2->Location = System::Drawing::Point(847, 148);
+			this->chkbox_sem2->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem2->Name = L"chkbox_sem2";
-			this->chkbox_sem2->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem2->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem2->TabIndex = 50;
 			this->chkbox_sem2->Text = L"2";
 			this->chkbox_sem2->UseVisualStyleBackColor = true;
@@ -830,26 +905,116 @@ namespace CMS {
 			// chkbox_sem3
 			// 
 			this->chkbox_sem3->AutoSize = true;
-			this->chkbox_sem3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->chkbox_sem3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->chkbox_sem3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->chkbox_sem3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->chkbox_sem3->Location = System::Drawing::Point(679, 87);
+			this->chkbox_sem3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->chkbox_sem3->Location = System::Drawing::Point(921, 148);
+			this->chkbox_sem3->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem3->Name = L"chkbox_sem3";
-			this->chkbox_sem3->Size = System::Drawing::Size(45, 25);
+			this->chkbox_sem3->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem3->TabIndex = 51;
 			this->chkbox_sem3->Text = L"3";
 			this->chkbox_sem3->UseVisualStyleBackColor = true;
 			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &UpdateResult::chkbox_sem3_CheckedChanged);
 			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->panel3->Controls->Add(this->pictureBox1);
+			this->panel3->Controls->Add(this->btn_back);
+			this->panel3->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel3->Location = System::Drawing::Point(4, 4);
+			this->panel3->Margin = System::Windows::Forms::Padding(4);
+			this->panel3->Name = L"panel3";
+			this->panel3->Padding = System::Windows::Forms::Padding(4);
+			this->panel3->Size = System::Drawing::Size(62, 757);
+			this->panel3->TabIndex = 52;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(4, 699);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(54, 54);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 53;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pnl_account
+			// 
+			this->pnl_account->Controls->Add(this->btn_exit);
+			this->pnl_account->Controls->Add(this->btn_logout);
+			this->pnl_account->Controls->Add(this->btn_aboutUs);
+			this->pnl_account->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pnl_account->Location = System::Drawing::Point(75, 623);
+			this->pnl_account->Name = L"pnl_account";
+			this->pnl_account->Padding = System::Windows::Forms::Padding(3);
+			this->pnl_account->Size = System::Drawing::Size(172, 137);
+			this->pnl_account->TabIndex = 130;
+			this->pnl_account->Visible = false;
+			// 
+			// btn_exit
+			// 
+			this->btn_exit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(240)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(207)));
+			this->btn_exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_exit->Location = System::Drawing::Point(0, 90);
+			this->btn_exit->Name = L"btn_exit";
+			this->btn_exit->Size = System::Drawing::Size(172, 45);
+			this->btn_exit->TabIndex = 2;
+			this->btn_exit->Text = L"Exit";
+			this->btn_exit->UseVisualStyleBackColor = false;
+			// 
+			// btn_logout
+			// 
+			this->btn_logout->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(240)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(207)));
+			this->btn_logout->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_logout->Location = System::Drawing::Point(0, 45);
+			this->btn_logout->Name = L"btn_logout";
+			this->btn_logout->Size = System::Drawing::Size(172, 45);
+			this->btn_logout->TabIndex = 1;
+			this->btn_logout->Text = L"Log out";
+			this->btn_logout->UseVisualStyleBackColor = false;
+			// 
+			// btn_aboutUs
+			// 
+			this->btn_aboutUs->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(240)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(207)));
+			this->btn_aboutUs->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_aboutUs->Location = System::Drawing::Point(0, 0);
+			this->btn_aboutUs->Name = L"btn_aboutUs";
+			this->btn_aboutUs->Size = System::Drawing::Size(172, 45);
+			this->btn_aboutUs->TabIndex = 0;
+			this->btn_aboutUs->Text = L"About us";
+			this->btn_aboutUs->UseVisualStyleBackColor = false;
+			this->btn_aboutUs->Click += gcnew System::EventHandler(this, &UpdateResult::btn_aboutUs_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->panel1->Location = System::Drawing::Point(753, 563);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(425, 3);
+			this->panel1->TabIndex = 131;
+			// 
 			// UpdateResult
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(13, 27);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->ClientSize = System::Drawing::Size(1215, 611);
+			this->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->ClientSize = System::Drawing::Size(1225, 765);
 			this->ControlBox = false;
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->pnl_account);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->chkbox_sem3);
 			this->Controls->Add(this->chkbox_sem2);
 			this->Controls->Add(this->chkbox_sem1);
@@ -863,7 +1028,6 @@ namespace CMS {
 			this->Controls->Add(this->txt_rateTotal);
 			this->Controls->Add(this->label21);
 			this->Controls->Add(this->btn_Update);
-			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->txt_totalmark);
 			this->Controls->Add(this->label19);
 			this->Controls->Add(this->label15);
@@ -881,7 +1045,6 @@ namespace CMS {
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->txt_othermark);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->txt_StudentID);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->txt_maxStu);
@@ -899,13 +1062,21 @@ namespace CMS {
 			this->Controls->Add(this->txt_courseID);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pnl_titleUpdateScore);
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"UpdateResult";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Load += gcnew System::EventHandler(this, &UpdateResult::UpdateResult_Load);
 			this->pnl_titleUpdateScore->ResumeLayout(false);
 			this->pnl_titleUpdateScore->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->pnl_account->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -934,34 +1105,30 @@ namespace CMS {
 		}
 
 		txt_othermark->ReadOnly = true;
-		txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_othermark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_midmark->ReadOnly = true;
-		txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_midmark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_finalmark->ReadOnly = true;
-		txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_finalmark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_rateOther->ReadOnly = true;
-		txt_rateOther->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_rateOther->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_rateMid->ReadOnly = true;
-		txt_rateMid->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_rateMid->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_rateFinal->ReadOnly = true;
-		txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-			static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		this->curCourse = nullptr;
 		this->curStudent = nullptr;
 
-		pnl_titleUpdateScore->BackColor = Color::FromArgb(50, 255, 255, 255);
 		lbl_title->BackColor = System::Drawing::Color::Transparent;
+
+		btn_Update->Enabled = false;
+		btn_Update->Cursor = Cursors::No;
 	}
 
 	private: System::Void txt_intOnly_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
@@ -999,15 +1166,6 @@ namespace CMS {
 		//// Allow digits, decimal point, backspace, and delete keys
 		if (!Char::IsControl(e->KeyChar) && !Char::IsDigit(e->KeyChar) && e->KeyChar != '.' && e->KeyChar != '\u007F')	e->Handled = true;
 		// '\u007F' == backspace
-
-		// Allow only one decimal point
-		if (e->KeyChar == '.' && existDot(static_cast<System::String^>(sender)))	e->Handled = true;
-	}
-
-	private: bool existDot(System::String^ s) {
-		std::string str = msclr::interop::marshal_as<std::string>(s);
-		for (int i = 0; i < str.length(); i++)	if (str[i] == '.')	return 1;
-		return 0;
 	}
 
 	private: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1092,27 +1250,32 @@ namespace CMS {
 		while (this->curStudent) {
 			if (this->curStudent->data->student->studentID == id) {
 				txt_othermark->ReadOnly = false;
-				txt_othermark->BackColor = System::Drawing::SystemColors::Control;
+				txt_othermark->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
 				txt_othermark->Text = this->curStudent->data->otherMark.ToString("F2");
 
 				txt_midmark->ReadOnly = false;
-				txt_midmark->BackColor = System::Drawing::SystemColors::Control;
+				txt_midmark->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
 				txt_midmark->Text = this->curStudent->data->midtermMark.ToString("F2");
 
 				txt_finalmark->ReadOnly = false;
-				txt_finalmark->BackColor = System::Drawing::SystemColors::Control;
+				txt_finalmark->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
 				txt_finalmark->Text = this->curStudent->data->finalMark.ToString("F2");
 
 				txt_rateOther->ReadOnly = false;
-				txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
+				txt_rateOther->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
+				txt_rateOther->ForeColor = System::Drawing::Color::FromArgb(255, 132, 0);
 
 				txt_rateMid->ReadOnly = false;
-				txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
+				txt_rateMid->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
+				txt_rateMid->ForeColor = System::Drawing::Color::FromArgb(255, 132, 0);
 
 				txt_rateFinal->ReadOnly = false;
-				txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
+				txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(255, 251, 172);
+				txt_rateFinal->ForeColor = System::Drawing::Color::FromArgb(255, 132, 0);
 
 				txt_StudentID_2->Text = txt_StudentID->Text;
+				btn_Update->Enabled = true;
+				btn_Update->Cursor = Cursors::Hand;
 				return;
 			}
 			this->curStudent = this->curStudent->next;
@@ -1173,30 +1336,27 @@ namespace CMS {
 
 		txt_othermark->Text = "";
 		txt_othermark->ReadOnly = true;
-		this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		this->txt_othermark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_midmark->Text = "";
 		txt_midmark->ReadOnly = true;
-		this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		this->txt_midmark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_finalmark->Text = "";
 		txt_finalmark->ReadOnly = true;
-		this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
-			static_cast<System::Int32>(static_cast<System::Byte>(93)), static_cast<System::Int32>(static_cast<System::Byte>(110)));
+		this->txt_finalmark->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		//txt_rateOther->Text = "";
 		txt_rateOther->ReadOnly = true;
-		txt_rateOther->BackColor = System::Drawing::SystemColors::Control;
+		txt_rateOther->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		//txt_rateMid->Text = "";
 		txt_rateMid->ReadOnly = true;
-		txt_rateMid->BackColor = System::Drawing::SystemColors::Control;
+		txt_rateMid->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		//txt_rateFinal->Text = "";
 		txt_rateFinal->ReadOnly = true;
-		txt_rateFinal->BackColor = System::Drawing::SystemColors::Control;
+		txt_rateFinal->BackColor = System::Drawing::Color::FromArgb(181, 213, 197);
 
 		txt_coursename->Text = "";
 		txt_teacher->Text = "";
@@ -1204,6 +1364,9 @@ namespace CMS {
 		txt_maxStu->Text = "";
 		txt_totalmark->Text = "";
 		txt_rateTotal->Text = "";
+
+		btn_Update->Enabled = false;
+		btn_Update->Cursor = Cursors::No;
 
 		this->curStudent = nullptr;
 		MessageBox::Show("Successfully updated");
@@ -1272,6 +1435,9 @@ namespace CMS {
 		if (chkbox_sem3->Checked) {
 			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;
 		}
+	}
+
+	private: System::Void btn_aboutUs_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

@@ -53,10 +53,11 @@ namespace CMS {
 
 	private: System::Windows::Forms::Label^ lbl_password;
 	private: System::Windows::Forms::Panel^ pnl_login;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Panel^ pnl_titleLogin;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::CheckBox^ chkbx_remember;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 
@@ -84,10 +85,11 @@ namespace CMS {
 			this->pnl_login = (gcnew System::Windows::Forms::Panel());
 			this->chkbx_remember = (gcnew System::Windows::Forms::CheckBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pnl_titleLogin = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pnl_login->SuspendLayout();
 			this->pnl_titleLogin->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lbl_username
@@ -108,7 +110,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->txt_username->Location = System::Drawing::Point(39, 159);
 			this->txt_username->Name = L"txt_username";
-			this->txt_username->Size = System::Drawing::Size(320, 26);
+			this->txt_username->Size = System::Drawing::Size(320, 30);
 			this->txt_username->TabIndex = 1;
 			// 
 			// btn_signin
@@ -129,13 +131,16 @@ namespace CMS {
 			// 
 			// btn_exit
 			// 
-			this->btn_exit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->btn_exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_exit->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btn_exit->Location = System::Drawing::Point(995, 6);
+			this->btn_exit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->btn_exit->Dock = System::Windows::Forms::DockStyle::Right;
+			this->btn_exit->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_exit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btn_exit->Location = System::Drawing::Point(977, 4);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(38, 38);
+			this->btn_exit->Size = System::Drawing::Size(54, 54);
 			this->btn_exit->TabIndex = 5;
 			this->btn_exit->Text = L"X";
 			this->btn_exit->UseVisualStyleBackColor = false;
@@ -148,7 +153,7 @@ namespace CMS {
 			this->txt_password->Location = System::Drawing::Point(39, 240);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->PasswordChar = '>';
-			this->txt_password->Size = System::Drawing::Size(320, 26);
+			this->txt_password->Size = System::Drawing::Size(320, 30);
 			this->txt_password->TabIndex = 4;
 			this->txt_password->UseSystemPasswordChar = true;
 			// 
@@ -173,6 +178,8 @@ namespace CMS {
 			this->pnl_login->Controls->Add(this->lbl_password);
 			this->pnl_login->Controls->Add(this->txt_password);
 			this->pnl_login->Controls->Add(this->txt_username);
+			this->pnl_login->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->pnl_login->Location = System::Drawing::Point(341, 122);
 			this->pnl_login->Name = L"pnl_login";
 			this->pnl_login->Size = System::Drawing::Size(403, 478);
@@ -184,13 +191,12 @@ namespace CMS {
 			this->chkbx_remember->BackColor = System::Drawing::Color::Transparent;
 			this->chkbx_remember->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 7, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->chkbx_remember->Location = System::Drawing::Point(39, 272);
+			this->chkbx_remember->Location = System::Drawing::Point(40, 275);
 			this->chkbx_remember->Name = L"chkbx_remember";
 			this->chkbx_remember->Size = System::Drawing::Size(128, 23);
 			this->chkbx_remember->TabIndex = 6;
 			this->chkbx_remember->Text = L"Remember me";
 			this->chkbx_remember->UseVisualStyleBackColor = false;
-			//this->chkbx_remember->CheckedChanged += gcnew System::EventHandler(this, &Login::chkbx_remember_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -204,32 +210,32 @@ namespace CMS {
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"LOGIN";
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::Control;
-			this->label1->Location = System::Drawing::Point(2, 8);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(363, 31);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"Course Management System";
-			// 
 			// pnl_titleLogin
 			// 
-			this->pnl_titleLogin->BackColor = System::Drawing::SystemColors::Control;
-			this->pnl_titleLogin->Controls->Add(this->label1);
+			this->pnl_titleLogin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->pnl_titleLogin->Controls->Add(this->pictureBox1);
 			this->pnl_titleLogin->Controls->Add(this->btn_exit);
 			this->pnl_titleLogin->Dock = System::Windows::Forms::DockStyle::Top;
-			this->pnl_titleLogin->Location = System::Drawing::Point(1, 1);
+			this->pnl_titleLogin->Location = System::Drawing::Point(4, 4);
 			this->pnl_titleLogin->Name = L"pnl_titleLogin";
-			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(3);
-			this->pnl_titleLogin->Size = System::Drawing::Size(1041, 48);
+			this->pnl_titleLogin->Padding = System::Windows::Forms::Padding(4);
+			this->pnl_titleLogin->Size = System::Drawing::Size(1035, 62);
 			this->pnl_titleLogin->TabIndex = 8;
 			this->pnl_titleLogin->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseDown);
 			this->pnl_titleLogin->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseMove);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(4, 4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(54, 54);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 9;
+			this->pictureBox1->TabStop = false;
 			// 
 			// Login
 			// 
@@ -243,13 +249,13 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Login";
-			this->Padding = System::Windows::Forms::Padding(1);
+			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->pnl_login->ResumeLayout(false);
 			this->pnl_login->PerformLayout();
 			this->pnl_titleLogin->ResumeLayout(false);
-			this->pnl_titleLogin->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -292,7 +298,7 @@ namespace CMS {
 					g_currentStudent = nullptr;
 					MenuStaff^ form = gcnew CMS::MenuStaff(this);
 					checkBoxRemember(input);
-					this->txt_password->Text = L"";
+					if (latestCheckRememberLogin == 0)	this->txt_password->Text = L"";
 					this->Hide();
 					form->Show();
 					return;
@@ -305,7 +311,6 @@ namespace CMS {
 			}
 			curStaf = curStaf->next;
 		}
-		if (curStaf)	return;
 
 		GROUP1::DLL<GROUP1::STUDENT*>* curStu = L_Student.head;
 		while (curStu) {
@@ -314,10 +319,10 @@ namespace CMS {
 					//MessageBox::Show("Successfully logged in!");
 					MenuStudent^ form = gcnew CMS::MenuStudent(this);//, curStu -> data);
 					checkBoxRemember(input);
+					if (latestCheckRememberLogin == 0)	this->txt_password->Text = L"";
 					g_currentStaff = nullptr;
 					g_currentStudent = curStu->data;
 					this->Hide();
-					this->txt_password->Text = L"";
 					form->Show();
 					return;
 				}
@@ -329,9 +334,8 @@ namespace CMS {
 			}
 			curStu = curStu->next;
 		}
-
-		if (!curStu)
-			MessageBox::Show("Username [" + txt_username->Text + "] do not exist");
+		// curStu is now nullptr
+		MessageBox::Show("User [" + txt_username->Text + "] does not exist");
 		this->txt_username->Text = L"";
 		this->txt_password->Text = L"";
 	}
