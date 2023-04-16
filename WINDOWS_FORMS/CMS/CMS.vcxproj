@@ -163,6 +163,15 @@
     <ClInclude Include="UpdateResult.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ViewAListInAClasses.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewAListStudentInACourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewClasses.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ViewListCourses.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -192,6 +201,9 @@
     <ClCompile Include="import.cpp" />
     <ClCompile Include="ImpScoreOfCourse.cpp" />
     <ClCompile Include="Login.cpp" />
+    <ClCompile Include="ViewAListInAClasses.cpp" />
+    <ClCompile Include="ViewAListStudentInACourse.cpp" />
+    <ClCompile Include="ViewClasses.cpp" />
     <ClCompile Include="ViewListCourses.cpp" />
     <ClCompile Include="ViewListCoursesOfStu.cpp" />
   </ItemGroup>
@@ -213,6 +225,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateResult.resx">
       <DependentUpon>UpdateResult.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAListInAClasses.resx">
+      <DependentUpon>ViewAListInAClasses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAListStudentInACourse.resx">
+      <DependentUpon>ViewAListStudentInACourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewClasses.resx">
+      <DependentUpon>ViewClasses.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
