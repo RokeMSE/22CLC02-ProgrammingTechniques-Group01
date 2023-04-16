@@ -417,7 +417,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(284, 9);
+			this->lbl_title->Location = System::Drawing::Point(284, 15);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(423, 31);
 			this->lbl_title->TabIndex = 92;
@@ -1136,7 +1136,7 @@ namespace CMS {
 	}
 	private: System::Void btn_aboutUs_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide(); // just hide not close
-		Form^ form = gcnew CMS::AboutUs;
+		Form^ form = gcnew CMS::AboutUs(this);
 		form->Show();
 	}
 	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {

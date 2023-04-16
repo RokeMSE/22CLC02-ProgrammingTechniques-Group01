@@ -266,8 +266,10 @@ namespace CMS {
 		pnl_titleLogin->BackColor = cl.FromArgb(50, 0, 0, 0);
 		// rgb(244, 238, 224)
 		this->chkbx_remember->Checked = latestCheckRememberLogin;
-		txt_password->Text = gcnew System::String(latestPassword.c_str());
-		txt_username->Text = gcnew System::String(latestUsername.c_str());
+		if (latestCheckRememberLogin) {
+			txt_password->Text = gcnew System::String(latestPassword.c_str());
+			txt_username->Text = gcnew System::String(latestUsername.c_str());
+		}
 	}
 
 	void checkBoxRemember(GROUP1::USER input) {

@@ -136,6 +136,9 @@
     <ClInclude Include="AboutUs.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Add1StuToClass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Add1StuToCourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -181,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CSV\Class.csv" />
+    <None Include="CSV\DATA.csv" />
     <None Include="CSV\SchoolYear.csv" />
     <None Include="CSV\SemInSchoolYear\2017_2018.csv" />
     <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv" />
@@ -199,15 +203,12 @@
     <ClCompile Include="export.cpp" />
     <ClCompile Include="helperFunctions.cpp" />
     <ClCompile Include="import.cpp" />
-    <ClCompile Include="ImpScoreOfCourse.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="ViewAListInAClasses.cpp" />
-    <ClCompile Include="ViewAListStudentInACourse.cpp" />
-    <ClCompile Include="ViewClasses.cpp" />
-    <ClCompile Include="ViewListCourses.cpp" />
-    <ClCompile Include="ViewListCoursesOfStu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add1StuToClass.resx">
+      <DependentUpon>Add1StuToClass.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add1StuToCourse.resx">
       <DependentUpon>Add1StuToCourse.h</DependentUpon>
     </EmbeddedResource>
@@ -228,12 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAListInAClasses.resx">
       <DependentUpon>ViewAListInAClasses.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewAListStudentInACourse.resx">
-      <DependentUpon>ViewAListStudentInACourse.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewClasses.resx">
-      <DependentUpon>ViewClasses.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

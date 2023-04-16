@@ -558,7 +558,7 @@ namespace CMS {
 	}
 	private: System::Void btn_Add1StuToCourse_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		Add1StuToCourse^ form = gcnew Add1StuToCourse(this);
+		Add1StuToCourse^ form = gcnew Add1StuToCourse(this, sourceForm);
 		form->Show();
 	}
 	private: System::Void ViewBtn_Click(System::Object^ sender, System::EventArgs^ e) {

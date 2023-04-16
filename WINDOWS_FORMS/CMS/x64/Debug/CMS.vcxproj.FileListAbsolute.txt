@@ -7,12 +7,3 @@ D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group
 D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.RemoveStuFromCourse.resources
 D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.UpdateResult.resources
 D:\LAP TRINH\KY THUAT LAP TRINH\GroupProject\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.GenerateResource.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.AssemblyReference.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.Add1StuToCourse.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.Login.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.MenuStaff.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.MenuStudent.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.RemoveStuFromCourse.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.UpdateResult.resources
-C:\Users\gigabyte\OneDrive\Documents\GitHub\WINDOWS_FORMS\CMS\x64\Debug\CMS.vcxproj.GenerateResource.cache

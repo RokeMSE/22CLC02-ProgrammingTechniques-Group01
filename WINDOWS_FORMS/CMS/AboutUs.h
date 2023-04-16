@@ -15,8 +15,9 @@ namespace CMS {
 	public ref class AboutUs : public System::Windows::Forms::Form
 	{
 	public:
-		AboutUs(void)
+		AboutUs(System::Windows::Forms::Form^ sourceform)
 		{
+			this->sourceForm = sourceform;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -36,6 +37,7 @@ namespace CMS {
 		}
 
 	private:
+		System::Windows::Forms::Form^ sourceForm;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>

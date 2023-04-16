@@ -378,14 +378,15 @@ bool importSchoolYears() {
     else g_currentSemester = g_currentSchoolYear->sem3;
     inp.close();
 
-    ifstream inp2("CSV / DATA.csv");
+    ifstream inp2("CSV/DATA.csv");
     getline(inp2, temp); // skip title line
-    if (inp2.is_open() && !inp2.eof()) {
+    if (!inp2.eof()) {
         getline(inp2, temp, ',');
         latestCheckRememberLogin = ((temp == "1") ? true : false);
         getline(inp2, latestUsername, ',');
         getline(inp2, latestPassword);
         inp2.close();
+        MessageBox::Show("aa");
     }
     return 1;
 }

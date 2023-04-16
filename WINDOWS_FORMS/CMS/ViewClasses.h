@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include<string>
 #include "header.h"
 //
@@ -95,7 +95,7 @@ namespace CMS {
 			// 
 			// columnHeader1
 			// 
-			this->columnHeader1->Text = L"Khóa";
+			this->columnHeader1->Text = L"Khï¿½a";
 			this->columnHeader1->Width = 249;
 			// 
 			// columnHeader2

@@ -1082,7 +1082,7 @@ namespace CMS {
 	}
 	private: System::Void btn_aboutUs_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide(); // just hide not close
-		Form^ form = gcnew CMS::AboutUs;
+		Form^ form = gcnew CMS::AboutUs(this);
 		form->Show();
 	}
 	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {

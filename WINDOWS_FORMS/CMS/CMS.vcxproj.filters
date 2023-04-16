@@ -61,13 +61,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AboutUs.h">
-    <ClInclude Include="ViewAListInAClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ViewAListStudentInACourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ViewClasses.h">
+    <ClInclude Include="ViewAListInAClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Add1StuToClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -93,6 +98,9 @@
     <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="CSV\DATA.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="export.cpp">
@@ -105,24 +113,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Login.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewListCourses.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ImpScoreOfCourse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewListCoursesOfStu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewAListInAClasses.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewAListStudentInACourse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
