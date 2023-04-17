@@ -41,11 +41,11 @@ namespace CMS {
 	private:
 		System::Windows::Forms::Form^ sourceForm;
 		System::Windows::Forms::Form^ loginForm;
-		bool lockAddBtn = false;
-
+		Point mouseDownLocation, formLocation;
 
 	private: System::Windows::Forms::CheckedListBox^ checkedListBox;
-	private: System::Windows::Forms::Panel^ pnl_titleUpdateScore;
+	private: System::Windows::Forms::Panel^ pnl_title;
+
 	private: System::Windows::Forms::Button^ btn_back;
 	private: System::Windows::Forms::Label^ lbl_title;
 	private: System::Windows::Forms::Button^ btn_toggle;
@@ -87,6 +87,7 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ btn_logout;
 	private: System::Windows::Forms::Button^ btn_aboutUs;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -113,7 +114,7 @@ namespace CMS {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Add1StuToClass::typeid));
 			this->checkedListBox = (gcnew System::Windows::Forms::CheckedListBox());
-			this->pnl_titleUpdateScore = (gcnew System::Windows::Forms::Panel());
+			this->pnl_title = (gcnew System::Windows::Forms::Panel());
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->btn_toggle = (gcnew System::Windows::Forms::Button());
@@ -144,7 +145,8 @@ namespace CMS {
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pnl_titleUpdateScore->SuspendLayout();
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->pnl_title->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->pnl_account->SuspendLayout();
@@ -170,19 +172,22 @@ namespace CMS {
 			this->checkedListBox->ThreeDCheckBoxes = true;
 			this->checkedListBox->ItemCheck += gcnew System::Windows::Forms::ItemCheckEventHandler(this, &Add1StuToClass::checkedListBox_ItemCheck);
 			// 
-			// pnl_titleUpdateScore
+			// pnl_title
 			// 
-			this->pnl_titleUpdateScore->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)),
-				static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->pnl_titleUpdateScore->Controls->Add(this->lbl_title);
-			this->pnl_titleUpdateScore->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->pnl_title->Controls->Add(this->lbl_title);
+			this->pnl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->pnl_titleUpdateScore->Location = System::Drawing::Point(65, 4);
-			this->pnl_titleUpdateScore->Margin = System::Windows::Forms::Padding(4);
-			this->pnl_titleUpdateScore->Name = L"pnl_titleUpdateScore";
-			this->pnl_titleUpdateScore->Padding = System::Windows::Forms::Padding(5);
-			this->pnl_titleUpdateScore->Size = System::Drawing::Size(1047, 60);
-			this->pnl_titleUpdateScore->TabIndex = 43;
+			this->pnl_title->Location = System::Drawing::Point(65, 4);
+			this->pnl_title->Margin = System::Windows::Forms::Padding(4);
+			this->pnl_title->Name = L"pnl_title";
+			this->pnl_title->Padding = System::Windows::Forms::Padding(5);
+			this->pnl_title->Size = System::Drawing::Size(1047, 60);
+			this->pnl_title->TabIndex = 43;
+			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseDown);
+			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseMove);
+
 			// 
 			// lbl_title
 			// 
@@ -288,7 +293,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label12->Location = System::Drawing::Point(87, 373);
+			this->label12->Location = System::Drawing::Point(87, 389);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(142, 27);
@@ -326,7 +331,7 @@ namespace CMS {
 			this->txt_firstname->Name = L"txt_firstname";
 			this->txt_firstname->Size = System::Drawing::Size(339, 33);
 			this->txt_firstname->TabIndex = 5;
-			this->txt_firstname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_name_TextChanged);
+			this->txt_firstname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_TextChanged);
 			// 
 			// label10
 			// 
@@ -433,7 +438,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_add->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_add->Location = System::Drawing::Point(407, 416);
+			this->btn_add->Location = System::Drawing::Point(451, 432);
 			this->btn_add->Margin = System::Windows::Forms::Padding(4);
 			this->btn_add->Name = L"btn_add";
 			this->btn_add->Size = System::Drawing::Size(139, 49);
@@ -446,7 +451,7 @@ namespace CMS {
 			// 
 			this->chkbox_male->AutoSize = true;
 			this->chkbox_male->BackColor = System::Drawing::Color::Transparent;
-			this->chkbox_male->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->chkbox_male->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->chkbox_male->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->chkbox_male->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
@@ -463,7 +468,7 @@ namespace CMS {
 			// 
 			this->chkbox_female->AutoSize = true;
 			this->chkbox_female->BackColor = System::Drawing::Color::Transparent;
-			this->chkbox_female->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->chkbox_female->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->chkbox_female->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->chkbox_female->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
@@ -487,7 +492,7 @@ namespace CMS {
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker->Location = System::Drawing::Point(233, 370);
+			this->dateTimePicker->Location = System::Drawing::Point(233, 386);
 			this->dateTimePicker->MaxDate = System::DateTime(2023, 4, 16, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(1930, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
@@ -536,7 +541,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->txt_fullname->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->txt_fullname->Location = System::Drawing::Point(232, 320);
+			this->txt_fullname->Location = System::Drawing::Point(232, 336);
 			this->txt_fullname->Margin = System::Windows::Forms::Padding(4);
 			this->txt_fullname->MaxLength = 60;
 			this->txt_fullname->Name = L"txt_fullname";
@@ -551,7 +556,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label4->Location = System::Drawing::Point(119, 323);
+			this->label4->Location = System::Drawing::Point(119, 339);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(111, 27);
@@ -570,14 +575,14 @@ namespace CMS {
 			this->panel2->Location = System::Drawing::Point(4, 4);
 			this->panel2->Name = L"panel2";
 			this->panel2->Padding = System::Windows::Forms::Padding(4);
-			this->panel2->Size = System::Drawing::Size(62, 575);
+			this->panel2->Size = System::Drawing::Size(62, 595);
 			this->panel2->TabIndex = 127;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 517);
+			this->account->Location = System::Drawing::Point(4, 537);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(54, 54);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -592,7 +597,7 @@ namespace CMS {
 			this->pnl_account->Controls->Add(this->btn_aboutUs);
 			this->pnl_account->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->pnl_account->Location = System::Drawing::Point(72, 439);
+			this->pnl_account->Location = System::Drawing::Point(72, 462);
 			this->pnl_account->Name = L"pnl_account";
 			this->pnl_account->Padding = System::Windows::Forms::Padding(3);
 			this->pnl_account->Size = System::Drawing::Size(172, 137);
@@ -641,19 +646,33 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(885, 416);
+			this->pictureBox1->Location = System::Drawing::Point(884, 432);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(150, 150);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 129;
 			this->pictureBox1->TabStop = false;
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 7, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::DarkGreen;
+			this->label5->Location = System::Drawing::Point(234, 305);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(543, 20);
+			this->label5->TabIndex = 130;
+			this->label5->Text = L"If student\'s name contains only 1 word, please put it in the [First name] textbox"
+				L"!";
+			// 
 			// Add1StuToClass
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1117, 583);
+			this->ClientSize = System::Drawing::Size(1110, 603);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pnl_account);
 			this->Controls->Add(this->panel2);
@@ -678,18 +697,19 @@ namespace CMS {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->txt_schoolyear);
 			this->Controls->Add(this->btn_toggle);
-			this->Controls->Add(this->pnl_titleUpdateScore);
+			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->checkedListBox);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Add1StuToClass";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Add1StuToClass";
 			this->Load += gcnew System::EventHandler(this, &Add1StuToClass::Add1StuToClass_Load);
-			this->pnl_titleUpdateScore->ResumeLayout(false);
-			this->pnl_titleUpdateScore->PerformLayout();
+			this->pnl_title->ResumeLayout(false);
+			this->pnl_title->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();
 			this->pnl_account->ResumeLayout(false);
@@ -727,7 +747,6 @@ namespace CMS {
 		}
 		catch (ArgumentOutOfRangeException^ exception) {
 			MessageBox::Show("Please create a new class for this school year first");
-			lockAddBtn = true;
 		}
 
 		///////////////////////////////////////////////////////////////
@@ -778,35 +797,51 @@ namespace CMS {
 	}
 
 	private: System::Void txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (!String::IsNullOrWhiteSpace(txt_StudentID->Text) && !String::IsNullOrWhiteSpace(txt_socialID->Text) && !String::IsNullOrWhiteSpace(txt_firstname->Text) && !lockAddBtn) {
-			// do not need to check if last name has been filled yet (in case student's name have only 1 word
+		if (String::IsNullOrWhiteSpace(txt_StudentID->Text) || String::IsNullOrWhiteSpace(txt_socialID->Text) || String::IsNullOrWhiteSpace(txt_firstname->Text))
+			btn_add->Enabled = false;
+		// do not need to check if last name has been filled yet (in case student's name have only 1 word)
+		else {
 			btn_add->Enabled = true;
 			btn_add->Cursor = System::Windows::Forms::Cursors::Hand;
 		}
 	}
+
 	private: System::Void btn_add_Click(System::Object^ sender, System::EventArgs^ e) {
 		int i;
-		for (i = 0; i < checkedListBox->Items->Count; i++) {
-			if (checkedListBox->GetItemChecked(i)) {
+		for (i = 0; i < checkedListBox->Items->Count; i++)
+			if (checkedListBox->GetItemChecked(i))
 				break;
-			}
-		}
+
 		if (i == checkedListBox->Items->Count) {
 			MessageBox::Show("Please choose a class in the list of classes.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
-		DLL<STUDENT*>* newNodeStu = new DLL<STUDENT*>;
+		std::string inputID = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
+		std::string inputClass = msclr::interop::marshal_as<std::string>(checkedListBox->Items[i]->ToString());
+		DLL<STUDENT*>* newNodeStu = L_Student.head, * stuInCurClass = nullptr;
+		// stuInCurClass is used for keeping the very last student in this class in case this class has students
+		while (newNodeStu) {
+			if (newNodeStu->data->Class->convertToString() == inputClass) {
+				stuInCurClass = newNodeStu;
+				if (newNodeStu->data->studentID == inputID) {
+					MessageBox::Show("This student has already been included in this class", "Occurrence", MessageBoxButtons::OK, MessageBoxIcon::Information);
+					return;
+				}
+			}
+			else if (newNodeStu->data->studentID == inputID) {
+				MessageBox::Show("This student has already been included in another class", "Occurrence", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				return;
+			}
+			newNodeStu = newNodeStu->next;
+		}
+
+		newNodeStu = new DLL<STUDENT*>;
 		newNodeStu->data = new STUDENT;
 		newNodeStu->data->Class = convertToClass(msclr::interop::marshal_as<std::string>(checkedListBox->Items[i]->ToString()));
-
-		newNodeStu->next = newNodeStu->data->Class->student.head;
-		newNodeStu->data->Class->student.head->prev = newNodeStu;
-		newNodeStu->data->Class->student.head = newNodeStu;
-
 		if (chkbox_female->Checked) newNodeStu->data->gender = 0;
 		else newNodeStu->data->gender = 1;
 
-		newNodeStu->data->studentID = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
+		newNodeStu->data->studentID = inputID;
 		newNodeStu->data->socialID = msclr::interop::marshal_as<std::string>(txt_socialID->Text);
 
 		newNodeStu->data->firstname = msclr::interop::marshal_as<std::string>(txt_firstname->Text);
@@ -815,6 +850,42 @@ namespace CMS {
 		newNodeStu->data->DoB.day = dateTimePicker->Value.Day;
 		newNodeStu->data->DoB.month = dateTimePicker->Value.Month;
 		newNodeStu->data->DoB.year = dateTimePicker->Value.Year;
+
+		// set username and password to default value:
+		newNodeStu->data->user.username = inputID;
+		// password = lastname + last_3_digits_of_socialID + "@KHTN"
+		std::string last3DigitsOfSocialID = "";
+		if (newNodeStu->data->socialID.length() == 1) last3DigitsOfSocialID = "00" + newNodeStu->data->socialID;
+		else if (newNodeStu->data->socialID.length() == 2) last3DigitsOfSocialID = "01" + newNodeStu->data->socialID;
+		else for (int i = newNodeStu->data->socialID.length() - 1; i >= newNodeStu->data->socialID.length() - 3; i--)
+			last3DigitsOfSocialID = newNodeStu->data->socialID[i] + last3DigitsOfSocialID;
+
+		std::string name = newNodeStu->data->lastname;
+
+		name[0] = name[0] - 'A' + 'a';
+		newNodeStu->data->user.password = newNodeStu->data->lastname + last3DigitsOfSocialID + "@KHTN";
+
+		if (L_Student.head == nullptr) {
+			// check whether any stu of this class has been included in the list L_Student
+			L_Student.head = newNodeStu;
+			L_Student.tail = L_Student.head;
+		}
+		else {
+			// if stuInCurClass != nullptr, stuInCurClass is pointing to the last student of the class in the list
+			// else, this class has no student
+			if (stuInCurClass) {
+				newNodeStu->prev = stuInCurClass;
+				newNodeStu->next = stuInCurClass->next;
+				stuInCurClass->next = newNodeStu;
+				if (newNodeStu->next)	newNodeStu->next->prev = newNodeStu;
+			}
+			else {
+				L_Student.tail->next = newNodeStu;
+				L_Student.tail = L_Student.tail->next;
+			}
+		}
+		System::String^ message = "Account is autogenerated:\n\tUser name: " + gcnew System::String(inputID.c_str()) + "\nPassword: " + gcnew System::String(newNodeStu->data->user.password.c_str());
+		MessageBox::Show(message);
 	}
 
 	private: System::Void txt_name_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -849,8 +920,30 @@ namespace CMS {
 		// then exit
 		Application::Exit();
 	}
-		   /////////////////////////////////////////////////////////////////////////////////////
-		   /////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
+		   // Panel
+	private: System::Void pnl_title_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Record the mouse position when the panel is clicked
+		mouseDownLocation = e->Location;
+		// Record the form position
+		formLocation = this->Location;
+	}
+
+	private: System::Void pnl_title_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		// Check if the left mouse button is pressed
+		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
+			// Calculate the new form position based on the mouse position
+			int dx = e->Location.X - mouseDownLocation.X;
+			int dy = e->Location.Y - mouseDownLocation.Y;
+			int newX = formLocation.X + dx;
+			int newY = formLocation.Y + dy;
+			// Update the form position
+			System::Drawing::Point newLocation(newX, newY);
+			this->Location = newLocation;
+		}
+	}
+	/////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
 	};
 }
-

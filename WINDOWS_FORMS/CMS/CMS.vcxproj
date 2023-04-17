@@ -136,18 +136,42 @@
     <ClInclude Include="AboutUs.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Add1Course.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Add1StuToClass.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Add1StuToCourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Create1Class.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Create1NewSem.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CreateSchoolYear.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Delete1Course.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ExpListStuInCourseCSV.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="export.h" />
     <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="helperFunctions.h" />
+    <ClInclude Include="ImpNewStuCSV.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="import.h" />
     <ClInclude Include="ImpScoreOfCourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ImpStuToCourseCSV.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Login.h">
@@ -163,6 +187,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Structs.h" />
+    <ClInclude Include="UpdateCourseInfo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="UpdateResult.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -181,19 +208,15 @@
     <ClInclude Include="ViewListCoursesOfStu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ViewScoreOf1Stu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewScoreOfClass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ViewScoreOfCourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CSV\Class.csv" />
-    <None Include="CSV\DATA.csv" />
-    <None Include="CSV\SchoolYear.csv" />
-    <None Include="CSV\SemInSchoolYear\2017_2018.csv" />
-    <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv" />
-    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv" />
-    <None Include="CSV\Staff.csv" />
-    <None Include="CSV\Student.csv" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

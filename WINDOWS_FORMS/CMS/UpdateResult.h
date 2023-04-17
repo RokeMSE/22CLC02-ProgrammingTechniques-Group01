@@ -45,6 +45,8 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::SCHOOLYEAR*>* curSchoolyear;
 		GROUP1::SEMESTER* curSemester;
 		System::Windows::Forms::Form^ sourceForm;
+		Point mouseDownLocation, formLocation;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_courseID;
 	private: System::Windows::Forms::TextBox^ txt_coursename;
@@ -103,10 +105,10 @@ namespace CMS {
 	private: System::Windows::Forms::TextBox^ txt_rateTotal;
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::Button^ btn_back;
-	private: System::Windows::Forms::Panel^ pnl_titleUpdateScore;
+	private: System::Windows::Forms::Panel^ pnl_title;
+
 	private: System::Windows::Forms::TextBox^ txt_StudentID_2;
 	private: System::Windows::Forms::Label^ label3;
-	private: Point mouseDownLocation, formLocation;
 	private: System::Windows::Forms::TextBox^ txt_schoolyear_start;
 
 	private: System::Windows::Forms::Label^ label22;
@@ -122,7 +124,7 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ btn_exit;
 	private: System::Windows::Forms::Button^ btn_logout;
 	private: System::Windows::Forms::Button^ btn_aboutUs;
-private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel1;
 
 	private:
 		/// <summary>
@@ -177,7 +179,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->txt_rateTotal = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
-			this->pnl_titleUpdateScore = (gcnew System::Windows::Forms::Panel());
+			this->pnl_title = (gcnew System::Windows::Forms::Panel());
 			this->txt_StudentID_2 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->txt_schoolyear_start = (gcnew System::Windows::Forms::TextBox());
@@ -194,7 +196,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pnl_titleUpdateScore->SuspendLayout();
+			this->pnl_title->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->pnl_account->SuspendLayout();
@@ -770,19 +772,19 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->btn_back->UseVisualStyleBackColor = false;
 			this->btn_back->Click += gcnew System::EventHandler(this, &UpdateResult::btn_back_Click);
 			// 
-			// pnl_titleUpdateScore
+			// pnl_title
 			// 
-			this->pnl_titleUpdateScore->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)),
-				static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->pnl_titleUpdateScore->Controls->Add(this->lbl_title);
-			this->pnl_titleUpdateScore->Location = System::Drawing::Point(68, 5);
-			this->pnl_titleUpdateScore->Margin = System::Windows::Forms::Padding(4);
-			this->pnl_titleUpdateScore->Name = L"pnl_titleUpdateScore";
-			this->pnl_titleUpdateScore->Padding = System::Windows::Forms::Padding(6, 5, 6, 5);
-			this->pnl_titleUpdateScore->Size = System::Drawing::Size(1153, 60);
-			this->pnl_titleUpdateScore->TabIndex = 42;
-			this->pnl_titleUpdateScore->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseDown);
-			this->pnl_titleUpdateScore->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_titleUpdateScore_MouseMove);
+			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->pnl_title->Controls->Add(this->lbl_title);
+			this->pnl_title->Location = System::Drawing::Point(68, 5);
+			this->pnl_title->Margin = System::Windows::Forms::Padding(4);
+			this->pnl_title->Name = L"pnl_title";
+			this->pnl_title->Padding = System::Windows::Forms::Padding(6, 5, 6, 5);
+			this->pnl_title->Size = System::Drawing::Size(1153, 60);
+			this->pnl_title->TabIndex = 42;
+			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_title_MouseDown);
+			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_title_MouseMove);
 			// 
 			// txt_StudentID_2
 			// 
@@ -1061,7 +1063,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->txt_courseID);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->pnl_titleUpdateScore);
+			this->Controls->Add(this->pnl_title);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
@@ -1072,8 +1074,8 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->Name = L"UpdateResult";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Load += gcnew System::EventHandler(this, &UpdateResult::UpdateResult_Load);
-			this->pnl_titleUpdateScore->ResumeLayout(false);
-			this->pnl_titleUpdateScore->PerformLayout();
+			this->pnl_title->ResumeLayout(false);
+			this->pnl_title->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->pnl_account->ResumeLayout(false);
@@ -1381,14 +1383,14 @@ private: System::Windows::Forms::Panel^ panel1;
 		this->sourceForm->Show();
 	}
 
-	private: System::Void pnl_titleUpdateScore_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	private: System::Void pnl_title_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Record the mouse position when the panel is clicked
 		mouseDownLocation = e->Location;
 		// Record the form position
 		formLocation = this->Location;
 	}
 
-	private: System::Void pnl_titleUpdateScore_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	private: System::Void pnl_title_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Check if the left mouse button is pressed
 		if (e->Button == System::Windows::Forms::MouseButtons::Left) {
 			// Calculate the new form position based on the mouse position

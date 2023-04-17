@@ -11,7 +11,7 @@ void main(cli::array<System::String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     bool imp;
-    //int i = 0;
+    int i = 0;
     imp = importClasses();
     if (!imp) goto _export;
     //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(i)));

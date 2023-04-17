@@ -78,7 +78,7 @@ namespace GROUP1 {
 
     // STUDENT
     struct STUDENT {
-        uint No = 0, yearIn = 0;    // yearIn: the year in which that student admitted to school
+        uint yearIn = 0;    // yearIn: the year in which that student admitted to school
         std::string studentID = "";
         std::string firstname = "";
         std::string lastname = "";
@@ -123,7 +123,7 @@ namespace GROUP1 {
 
     struct SCHOOLYEAR {
         uint begin = 0, end = 0;
-        SEMESTER* sem1 = nullptr, *sem2 = nullptr, *sem3 = nullptr;
+        SEMESTER* sem1 = nullptr, * sem2 = nullptr, * sem3 = nullptr;
     };
     /////////////////////////////////////////////////
 

@@ -1,6 +1,1 @@
-﻿  Add1StuToClass.cpp
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\MenuStaff.h(1270,22): error C2061: syntax error: identifier 'Add1StuToClass'
-  Login.cpp
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Add1StuToClass.h(728,39): warning C4101: 'exception': unreferenced local variable
-C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Login.cpp(10,46): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  Generating Code...
+﻿  CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\Debug\CMS.exe

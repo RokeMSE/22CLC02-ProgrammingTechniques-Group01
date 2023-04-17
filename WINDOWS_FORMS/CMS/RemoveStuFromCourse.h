@@ -46,7 +46,8 @@ namespace CMS {
 															// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
 	private: Point mouseDownLocation, formLocation;
-	private: System::Windows::Forms::Panel^ pnl_titleRemv;
+	private: System::Windows::Forms::Panel^ pnl_title;
+
 
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btn_back;
@@ -140,7 +141,7 @@ namespace CMS {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RemoveStuFromCourse::typeid));
-			this->pnl_titleRemv = (gcnew System::Windows::Forms::Panel());
+			this->pnl_title = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->txt_StudentID = (gcnew System::Windows::Forms::TextBox());
@@ -187,25 +188,25 @@ namespace CMS {
 			this->btn_exit = (gcnew System::Windows::Forms::Button());
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
-			this->pnl_titleRemv->SuspendLayout();
+			this->pnl_title->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_icon))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->pnl_account->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// pnl_titleRemv
+			// pnl_title
 			// 
-			this->pnl_titleRemv->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->pnl_titleRemv->Controls->Add(this->label1);
-			this->pnl_titleRemv->Cursor = System::Windows::Forms::Cursors::Default;
-			this->pnl_titleRemv->Location = System::Drawing::Point(4, 4);
-			this->pnl_titleRemv->Name = L"pnl_titleRemv";
-			this->pnl_titleRemv->Size = System::Drawing::Size(1014, 60);
-			this->pnl_titleRemv->TabIndex = 0;
-			this->pnl_titleRemv->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseDown);
-			this->pnl_titleRemv->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseMove);
+			this->pnl_title->Controls->Add(this->label1);
+			this->pnl_title->Cursor = System::Windows::Forms::Cursors::Default;
+			this->pnl_title->Location = System::Drawing::Point(4, 4);
+			this->pnl_title->Name = L"pnl_title";
+			this->pnl_title->Size = System::Drawing::Size(1014, 60);
+			this->pnl_title->TabIndex = 0;
+			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseDown);
+			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &RemoveStuFromCourse::pnl_titleRemv_MouseMove);
 			// 
 			// label1
 			// 
@@ -878,7 +879,7 @@ namespace CMS {
 			this->Controls->Add(this->btn_Search);
 			this->Controls->Add(this->txt_courseID);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->pnl_titleRemv);
+			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->pictureBox_icon);
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
@@ -887,8 +888,8 @@ namespace CMS {
 			this->Name = L"RemoveStuFromCourse";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Load += gcnew System::EventHandler(this, &RemoveStuFromCourse::RemoveStuFromCourse_Load);
-			this->pnl_titleRemv->ResumeLayout(false);
-			this->pnl_titleRemv->PerformLayout();
+			this->pnl_title->ResumeLayout(false);
+			this->pnl_title->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox_icon))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();

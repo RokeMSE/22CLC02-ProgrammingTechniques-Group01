@@ -23,16 +23,13 @@ bool importStudents() {
     string str;
     std::getline(ifs, str);  // skip title line
     while (!ifs.eof()) {
-        struct STUDENT* tmp = new STUDENT;
+        STUDENT* tmp = new STUDENT;
         std::getline(ifs, str, ','); // get username
 
         tmp->user.username = str;
 
         std::getline(ifs, str, ','); // get password
         tmp->user.password = str;
-
-        std::getline(ifs, str, ','); // get No
-        tmp->No = stoi(str);
 
         std::getline(ifs, str, ',');
         tmp->studentID = str;
@@ -45,7 +42,6 @@ bool importStudents() {
 
         std::getline(ifs, str, ',');
         tmp->gender = ((str == "1") ? 1 : 0);
-
         std::getline(ifs, str, ',');
         tmp->DoB = getDate(str);
 
@@ -153,7 +149,7 @@ bool importClasses()
 }
 
 
-bool importStudentsInACourse(std::string filename, COURSE* &c) {
+bool importStudentsInACourse(std::string filename, COURSE*& c) {
     ifstream ifs;
     ifs.open(filename);
     if (ifs.is_open() == false)
@@ -196,7 +192,8 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
                 tmp->prev = s->student->courses.tail;
                 s->student->courses.tail = tmp;
             }
-        } else {
+        }
+        else {
             MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
             return 0;
         }
@@ -205,7 +202,7 @@ bool importStudentsInACourse(std::string filename, COURSE* &c) {
     return true;
 }
 
-bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear) {
+bool importCoursesInASemester(std::string filename, SEMESTER*& a, uint startYear) {
     ifstream inp(filename);
 
     if (!inp.is_open())
@@ -258,7 +255,7 @@ bool importCoursesInASemester(std::string filename, SEMESTER* &a, uint startYear
     return true;
 }
 
-bool importASemesterInASchoolYear(std::string filename, SEMESTER* &newSem, uint startYear) {
+bool importASemesterInASchoolYear(std::string filename, SEMESTER*& newSem, uint startYear) {
     ifstream inp(filename);
     if (!inp.is_open()) return 0;
     string tmp;
@@ -358,18 +355,18 @@ bool importSchoolYears() {
             return 0;
         }
         ////////////////
-    
+
         // create a new Node of L_SchoolYear
-        _createNode: {
-            if (L_SchoolYear.head == nullptr) L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR*>;
-            else {
-                L_SchoolYear.tail->next = new DLL<SCHOOLYEAR*>;
-                L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
-                L_SchoolYear.tail = L_SchoolYear.tail->next;
-            }
-            L_SchoolYear.tail->data = newSchoolyear;
+    _createNode: {
+        if (L_SchoolYear.head == nullptr) L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR*>;
+        else {
+            L_SchoolYear.tail->next = new DLL<SCHOOLYEAR*>;
+            L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
+            L_SchoolYear.tail = L_SchoolYear.tail->next;
         }
-        ////////////////
+        L_SchoolYear.tail->data = newSchoolyear;
+        }
+    ////////////////
     }
     g_currentSchoolYear = L_SchoolYear.tail->data;
     if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
@@ -386,7 +383,6 @@ bool importSchoolYears() {
         getline(inp2, latestUsername, ',');
         getline(inp2, latestPassword);
         inp2.close();
-        MessageBox::Show("aa");
     }
     return 1;
 }

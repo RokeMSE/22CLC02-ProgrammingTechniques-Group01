@@ -78,32 +78,39 @@
     <ClInclude Include="ViewScoreOfCourse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CSV\Class.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\SchoolYear.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\Staff.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\Student.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\SemInSchoolYear\2017_2018.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\SemInSchoolYear\CourseInSemester\2017_sem1.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\2017_sem1_course12344.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CSV\DATA.csv">
-      <Filter>Resource Files</Filter>
-    </None>
+    <ClInclude Include="Add1Course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Create1NewSem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpStuToCourseCSV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateCourseInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpListStuInCourseCSV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewScoreOfClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateSchoolYear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Create1Class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpNewStuCSV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Delete1Course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewScoreOf1Stu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="export.cpp">

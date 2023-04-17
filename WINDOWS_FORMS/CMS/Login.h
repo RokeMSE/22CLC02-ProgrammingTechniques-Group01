@@ -272,17 +272,18 @@ namespace CMS {
 		}
 	}
 
-	void checkBoxRemember(GROUP1::USER input) {
-		if (this->chkbx_remember->Checked) {
-			latestUsername = input.username;
-			latestPassword = input.password;
-			latestCheckRememberLogin = true;
-		} else {
-			latestUsername = latestPassword = "";
-			latestCheckRememberLogin = false;
-		}
-	}
-	
+		   void checkBoxRemember(GROUP1::USER input) {
+			   if (this->chkbx_remember->Checked) {
+				   latestUsername = input.username;
+				   latestPassword = input.password;
+				   latestCheckRememberLogin = true;
+			   }
+			   else {
+				   latestUsername = latestPassword = "";
+				   latestCheckRememberLogin = false;
+			   }
+		   }
+
 	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
 		GROUP1::USER input;
 		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
@@ -371,5 +372,5 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-};
+	};
 }
