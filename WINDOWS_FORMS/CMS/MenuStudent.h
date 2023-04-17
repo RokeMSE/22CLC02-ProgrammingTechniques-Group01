@@ -535,30 +535,9 @@ namespace CMS {
 		this->sourceForm->Show();
 	}
 
-	private: System::Void btn_UpdateResult_Click(System::Object^ sender, System::EventArgs^ e) {
-		UpdateResult^ form = gcnew CMS::UpdateResult(this);
-		this->Hide();
-		form->Show();
-	}
-
-	private: System::Void btn_Remove1StuInCourse_Click(System::Object^ sender, System::EventArgs^ e) {
-		RemoveStuFromCourse^ form = gcnew RemoveStuFromCourse(this, sourceForm);
-		this->Hide();
-		form->Show();
-	}
 	private: System::Void btn_ViewCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		ViewListCourses^ form = gcnew CMS::ViewListCourses(this);
-		form->Show();
-	}
-	private: System::Void btn_ImportScore_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		ImpScoreOfCourse^ form = gcnew CMS::ImpScoreOfCourse(this);
-		form->Show();
-	}
-	private: System::Void btn_Add1StuToCourse_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		Add1StuToCourse^ form = gcnew Add1StuToCourse(this, sourceForm);
 		form->Show();
 	}
 	private: System::Void ViewBtn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -587,10 +566,6 @@ namespace CMS {
 	}
 	private: System::Void ChangePassBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	}
-	private: System::Void btn_StuInCourseCSV_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void btn_Create1NewClass_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
