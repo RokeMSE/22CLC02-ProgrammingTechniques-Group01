@@ -92,6 +92,7 @@ namespace CMS {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -309,6 +310,7 @@ namespace CMS {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Cursor = System::Windows::Forms::Cursors::No;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
@@ -402,6 +404,7 @@ namespace CMS {
 			// 
 			this->label13->AutoSize = true;
 			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->Cursor = System::Windows::Forms::Cursors::No;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
@@ -824,6 +827,9 @@ namespace CMS {
 		if (g_currentSemester->No == 1) chkbox_sem1->Checked = true;
 		else if (g_currentSemester->No == 2) chkbox_sem2->Checked = true;
 		else chkbox_sem2->Checked = true;
+
+		// reset form
+		txt_maxStu->Text = L"50";
 	}
 
 	//////////////////////////////////////////////////////////////////////////
@@ -967,6 +973,45 @@ namespace CMS {
 				}
 				cur = cur->next;
 			}
+			cur = new DLL<COURSE*>;
+			cur->data = new COURSE;
+			cur->data->ID = courseID;
+			cur->data->name = trim_whitespace(msclr::interop::marshal_as<std::string>(txt_coursename->Text));
+			cur->data->teacher = trim_whitespace(msclr::interop::marshal_as<std::string>(txt_teacher->Text));
+			cur->data->maxStudents = Convert::ToInt32(txt_maxStu->Text);
+			cur->data->credit = Convert::ToInt32(txt_credit->Text);
+
+			for (int i = 0; i < 7; i++)
+				if (weekday[i]->Checked == true) {
+					cur->data->day = WeekDay(i);
+					break;
+				}
+			for (int i = 0; i < 4; i++)
+				if (session[i]->Checked == true) {
+					cur->data->session = Session(i);
+					break;
+				}
+
+			if (g_currentSemester->course.head) {
+				g_currentSemester->course.tail->next = cur;
+				cur->prev = g_currentSemester->course.tail;
+				g_currentSemester->course.tail = g_currentSemester->course.tail->next;
+			}
+			else {
+				g_currentSemester->course.head = g_currentSemester->course.tail = cur;
+			}
+			txt_courseID->Text = L"";
+			txt_coursename->Text = L"";
+			txt_teacher->Text = L"";
+			txt_maxStu->Text = L"50";
+			txt_credit->Text = L"";
+			int i;
+			for (i = 0; i < 4; i++) {
+				weekday[i]->Checked = false;
+				session[i]->Checked = false;
+			}
+			for (; i < 7; i++)
+				weekday[i]->Checked = false;
 		}
 		private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->Close();
