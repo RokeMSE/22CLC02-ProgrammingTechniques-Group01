@@ -381,7 +381,6 @@ namespace CMS {
 			this->txt_courseID->Name = L"txt_courseID";
 			this->txt_courseID->Size = System::Drawing::Size(168, 33);
 			this->txt_courseID->TabIndex = 76;
-			this->txt_courseID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &Add1StuToCourse::txt_intOnly_KeyPress);
 			// 
 			// label2
 			// 
@@ -417,7 +416,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(284, 15);
+			this->lbl_title->Location = System::Drawing::Point(282, 15);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(423, 31);
 			this->lbl_title->TabIndex = 92;
@@ -445,7 +444,7 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(705, 96);
+			this->pictureBox1->Location = System::Drawing::Point(708, 96);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(155, 155);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -769,8 +768,8 @@ namespace CMS {
 			// 
 			// Add1StuToCourse
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 22);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1020, 695);
 			this->Controls->Add(this->pnl_account);

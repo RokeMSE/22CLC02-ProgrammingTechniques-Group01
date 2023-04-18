@@ -226,7 +226,6 @@ namespace CMS {
 			this->txt_courseID->Name = L"txt_courseID";
 			this->txt_courseID->Size = System::Drawing::Size(375, 33);
 			this->txt_courseID->TabIndex = 1;
-			this->txt_courseID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &UpdateResult::txt_intOnly_KeyPress);
 			// 
 			// txt_coursename
 			// 
@@ -954,7 +953,7 @@ namespace CMS {
 			this->pnl_account->Controls->Add(this->btn_aboutUs);
 			this->pnl_account->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->pnl_account->Location = System::Drawing::Point(75, 623);
+			this->pnl_account->Location = System::Drawing::Point(72, 623);
 			this->pnl_account->Name = L"pnl_account";
 			this->pnl_account->Padding = System::Windows::Forms::Padding(3);
 			this->pnl_account->Size = System::Drawing::Size(172, 137);
@@ -1428,11 +1427,13 @@ namespace CMS {
 			chkbox_sem2->Checked = 0;	chkbox_sem3->Checked = 0;
 		}
 	}
+
 	private: System::Void chkbox_sem2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (chkbox_sem2->Checked) {
 			chkbox_sem1->Checked = 0;	chkbox_sem3->Checked = 0;
 		}
 	}
+
 	private: System::Void chkbox_sem3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (chkbox_sem3->Checked) {
 			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;

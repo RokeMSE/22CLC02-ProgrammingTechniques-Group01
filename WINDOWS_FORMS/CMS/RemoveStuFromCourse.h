@@ -328,7 +328,6 @@ namespace CMS {
 			this->txt_courseID->Name = L"txt_courseID";
 			this->txt_courseID->Size = System::Drawing::Size(147, 33);
 			this->txt_courseID->TabIndex = 19;
-			this->txt_courseID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RemoveStuFromCourse::txt_intOnly_KeyPress);
 			// 
 			// label2
 			// 

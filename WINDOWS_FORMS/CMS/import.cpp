@@ -90,7 +90,6 @@ bool importStaffs() {
         std::getline(ifs, tmp->user.password, ',');
         std::getline(ifs, tmp->firstname, ',');
         std::getline(ifs, tmp->lastname);
-
         if (L_Staff.head == nullptr)
         {
             L_Staff.head = L_Staff.tail = new DLL<STAFF*>;
@@ -158,7 +157,7 @@ bool importStudentsInACourse(std::string filename, COURSE*& c) {
     //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(4)));
     std::getline(ifs, str);   /// skip the title line;
 
-    DLL<STUDENT*>* oriStu;
+    DLL<STUDENT*>* oriStu = nullptr;
     while (!ifs.eof())
     {
         std::getline(ifs, str, ',');   /// (str) will have format: "[StudentID]"
@@ -194,7 +193,9 @@ bool importStudentsInACourse(std::string filename, COURSE*& c) {
             }
         }
         else {
-            MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
+            if (oriStu) MessageBox::Show(msclr::interop::marshal_as<System::String^>("Cannot find student [" + oriStu->data->studentID + "] in the list of students"));
+            else MessageBox::Show(msclr::interop::marshal_as<System::String^>("No student in database"));
+
             return 0;
         }
     }
@@ -357,22 +358,28 @@ bool importSchoolYears() {
         ////////////////
 
         // create a new Node of L_SchoolYear
-    _createNode: {
-        if (L_SchoolYear.head == nullptr) L_SchoolYear.head = L_SchoolYear.tail = new DLL<SCHOOLYEAR*>;
-        else {
-            L_SchoolYear.tail->next = new DLL<SCHOOLYEAR*>;
-            L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
-            L_SchoolYear.tail = L_SchoolYear.tail->next;
-        }
-        L_SchoolYear.tail->data = newSchoolyear;
+        _createNode: {
+            if (L_SchoolYear.head == nullptr) {
+                L_SchoolYear.head = new DLL<SCHOOLYEAR*>;
+                L_SchoolYear.tail = L_SchoolYear.head;
+            }
+            else {
+                L_SchoolYear.tail->next = new DLL<SCHOOLYEAR*>;
+                L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
+                L_SchoolYear.tail = L_SchoolYear.tail->next;
+            }
+            L_SchoolYear.tail->data = newSchoolyear;
         }
     ////////////////
     }
-    g_currentSchoolYear = L_SchoolYear.tail->data;
-    if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
-    else if (!g_currentSchoolYear->sem2) g_currentSemester = g_currentSchoolYear->sem1;
-    else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;
-    else g_currentSemester = g_currentSchoolYear->sem3;
+    
+    if (L_SchoolYear.tail) {
+        g_currentSchoolYear = L_SchoolYear.tail->data;
+        if (!g_currentSchoolYear->sem1) g_currentSemester = nullptr;
+        else if (!g_currentSchoolYear->sem2) g_currentSemester = g_currentSchoolYear->sem1;
+        else if (!g_currentSchoolYear->sem3) g_currentSemester = g_currentSchoolYear->sem2;
+        else g_currentSemester = g_currentSchoolYear->sem3;
+    }
     inp.close();
 
     ifstream inp2("CSV/DATA.csv");

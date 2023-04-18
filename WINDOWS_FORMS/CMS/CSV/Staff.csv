@@ -1,9 +1,9 @@
 username,password,firstname,lastname
-hoang8@123,5staff@8,Hoang,Thanh Tu
-le12@123,2staff@12,Le,Thi Anh Thao
-nguyen13@123,6staff@13,Nguyen,Thi Minh Phuc
-truong10@123,6staff@10,Truong,Thanh Toan
-truong17@123,6staff@17,Truong,Nguyen Hien Luong
+hoang8@123,5staff@8,Hoang Thanh,Tu
+le12@123,2staff@12,Le Thi Anh,Thao
+nguyen13@123,6staff@13,Nguyen Thi Minh,Phuc
+truong10@123,6staff@10,Truong Thanh,Toan
+truong17@123,6staff@17,Truong Nguyen Hien,Luong
 ly8@123,2staff@8,Ly,Ngoc Han
-nguyen8@123,6staff@8,Nguyen,Minh Dat
-nguyen10@123,6staff@10,Nguyen,Xuan Thanh
+nguyen8@123,6staff@8,Nguyen Minh,Dat
+nguyen10@123,6staff@10,Nguyen Xuan,Thanh

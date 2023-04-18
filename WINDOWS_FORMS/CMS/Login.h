@@ -372,5 +372,5 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	};
+};
 }

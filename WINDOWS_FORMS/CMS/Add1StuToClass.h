@@ -114,7 +114,6 @@ namespace CMS {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Add1StuToClass::typeid));
 			this->checkedListBox = (gcnew System::Windows::Forms::CheckedListBox());
-			this->pnl_title = (gcnew System::Windows::Forms::Panel());
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->btn_toggle = (gcnew System::Windows::Forms::Button());
@@ -146,7 +145,6 @@ namespace CMS {
 			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->pnl_title->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->pnl_account->SuspendLayout();
@@ -164,30 +162,13 @@ namespace CMS {
 			this->checkedListBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->checkedListBox->FormattingEnabled = true;
-			this->checkedListBox->Location = System::Drawing::Point(849, 195);
+			this->checkedListBox->Location = System::Drawing::Point(860, 195);
 			this->checkedListBox->Margin = System::Windows::Forms::Padding(4);
 			this->checkedListBox->Name = L"checkedListBox";
-			this->checkedListBox->Size = System::Drawing::Size(223, 210);
+			this->checkedListBox->Size = System::Drawing::Size(213, 210);
 			this->checkedListBox->TabIndex = 8;
 			this->checkedListBox->ThreeDCheckBoxes = true;
 			this->checkedListBox->ItemCheck += gcnew System::Windows::Forms::ItemCheckEventHandler(this, &Add1StuToClass::checkedListBox_ItemCheck);
-			// 
-			// pnl_title
-			// 
-			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
-				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->pnl_title->Controls->Add(this->lbl_title);
-			this->pnl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->pnl_title->Location = System::Drawing::Point(65, 4);
-			this->pnl_title->Margin = System::Windows::Forms::Padding(4);
-			this->pnl_title->Name = L"pnl_title";
-			this->pnl_title->Padding = System::Windows::Forms::Padding(5);
-			this->pnl_title->Size = System::Drawing::Size(1047, 60);
-			this->pnl_title->TabIndex = 43;
-			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseDown);
-			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseMove);
-
 			// 
 			// lbl_title
 			// 
@@ -196,7 +177,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(280, 15);
+			this->lbl_title->Location = System::Drawing::Point(326, 15);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(515, 31);
@@ -252,6 +233,7 @@ namespace CMS {
 			this->txt_schoolyear->Location = System::Drawing::Point(233, 109);
 			this->txt_schoolyear->Margin = System::Windows::Forms::Padding(4);
 			this->txt_schoolyear->Name = L"txt_schoolyear";
+			this->txt_schoolyear->ReadOnly = true;
 			this->txt_schoolyear->Size = System::Drawing::Size(193, 33);
 			this->txt_schoolyear->TabIndex = 45;
 			// 
@@ -293,7 +275,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label12->Location = System::Drawing::Point(87, 389);
+			this->label12->Location = System::Drawing::Point(87, 397);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(142, 27);
@@ -331,7 +313,7 @@ namespace CMS {
 			this->txt_firstname->Name = L"txt_firstname";
 			this->txt_firstname->Size = System::Drawing::Size(339, 33);
 			this->txt_firstname->TabIndex = 5;
-			this->txt_firstname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_TextChanged);
+			this->txt_firstname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_name_TextChanged);
 			// 
 			// label10
 			// 
@@ -438,7 +420,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_add->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_add->Location = System::Drawing::Point(451, 432);
+			this->btn_add->Location = System::Drawing::Point(451, 440);
 			this->btn_add->Margin = System::Windows::Forms::Padding(4);
 			this->btn_add->Name = L"btn_add";
 			this->btn_add->Size = System::Drawing::Size(139, 49);
@@ -492,7 +474,7 @@ namespace CMS {
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker->Location = System::Drawing::Point(233, 386);
+			this->dateTimePicker->Location = System::Drawing::Point(233, 394);
 			this->dateTimePicker->MaxDate = System::DateTime(2023, 4, 16, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(1930, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
@@ -515,7 +497,7 @@ namespace CMS {
 			this->txt_lastname->Name = L"txt_lastname";
 			this->txt_lastname->Size = System::Drawing::Size(99, 33);
 			this->txt_lastname->TabIndex = 122;
-			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_name_TextChanged);
+			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_TextChanged);
 			// 
 			// label2
 			// 
@@ -541,10 +523,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->txt_fullname->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->txt_fullname->Location = System::Drawing::Point(232, 336);
+			this->txt_fullname->Location = System::Drawing::Point(232, 344);
 			this->txt_fullname->Margin = System::Windows::Forms::Padding(4);
 			this->txt_fullname->MaxLength = 60;
 			this->txt_fullname->Name = L"txt_fullname";
+			this->txt_fullname->ReadOnly = true;
 			this->txt_fullname->Size = System::Drawing::Size(568, 33);
 			this->txt_fullname->TabIndex = 124;
 			// 
@@ -556,7 +539,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label4->Location = System::Drawing::Point(119, 339);
+			this->label4->Location = System::Drawing::Point(119, 347);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(111, 27);
@@ -591,7 +574,7 @@ namespace CMS {
 			this->account->Click += gcnew System::EventHandler(this, &Add1StuToClass::account_Click);
 			// 
 			// pnl_account
-			// 
+			//
 			this->pnl_account->Controls->Add(this->btn_exit);
 			this->pnl_account->Controls->Add(this->btn_logout);
 			this->pnl_account->Controls->Add(this->btn_aboutUs);
@@ -646,7 +629,7 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(884, 432);
+			this->pictureBox1->Location = System::Drawing::Point(887, 432);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(150, 150);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -661,17 +644,18 @@ namespace CMS {
 			this->label5->ForeColor = System::Drawing::Color::DarkGreen;
 			this->label5->Location = System::Drawing::Point(234, 305);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(543, 20);
+			this->label5->Size = System::Drawing::Size(542, 20);
 			this->label5->TabIndex = 130;
-			this->label5->Text = L"If student\'s name contains only 1 word, please put it in the [First name] textbox"
-				L"!";
+			this->label5->Text = L"If student\'s name contains only 1 word, please put it in the [Last name] textbox!"
+				L"";
 			// 
 			// Add1StuToClass
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1110, 603);
+			this->Controls->Add(this->lbl_title);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pnl_account);
@@ -687,6 +671,7 @@ namespace CMS {
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->txt_yearIn);
+			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->txt_firstname);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->txt_socialID);
@@ -697,26 +682,24 @@ namespace CMS {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->txt_schoolyear);
 			this->Controls->Add(this->btn_toggle);
-			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->checkedListBox);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Location = System::Drawing::Point(65, 4);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Add1StuToClass";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Add1StuToClass";
 			this->Load += gcnew System::EventHandler(this, &Add1StuToClass::Add1StuToClass_Load);
-			this->pnl_title->ResumeLayout(false);
-			this->pnl_title->PerformLayout();
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseMove);
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();
 			this->pnl_account->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 
@@ -747,6 +730,9 @@ namespace CMS {
 		}
 		catch (ArgumentOutOfRangeException^ exception) {
 			MessageBox::Show("Please create a new class for this school year first");
+			this->Close();
+			sourceForm->Show();
+			return;
 		}
 
 		///////////////////////////////////////////////////////////////
@@ -754,8 +740,6 @@ namespace CMS {
 		// reset form
 		btn_add->Enabled = false;
 		btn_add->Cursor = System::Windows::Forms::Cursors::No;
-		checkedListBox->Visible = false;
-		btn_toggle->Text = L"List of classes \u2192";
 		txt_StudentID->Text = L"";
 		txt_socialID->Text = L"";
 		txt_firstname->Text = L"";
@@ -797,7 +781,7 @@ namespace CMS {
 	}
 
 	private: System::Void txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (String::IsNullOrWhiteSpace(txt_StudentID->Text) || String::IsNullOrWhiteSpace(txt_socialID->Text) || String::IsNullOrWhiteSpace(txt_firstname->Text))
+		if (String::IsNullOrWhiteSpace(txt_StudentID->Text) || String::IsNullOrWhiteSpace(txt_socialID->Text) || String::IsNullOrWhiteSpace(txt_lastname->Text))
 			btn_add->Enabled = false;
 		// do not need to check if last name has been filled yet (in case student's name have only 1 word)
 		else {
@@ -920,9 +904,10 @@ namespace CMS {
 		// then exit
 		Application::Exit();
 	}
+
 	/////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////
-		   // Panel
+	// Panel
 	private: System::Void pnl_title_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Record the mouse position when the panel is clicked
 		mouseDownLocation = e->Location;

@@ -547,14 +547,18 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->MenuPanel->Location = System::Drawing::Point(249, 0);
 			this->MenuPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MenuPanel->Name = L"MenuPanel";
+			this->MenuPanel->Padding = System::Windows::Forms::Padding(20);
 			this->MenuPanel->Size = System::Drawing::Size(952, 146);
 			this->MenuPanel->TabIndex = 28;
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(667, 18);
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(826, 20);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(98, 90);
+			this->pictureBox1->Padding = System::Windows::Forms::Padding(9);
+			this->pictureBox1->Size = System::Drawing::Size(106, 106);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 14;
 			this->pictureBox1->TabStop = false;
@@ -565,7 +569,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 			this->MenuLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Black", 23, System::Drawing::FontStyle::Bold));
 			this->MenuLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(106)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->MenuLabel->Location = System::Drawing::Point(26, 38);
+			this->MenuLabel->Location = System::Drawing::Point(45, 39);
 			this->MenuLabel->Name = L"MenuLabel";
 			this->MenuLabel->Padding = System::Windows::Forms::Padding(4);
 			this->MenuLabel->Size = System::Drawing::Size(336, 70);
@@ -1074,7 +1078,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox1;
 	}
 	private: System::Void btn_ImportScore_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		ImpScoreOfCourse^ form = gcnew CMS::ImpScoreOfCourse(this);
+		ImpScoreOfCourse^ form = gcnew CMS::ImpScoreOfCourse(this, sourceForm);
 		form->Show();
 	}
 	private: System::Void btn_Add1StuToCourse_Click(System::Object^ sender, System::EventArgs^ e) {

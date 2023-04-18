@@ -1,3 +1,3 @@
 ID,Name,Teacher,Credit,Max Students,Day,Session,File containing students in the course
-11003,Toan hoc to hop,Le Van Luyen,3,87,WED,S2,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2022_sem1_course11003.csv
-10004,Phuong phap lap trinh huong doi tuong,Nguyen Minh Huy,4,48,FRI,S1,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2022_sem1_course10004.csv
+MTH11003,Toan hoc to hop,Le Van Luyen,3,87,WED,S2,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2022_sem1_courseMTH11003.csv
+CSC10004,Phuong phap lap trinh huong doi tuong,Nguyen Minh Huy,4,48,FRI,S1,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2022_sem1_courseCSC10004.csv

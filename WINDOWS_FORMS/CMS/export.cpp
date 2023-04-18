@@ -84,7 +84,8 @@ void exportStudentsInACourse(string filename, COURSE*& c) {
     ofstream ofs(filename);
 
     ofs << "StudentID,othermark,midtermMark,finalMark,totalMark"; // this is title line
-    if (cur)    ofs << endl;
+    if (!cur)   return;
+    ofs << endl;
 
     GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp; // the node to be deleted
     while (cur)
@@ -105,7 +106,8 @@ void exportCoursesInASemester(std::string filename, GROUP1::SEMESTER*& sem, uint
 
     GROUP1::DLL<GROUP1::COURSE*>* temp; // the node to be deleted
     out << "ID,Name,Teacher,Credit,Max Students,Day,Session,File containing students in the course";
-    if (cur)    out << endl;
+    if (!cur)    return;
+    out << endl;
     while (cur) {
         string file = "CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/" + to_string(startYear) + "_sem" + to_string(sem->No) + "_course" + cur->data->ID + ".csv";
         out << cur->data->ID << ',' << cur->data->name << ',' << cur->data->teacher << ',' << cur->data->credit << ',' << cur->data->maxStudents << ',' << convertFromWeekDay(cur->data->day) << ',' << convertFromSession(cur->data->session);
@@ -139,7 +141,8 @@ void exportSchoolYears() {
     // since then, list.tail != nullptr
     ofstream out("CSV/SchoolYear.csv");
     out << "Beginning year,Ending year,File containing semesters,1st semester,2nd semester,3rd semester";    // title line
-    if (cur) out << endl;
+    if (!cur)   return;
+    out << endl;
     string file;
     GROUP1::DLL<GROUP1::SCHOOLYEAR*>* dummy; // the node to be deleted
     while (cur) {
