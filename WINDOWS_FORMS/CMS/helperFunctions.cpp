@@ -1,8 +1,17 @@
 #include "helperFunctions.h"
 #include "GlobalVariables.h"
+#include <regex>
 
 using namespace std;
 using namespace GROUP1;
+
+extern std::string trim_whitespace(const std::string& str) {
+    // Create a regular expression pattern that matches whitespace at the beginning or end of the string
+    std::regex pattern("^\\s+|\\s+$");
+
+    // Use std::regex_replace to replace all occurrences of the pattern with an empty string
+    return std::regex_replace(str, pattern, "");
+}
 
 extern DATE getDate(string chr) {
     DATE date;

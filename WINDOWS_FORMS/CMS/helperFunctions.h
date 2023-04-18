@@ -2,6 +2,7 @@
 #include "Structs.h"
 #include <string>
 
+extern std::string trim_whitespace(const std::string& str);
 extern std::string DateToString(GROUP1::DATE date);
 extern GROUP1::DATE getDate(std::string chr);
 extern std::string DayToString(GROUP1::WeekDay day);

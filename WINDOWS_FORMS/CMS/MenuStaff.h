@@ -7,6 +7,7 @@
 #include "ImpScoreOfCourse.h"
 #include "Add1StuToCourse.h"
 #include "Add1StuToClass.h"
+#include "Add1Course.h"
 
 namespace CMS {
 
@@ -42,124 +43,32 @@ namespace CMS {
 				delete components;
 			}
 		}
-
-
-
-
 	protected:
-
-	protected:
-
-
-
-
-
 	private: System::Windows::Forms::Button^ btn_StuInCourseCSV;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ btn_Remove1StuInCourse;
-
-
 	private: System::Windows::Forms::Button^ btn_Delete1Course;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ btn_ImportScore;
-
-
-
 	private: System::Windows::Forms::Panel^ OptionPanel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^ MenuPanel;
 	private: System::Windows::Forms::Label^ MenuLabel;
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ Icon;
-
 	private: System::Windows::Forms::Panel^ ImagePanel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ RemoveBtn;
 	private: System::Windows::Forms::Button^ AddBtn;
 	private: System::Windows::Forms::Button^ UpdateBtn;
 	private: System::Windows::Forms::Button^ CreateBtn;
 	private: System::Windows::Forms::Button^ ViewBtn;
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^ RemovePanel;
 	private: System::Windows::Forms::Panel^ UpdatePanel;
 	private: System::Windows::Forms::Button^ btn_UpdateCourse;
 	private: System::Windows::Forms::Button^ btn_UpdateResult;
 	private: System::Windows::Forms::Panel^ AddPanel;
-
 	private: System::Windows::Forms::Button^ btn_Add1StuToCourse;
 	private: System::Windows::Forms::Button^ btn_AddStuToClass;
 	private: System::Windows::Forms::Button^ btn_Add1CourseToCurSem;
 	private: System::Windows::Forms::Panel^ ViewPanel;
 	private: System::Windows::Forms::Button^ btn_ViewCourses;
 	private: System::Windows::Forms::Button^ btn_ViewClasses;
-
-
-
 	private: System::Windows::Forms::Button^ btn_Create1Sem;
 	private: System::Windows::Forms::Button^ btn_CreateSchoolYear;
 	private: System::Windows::Forms::Button^ btn_Create1NewClass;
@@ -171,28 +80,11 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ btn_exit;
 	private: System::Windows::Forms::Button^ btn_logout;
 	private: System::Windows::Forms::Button^ ChangePassBtn;
-
 	private: System::Windows::Forms::Button^ ViewScoreOfACourseBtn;
 	private: System::Windows::Forms::Button^ ViewStusInACourseBtn;
 	private: System::Windows::Forms::Button^ ViewStusInClassBtn;
 	private: System::Windows::Forms::Button^ ExportStusInACourseBtn;
-private: System::Windows::Forms::PictureBox^ pictureBox1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -1299,7 +1191,10 @@ private: System::Void ViewStusInACourseBtn_Click(System::Object^ sender, System:
 private: System::Void ViewScoreOfACourseBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btn_Add1CourseToCurSem_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	Form^ form = gcnew Add1Course(this, sourceForm);
+	this->Hide();
+	form->Show();
+}
 private: System::Void MenuLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 	private: System::Void btn_CreateSchoolYear_Click(System::Object^ sender, System::EventArgs^ e) {

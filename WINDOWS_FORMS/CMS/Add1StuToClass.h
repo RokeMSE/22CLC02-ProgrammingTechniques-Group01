@@ -44,7 +44,6 @@ namespace CMS {
 		Point mouseDownLocation, formLocation;
 
 	private: System::Windows::Forms::CheckedListBox^ checkedListBox;
-	private: System::Windows::Forms::Panel^ pnl_title;
 
 	private: System::Windows::Forms::Button^ btn_back;
 	private: System::Windows::Forms::Label^ lbl_title;
@@ -88,6 +87,9 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ btn_aboutUs;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Panel^ pnl_title;
+	private: System::Windows::Forms::Label^ label7;
+
 
 
 
@@ -145,10 +147,13 @@ namespace CMS {
 			this->btn_aboutUs = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->pnl_title = (gcnew System::Windows::Forms::Panel());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->pnl_account->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->pnl_title->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// checkedListBox
@@ -177,7 +182,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(326, 15);
+			this->lbl_title->Location = System::Drawing::Point(280, 15);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(515, 31);
@@ -275,7 +280,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label12->Location = System::Drawing::Point(87, 397);
+			this->label12->Location = System::Drawing::Point(87, 389);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(142, 27);
@@ -420,7 +425,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_add->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_add->Location = System::Drawing::Point(451, 440);
+			this->btn_add->Location = System::Drawing::Point(452, 430);
 			this->btn_add->Margin = System::Windows::Forms::Padding(4);
 			this->btn_add->Name = L"btn_add";
 			this->btn_add->Size = System::Drawing::Size(139, 49);
@@ -474,7 +479,7 @@ namespace CMS {
 			this->dateTimePicker->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker->Location = System::Drawing::Point(233, 394);
+			this->dateTimePicker->Location = System::Drawing::Point(233, 386);
 			this->dateTimePicker->MaxDate = System::DateTime(2023, 4, 16, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(1930, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
@@ -523,7 +528,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->txt_fullname->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->txt_fullname->Location = System::Drawing::Point(232, 344);
+			this->txt_fullname->Location = System::Drawing::Point(232, 336);
 			this->txt_fullname->Margin = System::Windows::Forms::Padding(4);
 			this->txt_fullname->MaxLength = 60;
 			this->txt_fullname->Name = L"txt_fullname";
@@ -539,7 +544,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label4->Location = System::Drawing::Point(119, 347);
+			this->label4->Location = System::Drawing::Point(119, 339);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(111, 27);
@@ -574,7 +579,7 @@ namespace CMS {
 			this->account->Click += gcnew System::EventHandler(this, &Add1StuToClass::account_Click);
 			// 
 			// pnl_account
-			//
+			// 
 			this->pnl_account->Controls->Add(this->btn_exit);
 			this->pnl_account->Controls->Add(this->btn_logout);
 			this->pnl_account->Controls->Add(this->btn_aboutUs);
@@ -629,7 +634,7 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(887, 432);
+			this->pictureBox1->Location = System::Drawing::Point(892, 432);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(150, 150);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -649,13 +654,39 @@ namespace CMS {
 			this->label5->Text = L"If student\'s name contains only 1 word, please put it in the [Last name] textbox!"
 				L"";
 			// 
+			// pnl_title
+			// 
+			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->pnl_title->Controls->Add(this->label7);
+			this->pnl_title->Location = System::Drawing::Point(66, 4);
+			this->pnl_title->Name = L"pnl_title";
+			this->pnl_title->Size = System::Drawing::Size(1040, 60);
+			this->pnl_title->TabIndex = 131;
+			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseDown);
+			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseMove);
+
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(291, 15);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(465, 31);
+			this->label7->TabIndex = 132;
+			this->label7->Text = L"ADD A NEW STUDENT TO THE CLASS";
+			// 
 			// Add1StuToClass
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1110, 603);
-			this->Controls->Add(this->lbl_title);
+			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pnl_account);
@@ -671,7 +702,6 @@ namespace CMS {
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->txt_yearIn);
-			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->txt_firstname);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->txt_socialID);
@@ -686,20 +716,20 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Location = System::Drawing::Point(65, 4);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Add1StuToClass";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Add1StuToClass";
 			this->Load += gcnew System::EventHandler(this, &Add1StuToClass::Add1StuToClass_Load);
-			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseDown);
-			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Add1StuToClass::pnl_title_MouseMove);
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();
 			this->pnl_account->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->pnl_title->ResumeLayout(false);
+			this->pnl_title->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 
@@ -904,10 +934,9 @@ namespace CMS {
 		// then exit
 		Application::Exit();
 	}
-
-	/////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////
-	// Panel
+		   /////////////////////////////////////////////////////////////////////////////////////
+		   /////////////////////////////////////////////////////////////////////////////////////
+				  // Panel
 	private: System::Void pnl_title_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Record the mouse position when the panel is clicked
 		mouseDownLocation = e->Location;
@@ -928,7 +957,7 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-	/////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////
+		   /////////////////////////////////////////////////////////////////////////////////////
+		   /////////////////////////////////////////////////////////////////////////////////////
 	};
 }
