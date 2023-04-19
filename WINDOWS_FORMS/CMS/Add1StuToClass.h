@@ -213,7 +213,7 @@ namespace CMS {
 			this->btn_toggle->BackColor = System::Drawing::Color::Linen;
 			this->btn_toggle->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_toggle->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->btn_toggle->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_toggle->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_toggle->Location = System::Drawing::Point(849, 147);
 			this->btn_toggle->Margin = System::Windows::Forms::Padding(4);
@@ -751,7 +751,6 @@ namespace CMS {
 		// default mode
 		checkedListBox->Visible = false;
 		btn_toggle->Text = L"List of classes \u2192";
-		txt_yearIn->Text = gcnew System::String(std::to_string(g_currentSchoolYear->begin).c_str());
 		chkbox_male->Checked = true;
 		chkbox_female->Checked = false;
 		txt_yearIn->Text = gcnew System::String(std::to_string(g_currentSchoolYear->begin).c_str());
@@ -764,7 +763,6 @@ namespace CMS {
 			sourceForm->Show();
 			return;
 		}
-
 		///////////////////////////////////////////////////////////////
 
 		// reset form

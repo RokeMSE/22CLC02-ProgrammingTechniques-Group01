@@ -45,6 +45,18 @@ extern std::string DayToString(GROUP1::WeekDay day) {
     }
 }
 
+extern uint countStudentsInACourse(GROUP1::COURSE* course) {
+    // to count number of students in a course
+    int res = 0;
+    DLL<SCOREBOARD*>* cur = course->students.head;
+    while (cur) {
+        res++;
+        cur = cur->next;
+    }
+    return res;
+}
+
+
 // CLASS
 
 string CLASS::convertToString() {
