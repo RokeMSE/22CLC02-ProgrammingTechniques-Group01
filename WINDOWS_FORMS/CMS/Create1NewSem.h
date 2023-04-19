@@ -2,6 +2,9 @@
 
 #include "header.h"
 
+using namespace std;
+using namespace GROUP1;
+
 namespace CMS {
 
 	using namespace System;
@@ -297,6 +300,20 @@ namespace CMS {
 			(*g_currentSchoolYear).sem3 = tempSem;
 
 		g_currentSemester = tempSem;
+		DLL<COURSE*>* cur = L_Student.head->data->courses.head;
+		DLL<COURSE*>* temp = L_Student.head->data->courses.head;
+		DLL<COURSE*>* dummy;//node to be deleted
+		while (temp)
+		{
+			cur = temp;
+			if (!cur->next)
+				delete cur;
+			while (cur->next->next)
+				cur = cur->next;
+			dummy = cur->next;
+			cur->next = cur->next->next;
+			delete dummy;
+		}
 
 		this->Hide();
 		this->sourceForm->Show();
