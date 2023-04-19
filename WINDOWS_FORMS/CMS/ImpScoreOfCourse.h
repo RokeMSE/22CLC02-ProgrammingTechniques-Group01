@@ -112,7 +112,6 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ImpScoreOfCourse::typeid));
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->lbl_input = (gcnew System::Windows::Forms::Label());
@@ -200,7 +199,7 @@ namespace CMS {
 			this->txt_pathfile->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_pathfile->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_pathfile->Location = System::Drawing::Point(281, 454);
+			this->txt_pathfile->Location = System::Drawing::Point(299, 454);
 			this->txt_pathfile->Name = L"txt_pathfile";
 			this->txt_pathfile->ReadOnly = true;
 			this->txt_pathfile->Size = System::Drawing::Size(455, 29);
@@ -231,7 +230,7 @@ namespace CMS {
 			this->txt_schoolyear_end->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_schoolyear_end->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_schoolyear_end->Location = System::Drawing::Point(428, 140);
+			this->txt_schoolyear_end->Location = System::Drawing::Point(446, 140);
 			this->txt_schoolyear_end->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear_end->Name = L"txt_schoolyear_end";
 			this->txt_schoolyear_end->ReadOnly = true;
@@ -245,7 +244,7 @@ namespace CMS {
 			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label23->Location = System::Drawing::Point(373, 146);
+			this->label23->Location = System::Drawing::Point(391, 146);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(47, 24);
 			this->label23->TabIndex = 83;
@@ -258,7 +257,7 @@ namespace CMS {
 			this->txt_schoolyear_start->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_schoolyear_start->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_schoolyear_start->Location = System::Drawing::Point(281, 140);
+			this->txt_schoolyear_start->Location = System::Drawing::Point(299, 140);
 			this->txt_schoolyear_start->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear_start->MaxLength = 4;
 			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
@@ -273,7 +272,7 @@ namespace CMS {
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label22->Location = System::Drawing::Point(215, 146);
+			this->label22->Location = System::Drawing::Point(228, 145);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(56, 24);
 			this->label22->TabIndex = 81;
@@ -285,7 +284,7 @@ namespace CMS {
 			this->chkbox_sem3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->chkbox_sem3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem3->Location = System::Drawing::Point(376, 180);
+			this->chkbox_sem3->Location = System::Drawing::Point(394, 180);
 			this->chkbox_sem3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem3->Name = L"chkbox_sem3";
 			this->chkbox_sem3->Size = System::Drawing::Size(42, 28);
@@ -300,7 +299,7 @@ namespace CMS {
 			this->chkbox_sem2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->chkbox_sem2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem2->Location = System::Drawing::Point(330, 180);
+			this->chkbox_sem2->Location = System::Drawing::Point(348, 180);
 			this->chkbox_sem2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem2->Name = L"chkbox_sem2";
 			this->chkbox_sem2->Size = System::Drawing::Size(42, 28);
@@ -315,7 +314,7 @@ namespace CMS {
 			this->chkbox_sem1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->chkbox_sem1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem1->Location = System::Drawing::Point(285, 180);
+			this->chkbox_sem1->Location = System::Drawing::Point(303, 180);
 			this->chkbox_sem1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem1->Name = L"chkbox_sem1";
 			this->chkbox_sem1->Size = System::Drawing::Size(42, 28);
@@ -330,7 +329,7 @@ namespace CMS {
 			this->lbl_semester->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->lbl_semester->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_semester->Location = System::Drawing::Point(184, 182);
+			this->lbl_semester->Location = System::Drawing::Point(190, 181);
 			this->lbl_semester->Name = L"lbl_semester";
 			this->lbl_semester->Size = System::Drawing::Size(94, 24);
 			this->lbl_semester->TabIndex = 77;
@@ -355,7 +354,7 @@ namespace CMS {
 			this->txt_schoolyear->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_schoolyear->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_schoolyear->Location = System::Drawing::Point(281, 100);
+			this->txt_schoolyear->Location = System::Drawing::Point(299, 100);
 			this->txt_schoolyear->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear->Name = L"txt_schoolyear";
 			this->txt_schoolyear->ReadOnly = true;
@@ -369,7 +368,7 @@ namespace CMS {
 			this->txt_courseID->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_courseID->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_courseID->Location = System::Drawing::Point(281, 210);
+			this->txt_courseID->Location = System::Drawing::Point(299, 210);
 			this->txt_courseID->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_courseID->MaxLength = 10;
 			this->txt_courseID->Name = L"txt_courseID";
@@ -383,7 +382,7 @@ namespace CMS {
 			this->lbl_courseID->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->lbl_courseID->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_courseID->Location = System::Drawing::Point(184, 219);
+			this->lbl_courseID->Location = System::Drawing::Point(187, 215);
 			this->lbl_courseID->Name = L"lbl_courseID";
 			this->lbl_courseID->Size = System::Drawing::Size(97, 24);
 			this->lbl_courseID->TabIndex = 85;
@@ -427,7 +426,7 @@ namespace CMS {
 			this->txt_coursename->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_coursename->Location = System::Drawing::Point(281, 361);
+			this->txt_coursename->Location = System::Drawing::Point(299, 361);
 			this->txt_coursename->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_coursename->Name = L"txt_coursename";
 			this->txt_coursename->ReadOnly = true;
@@ -440,7 +439,7 @@ namespace CMS {
 			this->lbl_coursename->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->lbl_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_coursename->Location = System::Drawing::Point(150, 369);
+			this->lbl_coursename->Location = System::Drawing::Point(155, 366);
 			this->lbl_coursename->Name = L"lbl_coursename";
 			this->lbl_coursename->Size = System::Drawing::Size(129, 24);
 			this->lbl_coursename->TabIndex = 89;
@@ -453,7 +452,7 @@ namespace CMS {
 			this->txt_teacher->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->txt_teacher->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_teacher->Location = System::Drawing::Point(281, 408);
+			this->txt_teacher->Location = System::Drawing::Point(299, 408);
 			this->txt_teacher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_teacher->Name = L"txt_teacher";
 			this->txt_teacher->ReadOnly = true;
@@ -480,7 +479,7 @@ namespace CMS {
 			this->btn_browse->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
 			this->btn_browse->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_browse->Location = System::Drawing::Point(742, 456);
+			this->btn_browse->Location = System::Drawing::Point(760, 456);
 			this->btn_browse->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_browse->Name = L"btn_browse";
 			this->btn_browse->Size = System::Drawing::Size(70, 30);
@@ -493,7 +492,6 @@ namespace CMS {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(692, 106);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(170, 170);
@@ -528,7 +526,6 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 615);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(52, 52);
@@ -624,7 +621,6 @@ namespace CMS {
 			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ImpScoreOfCourse";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"ImpScoreOfCourse";
