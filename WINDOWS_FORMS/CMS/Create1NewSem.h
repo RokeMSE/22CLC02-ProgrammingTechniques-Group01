@@ -300,19 +300,24 @@ namespace CMS {
 			(*g_currentSchoolYear).sem3 = tempSem;
 
 		g_currentSemester = tempSem;
-		DLL<COURSE*>* cur = L_Student.head->data->courses.head;
-		DLL<COURSE*>* temp = L_Student.head->data->courses.head;
-		DLL<COURSE*>* dummy;//node to be deleted
-		while (temp)
+		DLL<STUDENT*>* stu = L_Student.head;
+		while (stu)
 		{
-			cur = temp;
-			if (!cur->next)
-				delete cur;
-			while (cur->next->next)
-				cur = cur->next;
-			dummy = cur->next;
-			cur->next = cur->next->next;
-			delete dummy;
+			DLL<COURSE*>* cur = stu->data->courses.head;
+			DLL<COURSE*>* temp = stu->data->courses.head;
+			DLL<COURSE*>* dummy;//node to be deleted
+			while (temp)
+			{
+				cur = temp;
+				if (!cur->next)
+					delete cur;
+				while (cur->next->next)
+					cur = cur->next;
+				dummy = cur->next;
+				cur->next = cur->next->next;
+				delete dummy;
+			}
+			stu = stu->next;
 		}
 
 		this->Hide();
