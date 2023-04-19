@@ -22,6 +22,10 @@ bool importStudents() {
     if (!ifs.is_open()) return 0;
     string str;
     std::getline(ifs, str);  // skip title line
+
+    string cls = "";
+    DLL<CLASS>* pre_cls;
+
     while (!ifs.eof()) {
         STUDENT* tmp = new STUDENT;
         std::getline(ifs, str, ','); // get username
@@ -53,6 +57,7 @@ bool importStudents() {
         while (nodeCls) {
             if (nodeCls->data.convertToString() == str) {
                 tmp->Class = &(nodeCls->data);
+                tmp->yearIn = 2000 + tmp->Class->K;
                 break;
             }
             nodeCls = nodeCls->next;
@@ -73,7 +78,21 @@ bool importStudents() {
         }
         L_Student.tail->data = tmp;
         //L_Student.head -> next = L_Student.tail->next = nullptr;
+
+        if (str != cls) {
+
+            if (cls == "")
+                nodeCls->data.student.head = L_Student.head;
+            else {
+                pre_cls->data.student.tail = L_Student.tail->prev;
+                nodeCls->data.student.head = L_Student.tail;
+            }
+            cls = str;
+        }
+        pre_cls = nodeCls;
     }
+    pre_cls->data.student.tail = L_Student.tail;
+
     ifs.close();
     return 1;
 }
@@ -189,7 +208,8 @@ bool importStudentsInACourse(std::string filename, COURSE*& c) {
             }
             else {
                 tmp->prev = s->student->courses.tail;
-                s->student->courses.tail = tmp;
+                s->student->courses.tail->next = tmp;
+                s->student->courses.tail = s->student->courses.tail->next;
             }
         }
         else {
