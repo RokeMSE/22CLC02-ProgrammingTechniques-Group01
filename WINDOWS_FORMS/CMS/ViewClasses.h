@@ -38,13 +38,24 @@ namespace CMS {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::ListView^ listView1;
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^ lbl_title;
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader1;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader2;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader3;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader4;
-	private: System::Windows::Forms::Button^ btn_back;
-	private: System::Windows::Forms::Label^ lbl_title;
+	private: System::Windows::Forms::ListView^ listView1;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ account;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	protected:
@@ -66,14 +77,68 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewClasses::typeid));
+			this->lbl_title = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->btn_back = (gcnew System::Windows::Forms::Button());
-			this->lbl_title = (gcnew System::Windows::Forms::Label());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->account = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->SuspendLayout();
+			// 
+			// lbl_title
+			// 
+			this->lbl_title->AutoSize = true;
+			this->lbl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 22, System::Drawing::FontStyle::Bold));
+			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->lbl_title->Location = System::Drawing::Point(378, 17);
+			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_title->Name = L"lbl_title";
+			this->lbl_title->Size = System::Drawing::Size(280, 50);
+			this->lbl_title->TabIndex = 43;
+			this->lbl_title->Text = L"List of Classes";
+			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewClasses::lbl_title_Click_1);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(430, 70);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(150, 150);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 130;
+			this->pictureBox1->TabStop = false;
+			// 
+			// columnHeader1
+			// 
+			this->columnHeader1->Text = L"Khóa";
+			this->columnHeader1->Width = 249;
+			// 
+			// columnHeader2
+			// 
+			this->columnHeader2->Text = L"Program";
+			this->columnHeader2->Width = 256;
+			// 
+			// columnHeader3
+			// 
+			this->columnHeader3->Text = L"No";
+			this->columnHeader3->Width = 187;
+			// 
+			// columnHeader4
+			// 
+			this->columnHeader4->Text = L"YearIn";
+			this->columnHeader4->Width = 289;
 			// 
 			// listView1
 			// 
@@ -82,84 +147,83 @@ namespace CMS {
 				this->columnHeader1, this->columnHeader2,
 					this->columnHeader3, this->columnHeader4
 			});
-			this->listView1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->listView1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8));
+			this->listView1->FullRowSelect = true;
+			this->listView1->GridLines = true;
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(0, 116);
-			this->listView1->Margin = System::Windows::Forms::Padding(4);
+			this->listView1->Location = System::Drawing::Point(55, 230);
+			this->listView1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(966, 601);
-			this->listView1->TabIndex = 0;
+			this->listView1->Size = System::Drawing::Size(911, 638);
+			this->listView1->TabIndex = 76;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
 			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &ViewClasses::listView1_SelectedIndexChanged);
 			// 
-			// columnHeader1
+			// panel1
 			// 
-			this->columnHeader1->Text = L"Kh�a";
-			this->columnHeader1->Width = 249;
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
+			this->panel1->Controls->Add(this->account);
+			this->panel1->Controls->Add(this->button1);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Padding = System::Windows::Forms::Padding(4);
+			this->panel1->Size = System::Drawing::Size(60, 868);
+			this->panel1->TabIndex = 131;
 			// 
-			// columnHeader2
+			// account
 			// 
-			this->columnHeader2->Text = L"Program";
-			this->columnHeader2->Width = 254;
+			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->account->Location = System::Drawing::Point(4, 812);
+			this->account->Name = L"account";
+			this->account->Size = System::Drawing::Size(52, 52);
+			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->account->TabIndex = 102;
+			this->account->TabStop = false;
 			// 
-			// columnHeader3
+			// button1
 			// 
-			this->columnHeader3->Text = L"No";
-			this->columnHeader3->Width = 176;
-			// 
-			// columnHeader4
-			// 
-			this->columnHeader4->Text = L"YearIn";
-			this->columnHeader4->Width = 191;
-			// 
-			// btn_back
-			// 
-			this->btn_back->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
-			this->btn_back->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(93)),
-				static_cast<System::Int32>(static_cast<System::Byte>(110)));
-			this->btn_back->Location = System::Drawing::Point(822, 25);
-			this->btn_back->Name = L"btn_back";
-			this->btn_back->Size = System::Drawing::Size(94, 35);
-			this->btn_back->TabIndex = 1;
-			this->btn_back->Text = L"Back";
-			this->btn_back->UseVisualStyleBackColor = true;
-			this->btn_back->Click += gcnew System::EventHandler(this, &ViewClasses::btn_back_Click);
-			// 
-			// lbl_title
-			// 
-			this->lbl_title->BackColor = System::Drawing::Color::Aquamarine;
-			this->lbl_title->ForeColor = System::Drawing::Color::White;
-			this->lbl_title->Location = System::Drawing::Point(355, 25);
-			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(116, 25);
-			this->lbl_title->TabIndex = 5;
-			this->lbl_title->Text = L"List of Classes";
-			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewClasses::lbl_title_Click_1);
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
+			this->button1->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->button1->Location = System::Drawing::Point(4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Name = L"button1";
+			this->button1->Padding = System::Windows::Forms::Padding(4);
+			this->button1->Size = System::Drawing::Size(52, 52);
+			this->button1->TabIndex = 57;
+			this->button1->Text = L"<";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ViewClasses::btn_back_Click);
 			// 
 			// ViewClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 19);
+			this->AutoScaleDimensions = System::Drawing::SizeF(10, 23);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->ClientSize = System::Drawing::Size(966, 717);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->ClientSize = System::Drawing::Size(966, 868);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->lbl_title);
-			this->Controls->Add(this->btn_back);
 			this->Controls->Add(this->listView1);
-			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10));
+			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Location = System::Drawing::Point(513, 121);
 			this->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->Name = L"ViewClasses";
 			this->Text = L"ViewClasses";
 			this->Load += gcnew System::EventHandler(this, &ViewClasses::ViewClasses_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 		//public: void btnprint_Click(System::Object^ sender, System::EventArgs^ e);
