@@ -79,6 +79,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewAListInAClasses::typeid));
 			this->txt_yourclass = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_yourclass = (gcnew System::Windows::Forms::Label());
 			this->btn_search = (gcnew System::Windows::Forms::Button());
@@ -111,7 +112,7 @@ namespace CMS {
 			this->txt_yourclass->MaxLength = 20;
 			this->txt_yourclass->Name = L"txt_yourclass";
 			this->txt_yourclass->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->txt_yourclass->Size = System::Drawing::Size(218, 29);
+			this->txt_yourclass->Size = System::Drawing::Size(218, 33);
 			this->txt_yourclass->TabIndex = 1;
 			// 
 			// lbl_yourclass
@@ -122,7 +123,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->lbl_yourclass->Location = System::Drawing::Point(90, 85);
 			this->lbl_yourclass->Name = L"lbl_yourclass";
-			this->lbl_yourclass->Size = System::Drawing::Size(113, 20);
+			this->lbl_yourclass->Size = System::Drawing::Size(129, 21);
 			this->lbl_yourclass->TabIndex = 2;
 			this->lbl_yourclass->Text = L"Enter your class";
 			// 
@@ -135,7 +136,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(110)));
 			this->btn_search->Location = System::Drawing::Point(386, 110);
 			this->btn_search->Name = L"btn_search";
-			this->btn_search->Size = System::Drawing::Size(86, 27);
+			this->btn_search->Size = System::Drawing::Size(86, 33);
 			this->btn_search->TabIndex = 75;
 			this->btn_search->Text = L"Search";
 			this->btn_search->UseVisualStyleBackColor = false;
@@ -206,7 +207,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->lbl_title->Location = System::Drawing::Point(440, 19);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(400, 52);
+			this->lbl_title->Size = System::Drawing::Size(477, 60);
 			this->lbl_title->TabIndex = 5;
 			this->lbl_title->Text = L"List Student of Class";
 			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewAListInAClasses::lbl_title_Click);
@@ -243,7 +244,7 @@ namespace CMS {
 			this->checkedListBox->Location = System::Drawing::Point(924, 134);
 			this->checkedListBox->Margin = System::Windows::Forms::Padding(4);
 			this->checkedListBox->Name = L"checkedListBox";
-			this->checkedListBox->Size = System::Drawing::Size(223, 192);
+			this->checkedListBox->Size = System::Drawing::Size(223, 180);
 			this->checkedListBox->TabIndex = 78;
 			this->checkedListBox->ThreeDCheckBoxes = true;
 			this->checkedListBox->ItemCheck += gcnew System::Windows::Forms::ItemCheckEventHandler(this, &ViewAListInAClasses::checkedListBox_ItemCheck);
@@ -264,6 +265,7 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 655);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(52, 52);
@@ -290,7 +292,7 @@ namespace CMS {
 			// 
 			// ViewAListInAClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 19);
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
@@ -307,6 +309,7 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ViewAListInAClasses";
 			this->Text = L"ViewAListInAClasses";
@@ -338,10 +341,8 @@ namespace CMS {
 		while (curStudent) {
 			if (curStudent->data->Class->convertToString() == msclr::interop::marshal_as<std::string >(className)) {
 				item = gcnew ListViewItem();
-				item->Text = gcnew System::String(std::to_string(curStudent->data->No).c_str());
 				item->SubItems->Add(gcnew System::String((curStudent->data->studentID).c_str()));
 				item->SubItems->Add(gcnew System::String((curStudent->data->firstname).c_str()));
-				item->SubItems->Add(gcnew System::String((curStudent->data->fullname).c_str()));
 				item->SubItems->Add(gcnew System::String(std::to_string(curStudent->data->gender).c_str()));
 				item->SubItems->Add(gcnew System::String(DateToString(curStudent->data->DoB).c_str()));
 				item->SubItems->Add(gcnew System::String((curStudent->data->socialID).c_str()));
@@ -385,7 +386,6 @@ namespace CMS {
 		while (curStudent) {
 			if (curStudent->data->Class->convertToString() == msclr::interop::marshal_as<std::string>(selectedClassName)) {
 				item = gcnew ListViewItem();
-				item->Text = gcnew System::String(std::to_string(curStudent->data->No).c_str());
 				item->SubItems->Add(gcnew System::String((curStudent->data->studentID).c_str()));
 				item->SubItems->Add(gcnew System::String((curStudent->data->firstname).c_str()));
 				item->SubItems->Add(gcnew System::String((curStudent->data->lastname).c_str()));

@@ -226,7 +226,7 @@ namespace CMS {
 			this->OptionPanel->Location = System::Drawing::Point(0, 0);
 			this->OptionPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->OptionPanel->Name = L"OptionPanel";
-			this->OptionPanel->Size = System::Drawing::Size(221, 563);
+			this->OptionPanel->Size = System::Drawing::Size(249, 704);
 			this->OptionPanel->TabIndex = 26;
 			// 
 			// AccountBtn
@@ -239,10 +239,10 @@ namespace CMS {
 			this->AccountBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AccountBtn->ForeColor = System::Drawing::Color::Cornsilk;
-			this->AccountBtn->Location = System::Drawing::Point(0, 156);
+			this->AccountBtn->Location = System::Drawing::Point(0, 195);
 			this->AccountBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AccountBtn->Name = L"AccountBtn";
-			this->AccountBtn->Size = System::Drawing::Size(221, 39);
+			this->AccountBtn->Size = System::Drawing::Size(249, 49);
 			this->AccountBtn->TabIndex = 51;
 			this->AccountBtn->Text = L"ACCOUNT";
 			this->AccountBtn->UseVisualStyleBackColor = false;
@@ -258,10 +258,10 @@ namespace CMS {
 			this->ViewBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ViewBtn->ForeColor = System::Drawing::Color::Cornsilk;
-			this->ViewBtn->Location = System::Drawing::Point(0, 117);
+			this->ViewBtn->Location = System::Drawing::Point(0, 146);
 			this->ViewBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ViewBtn->Name = L"ViewBtn";
-			this->ViewBtn->Size = System::Drawing::Size(221, 39);
+			this->ViewBtn->Size = System::Drawing::Size(249, 49);
 			this->ViewBtn->TabIndex = 42;
 			this->ViewBtn->Text = L"VIEW";
 			this->ViewBtn->UseVisualStyleBackColor = false;
@@ -274,7 +274,7 @@ namespace CMS {
 			this->ImagePanel->Location = System::Drawing::Point(0, 0);
 			this->ImagePanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ImagePanel->Name = L"ImagePanel";
-			this->ImagePanel->Size = System::Drawing::Size(221, 117);
+			this->ImagePanel->Size = System::Drawing::Size(249, 146);
 			this->ImagePanel->TabIndex = 32;
 			// 
 			// Icon
@@ -285,11 +285,11 @@ namespace CMS {
 			this->Icon->ErrorImage = nullptr;
 			this->Icon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.Image")));
 			this->Icon->InitialImage = nullptr;
-			this->Icon->Location = System::Drawing::Point(52, 8);
+			this->Icon->Location = System::Drawing::Point(58, 10);
 			this->Icon->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Icon->Name = L"Icon";
-			this->Icon->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
-			this->Icon->Size = System::Drawing::Size(104, 102);
+			this->Icon->Padding = System::Windows::Forms::Padding(4);
+			this->Icon->Size = System::Drawing::Size(117, 128);
 			this->Icon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Icon->TabIndex = 31;
 			this->Icon->TabStop = false;
@@ -301,10 +301,10 @@ namespace CMS {
 			this->MenuPanel->Controls->Add(this->ExitBtn);
 			this->MenuPanel->Controls->Add(this->MenuLabel);
 			this->MenuPanel->Dock = System::Windows::Forms::DockStyle::Top;
-			this->MenuPanel->Location = System::Drawing::Point(221, 0);
+			this->MenuPanel->Location = System::Drawing::Point(249, 0);
 			this->MenuPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MenuPanel->Name = L"MenuPanel";
-			this->MenuPanel->Size = System::Drawing::Size(832, 59);
+			this->MenuPanel->Size = System::Drawing::Size(936, 74);
 			this->MenuPanel->TabIndex = 28;
 			// 
 			// ExitBtn
@@ -314,10 +314,10 @@ namespace CMS {
 			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ExitBtn->ForeColor = System::Drawing::Color::LemonChiffon;
-			this->ExitBtn->Location = System::Drawing::Point(752, 11);
+			this->ExitBtn->Location = System::Drawing::Point(846, 14);
 			this->ExitBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(35, 35);
+			this->ExitBtn->Size = System::Drawing::Size(39, 44);
 			this->ExitBtn->TabIndex = 14;
 			this->ExitBtn->Text = L"x";
 			this->ExitBtn->UseVisualStyleBackColor = false;
@@ -329,9 +329,9 @@ namespace CMS {
 			this->MenuLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI Black", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->MenuLabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			this->MenuLabel->Location = System::Drawing::Point(47, 8);
+			this->MenuLabel->Location = System::Drawing::Point(53, 10);
 			this->MenuLabel->Name = L"MenuLabel";
-			this->MenuLabel->Size = System::Drawing::Size(242, 46);
+			this->MenuLabel->Size = System::Drawing::Size(284, 54);
 			this->MenuLabel->TabIndex = 13;
 			this->MenuLabel->Text = L"DASHBOARD";
 			this->MenuLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -342,10 +342,10 @@ namespace CMS {
 			this->ViewPanel->Controls->Add(this->ViewScoreOfACourseBtn);
 			this->ViewPanel->Controls->Add(this->btn_ViewCourses);
 			this->ViewPanel->Dock = System::Windows::Forms::DockStyle::Top;
-			this->ViewPanel->Location = System::Drawing::Point(221, 117);
+			this->ViewPanel->Location = System::Drawing::Point(249, 146);
 			this->ViewPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ViewPanel->Name = L"ViewPanel";
-			this->ViewPanel->Size = System::Drawing::Size(832, 80);
+			this->ViewPanel->Size = System::Drawing::Size(936, 100);
 			this->ViewPanel->TabIndex = 52;
 			this->ViewPanel->Visible = false;
 			// 
@@ -358,9 +358,10 @@ namespace CMS {
 			this->ViewScoreOfACourseBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ViewScoreOfACourseBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->ViewScoreOfACourseBtn->ForeColor = System::Drawing::Color::FloralWhite;
-			this->ViewScoreOfACourseBtn->Location = System::Drawing::Point(0, 40);
+			this->ViewScoreOfACourseBtn->Location = System::Drawing::Point(0, 50);
+			this->ViewScoreOfACourseBtn->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->ViewScoreOfACourseBtn->Name = L"ViewScoreOfACourseBtn";
-			this->ViewScoreOfACourseBtn->Size = System::Drawing::Size(832, 40);
+			this->ViewScoreOfACourseBtn->Size = System::Drawing::Size(936, 50);
 			this->ViewScoreOfACourseBtn->TabIndex = 44;
 			this->ViewScoreOfACourseBtn->Text = L"View the scoreboard of a course";
 			this->ViewScoreOfACourseBtn->UseVisualStyleBackColor = false;
@@ -375,8 +376,9 @@ namespace CMS {
 			this->btn_ViewCourses->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->btn_ViewCourses->ForeColor = System::Drawing::Color::FloralWhite;
 			this->btn_ViewCourses->Location = System::Drawing::Point(0, 0);
+			this->btn_ViewCourses->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_ViewCourses->Name = L"btn_ViewCourses";
-			this->btn_ViewCourses->Size = System::Drawing::Size(832, 40);
+			this->btn_ViewCourses->Size = System::Drawing::Size(936, 50);
 			this->btn_ViewCourses->TabIndex = 40;
 			this->btn_ViewCourses->Text = L"View courses of current semester";
 			this->btn_ViewCourses->UseVisualStyleBackColor = false;
@@ -387,10 +389,10 @@ namespace CMS {
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->txt_nameOfUser);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(221, 59);
+			this->panel1->Location = System::Drawing::Point(249, 74);
 			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(832, 58);
+			this->panel1->Size = System::Drawing::Size(936, 72);
 			this->panel1->TabIndex = 51;
 			// 
 			// label2
@@ -399,9 +401,9 @@ namespace CMS {
 			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label2->Location = System::Drawing::Point(10, 16);
+			this->label2->Location = System::Drawing::Point(11, 20);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(52, 16);
+			this->label2->Size = System::Drawing::Size(66, 20);
 			this->label2->TabIndex = 18;
 			this->label2->Text = L"Student";
 			// 
@@ -410,11 +412,11 @@ namespace CMS {
 			this->txt_nameOfUser->BackColor = System::Drawing::Color::LemonChiffon;
 			this->txt_nameOfUser->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_nameOfUser->Location = System::Drawing::Point(77, 11);
+			this->txt_nameOfUser->Location = System::Drawing::Point(87, 14);
 			this->txt_nameOfUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_nameOfUser->Name = L"txt_nameOfUser";
 			this->txt_nameOfUser->ReadOnly = true;
-			this->txt_nameOfUser->Size = System::Drawing::Size(337, 24);
+			this->txt_nameOfUser->Size = System::Drawing::Size(379, 28);
 			this->txt_nameOfUser->TabIndex = 17;
 			// 
 			// AccountPanel
@@ -424,10 +426,10 @@ namespace CMS {
 			this->AccountPanel->Controls->Add(this->btn_logout);
 			this->AccountPanel->Controls->Add(this->ChangePassBtn);
 			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Top;
-			this->AccountPanel->Location = System::Drawing::Point(221, 197);
+			this->AccountPanel->Location = System::Drawing::Point(249, 246);
 			this->AccountPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->AccountPanel->Name = L"AccountPanel";
-			this->AccountPanel->Size = System::Drawing::Size(832, 120);
+			this->AccountPanel->Size = System::Drawing::Size(936, 150);
 			this->AccountPanel->TabIndex = 57;
 			this->AccountPanel->Visible = false;
 			// 
@@ -440,10 +442,10 @@ namespace CMS {
 			this->btn_exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_exit->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->btn_exit->ForeColor = System::Drawing::Color::FloralWhite;
-			this->btn_exit->Location = System::Drawing::Point(0, 80);
+			this->btn_exit->Location = System::Drawing::Point(0, 100);
 			this->btn_exit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Size = System::Drawing::Size(832, 40);
+			this->btn_exit->Size = System::Drawing::Size(936, 50);
 			this->btn_exit->TabIndex = 18;
 			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = false;
@@ -458,10 +460,10 @@ namespace CMS {
 			this->btn_logout->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_logout->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->btn_logout->ForeColor = System::Drawing::Color::FloralWhite;
-			this->btn_logout->Location = System::Drawing::Point(0, 40);
+			this->btn_logout->Location = System::Drawing::Point(0, 50);
 			this->btn_logout->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_logout->Name = L"btn_logout";
-			this->btn_logout->Size = System::Drawing::Size(832, 40);
+			this->btn_logout->Size = System::Drawing::Size(936, 50);
 			this->btn_logout->TabIndex = 17;
 			this->btn_logout->Text = L"Logout";
 			this->btn_logout->UseVisualStyleBackColor = false;
@@ -479,7 +481,7 @@ namespace CMS {
 			this->ChangePassBtn->Location = System::Drawing::Point(0, 0);
 			this->ChangePassBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ChangePassBtn->Name = L"ChangePassBtn";
-			this->ChangePassBtn->Size = System::Drawing::Size(832, 40);
+			this->ChangePassBtn->Size = System::Drawing::Size(936, 50);
 			this->ChangePassBtn->TabIndex = 16;
 			this->ChangePassBtn->Text = L"Change password";
 			this->ChangePassBtn->UseVisualStyleBackColor = false;
@@ -487,12 +489,12 @@ namespace CMS {
 			// 
 			// MenuStudent
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
 				static_cast<System::Int32>(static_cast<System::Byte>(70)));
-			this->ClientSize = System::Drawing::Size(1053, 563);
+			this->ClientSize = System::Drawing::Size(1185, 704);
 			this->ControlBox = false;
 			this->Controls->Add(this->AccountPanel);
 			this->Controls->Add(this->ViewPanel);
@@ -500,6 +502,8 @@ namespace CMS {
 			this->Controls->Add(this->MenuPanel);
 			this->Controls->Add(this->OptionPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"MenuStudent";
 			this->Text = L"MenuStudent";
 			this->Load += gcnew System::EventHandler(this, &MenuStudent::MenuStudent_Load);

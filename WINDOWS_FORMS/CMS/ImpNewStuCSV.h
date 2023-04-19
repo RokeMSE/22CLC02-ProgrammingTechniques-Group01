@@ -98,6 +98,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(impNewStuCSV::typeid));
 			this->StartPanel = (gcnew System::Windows::Forms::Panel());
 			this->ImpNewStuCSVLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolyearTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -163,7 +164,7 @@ namespace CMS {
 			this->SchoolyearLab->Location = System::Drawing::Point(113, 194);
 			this->SchoolyearLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->SchoolyearLab->Name = L"SchoolyearLab";
-			this->SchoolyearLab->Size = System::Drawing::Size(146, 32);
+			this->SchoolyearLab->Size = System::Drawing::Size(147, 32);
 			this->SchoolyearLab->TabIndex = 99;
 			this->SchoolyearLab->Text = L"School year";
 			// 
@@ -178,7 +179,7 @@ namespace CMS {
 			this->ClassLab->Location = System::Drawing::Point(113, 259);
 			this->ClassLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->ClassLab->Name = L"ClassLab";
-			this->ClassLab->Size = System::Drawing::Size(71, 32);
+			this->ClassLab->Size = System::Drawing::Size(72, 32);
 			this->ClassLab->TabIndex = 104;
 			this->ClassLab->Text = L"Class";
 			// 
@@ -207,7 +208,7 @@ namespace CMS {
 			this->PathLab->Location = System::Drawing::Point(113, 319);
 			this->PathLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->PathLab->Name = L"PathLab";
-			this->PathLab->Size = System::Drawing::Size(189, 32);
+			this->PathLab->Size = System::Drawing::Size(190, 32);
 			this->PathLab->TabIndex = 110;
 			this->PathLab->Text = L"Path of CSV file";
 			// 
@@ -297,6 +298,7 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->Name = L"impNewStuCSV";
 			this->Text = L"impNewStuCSV";

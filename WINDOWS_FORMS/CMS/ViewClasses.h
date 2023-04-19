@@ -104,7 +104,7 @@ namespace CMS {
 			this->lbl_title->Location = System::Drawing::Point(378, 17);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(280, 50);
+			this->lbl_title->Size = System::Drawing::Size(335, 58);
 			this->lbl_title->TabIndex = 43;
 			this->lbl_title->Text = L"List of Classes";
 			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewClasses::lbl_title_Click_1);
@@ -176,6 +176,7 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 812);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(52, 52);
@@ -202,7 +203,7 @@ namespace CMS {
 			// 
 			// ViewClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 23);
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 27);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
@@ -214,6 +215,7 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Location = System::Drawing::Point(513, 121);
 			this->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->Name = L"ViewClasses";

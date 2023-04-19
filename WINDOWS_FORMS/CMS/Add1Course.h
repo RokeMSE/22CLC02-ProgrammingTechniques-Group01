@@ -973,7 +973,10 @@ namespace CMS {
 				}
 				cur = cur->next;
 			}
+
+			// cur now is nullptr
 			cur = new DLL<COURSE*>;
+			// cur->prev == cur->next == nullptr by default
 			cur->data = new COURSE;
 			cur->data->ID = courseID;
 			cur->data->name = trim_whitespace(msclr::interop::marshal_as<std::string>(txt_coursename->Text));

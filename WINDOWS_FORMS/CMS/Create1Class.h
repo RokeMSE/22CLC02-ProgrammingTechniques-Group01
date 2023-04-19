@@ -68,6 +68,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Create1Class::typeid));
 			this->Create1ClassLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolYearLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolYearTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -103,7 +104,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->SchoolYearLab->Location = System::Drawing::Point(279, 100);
 			this->SchoolYearLab->Name = L"SchoolYearLab";
-			this->SchoolYearLab->Size = System::Drawing::Size(146, 32);
+			this->SchoolYearLab->Size = System::Drawing::Size(147, 32);
 			this->SchoolYearLab->TabIndex = 1;
 			this->SchoolYearLab->Text = L"School year";
 			// 
@@ -129,7 +130,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->ProgramLab->Location = System::Drawing::Point(279, 150);
 			this->ProgramLab->Name = L"ProgramLab";
-			this->ProgramLab->Size = System::Drawing::Size(114, 32);
+			this->ProgramLab->Size = System::Drawing::Size(115, 32);
 			this->ProgramLab->TabIndex = 3;
 			this->ProgramLab->Text = L"Program";
 			// 
@@ -164,7 +165,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->NoLab->Location = System::Drawing::Point(279, 202);
 			this->NoLab->Name = L"NoLab";
-			this->NoLab->Size = System::Drawing::Size(48, 32);
+			this->NoLab->Size = System::Drawing::Size(49, 32);
 			this->NoLab->TabIndex = 5;
 			this->NoLab->Text = L"No";
 			// 
@@ -233,6 +234,7 @@ namespace CMS {
 			this->Controls->Add(this->SchoolYearTextBox);
 			this->Controls->Add(this->SchoolYearLab);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Create1Class";
 			this->Text = L"Create1Class";

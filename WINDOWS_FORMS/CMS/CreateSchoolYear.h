@@ -66,6 +66,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CreateSchoolYear::typeid));
 			this->CreateSchoolYearLab = (gcnew System::Windows::Forms::Label());
 			this->BeginYearLab = (gcnew System::Windows::Forms::Label());
 			this->BeginYearTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -104,7 +105,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->BeginYearLab->Location = System::Drawing::Point(216, 101);
 			this->BeginYearLab->Name = L"BeginYearLab";
-			this->BeginYearLab->Size = System::Drawing::Size(135, 32);
+			this->BeginYearLab->Size = System::Drawing::Size(136, 32);
 			this->BeginYearLab->TabIndex = 1;
 			this->BeginYearLab->Text = L"Begin year";
 			// 
@@ -116,7 +117,6 @@ namespace CMS {
 			this->BeginYearTextBox->Name = L"BeginYearTextBox";
 			this->BeginYearTextBox->Size = System::Drawing::Size(152, 39);
 			this->BeginYearTextBox->TabIndex = 2;
-			//this->BeginYearTextBox->TextChanged += gcnew System::EventHandler(this, &CreateSchoolYear::BeginYearTextBox_TextChanged);
 			// 
 			// EndYearTextBox
 			// 
@@ -137,7 +137,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->EndYearLab->Location = System::Drawing::Point(216, 148);
 			this->EndYearLab->Name = L"EndYearLab";
-			this->EndYearLab->Size = System::Drawing::Size(113, 32);
+			this->EndYearLab->Size = System::Drawing::Size(114, 32);
 			this->EndYearLab->TabIndex = 3;
 			this->EndYearLab->Text = L"End year";
 			// 
@@ -235,6 +235,7 @@ namespace CMS {
 			this->Controls->Add(this->WorkPanel);
 			this->Controls->Add(this->StartPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"CreateSchoolYear";
 			this->Text = L"CreateSchoolYear";

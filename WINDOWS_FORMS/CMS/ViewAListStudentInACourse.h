@@ -97,6 +97,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewListStudentInACourses::typeid));
 			this->txt_sem = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->txt_schoolyear = (gcnew System::Windows::Forms::TextBox());
@@ -139,7 +140,7 @@ namespace CMS {
 			this->txt_sem->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->txt_sem->MaxLength = 10;
 			this->txt_sem->Name = L"txt_sem";
-			this->txt_sem->Size = System::Drawing::Size(65, 29);
+			this->txt_sem->Size = System::Drawing::Size(65, 33);
 			this->txt_sem->TabIndex = 16;
 			// 
 			// label5
@@ -152,7 +153,7 @@ namespace CMS {
 			this->label5->Location = System::Drawing::Point(95, 183);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(89, 24);
+			this->label5->Size = System::Drawing::Size(106, 27);
 			this->label5->TabIndex = 15;
 			this->label5->Text = L"Semester";
 			// 
@@ -167,7 +168,7 @@ namespace CMS {
 			this->txt_schoolyear->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->txt_schoolyear->MaxLength = 20;
 			this->txt_schoolyear->Name = L"txt_schoolyear";
-			this->txt_schoolyear->Size = System::Drawing::Size(289, 29);
+			this->txt_schoolyear->Size = System::Drawing::Size(289, 33);
 			this->txt_schoolyear->TabIndex = 14;
 			// 
 			// label4
@@ -177,10 +178,10 @@ namespace CMS {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label4->Location = System::Drawing::Point(95, 123);
+			this->label4->Location = System::Drawing::Point(86, 117);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(110, 24);
+			this->label4->Size = System::Drawing::Size(130, 27);
 			this->label4->TabIndex = 13;
 			this->label4->Text = L"School Year";
 			// 
@@ -193,7 +194,7 @@ namespace CMS {
 			this->btn_Search->Location = System::Drawing::Point(410, 183);
 			this->btn_Search->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(96, 29);
+			this->btn_Search->Size = System::Drawing::Size(96, 37);
 			this->btn_Search->TabIndex = 12;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = false;
@@ -210,7 +211,7 @@ namespace CMS {
 			this->txt_courseName->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->txt_courseName->MaxLength = 30;
 			this->txt_courseName->Name = L"txt_courseName";
-			this->txt_courseName->Size = System::Drawing::Size(289, 29);
+			this->txt_courseName->Size = System::Drawing::Size(289, 33);
 			this->txt_courseName->TabIndex = 11;
 			// 
 			// label1
@@ -220,10 +221,10 @@ namespace CMS {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label1->Location = System::Drawing::Point(789, 177);
+			this->label1->Location = System::Drawing::Point(766, 177);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(147, 24);
+			this->label1->Size = System::Drawing::Size(175, 27);
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"Name of Course";
 			// 
@@ -254,7 +255,7 @@ namespace CMS {
 			this->lbl_title->Location = System::Drawing::Point(509, 27);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(469, 50);
+			this->lbl_title->Size = System::Drawing::Size(559, 58);
 			this->lbl_title->TabIndex = 4;
 			this->lbl_title->Text = L"List Student in A Course";
 			// 
@@ -326,7 +327,7 @@ namespace CMS {
 			this->label2->ForeColor = System::Drawing::Color::DarkGreen;
 			this->label2->Location = System::Drawing::Point(214, 154);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(153, 17);
+			this->label2->Size = System::Drawing::Size(173, 20);
 			this->label2->TabIndex = 131;
 			this->label2->Text = L"( Example: 2017-2018,... )";
 			// 
@@ -338,7 +339,7 @@ namespace CMS {
 			this->label3->ForeColor = System::Drawing::Color::DarkGreen;
 			this->label3->Location = System::Drawing::Point(941, 211);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(155, 17);
+			this->label3->Size = System::Drawing::Size(175, 20);
 			this->label3->TabIndex = 132;
 			this->label3->Text = L"( Example: ABC course,...)";
 			// 
@@ -350,7 +351,7 @@ namespace CMS {
 			this->label6->ForeColor = System::Drawing::Color::DarkGreen;
 			this->label6->Location = System::Drawing::Point(205, 218);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(107, 17);
+			this->label6->Size = System::Drawing::Size(121, 20);
 			this->label6->TabIndex = 133;
 			this->label6->Text = L"( Example: 1,2,3 )";
 			// 
@@ -365,7 +366,7 @@ namespace CMS {
 			this->txt_courseID->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_courseID->MaxLength = 12;
 			this->txt_courseID->Name = L"txt_courseID";
-			this->txt_courseID->Size = System::Drawing::Size(289, 29);
+			this->txt_courseID->Size = System::Drawing::Size(289, 33);
 			this->txt_courseID->TabIndex = 135;
 			// 
 			// lbl_courseID
@@ -377,7 +378,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->lbl_courseID->Location = System::Drawing::Point(811, 119);
 			this->lbl_courseID->Name = L"lbl_courseID";
-			this->lbl_courseID->Size = System::Drawing::Size(97, 24);
+			this->lbl_courseID->Size = System::Drawing::Size(116, 27);
 			this->lbl_courseID->TabIndex = 134;
 			this->lbl_courseID->Text = L"Course ID:";
 			// 
@@ -389,7 +390,7 @@ namespace CMS {
 			this->label7->ForeColor = System::Drawing::Color::DarkGreen;
 			this->label7->Location = System::Drawing::Point(943, 149);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(123, 17);
+			this->label7->Size = System::Drawing::Size(139, 20);
 			this->label7->TabIndex = 136;
 			this->label7->Text = L"( Example: 12344,...)";
 			// 
@@ -409,6 +410,7 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 830);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(52, 52);
@@ -435,7 +437,7 @@ namespace CMS {
 			// 
 			// ViewListStudentInACourses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1592, 894);
@@ -459,6 +461,7 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ViewListStudentInACourses";
 			this->Padding = System::Windows::Forms::Padding(4);

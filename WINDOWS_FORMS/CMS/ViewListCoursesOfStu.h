@@ -138,7 +138,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->lbl_title->Location = System::Drawing::Point(231, 13);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(559, 31);
+			this->lbl_title->Size = System::Drawing::Size(653, 37);
 			this->lbl_title->TabIndex = 6;
 			this->lbl_title->Text = L"VIEW YOUR COURSE IN CURRENT SEMESTER";
 			// 
@@ -167,7 +167,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->lbl_semester->Location = System::Drawing::Point(834, 76);
 			this->lbl_semester->Name = L"lbl_semester";
-			this->lbl_semester->Size = System::Drawing::Size(94, 24);
+			this->lbl_semester->Size = System::Drawing::Size(112, 27);
 			this->lbl_semester->TabIndex = 60;
 			this->lbl_semester->Text = L"Semester:";
 			// 
@@ -179,7 +179,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->lbl_schoolyear->Location = System::Drawing::Point(469, 76);
 			this->lbl_schoolyear->Name = L"lbl_schoolyear";
-			this->lbl_schoolyear->Size = System::Drawing::Size(115, 24);
+			this->lbl_schoolyear->Size = System::Drawing::Size(136, 27);
 			this->lbl_schoolyear->TabIndex = 58;
 			this->lbl_schoolyear->Text = L"School Year:";
 			// 
@@ -254,7 +254,7 @@ namespace CMS {
 			this->txt_schoolyear->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear->Name = L"txt_schoolyear";
 			this->txt_schoolyear->ReadOnly = true;
-			this->txt_schoolyear->Size = System::Drawing::Size(232, 29);
+			this->txt_schoolyear->Size = System::Drawing::Size(232, 33);
 			this->txt_schoolyear->TabIndex = 78;
 			// 
 			// txt_fullname
@@ -268,7 +268,7 @@ namespace CMS {
 			this->txt_fullname->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_fullname->Name = L"txt_fullname";
 			this->txt_fullname->ReadOnly = true;
-			this->txt_fullname->Size = System::Drawing::Size(232, 29);
+			this->txt_fullname->Size = System::Drawing::Size(232, 33);
 			this->txt_fullname->TabIndex = 81;
 			// 
 			// lbl_fullname
@@ -279,7 +279,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->lbl_fullname->Location = System::Drawing::Point(94, 76);
 			this->lbl_fullname->Name = L"lbl_fullname";
-			this->lbl_fullname->Size = System::Drawing::Size(101, 24);
+			this->lbl_fullname->Size = System::Drawing::Size(121, 27);
 			this->lbl_fullname->TabIndex = 80;
 			this->lbl_fullname->Text = L"Full Name:";
 			// 
@@ -294,7 +294,7 @@ namespace CMS {
 			this->txt_studentID->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_studentID->Name = L"txt_studentID";
 			this->txt_studentID->ReadOnly = true;
-			this->txt_studentID->Size = System::Drawing::Size(232, 29);
+			this->txt_studentID->Size = System::Drawing::Size(232, 33);
 			this->txt_studentID->TabIndex = 83;
 			// 
 			// lbl_studentID
@@ -305,7 +305,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->lbl_studentID->Location = System::Drawing::Point(89, 115);
 			this->lbl_studentID->Name = L"lbl_studentID";
-			this->lbl_studentID->Size = System::Drawing::Size(106, 24);
+			this->lbl_studentID->Size = System::Drawing::Size(126, 27);
 			this->lbl_studentID->TabIndex = 82;
 			this->lbl_studentID->Text = L"Student ID:";
 			// 
@@ -414,7 +414,7 @@ namespace CMS {
 			this->txt_schoolyear_end->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear_end->Name = L"txt_schoolyear_end";
 			this->txt_schoolyear_end->ReadOnly = true;
-			this->txt_schoolyear_end->Size = System::Drawing::Size(83, 29);
+			this->txt_schoolyear_end->Size = System::Drawing::Size(83, 33);
 			this->txt_schoolyear_end->TabIndex = 112;
 			// 
 			// label23
@@ -426,7 +426,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->label23->Location = System::Drawing::Point(685, 115);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(47, 24);
+			this->label23->Size = System::Drawing::Size(55, 27);
 			this->label23->TabIndex = 111;
 			this->label23->Text = L"End:";
 			// 
@@ -441,7 +441,7 @@ namespace CMS {
 			this->txt_schoolyear_start->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txt_schoolyear_start->MaxLength = 4;
 			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
-			this->txt_schoolyear_start->Size = System::Drawing::Size(83, 29);
+			this->txt_schoolyear_start->Size = System::Drawing::Size(83, 33);
 			this->txt_schoolyear_start->TabIndex = 110;
 			this->txt_schoolyear_start->TextChanged += gcnew System::EventHandler(this, &ViewListCoursesOfStu::txt_schoolyear_start_TextChanged);
 			// 
@@ -454,7 +454,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->label22->Location = System::Drawing::Point(528, 115);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(56, 24);
+			this->label22->Size = System::Drawing::Size(66, 27);
 			this->label22->TabIndex = 109;
 			this->label22->Text = L"Start:";
 			// 
@@ -483,7 +483,7 @@ namespace CMS {
 			this->chkbox_sem3->Location = System::Drawing::Point(1025, 75);
 			this->chkbox_sem3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem3->Name = L"chkbox_sem3";
-			this->chkbox_sem3->Size = System::Drawing::Size(42, 28);
+			this->chkbox_sem3->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem3->TabIndex = 115;
 			this->chkbox_sem3->Text = L"3";
 			this->chkbox_sem3->UseVisualStyleBackColor = true;
@@ -498,7 +498,7 @@ namespace CMS {
 			this->chkbox_sem2->Location = System::Drawing::Point(979, 75);
 			this->chkbox_sem2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem2->Name = L"chkbox_sem2";
-			this->chkbox_sem2->Size = System::Drawing::Size(42, 28);
+			this->chkbox_sem2->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem2->TabIndex = 114;
 			this->chkbox_sem2->Text = L"2";
 			this->chkbox_sem2->UseVisualStyleBackColor = true;
@@ -513,7 +513,7 @@ namespace CMS {
 			this->chkbox_sem1->Location = System::Drawing::Point(934, 75);
 			this->chkbox_sem1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chkbox_sem1->Name = L"chkbox_sem1";
-			this->chkbox_sem1->Size = System::Drawing::Size(42, 28);
+			this->chkbox_sem1->Size = System::Drawing::Size(50, 31);
 			this->chkbox_sem1->TabIndex = 113;
 			this->chkbox_sem1->Text = L"1";
 			this->chkbox_sem1->UseVisualStyleBackColor = true;
@@ -521,7 +521,7 @@ namespace CMS {
 			// 
 			// ViewListCoursesOfStu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 19);
+			this->AutoScaleDimensions = System::Drawing::SizeF(10, 21);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1095, 528);

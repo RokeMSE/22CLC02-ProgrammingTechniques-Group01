@@ -232,11 +232,41 @@
     <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add1Course.resx">
+      <DependentUpon>Add1Course.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add1StuToClass.resx">
       <DependentUpon>Add1StuToClass.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add1StuToCourse.resx">
       <DependentUpon>Add1StuToCourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create1Class.resx">
+      <DependentUpon>Create1Class.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create1NewSem.resx">
+      <DependentUpon>Create1NewSem.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSchoolYear.resx">
+      <DependentUpon>CreateSchoolYear.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete1Course.resx">
+      <DependentUpon>Delete1Course.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpListStuInCourseCSV.resx">
+      <DependentUpon>ExpListStuInCourseCSV.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImpNewStuCSV.resx">
+      <DependentUpon>ImpNewStuCSV.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImpScoreOfCourse.resx">
+      <DependentUpon>ImpScoreOfCourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImpStuToCourseCSV.resx">
+      <DependentUpon>ImpStuToCourseCSV.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
@@ -250,11 +280,35 @@
     <EmbeddedResource Include="RemoveStuFromCourse.resx">
       <DependentUpon>RemoveStuFromCourse.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCourseInfo.resx">
+      <DependentUpon>UpdateCourseInfo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateResult.resx">
       <DependentUpon>UpdateResult.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAListInAClasses.resx">
       <DependentUpon>ViewAListInAClasses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAListStudentInACourse.resx">
+      <DependentUpon>ViewAListStudentInACourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewClasses.resx">
+      <DependentUpon>ViewClasses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewListCourses.resx">
+      <DependentUpon>ViewListCourses.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewListCoursesOfStu.resx">
+      <DependentUpon>ViewListCoursesOfStu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScoreOf1Stu.resx">
+      <DependentUpon>ViewScoreOf1Stu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScoreOfClass.resx">
+      <DependentUpon>ViewScoreOfClass.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScoreOfCourse.resx">
+      <DependentUpon>ViewScoreOfCourse.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

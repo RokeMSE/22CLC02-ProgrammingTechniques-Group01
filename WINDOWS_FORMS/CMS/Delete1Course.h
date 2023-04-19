@@ -70,6 +70,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Delete1Course::typeid));
 			this->Delete1CourseLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolYearLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolYearTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -106,7 +107,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->SchoolYearLab->Location = System::Drawing::Point(279, 100);
 			this->SchoolYearLab->Name = L"SchoolYearLab";
-			this->SchoolYearLab->Size = System::Drawing::Size(146, 32);
+			this->SchoolYearLab->Size = System::Drawing::Size(147, 32);
 			this->SchoolYearLab->TabIndex = 1;
 			this->SchoolYearLab->Text = L"School year";
 			// 
@@ -132,7 +133,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->SemesterLab->Location = System::Drawing::Point(279, 150);
 			this->SemesterLab->Name = L"SemesterLab";
-			this->SemesterLab->Size = System::Drawing::Size(118, 32);
+			this->SemesterLab->Size = System::Drawing::Size(119, 32);
 			this->SemesterLab->TabIndex = 3;
 			this->SemesterLab->Text = L"Semester";
 			// 
@@ -168,7 +169,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->CourseIDLab->Location = System::Drawing::Point(279, 202);
 			this->CourseIDLab->Name = L"CourseIDLab";
-			this->CourseIDLab->Size = System::Drawing::Size(126, 32);
+			this->CourseIDLab->Size = System::Drawing::Size(127, 32);
 			this->CourseIDLab->TabIndex = 5;
 			this->CourseIDLab->Text = L"Course ID";
 			// 
@@ -237,6 +238,7 @@ namespace CMS {
 			this->Controls->Add(this->SchoolYearTextBox);
 			this->Controls->Add(this->SchoolYearLab);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Delete1Course";
 			this->Text = L"Delete1Course";

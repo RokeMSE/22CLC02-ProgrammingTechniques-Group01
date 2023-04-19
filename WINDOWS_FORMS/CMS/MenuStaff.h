@@ -913,6 +913,7 @@ namespace CMS {
 			this->Controls->Add(this->MenuPanel);
 			this->Controls->Add(this->OptionPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"MenuStaff";
 			this->Text = L"MenuStaff";
