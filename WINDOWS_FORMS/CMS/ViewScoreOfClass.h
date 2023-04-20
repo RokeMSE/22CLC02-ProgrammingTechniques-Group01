@@ -318,188 +318,8 @@ namespace CMS {
 	}
 
 	private: System::Void searchButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		DLL<COURSE*>* cur = g_currentSemester->course.head;
-		int* count = new int;
-		*count = 0;
-		while (!cur)
-		{
-			(*count)++;
-			cur = cur->next;
-		}
-
-		cur = g_currentSemester->course.head;
-		int* temp = new int;
-		DLL<STUDENT*>* stu = L_Student.head;
-		if (!cur)
-		{
-			*temp = 1;
-			ListViewItem^ item = listViewScoreOfClass->Items->Add("x");
-			while (*temp != *count)
-			{
-				item->SubItems->Add("x");
-				(*temp)++;
-			}
-			delete temp;
-		}
-		else
-		{
-			String^ selectedValue = ChooseClass->Text;
-			msclr::interop::marshal_context context;
-			string dummy = context.marshal_as<std::string>(selectedValue);
-			while (stu)
-			{
-				if (stu->data->Class->convertToString() == dummy)
-				{
-					cur = g_currentSemester->course.head;
-					ListViewItem^ item = listViewScoreOfClass->Items->Add(msclr::interop::marshal_as<System::String^>(stu->data->firstname + " " + stu->data->lastname));
-					while (cur)
-					{
-						bool found = false;
-						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
-						while (stuScore != nullptr)
-						{
-							if (stuScore->data->student == stu->data)
-							{
-								if (stuScore->data->finalMark == 0)
-									item->SubItems->Add("x");
-								else
-								{
-									/*msclr::interop::marshal_context context;
-									string dummy = context.marshal_as<std::string>(setprecision("2")(stuScore->data->finalMark));*/
-									String^ str = String::Format("{0:0.00}", stuScore->data->finalMark);
-									item->SubItems->Add(str);
-								}
-								found = true;
-								break;
-							}
-							stuScore = stuScore->next;
-						}
-						if (!found)
-							item->SubItems->Add("x");
-
-						cur = cur->next;
-					}
-					//here
-					cur = g_currentSemester->course.head;
-					float* thisSemGPA = new float;
-					*thisSemGPA = 0;
-					int* cre = new int;
-					*cre = 0;
-					while (cur)
-					{
-						bool found = false;
-						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
-						while (stuScore != nullptr)
-						{
-							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
-							{
-								*thisSemGPA = *thisSemGPA + (stuScore->data->finalMark) * (cur->data->credit);
-								found = true;
-								*cre += cur->data->credit;
-								break;
-							}
-							stuScore = stuScore->next;
-						}
-						cur = cur->next;
-					}
-					if (*thisSemGPA == 0)
-						item->SubItems->Add("x");
-					else
-					{
-						msclr::interop::marshal_context context;
-						string dummy = context.marshal_as<std::string>(((*thisSemGPA) / (*cre)).ToString("0.00"));
-						item->SubItems->Add(msclr::interop::marshal_as<System::String^>(dummy));
-					}
-					delete thisSemGPA;
-					float* GPA = new float;
-
-					DLL<SCHOOLYEAR*>* year = L_SchoolYear.head;
-					*GPA = 0;
-					*cre = 0;
-					while (year)
-					{
-						if (!year->data->sem1)
-							break;
-						cur = year->data->sem1->course.head;
-						while (cur)
-						{
-							bool found = false;
-							DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
-							while (stuScore != nullptr)
-							{
-								if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
-								{
-									*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
-									found = true;
-									*cre += cur->data->credit;
-									break;
-								}
-								stuScore = stuScore->next;
-							}
-							cur = cur->next;
-						}
-						if (!year->data->sem2)
-							break;
-						cur = year->data->sem2->course.head;
-
-						while (cur)
-						{
-							bool found = false;
-							DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
-							while (stuScore != nullptr)
-							{
-								if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
-								{
-									*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
-									found = true;
-									*cre += cur->data->credit;
-									break;
-								}
-								stuScore = stuScore->next;
-							}
-							cur = cur->next;
-						}
-
-						if (!year->data->sem3)
-							break;
-						cur = year->data->sem3->course.head;
-						while (cur)
-						{
-							bool found = false;
-							DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
-							while (stuScore != nullptr)
-							{
-								if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
-								{
-									*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
-									found = true;
-									*cre += cur->data->credit;
-									break;
-								}
-								stuScore = stuScore->next;
-							}
-							cur = cur->next;
-						}
-						year = year->next;
-					}
-					if (*GPA == 0)
-						item->SubItems->Add("x");
-					else
-					{
-						msclr::interop::marshal_context context;
-						string dummy = context.marshal_as<std::string>(((*GPA) / (*cre)).ToString("0.00"));
-						item->SubItems->Add(msclr::interop::marshal_as<System::String^>(dummy));
-					}
-				}
-				stu = stu->next;
-			}
-
-		}
-		delete temp;
-		delete count;
-	}
-	private: System::Void ViewScoreOfClass_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		listViewScoreOfClass->Clear();
+		this->listViewScoreOfClass->Columns->Add("Student");
 		DLL<COURSE*>* course = g_currentSemester->course.head;
 		while (course)
 		{
@@ -508,12 +328,6 @@ namespace CMS {
 		}
 		this->listViewScoreOfClass->Columns->Add("GPA this semester");
 		this->listViewScoreOfClass->Columns->Add("Overall GPA");
-		DLL<CLASS>* Class = L_Class.head;
-		while (Class)
-		{
-			this->ChooseClass->Items->Add(msclr::interop::marshal_as<System::String^>(Class->data.convertToString()));
-			Class = Class->next;
-		}
 		course = g_currentSemester->course.head;
 		int* i = new int;
 		*i = 0;
@@ -528,6 +342,187 @@ namespace CMS {
 		(*i)++;
 		this->listViewScoreOfClass->Columns[*i]->Width = 100;
 		delete i;
+		DLL<COURSE*>* cur = g_currentSemester->course.head;
+		int* count = new int;
+		*count = 0;
+		while (!cur)
+		{
+			(*count)++;
+			cur = cur->next;
+		}
+		cur = g_currentSemester->course.head;
+		int* temp = new int;
+		DLL<CLASS>* curClas = L_Class.head;
+		String^ selectedValue = ChooseClass->Text;
+		msclr::interop::marshal_context context;
+		string dummy = context.marshal_as<std::string>(selectedValue);
+		while (curClas)
+		{
+			if (to_string(curClas->data.K) + convertFromProgram(curClas->data.program) + to_string(curClas->data.No) == dummy)
+				break;
+			curClas = curClas->next;
+		}
+		DLL<STUDENT*>* stu = curClas->data.student.head;
+		if (!cur)
+		{
+			*temp = 1;
+			ListViewItem^ item = listViewScoreOfClass->Items->Add("x");
+			while (*temp != *count)
+			{
+				item->SubItems->Add("x");
+				(*temp)++;
+			}
+		}
+		else
+		{
+			
+			while (stu && stu->data->Class->convertToString() == dummy)
+			{
+				cur = g_currentSemester->course.head;
+				ListViewItem^ item = listViewScoreOfClass->Items->Add(msclr::interop::marshal_as<System::String^>(stu->data->firstname + " " + stu->data->lastname));
+				while (cur)
+				{
+					bool found = false;
+					DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
+					while (stuScore)
+					{
+						if (stuScore->data->student == stu->data)
+						{
+							String^ str = String::Format("{0:0.00}", stuScore->data->finalMark);
+							item->SubItems->Add(str);
+							found = true;
+						}
+						stuScore = stuScore->next;
+					}
+					if (!found)
+						item->SubItems->Add("x");
+
+					cur = cur->next;
+				}
+				cur = g_currentSemester->course.head;
+				float* thisSemGPA = new float;
+				*thisSemGPA = 0;
+				int* cre = new int;
+				*cre = 0;
+				while (cur)
+				{
+					bool found = false;
+					DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
+					while (stuScore != nullptr)
+					{
+						if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+						{
+							*thisSemGPA = *thisSemGPA + (stuScore->data->finalMark) * (cur->data->credit);
+							found = true;
+							*cre += cur->data->credit;
+							break;
+						}
+						stuScore = stuScore->next;
+					}
+					cur = cur->next;
+				}
+				if (*thisSemGPA == 0)
+					item->SubItems->Add("x");
+				else
+				{
+					msclr::interop::marshal_context context;
+					string dummy = context.marshal_as<std::string>(((*thisSemGPA) / (*cre)).ToString("0.00"));
+					item->SubItems->Add(msclr::interop::marshal_as<System::String^>(dummy));
+				}
+				delete thisSemGPA;
+				float* GPA = new float;
+
+				DLL<SCHOOLYEAR*>* year = L_SchoolYear.head;
+				*GPA = 0;
+				*cre = 0;
+				while (year)
+				{
+					if (!year->data->sem1)
+						break;
+					cur = year->data->sem1->course.head;
+					while (cur)
+					{
+						bool found = false;
+						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
+						while (stuScore != nullptr)
+						{
+							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							{
+								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								found = true;
+								*cre += cur->data->credit;
+								break;
+							}
+							stuScore = stuScore->next;
+						}
+						cur = cur->next;
+					}
+					if (!year->data->sem2)
+						break;
+					cur = year->data->sem2->course.head;
+
+					while (cur)
+					{
+						bool found = false;
+						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
+						while (stuScore != nullptr)
+						{
+							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							{
+								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								found = true;
+								*cre += cur->data->credit;
+								break;
+							}
+							stuScore = stuScore->next;
+						}
+						cur = cur->next;
+					}
+
+					if (!year->data->sem3)
+						break;
+					cur = year->data->sem3->course.head;
+					while (cur)
+					{
+						bool found = false;
+						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
+						while (stuScore != nullptr)
+						{
+							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							{
+								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								found = true;
+								*cre += cur->data->credit;
+								break;
+							}
+							stuScore = stuScore->next;
+						}
+						cur = cur->next;
+					}
+					year = year->next;
+				}
+				if (*GPA == 0)
+					item->SubItems->Add("x");
+				else
+				{
+					msclr::interop::marshal_context context;
+					string dummy = context.marshal_as<std::string>(((*GPA) / (*cre)).ToString("0.00"));
+					item->SubItems->Add(msclr::interop::marshal_as<System::String^>(dummy));
+				}
+				stu = stu->next;
+			}
+
+		}
+		delete temp;
+		delete count;
+	}
+	private: System::Void ViewScoreOfClass_Load(System::Object^ sender, System::EventArgs^ e) {
+		DLL<CLASS>* Class = L_Class.head;
+		while (Class)
+		{
+			this->ChooseClass->Items->Add(msclr::interop::marshal_as<System::String^>(Class->data.convertToString()));
+			Class = Class->next;
+		}
 	}
 	private: System::Void btn_back_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
