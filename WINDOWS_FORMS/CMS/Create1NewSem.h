@@ -321,7 +321,10 @@ namespace CMS {
 			{
 				cur = temp;
 				if (!cur->next)
+				{
 					delete cur;
+					break;
+				}
 				while (cur->next->next)
 					cur = cur->next;
 				dummy = cur->next;

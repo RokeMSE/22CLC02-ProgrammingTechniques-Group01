@@ -517,6 +517,29 @@ namespace CMS {
 		delete count;
 	}
 	private: System::Void ViewScoreOfClass_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->listViewScoreOfClass->Columns->Add("Student");
+		DLL<COURSE*>* course = g_currentSemester->course.head;
+		while (course)
+		{
+			this->listViewScoreOfClass->Columns->Add(msclr::interop::marshal_as<System::String^>(course->data->ID));
+			course = course->next;
+		}
+		this->listViewScoreOfClass->Columns->Add("GPA this semester");
+		this->listViewScoreOfClass->Columns->Add("Overall GPA");
+		course = g_currentSemester->course.head;
+		int* i = new int;
+		*i = 0;
+		this->listViewScoreOfClass->Columns[*i]->Width = 160;
+		for (*i = 1; course; (*i)++)
+		{
+			this->listViewScoreOfClass->Columns[*i]->Width = 100;
+			course = course->next;
+		}
+
+		this->listViewScoreOfClass->Columns[*i]->Width = 125;
+		(*i)++;
+		this->listViewScoreOfClass->Columns[*i]->Width = 100;
+		delete i;
 		DLL<CLASS>* Class = L_Class.head;
 		while (Class)
 		{
