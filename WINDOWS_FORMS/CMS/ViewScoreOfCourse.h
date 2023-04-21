@@ -388,7 +388,7 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
+			//this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 765);
 			this->account->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->account->Name = L"account";
@@ -437,7 +437,7 @@ namespace CMS {
 			this->Controls->Add(this->lbl_semester);
 			this->Controls->Add(this->lbl_schoolyear);
 			this->Controls->Add(this->lbl_title);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			//this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"ViewScoreBoardOfTheCourse";
 			this->Text = L"MyForm";
