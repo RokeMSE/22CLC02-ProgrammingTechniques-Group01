@@ -313,14 +313,15 @@ namespace CMS {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(4, 700);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(60, 60);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 58;
-			this->pictureBox1->TabStop = false;
+			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
+			//this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
+			this->account->Location = System::Drawing::Point(4, 765);
+			this->account->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->account->Name = L"account";
+			this->account->Size = System::Drawing::Size(60, 65);
+			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->account->TabIndex = 102;
+			this->account->TabStop = false;
 			// 
 			// button1
 			// 

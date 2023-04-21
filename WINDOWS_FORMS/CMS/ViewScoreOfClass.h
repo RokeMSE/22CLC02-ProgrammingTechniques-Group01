@@ -410,11 +410,29 @@ namespace CMS {
 					DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
 					while (stuScore != nullptr)
 					{
-						if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+						if (stuScore->data->student == stu->data && stuScore->data->totalMark != 0)
 						{
-							*thisSemGPA = *thisSemGPA + (stuScore->data->finalMark) * (cur->data->credit);
+							float* tempGPA = new float;
+							if (stuScore->data->totalMark >= 9 && stuScore->data->totalMark <= 10)
+								*tempGPA = 4;
+							else if (stuScore->data->totalMark >= 8 && stuScore->data->totalMark < 9)
+								*tempGPA = 3.5;
+							else if (stuScore->data->totalMark >= 7 && stuScore->data->totalMark < 8)
+								*tempGPA = 3;
+							else if (stuScore->data->totalMark >= 6 && stuScore->data->totalMark < 7)
+								*tempGPA = 2.5;
+							else if (stuScore->data->totalMark >= 5 && stuScore->data->totalMark < 6)
+								*tempGPA = 2;
+							else if (stuScore->data->totalMark >= 4 && stuScore->data->totalMark < 5)
+								*tempGPA = 1.5;
+							else if (stuScore->data->totalMark >= 3 && stuScore->data->totalMark < 4)
+								*tempGPA = 1;
+							else if (stuScore->data->totalMark < 3 && stuScore->data->totalMark > 0)
+								*tempGPA = 0;
+							*thisSemGPA = *thisSemGPA + (*tempGPA) * (cur->data->credit);
 							found = true;
 							*cre += cur->data->credit;
+							delete tempGPA;
 							break;
 						}
 						stuScore = stuScore->next;
@@ -446,11 +464,29 @@ namespace CMS {
 						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
 						while (stuScore != nullptr)
 						{
-							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							if (stuScore->data->student == stu->data && stuScore->data->totalMark != 0)
 							{
-								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								float* tempGPA = new float;
+								if (stuScore->data->totalMark >= 9 && stuScore->data->totalMark <= 10)
+									*tempGPA = 4;
+								else if (stuScore->data->totalMark >= 8 && stuScore->data->totalMark < 9)
+									*tempGPA = 3.5;
+								else if (stuScore->data->totalMark >= 7 && stuScore->data->totalMark < 8)
+									*tempGPA = 3;
+								else if (stuScore->data->totalMark >= 6 && stuScore->data->totalMark < 7)
+									*tempGPA = 2.5;
+								else if (stuScore->data->totalMark >= 5 && stuScore->data->totalMark < 6)
+									*tempGPA = 2;
+								else if (stuScore->data->totalMark >= 4 && stuScore->data->totalMark < 5)
+									*tempGPA = 1.5;
+								else if (stuScore->data->totalMark >= 3 && stuScore->data->totalMark < 4)
+									*tempGPA = 1;
+								else if (stuScore->data->totalMark < 3 && stuScore->data->totalMark > 0)
+									*tempGPA = 0;
+								*GPA = *GPA + (*tempGPA) * (cur->data->credit);
 								found = true;
 								*cre += cur->data->credit;
+								delete tempGPA;
 								break;
 							}
 							stuScore = stuScore->next;
@@ -467,11 +503,29 @@ namespace CMS {
 						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
 						while (stuScore != nullptr)
 						{
-							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							if (stuScore->data->student == stu->data && stuScore->data->totalMark != 0)
 							{
-								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								float* tempGPA = new float;
+								if (stuScore->data->totalMark >= 9 && stuScore->data->totalMark <= 10)
+									*tempGPA = 4;
+								else if (stuScore->data->totalMark >= 8 && stuScore->data->totalMark < 9)
+									*tempGPA = 3.5;
+								else if (stuScore->data->totalMark >= 7 && stuScore->data->totalMark < 8)
+									*tempGPA = 3;
+								else if (stuScore->data->totalMark >= 6 && stuScore->data->totalMark < 7)
+									*tempGPA = 2.5;
+								else if (stuScore->data->totalMark >= 5 && stuScore->data->totalMark < 6)
+									*tempGPA = 2;
+								else if (stuScore->data->totalMark >= 4 && stuScore->data->totalMark < 5)
+									*tempGPA = 1.5;
+								else if (stuScore->data->totalMark >= 3 && stuScore->data->totalMark < 4)
+									*tempGPA = 1;
+								else if (stuScore->data->totalMark < 3 && stuScore->data->totalMark > 0)
+									*tempGPA = 0;
+								*GPA = *GPA + (*tempGPA) * (cur->data->credit);
 								found = true;
 								*cre += cur->data->credit;
+								delete tempGPA;
 								break;
 							}
 							stuScore = stuScore->next;
@@ -488,11 +542,29 @@ namespace CMS {
 						DLL<SCOREBOARD*>* stuScore = cur->data->students.head;
 						while (stuScore != nullptr)
 						{
-							if (stuScore->data->student == stu->data && stuScore->data->finalMark != 0)
+							if (stuScore->data->student == stu->data && stuScore->data->totalMark != 0)
 							{
-								*GPA = *GPA + (stuScore->data->finalMark) * (cur->data->credit);
+								float* tempGPA = new float;
+								if (stuScore->data->totalMark >= 9 && stuScore->data->totalMark <= 10)
+									*tempGPA = 4;
+								else if (stuScore->data->totalMark >= 8 && stuScore->data->totalMark < 9)
+									*tempGPA = 3.5;
+								else if (stuScore->data->totalMark >= 7 && stuScore->data->totalMark < 8)
+									*tempGPA = 3;
+								else if (stuScore->data->totalMark >= 6 && stuScore->data->totalMark < 7)
+									*tempGPA = 2.5;
+								else if (stuScore->data->totalMark >= 5 && stuScore->data->totalMark < 6)
+									*tempGPA = 2;
+								else if (stuScore->data->totalMark >= 4 && stuScore->data->totalMark < 5)
+									*tempGPA = 1.5;
+								else if (stuScore->data->totalMark >= 3 && stuScore->data->totalMark < 4)
+									*tempGPA = 1;
+								else if (stuScore->data->totalMark < 3 && stuScore->data->totalMark > 0)
+									*tempGPA = 0;
+								*GPA = *GPA + (*tempGPA) * (cur->data->credit);
 								found = true;
 								*cre += cur->data->credit;
+								delete tempGPA;
 								break;
 							}
 							stuScore = stuScore->next;
