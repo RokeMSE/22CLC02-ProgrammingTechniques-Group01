@@ -38,7 +38,19 @@ namespace CMS {
 
 	private:
 		System::Windows::Forms::Form^ sourceForm;
-		/// <summary>
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ lbl_title;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Panel^ panel3;
+		   /// <summary>
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
@@ -51,20 +63,207 @@ namespace CMS {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AboutUs::typeid));
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->lbl_title = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(155)),
+				static_cast<System::Int32>(static_cast<System::Byte>(177)));
+			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(234)),
+				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			this->button1->Location = System::Drawing::Point(4, 4);
+			this->button1->Name = L"button1";
+			this->button1->Padding = System::Windows::Forms::Padding(4);
+			this->button1->Size = System::Drawing::Size(60, 60);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"<";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &AboutUs::button1_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(234)),
+				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			this->panel1->Controls->Add(this->button1);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panel1->Location = System::Drawing::Point(4, 4);
+			this->panel1->Name = L"panel1";
+			this->panel1->Padding = System::Windows::Forms::Padding(4);
+			this->panel1->Size = System::Drawing::Size(68, 351);
+			this->panel1->TabIndex = 1;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(155)),
+				static_cast<System::Int32>(static_cast<System::Byte>(177)));
+			this->panel2->Controls->Add(this->lbl_title);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel2->Location = System::Drawing::Point(72, 4);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(820, 66);
+			this->panel2->TabIndex = 2;
+			// 
+			// lbl_title
+			// 
+			this->lbl_title->AutoSize = true;
+			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(234)),
+				static_cast<System::Int32>(static_cast<System::Byte>(32)));
+			this->lbl_title->Location = System::Drawing::Point(335, 9);
+			this->lbl_title->Name = L"lbl_title";
+			this->lbl_title->Size = System::Drawing::Size(162, 48);
+			this->lbl_title->TabIndex = 93;
+			this->lbl_title->Text = L"About us";
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(4, 4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(233, 233);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 3;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Handwriting", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->label1->Location = System::Drawing::Point(52, 240);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(128, 28);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"GROUP 1";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Courier New", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(130, 125);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(376, 25);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"22127488 - Truong Thanh Toan";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Courier New", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(130, 165);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(467, 25);
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"22127254 - Truong Nguyen Hien Luong";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Courier New", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(130, 204);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(376, 25);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"22127391 - Nguyen Xuan Thanh";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Courier New", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(130, 243);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(298, 25);
+			this->label5->TabIndex = 8;
+			this->label5->Text = L"22127101 - Ly Ngoc Han";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Courier New", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(130, 282);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(350, 25);
+			this->label6->TabIndex = 9;
+			this->label6->Text = L"21126058 - Nguyen Minh Dat";
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
+				static_cast<System::Int32>(static_cast<System::Byte>(181)));
+			this->panel3->Controls->Add(this->pictureBox1);
+			this->panel3->Controls->Add(this->label1);
+			this->panel3->Location = System::Drawing::Point(651, 70);
+			this->panel3->Name = L"panel3";
+			this->panel3->Padding = System::Windows::Forms::Padding(4);
+			this->panel3->Size = System::Drawing::Size(241, 284);
+			this->panel3->TabIndex = 10;
 			// 
 			// AboutUs
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(278, 244);
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(244)),
+				static_cast<System::Int32>(static_cast<System::Byte>(234)));
+			this->ClientSize = System::Drawing::Size(896, 359);
+			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"AboutUs";
+			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"AboutUs";
+			this->Load += gcnew System::EventHandler(this, &AboutUs::AboutUs_Load);
+			this->panel1->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void AboutUs_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+		sourceForm->Show();
+	}
 	};
 }

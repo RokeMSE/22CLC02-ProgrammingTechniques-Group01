@@ -1008,8 +1008,8 @@ namespace CMS {
 			// 
 			// UpdateResult
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(13, 27);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1225, 765);
 			this->ControlBox = false;

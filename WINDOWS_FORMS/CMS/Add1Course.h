@@ -365,6 +365,7 @@ namespace CMS {
 			this->chkbox_sem3->TabIndex = 177;
 			this->chkbox_sem3->Text = L"3";
 			this->chkbox_sem3->UseVisualStyleBackColor = false;
+			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &Add1Course::chkbox_sem3_CheckedChanged);
 			// 
 			// chkbox_sem2
 			// 
@@ -382,6 +383,7 @@ namespace CMS {
 			this->chkbox_sem2->TabIndex = 176;
 			this->chkbox_sem2->Text = L"2";
 			this->chkbox_sem2->UseVisualStyleBackColor = false;
+			this->chkbox_sem2->CheckedChanged += gcnew System::EventHandler(this, &Add1Course::chkbox_sem2_CheckedChanged);
 			// 
 			// chkbox_sem1
 			// 
@@ -399,6 +401,7 @@ namespace CMS {
 			this->chkbox_sem1->TabIndex = 175;
 			this->chkbox_sem1->Text = L"1";
 			this->chkbox_sem1->UseVisualStyleBackColor = false;
+			this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &Add1Course::chkbox_sem1_CheckedChanged);
 			// 
 			// label13
 			// 
@@ -949,7 +952,27 @@ namespace CMS {
 		}
 	//////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////
+	
 
+	//////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////
+	// 
+	//this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &Add1StuToCourse::chkbox_sem1_CheckedChanged);
+	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem1->Checked) {
+			chkbox_sem2->Checked = 0;	chkbox_sem3->Checked = 0;
+		}
+	}
+	private: System::Void chkbox_sem2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem2->Checked) {
+			chkbox_sem1->Checked = 0;	chkbox_sem3->Checked = 0;
+		}
+	}
+	private: System::Void chkbox_sem3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chkbox_sem3->Checked) {
+			chkbox_sem1->Checked = 0;	chkbox_sem2->Checked = 0;
+		}
+	}
 
 	//////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////
