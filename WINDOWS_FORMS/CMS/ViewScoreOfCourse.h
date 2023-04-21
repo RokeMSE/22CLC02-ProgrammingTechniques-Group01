@@ -3,6 +3,8 @@
 #include "header.h"
 #include <msclr/marshal_cppstd.h>
 #include <cctype>
+using namespace GROUP1;
+using namespace std;
 namespace CMS {
 
 	using namespace System;
@@ -23,7 +25,6 @@ namespace CMS {
 		{
 			InitializeComponent();
 			this->sourceForm = form;
-			this->btn_Search->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::btn_Search_Click);
 		}
 
 	protected:
@@ -65,7 +66,7 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ btn_Search;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::DomainUpDown^ domainUD_schoolyear;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::CheckBox^ chkbox_sem3;
@@ -106,7 +107,6 @@ namespace CMS {
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->btn_Search = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->domainUD_schoolyear = (gcnew System::Windows::Forms::DomainUpDown());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -116,7 +116,6 @@ namespace CMS {
 			this->chkbox_sem1 = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -193,7 +192,7 @@ namespace CMS {
 			this->listView->Location = System::Drawing::Point(74, 275);
 			this->listView->Margin = System::Windows::Forms::Padding(0);
 			this->listView->Name = L"listView";
-			this->listView->Size = System::Drawing::Size(1046, 494);
+			this->listView->Size = System::Drawing::Size(1074, 494);
 			this->listView->TabIndex = 88;
 			this->listView->UseCompatibleStateImageBehavior = false;
 			this->listView->View = System::Windows::Forms::View::Details;
@@ -201,37 +200,37 @@ namespace CMS {
 			// col_no
 			// 
 			this->col_no->Text = L"No";
-			this->col_no->Width = 36;
+			this->col_no->Width = 51;
 			// 
 			// col_ID
 			// 
 			this->col_ID->Text = L"Student ID";
-			this->col_ID->Width = 110;
+			this->col_ID->Width = 131;
 			// 
 			// col_firstname
 			// 
 			this->col_firstname->Text = L"First name";
-			this->col_firstname->Width = 193;
+			this->col_firstname->Width = 254;
 			// 
 			// col_lastname
 			// 
 			this->col_lastname->Text = L"Last name";
-			this->col_lastname->Width = 120;
+			this->col_lastname->Width = 131;
 			// 
 			// col_othermark
 			// 
 			this->col_othermark->Text = L"Other Mark";
-			this->col_othermark->Width = 108;
+			this->col_othermark->Width = 142;
 			// 
 			// col_midtermMark
 			// 
 			this->col_midtermMark->Text = L"Midterm Mark";
-			this->col_midtermMark->Width = 127;
+			this->col_midtermMark->Width = 140;
 			// 
 			// col_finalmark
 			// 
 			this->col_finalmark->Text = L"Final Mark";
-			this->col_finalmark->Width = 88;
+			this->col_finalmark->Width = 120;
 			// 
 			// col_totalMark
 			// 
@@ -301,7 +300,6 @@ namespace CMS {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(4, 4);
@@ -310,18 +308,6 @@ namespace CMS {
 			this->panel1->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel1->Size = System::Drawing::Size(68, 765);
 			this->panel1->TabIndex = 139;
-			// 
-			// pictureBox1
-			// 
-			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
-			//this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 765);
-			this->account->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
-			this->account->Name = L"account";
-			this->account->Size = System::Drawing::Size(60, 65);
-			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->account->TabIndex = 102;
-			this->account->TabStop = false;
 			// 
 			// button1
 			// 
@@ -364,7 +350,7 @@ namespace CMS {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(72, 4);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1048, 66);
+			this->panel2->Size = System::Drawing::Size(1077, 66);
 			this->panel2->TabIndex = 141;
 			// 
 			// label1
@@ -434,7 +420,7 @@ namespace CMS {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(914, 120);
+			this->pictureBox2->Location = System::Drawing::Point(926, 123);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(120, 120);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -446,7 +432,7 @@ namespace CMS {
 			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1124, 773);
+			this->ClientSize = System::Drawing::Size(1153, 773);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->chkbox_sem3);
 			this->Controls->Add(this->chkbox_sem2);
@@ -465,13 +451,13 @@ namespace CMS {
 			this->Controls->Add(this->lbl_title);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Location = System::Drawing::Point(4, 765);
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"ViewScoreOfCourse";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &ViewScoreOfCourse::ViewScoreOfCourse_Load);
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();

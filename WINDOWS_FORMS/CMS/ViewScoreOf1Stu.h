@@ -15,14 +15,14 @@ namespace CMS {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for ViewScoreOfCourse
+	/// Summary for ViewScoreOf1Stu
 	/// </summary>
-	public ref class ViewScoreOfCourse : public System::Windows::Forms::Form
+	public ref class ViewScoreOf1Stu : public System::Windows::Forms::Form
 	{
 	public:
 		System::Windows::Forms::Form^ sourceForm;
 		System::Windows::Forms::Form^ loginForm;
-		ViewScoreOfCourse(System::Windows::Forms::Form^ form, System::Windows::Forms::Form^ loginform)
+		ViewScoreOf1Stu(System::Windows::Forms::Form^ form, System::Windows::Forms::Form^ loginform)
 		{
 			this->sourceForm = form;
 			this->loginForm = loginform;
@@ -53,7 +53,7 @@ namespace CMS {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~ViewScoreOfCourse()
+		~ViewScoreOf1Stu()
 		{
 			if (components)
 			{
@@ -125,7 +125,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewScoreOfCourse::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ViewScoreOf1Stu::typeid));
 			this->pnl_title = (gcnew System::Windows::Forms::Panel());
 			this->lbl_title = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -221,7 +221,7 @@ namespace CMS {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 124;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::pictureBox1_Click);
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ViewScoreOf1Stu::pictureBox1_Click);
 			// 
 			// btn_back
 			// 
@@ -237,7 +237,7 @@ namespace CMS {
 			this->btn_back->TabIndex = 89;
 			this->btn_back->Text = L"<";
 			this->btn_back->UseVisualStyleBackColor = false;
-			this->btn_back->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::btn_back_Click);
+			this->btn_back->Click += gcnew System::EventHandler(this, &ViewScoreOf1Stu::btn_back_Click);
 			// 
 			// btn_Search
 			// 
@@ -253,7 +253,7 @@ namespace CMS {
 			this->btn_Search->TabIndex = 110;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = false;
-			this->btn_Search->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::btn_Search_Click);
+			this->btn_Search->Click += gcnew System::EventHandler(this, &ViewScoreOf1Stu::btn_Search_Click);
 			// 
 			// txt_schoolyear_end
 			// 
@@ -295,7 +295,7 @@ namespace CMS {
 			this->txt_schoolyear_start->Name = L"txt_schoolyear_start";
 			this->txt_schoolyear_start->Size = System::Drawing::Size(93, 33);
 			this->txt_schoolyear_start->TabIndex = 107;
-			this->txt_schoolyear_start->TextChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::txt_schoolyear_start_TextChanged);
+			this->txt_schoolyear_start->TextChanged += gcnew System::EventHandler(this, &ViewScoreOf1Stu::txt_schoolyear_start_TextChanged);
 			// 
 			// label22
 			// 
@@ -323,7 +323,7 @@ namespace CMS {
 			this->chkbox_sem3->TabIndex = 105;
 			this->chkbox_sem3->Text = L"3";
 			this->chkbox_sem3->UseVisualStyleBackColor = true;
-			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::chkbox_sem3_CheckedChanged);
+			this->chkbox_sem3->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOf1Stu::chkbox_sem3_CheckedChanged);
 			// 
 			// chkbox_sem2
 			// 
@@ -338,7 +338,7 @@ namespace CMS {
 			this->chkbox_sem2->TabIndex = 104;
 			this->chkbox_sem2->Text = L"2";
 			this->chkbox_sem2->UseVisualStyleBackColor = true;
-			this->chkbox_sem2->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::chkbox_sem2_CheckedChanged);
+			this->chkbox_sem2->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOf1Stu::chkbox_sem2_CheckedChanged);
 			// 
 			// chkbox_sem1
 			// 
@@ -353,7 +353,7 @@ namespace CMS {
 			this->chkbox_sem1->TabIndex = 103;
 			this->chkbox_sem1->Text = L"1";
 			this->chkbox_sem1->UseVisualStyleBackColor = true;
-			this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::chkbox_sem1_CheckedChanged);
+			this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOf1Stu::chkbox_sem1_CheckedChanged);
 			// 
 			// lbl_semester
 			// 
@@ -654,7 +654,7 @@ namespace CMS {
 			this->btn_exit->TabIndex = 99;
 			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = false;
-			this->btn_exit->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::btn_exit_Click);
+			this->btn_exit->Click += gcnew System::EventHandler(this, &ViewScoreOf1Stu::btn_exit_Click);
 			// 
 			// btn_logout
 			// 
@@ -671,9 +671,9 @@ namespace CMS {
 			this->btn_logout->TabIndex = 98;
 			this->btn_logout->Text = L"Log out";
 			this->btn_logout->UseVisualStyleBackColor = false;
-			this->btn_logout->Click += gcnew System::EventHandler(this, &ViewScoreOfCourse::btn_logout_Click);
+			this->btn_logout->Click += gcnew System::EventHandler(this, &ViewScoreOf1Stu::btn_logout_Click);
 			// 
-			// ViewScoreOfCourse
+			// ViewScoreOf1Stu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -711,10 +711,10 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
-			this->Name = L"ViewScoreOfCourse";
+			this->Name = L"ViewScoreOf1Stu";
 			this->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->Text = L"ViewScoreOfCourse";
-			this->Load += gcnew System::EventHandler(this, &ViewScoreOfCourse::ViewScoreOfCourse_Load);
+			this->Text = L"ViewScoreOf1Stu";
+			this->Load += gcnew System::EventHandler(this, &ViewScoreOf1Stu::ViewScoreOf1Stu_Load);
 			this->pnl_title->ResumeLayout(false);
 			this->pnl_title->PerformLayout();
 			this->panel1->ResumeLayout(false);
@@ -757,7 +757,7 @@ namespace CMS {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 		pnl_account->Visible = !pnl_account->Visible;
 	}
-	private: System::Void ViewScoreOfCourse_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void ViewScoreOf1Stu_Load(System::Object^ sender, System::EventArgs^ e) {
 		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
 		txt_fullname->Text = gcnew System::String((g_currentStudent->firstname + " " + g_currentStudent->lastname).c_str());
 		txt_studentID->Text = gcnew System::String((g_currentStudent->studentID).c_str());

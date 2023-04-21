@@ -1433,7 +1433,7 @@ namespace CMS {
 	}
 	private: System::Void ViewScoreOfACourseBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		ViewScoreBoardOfTheCourse^ form = gcnew ViewScoreBoardOfTheCourse(this);
+		ViewScoreOfCourse^ form = gcnew ViewScoreOfCourse(this);
 		form->Show();
 	}
 	private: System::Void btn_Add1CourseToCurSem_Click(System::Object^ sender, System::EventArgs^ e) {
