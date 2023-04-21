@@ -410,7 +410,7 @@ namespace CMS {
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
+			//this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
 			this->account->Location = System::Drawing::Point(4, 830);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(52, 52);
@@ -461,7 +461,7 @@ namespace CMS {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			//this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ViewListStudentInACourses";
 			this->Padding = System::Windows::Forms::Padding(4);
@@ -562,9 +562,12 @@ namespace CMS {
 					while (course) {
 						if (course->data->name == msclr::interop::marshal_as<std::string >(coursename) || course->data->ID == msclr::interop::marshal_as<std::string >(courseid)) {
 							GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp = course->data->students.head;
+							int* count = new int;
+							*count = 0;
 							while (tmp) {
+								
 								item = gcnew ListViewItem();
-								item->Text = gcnew System::String(std::to_string(tmp->data->student->No).c_str());
+								item->Text = gcnew System::String(std::to_string((*count)).c_str());
 								item->SubItems->Add(gcnew System::String((tmp->data->student->studentID).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->firstname).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->lastname).c_str()));
@@ -576,6 +579,7 @@ namespace CMS {
 								tmp = tmp->next;
 
 							}
+							delete count;
 							course = course->next;
 						}
 						else {
@@ -588,10 +592,12 @@ namespace CMS {
 					while (course) {
 						if (course->data->name == msclr::interop::marshal_as<std::string >(coursename) || course->data->ID == msclr::interop::marshal_as<std::string >(courseid)) {
 							GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp = course->data->students.head;
+							int* count = new int;
+							*count = 0;
 							while (tmp) {
 
 								item = gcnew ListViewItem();
-								item->Text = gcnew System::String(std::to_string(tmp->data->student->No).c_str());
+								item->Text = gcnew System::String(std::to_string((*count)++).c_str());
 								item->SubItems->Add(gcnew System::String((tmp->data->student->studentID).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->firstname).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->lastname).c_str()));
@@ -602,6 +608,7 @@ namespace CMS {
 								listView1->Items->Add(item);
 								tmp = tmp->next;
 							}
+							delete count;
 							course = course->next;
 						}
 						else {
@@ -614,10 +621,12 @@ namespace CMS {
 					while (course) {
 						if (course->data->name == msclr::interop::marshal_as<std::string >(coursename) || course->data->ID == msclr::interop::marshal_as<std::string >(courseid)) {
 							GROUP1::DLL<GROUP1::SCOREBOARD*>* tmp = course->data->students.head;
+							int* count = new int;
+							*count = 0;
 							while (tmp) {
 
 								item = gcnew ListViewItem();
-								item->Text = gcnew System::String(std::to_string(tmp->data->student->No).c_str());
+								item->Text = gcnew System::String(std::to_string((*count)++).c_str());
 								item->SubItems->Add(gcnew System::String((tmp->data->student->studentID).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->firstname).c_str()));
 								item->SubItems->Add(gcnew System::String((tmp->data->student->lastname).c_str()));
@@ -630,6 +639,7 @@ namespace CMS {
 								tmp = tmp->next;
 
 							}
+							delete count;
 							course = course->next;
 
 						}
