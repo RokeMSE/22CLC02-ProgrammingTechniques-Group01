@@ -101,7 +101,8 @@ namespace CMS {
 	private: System::Windows::Forms::PictureBox^ account;
 	private: System::Windows::Forms::Button^ btn_back;
 	private: System::Windows::Forms::Panel^ pnl_title;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ UpdateCourseInfoLab;
+
 
 
 	protected:
@@ -153,7 +154,7 @@ namespace CMS {
 			this->account = (gcnew System::Windows::Forms::PictureBox());
 			this->btn_back = (gcnew System::Windows::Forms::Button());
 			this->pnl_title = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->UpdateCourseInfoLab = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
 			this->pnl_title->SuspendLayout();
@@ -578,7 +579,7 @@ namespace CMS {
 			// 
 			this->pnl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->pnl_title->Controls->Add(this->label1);
+			this->pnl_title->Controls->Add(this->UpdateCourseInfoLab);
 			this->pnl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8));
 			this->pnl_title->Location = System::Drawing::Point(66, 5);
 			this->pnl_title->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
@@ -586,17 +587,17 @@ namespace CMS {
 			this->pnl_title->Size = System::Drawing::Size(975, 75);
 			this->pnl_title->TabIndex = 99;
 			// 
-			// label1
+			// UpdateCourseInfoLab
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(252, 19);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(483, 37);
-			this->label1->TabIndex = 58;
-			this->label1->Text = L"UPDATE COURSE INFORMATION";
+			this->UpdateCourseInfoLab->AutoSize = true;
+			this->UpdateCourseInfoLab->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
+			this->UpdateCourseInfoLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->UpdateCourseInfoLab->Location = System::Drawing::Point(252, 19);
+			this->UpdateCourseInfoLab->Name = L"UpdateCourseInfoLab";
+			this->UpdateCourseInfoLab->Size = System::Drawing::Size(483, 37);
+			this->UpdateCourseInfoLab->TabIndex = 58;
+			this->UpdateCourseInfoLab->Text = L"UPDATE COURSE INFORMATION";
 			// 
 			// UpdateCourseInfo
 			// 
@@ -639,7 +640,7 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
-			//this->Name;
+			//this->Name = L"UpdateCourseInfo";
 			this->Text = L"UpdateCourseInfo";
 			this->Load += gcnew System::EventHandler(this, &UpdateCourseInfo::UpdateCourseInfo_Load);
 			this->panel2->ResumeLayout(false);

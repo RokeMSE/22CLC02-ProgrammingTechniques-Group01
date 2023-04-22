@@ -145,6 +145,9 @@
     <ClInclude Include="Add1StuToCourse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ChangePass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Create1Class.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -226,6 +229,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChangePass.cpp" />
     <ClCompile Include="export.cpp" />
     <ClCompile Include="helperFunctions.cpp" />
     <ClCompile Include="import.cpp" />
@@ -243,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add1StuToCourse.resx">
       <DependentUpon>Add1StuToCourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create1Class.resx">
       <DependentUpon>Create1Class.h</DependentUpon>

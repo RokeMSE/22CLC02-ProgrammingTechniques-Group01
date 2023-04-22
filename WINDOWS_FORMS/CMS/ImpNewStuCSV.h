@@ -15,13 +15,13 @@ namespace CMS {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for impNewStuCSV
+	/// Summary for ImpNewStuCSV
 	/// </summary>
-	public ref class impNewStuCSV : public System::Windows::Forms::Form
+	public ref class ImpNewStuCSV : public System::Windows::Forms::Form
 	{
 	public:
 		System::Windows::Forms::Form^ sourceForm;
-		impNewStuCSV(System::Windows::Forms::Form^ form)
+		ImpNewStuCSV(System::Windows::Forms::Form^ form)
 		{
 			this->sourceForm = form;
 			InitializeComponent();
@@ -34,7 +34,7 @@ namespace CMS {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~impNewStuCSV()
+		~ImpNewStuCSV()
 		{
 			if (components)
 			{
@@ -54,12 +54,15 @@ namespace CMS {
 
 	private: System::Windows::Forms::Label^ SchoolyearLab;
 	private: System::Windows::Forms::Label^ ClassLab;
-	private: System::Windows::Forms::TextBox^ ClassTextBox;
+
 	private: System::Windows::Forms::Label^ PathLab;
 	private: System::Windows::Forms::TextBox^ PathTextBox;
 	private: System::Windows::Forms::Button^ BrowseBtn;
-	private: System::Windows::Forms::Button^ ExitBtn;
+
 	private: System::Windows::Forms::Button^ EnterBtn;
+	private: System::Windows::Forms::ComboBox^ ClassComboBox;
+
+	private: System::Windows::Forms::Panel^ WorkPanel;
 
 
 
@@ -98,19 +101,20 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(impNewStuCSV::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ImpNewStuCSV::typeid));
 			this->StartPanel = (gcnew System::Windows::Forms::Panel());
 			this->ImpNewStuCSVLab = (gcnew System::Windows::Forms::Label());
 			this->SchoolyearTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->SchoolyearLab = (gcnew System::Windows::Forms::Label());
 			this->ClassLab = (gcnew System::Windows::Forms::Label());
-			this->ClassTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->PathLab = (gcnew System::Windows::Forms::Label());
 			this->PathTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->BrowseBtn = (gcnew System::Windows::Forms::Button());
-			this->ExitBtn = (gcnew System::Windows::Forms::Button());
 			this->EnterBtn = (gcnew System::Windows::Forms::Button());
+			this->ClassComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->WorkPanel = (gcnew System::Windows::Forms::Panel());
 			this->StartPanel->SuspendLayout();
+			this->WorkPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// StartPanel
@@ -123,7 +127,7 @@ namespace CMS {
 			this->StartPanel->Location = System::Drawing::Point(0, 0);
 			this->StartPanel->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->StartPanel->Name = L"StartPanel";
-			this->StartPanel->Size = System::Drawing::Size(1212, 120);
+			this->StartPanel->Size = System::Drawing::Size(838, 120);
 			this->StartPanel->TabIndex = 96;
 			this->StartPanel->Visible = false;
 			// 
@@ -133,26 +137,29 @@ namespace CMS {
 			this->ImpNewStuCSVLab->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
 			this->ImpNewStuCSVLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->ImpNewStuCSVLab->Location = System::Drawing::Point(233, 46);
+			this->ImpNewStuCSVLab->Location = System::Drawing::Point(63, 47);
 			this->ImpNewStuCSVLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->ImpNewStuCSVLab->Name = L"ImpNewStuCSVLab";
 			this->ImpNewStuCSVLab->Size = System::Drawing::Size(677, 37);
 			this->ImpNewStuCSVLab->TabIndex = 58;
 			this->ImpNewStuCSVLab->Text = L"Import a CSV file containing students of a class";
+			this->ImpNewStuCSVLab->Click += gcnew System::EventHandler(this, &ImpNewStuCSV::ImpNewStuCSVLab_Click);
 			// 
 			// SchoolyearTextBox
 			// 
 			this->SchoolyearTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)),
 				static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->SchoolyearTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Bold));
-			this->SchoolyearTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(132)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->SchoolyearTextBox->Location = System::Drawing::Point(308, 187);
+			this->SchoolyearTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->SchoolyearTextBox->Cursor = System::Windows::Forms::Cursors::No;
+			this->SchoolyearTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			this->SchoolyearTextBox->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->SchoolyearTextBox->Location = System::Drawing::Point(192, 52);
 			this->SchoolyearTextBox->Margin = System::Windows::Forms::Padding(5, 3, 5, 3);
 			this->SchoolyearTextBox->Name = L"SchoolyearTextBox";
 			this->SchoolyearTextBox->ReadOnly = true;
-			this->SchoolyearTextBox->Size = System::Drawing::Size(314, 29);
+			this->SchoolyearTextBox->Size = System::Drawing::Size(314, 39);
 			this->SchoolyearTextBox->TabIndex = 98;
+			this->SchoolyearTextBox->TextChanged += gcnew System::EventHandler(this, &ImpNewStuCSV::SchoolyearTextBox_TextChanged);
 			// 
 			// SchoolyearLab
 			// 
@@ -161,10 +168,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->SchoolyearLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->SchoolyearLab->Location = System::Drawing::Point(113, 194);
-			this->SchoolyearLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->SchoolyearLab->Location = System::Drawing::Point(44, 53);
+			this->SchoolyearLab->Margin = System::Windows::Forms::Padding(3);
 			this->SchoolyearLab->Name = L"SchoolyearLab";
-			this->SchoolyearLab->Size = System::Drawing::Size(147, 32);
+			this->SchoolyearLab->Padding = System::Windows::Forms::Padding(3);
+			this->SchoolyearLab->Size = System::Drawing::Size(152, 38);
 			this->SchoolyearLab->TabIndex = 99;
 			this->SchoolyearLab->Text = L"School year";
 			// 
@@ -176,27 +184,12 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->ClassLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->ClassLab->Location = System::Drawing::Point(113, 259);
+			this->ClassLab->Location = System::Drawing::Point(44, 110);
 			this->ClassLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->ClassLab->Name = L"ClassLab";
-			this->ClassLab->Size = System::Drawing::Size(72, 32);
+			this->ClassLab->Size = System::Drawing::Size(71, 32);
 			this->ClassLab->TabIndex = 104;
 			this->ClassLab->Text = L"Class";
-			// 
-			// ClassTextBox
-			// 
-			this->ClassTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
-				static_cast<System::Int32>(static_cast<System::Byte>(172)));
-			this->ClassTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Bold));
-			this->ClassTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->ClassTextBox->Location = System::Drawing::Point(308, 259);
-			this->ClassTextBox->Margin = System::Windows::Forms::Padding(5, 3, 5, 3);
-			this->ClassTextBox->MaxLength = 10;
-			this->ClassTextBox->Name = L"ClassTextBox";
-			this->ClassTextBox->Size = System::Drawing::Size(314, 29);
-			this->ClassTextBox->TabIndex = 105;
-			this->ClassTextBox->TextChanged += gcnew System::EventHandler(this, &impNewStuCSV::ClassTextBox_TextChanged);
 			// 
 			// PathLab
 			// 
@@ -205,60 +198,41 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->PathLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->PathLab->Location = System::Drawing::Point(113, 319);
+			this->PathLab->Location = System::Drawing::Point(44, 165);
 			this->PathLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->PathLab->Name = L"PathLab";
-			this->PathLab->Size = System::Drawing::Size(190, 32);
+			this->PathLab->Size = System::Drawing::Size(189, 32);
 			this->PathLab->TabIndex = 110;
 			this->PathLab->Text = L"Path of CSV file";
 			// 
 			// PathTextBox
 			// 
-			this->PathTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
-				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->PathTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Bold));
-			this->PathTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->PathTextBox->Location = System::Drawing::Point(308, 322);
+			this->PathTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->PathTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->PathTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
+			this->PathTextBox->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->PathTextBox->Location = System::Drawing::Point(192, 163);
 			this->PathTextBox->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->PathTextBox->Name = L"PathTextBox";
-			this->PathTextBox->ReadOnly = true;
-			this->PathTextBox->Size = System::Drawing::Size(657, 29);
+			this->PathTextBox->Size = System::Drawing::Size(441, 34);
 			this->PathTextBox->TabIndex = 113;
 			// 
 			// BrowseBtn
 			// 
-			this->BrowseBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
-				static_cast<System::Int32>(static_cast<System::Byte>(172)));
-			this->BrowseBtn->Enabled = false;
-			this->BrowseBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Bold));
+			this->BrowseBtn->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->BrowseBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->BrowseBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->BrowseBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->BrowseBtn->Location = System::Drawing::Point(982, 321);
+			this->BrowseBtn->Location = System::Drawing::Point(572, 208);
 			this->BrowseBtn->Margin = System::Windows::Forms::Padding(5, 3, 5, 3);
 			this->BrowseBtn->Name = L"BrowseBtn";
-			this->BrowseBtn->Size = System::Drawing::Size(86, 29);
+			this->BrowseBtn->Size = System::Drawing::Size(100, 34);
 			this->BrowseBtn->TabIndex = 114;
 			this->BrowseBtn->Text = L"Browse";
 			this->BrowseBtn->UseVisualStyleBackColor = false;
-			this->BrowseBtn->Click += gcnew System::EventHandler(this, &impNewStuCSV::BrowseBtn_Click);
-			// 
-			// ExitBtn
-			// 
-			this->ExitBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->ExitBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ExitBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
-				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ExitBtn->Location = System::Drawing::Point(1061, 412);
-			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(81, 48);
-			this->ExitBtn->TabIndex = 116;
-			this->ExitBtn->Text = L"Exit";
-			this->ExitBtn->UseVisualStyleBackColor = false;
-			this->ExitBtn->Click += gcnew System::EventHandler(this, &impNewStuCSV::ExitBtn_Click);
+			this->BrowseBtn->Click += gcnew System::EventHandler(this, &ImpNewStuCSV::BrowseBtn_Click);
 			// 
 			// EnterBtn
 			// 
@@ -269,53 +243,86 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->EnterBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->EnterBtn->Location = System::Drawing::Point(956, 412);
+			this->EnterBtn->Location = System::Drawing::Point(221, 262);
 			this->EnterBtn->Name = L"EnterBtn";
-			this->EnterBtn->Size = System::Drawing::Size(90, 48);
+			this->EnterBtn->Size = System::Drawing::Size(203, 41);
 			this->EnterBtn->TabIndex = 115;
 			this->EnterBtn->Text = L"Enter";
 			this->EnterBtn->UseVisualStyleBackColor = false;
-			this->EnterBtn->Click += gcnew System::EventHandler(this, &impNewStuCSV::EnterBtn_Click);
+			this->EnterBtn->Click += gcnew System::EventHandler(this, &ImpNewStuCSV::EnterBtn_Click);
 			// 
-			// impNewStuCSV
+			// ClassComboBox
+			// 
+			this->ClassComboBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->ClassComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->ClassComboBox->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->ClassComboBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
+			this->ClassComboBox->ForeColor = System::Drawing::Color::FloralWhite;
+			this->ClassComboBox->IntegralHeight = false;
+			this->ClassComboBox->Location = System::Drawing::Point(192, 110);
+			this->ClassComboBox->Name = L"ClassComboBox";
+			this->ClassComboBox->Size = System::Drawing::Size(314, 36);
+			this->ClassComboBox->TabIndex = 117;
+			// 
+			// WorkPanel
+			// 
+			this->WorkPanel->AutoSize = true;
+			this->WorkPanel->Controls->Add(this->ClassComboBox);
+			this->WorkPanel->Controls->Add(this->EnterBtn);
+			this->WorkPanel->Controls->Add(this->BrowseBtn);
+			this->WorkPanel->Controls->Add(this->PathTextBox);
+			this->WorkPanel->Controls->Add(this->PathLab);
+			this->WorkPanel->Controls->Add(this->ClassLab);
+			this->WorkPanel->Controls->Add(this->SchoolyearLab);
+			this->WorkPanel->Controls->Add(this->SchoolyearTextBox);
+			this->WorkPanel->Dock = System::Windows::Forms::DockStyle::Top;
+			this->WorkPanel->Location = System::Drawing::Point(0, 120);
+			this->WorkPanel->Name = L"WorkPanel";
+			this->WorkPanel->Size = System::Drawing::Size(838, 306);
+			this->WorkPanel->TabIndex = 118;
+			// 
+			// ImpNewStuCSV
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(14, 32);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
+			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ClientSize = System::Drawing::Size(1212, 500);
+			this->ClientSize = System::Drawing::Size(838, 500);
 			this->ControlBox = false;
-			this->Controls->Add(this->ExitBtn);
-			this->Controls->Add(this->EnterBtn);
-			this->Controls->Add(this->BrowseBtn);
-			this->Controls->Add(this->PathTextBox);
-			this->Controls->Add(this->PathLab);
-			this->Controls->Add(this->ClassTextBox);
-			this->Controls->Add(this->ClassLab);
-			this->Controls->Add(this->SchoolyearLab);
-			this->Controls->Add(this->SchoolyearTextBox);
+			this->Controls->Add(this->WorkPanel);
 			this->Controls->Add(this->StartPanel);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
-			this->Name = L"impNewStuCSV";
-			this->Text = L"impNewStuCSV";
-			this->Load += gcnew System::EventHandler(this, &impNewStuCSV::impNewStuCSV_Load);
+			this->Name = L"ImpNewStuCSV";
+			this->Text = L"ImpNewStuCSV";
+			this->Load += gcnew System::EventHandler(this, &ImpNewStuCSV::ImpNewStuCSV_Load);
 			this->StartPanel->ResumeLayout(false);
 			this->StartPanel->PerformLayout();
+			this->WorkPanel->ResumeLayout(false);
+			this->WorkPanel->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void impNewStuCSV_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void ImpNewStuCSV_Load(System::Object^ sender, System::EventArgs^ e) {
 		SchoolyearTextBox->Text = (g_currentSchoolYear->begin) + "_" + (g_currentSchoolYear->end);
 		SchoolyearTextBox->ReadOnly = true;
+		DLL<CLASS>* cur = L_Class.head;
+		while (cur)
+		{
+			this->ClassComboBox->Items->Add(msclr::interop::marshal_as<String^>(cur->data.convertToString()));
+			cur = cur->next;
+		}
 	}
 	private: System::Void EnterBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->ClassTextBox->Text == "" || this->PathTextBox->Text == "")
+		if (this->ClassComboBox->Text == "" || this->PathTextBox->Text == "")
 		{
 			MessageBox::Show("Invalid!", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Error);
 			return;
@@ -323,7 +330,7 @@ namespace CMS {
 		DLL<CLASS>* cur = L_Class.head;
 		while (cur)
 		{
-			if (cur->data.convertToString() == msclr::interop::marshal_as<string>(ClassTextBox->Text))
+			if (cur->data.convertToString() == msclr::interop::marshal_as<string>(ClassComboBox->Text))
 				break;
 			cur = cur->next;
 		}
@@ -428,5 +435,9 @@ namespace CMS {
 		// then exit
 		Application::Exit();
 	}
+private: System::Void ImpNewStuCSVLab_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void SchoolyearTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

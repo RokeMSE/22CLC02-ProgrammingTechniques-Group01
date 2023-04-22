@@ -117,6 +117,7 @@ namespace CMS {
 			this->BeginYearTextBox->Name = L"BeginYearTextBox";
 			this->BeginYearTextBox->Size = System::Drawing::Size(152, 39);
 			this->BeginYearTextBox->TabIndex = 2;
+			this->BeginYearTextBox->TextChanged += gcnew System::EventHandler(this, &CreateSchoolYear::BeginYearTextBox_TextChanged);
 			// 
 			// EndYearTextBox
 			// 
@@ -247,10 +248,11 @@ namespace CMS {
 
 		}
 #pragma endregion
-	/*private: System::Void BeginYearTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void BeginYearTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (this->BeginYearTextBox->Text == "")
 			return;
-	}*/
+		EndYearTextBox->Text = msclr::interop::marshal_as<System::String^>(std::to_string(std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text)) + 1));
+	}
 	private: System::Void EnterBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->BeginYearTextBox->Text == "")
 			MessageBox::Show("Invalid!");
@@ -269,15 +271,15 @@ namespace CMS {
 				{
 					MessageBox::Show("This school year has already existed");
 					this->BeginYearTextBox->Clear();
+					this->EndYearTextBox->Clear();
 					return;
 				}
 				cur = cur->next;
 			}
-			GROUP1::DLL<GROUP1::SCHOOLYEAR*>* schoolyear;
+			GROUP1::DLL<GROUP1::SCHOOLYEAR*>* schoolyear = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
 			schoolyear->data = new GROUP1::SCHOOLYEAR;
 			schoolyear->data->begin = std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text));
 			schoolyear->data->end = schoolyear->data->begin + 1;
-			EndYearTextBox->Text = msclr::interop::marshal_as<System::String^>(std::to_string(schoolyear->data->end));
 			if (L_SchoolYear.head == nullptr)
 			{
 				L_SchoolYear.head = schoolyear;
@@ -287,6 +289,7 @@ namespace CMS {
 			{
 				L_SchoolYear.tail->next = schoolyear;
 				schoolyear->prev = L_SchoolYear.tail;
+				schoolyear->next = nullptr;
 				L_SchoolYear.tail = schoolyear;
 				GROUP1::DLL<GROUP1::STUDENT*>* stu = L_Student.head;
 				while (stu)
@@ -294,15 +297,18 @@ namespace CMS {
 					GROUP1::DLL<GROUP1::COURSE*>* courseOfStu = stu->data->courses.head;
 					while (courseOfStu)
 					{
+						GROUP1::DLL<GROUP1::COURSE*>* dummy = courseOfStu;
 						courseOfStu = courseOfStu->next;
-						delete courseOfStu->prev;
+						delete dummy;
 					}
-					stu->data->courses.head = nullptr;
-					stu->data->courses.tail = nullptr;
+					/*stu->data->courses.head = nullptr;
+					stu->data->courses.tail = nullptr;*/
 					stu = stu->next;
 				}
 			}
 			g_currentSchoolYear = L_SchoolYear.tail->data;
+			//MessageBox::Show(msclr::interop::marshal_as<String^>(std::to_string(g_currentSchoolYear->begin)));
+			//g_currentSemester = nullptr;
 			MessageBox::Show("Successfully create a new school year!");
 		}
 	}

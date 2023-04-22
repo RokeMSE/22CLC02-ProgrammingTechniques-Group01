@@ -111,6 +111,9 @@
     <ClInclude Include="ViewScoreOf1Stu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChangePass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="export.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangePass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

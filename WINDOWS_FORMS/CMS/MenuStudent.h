@@ -1,6 +1,7 @@
 #pragma once
 
 #include "header.h"
+#include "ChangePass.h"
 #include "ViewListCoursesOfStu.h"
 #include "ViewScoreOf1Stu.h"
 
@@ -150,7 +151,7 @@ namespace CMS {
 
 
 
-	private: System::Windows::Forms::Button^ AccountBtn;
+
 
 	private: System::Windows::Forms::Panel^ AccountPanel;
 	private: System::Windows::Forms::Button^ btn_exit;
@@ -158,6 +159,7 @@ namespace CMS {
 	private: System::Windows::Forms::Button^ ChangePassBtn;
 	private: System::Windows::Forms::Button^ ExitBtn;
 	private: System::Windows::Forms::Button^ ViewScoreOfACourseBtn;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 
@@ -190,7 +192,7 @@ namespace CMS {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MenuStudent::typeid));
 			this->OptionPanel = (gcnew System::Windows::Forms::Panel());
-			this->AccountBtn = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ViewBtn = (gcnew System::Windows::Forms::Button());
 			this->ImagePanel = (gcnew System::Windows::Forms::Panel());
 			this->Icon = (gcnew System::Windows::Forms::PictureBox());
@@ -205,6 +207,7 @@ namespace CMS {
 			this->btn_logout = (gcnew System::Windows::Forms::Button());
 			this->ChangePassBtn = (gcnew System::Windows::Forms::Button());
 			this->OptionPanel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->ImagePanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Icon))->BeginInit();
 			this->MenuPanel->SuspendLayout();
@@ -217,7 +220,7 @@ namespace CMS {
 			this->OptionPanel->AutoScroll = true;
 			this->OptionPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->OptionPanel->Controls->Add(this->AccountBtn);
+			this->OptionPanel->Controls->Add(this->pictureBox1);
 			this->OptionPanel->Controls->Add(this->ViewBtn);
 			this->OptionPanel->Controls->Add(this->ImagePanel);
 			this->OptionPanel->Dock = System::Windows::Forms::DockStyle::Left;
@@ -227,25 +230,18 @@ namespace CMS {
 			this->OptionPanel->Size = System::Drawing::Size(249, 704);
 			this->OptionPanel->TabIndex = 26;
 			// 
-			// AccountBtn
+			// pictureBox1
 			// 
-			this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->AccountBtn->Dock = System::Windows::Forms::DockStyle::Top;
-			this->AccountBtn->FlatAppearance->BorderSize = 0;
-			this->AccountBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->AccountBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->AccountBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->AccountBtn->Location = System::Drawing::Point(0, 195);
-			this->AccountBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->AccountBtn->Name = L"AccountBtn";
-			this->AccountBtn->Size = System::Drawing::Size(249, 49);
-			this->AccountBtn->TabIndex = 51;
-			this->AccountBtn->Text = L"ACCOUNT";
-			this->AccountBtn->UseVisualStyleBackColor = false;
-			this->AccountBtn->Click += gcnew System::EventHandler(this, &MenuStudent::AccountBtn_Click);
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->InitialImage = nullptr;
+			this->pictureBox1->Location = System::Drawing::Point(77, 412);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(98, 90);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 52;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MenuStudent::AccountBtn_Click);
 			// 
 			// ViewBtn
 			// 
@@ -290,7 +286,7 @@ namespace CMS {
 			this->Icon->Location = System::Drawing::Point(58, 10);
 			this->Icon->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Icon->Name = L"Icon";
-			this->Icon->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Icon->Padding = System::Windows::Forms::Padding(4);
 			this->Icon->Size = System::Drawing::Size(117, 128);
 			this->Icon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Icon->TabIndex = 31;
@@ -368,8 +364,9 @@ namespace CMS {
 			this->ViewScoreOfACourseBtn->Name = L"ViewScoreOfACourseBtn";
 			this->ViewScoreOfACourseBtn->Size = System::Drawing::Size(936, 50);
 			this->ViewScoreOfACourseBtn->TabIndex = 44;
-			this->ViewScoreOfACourseBtn->Text = L"View the scoreboard of a course";
+			this->ViewScoreOfACourseBtn->Text = L"View the scoreboard";
 			this->ViewScoreOfACourseBtn->UseVisualStyleBackColor = false;
+			this->ViewScoreOfACourseBtn->Click += gcnew System::EventHandler(this, &MenuStudent::ViewScoreOfACourseBtn_Click);
 			// 
 			// btn_ViewCourses
 			// 
@@ -480,6 +477,7 @@ namespace CMS {
 			this->Text = L"MenuStudent";
 			this->Load += gcnew System::EventHandler(this, &MenuStudent::MenuStudent_Load);
 			this->OptionPanel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ImagePanel->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Icon))->EndInit();
 			this->MenuPanel->ResumeLayout(false);
@@ -516,30 +514,39 @@ namespace CMS {
 	}
 	private: System::Void ViewBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!this->ViewPanel->Visible)
-			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
-				static_cast<System::Int32>(static_cast<System::Byte>(70)));
+		{
+			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(219)));
+			this->ViewBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(106)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)));
+		}
 		else
-			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-		this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		{
+			this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				static_cast<System::Int32>(static_cast<System::Byte>(41)));
+			this->ViewBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+		}
 		this->AccountPanel->Visible = false;
 		this->ViewPanel->Visible = !this->ViewPanel->Visible;
 	}
 	private: System::Void AccountBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (!this->AccountPanel->Visible)
-			this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(54)),
-				static_cast<System::Int32>(static_cast<System::Byte>(70)));
-		else
-			this->AccountBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-			static_cast<System::Int32>(static_cast<System::Byte>(87)));
+		this->ViewBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+			static_cast<System::Int32>(static_cast<System::Byte>(41)));
+		this->ViewBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			static_cast<System::Int32>(static_cast<System::Byte>(128)));
 		this->ViewPanel->Visible = false;
 		this->AccountPanel->Visible = !this->AccountPanel->Visible;
 	}
 	private: System::Void ChangePassBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		ChangePass^ form = gcnew ChangePass();
+		this->Hide();
+		form->Show();
 	}
-	};
+	private: System::Void ViewScoreOfACourseBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		ViewScoreOf1Stu^ form = gcnew ViewScoreOf1Stu(this, this->sourceForm);
+		this->Hide();
+		form->Show();
+	}
+};
 }

@@ -82,8 +82,6 @@ namespace CMS {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->account = (gcnew System::Windows::Forms::PictureBox());
@@ -101,7 +99,7 @@ namespace CMS {
 			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 22, System::Drawing::FontStyle::Bold));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(378, 17);
+			this->lbl_title->Location = System::Drawing::Point(155, 8);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(335, 58);
@@ -113,48 +111,36 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(430, 70);
+			this->pictureBox1->Location = System::Drawing::Point(250, 69);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(150, 150);
+			this->pictureBox1->Size = System::Drawing::Size(111, 118);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 130;
 			this->pictureBox1->TabStop = false;
 			// 
 			// columnHeader1
 			// 
-			this->columnHeader1->Text = L"Khóa";
-			this->columnHeader1->Width = 249;
+			this->columnHeader1->Text = L"Số thứ tự";
+			this->columnHeader1->Width = 128;
 			// 
 			// columnHeader2
 			// 
-			this->columnHeader2->Text = L"Program";
-			this->columnHeader2->Width = 256;
-			// 
-			// columnHeader3
-			// 
-			this->columnHeader3->Text = L"No";
-			this->columnHeader3->Width = 187;
-			// 
-			// columnHeader4
-			// 
-			this->columnHeader4->Text = L"YearIn";
-			this->columnHeader4->Width = 289;
+			this->columnHeader2->Text = L"Lớp";
+			this->columnHeader2->Width = 511;
 			// 
 			// listView1
 			// 
 			this->listView1->BackColor = System::Drawing::SystemColors::Info;
-			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(4) {
-				this->columnHeader1, this->columnHeader2,
-					this->columnHeader3, this->columnHeader4
-			});
-			this->listView1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8));
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
+			this->listView1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->listView1->FullRowSelect = true;
 			this->listView1->GridLines = true;
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(55, 230);
+			this->listView1->Location = System::Drawing::Point(62, 188);
 			this->listView1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(911, 638);
+			this->listView1->Size = System::Drawing::Size(547, 366);
 			this->listView1->TabIndex = 76;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -170,16 +156,16 @@ namespace CMS {
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Padding = System::Windows::Forms::Padding(4);
-			this->panel1->Size = System::Drawing::Size(60, 868);
+			this->panel1->Size = System::Drawing::Size(63, 530);
 			this->panel1->TabIndex = 131;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 812);
+			this->account->Location = System::Drawing::Point(4, 474);
 			this->account->Name = L"account";
-			this->account->Size = System::Drawing::Size(52, 52);
+			this->account->Size = System::Drawing::Size(55, 52);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->account->TabIndex = 102;
 			this->account->TabStop = false;
@@ -195,7 +181,7 @@ namespace CMS {
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Padding = System::Windows::Forms::Padding(4);
-			this->button1->Size = System::Drawing::Size(52, 52);
+			this->button1->Size = System::Drawing::Size(55, 52);
 			this->button1->TabIndex = 57;
 			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
@@ -207,7 +193,7 @@ namespace CMS {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->ClientSize = System::Drawing::Size(966, 868);
+			this->ClientSize = System::Drawing::Size(609, 530);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->lbl_title);
@@ -233,18 +219,7 @@ namespace CMS {
 #pragma endregion
 	public: System::Void btnPrint_ClicK(System::Object^ sender, System::EventArgs^ e) {
 
-		GROUP1::DLL<GROUP1::CLASS>* curClass = L_Class.head;
-		ListViewItem^ item;
-		while (curClass) {
-			item = gcnew ListViewItem();
-			item->Text = gcnew System::String(std::to_string(curClass->data.K).c_str());
-			item->SubItems->Add(gcnew System::String(std::to_string(curClass->data.No).c_str()));
-			item->SubItems->Add(gcnew System::String(convertFromProgram(curClass->data.program).c_str()));
-			item->SubItems->Add(gcnew System::String(std::to_string(curClass->data.yearIn).c_str()));
-			listView1->Items->Add(item);
-			curClass = curClass->next;
-
-		}
+		
 	}
 
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -252,7 +227,24 @@ namespace CMS {
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ViewClasses_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		GROUP1::DLL<GROUP1::CLASS>* curClass = L_Class.head;
+		ListViewItem^ item;
+		int* i = new int;
+		*i = 1;
+		while (curClass) {
+			item = gcnew ListViewItem();
+			item->SubItems->Add(gcnew System::String((curClass->data.convertToString()).c_str()));
+			item->Text = gcnew System::String((curClass->data.convertToString()).c_str());
+			item->SubItems->Add(gcnew System::String(std::to_string(*i).c_str()));
+			item->Text = gcnew System::String(std::to_string(*i).c_str());
+			/*item->SubItems->Add(gcnew System::String(convertFromProgram(curClass->data.program).c_str()));
+			item->SubItems->Add(gcnew System::String(std::to_string(curClass->data.No).c_str()));*/
+			//item->SubItems->Add(gcnew System::String(std::to_string(*i).c_str()));
+			listView1->Items->Add(item);
+			curClass = curClass->next;
+			(*i)++;
+		}
+		delete i;
 	}
 	private: System::Void listView1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
