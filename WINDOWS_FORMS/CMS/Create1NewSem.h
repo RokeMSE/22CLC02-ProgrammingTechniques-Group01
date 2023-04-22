@@ -458,7 +458,7 @@ namespace CMS {
 
 #pragma endregion
 	private: System::Void createButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		GROUP1::SEMESTER* tempSem;
+		GROUP1::SEMESTER* tempSem = new SEMESTER;
 
 		string* dayS = new string;
 		string* monthS = new string;
@@ -507,13 +507,101 @@ namespace CMS {
 			if (((stoi(*yearE) % 4 == 0) && (stoi(*yearE) % 100 != 0)) || (stoi(*yearE) % 400 == 0))   *dayInMonth = 29;
 			else    *dayInMonth = 28;
 		}
-		if (stoi(*dayE) > *dayInMonth || stoi(*dayE) <= 0 )
+		if (stoi(*dayE) > *dayInMonth || stoi(*dayE) <= 0)
 		{
 			MessageBox::Show("Invalid day");
 			return;
 		}
-		(*tempSem).enddate = getDate(*dayE + '/' + *monthE + '/' + *yearE);
-		(*tempSem).startdate = getDate(*dayS + '/' + *monthS + '/' + *yearS);
+		if (g_currentSemester != nullptr && stoi(*yearS) < g_currentSemester->enddate.year)
+		{
+			MessageBox::Show("Invalid start year");
+			delete dayS;
+			delete monthS;
+			delete yearS;
+			delete dayE;
+			delete monthE;
+			delete yearE;
+			delete dayInMonth;
+			return;
+		}
+		else if (g_currentSemester != nullptr && stoi(*yearS) == g_currentSemester->enddate.year)
+		{
+			if (stoi(*monthS) < g_currentSemester->enddate.month)
+			{
+				MessageBox::Show("Invalid start month");
+				delete dayS;
+				delete monthS;
+				delete yearS;
+				delete dayE;
+				delete monthE;
+				delete yearE;
+				delete dayInMonth;
+				return;
+			}
+			else if (stoi(*monthS) == g_currentSemester->enddate.month)
+			{
+				if (stoi(*dayS) < g_currentSemester->enddate.day)
+				{
+					MessageBox::Show("Invalid start day");
+					delete dayS;
+					delete monthS;
+					delete yearS;
+					delete dayE;
+					delete monthE;
+					delete yearE;
+					delete dayInMonth;
+					return;
+				}
+			}
+		}
+		if (stoi(*yearE) < stoi(*yearS))
+		{
+			MessageBox::Show("Invalid end year");
+			delete dayS;
+			delete monthS;
+			delete yearS;
+			delete dayE;
+			delete monthE;
+			delete yearE;
+			delete dayInMonth;
+			return;
+		}
+		else if (stoi(*yearS) == stoi(*yearE))
+		{
+			if (stoi(*monthE) < stoi(*monthS))
+			{
+				MessageBox::Show("Invalid end month");
+				delete dayS;
+				delete monthS;
+				delete yearS;
+				delete dayE;
+				delete monthE;
+				delete yearE;
+				delete dayInMonth;
+				return;
+			}
+			else if (stoi(*monthS) == stoi(*monthE))
+			{
+				if (stoi(*dayE) < stoi(*dayS))
+				{
+					MessageBox::Show("Invalid end day");
+					delete dayS;
+					delete monthS;
+					delete yearS;
+					delete dayE;
+					delete monthE;
+					delete yearE;
+					delete dayInMonth;
+					return;
+				}
+			}
+		}
+		(*tempSem).enddate.day = stoi(*dayE);
+		(*tempSem).enddate.month = stoi(*monthE);
+		(*tempSem).enddate.year = stoi(*yearE);
+		(*tempSem).startdate.day = stoi(*dayS);
+		(*tempSem).startdate.month = stoi(*monthS);
+		(*tempSem).startdate.year = stoi(*yearS);
 		delete dayS;
 		delete monthS;
 		delete yearS;
@@ -563,6 +651,8 @@ namespace CMS {
 		this->sourceForm->Show();
 	}
 	private: System::Void Create1NewSem_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->startYear->Text = msclr::interop::marshal_as<String^>(to_string(g_currentSemester->enddate.year));
+		this->startYear->Enabled = false;
 		if (g_currentSemester == g_currentSchoolYear->sem1)
 		{
 			this->ChooseSem->Items->Add("2");
