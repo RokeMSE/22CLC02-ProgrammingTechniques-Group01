@@ -596,6 +596,11 @@ namespace CMS {
 				}
 			}
 		}
+		if (stoi(*yearE) > g_currentSchoolYear->end)
+		{
+			MessageBox::Show("invalid end year");
+			return;
+		}
 		(*tempSem).enddate.day = stoi(*dayE);
 		(*tempSem).enddate.month = stoi(*monthE);
 		(*tempSem).enddate.year = stoi(*yearE);
