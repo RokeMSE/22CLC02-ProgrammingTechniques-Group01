@@ -528,6 +528,12 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void ViewListCourses_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (!g_currentSchoolYear) {
+			MessageBox::Show("There is no school year in the system");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
 	}
 	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {

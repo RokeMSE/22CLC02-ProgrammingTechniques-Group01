@@ -91,7 +91,7 @@ bool importStudents() {
         }
         pre_cls = nodeCls;
     }
-    pre_cls->data.student.tail = L_Student.tail;
+    if (pre_cls) pre_cls->data.student.tail = L_Student.tail;
 
     ifs.close();
     return 1;

@@ -272,15 +272,13 @@ namespace CMS {
 		//			curStudent = curStudent->next;
 		//	}
 		//}
-
-
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void ViewAListInAClasses_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (!L_Class.head) {
+			MessageBox::Show("There is no class the system");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		DLL<CLASS>* Class = L_Class.head;
 		while (Class)
 		{

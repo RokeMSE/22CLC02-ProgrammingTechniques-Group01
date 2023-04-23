@@ -56,6 +56,7 @@ namespace CMS {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ account;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Panel^ panel2;
 
 
 	protected:
@@ -86,20 +87,21 @@ namespace CMS {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->account = (gcnew System::Windows::Forms::PictureBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->BeginInit();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// lbl_title
 			// 
 			this->lbl_title->AutoSize = true;
-			this->lbl_title->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
-				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->lbl_title->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 22, System::Drawing::FontStyle::Bold));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(155, 8);
+			this->lbl_title->Location = System::Drawing::Point(112, 1);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(335, 58);
@@ -111,7 +113,7 @@ namespace CMS {
 			// 
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::No;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(250, 69);
+			this->pictureBox1->Location = System::Drawing::Point(294, 92);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(111, 118);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -137,7 +139,7 @@ namespace CMS {
 			this->listView1->FullRowSelect = true;
 			this->listView1->GridLines = true;
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(62, 188);
+			this->listView1->Location = System::Drawing::Point(69, 236);
 			this->listView1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->listView1->Name = L"listView1";
 			this->listView1->Size = System::Drawing::Size(547, 366);
@@ -153,17 +155,17 @@ namespace CMS {
 			this->panel1->Controls->Add(this->account);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Location = System::Drawing::Point(4, 4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Padding = System::Windows::Forms::Padding(4);
-			this->panel1->Size = System::Drawing::Size(63, 530);
+			this->panel1->Size = System::Drawing::Size(63, 598);
 			this->panel1->TabIndex = 131;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 474);
+			this->account->Location = System::Drawing::Point(4, 542);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(55, 52);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -187,17 +189,26 @@ namespace CMS {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &ViewClasses::btn_back_Click);
 			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->panel2->Controls->Add(this->lbl_title);
+			this->panel2->Location = System::Drawing::Point(69, 4);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(547, 60);
+			this->panel2->TabIndex = 132;
+			// 
 			// ViewClasses
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 27);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
-				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->ClientSize = System::Drawing::Size(609, 530);
+			this->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->ClientSize = System::Drawing::Size(620, 606);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->lbl_title);
 			this->Controls->Add(this->listView1);
+			this->Controls->Add(this->panel2);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -205,13 +216,15 @@ namespace CMS {
 			this->Location = System::Drawing::Point(513, 121);
 			this->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
 			this->Name = L"ViewClasses";
+			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"ViewClasses";
 			this->Load += gcnew System::EventHandler(this, &ViewClasses::ViewClasses_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->account))->EndInit();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 		//public: void btnprint_Click(System::Object^ sender, System::EventArgs^ e);
