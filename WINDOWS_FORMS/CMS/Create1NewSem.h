@@ -598,7 +598,7 @@ namespace CMS {
 		}
 		if (stoi(*yearE) > g_currentSchoolYear->end)
 		{
-			MessageBox::Show("invalid end year");
+			MessageBox::Show("Invalid end year");
 			return;
 		}
 		(*tempSem).enddate.day = stoi(*dayE);
@@ -656,18 +656,25 @@ namespace CMS {
 		this->sourceForm->Show();
 	}
 	private: System::Void Create1NewSem_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->startYear->Text = msclr::interop::marshal_as<String^>(to_string(g_currentSemester->enddate.year));
+		if (g_currentSemester == nullptr)
+		{
+			this->startYear->Text = msclr::interop::marshal_as<String^>(to_string(g_currentSchoolYear->begin));
+		}
+		else
+		{
+			this->startYear->Text = msclr::interop::marshal_as<String^>(to_string(g_currentSemester->enddate.year));
+		}
 		this->startYear->Enabled = false;
-		if (g_currentSemester == g_currentSchoolYear->sem1)
+		if (g_currentSemester == g_currentSchoolYear->sem1 && g_currentSemester != nullptr)
 		{
 			this->ChooseSem->Items->Add("2");
 			this->ChooseSem->Items->Add("3");
 		}
-		else if (g_currentSemester == g_currentSchoolYear->sem2)
+		else if (g_currentSemester == g_currentSchoolYear->sem2 && g_currentSemester != nullptr)
 		{
 			this->ChooseSem->Items->Add("3");
 		}
-		else if (!g_currentSemester)
+		else if (g_currentSemester == nullptr)
 		{
 			this->ChooseSem->Items->Add("1");
 			this->ChooseSem->Items->Add("2");

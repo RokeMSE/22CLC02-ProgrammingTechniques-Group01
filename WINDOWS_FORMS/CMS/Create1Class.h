@@ -290,7 +290,7 @@ namespace CMS {
 		else
 		{
 			newClass->prev = L_Class.tail;
-			L_Class.tail = newClass;
+			L_Class.tail->next = newClass;
 			L_Class.tail = newClass;
 		}
 		MessageBox::Show("Successfully create a 1st-year class");

@@ -287,6 +287,7 @@ namespace CMS {
 			}
 			else
 			{
+				L_SchoolYear.tail->next = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
 				L_SchoolYear.tail->next = schoolyear;
 				schoolyear->prev = L_SchoolYear.tail;
 				schoolyear->next = nullptr;
@@ -308,7 +309,7 @@ namespace CMS {
 			}
 			g_currentSchoolYear = L_SchoolYear.tail->data;
 			//MessageBox::Show(msclr::interop::marshal_as<String^>(std::to_string(g_currentSchoolYear->begin)));
-			//g_currentSemester = nullptr;
+			g_currentSemester = nullptr;
 			MessageBox::Show("Successfully create a new school year!");
 		}
 	}

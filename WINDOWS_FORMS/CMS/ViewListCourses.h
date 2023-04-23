@@ -589,6 +589,22 @@ namespace CMS {
 			return;
 		}
 
+		if (chkbox_sem1->Checked && cur->data->sem1 == nullptr)
+		{
+			MessageBox::Show("This Semester does not occur!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		if (chkbox_sem2->Checked && cur->data->sem2 == nullptr)
+		{
+			MessageBox::Show("This Semester does not occur!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		if (chkbox_sem3->Checked && cur->data->sem3 == nullptr)
+		{
+			MessageBox::Show("This Semester does not occur!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
 		DLL<COURSE*>* list = nullptr;
 		if (chkbox_sem1->Checked && cur->data->sem1 != nullptr)
 			list = cur->data->sem1->course.head;
@@ -598,7 +614,7 @@ namespace CMS {
 			list = cur->data->sem3->course.head;
 
 		if (list == nullptr)
-			MessageBox::Show("This Semester does not occur!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("This Semester does not have a course yet!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		else {
 			int count = 1;
 			while (list != nullptr) {

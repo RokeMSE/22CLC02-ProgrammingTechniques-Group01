@@ -517,10 +517,11 @@ namespace CMS {
 			String^ filename = openFileDialog1->FileName;
 			txt_pathfile->Text = filename;
 		}
+		btn_import->Enabled = true;
 	}
 	private: System::Void txt_pathfile_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (txt_pathfile->Text != "")
-			btn_browse->Enabled = true;
+			btn_import->Enabled = true;
 	}
 	private: System::Void btn_import_Click(System::Object^ sender, System::EventArgs^ e) {
 		string filename = msclr::interop::marshal_as<std::string>(txt_pathfile->Text);
@@ -529,7 +530,7 @@ namespace CMS {
 		{
 			string str;
 			getline(inp, str);//skipTitle
-			if (str != "StudentID,othermark,midtermMark,finalMark,totalMark") {
+			if (str != "studentID") {
 				inp.close();
 				MessageBox::Show("This file is not correct! Choose again!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				return;
@@ -539,24 +540,105 @@ namespace CMS {
 			{
 				if (cur->data->ID == msclr::interop::marshal_as<string>(txt_courseID->Text))
 					break;
+				cur = cur->next;
 			}
 			if (!cur)
 			{
 				MessageBox::Show("Invalid Course ID");
 				return;
 			}
+
+			DLL<SCOREBOARD*>* curr = cur->data->students.head;
+			if (curr != nullptr)
+			{
+				MessageBox::Show("There are already students in this course");
+				return;
+			}
+			//curr->data->student = new STUDENT;
+			//while (!inp.eof())
+			//{
+			//	DLL<STUDENT*>* currr = L_Student.head;
+			//	curr = cur->data->students.head;
+			//	getline(inp, str, ',');//username
+			//	while (curr != nullptr && currr->data->user.username != str) currr = currr->next;
+			//	if (curr != nullptr)
+			//	{
+			//		curr->data->student->user.username = str;
+			//		getline(inp, str, ',');//password
+			//		curr->data->student->user.password = str;
+			//		getline(inp, str, ',');//studentID
+			//		curr->data->student->studentID = str;
+			//		getline(inp, str, ',');//firstname
+			//		curr->data->student->firstname = str;
+			//		getline(inp, str, ',');//lastname
+			//		curr->data->student->lastname = str;
+			//		getline(inp, str, ',');//gender
+			//		curr->data->student->gender = stoi(str);
+			//		getline(inp, str, ',');//DoB
+			//		curr->data->student->DoB = getDate(str);
+			//		getline(inp, str, ',');//socialID
+			//		curr->data->student->socialID = str;
+			//		getline(inp, str, ',');//class
+			//		curr->data->student->Class = convertToClass(str);
+			//		curr->next = new DLL<SCOREBOARD*>;
+			//		curr->next->data->student = new STUDENT;
+			//		curr->data->student = currr->data;
+			//		curr = curr->next;
+			//	}
+			//	if (currr == nullptr)
+			//	{
+			//		str = "The student [" + str + "] is not exist! Check again!";
+			//		gcnew System::String((str).c_str()), "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			//		return;
+			//	}
+			//	else
+			//	{
+			//		
+			//	}
+			//}
 			while (!inp.eof())
 			{
-				getline(inp, str, ',');//StudentID
-				cur->data->students.head->data->student->studentID = str;
-				getline(inp, str, ',');//otherMark
-				cur->data->students.head->data->otherMark = stoi(str);
-				getline(inp, str, ',');//midtermMark
-				cur->data->students.head->data->midtermMark = stoi(str);
-				getline(inp, str, ',');//finalMark
-				cur->data->students.head->data->finalMark = stoi(str);
-				getline(inp, str, ',');//totalMark
-				cur->data->students.head->data->otherMark = stoi(str);
+				curr = new DLL<SCOREBOARD*>;
+				curr->prev = cur->data->students.tail;
+				DLL<STUDENT*>* stu = L_Student.head;
+				getline(inp, str);
+				while (stu)
+				{
+					if (stu->data->studentID == str)
+						break;
+					stu = stu->next;
+				}
+				if (stu == nullptr)
+					MessageBox::Show("The student ID " + msclr::interop::marshal_as<String^>(str) + " is invalid");
+				else
+				{
+					curr->data = new SCOREBOARD;
+					curr->data->student = stu->data;
+
+					if (!stu->data->courses.head)
+					{
+						stu->data->courses.head = new DLL<COURSE*>;
+						stu->data->courses.tail = new DLL<COURSE*>;
+						stu->data->courses.head->data = cur->data;
+					}
+					else
+					{
+						stu->data->courses.tail->next = new DLL<COURSE*>;
+						stu->data->courses.tail->next->data = cur->data;
+						stu->data->courses.tail->next->prev = stu->data->courses.tail;
+					}
+					stu->data->courses.tail->data = cur->data;
+				}
+				if (cur->data->students.head == nullptr)
+				{
+					cur->data->students.head = curr;
+				}
+				else
+					cur->data->students.tail->next = curr;
+				cur->data->students.tail = curr;
+				MessageBox::Show(msclr::interop::marshal_as<String^>(cur->data->students.tail->data->student->studentID));
+				//curr = curr->next;
+
 			}
 			inp.close();
 			MessageBox::Show("Import Successfully!", "Notification", MessageBoxButtons::OK);
