@@ -523,6 +523,12 @@ namespace CMS {
 			ofstream ofs(filename);
 			ofs << "No,Student ID,Name,othermark,midtermMark,finalMark,totalMark\n";
 			DLL<SCOREBOARD*>* stu = cur->data->students.head;
+			if (stu == nullptr) {
+				MessageBox::Show("Can not find any Students in this Course! You must add a new one before exporting!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
 			for (int i = 1; stu; i++)
 			{
 				ofs << i << "," << stu->data->student->studentID << "," << stu->data->student->lastname + " " + stu->data->student->firstname << "," << stu->data->otherMark << "," << stu->data->midtermMark << "," << stu->data->finalMark << "," << stu->data->totalMark << "\n";
@@ -540,8 +546,15 @@ namespace CMS {
 				break;
 			cur = cur->next;
 		}
-		if (!cur)
-			MessageBox::Show("Invalid course ID");
+		if (!cur) {
+			if (g_currentSemester->course.head == nullptr) {
+				MessageBox::Show("Can not find any Courses in this Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
+			else MessageBox::Show("Invalid course ID");
+		}
 		else
 		{
 			txt_coursename->Text = msclr::interop::marshal_as<System::String^>(cur->data->name);
@@ -551,6 +564,17 @@ namespace CMS {
 		btn_browse->Enabled = true;
 	}
 	private: System::Void ExpListStuInCourseCSV_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr)
+				MessageBox::Show("Can not find any SchoolYear! You must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else
+				MessageBox::Show("Can not find any Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		this->schoolyeartxt->Text = msclr::interop::marshal_as<String^>(to_string(g_currentSchoolYear->begin + '_' + g_currentSchoolYear->end));
 		this->schoolyeartxt->ReadOnly = false;
 		if (g_currentSemester == g_currentSchoolYear->sem1)

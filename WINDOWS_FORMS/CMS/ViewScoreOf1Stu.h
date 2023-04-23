@@ -758,6 +758,17 @@ namespace CMS {
 		pnl_account->Visible = !pnl_account->Visible;
 	}
 	private: System::Void ViewScoreOf1Stu_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr)
+				MessageBox::Show("Can not find any SchoolYear! Staff must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else
+				MessageBox::Show("Can not find any Semester! Staff must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
 		txt_fullname->Text = gcnew System::String((g_currentStudent->firstname + " " + g_currentStudent->lastname).c_str());
 		txt_studentID->Text = gcnew System::String((g_currentStudent->studentID).c_str());

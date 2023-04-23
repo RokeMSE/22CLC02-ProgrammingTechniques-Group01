@@ -733,6 +733,21 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void ViewAListStudentInACourse_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr) {
+				MessageBox::Show("Can not find any SchoolYear! You must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
+			else {
+				MessageBox::Show("Can not find any Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
+		}
 		txt_schoolyear_start->Text = System::Convert::ToString(g_currentSchoolYear->begin);
 		switch (g_currentSemester->No)
 		{
@@ -831,7 +846,7 @@ namespace CMS {
 		if (sem == nullptr) {
 			txt_courseID->Text = "";
 			if (cur->data->sem1 == nullptr && cur->data->sem2 == nullptr && cur->data->sem3 == nullptr)
-				MessageBox::Show("This SchoolYear does not have any Semesters! Please Create new one!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("This SchoolYear does not have any Semesters! Please add a new one!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			else
 				MessageBox::Show("This Semester does not occur!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			viewnone();

@@ -126,9 +126,9 @@ namespace CMS {
 			this->labelClass->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10));
 			this->labelClass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->labelClass->Location = System::Drawing::Point(150, 102);
+			this->labelClass->Location = System::Drawing::Point(133, 82);
 			this->labelClass->Name = L"labelClass";
-			this->labelClass->Size = System::Drawing::Size(59, 27);
+			this->labelClass->Size = System::Drawing::Size(51, 23);
 			this->labelClass->TabIndex = 58;
 			this->labelClass->Text = L"Class";
 			// 
@@ -140,10 +140,10 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->searchButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->searchButton->Location = System::Drawing::Point(850, 99);
+			this->searchButton->Location = System::Drawing::Point(756, 79);
 			this->searchButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->searchButton->Name = L"searchButton";
-			this->searchButton->Size = System::Drawing::Size(104, 39);
+			this->searchButton->Size = System::Drawing::Size(92, 31);
 			this->searchButton->TabIndex = 76;
 			this->searchButton->Text = L"Search";
 			this->searchButton->UseVisualStyleBackColor = false;
@@ -157,10 +157,9 @@ namespace CMS {
 			this->listViewScoreOfClass->FullRowSelect = true;
 			this->listViewScoreOfClass->GridLines = true;
 			this->listViewScoreOfClass->HideSelection = false;
-			this->listViewScoreOfClass->Location = System::Drawing::Point(72, 159);
-			this->listViewScoreOfClass->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->listViewScoreOfClass->Location = System::Drawing::Point(64, 127);
 			this->listViewScoreOfClass->Name = L"listViewScoreOfClass";
-			this->listViewScoreOfClass->Size = System::Drawing::Size(1064, 478);
+			this->listViewScoreOfClass->Size = System::Drawing::Size(946, 383);
 			this->listViewScoreOfClass->TabIndex = 77;
 			this->listViewScoreOfClass->UseCompatibleStateImageBehavior = false;
 			this->listViewScoreOfClass->View = System::Windows::Forms::View::Details;
@@ -211,10 +210,9 @@ namespace CMS {
 			this->ChooseClass->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
 			this->ChooseClass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->ChooseClass->Location = System::Drawing::Point(244, 104);
-			this->ChooseClass->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->ChooseClass->Location = System::Drawing::Point(217, 83);
 			this->ChooseClass->Name = L"ChooseClass";
-			this->ChooseClass->Size = System::Drawing::Size(244, 43);
+			this->ChooseClass->Size = System::Drawing::Size(217, 37);
 			this->ChooseClass->TabIndex = 78;
 			this->ChooseClass->Text = L"Choose Class";
 			// 
@@ -226,20 +224,18 @@ namespace CMS {
 			this->panel2->Controls->Add(this->btn_back);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel2->Location = System::Drawing::Point(0, 0);
-			this->panel2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->panel2->Name = L"panel2";
-			this->panel2->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->panel2->Size = System::Drawing::Size(68, 645);
+			this->panel2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel2->Size = System::Drawing::Size(60, 516);
 			this->panel2->TabIndex = 98;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 575);
-			this->account->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->account->Location = System::Drawing::Point(4, 460);
 			this->account->Name = L"account";
-			this->account->Size = System::Drawing::Size(60, 65);
+			this->account->Size = System::Drawing::Size(52, 52);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->account->TabIndex = 58;
 			this->account->TabStop = false;
@@ -251,10 +247,10 @@ namespace CMS {
 			this->btn_back->Dock = System::Windows::Forms::DockStyle::Top;
 			this->btn_back->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->btn_back->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->btn_back->Location = System::Drawing::Point(4, 5);
+			this->btn_back->Location = System::Drawing::Point(4, 4);
 			this->btn_back->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_back->Name = L"btn_back";
-			this->btn_back->Size = System::Drawing::Size(60, 65);
+			this->btn_back->Size = System::Drawing::Size(52, 52);
 			this->btn_back->TabIndex = 57;
 			this->btn_back->Text = L"<";
 			this->btn_back->UseVisualStyleBackColor = false;
@@ -266,10 +262,9 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
 			this->pnl_title->Controls->Add(this->label1);
 			this->pnl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8));
-			this->pnl_title->Location = System::Drawing::Point(69, 0);
-			this->pnl_title->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->pnl_title->Location = System::Drawing::Point(61, 0);
 			this->pnl_title->Name = L"pnl_title";
-			this->pnl_title->Size = System::Drawing::Size(1068, 75);
+			this->pnl_title->Size = System::Drawing::Size(949, 60);
 			this->pnl_title->TabIndex = 99;
 			// 
 			// label1
@@ -278,18 +273,18 @@ namespace CMS {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(405, 16);
+			this->label1->Location = System::Drawing::Point(360, 13);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(256, 37);
+			this->label1->Size = System::Drawing::Size(217, 31);
 			this->label1->TabIndex = 58;
 			this->label1->Text = L"SCORE OF CLASS";
 			// 
 			// ViewScoreOfClass
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1141, 645);
+			this->ClientSize = System::Drawing::Size(1014, 516);
 			this->ControlBox = false;
 			this->Controls->Add(this->pnl_title);
 			this->Controls->Add(this->panel2);
@@ -299,7 +294,6 @@ namespace CMS {
 			this->Controls->Add(this->labelClass);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"ViewScoreOfClass";
 			this->Text = L"ViewScoreOfClass";
 			this->Load += gcnew System::EventHandler(this, &ViewScoreOfClass::ViewScoreOfClass_Load);
@@ -363,6 +357,14 @@ namespace CMS {
 			curClas = curClas->next;
 		}
 		DLL<STUDENT*>* stu = curClas->data.student.head;
+
+		if (stu == nullptr) {
+			MessageBox::Show("Can not find any Students in this Class! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		if (!cur)
 		{
 			*temp = 1;
@@ -375,7 +377,7 @@ namespace CMS {
 		}
 		else
 		{
-			
+
 			while (stu && stu->data->Class->convertToString() == dummy)
 			{
 				cur = g_currentSemester->course.head;
@@ -589,6 +591,30 @@ namespace CMS {
 		delete count;
 	}
 	private: System::Void ViewScoreOfClass_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr)
+				MessageBox::Show("Can not find any SchoolYear! You must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else
+				MessageBox::Show("Can not find any Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
+		if (g_currentSemester->course.head == nullptr) {
+			MessageBox::Show("Can not find any Courses in current Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
+		if (L_Class.head == nullptr) {
+			MessageBox::Show("Can not find any Classes in current Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		this->listViewScoreOfClass->Columns->Add("Student");
 		DLL<COURSE*>* course = g_currentSemester->course.head;
 		while (course)

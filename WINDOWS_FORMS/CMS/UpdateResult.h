@@ -40,7 +40,7 @@ namespace CMS {
 		}
 	private:
 		GROUP1::DLL<GROUP1::COURSE*>* curCourse = nullptr;	// the course this form is working on
-															// this pointer is get when course ID has been entered and button search is clicked 
+		// this pointer is get when course ID has been entered and button search is clicked 
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
 		GROUP1::DLL<GROUP1::SCHOOLYEAR*>* curSchoolyear;
 		GROUP1::SEMESTER* curSemester;
@@ -1084,6 +1084,17 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void UpdateResult_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr)
+				MessageBox::Show("Can not find any SchoolYear! You must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else
+				MessageBox::Show("Can not find any Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		std::string str = std::to_string(g_currentSchoolYear->begin) + " - " + std::to_string(g_currentSchoolYear->end);
 		txt_schoolyear->Text = gcnew System::String(str.c_str());
 		txt_schoolyear_start->Text = gcnew System::String(g_currentSchoolYear->begin.ToString());
@@ -1222,6 +1233,14 @@ namespace CMS {
 		id = msclr::interop::marshal_as<std::string>(txt_courseID->Text);
 
 		if (this->curCourse && this->curCourse->data->ID == id)	goto _skipfindcourse;
+
+		if (this->curSemester->course.head == nullptr) {
+			MessageBox::Show("Can not find any Courses in this Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		this->curCourse = this->curSemester->course.head;
 
 		while (this->curCourse) {
@@ -1282,10 +1301,18 @@ namespace CMS {
 			this->curStudent = this->curStudent->next;
 		}
 		if (!this->curStudent) {
-			id = "Cannot find student " + id;
-			System::String^ message = gcnew System::String(id.c_str());
-			MessageBox::Show(message);
-			return;
+			if (this->curCourse->data->students.head == nullptr) {
+				MessageBox::Show("Can not find any Students in this Course! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
+			else {
+				id = "Cannot find student " + id;
+				System::String^ message = gcnew System::String(id.c_str());
+				MessageBox::Show(message);
+				return;
+			}
 		}
 	}
 

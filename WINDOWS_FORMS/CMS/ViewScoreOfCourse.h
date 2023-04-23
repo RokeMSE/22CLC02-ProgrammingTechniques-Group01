@@ -40,7 +40,7 @@ namespace CMS {
 			}
 		}
 	private:
-		
+
 		DLL<SCHOOLYEAR*>* curSchoolYear = nullptr;
 		SEMESTER* curSem = nullptr;
 		DLL<COURSE*>* curCourse = nullptr;
@@ -466,7 +466,7 @@ namespace CMS {
 
 		}
 #pragma endregion
-	//this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::chkbox_sem1_CheckedChanged);
+		//this->chkbox_sem1->CheckedChanged += gcnew System::EventHandler(this, &ViewScoreOfCourse::chkbox_sem1_CheckedChanged);
 	private: System::Void chkbox_sem1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (chkbox_sem1->Checked) {
 			chkbox_sem2->Checked = 0;	chkbox_sem3->Checked = 0;
@@ -522,12 +522,26 @@ namespace CMS {
 		std::string courseID = msclr::interop::marshal_as<std::string>(txt_courseID->Text);
 		while (curCourse && curCourse->data->ID != courseID)	curCourse = curCourse->next;
 		if (!curCourse) {
-			MessageBox::Show("This course does not exist");
+			if (curSem->course.head == nullptr) {
+				MessageBox::Show("Can not find any Courses in this Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				this->Close();
+				this->sourceForm->Show();
+				return;
+			}
+			else
+				MessageBox::Show("This course does not exist");
 			return;
 		}
 		txt_coursename->Text = msclr::interop::marshal_as<System::String^>(curCourse->data->name.c_str());
 		int no = 1;
 		DLL<SCOREBOARD*>* curStu = curCourse->data->students.head;
+
+		if (curStu == nullptr) {
+			MessageBox::Show("Can not find any Students in this Course! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		while (curStu) {
 			ListViewItem^ item = gcnew ListViewItem(no.ToString());
 			item->SubItems->Add(msclr::interop::marshal_as<System::String^>(curStu->data->student->studentID));
@@ -547,6 +561,16 @@ namespace CMS {
 		this->sourceForm->Show();
 	}
 	private: System::Void ViewScoreOfCourse_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSemester == nullptr) {
+			if (g_currentSchoolYear == nullptr)
+				MessageBox::Show("Can not find any SchoolYear! You must create a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else
+				MessageBox::Show("Can not find any Semester! You must add a new one!", "WARNING", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+
 		DLL<SCHOOLYEAR*>* cur = L_SchoolYear.head;
 		while (cur) {
 			this->domainUD_schoolyear->Items->Add(gcnew System::String((to_string(cur->data->begin) + " - " + to_string(cur->data->end)).c_str()));
@@ -557,5 +581,5 @@ namespace CMS {
 		chkbox_sem2->Checked = false;
 		chkbox_sem3->Checked = false;
 	}
-};
+	};
 }
