@@ -89,7 +89,7 @@ namespace CMS {
 			this->Create1ClassLab->Font = (gcnew System::Drawing::Font(L"Tahoma", 15, System::Drawing::FontStyle::Bold));
 			this->Create1ClassLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(106)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->Create1ClassLab->Location = System::Drawing::Point(306, 18);
+			this->Create1ClassLab->Location = System::Drawing::Point(295, 12);
 			this->Create1ClassLab->Name = L"Create1ClassLab";
 			this->Create1ClassLab->Size = System::Drawing::Size(330, 36);
 			this->Create1ClassLab->TabIndex = 0;
@@ -102,7 +102,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->SchoolYearLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->SchoolYearLab->Location = System::Drawing::Point(279, 100);
+			this->SchoolYearLab->Location = System::Drawing::Point(278, 120);
 			this->SchoolYearLab->Name = L"SchoolYearLab";
 			this->SchoolYearLab->Size = System::Drawing::Size(147, 32);
 			this->SchoolYearLab->TabIndex = 1;
@@ -114,12 +114,11 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->SchoolYearTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)),
 				static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->SchoolYearTextBox->Location = System::Drawing::Point(457, 97);
+			this->SchoolYearTextBox->Location = System::Drawing::Point(456, 117);
 			this->SchoolYearTextBox->Name = L"SchoolYearTextBox";
 			this->SchoolYearTextBox->ReadOnly = true;
 			this->SchoolYearTextBox->Size = System::Drawing::Size(179, 39);
 			this->SchoolYearTextBox->TabIndex = 2;
-			this->SchoolYearTextBox->Click += gcnew System::EventHandler(this, &Create1Class::SchoolYearTextBox_Click);
 			// 
 			// ProgramLab
 			// 
@@ -128,7 +127,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->ProgramLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->ProgramLab->Location = System::Drawing::Point(279, 150);
+			this->ProgramLab->Location = System::Drawing::Point(278, 170);
 			this->ProgramLab->Name = L"ProgramLab";
 			this->ProgramLab->Size = System::Drawing::Size(115, 32);
 			this->ProgramLab->TabIndex = 3;
@@ -140,7 +139,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->ProgramDomain->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->ProgramDomain->Location = System::Drawing::Point(457, 148);
+			this->ProgramDomain->Location = System::Drawing::Point(456, 168);
 			this->ProgramDomain->Name = L"ProgramDomain";
 			this->ProgramDomain->Size = System::Drawing::Size(179, 39);
 			this->ProgramDomain->TabIndex = 4;
@@ -151,7 +150,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->NoTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->NoTextBox->Location = System::Drawing::Point(457, 199);
+			this->NoTextBox->Location = System::Drawing::Point(456, 219);
 			this->NoTextBox->Name = L"NoTextBox";
 			this->NoTextBox->Size = System::Drawing::Size(179, 39);
 			this->NoTextBox->TabIndex = 6;
@@ -163,7 +162,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->NoLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->NoLab->Location = System::Drawing::Point(279, 202);
+			this->NoLab->Location = System::Drawing::Point(278, 222);
 			this->NoLab->Name = L"NoLab";
 			this->NoLab->Size = System::Drawing::Size(49, 32);
 			this->NoLab->TabIndex = 5;
@@ -178,13 +177,13 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->EnterBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->EnterBtn->Location = System::Drawing::Point(585, 271);
+			this->EnterBtn->Location = System::Drawing::Point(584, 291);
 			this->EnterBtn->Name = L"EnterBtn";
 			this->EnterBtn->Size = System::Drawing::Size(90, 48);
 			this->EnterBtn->TabIndex = 7;
 			this->EnterBtn->Text = L"Enter";
 			this->EnterBtn->UseVisualStyleBackColor = false;
-			this->EnterBtn->Click += gcnew System::EventHandler(this, &Create1Class::button1_Click);
+			this->EnterBtn->Click += gcnew System::EventHandler(this, &Create1Class::EnterBtn_Click);
 			// 
 			// ExitBtn
 			// 
@@ -195,7 +194,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->ExitBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ExitBtn->Location = System::Drawing::Point(690, 271);
+			this->ExitBtn->Location = System::Drawing::Point(689, 291);
 			this->ExitBtn->Name = L"ExitBtn";
 			this->ExitBtn->Size = System::Drawing::Size(81, 48);
 			this->ExitBtn->TabIndex = 8;
@@ -247,6 +246,11 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void Create1Class_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (!g_currentSchoolYear) {
+			MessageBox::Show("Please creare a new school year first");
+			this->Close();
+			return;
+		}
 		this->SchoolYearTextBox->Text = msclr::interop::marshal_as<System::String^>(std::to_string(g_currentSchoolYear->begin) + '-' + std::to_string(g_currentSchoolYear->end));
 		ProgramDomain->Items->Add("APCS");
 		ProgramDomain->Items->Add("CLC");
@@ -260,7 +264,7 @@ namespace CMS {
 		// then exit
 		Application::Exit();
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void EnterBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!this->ProgramDomain->Text || !this->NoTextBox->Text || std::stoi(msclr::interop::marshal_as<std::string>(NoTextBox->Text)) <= 0)
 		{
 			MessageBox::Show("Invalid");
@@ -271,7 +275,7 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::CLASS>* cur = L_Class.head;
 		while (cur)
 		{
-			if (cur->data.convertToString() == std::to_string(g_currentSchoolYear->begin % 2000) + msclr::interop::marshal_as<std::string>(this->ProgramDomain->Text + this->NoTextBox->Text))
+			if (cur->data.convertToString() == std::to_string(g_currentSchoolYear->begin % 2000) + msclr::interop::marshal_as<std::string>(this->ProgramDomain->Text + Convert::ToInt32(this->NoTextBox->Text)))
 			{
 				MessageBox::Show("This class has already existed!");
 				return;
@@ -280,6 +284,7 @@ namespace CMS {
 		}
 		GROUP1::DLL<GROUP1::CLASS>* newClass = new GROUP1::DLL<GROUP1::CLASS>;
 		newClass->data.K = g_currentSchoolYear->begin % 2000;
+		newClass->data.yearIn = g_currentSchoolYear->begin;
 		newClass->data.No = std::stoi(msclr::interop::marshal_as<std::string>(this->NoTextBox->Text));
 		newClass->data.program = convertToProgram(msclr::interop::marshal_as<std::string>(this->ProgramDomain->Text));
 		if (!L_Class.head)
@@ -295,8 +300,8 @@ namespace CMS {
 		}
 		MessageBox::Show("Successfully create a 1st-year class");
 	}
-	private: System::Void SchoolYearTextBox_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("You may haven't create a new school year yet, you can choose option \"Create a school year\", then come back.");
+	private: System::Void SchoolYearTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		//MessageBox::Show("You may haven't create a new school year yet, you can choose option \"Create a school year\", then come back.");
 	}
 };
 }

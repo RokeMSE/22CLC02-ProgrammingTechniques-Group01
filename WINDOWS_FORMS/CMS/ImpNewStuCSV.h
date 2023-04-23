@@ -63,6 +63,7 @@ namespace CMS {
 	private: System::Windows::Forms::ComboBox^ ClassComboBox;
 
 	private: System::Windows::Forms::Panel^ WorkPanel;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 
 
 
@@ -113,6 +114,7 @@ namespace CMS {
 			this->EnterBtn = (gcnew System::Windows::Forms::Button());
 			this->ClassComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->WorkPanel = (gcnew System::Windows::Forms::Panel());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->StartPanel->SuspendLayout();
 			this->WorkPanel->SuspendLayout();
 			this->SuspendLayout();
@@ -137,7 +139,7 @@ namespace CMS {
 			this->ImpNewStuCSVLab->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold));
 			this->ImpNewStuCSVLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->ImpNewStuCSVLab->Location = System::Drawing::Point(63, 47);
+			this->ImpNewStuCSVLab->Location = System::Drawing::Point(70, 47);
 			this->ImpNewStuCSVLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->ImpNewStuCSVLab->Name = L"ImpNewStuCSVLab";
 			this->ImpNewStuCSVLab->Size = System::Drawing::Size(677, 37);
@@ -153,7 +155,7 @@ namespace CMS {
 			this->SchoolyearTextBox->Cursor = System::Windows::Forms::Cursors::No;
 			this->SchoolyearTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->SchoolyearTextBox->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->SchoolyearTextBox->Location = System::Drawing::Point(192, 52);
+			this->SchoolyearTextBox->Location = System::Drawing::Point(247, 52);
 			this->SchoolyearTextBox->Margin = System::Windows::Forms::Padding(5, 3, 5, 3);
 			this->SchoolyearTextBox->Name = L"SchoolyearTextBox";
 			this->SchoolyearTextBox->ReadOnly = true;
@@ -172,7 +174,7 @@ namespace CMS {
 			this->SchoolyearLab->Margin = System::Windows::Forms::Padding(3);
 			this->SchoolyearLab->Name = L"SchoolyearLab";
 			this->SchoolyearLab->Padding = System::Windows::Forms::Padding(3);
-			this->SchoolyearLab->Size = System::Drawing::Size(152, 38);
+			this->SchoolyearLab->Size = System::Drawing::Size(153, 38);
 			this->SchoolyearLab->TabIndex = 99;
 			this->SchoolyearLab->Text = L"School year";
 			// 
@@ -187,7 +189,7 @@ namespace CMS {
 			this->ClassLab->Location = System::Drawing::Point(44, 110);
 			this->ClassLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->ClassLab->Name = L"ClassLab";
-			this->ClassLab->Size = System::Drawing::Size(71, 32);
+			this->ClassLab->Size = System::Drawing::Size(72, 32);
 			this->ClassLab->TabIndex = 104;
 			this->ClassLab->Text = L"Class";
 			// 
@@ -201,7 +203,7 @@ namespace CMS {
 			this->PathLab->Location = System::Drawing::Point(44, 165);
 			this->PathLab->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->PathLab->Name = L"PathLab";
-			this->PathLab->Size = System::Drawing::Size(189, 32);
+			this->PathLab->Size = System::Drawing::Size(190, 32);
 			this->PathLab->TabIndex = 110;
 			this->PathLab->Text = L"Path of CSV file";
 			// 
@@ -212,7 +214,7 @@ namespace CMS {
 			this->PathTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->PathTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->PathTextBox->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->PathTextBox->Location = System::Drawing::Point(192, 163);
+			this->PathTextBox->Location = System::Drawing::Point(247, 166);
 			this->PathTextBox->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->PathTextBox->Name = L"PathTextBox";
 			this->PathTextBox->Size = System::Drawing::Size(441, 34);
@@ -225,7 +227,7 @@ namespace CMS {
 			this->BrowseBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->BrowseBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->BrowseBtn->Location = System::Drawing::Point(572, 208);
+			this->BrowseBtn->Location = System::Drawing::Point(698, 166);
 			this->BrowseBtn->Margin = System::Windows::Forms::Padding(5, 3, 5, 3);
 			this->BrowseBtn->Name = L"BrowseBtn";
 			this->BrowseBtn->Size = System::Drawing::Size(100, 34);
@@ -243,7 +245,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->EnterBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->EnterBtn->Location = System::Drawing::Point(221, 262);
+			this->EnterBtn->Location = System::Drawing::Point(323, 235);
 			this->EnterBtn->Name = L"EnterBtn";
 			this->EnterBtn->Size = System::Drawing::Size(203, 41);
 			this->EnterBtn->TabIndex = 115;
@@ -260,7 +262,7 @@ namespace CMS {
 			this->ClassComboBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->ClassComboBox->ForeColor = System::Drawing::Color::FloralWhite;
 			this->ClassComboBox->IntegralHeight = false;
-			this->ClassComboBox->Location = System::Drawing::Point(192, 110);
+			this->ClassComboBox->Location = System::Drawing::Point(247, 110);
 			this->ClassComboBox->Name = L"ClassComboBox";
 			this->ClassComboBox->Size = System::Drawing::Size(314, 36);
 			this->ClassComboBox->TabIndex = 117;
@@ -279,13 +281,17 @@ namespace CMS {
 			this->WorkPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->WorkPanel->Location = System::Drawing::Point(0, 120);
 			this->WorkPanel->Name = L"WorkPanel";
-			this->WorkPanel->Size = System::Drawing::Size(838, 306);
+			this->WorkPanel->Size = System::Drawing::Size(838, 279);
 			this->WorkPanel->TabIndex = 118;
+			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
 			// ImpNewStuCSV
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(14, 32);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
@@ -312,6 +318,12 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void ImpNewStuCSV_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr) {
+			MessageBox::Show("There is no school year in the system");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		SchoolyearTextBox->Text = (g_currentSchoolYear->begin) + "_" + (g_currentSchoolYear->end);
 		SchoolyearTextBox->ReadOnly = true;
 		DLL<CLASS>* cur = L_Class.head;
@@ -343,7 +355,7 @@ namespace CMS {
 		ifstream inp(msclr::interop::marshal_as<string>(PathTextBox->Text));
 		if (!inp.is_open())
 		{
-			MessageBox::Show("File does not exist!");
+			MessageBox::Show("Cannot open file.");
 			return;
 		}
 		// your code here

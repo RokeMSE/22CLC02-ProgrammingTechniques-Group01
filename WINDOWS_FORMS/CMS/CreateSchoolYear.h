@@ -256,17 +256,14 @@ namespace CMS {
 	private: System::Void EnterBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->BeginYearTextBox->Text == "")
 			MessageBox::Show("Invalid!");
-		else
-		{
-			if (std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text)) <= 0)
-			{
+		else {
+			if (std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text)) <= 0) {
 				MessageBox::Show("Invalid year!");
 				this->BeginYearTextBox->Clear();
 				return;
 			}
 			GROUP1::DLL<GROUP1::SCHOOLYEAR*>* cur = L_SchoolYear.head;
-			while (cur)
-			{
+			while (cur) {
 				if (cur->data->begin == std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text)))
 				{
 					MessageBox::Show("This school year has already existed");
@@ -280,21 +277,17 @@ namespace CMS {
 			schoolyear->data = new GROUP1::SCHOOLYEAR;
 			schoolyear->data->begin = std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text));
 			schoolyear->data->end = schoolyear->data->begin + 1;
-			if (L_SchoolYear.head == nullptr)
-			{
+			if (L_SchoolYear.head == nullptr) {
 				L_SchoolYear.head = schoolyear;
 				L_SchoolYear.tail = schoolyear;
-			}
-			else
-			{
+			} else {
 				L_SchoolYear.tail->next = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
 				L_SchoolYear.tail->next = schoolyear;
 				schoolyear->prev = L_SchoolYear.tail;
 				schoolyear->next = nullptr;
 				L_SchoolYear.tail = schoolyear;
 				GROUP1::DLL<GROUP1::STUDENT*>* stu = L_Student.head;
-				while (stu)
-				{
+				while (stu) {
 					GROUP1::DLL<GROUP1::COURSE*>* courseOfStu = stu->data->courses.head;
 					while (courseOfStu)
 					{

@@ -2,6 +2,7 @@
 #include "header.h"
 #include "Login.h"
 #include "AboutUs.h"
+#include <cctype>
 using namespace GROUP1;
 
 namespace CMS {
@@ -481,12 +482,12 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker->Location = System::Drawing::Point(233, 386);
-			this->dateTimePicker->MaxDate = System::DateTime(2023, 4, 16, 0, 0, 0, 0);
+			this->dateTimePicker->MaxDate = System::DateTime::Today;
 			this->dateTimePicker->MinDate = System::DateTime(1930, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
 			this->dateTimePicker->Size = System::Drawing::Size(200, 33);
 			this->dateTimePicker->TabIndex = 6;
-			this->dateTimePicker->Value = System::DateTime(2023, 4, 16, 0, 0, 0, 0);
+			this->dateTimePicker->Value = System::DateTime::Today;
 			// 
 			// txt_lastname
 			// 
@@ -503,6 +504,7 @@ namespace CMS {
 			this->txt_lastname->Name = L"txt_lastname";
 			this->txt_lastname->Size = System::Drawing::Size(99, 33);
 			this->txt_lastname->TabIndex = 122;
+			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_name_TextChanged);
 			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_TextChanged);
 			// 
 			// label2
@@ -735,6 +737,18 @@ namespace CMS {
 #pragma endregion
 
 	private: System::Void Add1StuToClass_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr) {
+			MessageBox::Show("There is no school year in the system");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		if (L_Class.head == nullptr) {
+			MessageBox::Show("There is no class in the current school year");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		// load list of 1st classes, which are the classes added in this year
 		DLL<CLASS>* cur = L_Class.head;
 		while (cur) {
@@ -831,7 +845,7 @@ namespace CMS {
 		}
 		std::string inputID = msclr::interop::marshal_as<std::string>(txt_StudentID->Text);
 		std::string inputClass = msclr::interop::marshal_as<std::string>(checkedListBox->Items[i]->ToString());
-		DLL<STUDENT*>* newNodeStu = L_Student.head, * stuInCurClass = nullptr;
+		DLL<STUDENT*> *newNodeStu = L_Student.head, * stuInCurClass = nullptr;
 		// stuInCurClass is used for keeping the very last student in this class in case this class has students
 		while (newNodeStu) {
 			if (newNodeStu->data->Class->convertToString() == inputClass) {
@@ -876,7 +890,7 @@ namespace CMS {
 		std::string name = newNodeStu->data->lastname;
 
 		name[0] = name[0] - 'A' + 'a';
-		newNodeStu->data->user.password = newNodeStu->data->lastname + last3DigitsOfSocialID + "@KHTN";
+		newNodeStu->data->user.password = name + last3DigitsOfSocialID + "@KHTN";
 
 		if (L_Student.head == nullptr) {
 			// check whether any stu of this class has been included in the list L_Student
@@ -899,7 +913,7 @@ namespace CMS {
 				newNodeStu->data->Class->student.head = newNodeStu->data->Class->student.tail = newNodeStu;
 			}
 		}
-		System::String^ message = "Account is automatically generated:\n\tUser name: " + gcnew System::String(inputID.c_str()) + "\nPassword: " + gcnew System::String(newNodeStu->data->user.password.c_str());
+		System::String^ message = "Account is automatically generated with following logging in information:\n\tUser name: " + gcnew System::String(inputID.c_str()) + "\n\tPassword: " + gcnew System::String(newNodeStu->data->user.password.c_str());
 		MessageBox::Show(message);
 	}
 
@@ -958,7 +972,7 @@ namespace CMS {
 			this->Location = newLocation;
 		}
 	}
-		   /////////////////////////////////////////////////////////////////////////////////////
-		   /////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
 	};
 }

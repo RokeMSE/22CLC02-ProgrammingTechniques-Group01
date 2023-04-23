@@ -475,6 +475,18 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void ImpStuToCourseCSV_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr) {
+			MessageBox::Show("There is no school year");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		if (g_currentSemester == nullptr) {
+			MessageBox::Show("There is no semester in the current school year");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		txt_schoolyear->Text = (g_currentSchoolYear->begin) + "_" + (g_currentSchoolYear->end);
 		txt_schoolyear->ReadOnly = true;
 		if (g_currentSemester == g_currentSchoolYear->sem1)
