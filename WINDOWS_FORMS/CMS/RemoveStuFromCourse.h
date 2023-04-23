@@ -899,6 +899,34 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void RemoveStuFromCourse_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr)
+		{
+			MessageBox::Show("Create school year first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		else if (g_currentSemester == nullptr)
+		{
+			MessageBox::Show("Create semester first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		else if (g_currentSemester->course.head == nullptr)
+		{
+			MessageBox::Show("There is no course in this semester!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		if (L_Student.head == nullptr)
+		{
+			MessageBox::Show("There is no student in this school year!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		std::string str = std::to_string(g_currentSchoolYear->begin) + " - " + std::to_string(g_currentSchoolYear->end);
 		txt_schoolyear->Text = gcnew System::String(str.c_str());
 		txt_schoolyear_start->Text = gcnew System::String(g_currentSchoolYear->begin.ToString());

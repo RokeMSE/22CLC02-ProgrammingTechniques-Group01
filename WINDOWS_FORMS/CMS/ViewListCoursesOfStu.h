@@ -588,6 +588,20 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void ViewListCoursesOfStu_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr)
+		{
+			MessageBox::Show("Create school year first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		else if (g_currentSemester == nullptr)
+		{
+			MessageBox::Show("Create semester first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 
 		if (g_currentSemester->No == 1)
 			chkbox_sem1->Checked = true;

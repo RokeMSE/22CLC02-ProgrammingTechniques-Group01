@@ -317,8 +317,8 @@ namespace CMS {
 			this->btn_ImportStuInCourseCSV->Location = System::Drawing::Point(0, 84);
 			this->btn_ImportStuInCourseCSV->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_ImportStuInCourseCSV->Name = L"btn_ImportStuInCourseCSV";
-			this->btn_ImportStuInCourseCSV->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_ImportStuInCourseCSV->Size = System::Drawing::Size(884, 42);
+			this->btn_ImportStuInCourseCSV->Padding = System::Windows::Forms::Padding(3);
+			this->btn_ImportStuInCourseCSV->Size = System::Drawing::Size(926, 42);
 			this->btn_ImportStuInCourseCSV->TabIndex = 6;
 			this->btn_ImportStuInCourseCSV->Text = L"Upload a CSV file of students enrolled in a course of current semester";
 			this->btn_ImportStuInCourseCSV->UseVisualStyleBackColor = false;
@@ -337,8 +337,8 @@ namespace CMS {
 			this->btn_Remove1StuInCourse->Location = System::Drawing::Point(0, 42);
 			this->btn_Remove1StuInCourse->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Remove1StuInCourse->Name = L"btn_Remove1StuInCourse";
-			this->btn_Remove1StuInCourse->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_Remove1StuInCourse->Size = System::Drawing::Size(884, 42);
+			this->btn_Remove1StuInCourse->Padding = System::Windows::Forms::Padding(3);
+			this->btn_Remove1StuInCourse->Size = System::Drawing::Size(926, 42);
 			this->btn_Remove1StuInCourse->TabIndex = 10;
 			this->btn_Remove1StuInCourse->Text = L"Remove a student from a course in current semester";
 			this->btn_Remove1StuInCourse->UseVisualStyleBackColor = false;
@@ -357,8 +357,8 @@ namespace CMS {
 			this->btn_Delete1Course->Location = System::Drawing::Point(0, 0);
 			this->btn_Delete1Course->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Delete1Course->Name = L"btn_Delete1Course";
-			this->btn_Delete1Course->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_Delete1Course->Size = System::Drawing::Size(884, 42);
+			this->btn_Delete1Course->Padding = System::Windows::Forms::Padding(3);
+			this->btn_Delete1Course->Size = System::Drawing::Size(926, 42);
 			this->btn_Delete1Course->TabIndex = 11;
 			this->btn_Delete1Course->Text = L"Delete a course of current semester";
 			this->btn_Delete1Course->UseVisualStyleBackColor = false;
@@ -377,8 +377,8 @@ namespace CMS {
 			this->btn_ImportScore->Location = System::Drawing::Point(0, 42);
 			this->btn_ImportScore->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_ImportScore->Name = L"btn_ImportScore";
-			this->btn_ImportScore->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_ImportScore->Size = System::Drawing::Size(884, 42);
+			this->btn_ImportScore->Padding = System::Windows::Forms::Padding(3);
+			this->btn_ImportScore->Size = System::Drawing::Size(926, 42);
 			this->btn_ImportScore->TabIndex = 19;
 			this->btn_ImportScore->Text = L"Import the ScoreBoard of a Course";
 			this->btn_ImportScore->UseVisualStyleBackColor = false;
@@ -399,7 +399,7 @@ namespace CMS {
 			this->OptionPanel->Controls->Add(this->ImagePanel);
 			this->OptionPanel->Dock = System::Windows::Forms::DockStyle::Left;
 			this->OptionPanel->Location = System::Drawing::Point(0, 0);
-			this->OptionPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->OptionPanel->Margin = System::Windows::Forms::Padding(2);
 			this->OptionPanel->Name = L"OptionPanel";
 			this->OptionPanel->Size = System::Drawing::Size(196, 1129);
 			this->OptionPanel->TabIndex = 26;
@@ -409,7 +409,7 @@ namespace CMS {
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = nullptr;
 			this->pictureBox1->Location = System::Drawing::Point(65, 430);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(67, 67);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -430,7 +430,7 @@ namespace CMS {
 			this->ImportExportBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->ImportExportBtn->Location = System::Drawing::Point(0, 327);
-			this->ImportExportBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ImportExportBtn->Margin = System::Windows::Forms::Padding(2);
 			this->ImportExportBtn->Name = L"ImportExportBtn";
 			this->ImportExportBtn->Size = System::Drawing::Size(196, 41);
 			this->ImportExportBtn->TabIndex = 50;
@@ -451,7 +451,7 @@ namespace CMS {
 			this->RemoveBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->RemoveBtn->Location = System::Drawing::Point(0, 286);
-			this->RemoveBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->RemoveBtn->Margin = System::Windows::Forms::Padding(2);
 			this->RemoveBtn->Name = L"RemoveBtn";
 			this->RemoveBtn->Size = System::Drawing::Size(196, 41);
 			this->RemoveBtn->TabIndex = 48;
@@ -471,9 +471,9 @@ namespace CMS {
 			this->AddBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->AddBtn->Location = System::Drawing::Point(0, 245);
-			this->AddBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AddBtn->Margin = System::Windows::Forms::Padding(2);
 			this->AddBtn->Name = L"AddBtn";
-			this->AddBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->AddBtn->Padding = System::Windows::Forms::Padding(3);
 			this->AddBtn->Size = System::Drawing::Size(196, 41);
 			this->AddBtn->TabIndex = 47;
 			this->AddBtn->Text = L"ADD";
@@ -492,9 +492,9 @@ namespace CMS {
 			this->UpdateBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->UpdateBtn->Location = System::Drawing::Point(0, 204);
-			this->UpdateBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->UpdateBtn->Margin = System::Windows::Forms::Padding(2);
 			this->UpdateBtn->Name = L"UpdateBtn";
-			this->UpdateBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->UpdateBtn->Padding = System::Windows::Forms::Padding(3);
 			this->UpdateBtn->Size = System::Drawing::Size(196, 41);
 			this->UpdateBtn->TabIndex = 46;
 			this->UpdateBtn->Text = L"UPDATE";
@@ -513,9 +513,9 @@ namespace CMS {
 			this->CreateBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->CreateBtn->Location = System::Drawing::Point(0, 163);
-			this->CreateBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->CreateBtn->Margin = System::Windows::Forms::Padding(2);
 			this->CreateBtn->Name = L"CreateBtn";
-			this->CreateBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->CreateBtn->Padding = System::Windows::Forms::Padding(3);
 			this->CreateBtn->Size = System::Drawing::Size(196, 41);
 			this->CreateBtn->TabIndex = 45;
 			this->CreateBtn->Text = L"CREATE";
@@ -535,7 +535,7 @@ namespace CMS {
 			this->ViewBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->ViewBtn->Location = System::Drawing::Point(0, 122);
-			this->ViewBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ViewBtn->Margin = System::Windows::Forms::Padding(2);
 			this->ViewBtn->Name = L"ViewBtn";
 			this->ViewBtn->Size = System::Drawing::Size(196, 41);
 			this->ViewBtn->TabIndex = 42;
@@ -550,7 +550,7 @@ namespace CMS {
 			this->ImagePanel->Controls->Add(this->Icon);
 			this->ImagePanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ImagePanel->Location = System::Drawing::Point(0, 0);
-			this->ImagePanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ImagePanel->Margin = System::Windows::Forms::Padding(2);
 			this->ImagePanel->Name = L"ImagePanel";
 			this->ImagePanel->Size = System::Drawing::Size(196, 122);
 			this->ImagePanel->TabIndex = 32;
@@ -564,9 +564,9 @@ namespace CMS {
 			this->Icon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.Image")));
 			this->Icon->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Icon.InitialImage")));
 			this->Icon->Location = System::Drawing::Point(51, 12);
-			this->Icon->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Icon->Margin = System::Windows::Forms::Padding(2);
 			this->Icon->Name = L"Icon";
-			this->Icon->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->Icon->Padding = System::Windows::Forms::Padding(3);
 			this->Icon->Size = System::Drawing::Size(92, 100);
 			this->Icon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Icon->TabIndex = 31;
@@ -580,9 +580,9 @@ namespace CMS {
 			this->MenuPanel->Controls->Add(this->MenuLabel);
 			this->MenuPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->MenuPanel->Location = System::Drawing::Point(196, 0);
-			this->MenuPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MenuPanel->Margin = System::Windows::Forms::Padding(2);
 			this->MenuPanel->Name = L"MenuPanel";
-			this->MenuPanel->Size = System::Drawing::Size(884, 122);
+			this->MenuPanel->Size = System::Drawing::Size(926, 122);
 			this->MenuPanel->TabIndex = 28;
 			// 
 			// ExitBtn
@@ -595,7 +595,7 @@ namespace CMS {
 			this->ExitBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
 			this->ExitBtn->Location = System::Drawing::Point(836, 9);
-			this->ExitBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ExitBtn->Margin = System::Windows::Forms::Padding(2);
 			this->ExitBtn->Name = L"ExitBtn";
 			this->ExitBtn->Size = System::Drawing::Size(38, 38);
 			this->ExitBtn->TabIndex = 15;
@@ -612,7 +612,7 @@ namespace CMS {
 			this->MenuLabel->Location = System::Drawing::Point(22, 32);
 			this->MenuLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->MenuLabel->Name = L"MenuLabel";
-			this->MenuLabel->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->MenuLabel->Padding = System::Windows::Forms::Padding(3);
 			this->MenuLabel->Size = System::Drawing::Size(283, 58);
 			this->MenuLabel->TabIndex = 13;
 			this->MenuLabel->Text = L"DASHBOARD";
@@ -626,9 +626,9 @@ namespace CMS {
 			this->RemovePanel->Controls->Add(this->btn_Delete1Course);
 			this->RemovePanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->RemovePanel->Location = System::Drawing::Point(196, 709);
-			this->RemovePanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->RemovePanel->Margin = System::Windows::Forms::Padding(2);
 			this->RemovePanel->Name = L"RemovePanel";
-			this->RemovePanel->Size = System::Drawing::Size(884, 84);
+			this->RemovePanel->Size = System::Drawing::Size(926, 84);
 			this->RemovePanel->TabIndex = 50;
 			this->RemovePanel->Visible = false;
 			// 
@@ -639,9 +639,9 @@ namespace CMS {
 			this->UpdatePanel->Controls->Add(this->btn_UpdateResult);
 			this->UpdatePanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->UpdatePanel->Location = System::Drawing::Point(196, 499);
-			this->UpdatePanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->UpdatePanel->Margin = System::Windows::Forms::Padding(2);
 			this->UpdatePanel->Name = L"UpdatePanel";
-			this->UpdatePanel->Size = System::Drawing::Size(884, 84);
+			this->UpdatePanel->Size = System::Drawing::Size(926, 84);
 			this->UpdatePanel->TabIndex = 54;
 			this->UpdatePanel->Visible = false;
 			// 
@@ -658,8 +658,8 @@ namespace CMS {
 			this->btn_UpdateCourse->Location = System::Drawing::Point(0, 42);
 			this->btn_UpdateCourse->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_UpdateCourse->Name = L"btn_UpdateCourse";
-			this->btn_UpdateCourse->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_UpdateCourse->Size = System::Drawing::Size(884, 42);
+			this->btn_UpdateCourse->Padding = System::Windows::Forms::Padding(3);
+			this->btn_UpdateCourse->Size = System::Drawing::Size(926, 42);
 			this->btn_UpdateCourse->TabIndex = 41;
 			this->btn_UpdateCourse->Text = L"Update information of a course in current semester";
 			this->btn_UpdateCourse->UseVisualStyleBackColor = false;
@@ -678,7 +678,7 @@ namespace CMS {
 			this->btn_UpdateResult->Location = System::Drawing::Point(0, 0);
 			this->btn_UpdateResult->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_UpdateResult->Name = L"btn_UpdateResult";
-			this->btn_UpdateResult->Size = System::Drawing::Size(884, 42);
+			this->btn_UpdateResult->Size = System::Drawing::Size(926, 42);
 			this->btn_UpdateResult->TabIndex = 42;
 			this->btn_UpdateResult->Text = L"Update a student\'s result";
 			this->btn_UpdateResult->UseVisualStyleBackColor = false;
@@ -692,9 +692,9 @@ namespace CMS {
 			this->AddPanel->Controls->Add(this->btn_Add1CourseToCurSem);
 			this->AddPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->AddPanel->Location = System::Drawing::Point(196, 373);
-			this->AddPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AddPanel->Margin = System::Windows::Forms::Padding(2);
 			this->AddPanel->Name = L"AddPanel";
-			this->AddPanel->Size = System::Drawing::Size(884, 126);
+			this->AddPanel->Size = System::Drawing::Size(926, 126);
 			this->AddPanel->TabIndex = 53;
 			this->AddPanel->Visible = false;
 			// 
@@ -711,7 +711,7 @@ namespace CMS {
 			this->btn_Add1StuToCourse->Location = System::Drawing::Point(0, 84);
 			this->btn_Add1StuToCourse->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Add1StuToCourse->Name = L"btn_Add1StuToCourse";
-			this->btn_Add1StuToCourse->Size = System::Drawing::Size(884, 42);
+			this->btn_Add1StuToCourse->Size = System::Drawing::Size(926, 42);
 			this->btn_Add1StuToCourse->TabIndex = 42;
 			this->btn_Add1StuToCourse->Text = L"Add a student to a course in current semester";
 			this->btn_Add1StuToCourse->UseVisualStyleBackColor = false;
@@ -730,7 +730,7 @@ namespace CMS {
 			this->btn_AddStuToClass->Location = System::Drawing::Point(0, 42);
 			this->btn_AddStuToClass->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_AddStuToClass->Name = L"btn_AddStuToClass";
-			this->btn_AddStuToClass->Size = System::Drawing::Size(884, 42);
+			this->btn_AddStuToClass->Size = System::Drawing::Size(926, 42);
 			this->btn_AddStuToClass->TabIndex = 39;
 			this->btn_AddStuToClass->Text = L"Add new 1st year students to 1st-year classes";
 			this->btn_AddStuToClass->UseVisualStyleBackColor = false;
@@ -749,7 +749,7 @@ namespace CMS {
 			this->btn_Add1CourseToCurSem->Location = System::Drawing::Point(0, 0);
 			this->btn_Add1CourseToCurSem->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Add1CourseToCurSem->Name = L"btn_Add1CourseToCurSem";
-			this->btn_Add1CourseToCurSem->Size = System::Drawing::Size(884, 42);
+			this->btn_Add1CourseToCurSem->Size = System::Drawing::Size(926, 42);
 			this->btn_Add1CourseToCurSem->TabIndex = 41;
 			this->btn_Add1CourseToCurSem->Text = L"Add a course to current semester";
 			this->btn_Add1CourseToCurSem->UseVisualStyleBackColor = false;
@@ -768,8 +768,8 @@ namespace CMS {
 			this->btn_Create1Sem->Location = System::Drawing::Point(0, 0);
 			this->btn_Create1Sem->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Create1Sem->Name = L"btn_Create1Sem";
-			this->btn_Create1Sem->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_Create1Sem->Size = System::Drawing::Size(884, 42);
+			this->btn_Create1Sem->Padding = System::Windows::Forms::Padding(3);
+			this->btn_Create1Sem->Size = System::Drawing::Size(926, 42);
 			this->btn_Create1Sem->TabIndex = 37;
 			this->btn_Create1Sem->Text = L"Create a semester";
 			this->btn_Create1Sem->UseVisualStyleBackColor = false;
@@ -788,8 +788,8 @@ namespace CMS {
 			this->btn_CreateSchoolYear->Location = System::Drawing::Point(0, 42);
 			this->btn_CreateSchoolYear->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_CreateSchoolYear->Name = L"btn_CreateSchoolYear";
-			this->btn_CreateSchoolYear->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_CreateSchoolYear->Size = System::Drawing::Size(884, 42);
+			this->btn_CreateSchoolYear->Padding = System::Windows::Forms::Padding(3);
+			this->btn_CreateSchoolYear->Size = System::Drawing::Size(926, 42);
 			this->btn_CreateSchoolYear->TabIndex = 35;
 			this->btn_CreateSchoolYear->Text = L"Create a school year";
 			this->btn_CreateSchoolYear->UseVisualStyleBackColor = false;
@@ -808,8 +808,8 @@ namespace CMS {
 			this->btn_Create1NewClass->Location = System::Drawing::Point(0, 84);
 			this->btn_Create1NewClass->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_Create1NewClass->Name = L"btn_Create1NewClass";
-			this->btn_Create1NewClass->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_Create1NewClass->Size = System::Drawing::Size(884, 42);
+			this->btn_Create1NewClass->Padding = System::Windows::Forms::Padding(3);
+			this->btn_Create1NewClass->Size = System::Drawing::Size(926, 42);
 			this->btn_Create1NewClass->TabIndex = 36;
 			this->btn_Create1NewClass->Text = L"Create classes for 1st-year students";
 			this->btn_Create1NewClass->UseVisualStyleBackColor = false;
@@ -823,9 +823,9 @@ namespace CMS {
 			this->CreatePanel->Controls->Add(this->btn_Create1Sem);
 			this->CreatePanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->CreatePanel->Location = System::Drawing::Point(196, 583);
-			this->CreatePanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->CreatePanel->Margin = System::Windows::Forms::Padding(2);
 			this->CreatePanel->Name = L"CreatePanel";
-			this->CreatePanel->Size = System::Drawing::Size(884, 126);
+			this->CreatePanel->Size = System::Drawing::Size(926, 126);
 			this->CreatePanel->TabIndex = 55;
 			this->CreatePanel->Visible = false;
 			// 
@@ -838,9 +838,9 @@ namespace CMS {
 			this->ImportExportPanel->Controls->Add(this->ExportStusInACourseBtn);
 			this->ImportExportPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ImportExportPanel->Location = System::Drawing::Point(196, 793);
-			this->ImportExportPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ImportExportPanel->Margin = System::Windows::Forms::Padding(2);
 			this->ImportExportPanel->Name = L"ImportExportPanel";
-			this->ImportExportPanel->Size = System::Drawing::Size(884, 168);
+			this->ImportExportPanel->Size = System::Drawing::Size(926, 168);
 			this->ImportExportPanel->TabIndex = 56;
 			this->ImportExportPanel->Visible = false;
 			// 
@@ -857,8 +857,8 @@ namespace CMS {
 			this->BtnImpStuToClass->Location = System::Drawing::Point(0, 126);
 			this->BtnImpStuToClass->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->BtnImpStuToClass->Name = L"BtnImpStuToClass";
-			this->BtnImpStuToClass->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->BtnImpStuToClass->Size = System::Drawing::Size(884, 42);
+			this->BtnImpStuToClass->Padding = System::Windows::Forms::Padding(3);
+			this->BtnImpStuToClass->Size = System::Drawing::Size(926, 42);
 			this->BtnImpStuToClass->TabIndex = 42;
 			this->BtnImpStuToClass->Text = L"Import 1st-year students into class";
 			this->BtnImpStuToClass->UseVisualStyleBackColor = false;
@@ -877,8 +877,8 @@ namespace CMS {
 			this->ExportStusInACourseBtn->Location = System::Drawing::Point(0, 0);
 			this->ExportStusInACourseBtn->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->ExportStusInACourseBtn->Name = L"ExportStusInACourseBtn";
-			this->ExportStusInACourseBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->ExportStusInACourseBtn->Size = System::Drawing::Size(884, 42);
+			this->ExportStusInACourseBtn->Padding = System::Windows::Forms::Padding(3);
+			this->ExportStusInACourseBtn->Size = System::Drawing::Size(926, 42);
 			this->ExportStusInACourseBtn->TabIndex = 41;
 			this->ExportStusInACourseBtn->Text = L"Export students in a course";
 			this->ExportStusInACourseBtn->UseVisualStyleBackColor = false;
@@ -893,9 +893,9 @@ namespace CMS {
 			this->AccountPanel->Controls->Add(this->btn_exit);
 			this->AccountPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->AccountPanel->Location = System::Drawing::Point(196, 961);
-			this->AccountPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AccountPanel->Margin = System::Windows::Forms::Padding(2);
 			this->AccountPanel->Name = L"AccountPanel";
-			this->AccountPanel->Size = System::Drawing::Size(884, 168);
+			this->AccountPanel->Size = System::Drawing::Size(926, 168);
 			this->AccountPanel->TabIndex = 57;
 			this->AccountPanel->Visible = false;
 			// 
@@ -910,10 +910,10 @@ namespace CMS {
 			this->AboutUsBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->AboutUsBtn->Location = System::Drawing::Point(0, 126);
-			this->AboutUsBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AboutUsBtn->Margin = System::Windows::Forms::Padding(2);
 			this->AboutUsBtn->Name = L"AboutUsBtn";
-			this->AboutUsBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->AboutUsBtn->Size = System::Drawing::Size(884, 42);
+			this->AboutUsBtn->Padding = System::Windows::Forms::Padding(3);
+			this->AboutUsBtn->Size = System::Drawing::Size(926, 42);
 			this->AboutUsBtn->TabIndex = 19;
 			this->AboutUsBtn->Text = L"About us";
 			this->AboutUsBtn->UseVisualStyleBackColor = false;
@@ -930,10 +930,10 @@ namespace CMS {
 			this->ChangePassBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->ChangePassBtn->Location = System::Drawing::Point(0, 84);
-			this->ChangePassBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ChangePassBtn->Margin = System::Windows::Forms::Padding(2);
 			this->ChangePassBtn->Name = L"ChangePassBtn";
-			this->ChangePassBtn->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->ChangePassBtn->Size = System::Drawing::Size(884, 42);
+			this->ChangePassBtn->Padding = System::Windows::Forms::Padding(3);
+			this->ChangePassBtn->Size = System::Drawing::Size(926, 42);
 			this->ChangePassBtn->TabIndex = 16;
 			this->ChangePassBtn->Text = L"Change password";
 			this->ChangePassBtn->UseVisualStyleBackColor = false;
@@ -950,10 +950,10 @@ namespace CMS {
 			this->btn_logout->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->btn_logout->Location = System::Drawing::Point(0, 42);
-			this->btn_logout->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_logout->Margin = System::Windows::Forms::Padding(2);
 			this->btn_logout->Name = L"btn_logout";
-			this->btn_logout->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_logout->Size = System::Drawing::Size(884, 42);
+			this->btn_logout->Padding = System::Windows::Forms::Padding(3);
+			this->btn_logout->Size = System::Drawing::Size(926, 42);
 			this->btn_logout->TabIndex = 17;
 			this->btn_logout->Text = L"Logout";
 			this->btn_logout->UseVisualStyleBackColor = false;
@@ -970,10 +970,10 @@ namespace CMS {
 			this->btn_exit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->btn_exit->Location = System::Drawing::Point(0, 0);
-			this->btn_exit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_exit->Margin = System::Windows::Forms::Padding(2);
 			this->btn_exit->Name = L"btn_exit";
-			this->btn_exit->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->btn_exit->Size = System::Drawing::Size(884, 42);
+			this->btn_exit->Padding = System::Windows::Forms::Padding(3);
+			this->btn_exit->Size = System::Drawing::Size(926, 42);
 			this->btn_exit->TabIndex = 18;
 			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = false;
@@ -992,7 +992,7 @@ namespace CMS {
 			this->btn_ViewClasses->Location = System::Drawing::Point(0, 0);
 			this->btn_ViewClasses->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_ViewClasses->Name = L"btn_ViewClasses";
-			this->btn_ViewClasses->Size = System::Drawing::Size(884, 42);
+			this->btn_ViewClasses->Size = System::Drawing::Size(926, 42);
 			this->btn_ViewClasses->TabIndex = 41;
 			this->btn_ViewClasses->Text = L"View classes";
 			this->btn_ViewClasses->UseVisualStyleBackColor = false;
@@ -1011,7 +1011,7 @@ namespace CMS {
 			this->btn_ViewCourses->Location = System::Drawing::Point(0, 42);
 			this->btn_ViewCourses->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->btn_ViewCourses->Name = L"btn_ViewCourses";
-			this->btn_ViewCourses->Size = System::Drawing::Size(884, 42);
+			this->btn_ViewCourses->Size = System::Drawing::Size(926, 42);
 			this->btn_ViewCourses->TabIndex = 40;
 			this->btn_ViewCourses->Text = L"View courses of current semester";
 			this->btn_ViewCourses->UseVisualStyleBackColor = false;
@@ -1030,7 +1030,7 @@ namespace CMS {
 			this->ViewStusInClassBtn->Location = System::Drawing::Point(0, 84);
 			this->ViewStusInClassBtn->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->ViewStusInClassBtn->Name = L"ViewStusInClassBtn";
-			this->ViewStusInClassBtn->Size = System::Drawing::Size(884, 42);
+			this->ViewStusInClassBtn->Size = System::Drawing::Size(926, 42);
 			this->ViewStusInClassBtn->TabIndex = 42;
 			this->ViewStusInClassBtn->Text = L"View students of a class";
 			this->ViewStusInClassBtn->UseVisualStyleBackColor = false;
@@ -1049,7 +1049,7 @@ namespace CMS {
 			this->ViewStusInACourseBtn->Location = System::Drawing::Point(0, 126);
 			this->ViewStusInACourseBtn->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->ViewStusInACourseBtn->Name = L"ViewStusInACourseBtn";
-			this->ViewStusInACourseBtn->Size = System::Drawing::Size(884, 42);
+			this->ViewStusInACourseBtn->Size = System::Drawing::Size(926, 42);
 			this->ViewStusInACourseBtn->TabIndex = 43;
 			this->ViewStusInACourseBtn->Text = L"View students in a course";
 			this->ViewStusInACourseBtn->UseVisualStyleBackColor = false;
@@ -1068,7 +1068,7 @@ namespace CMS {
 			this->ViewScoreOfACourseBtn->Location = System::Drawing::Point(0, 168);
 			this->ViewScoreOfACourseBtn->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->ViewScoreOfACourseBtn->Name = L"ViewScoreOfACourseBtn";
-			this->ViewScoreOfACourseBtn->Size = System::Drawing::Size(884, 42);
+			this->ViewScoreOfACourseBtn->Size = System::Drawing::Size(926, 42);
 			this->ViewScoreOfACourseBtn->TabIndex = 44;
 			this->ViewScoreOfACourseBtn->Text = L"View the scoreboard of a course";
 			this->ViewScoreOfACourseBtn->UseVisualStyleBackColor = false;
@@ -1086,9 +1086,9 @@ namespace CMS {
 			this->ViewPanel->Controls->Add(this->btn_ViewClasses);
 			this->ViewPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ViewPanel->Location = System::Drawing::Point(196, 122);
-			this->ViewPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ViewPanel->Margin = System::Windows::Forms::Padding(2);
 			this->ViewPanel->Name = L"ViewPanel";
-			this->ViewPanel->Size = System::Drawing::Size(884, 251);
+			this->ViewPanel->Size = System::Drawing::Size(926, 251);
 			this->ViewPanel->TabIndex = 52;
 			this->ViewPanel->Visible = false;
 			// 
@@ -1104,7 +1104,7 @@ namespace CMS {
 			this->BtnViewScoreOfClass->Location = System::Drawing::Point(0, 210);
 			this->BtnViewScoreOfClass->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->BtnViewScoreOfClass->Name = L"BtnViewScoreOfClass";
-			this->BtnViewScoreOfClass->Size = System::Drawing::Size(884, 41);
+			this->BtnViewScoreOfClass->Size = System::Drawing::Size(926, 41);
 			this->BtnViewScoreOfClass->TabIndex = 59;
 			this->BtnViewScoreOfClass->Text = L"View Score Of Class";
 			this->BtnViewScoreOfClass->UseVisualStyleBackColor = true;
@@ -1120,7 +1120,7 @@ namespace CMS {
 			this->BackBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
 			this->BackBtn->Location = System::Drawing::Point(836, 3);
-			this->BackBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->BackBtn->Margin = System::Windows::Forms::Padding(2);
 			this->BackBtn->Name = L"BackBtn";
 			this->BackBtn->Size = System::Drawing::Size(38, 38);
 			this->BackBtn->TabIndex = 58;
@@ -1136,7 +1136,7 @@ namespace CMS {
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ClientSize = System::Drawing::Size(1101, 507);
+			this->ClientSize = System::Drawing::Size(1143, 507);
 			this->ControlBox = false;
 			this->Controls->Add(this->AccountPanel);
 			this->Controls->Add(this->ImportExportPanel);
@@ -1629,12 +1629,23 @@ namespace CMS {
 		if (g_currentSchoolYear == nullptr)
 		{
 			MessageBox::Show("Create a school year first!");
+			CreateBtn->PerformClick();
 			btn_CreateSchoolYear->PerformClick();
+			return;
 		}
 		else if (g_currentSemester == nullptr)
 		{
 			MessageBox::Show("Create a semester for current school year first!");
+			CreateBtn->PerformClick();
 			btn_Create1Sem->PerformClick();
+			return;
+		}
+		else if (g_currentSemester->course.head == nullptr)
+		{
+			MessageBox::Show("There is no course in this semester!");
+			AddBtn->PerformClick();
+			btn_Add1CourseToCurSem->PerformClick();
+			return;
 		}
 		Delete1Course^ form = gcnew CMS::Delete1Course();
 		form->TopMost = false;

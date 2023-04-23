@@ -652,6 +652,27 @@ namespace CMS {
 		}
 #pragma endregion
 	private: System::Void UpdateCourseInfo_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (g_currentSchoolYear == nullptr)
+		{
+			MessageBox::Show("Create school year first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		else if (g_currentSemester == nullptr)
+		{
+			MessageBox::Show("Create semester first!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
+		else if (g_currentSemester->course.head == nullptr)
+		{
+			MessageBox::Show("There is no course in this semester!!");
+			this->Close();
+			this->sourceForm->Show();
+			return;
+		}
 		DLL<COURSE*>* cur = g_currentSemester->course.head;
 		while (cur)
 		{
