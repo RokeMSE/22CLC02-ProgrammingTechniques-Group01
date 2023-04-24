@@ -59,6 +59,7 @@ namespace CMS {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChangePass::typeid));
 			this->ChangePassLab = (gcnew System::Windows::Forms::Label());
 			this->CurrentPassLab = (gcnew System::Windows::Forms::Label());
 			this->CurrentPassTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -96,7 +97,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->CurrentPassLab->Location = System::Drawing::Point(216, 101);
 			this->CurrentPassLab->Name = L"CurrentPassLab";
-			this->CurrentPassLab->Size = System::Drawing::Size(217, 32);
+			this->CurrentPassLab->Size = System::Drawing::Size(218, 32);
 			this->CurrentPassLab->TabIndex = 1;
 			this->CurrentPassLab->Text = L"Current password";
 			// 
@@ -130,7 +131,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->NewPassLab->Location = System::Drawing::Point(216, 148);
 			this->NewPassLab->Name = L"NewPassLab";
-			this->NewPassLab->Size = System::Drawing::Size(181, 32);
+			this->NewPassLab->Size = System::Drawing::Size(182, 32);
 			this->NewPassLab->TabIndex = 3;
 			this->NewPassLab->Text = L"New password";
 			// 
@@ -199,8 +200,8 @@ namespace CMS {
 			// 
 			// ChangePass
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
@@ -209,6 +210,7 @@ namespace CMS {
 			this->Controls->Add(this->WorkPanel);
 			this->Controls->Add(this->StartPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ChangePass";
 			this->Text = L"ChangePass";
@@ -241,6 +243,12 @@ namespace CMS {
 			//MessageBox::Show(msclr::interop::marshal_as<String^>(std::to_string(g_currentSchoolYear->begin)));
 			//g_currentSemester = nullptr;
 			MessageBox::Show("Successfully change your password!");
+			if (latestCheckRememberLogin) {
+				latestPassword = user->password;
+			}
+			else {
+				latestUsername = latestPassword = "";
+			}
 		}
 	}
 	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {

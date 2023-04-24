@@ -600,8 +600,8 @@ namespace CMS {
 			// 
 			// UpdateCourseInfo
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1055, 660);
 			this->Controls->Add(this->pnl_title);
@@ -639,7 +639,7 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
-			//this->Name;
+			//this->Name = L"UpdateCourseInfo";
 			this->Text = L"UpdateCourseInfo";
 			this->Load += gcnew System::EventHandler(this, &UpdateCourseInfo::UpdateCourseInfo_Load);
 			this->panel2->ResumeLayout(false);

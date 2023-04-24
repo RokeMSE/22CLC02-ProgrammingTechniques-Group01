@@ -246,7 +246,7 @@ namespace CMS {
 			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_Search->Location = System::Drawing::Point(897, 211);
+			this->btn_Search->Location = System::Drawing::Point(891, 208);
 			this->btn_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_Search->Name = L"btn_Search";
 			this->btn_Search->Size = System::Drawing::Size(115, 50);
@@ -675,8 +675,8 @@ namespace CMS {
 			// 
 			// ViewScoreOf1Stu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1218, 684);
 			this->Controls->Add(this->pnl_account);

@@ -142,7 +142,7 @@ namespace CMS {
 			this->listView1->Location = System::Drawing::Point(69, 236);
 			this->listView1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(547, 366);
+			this->listView1->Size = System::Drawing::Size(547, 479);
 			this->listView1->TabIndex = 76;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -158,14 +158,14 @@ namespace CMS {
 			this->panel1->Location = System::Drawing::Point(4, 4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Padding = System::Windows::Forms::Padding(4);
-			this->panel1->Size = System::Drawing::Size(63, 598);
+			this->panel1->Size = System::Drawing::Size(63, 711);
 			this->panel1->TabIndex = 131;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 542);
+			this->account->Location = System::Drawing::Point(4, 655);
 			this->account->Name = L"account";
 			this->account->Size = System::Drawing::Size(55, 52);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -201,10 +201,10 @@ namespace CMS {
 			// 
 			// ViewClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 27);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(620, 606);
+			this->ClientSize = System::Drawing::Size(620, 719);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->listView1);

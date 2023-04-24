@@ -110,6 +110,8 @@ namespace CMS {
 
 
 
+
+
 	protected:
 
 	private:
@@ -666,20 +668,11 @@ namespace CMS {
 		}
 		this->startYear->Enabled = false;
 		if (g_currentSemester == g_currentSchoolYear->sem1 && g_currentSemester != nullptr)
-		{
 			this->ChooseSem->Items->Add("2");
-			this->ChooseSem->Items->Add("3");
-		}
 		else if (g_currentSemester == g_currentSchoolYear->sem2 && g_currentSemester != nullptr)
-		{
 			this->ChooseSem->Items->Add("3");
-		}
 		else if (g_currentSemester == nullptr)
-		{
 			this->ChooseSem->Items->Add("1");
-			this->ChooseSem->Items->Add("2");
-			this->ChooseSem->Items->Add("3");
-		}
 	}
 	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		exportSchoolYears();

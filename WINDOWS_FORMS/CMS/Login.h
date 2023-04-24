@@ -96,32 +96,36 @@ namespace CMS {
 			// 
 			this->lbl_username->AutoSize = true;
 			this->lbl_username->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_username->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_username->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_username->Location = System::Drawing::Point(35, 133);
+			this->lbl_username->Location = System::Drawing::Point(35, 159);
 			this->lbl_username->Name = L"lbl_username";
-			this->lbl_username->Size = System::Drawing::Size(95, 22);
+			this->lbl_username->Size = System::Drawing::Size(108, 25);
 			this->lbl_username->TabIndex = 0;
 			this->lbl_username->Text = L"User name";
 			// 
 			// txt_username
 			// 
-			this->txt_username->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_username->Location = System::Drawing::Point(39, 159);
+			this->txt_username->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->txt_username->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_username->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_username->Location = System::Drawing::Point(39, 189);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(320, 30);
 			this->txt_username->TabIndex = 1;
 			// 
 			// btn_signin
 			// 
-			this->btn_signin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->btn_signin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_signin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->btn_signin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_signin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->btn_signin->Location = System::Drawing::Point(150, 319);
+			this->btn_signin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->btn_signin->Location = System::Drawing::Point(145, 349);
 			this->btn_signin->Name = L"btn_signin";
 			this->btn_signin->Size = System::Drawing::Size(121, 43);
 			this->btn_signin->TabIndex = 2;
@@ -148,9 +152,13 @@ namespace CMS {
 			// 
 			// txt_password
 			// 
-			this->txt_password->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_password->Location = System::Drawing::Point(39, 240);
+			this->txt_password->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
+				static_cast<System::Int32>(static_cast<System::Byte>(172)));
+			this->txt_password->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->txt_password->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->txt_password->Location = System::Drawing::Point(39, 270);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->PasswordChar = '>';
 			this->txt_password->Size = System::Drawing::Size(320, 30);
@@ -161,16 +169,18 @@ namespace CMS {
 			// 
 			this->lbl_password->AutoSize = true;
 			this->lbl_password->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_password->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_password->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_password->Location = System::Drawing::Point(35, 214);
+			this->lbl_password->Location = System::Drawing::Point(35, 240);
 			this->lbl_password->Name = L"lbl_password";
-			this->lbl_password->Size = System::Drawing::Size(89, 22);
+			this->lbl_password->Size = System::Drawing::Size(99, 25);
 			this->lbl_password->TabIndex = 3;
 			this->lbl_password->Text = L"Password";
 			// 
 			// pnl_login
 			// 
+			this->pnl_login->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->pnl_login->Controls->Add(this->pictureBox1);
 			this->pnl_login->Controls->Add(this->chkbx_remember);
 			this->pnl_login->Controls->Add(this->label2);
 			this->pnl_login->Controls->Add(this->btn_signin);
@@ -191,7 +201,7 @@ namespace CMS {
 			this->chkbx_remember->BackColor = System::Drawing::Color::Transparent;
 			this->chkbx_remember->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 7, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->chkbx_remember->Location = System::Drawing::Point(40, 275);
+			this->chkbx_remember->Location = System::Drawing::Point(40, 305);
 			this->chkbx_remember->Name = L"chkbx_remember";
 			this->chkbx_remember->Size = System::Drawing::Size(128, 23);
 			this->chkbx_remember->TabIndex = 6;
@@ -202,19 +212,18 @@ namespace CMS {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(155, 27);
+			this->label2->Location = System::Drawing::Point(125, 66);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(106, 36);
+			this->label2->Size = System::Drawing::Size(156, 52);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"LOGIN";
 			// 
 			// pnl_titleLogin
 			// 
-			this->pnl_titleLogin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
-				static_cast<System::Int32>(static_cast<System::Byte>(197)));
-			this->pnl_titleLogin->Controls->Add(this->pictureBox1);
+			this->pnl_titleLogin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
+				static_cast<System::Int32>(static_cast<System::Byte>(74)));
 			this->pnl_titleLogin->Controls->Add(this->btn_exit);
 			this->pnl_titleLogin->Dock = System::Windows::Forms::DockStyle::Top;
 			this->pnl_titleLogin->Location = System::Drawing::Point(4, 4);
@@ -228,9 +237,8 @@ namespace CMS {
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(4, 4);
+			this->pictureBox1->Location = System::Drawing::Point(178, 3);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(54, 54);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -239,9 +247,10 @@ namespace CMS {
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(181)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1043, 688);
 			this->Controls->Add(this->pnl_titleLogin);

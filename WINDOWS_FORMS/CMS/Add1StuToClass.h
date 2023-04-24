@@ -482,12 +482,12 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker->Location = System::Drawing::Point(233, 386);
-			this->dateTimePicker->MaxDate = System::DateTime::Today;
+			this->dateTimePicker->MaxDate = System::DateTime(2023, 4, 24, 0, 0, 0, 0);
 			this->dateTimePicker->MinDate = System::DateTime(1930, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker->Name = L"dateTimePicker";
 			this->dateTimePicker->Size = System::Drawing::Size(200, 33);
 			this->dateTimePicker->TabIndex = 6;
-			this->dateTimePicker->Value = System::DateTime::Today;
+			this->dateTimePicker->Value = System::DateTime(2023, 4, 24, 0, 0, 0, 0);
 			// 
 			// txt_lastname
 			// 
@@ -504,7 +504,6 @@ namespace CMS {
 			this->txt_lastname->Name = L"txt_lastname";
 			this->txt_lastname->Size = System::Drawing::Size(99, 33);
 			this->txt_lastname->TabIndex = 122;
-			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_name_TextChanged);
 			this->txt_lastname->TextChanged += gcnew System::EventHandler(this, &Add1StuToClass::txt_TextChanged);
 			// 
 			// label2

@@ -221,8 +221,8 @@ namespace CMS {
 			// 
 			// Delete1Course
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
@@ -297,7 +297,7 @@ namespace CMS {
 					courseInSem->next->prev = courseInSem->prev;
 				}
 				GROUP1::DLL<GROUP1::SCOREBOARD*>* scoreboardInCourse = courseInSem->data->students.head;
-				while (scoreboardInCourse)
+				while (scoreboardInCourse && scoreboardInCourse->next)
 				{
 					GROUP1::DLL<GROUP1::COURSE*>* courseOfStudent = scoreboardInCourse->data->student->courses.head;
 					while (courseOfStudent)
@@ -329,7 +329,10 @@ namespace CMS {
 					delete scoreboardInCourse->prev->data;
 					delete scoreboardInCourse->prev;
 				}
-				delete scoreboardInCourse;
+				if (scoreboardInCourse) {
+					delete scoreboardInCourse->data;
+					delete scoreboardInCourse;
+				}
 				std::string filename = "CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\\" + std::to_string(g_currentSchoolYear->begin) + "_sem" + std::to_string(g_currentSemester->No) + "_course" + courseInSem->data->ID + ".csv";
 				bool k = remove(filename.c_str());
 				delete courseInSem->data;

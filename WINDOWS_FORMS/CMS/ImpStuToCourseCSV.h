@@ -2,6 +2,7 @@
 #include "header.h"
 #include <fstream>
 #include <string>
+#include <cctype>
 using namespace std;
 using namespace GROUP1;
 
@@ -434,8 +435,8 @@ namespace CMS {
 			// 
 			// ImpStuToCourseCSV
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1043, 738);
 			this->ControlBox = false;
@@ -542,7 +543,9 @@ namespace CMS {
 		{
 			string str;
 			getline(inp, str);//skipTitle
-			if (str != "studentID") {
+			for (int i = 0; i < str.length(); i++)
+				str[i] = tolower(str[i]);
+			if (str != "studentid") {
 				inp.close();
 				MessageBox::Show("This file is not correct! Choose again!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				return;

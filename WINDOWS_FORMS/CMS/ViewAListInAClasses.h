@@ -107,7 +107,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->lbl_yourclass->Location = System::Drawing::Point(90, 85);
 			this->lbl_yourclass->Name = L"lbl_yourclass";
-			this->lbl_yourclass->Size = System::Drawing::Size(113, 20);
+			this->lbl_yourclass->Size = System::Drawing::Size(129, 21);
 			this->lbl_yourclass->TabIndex = 2;
 			this->lbl_yourclass->Text = L"Enter your class";
 			// 
@@ -136,7 +136,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->lbl_title->Location = System::Drawing::Point(440, 19);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(400, 52);
+			this->lbl_title->Size = System::Drawing::Size(477, 60);
 			this->lbl_title->TabIndex = 5;
 			this->lbl_title->Text = L"List Student of Class";
 			// 
@@ -190,7 +190,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->chooseClass->Location = System::Drawing::Point(94, 127);
 			this->chooseClass->Name = L"chooseClass";
-			this->chooseClass->Size = System::Drawing::Size(158, 29);
+			this->chooseClass->Size = System::Drawing::Size(158, 33);
 			this->chooseClass->TabIndex = 133;
 			this->chooseClass->Text = L"Choose Class";
 			// 
@@ -213,8 +213,8 @@ namespace CMS {
 			// 
 			// ViewAListInAClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 19);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));

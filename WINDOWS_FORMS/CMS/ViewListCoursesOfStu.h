@@ -465,10 +465,10 @@ namespace CMS {
 			this->btn_Search->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->btn_Search->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_Search->Location = System::Drawing::Point(925, 104);
+			this->btn_Search->Location = System::Drawing::Point(909, 115);
 			this->btn_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_Search->Name = L"btn_Search";
-			this->btn_Search->Size = System::Drawing::Size(83, 35);
+			this->btn_Search->Size = System::Drawing::Size(104, 39);
 			this->btn_Search->TabIndex = 116;
 			this->btn_Search->Text = L"Search";
 			this->btn_Search->UseVisualStyleBackColor = false;
@@ -521,8 +521,8 @@ namespace CMS {
 			// 
 			// ViewListCoursesOfStu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 21);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(1095, 528);
 			this->Controls->Add(this->btn_Search);
