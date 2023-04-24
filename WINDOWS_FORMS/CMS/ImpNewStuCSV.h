@@ -397,8 +397,9 @@ namespace CMS {
 				std::getline(inp, stu->data->socialID);
 				if (!L_Student.head)
 					L_Student.head = stu;
+				stu->data->Class = &(cur->data);
 				stu->prev = tmp;
-				tmp->next = stu;
+				if (tmp) tmp->next = stu;
 				tmp = stu;
 				cur->data.student.tail = L_Student.tail = stu;
 				if (!cur->data.student.head)
@@ -413,6 +414,7 @@ namespace CMS {
 			if (res == System::Windows::Forms::DialogResult::No)
 				return;
 		}*/
+		MessageBox::Show("Successfully imported");
 
 	}
 	private: System::Void BrowseBtn_Click(System::Object^ sender, System::EventArgs^ e) {

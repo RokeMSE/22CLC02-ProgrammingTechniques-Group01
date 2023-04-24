@@ -160,10 +160,10 @@ namespace CMS {
 			this->createButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->createButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->createButton->Location = System::Drawing::Point(528, 320);
+			this->createButton->Location = System::Drawing::Point(594, 400);
 			this->createButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->createButton->Name = L"createButton";
-			this->createButton->Size = System::Drawing::Size(86, 39);
+			this->createButton->Size = System::Drawing::Size(97, 49);
 			this->createButton->TabIndex = 8;
 			this->createButton->Text = L"Enter";
 			this->createButton->UseVisualStyleBackColor = false;
@@ -174,9 +174,10 @@ namespace CMS {
 			this->ChooseSem->BackColor = System::Drawing::SystemColors::Window;
 			this->ChooseSem->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->ChooseSem->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->ChooseSem->Location = System::Drawing::Point(278, 77);
+			this->ChooseSem->Location = System::Drawing::Point(313, 96);
+			this->ChooseSem->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->ChooseSem->Name = L"ChooseSem";
-			this->ChooseSem->Size = System::Drawing::Size(182, 30);
+			this->ChooseSem->Size = System::Drawing::Size(205, 35);
 			this->ChooseSem->TabIndex = 9;
 			// 
 			// lbl_semester
@@ -185,9 +186,9 @@ namespace CMS {
 			this->lbl_semester->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->lbl_semester->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_semester->Location = System::Drawing::Point(135, 76);
+			this->lbl_semester->Location = System::Drawing::Point(152, 95);
 			this->lbl_semester->Name = L"lbl_semester";
-			this->lbl_semester->Size = System::Drawing::Size(99, 28);
+			this->lbl_semester->Size = System::Drawing::Size(119, 32);
 			this->lbl_semester->TabIndex = 99;
 			this->lbl_semester->Text = L"Semester";
 			// 
@@ -198,9 +199,9 @@ namespace CMS {
 			this->lblStartDate->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->lblStartDate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lblStartDate->Location = System::Drawing::Point(135, 122);
+			this->lblStartDate->Location = System::Drawing::Point(152, 152);
 			this->lblStartDate->Name = L"lblStartDate";
-			this->lblStartDate->Size = System::Drawing::Size(110, 28);
+			this->lblStartDate->Size = System::Drawing::Size(129, 32);
 			this->lblStartDate->TabIndex = 100;
 			this->lblStartDate->Text = L"Start Date";
 			// 
@@ -211,9 +212,9 @@ namespace CMS {
 			this->label23->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label23->Location = System::Drawing::Point(135, 216);
+			this->label23->Location = System::Drawing::Point(152, 270);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(98, 28);
+			this->label23->Size = System::Drawing::Size(118, 32);
 			this->label23->TabIndex = 101;
 			this->label23->Text = L"End Date";
 			// 
@@ -227,8 +228,8 @@ namespace CMS {
 			this->StartPanel->Location = System::Drawing::Point(0, 0);
 			this->StartPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->StartPanel->Name = L"StartPanel";
-			this->StartPanel->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
-			this->StartPanel->Size = System::Drawing::Size(818, 57);
+			this->StartPanel->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->StartPanel->Size = System::Drawing::Size(920, 71);
 			this->StartPanel->TabIndex = 102;
 			this->StartPanel->Visible = false;
 			// 
@@ -241,9 +242,9 @@ namespace CMS {
 			this->CreateSchoolYearLab->Font = (gcnew System::Drawing::Font(L"Tahoma", 15, System::Drawing::FontStyle::Bold));
 			this->CreateSchoolYearLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)),
 				static_cast<System::Int32>(static_cast<System::Byte>(106)), static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->CreateSchoolYearLab->Location = System::Drawing::Point(80, 10);
+			this->CreateSchoolYearLab->Location = System::Drawing::Point(90, 12);
 			this->CreateSchoolYearLab->Name = L"CreateSchoolYearLab";
-			this->CreateSchoolYearLab->Size = System::Drawing::Size(316, 30);
+			this->CreateSchoolYearLab->Size = System::Drawing::Size(381, 36);
 			this->CreateSchoolYearLab->TabIndex = 0;
 			this->CreateSchoolYearLab->Text = L"CREATE NEW SEMESTER";
 			// 
@@ -257,10 +258,10 @@ namespace CMS {
 				static_cast<System::Byte>(8)));
 			this->BackBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->BackBtn->Location = System::Drawing::Point(466, 10);
+			this->BackBtn->Location = System::Drawing::Point(524, 12);
 			this->BackBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->BackBtn->Name = L"BackBtn";
-			this->BackBtn->Size = System::Drawing::Size(33, 30);
+			this->BackBtn->Size = System::Drawing::Size(37, 38);
 			this->BackBtn->TabIndex = 0;
 			this->BackBtn->Text = L"<";
 			this->BackBtn->UseVisualStyleBackColor = false;
@@ -273,10 +274,10 @@ namespace CMS {
 			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->ExitBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ExitBtn->Location = System::Drawing::Point(620, 320);
+			this->ExitBtn->Location = System::Drawing::Point(698, 400);
 			this->ExitBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(86, 39);
+			this->ExitBtn->Size = System::Drawing::Size(97, 49);
 			this->ExitBtn->TabIndex = 103;
 			this->ExitBtn->Text = L"Exit";
 			this->ExitBtn->UseVisualStyleBackColor = false;
@@ -287,9 +288,10 @@ namespace CMS {
 			this->startDay->BackColor = System::Drawing::SystemColors::Window;
 			this->startDay->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->startDay->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->startDay->Location = System::Drawing::Point(221, 169);
+			this->startDay->Location = System::Drawing::Point(249, 211);
+			this->startDay->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->startDay->Name = L"startDay";
-			this->startDay->Size = System::Drawing::Size(70, 29);
+			this->startDay->Size = System::Drawing::Size(78, 33);
 			this->startDay->TabIndex = 7;
 			// 
 			// startYear
@@ -297,9 +299,10 @@ namespace CMS {
 			this->startYear->BackColor = System::Drawing::SystemColors::Window;
 			this->startYear->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->startYear->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->startYear->Location = System::Drawing::Point(604, 172);
+			this->startYear->Location = System::Drawing::Point(680, 215);
+			this->startYear->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->startYear->Name = L"startYear";
-			this->startYear->Size = System::Drawing::Size(70, 29);
+			this->startYear->Size = System::Drawing::Size(78, 33);
 			this->startYear->TabIndex = 104;
 			// 
 			// endMonth
@@ -307,9 +310,10 @@ namespace CMS {
 			this->endMonth->BackColor = System::Drawing::SystemColors::Window;
 			this->endMonth->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->endMonth->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->endMonth->Location = System::Drawing::Point(429, 265);
+			this->endMonth->Location = System::Drawing::Point(483, 331);
+			this->endMonth->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->endMonth->Name = L"endMonth";
-			this->endMonth->Size = System::Drawing::Size(70, 29);
+			this->endMonth->Size = System::Drawing::Size(78, 33);
 			this->endMonth->TabIndex = 105;
 			// 
 			// endYear
@@ -317,9 +321,10 @@ namespace CMS {
 			this->endYear->BackColor = System::Drawing::SystemColors::Window;
 			this->endYear->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->endYear->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->endYear->Location = System::Drawing::Point(604, 265);
+			this->endYear->Location = System::Drawing::Point(680, 331);
+			this->endYear->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->endYear->Name = L"endYear";
-			this->endYear->Size = System::Drawing::Size(70, 29);
+			this->endYear->Size = System::Drawing::Size(78, 33);
 			this->endYear->TabIndex = 106;
 			// 
 			// startMonth
@@ -327,9 +332,10 @@ namespace CMS {
 			this->startMonth->BackColor = System::Drawing::SystemColors::Window;
 			this->startMonth->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->startMonth->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->startMonth->Location = System::Drawing::Point(429, 172);
+			this->startMonth->Location = System::Drawing::Point(483, 215);
+			this->startMonth->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->startMonth->Name = L"startMonth";
-			this->startMonth->Size = System::Drawing::Size(70, 29);
+			this->startMonth->Size = System::Drawing::Size(78, 33);
 			this->startMonth->TabIndex = 107;
 			// 
 			// endDay
@@ -337,9 +343,10 @@ namespace CMS {
 			this->endDay->BackColor = System::Drawing::SystemColors::Window;
 			this->endDay->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->endDay->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->endDay->Location = System::Drawing::Point(221, 262);
+			this->endDay->Location = System::Drawing::Point(249, 328);
+			this->endDay->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->endDay->Name = L"endDay";
-			this->endDay->Size = System::Drawing::Size(70, 29);
+			this->endDay->Size = System::Drawing::Size(78, 33);
 			this->endDay->TabIndex = 108;
 			// 
 			// startDaylbl
@@ -349,9 +356,9 @@ namespace CMS {
 			this->startDaylbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->startDaylbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->startDaylbl->Location = System::Drawing::Point(156, 170);
+			this->startDaylbl->Location = System::Drawing::Point(176, 212);
 			this->startDaylbl->Name = L"startDaylbl";
-			this->startDaylbl->Size = System::Drawing::Size(49, 28);
+			this->startDaylbl->Size = System::Drawing::Size(59, 32);
 			this->startDaylbl->TabIndex = 109;
 			this->startDaylbl->Text = L"Day";
 			// 
@@ -362,9 +369,9 @@ namespace CMS {
 			this->startMonthlbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->startMonthlbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->startMonthlbl->Location = System::Drawing::Point(336, 170);
+			this->startMonthlbl->Location = System::Drawing::Point(378, 212);
 			this->startMonthlbl->Name = L"startMonthlbl";
-			this->startMonthlbl->Size = System::Drawing::Size(75, 28);
+			this->startMonthlbl->Size = System::Drawing::Size(91, 32);
 			this->startMonthlbl->TabIndex = 110;
 			this->startMonthlbl->Text = L"Month";
 			// 
@@ -375,9 +382,9 @@ namespace CMS {
 			this->startYearlbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->startYearlbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->startYearlbl->Location = System::Drawing::Point(546, 173);
+			this->startYearlbl->Location = System::Drawing::Point(614, 216);
 			this->startYearlbl->Name = L"startYearlbl";
-			this->startYearlbl->Size = System::Drawing::Size(52, 28);
+			this->startYearlbl->Size = System::Drawing::Size(64, 32);
 			this->startYearlbl->TabIndex = 111;
 			this->startYearlbl->Text = L"Year";
 			// 
@@ -388,9 +395,9 @@ namespace CMS {
 			this->endDaylbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->endDaylbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->endDaylbl->Location = System::Drawing::Point(156, 260);
+			this->endDaylbl->Location = System::Drawing::Point(176, 325);
 			this->endDaylbl->Name = L"endDaylbl";
-			this->endDaylbl->Size = System::Drawing::Size(49, 28);
+			this->endDaylbl->Size = System::Drawing::Size(59, 32);
 			this->endDaylbl->TabIndex = 112;
 			this->endDaylbl->Text = L"Day";
 			// 
@@ -401,9 +408,9 @@ namespace CMS {
 			this->endMonthlbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->endMonthlbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->endMonthlbl->Location = System::Drawing::Point(336, 263);
+			this->endMonthlbl->Location = System::Drawing::Point(378, 329);
 			this->endMonthlbl->Name = L"endMonthlbl";
-			this->endMonthlbl->Size = System::Drawing::Size(75, 28);
+			this->endMonthlbl->Size = System::Drawing::Size(91, 32);
 			this->endMonthlbl->TabIndex = 113;
 			this->endMonthlbl->Text = L"Month";
 			// 
@@ -414,19 +421,19 @@ namespace CMS {
 			this->endYearlbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
 			this->endYearlbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->endYearlbl->Location = System::Drawing::Point(546, 263);
+			this->endYearlbl->Location = System::Drawing::Point(614, 329);
 			this->endYearlbl->Name = L"endYearlbl";
-			this->endYearlbl->Size = System::Drawing::Size(52, 28);
+			this->endYearlbl->Size = System::Drawing::Size(64, 32);
 			this->endYearlbl->TabIndex = 114;
 			this->endYearlbl->Text = L"Year";
 			// 
 			// Create1NewSem
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ClientSize = System::Drawing::Size(818, 388);
+			this->ClientSize = System::Drawing::Size(920, 485);
 			this->Controls->Add(this->endYearlbl);
 			this->Controls->Add(this->endMonthlbl);
 			this->Controls->Add(this->endDaylbl);
@@ -448,6 +455,7 @@ namespace CMS {
 			this->Controls->Add(this->startDay);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"Create1NewSem";
 			this->Text = L"Create1NewSem";
 			this->Load += gcnew System::EventHandler(this, &Create1NewSem::Create1NewSem_Load);

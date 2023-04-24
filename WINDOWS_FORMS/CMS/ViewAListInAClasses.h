@@ -335,13 +335,17 @@ namespace CMS {
 		*count = 1;
 		DLL<STUDENT*>* curStudent = Class->data.student.head;
 
+		std::string gender = "";
 		while (curStudent && curStudent->data->Class->convertToString() == msclr::interop::marshal_as<std::string>(selectedClassName)) {
 			item = gcnew ListViewItem();
 			ListViewItem^ item = listView1->Items->Add(msclr::interop::marshal_as<String^>(to_string(*count)));
 			item->SubItems->Add(gcnew System::String((curStudent->data->studentID).c_str()));
 			item->SubItems->Add(gcnew System::String((curStudent->data->firstname).c_str()));
 			item->SubItems->Add(gcnew System::String((curStudent->data->lastname).c_str()));
-			item->SubItems->Add(gcnew System::String(std::to_string(curStudent->data->gender).c_str()));
+
+			if (curStudent->data->gender)	gender = "Male";
+			else gender = "Female";
+			item->SubItems->Add(gcnew System::String(gender.c_str()));
 			item->SubItems->Add(gcnew System::String(DateToString(curStudent->data->DoB).c_str()));
 			item->SubItems->Add(gcnew System::String((curStudent->data->socialID).c_str()));
 			(*count)++;
