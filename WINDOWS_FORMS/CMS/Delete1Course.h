@@ -266,7 +266,7 @@ namespace CMS {
 		if (this->CourseIDTextBox->Text == "")
 		{
 			MessageBox::Show("Invalid!");
-			CourseIDTextBox->Text = "";
+			CourseIDTextBox->Clear();
 			return;
 		}
 		GROUP1::DLL<GROUP1::COURSE*>* courseInSem = g_currentSemester->course.head;
@@ -279,6 +279,11 @@ namespace CMS {
 		{
 			if (courseInSem->data->ID == msclr::interop::marshal_as<std::string>(this->CourseIDTextBox->Text))
 			{
+				if (courseInSem != g_currentSemester->course.head && courseInSem != g_currentSemester->course.tail)
+				{
+					courseInSem->prev->next = courseInSem->next;
+					courseInSem->next->prev = courseInSem->prev;
+				}
 				if (courseInSem == g_currentSemester->course.head)
 				{
 					g_currentSemester->course.head = courseInSem -> next;
@@ -290,11 +295,6 @@ namespace CMS {
 					g_currentSemester->course.tail = courseInSem->prev;
 					if (courseInSem->prev)
 						courseInSem->prev->next = nullptr;
-				}
-				else
-				{
-					courseInSem->prev->next = courseInSem->next;
-					courseInSem->next->prev = courseInSem->prev;
 				}
 				GROUP1::DLL<GROUP1::SCOREBOARD*>* scoreboardInCourse = courseInSem->data->students.head;
 				while (scoreboardInCourse && scoreboardInCourse->next)
@@ -333,7 +333,7 @@ namespace CMS {
 					delete scoreboardInCourse->data;
 					delete scoreboardInCourse;
 				}
-				std::string filename = "CSV\SemInSchoolYear\CourseInSemester\StudentsInCourse\\" + std::to_string(g_currentSchoolYear->begin) + "_sem" + std::to_string(g_currentSemester->No) + "_course" + courseInSem->data->ID + ".csv";
+				std::string filename = "CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/" + std::to_string(g_currentSchoolYear->begin) + "_sem" + std::to_string(g_currentSemester->No) + "_course" + courseInSem->data->ID + ".CSV";
 				bool k = remove(filename.c_str());
 				delete courseInSem->data;
 				delete courseInSem;
