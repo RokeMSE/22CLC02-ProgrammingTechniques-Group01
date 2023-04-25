@@ -105,9 +105,10 @@ namespace CMS {
 			this->lbl_yourclass->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8));
 			this->lbl_yourclass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->lbl_yourclass->Location = System::Drawing::Point(90, 85);
+			this->lbl_yourclass->Location = System::Drawing::Point(75, 71);
+			this->lbl_yourclass->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lbl_yourclass->Name = L"lbl_yourclass";
-			this->lbl_yourclass->Size = System::Drawing::Size(129, 21);
+			this->lbl_yourclass->Size = System::Drawing::Size(113, 20);
 			this->lbl_yourclass->TabIndex = 2;
 			this->lbl_yourclass->Text = L"Enter your class";
 			// 
@@ -118,9 +119,10 @@ namespace CMS {
 			this->listView1->FullRowSelect = true;
 			this->listView1->GridLines = true;
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(54, 187);
+			this->listView1->Location = System::Drawing::Point(45, 156);
+			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(1139, 524);
+			this->listView1->Size = System::Drawing::Size(950, 437);
 			this->listView1->TabIndex = 76;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -134,9 +136,10 @@ namespace CMS {
 			this->lbl_title->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 22, System::Drawing::FontStyle::Bold));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(440, 19);
+			this->lbl_title->Location = System::Drawing::Point(367, 16);
+			this->lbl_title->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lbl_title->Name = L"lbl_title";
-			this->lbl_title->Size = System::Drawing::Size(477, 60);
+			this->lbl_title->Size = System::Drawing::Size(400, 52);
 			this->lbl_title->TabIndex = 5;
 			this->lbl_title->Text = L"List Student of Class";
 			// 
@@ -148,18 +151,20 @@ namespace CMS {
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Padding = System::Windows::Forms::Padding(4);
-			this->panel1->Size = System::Drawing::Size(60, 711);
+			this->panel1->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->panel1->Size = System::Drawing::Size(50, 592);
 			this->panel1->TabIndex = 132;
 			// 
 			// account
 			// 
 			this->account->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"account.Image")));
-			this->account->Location = System::Drawing::Point(4, 655);
+			this->account->Location = System::Drawing::Point(3, 546);
+			this->account->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->account->Name = L"account";
-			this->account->Size = System::Drawing::Size(52, 52);
+			this->account->Size = System::Drawing::Size(44, 43);
 			this->account->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->account->TabIndex = 102;
 			this->account->TabStop = false;
@@ -171,11 +176,11 @@ namespace CMS {
 			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->button1->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->button1->Location = System::Drawing::Point(4, 4);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Location = System::Drawing::Point(3, 3);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Padding = System::Windows::Forms::Padding(4);
-			this->button1->Size = System::Drawing::Size(52, 52);
+			this->button1->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
+			this->button1->Size = System::Drawing::Size(44, 43);
 			this->button1->TabIndex = 57;
 			this->button1->Text = L"<";
 			this->button1->UseVisualStyleBackColor = false;
@@ -188,9 +193,10 @@ namespace CMS {
 			this->chooseClass->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->chooseClass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->chooseClass->Location = System::Drawing::Point(94, 127);
+			this->chooseClass->Location = System::Drawing::Point(78, 106);
+			this->chooseClass->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->chooseClass->Name = L"chooseClass";
-			this->chooseClass->Size = System::Drawing::Size(158, 33);
+			this->chooseClass->Size = System::Drawing::Size(132, 29);
 			this->chooseClass->TabIndex = 133;
 			this->chooseClass->Text = L"Choose Class";
 			// 
@@ -202,10 +208,10 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->searchButton->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->searchButton->Location = System::Drawing::Point(334, 127);
-			this->searchButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->searchButton->Location = System::Drawing::Point(278, 106);
+			this->searchButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->searchButton->Name = L"searchButton";
-			this->searchButton->Size = System::Drawing::Size(92, 31);
+			this->searchButton->Size = System::Drawing::Size(77, 26);
 			this->searchButton->TabIndex = 134;
 			this->searchButton->Text = L"Search";
 			this->searchButton->UseVisualStyleBackColor = false;
@@ -213,12 +219,12 @@ namespace CMS {
 			// 
 			// ViewAListInAClasses
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
+			this->AutoScaleDimensions = System::Drawing::SizeF(120, 120);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->ClientSize = System::Drawing::Size(1193, 711);
+			this->ClientSize = System::Drawing::Size(994, 592);
 			this->Controls->Add(this->searchButton);
 			this->Controls->Add(this->chooseClass);
 			this->Controls->Add(this->panel1);
@@ -230,7 +236,6 @@ namespace CMS {
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ViewAListInAClasses";
 			this->Text = L"ViewAListInAClasses";
 			this->Load += gcnew System::EventHandler(this, &ViewAListInAClasses::ViewAListInAClasses_Load);
@@ -331,10 +336,19 @@ namespace CMS {
 				break;
 			Class = Class->next;
 		}
+
+		if (Class == nullptr) {
+			MessageBox::Show("Please choose a Class!", "Notification");
+			return;
+		}
+
 		int* count = new int;
 		*count = 1;
 		DLL<STUDENT*>* curStudent = Class->data.student.head;
-
+		if (curStudent == nullptr) {
+			MessageBox::Show("This Class does not have any Students! Please Add new one!", "Notification", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 		std::string gender = "";
 		while (curStudent && curStudent->data->Class->convertToString() == msclr::interop::marshal_as<std::string>(selectedClassName)) {
 			item = gcnew ListViewItem();
@@ -354,5 +368,5 @@ namespace CMS {
 		*count = 0;
 		delete count;
 	}
-};
+	};
 }

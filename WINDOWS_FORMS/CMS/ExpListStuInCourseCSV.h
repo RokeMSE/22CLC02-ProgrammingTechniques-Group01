@@ -197,7 +197,7 @@ namespace CMS {
 			this->lbl_coursename->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->lbl_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_coursename->Location = System::Drawing::Point(566, 172);
+			this->lbl_coursename->Location = System::Drawing::Point(576, 172);
 			this->lbl_coursename->Name = L"lbl_coursename";
 			this->lbl_coursename->Size = System::Drawing::Size(129, 24);
 			this->lbl_coursename->TabIndex = 94;
@@ -249,7 +249,7 @@ namespace CMS {
 			this->lbl_input->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold));
 			this->lbl_input->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->lbl_input->Location = System::Drawing::Point(68, 347);
+			this->lbl_input->Location = System::Drawing::Point(80, 347);
 			this->lbl_input->Name = L"lbl_input";
 			this->lbl_input->Size = System::Drawing::Size(234, 27);
 			this->lbl_input->TabIndex = 98;
@@ -262,7 +262,7 @@ namespace CMS {
 			this->txt_pathfile->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12));
 			this->txt_pathfile->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->txt_pathfile->Location = System::Drawing::Point(297, 343);
+			this->txt_pathfile->Location = System::Drawing::Point(317, 343);
 			this->txt_pathfile->Name = L"txt_pathfile";
 			this->txt_pathfile->ReadOnly = true;
 			this->txt_pathfile->Size = System::Drawing::Size(557, 33);
@@ -375,9 +375,9 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
 			this->label3->Location = System::Drawing::Point(117, 123);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(109, 24);
+			this->label3->Size = System::Drawing::Size(114, 24);
 			this->label3->TabIndex = 105;
-			this->label3->Text = L"School year";
+			this->label3->Text = L"School year:";
 			// 
 			// schoolyeartxt
 			// 
@@ -400,11 +400,11 @@ namespace CMS {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label4->Location = System::Drawing::Point(117, 167);
+			this->label4->Location = System::Drawing::Point(137, 163);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(89, 24);
+			this->label4->Size = System::Drawing::Size(94, 24);
 			this->label4->TabIndex = 107;
-			this->label4->Text = L"Semester";
+			this->label4->Text = L"Semester:";
 			// 
 			// chkbox_sem1
 			// 
@@ -527,7 +527,9 @@ namespace CMS {
 		}
 		for (int i = 1; stu; i++)
 		{
-			ofs << i << "," << stu->data->student->studentID << "," << stu->data->student->lastname + " " + stu->data->student->firstname << "," << stu->data->otherMark << "," << stu->data->midtermMark << "," << stu->data->finalMark << "," << stu->data->totalMark << "\n";
+			ofs << i << "," << stu->data->student->studentID << "," << stu->data->student->lastname + " " + stu->data->student->firstname << "," << stu->data->otherMark << "," << stu->data->midtermMark << "," << stu->data->finalMark << "," << stu->data->totalMark;
+			if (stu->next)
+				ofs << endl;
 			stu = stu->next;
 		}
 		ofs.close();
@@ -535,6 +537,7 @@ namespace CMS {
 
 	}
 	private: System::Void btn_search_Click(System::Object^ sender, System::EventArgs^ e) {
+		btn_export->Enabled = false;
 		btn_browse->Enabled = false;
 		txt_coursename->Text = "";
 		txt_teacher->Text = "";
