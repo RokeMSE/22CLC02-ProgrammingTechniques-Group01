@@ -484,6 +484,7 @@ namespace CMS {
 	}
 	public: System::Void btn_Search_Click(System::Object^ sender, System::EventArgs^ e) {
 		listView->Items->Clear();
+		txt_coursename->Text = "";
 		DLL<SCHOOLYEAR*>* cur = L_SchoolYear.head;
 		std::string inputSchoolyear = msclr::interop::marshal_as<std::string>(domainUD_schoolyear->SelectedItem->ToString());
 		inputSchoolyear = inputSchoolyear.substr(0, 4);

@@ -362,6 +362,10 @@ namespace CMS {
 				break;
 			curClas = curClas->next;
 		}
+		if (curClas == nullptr) {
+			MessageBox::Show("Please choose a Class!", "Notification");
+			return;
+		}
 		DLL<STUDENT*>* stu = curClas->data.student.head;
 
 		if (stu == nullptr) {
