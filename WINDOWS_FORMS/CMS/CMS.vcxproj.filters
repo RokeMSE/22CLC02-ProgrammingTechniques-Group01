@@ -134,7 +134,7 @@
     <ClCompile Include="ChangePass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="Logout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
