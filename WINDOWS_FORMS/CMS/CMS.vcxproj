@@ -180,6 +180,9 @@
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="mainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MenuStaff.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -233,7 +236,8 @@
     <ClCompile Include="export.cpp" />
     <ClCompile Include="helperFunctions.cpp" />
     <ClCompile Include="import.cpp" />
-    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutUs.resx">
@@ -277,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStaff.resx">
       <DependentUpon>MenuStaff.h</DependentUpon>

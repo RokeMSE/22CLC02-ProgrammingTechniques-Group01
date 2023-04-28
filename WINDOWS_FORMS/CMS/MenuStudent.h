@@ -540,6 +540,14 @@ private: System::Windows::Forms::Button^ BackBtn;
 		//txt_nameOfUser->Text = gcnew System::String(namedisplay.c_str());
 	}
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();
@@ -547,11 +555,7 @@ private: System::Windows::Forms::Button^ BackBtn;
 		// then exit
 		Application::Exit();
 	}
-	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
-		g_currentStudent = nullptr;
-		this->Hide();
-		this->sourceForm->Show();
-	}
+	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void btn_ViewCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();

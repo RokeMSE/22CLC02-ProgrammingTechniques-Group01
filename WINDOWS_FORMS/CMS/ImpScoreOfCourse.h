@@ -848,11 +848,18 @@ namespace CMS {
 		Form^ form = gcnew CMS::AboutUs(this);
 		form->Show();
 	}
-	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-		loginForm->Show();
-	}
+
+	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();

@@ -1,11 +1,11 @@
 #pragma once
+#ifndef _login
+#define _login
 #include "header.h"
-
 #include "MenuStaff.h"
 #include "MenuStudent.h"
 
 namespace CMS {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -39,29 +39,17 @@ namespace CMS {
 			}
 		}
 	private: System::Windows::Forms::Label^ lbl_username;
-	private: System::Windows::Forms::TextBox^ txt_username;
 	private: System::Windows::Forms::Button^ btn_signin;
 	private: System::Windows::Forms::Button^ btn_exit;
 	private: Point mouseDownLocation, formLocation;
-	protected:
-
-	protected:
-
-
-
-	private: System::Windows::Forms::TextBox^ txt_password;
-
+	public:			System::Windows::Forms::TextBox^ txt_password;
+	public:			System::Windows::Forms::TextBox^ txt_username;
 	private: System::Windows::Forms::Label^ lbl_password;
 	private: System::Windows::Forms::Panel^ pnl_login;
-
 	private: System::Windows::Forms::Panel^ pnl_titleLogin;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::CheckBox^ chkbx_remember;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -260,7 +248,8 @@ namespace CMS {
 			this->Name = L"Login";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Login";
-			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
+			this->Shown += gcnew System::EventHandler(this, &Login::Login_Shown);
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Shown);
 			this->pnl_login->ResumeLayout(false);
 			this->pnl_login->PerformLayout();
 			this->pnl_titleLogin->ResumeLayout(false);
@@ -269,16 +258,16 @@ namespace CMS {
 
 		}
 #pragma endregion
-	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Login_Shown(System::Object^ sender, System::EventArgs^ e) {
 		Color cl;
 		pnl_login->BackColor = cl.FromArgb(100, 244, 238, 224);
 		pnl_titleLogin->BackColor = cl.FromArgb(50, 0, 0, 0);
 		// rgb(244, 238, 224)
-		this->chkbx_remember->Checked = latestCheckRememberLogin;
 		if (latestCheckRememberLogin) {
 			txt_password->Text = gcnew System::String(latestPassword.c_str());
 			txt_username->Text = gcnew System::String(latestUsername.c_str());
 		}
+		this->chkbx_remember->Checked = latestCheckRememberLogin;
 	}
 
 		   void checkBoxRemember(GROUP1::USER input) {
@@ -292,7 +281,6 @@ namespace CMS {
 				   latestCheckRememberLogin = false;
 			   }
 		   }
-
 	private: System::Void btn_signin_Click(System::Object^ sender, System::EventArgs^ e) {
 		GROUP1::USER input;
 		input.username = msclr::interop::marshal_as<std::string>(txt_username->Text);
@@ -353,6 +341,7 @@ namespace CMS {
 	}
 
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();
@@ -383,3 +372,4 @@ namespace CMS {
 	}
 };
 }
+#endif

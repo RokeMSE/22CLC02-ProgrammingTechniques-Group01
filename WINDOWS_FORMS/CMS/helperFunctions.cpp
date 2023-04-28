@@ -5,6 +5,10 @@
 using namespace std;
 using namespace GROUP1;
 
+// working files
+using namespace System::IO;
+using namespace System;
+
 extern std::string trim_whitespace(const std::string& str) {
     // Create a regular expression pattern that matches whitespace at the beginning or end of the string
     std::regex pattern("^\\s+|\\s+$");
@@ -108,7 +112,7 @@ extern Program convertToProgram(string str) {
     else                        return VP;
 }
 
-extern Type convertToType(string str) {
+extern GROUP1::Type convertToType(string str) {
     if (str == "Staff")   return Staff;
     else                    return Student;
 }
@@ -149,7 +153,7 @@ extern string convertFromSession(Session x)
     return str[x];
 }
 
-extern string convertFromType(Type x)
+extern string convertFromType(GROUP1::Type x)
 {
     string str[2] = { "STAFF", "STUDENT" };
     return str[x];
@@ -172,4 +176,13 @@ extern void add_val(LIST<DLL, Data_Type>& list, Data_Type val) {
         list.tail->next = tmp;
         list.tail = list.tail->next;
     }
+}
+
+extern void deleteFiles() {
+    String^ folderPath = "CSV";
+    folderPath = Path::GetFullPath(folderPath);
+    // Get all the files in the folder and its subfolders
+    cli::array<String^>^ files = Directory::GetFiles(folderPath, "*", SearchOption::AllDirectories);
+    // Loop through the list of files and delete them
+    for each (String ^ file in files) File::Delete(file);
 }

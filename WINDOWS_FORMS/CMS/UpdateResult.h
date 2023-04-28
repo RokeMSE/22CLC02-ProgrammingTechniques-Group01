@@ -1,5 +1,6 @@
 #pragma once
 #include "header.h"
+#include "AboutUs.h"
 #include <msclr/marshal_cppstd.h>
 #include <string>
 
@@ -18,9 +19,10 @@ namespace CMS {
 	public ref class UpdateResult : public System::Windows::Forms::Form
 	{
 	public:
-		UpdateResult(System::Windows::Forms::Form^ form)
+		UpdateResult(System::Windows::Forms::Form^ sourceform, System::Windows::Forms::Form^ loginform)
 		{
-			this->sourceForm = form;
+			this->sourceForm = sourceform;
+			this->loginForm = loginform;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -44,7 +46,7 @@ namespace CMS {
 		GROUP1::DLL<GROUP1::SCOREBOARD*>* curStudent;
 		GROUP1::DLL<GROUP1::SCHOOLYEAR*>* curSchoolyear;
 		GROUP1::SEMESTER* curSemester;
-		System::Windows::Forms::Form^ sourceForm;
+		System::Windows::Forms::Form ^sourceForm, ^loginForm;
 		Point mouseDownLocation, formLocation;
 
 	private: System::Windows::Forms::Label^ label1;
@@ -971,6 +973,7 @@ namespace CMS {
 			this->btn_exit->TabIndex = 2;
 			this->btn_exit->Text = L"Exit";
 			this->btn_exit->UseVisualStyleBackColor = false;
+			this->btn_exit->Click += gcnew System::EventHandler(this, &UpdateResult::btn_exit_Click);
 			// 
 			// btn_logout
 			// 
@@ -983,6 +986,7 @@ namespace CMS {
 			this->btn_logout->TabIndex = 1;
 			this->btn_logout->Text = L"Log out";
 			this->btn_logout->UseVisualStyleBackColor = false;
+			this->btn_logout->Click += gcnew System::EventHandler(this, &UpdateResult::btn_logout_Click);
 			// 
 			// btn_aboutUs
 			// 
@@ -1468,6 +1472,26 @@ namespace CMS {
 	}
 
 	private: System::Void btn_aboutUs_Click(System::Object^ sender, System::EventArgs^ e) {
+		Form^ form = gcnew AboutUs(this);
+		this->Close();
+		form->Show();
 	}
-	};
+	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
+		exportSchoolYears();
+		exportStudents();
+		exportClasses();
+		exportStaffs();
+		// then exit
+		Application::Exit();
+	}
+	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

@@ -1,17 +1,16 @@
-#include "Login.h"
 #include "header.h"
+#include "mainForm.h"
 #include <string>
 
 using namespace System;
 using namespace System::Windows::Forms;
-
 
 [STAThread]
 void main(cli::array<System::String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     bool imp;
-    int i = 0;
+    //int i = 0;
     imp = importClasses();
     if (!imp) goto _export;
     //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(i)));
@@ -28,20 +27,21 @@ void main(cli::array<System::String^>^ args) {
 
     imp = importSchoolYears();
     if (!imp) goto _export;
-    else goto _xyz;
+    goto _starting;
 
 _export:
     MessageBox::Show("Error in database!");
     // call `export` functions
+    deleteFiles();
     exportSchoolYears();
     exportClasses();
     exportStudents();
     exportStaffs();
     return;
-_xyz:
+_starting:
     //MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(L_SchoolYear.tail->data->begin)));
     //if (L_SchoolYear.head->data->sem1)   MessageBox::Show(msclr::interop::marshal_as<System::String^>(std::to_string(L_SchoolYear.head->data->sem1->No)));
-    CMS::Login form;
+    CMS::mainForm form;
     Application::Run(% form);
 }
 // 

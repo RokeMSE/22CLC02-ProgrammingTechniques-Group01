@@ -273,7 +273,7 @@ namespace CMS {
 			if (g_currentStaff)
 				user = &(g_currentStaff->user);
 			else
-				user = &(g_currentStaff->user);
+				user = &(g_currentStudent->user);
 			if (msclr::interop::marshal_as<std::string>(CurrentPassTextBox->Text) != user->password)
 			{
 				MessageBox::Show("Wrong password! Please enter the correct current password.", "Notification", MessageBoxButtons::OKCancel, MessageBoxIcon::Error);
@@ -285,15 +285,21 @@ namespace CMS {
 			//MessageBox::Show(msclr::interop::marshal_as<String^>(std::to_string(g_currentSchoolYear->begin)));
 			//g_currentSemester = nullptr;
 			MessageBox::Show("Successfully change your password!");
-			if (latestCheckRememberLogin) {
+			if (latestCheckRememberLogin)
 				latestPassword = user->password;
-			}
-			else {
+			else
 				latestUsername = latestPassword = "";
-			}
 		}
 	}
 	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();

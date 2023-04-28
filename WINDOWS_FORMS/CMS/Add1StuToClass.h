@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "header.h"
-#include "Login.h"
 #include "AboutUs.h"
 #include <cctype>
 using namespace GROUP1;
@@ -934,13 +933,18 @@ namespace CMS {
 		AboutUs^ form = gcnew CMS::AboutUs(this);
 		form->Show();
 	}
-	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
-		g_currentStudent = nullptr;
-		g_currentStaff = nullptr;
-		this->Close();
-		this->loginForm->Show();
-	}
+
+	private: System::Void btn_logout_Click(System::Object^ sender, System::EventArgs^ e);
+
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();

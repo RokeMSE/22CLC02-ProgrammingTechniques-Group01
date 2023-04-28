@@ -1,1 +1,12 @@
-﻿  CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\Debug\CMS.exe
+﻿  Menu.cpp
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Add1StuToClass.h(773,39): warning C4101: 'exception': unreferenced local variable
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Add1StuToClass.h(885,64): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Create1NewSem.h(525,52): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\Create1NewSem.h(609,20): warning C4018: '>': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\ImpStuToCourseCSV.h(546,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateCourseInfo.h(704,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateCourseInfo.h(724,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateCourseInfo.h(754,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\CMS\UpdateCourseInfo.h(769,21): warning C4018: '<': signed/unsigned mismatch
+  ChangePass.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  CMS.vcxproj -> C:\Users\Toan\OneDrive - VNU-HCMUS\HCMUS\HK2\ProgrammingTechniques\Project\Code\22CLC02-ProgrammingTechniques-Group01\WINDOWS_FORMS\Debug\CMS.exe

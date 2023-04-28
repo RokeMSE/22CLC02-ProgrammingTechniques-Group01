@@ -257,6 +257,14 @@ namespace CMS {
 		ProgramDomain->Items->Add("VP");
 	}
 	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		deleteFiles();
+		if (latestCheckRememberLogin) {
+			latestUsername = g_currentStaff->user.username;
+			latestPassword = g_currentStaff->user.password;
+		}
+		else {
+			latestUsername = latestPassword = "";
+		}
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();

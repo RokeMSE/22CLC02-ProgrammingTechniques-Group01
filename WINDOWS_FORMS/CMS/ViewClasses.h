@@ -107,7 +107,6 @@ namespace CMS {
 			this->lbl_title->Size = System::Drawing::Size(335, 58);
 			this->lbl_title->TabIndex = 43;
 			this->lbl_title->Text = L"List of Classes";
-			this->lbl_title->Click += gcnew System::EventHandler(this, &ViewClasses::lbl_title_Click_1);
 			// 
 			// pictureBox1
 			// 
@@ -146,7 +145,6 @@ namespace CMS {
 			this->listView1->TabIndex = 76;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
-			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &ViewClasses::listView1_SelectedIndexChanged);
 			// 
 			// panel1
 			// 
@@ -259,20 +257,9 @@ namespace CMS {
 		}
 		delete i;
 	}
-	private: System::Void listView1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void btn_back_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		this->Close();
 		this->sourceForm->Show();
-	}
-
-
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void lbl_title_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void lbl_title_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
