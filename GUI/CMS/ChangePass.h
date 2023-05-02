@@ -294,12 +294,17 @@ namespace CMS {
 	private: System::Void ExitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		deleteFiles();
 		if (latestCheckRememberLogin) {
-			latestUsername = g_currentStaff->user.username;
-			latestPassword = g_currentStaff->user.password;
+			if (g_currentStaff) {
+				latestUsername = g_currentStaff->user.username;
+				latestPassword = g_currentStaff->user.password;
+			}
+			else {
+				latestUsername = g_currentStudent->user.username;
+				latestPassword = g_currentStudent->user.password;
+			}
 		}
-		else {
-			latestUsername = latestPassword = "";
-		}
+		else latestUsername = latestPassword = "";
+
 		exportSchoolYears();
 		exportStudents();
 		exportClasses();

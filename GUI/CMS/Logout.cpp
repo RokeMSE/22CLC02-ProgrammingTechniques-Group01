@@ -30,7 +30,7 @@ System::Void CMS::MenuStaff::btn_logout_Click(System::Object^ sender, System::Ev
 	Login^ form = gcnew Login();
 	form->Show();
 }
- 
+
 System::Void CMS::MenuStudent::btn_logout_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (latestCheckRememberLogin) {
 		latestUsername = g_currentStudent->user.username;
