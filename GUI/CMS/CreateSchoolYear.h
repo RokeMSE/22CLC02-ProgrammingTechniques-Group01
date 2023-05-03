@@ -251,6 +251,12 @@ namespace CMS {
 	private: System::Void BeginYearTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (this->BeginYearTextBox->Text == "")
 			return;
+		if (System::Text::RegularExpressions::Regex::IsMatch(this->BeginYearTextBox->Text, "[^0-9]"))
+		{
+			MessageBox::Show("Please enter only valid numbers", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->BeginYearTextBox->Text= this->BeginYearTextBox->Text->Remove(this->BeginYearTextBox->Text->Length - 1);
+			return;
+		}
 		EndYearTextBox->Text = msclr::interop::marshal_as<System::String^>(std::to_string(std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text)) + 1));
 	}
 	private: System::Void EnterBtn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -273,19 +279,18 @@ namespace CMS {
 				}
 				cur = cur->next;
 			}
-			GROUP1::DLL<GROUP1::SCHOOLYEAR*>* schoolyear = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
-			schoolyear->data = new GROUP1::SCHOOLYEAR;
-			schoolyear->data->begin = std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text));
-			schoolyear->data->end = schoolyear->data->begin + 1;
+			GROUP1::SCHOOLYEAR* schoolyear = new GROUP1::SCHOOLYEAR;
+			schoolyear->begin = std::stoi(msclr::interop::marshal_as<std::string>(BeginYearTextBox->Text));
+			schoolyear->end = schoolyear->begin + 1;
 			if (L_SchoolYear.head == nullptr) {
-				L_SchoolYear.head = schoolyear;
-				L_SchoolYear.tail = schoolyear;
-			} else {
+				L_SchoolYear.head = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
+				L_SchoolYear.tail = L_SchoolYear.head;
+			} 
+			else 
+			{
 				L_SchoolYear.tail->next = new GROUP1::DLL<GROUP1::SCHOOLYEAR*>;
-				L_SchoolYear.tail->next = schoolyear;
-				schoolyear->prev = L_SchoolYear.tail;
-				schoolyear->next = nullptr;
-				L_SchoolYear.tail = schoolyear;
+				L_SchoolYear.tail->next->prev = L_SchoolYear.tail;
+				L_SchoolYear.tail = L_SchoolYear.tail->next;
 				GROUP1::DLL<GROUP1::STUDENT*>* stu = L_Student.head;
 				while (stu) {
 					GROUP1::DLL<GROUP1::COURSE*>* courseOfStu = stu->data->courses.head;
@@ -295,11 +300,12 @@ namespace CMS {
 						courseOfStu = courseOfStu->next;
 						delete dummy;
 					}
-					/*stu->data->courses.head = nullptr;
-					stu->data->courses.tail = nullptr;*/
+					stu->data->courses.head = nullptr;
+					stu->data->courses.tail = nullptr;
 					stu = stu->next;
 				}
 			}
+			L_SchoolYear.tail->data = schoolyear;
 			g_currentSchoolYear = L_SchoolYear.tail->data;
 			//MessageBox::Show(msclr::interop::marshal_as<String^>(std::to_string(g_currentSchoolYear->begin)));
 			g_currentSemester = nullptr;

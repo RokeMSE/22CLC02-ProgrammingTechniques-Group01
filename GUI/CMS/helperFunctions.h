@@ -25,3 +25,5 @@ extern void add_val(GROUP1::LIST<GROUP1::DLL, Data_Type>& list, Data_Type val);
 
 // delete files before exporting
 extern void deleteFiles();
+
+extern void sort(GROUP1::DLL<GROUP1::SCHOOLYEAR*>* head, GROUP1::DLL<GROUP1::SCHOOLYEAR*>* tail);
