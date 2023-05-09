@@ -4,6 +4,8 @@
 
 using namespace std;
 using namespace GROUP1;
+
+// working files
 using namespace System::IO;
 using namespace System;
 
@@ -183,45 +185,4 @@ extern void deleteFiles() {
     cli::array<String^>^ files = Directory::GetFiles(folderPath, "*", SearchOption::AllDirectories);
     // Loop through the list of files and delete them
     for each (String ^ file in files) File::Delete(file);
-}
-
-extern void sort(DLL<SCHOOLYEAR*>* head, DLL<SCHOOLYEAR*>* tail)
-{
-    if (!head || !(head->data) || !tail || !(tail->data) || head == tail)
-        return;
-
-    unsigned int year = tail->data->begin;
-
-    DLL<SCHOOLYEAR*>* p = head->prev, *i = head;
-    while (i->next)
-    {
-        if (i->data->begin < year)
-        {
-            if (!p)
-                p = head;
-            else
-                p = p->next;
-            //p = (!p) ? head : p->next;
-            SCHOOLYEAR* tmp = p->data;
-            p->data = i->data;
-            i->data = tmp;
-        }
-        i = i->next;
-    }
-
-    if (!p)
-        p = head;
-    else
-        p = p->next;
-    if (p)
-    {
-        SCHOOLYEAR* tmp = p->data;
-        p->data = tail->data;
-        tail->data = tmp;
-        if (p->prev && p != head)
-            sort(head, p->prev);
-        if (p->next && p != tail)
-            sort(p->next, tail);
-    }
-    return;
 }

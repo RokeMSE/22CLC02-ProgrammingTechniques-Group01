@@ -137,7 +137,6 @@ void exportASemesterInASchoolYear(std::string filename, GROUP1::SEMESTER*& sem, 
 }
 
 void exportSchoolYears() {
-    sort(L_SchoolYear.head, L_SchoolYear.tail);
     GROUP1::DLL<GROUP1::SCHOOLYEAR*>* cur = L_SchoolYear.head;
     // since then, list.tail != nullptr
     ofstream out("CSV/SchoolYear.csv");

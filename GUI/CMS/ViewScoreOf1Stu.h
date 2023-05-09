@@ -758,8 +758,8 @@ namespace CMS {
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		deleteFiles();
 		if (latestCheckRememberLogin) {
-			latestUsername = g_currentStaff->user.username;
-			latestPassword = g_currentStaff->user.password;
+			latestUsername = g_currentStudent->user.username;
+			latestPassword = g_currentStudent->user.password;
 		}
 		else {
 			latestUsername = latestPassword = "";

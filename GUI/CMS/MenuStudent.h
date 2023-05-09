@@ -541,27 +541,9 @@ private: System::Windows::Forms::Button^ BackBtn;
 		this->AccountPanel->Visible = !this->AccountPanel->Visible;
 	}
 	private: System::Void ChangePassBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		ChangePass^ form = gcnew CMS::ChangePass();
-		form->TopMost = false;
-		form->TopLevel = false;
-
-		//form->ClientSize = 
-		AccountPanel->Controls->Add(form);
-		AccountPanel->Controls->Add(this->BackBtn);
-		this->BackBtn->BringToFront();
-		for each (Control ^ control in this->AccountPanel->Controls) {
-
-			if (control != form)
-				control->Hide();
-			else
-			{
-				control->Dock = DockStyle::Top;
-				control->Show();
-				this->childForm = form;
-				this->BackBtn->Visible = true;
-			}
-		}
-		this->curPanel = AccountPanel;
+		ChangePass^ form = gcnew ChangePass();
+		this->Hide();
+		form->Show();
 	}
 	private: System::Void ViewScoreOfACourseBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		ViewScoreOf1Stu^ form = gcnew ViewScoreOf1Stu(this, this->sourceForm);
