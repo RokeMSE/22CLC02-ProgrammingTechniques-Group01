@@ -139,10 +139,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\..\..\..\Downloads\icon.ico">
+    <Image Include="user.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\..\..\..\Pictures\img.jpg">
+    <Image Include="icon.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

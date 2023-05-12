@@ -236,7 +236,7 @@ namespace CMS {
 			this->txt_coursename->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_coursename->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_coursename->Location = System::Drawing::Point(761, 200);
+			this->txt_coursename->Location = System::Drawing::Point(749, 201);
 			this->txt_coursename->Margin = System::Windows::Forms::Padding(4);
 			this->txt_coursename->Name = L"txt_coursename";
 			this->txt_coursename->ReadOnly = true;
@@ -250,7 +250,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label2->Location = System::Drawing::Point(612, 203);
+			this->label2->Location = System::Drawing::Point(600, 204);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(144, 27);
@@ -266,7 +266,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->lbl_title->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->lbl_title->Location = System::Drawing::Point(400, 15);
+			this->lbl_title->Location = System::Drawing::Point(388, 15);
 			this->lbl_title->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_title->Name = L"lbl_title";
 			this->lbl_title->Size = System::Drawing::Size(380, 31);
@@ -326,7 +326,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label5->Location = System::Drawing::Point(648, 148);
+			this->label5->Location = System::Drawing::Point(636, 149);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(106, 27);
@@ -340,7 +340,7 @@ namespace CMS {
 			this->txt_teacher->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_teacher->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_teacher->Location = System::Drawing::Point(761, 252);
+			this->txt_teacher->Location = System::Drawing::Point(749, 253);
 			this->txt_teacher->Margin = System::Windows::Forms::Padding(4);
 			this->txt_teacher->Name = L"txt_teacher";
 			this->txt_teacher->ReadOnly = true;
@@ -354,7 +354,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label6->Location = System::Drawing::Point(664, 255);
+			this->label6->Location = System::Drawing::Point(652, 256);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(92, 27);
@@ -368,7 +368,7 @@ namespace CMS {
 			this->txt_credit->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_credit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_credit->Location = System::Drawing::Point(760, 304);
+			this->txt_credit->Location = System::Drawing::Point(748, 305);
 			this->txt_credit->Margin = System::Windows::Forms::Padding(4);
 			this->txt_credit->Name = L"txt_credit";
 			this->txt_credit->ReadOnly = true;
@@ -382,7 +382,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label7->Location = System::Drawing::Point(656, 307);
+			this->label7->Location = System::Drawing::Point(644, 308);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(98, 27);
@@ -396,7 +396,7 @@ namespace CMS {
 			this->txt_maxStu->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_maxStu->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_maxStu->Location = System::Drawing::Point(1054, 304);
+			this->txt_maxStu->Location = System::Drawing::Point(1042, 305);
 			this->txt_maxStu->Margin = System::Windows::Forms::Padding(4);
 			this->txt_maxStu->Name = L"txt_maxStu";
 			this->txt_maxStu->ReadOnly = true;
@@ -410,7 +410,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label8->Location = System::Drawing::Point(895, 307);
+			this->label8->Location = System::Drawing::Point(883, 308);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(152, 27);
@@ -449,7 +449,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_othermark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_othermark->Location = System::Drawing::Point(761, 415);
+			this->txt_othermark->Location = System::Drawing::Point(749, 416);
 			this->txt_othermark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_othermark->MaxLength = 7;
 			this->txt_othermark->Name = L"txt_othermark";
@@ -466,7 +466,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label10->Location = System::Drawing::Point(627, 418);
+			this->label10->Location = System::Drawing::Point(615, 419);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(128, 27);
@@ -479,7 +479,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_midmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_midmark->Location = System::Drawing::Point(761, 462);
+			this->txt_midmark->Location = System::Drawing::Point(749, 463);
 			this->txt_midmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_midmark->MaxLength = 7;
 			this->txt_midmark->Name = L"txt_midmark";
@@ -496,7 +496,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label11->Location = System::Drawing::Point(595, 465);
+			this->label11->Location = System::Drawing::Point(583, 466);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(159, 27);
@@ -509,7 +509,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_rateOther->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_rateOther->Location = System::Drawing::Point(1054, 414);
+			this->txt_rateOther->Location = System::Drawing::Point(1042, 415);
 			this->txt_rateOther->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateOther->MaxLength = 3;
 			this->txt_rateOther->Name = L"txt_rateOther";
@@ -526,7 +526,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label12->Location = System::Drawing::Point(990, 417);
+			this->label12->Location = System::Drawing::Point(978, 418);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(58, 27);
@@ -539,7 +539,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_rateMid->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_rateMid->Location = System::Drawing::Point(1054, 461);
+			this->txt_rateMid->Location = System::Drawing::Point(1042, 462);
 			this->txt_rateMid->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateMid->MaxLength = 3;
 			this->txt_rateMid->Name = L"txt_rateMid";
@@ -556,7 +556,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label13->Location = System::Drawing::Point(990, 464);
+			this->label13->Location = System::Drawing::Point(978, 465);
 			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(58, 27);
@@ -570,7 +570,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label14->Location = System::Drawing::Point(1138, 414);
+			this->label14->Location = System::Drawing::Point(1126, 415);
 			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(36, 31);
@@ -584,7 +584,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label16->Location = System::Drawing::Point(1138, 461);
+			this->label16->Location = System::Drawing::Point(1126, 462);
 			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(36, 31);
@@ -598,7 +598,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label15->Location = System::Drawing::Point(1138, 508);
+			this->label15->Location = System::Drawing::Point(1126, 509);
 			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(36, 31);
@@ -611,7 +611,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_rateFinal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_rateFinal->Location = System::Drawing::Point(1054, 508);
+			this->txt_rateFinal->Location = System::Drawing::Point(1042, 509);
 			this->txt_rateFinal->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateFinal->MaxLength = 3;
 			this->txt_rateFinal->Name = L"txt_rateFinal";
@@ -628,7 +628,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label17->Location = System::Drawing::Point(990, 511);
+			this->label17->Location = System::Drawing::Point(978, 512);
 			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(58, 27);
@@ -641,7 +641,7 @@ namespace CMS {
 				static_cast<System::Int32>(static_cast<System::Byte>(197)));
 			this->txt_finalmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_finalmark->Location = System::Drawing::Point(760, 509);
+			this->txt_finalmark->Location = System::Drawing::Point(748, 510);
 			this->txt_finalmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_finalmark->MaxLength = 7;
 			this->txt_finalmark->Name = L"txt_finalmark";
@@ -658,7 +658,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label18->Location = System::Drawing::Point(635, 512);
+			this->label18->Location = System::Drawing::Point(623, 513);
 			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(119, 27);
@@ -672,7 +672,7 @@ namespace CMS {
 			this->txt_totalmark->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_totalmark->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_totalmark->Location = System::Drawing::Point(761, 584);
+			this->txt_totalmark->Location = System::Drawing::Point(749, 585);
 			this->txt_totalmark->Margin = System::Windows::Forms::Padding(4);
 			this->txt_totalmark->MaxLength = 10;
 			this->txt_totalmark->Name = L"txt_totalmark";
@@ -687,7 +687,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label19->Location = System::Drawing::Point(632, 587);
+			this->label19->Location = System::Drawing::Point(620, 588);
 			this->label19->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(123, 27);
@@ -703,7 +703,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->btn_Update->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->btn_Update->Location = System::Drawing::Point(868, 640);
+			this->btn_Update->Location = System::Drawing::Point(856, 641);
 			this->btn_Update->Margin = System::Windows::Forms::Padding(4);
 			this->btn_Update->Name = L"btn_Update";
 			this->btn_Update->Size = System::Drawing::Size(121, 47);
@@ -719,7 +719,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label20->Location = System::Drawing::Point(1139, 583);
+			this->label20->Location = System::Drawing::Point(1127, 584);
 			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(36, 31);
@@ -733,7 +733,7 @@ namespace CMS {
 			this->txt_rateTotal->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->txt_rateTotal->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(132)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->txt_rateTotal->Location = System::Drawing::Point(1054, 583);
+			this->txt_rateTotal->Location = System::Drawing::Point(1042, 584);
 			this->txt_rateTotal->Margin = System::Windows::Forms::Padding(4);
 			this->txt_rateTotal->Name = L"txt_rateTotal";
 			this->txt_rateTotal->ReadOnly = true;
@@ -747,7 +747,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->label21->Location = System::Drawing::Point(932, 587);
+			this->label21->Location = System::Drawing::Point(920, 588);
 			this->label21->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(116, 27);
@@ -782,7 +782,7 @@ namespace CMS {
 			this->pnl_title->Margin = System::Windows::Forms::Padding(4);
 			this->pnl_title->Name = L"pnl_title";
 			this->pnl_title->Padding = System::Windows::Forms::Padding(6, 5, 6, 5);
-			this->pnl_title->Size = System::Drawing::Size(1153, 60);
+			this->pnl_title->Size = System::Drawing::Size(1121, 60);
 			this->pnl_title->TabIndex = 42;
 			this->pnl_title->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_title_MouseDown);
 			this->pnl_title->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateResult::pnl_title_MouseMove);
@@ -879,7 +879,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->chkbox_sem1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem1->Location = System::Drawing::Point(773, 148);
+			this->chkbox_sem1->Location = System::Drawing::Point(761, 149);
 			this->chkbox_sem1->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem1->Name = L"chkbox_sem1";
 			this->chkbox_sem1->Size = System::Drawing::Size(50, 31);
@@ -896,7 +896,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->chkbox_sem2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem2->Location = System::Drawing::Point(847, 148);
+			this->chkbox_sem2->Location = System::Drawing::Point(835, 149);
 			this->chkbox_sem2->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem2->Name = L"chkbox_sem2";
 			this->chkbox_sem2->Size = System::Drawing::Size(50, 31);
@@ -913,7 +913,7 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->chkbox_sem3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->chkbox_sem3->Location = System::Drawing::Point(921, 148);
+			this->chkbox_sem3->Location = System::Drawing::Point(909, 149);
 			this->chkbox_sem3->Margin = System::Windows::Forms::Padding(4);
 			this->chkbox_sem3->Name = L"chkbox_sem3";
 			this->chkbox_sem3->Size = System::Drawing::Size(50, 31);
@@ -933,14 +933,14 @@ namespace CMS {
 			this->panel3->Margin = System::Windows::Forms::Padding(4);
 			this->panel3->Name = L"panel3";
 			this->panel3->Padding = System::Windows::Forms::Padding(4);
-			this->panel3->Size = System::Drawing::Size(62, 757);
+			this->panel3->Size = System::Drawing::Size(62, 720);
 			this->panel3->TabIndex = 52;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(4, 699);
+			this->pictureBox1->Location = System::Drawing::Point(4, 662);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(54, 54);
@@ -955,7 +955,7 @@ namespace CMS {
 			this->pnl_account->Controls->Add(this->btn_aboutUs);
 			this->pnl_account->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->pnl_account->Location = System::Drawing::Point(72, 623);
+			this->pnl_account->Location = System::Drawing::Point(72, 586);
 			this->pnl_account->Name = L"pnl_account";
 			this->pnl_account->Padding = System::Windows::Forms::Padding(3);
 			this->pnl_account->Size = System::Drawing::Size(172, 137);
@@ -1005,7 +1005,7 @@ namespace CMS {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->panel1->Location = System::Drawing::Point(753, 563);
+			this->panel1->Location = System::Drawing::Point(741, 564);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(425, 3);
 			this->panel1->TabIndex = 131;
@@ -1015,7 +1015,7 @@ namespace CMS {
 			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1225, 765);
+			this->ClientSize = System::Drawing::Size(1194, 728);
 			this->ControlBox = false;
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pnl_account);

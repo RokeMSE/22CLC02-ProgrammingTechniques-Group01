@@ -87,10 +87,10 @@ namespace CMS {
 			this->ChangePassLab->Font = (gcnew System::Drawing::Font(L"Tahoma", 15, System::Drawing::FontStyle::Bold));
 			this->ChangePassLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(106)),
 				static_cast<System::Int32>(static_cast<System::Byte>(51)));
-			this->ChangePassLab->Location = System::Drawing::Point(75, 11);
+			this->ChangePassLab->Location = System::Drawing::Point(90, 13);
 			this->ChangePassLab->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->ChangePassLab->Name = L"ChangePassLab";
-			this->ChangePassLab->Size = System::Drawing::Size(236, 30);
+			this->ChangePassLab->Size = System::Drawing::Size(282, 36);
 			this->ChangePassLab->TabIndex = 0;
 			this->ChangePassLab->Text = L"Change password";
 			// 
@@ -101,10 +101,10 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->CurrentPassLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->CurrentPassLab->Location = System::Drawing::Point(148, 82);
+			this->CurrentPassLab->Location = System::Drawing::Point(178, 98);
 			this->CurrentPassLab->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CurrentPassLab->Name = L"CurrentPassLab";
-			this->CurrentPassLab->Size = System::Drawing::Size(178, 28);
+			this->CurrentPassLab->Size = System::Drawing::Size(218, 32);
 			this->CurrentPassLab->TabIndex = 1;
 			this->CurrentPassLab->Text = L"Current password";
 			// 
@@ -112,10 +112,10 @@ namespace CMS {
 			// 
 			this->CurrentPassTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CurrentPassTextBox->Location = System::Drawing::Point(345, 79);
+			this->CurrentPassTextBox->Location = System::Drawing::Point(414, 95);
 			this->CurrentPassTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->CurrentPassTextBox->Name = L"CurrentPassTextBox";
-			this->CurrentPassTextBox->Size = System::Drawing::Size(198, 34);
+			this->CurrentPassTextBox->Size = System::Drawing::Size(237, 39);
 			this->CurrentPassTextBox->TabIndex = 2;
 			this->CurrentPassTextBox->UseSystemPasswordChar = true;
 			// 
@@ -123,10 +123,10 @@ namespace CMS {
 			// 
 			this->NewPassTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NewPassTextBox->Location = System::Drawing::Point(345, 121);
+			this->NewPassTextBox->Location = System::Drawing::Point(414, 145);
 			this->NewPassTextBox->Margin = System::Windows::Forms::Padding(2);
 			this->NewPassTextBox->Name = L"NewPassTextBox";
-			this->NewPassTextBox->Size = System::Drawing::Size(198, 34);
+			this->NewPassTextBox->Size = System::Drawing::Size(237, 39);
 			this->NewPassTextBox->TabIndex = 4;
 			this->NewPassTextBox->UseSystemPasswordChar = true;
 			// 
@@ -137,10 +137,10 @@ namespace CMS {
 				static_cast<System::Byte>(0)));
 			this->NewPassLab->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(38)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				static_cast<System::Int32>(static_cast<System::Byte>(41)));
-			this->NewPassLab->Location = System::Drawing::Point(148, 121);
+			this->NewPassLab->Location = System::Drawing::Point(178, 145);
 			this->NewPassLab->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NewPassLab->Name = L"NewPassLab";
-			this->NewPassLab->Size = System::Drawing::Size(150, 28);
+			this->NewPassLab->Size = System::Drawing::Size(182, 32);
 			this->NewPassLab->TabIndex = 3;
 			this->NewPassLab->Text = L"New password";
 			// 
@@ -152,11 +152,11 @@ namespace CMS {
 			this->EnterBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->EnterBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->EnterBtn->Location = System::Drawing::Point(483, 206);
+			this->EnterBtn->Location = System::Drawing::Point(580, 247);
 			this->EnterBtn->Margin = System::Windows::Forms::Padding(2);
 			this->EnterBtn->Name = L"EnterBtn";
-			this->EnterBtn->Padding = System::Windows::Forms::Padding(3);
-			this->EnterBtn->Size = System::Drawing::Size(81, 41);
+			this->EnterBtn->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->EnterBtn->Size = System::Drawing::Size(97, 49);
 			this->EnterBtn->TabIndex = 5;
 			this->EnterBtn->Text = L"Enter";
 			this->EnterBtn->UseVisualStyleBackColor = false;
@@ -170,10 +170,10 @@ namespace CMS {
 			this->ExitBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->ExitBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ExitBtn->Location = System::Drawing::Point(569, 206);
+			this->ExitBtn->Location = System::Drawing::Point(683, 247);
 			this->ExitBtn->Margin = System::Windows::Forms::Padding(2);
 			this->ExitBtn->Name = L"ExitBtn";
-			this->ExitBtn->Size = System::Drawing::Size(81, 41);
+			this->ExitBtn->Size = System::Drawing::Size(97, 49);
 			this->ExitBtn->TabIndex = 6;
 			this->ExitBtn->Text = L"Exit";
 			this->ExitBtn->UseVisualStyleBackColor = false;
@@ -192,11 +192,11 @@ namespace CMS {
 			this->WorkPanel->Controls->Add(this->NewPassLab);
 			this->WorkPanel->Controls->Add(this->NewPassTextBox);
 			this->WorkPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->WorkPanel->Location = System::Drawing::Point(0, 59);
+			this->WorkPanel->Location = System::Drawing::Point(0, 71);
 			this->WorkPanel->Margin = System::Windows::Forms::Padding(2);
 			this->WorkPanel->Name = L"WorkPanel";
-			this->WorkPanel->Padding = System::Windows::Forms::Padding(3);
-			this->WorkPanel->Size = System::Drawing::Size(767, 279);
+			this->WorkPanel->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->WorkPanel->Size = System::Drawing::Size(920, 335);
 			this->WorkPanel->TabIndex = 7;
 			// 
 			// ShowHide2
@@ -206,9 +206,10 @@ namespace CMS {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ShowHide2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->ShowHide2->Location = System::Drawing::Point(548, 134);
+			this->ShowHide2->Location = System::Drawing::Point(658, 161);
+			this->ShowHide2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ShowHide2->Name = L"ShowHide2";
-			this->ShowHide2->Size = System::Drawing::Size(46, 17);
+			this->ShowHide2->Size = System::Drawing::Size(53, 20);
 			this->ShowHide2->TabIndex = 8;
 			this->ShowHide2->Text = L"Show";
 			this->ShowHide2->Click += gcnew System::EventHandler(this, &ChangePass::ShowHide2_Click);
@@ -220,9 +221,10 @@ namespace CMS {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ShowHide->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(100)),
 				static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->ShowHide->Location = System::Drawing::Point(548, 96);
+			this->ShowHide->Location = System::Drawing::Point(658, 115);
+			this->ShowHide->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ShowHide->Name = L"ShowHide";
-			this->ShowHide->Size = System::Drawing::Size(46, 17);
+			this->ShowHide->Size = System::Drawing::Size(53, 20);
 			this->ShowHide->TabIndex = 7;
 			this->ShowHide->Text = L"Show";
 			this->ShowHide->Click += gcnew System::EventHandler(this, &ChangePass::ShowHide_Click);
@@ -236,24 +238,25 @@ namespace CMS {
 			this->StartPanel->Location = System::Drawing::Point(0, 0);
 			this->StartPanel->Margin = System::Windows::Forms::Padding(2);
 			this->StartPanel->Name = L"StartPanel";
-			this->StartPanel->Padding = System::Windows::Forms::Padding(3);
-			this->StartPanel->Size = System::Drawing::Size(767, 59);
+			this->StartPanel->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->StartPanel->Size = System::Drawing::Size(920, 71);
 			this->StartPanel->TabIndex = 8;
 			this->StartPanel->Visible = false;
 			// 
 			// ChangePass
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(120, 120);
+			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
 				static_cast<System::Int32>(static_cast<System::Byte>(219)));
-			this->ClientSize = System::Drawing::Size(767, 338);
+			this->ClientSize = System::Drawing::Size(920, 406);
 			this->ControlBox = false;
 			this->Controls->Add(this->WorkPanel);
 			this->Controls->Add(this->StartPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ChangePass";
 			this->Text = L"ChangePass";
 			this->WorkPanel->ResumeLayout(false);

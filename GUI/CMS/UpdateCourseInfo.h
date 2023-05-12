@@ -639,7 +639,6 @@ namespace CMS {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
-			//this->Name = L"UpdateCourseInfo";
 			this->Text = L"UpdateCourseInfo";
 			this->Load += gcnew System::EventHandler(this, &UpdateCourseInfo::UpdateCourseInfo_Load);
 			this->panel2->ResumeLayout(false);

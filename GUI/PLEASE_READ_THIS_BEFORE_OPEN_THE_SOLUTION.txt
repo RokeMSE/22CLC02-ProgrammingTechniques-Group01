@@ -1,0 +1,6 @@
+Please unblock all the files this folder `Source_Code` in order to avoid the "restricted zone" errors.
+
+
+In case you're using Windows as your operation and you unfortunately forgot the command, I have found this one on Internet that you can run in PowerShell:
+	1. Go to the "Soucre_Code" folder
+	2. dir -Recurse | Unblock-File

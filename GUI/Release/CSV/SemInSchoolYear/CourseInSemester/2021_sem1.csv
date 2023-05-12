@@ -1,3 +1,0 @@
-ID,Name,Teacher,Credit,Max Students,Day,Session,File containing students in the course
-CSC10001,Nhap mon lap trinh,Van Chi Nam,4,47,TUE,S3,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2021_sem1_courseCSC10001.csv
-CSC20001,Nhap mon cong nghe thong tin,Huynh Thuy Bao Tran,4,51,MON,S1,CSV/SemInSchoolYear/CourseInSemester/StudentsInCourse/2021_sem1_courseCSC20001.csv

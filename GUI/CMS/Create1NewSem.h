@@ -228,7 +228,7 @@ namespace CMS {
 			this->StartPanel->Location = System::Drawing::Point(0, 0);
 			this->StartPanel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->StartPanel->Name = L"StartPanel";
-			this->StartPanel->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->StartPanel->Padding = System::Windows::Forms::Padding(4);
 			this->StartPanel->Size = System::Drawing::Size(920, 71);
 			this->StartPanel->TabIndex = 102;
 			this->StartPanel->Visible = false;

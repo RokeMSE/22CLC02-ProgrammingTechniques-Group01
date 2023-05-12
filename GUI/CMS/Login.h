@@ -71,13 +71,13 @@ namespace CMS {
 			this->txt_password = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_password = (gcnew System::Windows::Forms::Label());
 			this->pnl_login = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->chkbx_remember = (gcnew System::Windows::Forms::CheckBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pnl_titleLogin = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pnl_login->SuspendLayout();
-			this->pnl_titleLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->pnl_titleLogin->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// lbl_username
@@ -183,6 +183,17 @@ namespace CMS {
 			this->pnl_login->Size = System::Drawing::Size(403, 478);
 			this->pnl_login->TabIndex = 7;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(178, 3);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(54, 54);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 9;
+			this->pictureBox1->TabStop = false;
+			// 
 			// chkbx_remember
 			// 
 			this->chkbx_remember->AutoSize = true;
@@ -222,17 +233,6 @@ namespace CMS {
 			this->pnl_titleLogin->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseDown);
 			this->pnl_titleLogin->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Login::pnl_titleLogin_MouseMove);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(178, 3);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(54, 54);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 9;
-			this->pictureBox1->TabStop = false;
-			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(144, 144);
@@ -248,12 +248,12 @@ namespace CMS {
 			this->Name = L"Login";
 			this->Padding = System::Windows::Forms::Padding(4);
 			this->Text = L"Login";
-			this->Shown += gcnew System::EventHandler(this, &Login::Login_Shown);
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Shown);
+			this->Shown += gcnew System::EventHandler(this, &Login::Login_Shown);
 			this->pnl_login->ResumeLayout(false);
 			this->pnl_login->PerformLayout();
-			this->pnl_titleLogin->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->pnl_titleLogin->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}

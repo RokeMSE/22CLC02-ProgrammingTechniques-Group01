@@ -242,7 +242,7 @@ private: System::Windows::Forms::Button^ BackBtn;
 			this->Icon->Location = System::Drawing::Point(59, 10);
 			this->Icon->Margin = System::Windows::Forms::Padding(2);
 			this->Icon->Name = L"Icon";
-			this->Icon->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Icon->Padding = System::Windows::Forms::Padding(4);
 			this->Icon->Size = System::Drawing::Size(118, 128);
 			this->Icon->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->Icon->TabIndex = 31;
